@@ -1,0 +1,18 @@
+uuid: 822f4e8e-019a-4e4d-8275-f1d7030f3ce9
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion_elements
+id: component_content.component_content.created
+field_name: created
+entity_type: component_content
+bundle: component_content
+label: 'Authored on'
+description: 'The time that the component content was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

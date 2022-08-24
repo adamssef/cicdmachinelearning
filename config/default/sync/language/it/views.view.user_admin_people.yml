@@ -1,0 +1,20 @@
+display:
+  default:
+    display_title: Predefinito
+    display_options:
+      fields:
+        name:
+          label: 'Nome utente'
+        status:
+          label: Stato
+          settings:
+            format_custom_true: Attivo
+        operations:
+          label: Operazioni
+      filters:
+        status:
+          group_info:
+            label: Stato
+            group_items:
+              1:
+                title: Attivo

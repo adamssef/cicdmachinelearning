@@ -1,0 +1,42 @@
+_core:
+  default_config_hash: yOPH6uEZYRHbg2OFP-bze0jGr06fI-Gr_66W-vA8Faw
+report-only:
+  enable: false
+  directives:
+    script-src:
+      base: self
+    script-src-attr:
+      base: self
+    script-src-elem:
+      base: self
+    style-src:
+      base: self
+    style-src-attr:
+      base: self
+    style-src-elem:
+      base: self
+    frame-ancestors:
+      base: self
+  reporting:
+    plugin: none
+enforce:
+  enable: true
+  directives:
+    script-src:
+      base: self
+      flags:
+        - unsafe-inline
+        - unsafe-eval
+      sources:
+        - 'https://cdn.cookielaw.org'
+        - 'https://www.googletagmanager.com'
+        - 'https://www.google-analytics.com'
+        - 'https://players.brightcove.net/'
+        - 'https://www.recaptcha.net'
+        - 'https://www.gstatic.com'
+        - '*.clarity.ms'
+        - 'https://js-agent.newrelic.com'
+    frame-ancestors:
+      base: self
+  reporting:
+    plugin: sitelog

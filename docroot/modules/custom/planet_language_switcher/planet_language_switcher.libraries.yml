@@ -1,0 +1,11 @@
+language-switcher:
+  version: VERSION
+  js:
+    js/language-switcher.js: {}
+  css:
+    theme:
+      css/language-switcher.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once

@@ -1,0 +1,34 @@
+display:
+  default:
+    display_title: Predefinito
+    display_options:
+      fields:
+        subject:
+          label: Oggetto
+        name:
+          label: Autore
+        operations:
+          label: Operazioni
+      filters:
+        subject:
+          expose:
+            label: Oggetto
+        langcode:
+          expose:
+            label: Lingua
+  page_unapproved:
+    display_options:
+      fields:
+        subject:
+          label: Oggetto
+        name:
+          label: Autore
+        operations:
+          label: Operazioni
+      filters:
+        subject:
+          expose:
+            label: Oggetto
+        langcode:
+          expose:
+            label: Lingua

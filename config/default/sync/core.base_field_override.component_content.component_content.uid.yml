@@ -1,0 +1,20 @@
+uuid: 86b6b9a2-a26a-431d-85eb-1934aa281f1a
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion_elements
+id: component_content.component_content.uid
+field_name: uid
+entity_type: component_content
+bundle: component_content
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\cohesion_elements\Entity\ComponentContent::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

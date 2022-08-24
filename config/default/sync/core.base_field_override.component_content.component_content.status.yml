@@ -1,0 +1,22 @@
+uuid: b5bd00e3-93c9-45b1-be78-c48b34092af3
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion_elements
+id: component_content.component_content.status
+field_name: status
+entity_type: component_content
+bundle: component_content
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

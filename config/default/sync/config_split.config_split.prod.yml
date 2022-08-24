@@ -1,0 +1,17 @@
+uuid: f5be267d-2ffa-471d-b80a-6b288c044d4c
+langcode: en
+status: false
+dependencies: {  }
+id: prod
+label: Prod
+description: ''
+weight: 0
+folder: ../config/default/environment/prod
+module:
+  acquia_connector: 0
+theme: {  }
+blacklist: {  }
+graylist:
+  - environment_indicator.indicator
+graylist_dependents: true
+graylist_skip_equal: true

@@ -1,0 +1,18 @@
+uuid: 80142902-059d-418f-b8cd-bedcbf208821
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion_elements
+id: component_content.component_content.title
+field_name: title
+entity_type: component_content
+bundle: component_content
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

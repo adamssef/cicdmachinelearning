@@ -1,0 +1,25 @@
+uuid: 1fa7b400-468e-4734-83ea-07c176bae3e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion
+    - planet_language_switcher
+  theme:
+    - cohesion_theme
+id: planet_language_switcher
+theme: cohesion_theme
+region: dx8_hidden
+weight: -4
+provider: null
+plugin: planet_language_switcher_block
+settings:
+  id: planet_language_switcher_block
+  label: 'Planet Language Switcher'
+  label_display: '0'
+  provider: planet_language_switcher
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: false

@@ -1,0 +1,162 @@
+name: planet
+
+# Start with the default drupal recipe
+recipe: drupal9
+
+# Configure the drupal recipe
+config:
+  php: '8.0'
+  composer_version: '2.2.9'
+  via: apache
+  webroot: docroot
+  drush: "*"
+  drupal: true
+  ssl: true
+  database: mariadb:10.5
+  xdebug: true
+  config:
+    php: config/php.ini
+services:
+  # PHPmyAdmin
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database
+  database:
+    type: mariadb:10.5
+    portforward: true
+    creds:
+      database: 'drupal'
+      password: 'drupal'
+      user: 'drupal'
+      host: 'database'
+      port: '3306'
+    run:
+      # Creates the databases as root since the app user does not have those privileges
+      - mysql -uroot -e "CREATE DATABASE IF NOT EXISTS drupal; GRANT ALL PRIVILEGES ON drupal.* TO 'drupal'@'%' IDENTIFIED by 'drupal';"
+  appserver:
+    scanner: false
+    overrides:
+      environment:
+        # Support debugging Drush with XDEBUG.
+        PHP_IDE_CONFIG: "serverName=appserver"
+        # If you want you can adjust this configuration to eneble profiling or
+        # other XDEBUG tool. Remember that you need to run lando rebuild -y
+        # after changing this:
+        # XDEBUG_MODE: "coverage,debug,develop,profile"
+        XDEBUG_MODE: "debug"
+        SIMPLESAMLPHP_CONFIG_DIR: "/app/simplesamlphp/config"
+        XDEBUG_CONFIG: discover_client_host=0
+        SIMPLETEST_DB: mysql://drupal:drupal@database/drupal#test
+    build_as_root:
+      # add a2enmod headers to enable mod_headers
+      # for add in header "Access-Control-Allow-Origin" for specific json files
+      - a2enmod headers
+      - service apache2 reload
+      - apt-get update && apt-get install -y imagemagick
+      - docker-php-ext-install sysvsem && docker-php-ext-enable sysvsem
+      # Installs nodejs for running Jest unit tests
+      - curl -sL https://deb.nodesource.com/setup_16.x | bash -
+      - apt-get install -y nodejs
+    build:
+      - "composer install"
+      - "vendor/squizlabs/php_codesniffer/bin/phpcs --config-set installed_paths /app/vendor/drupal/coder/coder_sniffer"
+  # Mailhog
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+  # Memcached
+  memcached:
+    type: memcached
+    portforward: true
+    run:
+      - /bin/sh -c '/opt/bitnami/memcached/bin/memcached start -d'
+  # Solr
+  solr:
+    type: solr:7
+    portforward: true
+    core: planet
+    build_as_root:
+      - rm -rf /opt/solr/server/solr/mycores/planet
+      - ln -s /app/config/solr/planet /opt/solr/server/solr/mycores/planet
+
+tooling:
+  drush-debug:
+    env:
+      XDEBUG_MODE: "coverage,debug"
+    cmd: "php -dxdebug.mode=coverage,debug -dxdebug.start_with_request=1 /app/vendor/drush/drush/drush --root=/app/docroot"
+    service: appserver
+  drush:
+    cmd: "/app/vendor/drush/drush/drush --root=/app/docroot"
+    service: appserver
+  drupal:
+    service: appserver
+    cmd: "/app/vendor/bin/drupal --root=/app/docroot"
+  composer:
+    service: appserver
+    cmd: "/usr/local/bin/composer --working-dir=/app"
+  npm:
+    service: appserver
+    cmd: "/usr/bin/npm"
+  phpcs:
+    service: appserver
+    cmd: "/app/vendor/bin/phpcs -s --colors --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,info,txt,md --ignore=\\.jpg,\\.jpeg,\\.png,\\.gif,docroot/modules/custom/lgpd_onetrust"
+    description: Run phpcs for given folder or file.
+  phpcbf:
+    service: appserver
+    cmd: "/app/vendor/bin/phpcbf --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,info,txt,md --ignore=\\.jpg,\\.jpeg,\\.png,\\.gif,docroot/modules/custom/lgpd_onetrust"
+    description: Run phpcbf for given folder or file.
+  phpunit:
+    service: appserver
+    env:
+      XDEBUG_MODE: "coverage,debug"
+    cmd: "php -dxdebug.mode=coverage,debug -dxdebug.start_with_request=1 /app/vendor/bin/phpunit "
+    description: Run phpunit for given folder or file. i.e. lando phpunit --configuration myfileTest.php
+  runtests:
+    service: appserver
+    cmd:  "rm -r docroot/modules/contrib/cohesion/tests 2> /dev/null; /usr/local/bin/php /app/docroot/core/scripts/run-tests.sh --php /usr/local/bin/php --color --verbose planet"
+    description: Run Drupal tests for the project
+  install:
+    cmd: "cd $LANDO_WEBROOT && drush si --site-name='Planet' --site-mail='admin@example.com' --account-name='admin' --account-mail='admin@example.com' --account-pass='admin' -y && drush config-set system.theme default seven -y && drush -y config-set system.performance css.preprocess 0 && drush -y config-set system.performance js.preprocess 0 && drush cr"
+    service: appserver
+    description: Install Application
+  db-import <file>:
+    service: :host
+    description: Imports a dump file into a database service
+    cmd:
+      - /helpers/sql-import.sh
+      - appserver: /app/db-import.sh
+    user: root
+    options:
+      host:
+        description: The database service to use
+        default: database
+        alias:
+          - h
+      no-wipe:
+        description: Do not destroy the existing database before an import
+        boolean: true
+  export-all:
+    service: appserver
+    cmd:
+      - drush export-all
+      - drush cex
+    description: Exports all configs
+  import-languages:
+    service: appserver
+    cmd:
+      - "LANGUAGES=$(ls translations | sed -e 's/\\..*$//'); for l in $LANGUAGES; do drush locale:import $l ../translations/$l.po --type=customized --override=all; done"
+      - drush cr
+    description: Reimport all languages to avoid errors
+
+proxy:
+  mailhog:
+    - mailhog-pga-drupal.lndo.site
+  appserver:
+    - planet.lndo.site
+  pma:
+    - pma.planet.lndo.site
+  solr:
+    - solr.planet.lndo.site:8983
+

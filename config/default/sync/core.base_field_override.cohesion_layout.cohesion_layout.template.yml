@@ -1,0 +1,20 @@
+uuid: c5a9ebdf-ee27-4929-8f4e-c13d67406ab6
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion_elements
+id: cohesion_layout.cohesion_layout.template
+field_name: template
+entity_type: cohesion_layout
+bundle: cohesion_layout
+label: Template
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '/* */'
+default_value_callback: ''
+settings: {  }
+field_type: string_long

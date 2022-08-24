@@ -1,0 +1,38 @@
+display:
+  default:
+    display_title: Predefinito
+    display_options:
+      title: Media
+      filters:
+        name:
+          expose:
+            label: Nome
+        langcode:
+          expose:
+            label: Lingua
+  page:
+    display_options:
+      fields:
+        edit_media:
+          text: Modifica
+        delete_media:
+          text: Elimina
+  widget:
+    display_options:
+      filters:
+        name:
+          expose:
+            label: Nome
+  widget_table:
+    display_options:
+      fields:
+        thumbnail__target_id:
+          label: Miniatura
+        name:
+          label: Nome
+        uid:
+          label: Autore
+      filters:
+        name:
+          expose:
+            label: Nome

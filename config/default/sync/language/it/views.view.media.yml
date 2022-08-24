@@ -1,0 +1,29 @@
+label: Media
+display:
+  default:
+    display_title: Predefinito
+    display_options:
+      title: Media
+      fields:
+        thumbnail__target_id:
+          label: Miniatura
+        bundle:
+          label: Tipo
+        uid:
+          label: Autore
+        status:
+          label: Stato
+        operations:
+          label: Operazioni
+      filters:
+        bundle:
+          expose:
+            label: Tipo
+        langcode:
+          expose:
+            label: Lingua
+  media_page_list:
+    display_title: Media
+    display_options:
+      menu:
+        title: Media

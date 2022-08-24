@@ -1,0 +1,34 @@
+_core:
+  default_config_hash: gpIMmHdWGMtTf2ZJoO-QHF9bk9ZVESnX-4LD-r3YtTw
+api_build_status: NO_CONTENT
+api_url: 'https://api.cohesiondx.com'
+api_key: umberloris-97542
+organization_key: acquia-502227
+site_id: f066f74c-ded8-4f55-934b-953e9cbcb232
+use_dx8: enable
+google_map_api_key: ''
+asset_is_imported: '1'
+elements_permissions: '{}'
+sidebar_view_style: thumbnails
+log_dx8_error: disable
+animate_on_view_mobile: DISABLED
+add_animation_classes: DISABLED
+image_browser:
+  config:
+    type: medialib_imagebrowser
+    dx8_imce_stream_wrapper: public
+    cohesion_media_lib_types:
+      - image
+      - 0
+      - 0
+      - 0
+      - 0
+  content:
+    type: medialib_imagebrowser
+    dx8_imce_stream_wrapper: public
+    cohesion_media_lib_types:
+      - image
+      - 0
+      - 0
+      - 0
+      - 0

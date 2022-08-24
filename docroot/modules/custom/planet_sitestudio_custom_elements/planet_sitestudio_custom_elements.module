@@ -1,0 +1,145 @@
+<?php
+
+/**
+ * @file
+ * Basic Module File, mainly contains hook_theme.
+ */
+
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\cohesion_elements\Entity\ComponentContent;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_theme().
+ *
+ * @codeCoverageIgnore
+ */
+function planet_sitestudio_custom_elements_theme($existing, $type, $theme, $path) {
+  return [
+    'attach_js_element' => [
+      'template' => 'attach-js-template',
+      'variables' => [
+        'elementSettings' => NULL,
+        'elementMarkup' => NULL,
+        'elementContext' => NULL,
+        'elementClass' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'filterable_view_block_template' => [
+      'template' => 'filterable-view-block-template',
+      'variables' => [
+        'elementSettings' => NULL,
+        'elementMarkup' => NULL,
+        'elementContext' => NULL,
+        'elementClass' => NULL,
+        'filteredData' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'filterable_view_scientific_document' => [
+      'template' => 'filterable-view-scientific-document',
+      'variables' => [
+        'elementSettings' => NULL,
+        'elementMarkup' => NULL,
+        'elementContext' => NULL,
+        'elementClass' => NULL,
+        'searchLinkUrl' => NULL,
+        'filteredData' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'filterable_view_custom_taxonomy' => [
+      'template' => 'filterable-view-custom-taxonomy',
+      'variables' => [
+        'elementSettings' => NULL,
+        'elementMarkup' => NULL,
+        'elementContext' => NULL,
+        'elementClass' => NULL,
+        'filteredData' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'registration_health_care_professional_form' => [
+      'template' => 'registration-health-care-professional-form',
+      'variables' => [
+        'elementSettings' => NULL,
+        'elementMarkup' => NULL,
+        'elementContext' => NULL,
+        'elementClass' => NULL,
+        'filteredData' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'event_content_classification_label_template' => [
+      'template' => 'event-content-classification-label-template',
+      'variables' => [
+        'elementSettings' => NULL,
+        'elementMarkup' => NULL,
+        'elementContext' => NULL,
+        'elementClass' => NULL,
+        'renderedTerm' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'html__no_accessibility' => [
+      'base hook' => 'html',
+      'render element' => 'html',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * @codeCoverageIgnore
+ */
+function planet_sitestudio_custom_elements_theme_suggestions_html_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'html__no_accessibility';
+}
+
+/**
+ * Implements hook_entity_build_defaults_alter().
+ */
+function planet_sitestudio_custom_elements_entity_build_defaults_alter(array &$build, EntityInterface $entity, $view_mode) {
+  if ($entity instanceof ComponentContent) {
+
+    // Get node object.
+    $node = \Drupal::routeMatch()->getParameter('node');
+
+    // Get page id 404.
+    $page_404_nid = filter_var(\Drupal::service('config.factory')->get('system.site')
+    ->get('page.404'), FILTER_SANITIZE_NUMBER_INT);
+
+    $node_id = '';
+    if ($node instanceof NodeInterface) {
+      $node_id = $node->id();
+    }
+
+    // It only creates the cache if the node is not 404.
+    if ($node_id !== $page_404_nid) {
+      $build['#cache']['contexts'][] = 'url.query_args';
+    }
+
+    $build['#cache']['keys'][] = 'component_content';
+    $build['#cache']['keys'][] = $entity->id();
+    $build['#cache']['contexts'][] = 'country';
+    $build['#cache']['contexts'][] = 'user';
+  }
+}
+
+/**
+ * Implements hook_tokens_alter().
+ */
+function planet_sitestudio_custom_elements_tokens_alter(array &$replacements, array $context, BubbleableMetadata $bubbleable_metadata) {
+  if ($context['type'] == 'node' && isset($context['tokens']['summary'])) {
+    $replacements_index = $context['tokens']['summary'];
+    // Check if the replacement key exists, to avoid errors.
+    if (!array_key_exists($replacements_index, $replacements)) {
+      $replacements[$replacements_index] = '';
+    }
+
+    $replacements[$replacements_index] = strip_tags($replacements[$replacements_index]);
+  }
+}

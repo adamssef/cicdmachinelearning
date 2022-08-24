@@ -1,0 +1,7 @@
+display:
+  default:
+    display_title: Predefinito
+    display_options:
+      fields:
+        operations:
+          label: Operazioni

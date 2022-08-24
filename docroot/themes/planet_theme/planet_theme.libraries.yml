@@ -1,0 +1,111 @@
+global-styling:
+  version: VERSION
+  js:
+    dist/vendors.js: {minified: true}
+    dist/main.js: {minified: true}
+    dist/search-field.js: {minified: true}
+  css:
+    theme:
+      dist/main.css: {minified: true}
+  dependencies:
+    - core/drupal
+
+gallery:
+  version: VERSION
+  js:
+    dist/gallery.js: {minified: true}
+  css:
+    theme:
+      dist/gallery.css: {minified: true, weight: 10}
+
+modal:
+  version: VERSION
+  js:
+    dist/modal.js: {minified: true}
+  css:
+    theme:
+      dist/modal.css: {minified: true}
+
+accordion:
+  version: VERSION
+  js:
+    dist/accordion.js: {minified: true}
+  css:
+    theme:
+      dist/accordion.css: {minified: true}
+  dependencies:
+    - core/drupal
+
+tabs:
+  version: VERSION
+  js:
+    dist/tabs.js: {}
+  css:
+    theme:
+      dist/tabs.css: {minified: true}
+      dist/accordion.css: {minified: true}
+
+callout:
+  version: VERSION
+  css:
+    theme:
+      dist/callout.css: {minified: true}
+
+sidebar:
+  version: VERSION
+  js:
+    dist/sidebar.js: {minified: true}
+  css:
+    theme:
+      dist/sidebar.css: {minified: true}
+
+main_menu:
+  version: VERSION
+  js:
+    dist/main-menu.js: {minified: true}
+  css:
+    theme:
+      dist/main-menu.css: {minified: true}
+
+faq_icon:
+  version: VERSION
+  css:
+    theme:
+      dist/faq-icon.css: {minified: true}
+
+alert:
+  version: VERSION
+  js:
+    dist/alert.js: {minified: true}
+  css:
+    theme:
+      dist/alert.css: {minified: true}
+  dependencies:
+    - core/drupal
+
+form:
+  version: VERSION
+  css:
+    theme:
+      dist/form.css: {minified: true}
+
+footer:
+  version: VERSION
+  js:
+    dist/footer.js: {minified: true}
+  css:
+    theme:
+      dist/footer.css: {minified: true}
+
+header:
+  version: VERSION
+  js:
+    dist/header.js: {minified: true}
+  css:
+    theme:
+      dist/header.css: {minified: true}
+
+dynamic_content:
+  version: VERSION
+  js:
+    dist/dynamic-content.js: {minified: true}

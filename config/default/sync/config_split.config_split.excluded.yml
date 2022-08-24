@@ -1,0 +1,18 @@
+uuid: 6a9fee50-d448-4fa8-b46d-547d2ab476bf
+langcode: en
+status: false
+dependencies: {  }
+id: excluded
+label: Excluded
+description: ''
+weight: 0
+folder: ../config/default/excluded
+module: {  }
+theme: {  }
+blacklist:
+  - content_moderation_notifications.content_moderation_notification.content_was_unpublished
+  - content_moderation_notifications.content_moderation_notification.published
+  - content_moderation_notifications.content_moderation_notification.rejected
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

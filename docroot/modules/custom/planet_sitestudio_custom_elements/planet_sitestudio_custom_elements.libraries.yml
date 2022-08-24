@@ -1,0 +1,5 @@
+---
+# Planet - Helper JS
+helperJs:
+  js:
+    js/planetHelperJs.js: {}

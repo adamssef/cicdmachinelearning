@@ -1,0 +1,20 @@
+uuid: b8be5c60-1f24-4b3b-af7a-301adf2b95ad
+langcode: en
+status: false
+dependencies: {  }
+id: dev
+label: Dev
+description: ''
+weight: 0
+folder: ../config/default/environment/dev
+module:
+  acquia_connector: 0
+  dblog: 0
+  shield: 0
+  syslog: 0
+theme: {  }
+blacklist: {  }
+graylist:
+  - environment_indicator.indicator
+graylist_dependents: true
+graylist_skip_equal: true
