@@ -1,4 +1,4 @@
-uuid: d8c60afc-c8b9-4503-b05f-9858f9bb5de0
+uuid: 6095d42d-c003-4f35-8ece-649723ec716f
 langcode: en
 status: open
 dependencies: {  }
@@ -15,8 +15,11 @@ category: ''
 elements: |-
   layout:
     '#type': webform_flexbox
-    container:
+    first_column:
       '#type': container
+      '#attributes':
+        class:
+          - column-flex
       about_you:
         '#type': fieldset
         '#title': 'About you'
@@ -31,6 +34,9 @@ elements: |-
       your_contact_details:
         '#type': fieldset
         '#title': 'Your contact details'
+        '#attributes':
+          class:
+            - fieldset-section
         phone:
           '#type': textfield
           '#title': 'Phone*'
@@ -39,29 +45,72 @@ elements: |-
           '#type': email
           '#title': 'E-mail*'
           '#required': true
-        about_your_project:
+      about_your_project:
+        '#type': fieldset
+        '#title': 'About your project'
+        '#attributes':
+          class:
+            - fieldset-section
+        textarea:
           '#type': textarea
-          '#title': 'About your project'
+          '#title': Textarea
           '#placeholder': 'Tell us more about your project'
-    about_your_business:
-      '#type': fieldset
-      '#title': 'About your business'
-      company_business_name:
-        '#type': textfield
-        '#title': 'Company or business name*'
-        '#required': true
-      type_of_business:
-        '#type': select
-        '#title': 'Type of Business'
-        '#options':
-          Other: Other
-      please_state:
-        '#type': textfield
-        '#title': 'Please state'
-      actions:
-        '#type': webform_actions
-        '#title': 'Submit button(s)'
-        '#submit__label': 'Send enqiry'
+    second_column:
+      '#type': container
+      '#attributes':
+        class:
+          - column-flex
+      about_your_business:
+        '#type': fieldset
+        '#title': 'About your business'
+        company_business_name:
+          '#type': textfield
+          '#title': 'Company or business name*'
+          '#required': true
+        where_are_you_based:
+          '#type': webform_entity_radios
+          '#title': 'Where are you based'
+          '#wrapper_type': form_element
+          '#target_type': taxonomy_term
+          '#selection_handler': 'default:taxonomy_term'
+          '#selection_settings':
+            target_bundles:
+              wb_regions: wb_regions
+            sort:
+              field: name
+              direction: ASC
+        country:
+          '#type': webform_entity_select
+          '#title': Country
+          '#states':
+            visible:
+              ':input[name="where_are_you_based"]':
+                checked: true
+          '#target_type': taxonomy_term
+          '#selection_handler': 'default:taxonomy_term'
+          '#selection_settings':
+            target_bundles:
+              wb_countries: wb_countries
+            sort:
+              field: name
+              direction: ASC
+        type_of_business:
+          '#type': select
+          '#title': 'Type of Business'
+          '#options':
+            Retail: Retail
+            Hospitality: Hospitality
+            Financial: Financial
+            Partner: Partner
+            Other: Other
+          '#default_value': Other
+        actions:
+          '#type': webform_actions
+          '#title': 'Submit button(s)'
+          '#submit__label': 'Send enqiry'
+          '#submit__attributes':
+            class:
+              - coh-style-primary-button
 css: ''
 javascript: ''
 settings:

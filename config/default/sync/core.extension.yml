@@ -72,6 +72,7 @@ module:
   password_policy_length: 0
   path: 0
   path_alias: 0
+  planet_core: 0
   planet_language_switcher: 0
   planet_sitestudio_custom_elements: 0
   rdf: 0
@@ -89,6 +90,7 @@ module:
   serialization: 0
   shortcut: 0
   simple_sitemap: 0
+  site_studio_webform: 0
   sitestudio_page_builder: 0
   system: 0
   taxonomy: 0
@@ -100,10 +102,12 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  wb_countries: 0
   webform: 0
   webform_pardot: 0
   webform_submission_export_import: 0
   webform_submission_log: 0
+  webform_node: 0
   webform_ui: 0
   content_translation: 10
   password_policy: 10
