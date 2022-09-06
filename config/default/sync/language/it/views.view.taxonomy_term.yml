@@ -1,4 +1,7 @@
-label: 'Termine della tassonomia'
 display:
   default:
-    display_title: Predefinito
+    display_options:
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Voci per pagina'

@@ -1,12 +1,11 @@
 display:
   default:
-    display_title: Predefinito
     display_options:
-      title: Media
-      filters:
-        name:
+      pager:
+        options:
           expose:
-            label: Nome
+            items_per_page_label: 'Voci per pagina'
+      filters:
         langcode:
           expose:
             label: Lingua
@@ -17,22 +16,3 @@ display:
           text: Modifica
         delete_media:
           text: Elimina
-  widget:
-    display_options:
-      filters:
-        name:
-          expose:
-            label: Nome
-  widget_table:
-    display_options:
-      fields:
-        thumbnail__target_id:
-          label: Miniatura
-        name:
-          label: Nome
-        uid:
-          label: Autore
-      filters:
-        name:
-          expose:
-            label: Nome

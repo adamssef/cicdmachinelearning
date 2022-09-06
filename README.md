@@ -5,7 +5,7 @@ This project provides a platform base installation for Planet
 ## LOCAL SETUP
 ### Requirements
 1. GIT, PHP, DOCKER, DOCKER-COMPOSE, COMPOSER and LANDO
-2. Need access to the repository [planet](https://bitbucket.org/ciandt_it/planet-payment)
+2. Need access to the repository [planet](https://github.com/weareplanet/planet-lead-generation)
 
 ### GET STARTED
 1. To start the new project run the following command:

@@ -1,0 +1,22 @@
+diff --git a/core/modules/path_alias/src/AliasRepository.php b/core/modules/path_alias/src/AliasRepository.php
+index e226a4f05d..804d5bd4d9 100644
+--- a/core/modules/path_alias/src/AliasRepository.php
++++ b/core/modules/path_alias/src/AliasRepository.php
+@@ -135,6 +135,17 @@ protected function addLanguageFallback(SelectInterface $query, $langcode) {
+     else {
+       $query->orderBy('base_table.langcode', 'ASC');
+     }
++
++    // Identify the entity language fallback.
++    $fallback_controller = \Drupal::service('language_fallback.controller');
++    $entity_fallback_languages = $fallback_controller->getFallbackChain($langcode);
++    if (!empty($entity_fallback_languages)) {
++      // Remove unused items from array.
++      $entity_fallback_languages = array_filter($entity_fallback_languages);
++      // Merge arrays.
++      $langcode_list = array_merge($langcode_list, $entity_fallback_languages);
++    }
++    
+     $query->condition('base_table.langcode', $langcode_list, 'IN');
+   }
+ 

@@ -6,8 +6,6 @@ display:
     display_options:
       title: Dateien
       fields:
-        filename:
-          label: Name
         filemime:
           label: MIME-Typ
         filesize:
@@ -34,6 +32,7 @@ display:
             offset_label: Versatz
       exposed_form:
         options:
+          submit_button: Filter
           reset_button_label: Zurücksetzen
           exposed_sorts_label: 'Sortieren nach'
           sort_asc_label: Aufsteigend

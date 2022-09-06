@@ -12,6 +12,7 @@
     "cweagans/composer-patches": "^1.6",
     "d3/d3": "^3.5",
     "drupal/admin_toolbar": "^3.1",
+    "drupal/autologout": "^1.4",
     "drupal/color-color": "^1.0",
     "drupal/config_filter": "^1.10",
     "drupal/config_ignore": "^2.3",
@@ -22,12 +23,16 @@
     "drupal/core-recommended": "^9.0.0",
     "drupal/csp": "^1.16",
     "drupal/devel": "^4.1",
+    "drupal/entity_language_fallback": "^1.4",
     "drupal/environment_indicator": "^4.0",
+    "drupal/flood_control": "^2.2",
     "drupal/google_tag": "^1.5",
     "drupal/hal-hal": "^1.0",
     "drupal/jsonapi_extras": "^3.21",
+    "drupal/login_security": "^2.0",
     "drupal/memcache": "^2.4",
     "drupal/metatag": "^1.21",
+    "drupal/password_policy": "^3.1",
     "drupal/recaptcha_v3": "^1.6",
     "drupal/robotstxt": "^1.4",
     "drupal/search_api_solr": "^4.2",
@@ -114,7 +119,9 @@
     ],
     "patches": {
       "drupal/core": {
-        "Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch"
+        "Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch",
+        "https://www.drupal.org/project/drupal/issues/3091336": "https://www.drupal.org/files/issues/2021-01-05/AliasRepository-proper-language-fallback-3091336-62.patch",
+        "Fix alias fallback": "patches/path_auto_alias_fallback.patch"
       },
       "drupal/config_ignore": {
         "Support for export filtering via Drush": "https://www.drupal.org/files/issues/2021-01-04/config_ignore_2857247-61.patch"

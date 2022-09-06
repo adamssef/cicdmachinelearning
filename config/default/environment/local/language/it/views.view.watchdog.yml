@@ -1,17 +1,15 @@
 display:
   default:
-    display_title: Predefinito
     display_options:
       fields:
-        type:
-          label: Tipo
-        timestamp:
-          label: Data
         name:
           label: Utente
         link:
           label: Operazioni
-      filters:
-        type:
+      pager:
+        options:
           expose:
-            label: Tipo
+            items_per_page_label: 'Voci per pagina'
+      exposed_form:
+        options:
+          submit_button: Filtra

@@ -1,14 +1,18 @@
 display:
   default:
-    display_title: Predefinito
     display_options:
       fields:
         subject:
           label: Oggetto
-        name:
-          label: Autore
         operations:
           label: Operazioni
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Voci per pagina'
+      exposed_form:
+        options:
+          submit_button: Filtra
       filters:
         subject:
           expose:
@@ -21,8 +25,6 @@ display:
       fields:
         subject:
           label: Oggetto
-        name:
-          label: Autore
         operations:
           label: Operazioni
       filters:

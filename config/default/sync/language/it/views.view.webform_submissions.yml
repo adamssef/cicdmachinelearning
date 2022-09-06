@@ -1,6 +1,10 @@
 display:
   default:
     display_options:
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Voci per pagina'
       fields:
         view_webform_submission:
           label: Operazioni
