@@ -1,20 +1,23 @@
 display:
   default:
-    display_title: Predefinito
     display_options:
       fields:
-        filename:
-          label: Nome
-        filesize:
-          label: Dimensione
         status:
           label: Stato
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Voci per pagina'
+      exposed_form:
+        options:
+          submit_button: Filtra
       filters:
         status:
           expose:
             label: Stato
   page_2:
     display_options:
-      fields:
-        type:
-          label: 'Tipo di entità'
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Voci per pagina'

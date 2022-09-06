@@ -1,20 +1,29 @@
 display:
   default:
-    display_title: Predefinito
     display_options:
       fields:
-        name:
-          label: 'Nome utente'
         status:
           label: Stato
           settings:
-            format_custom_true: Attivo
+            format_custom_false: Bloccato
+        roles_target_id:
+          label: Ruoli
         operations:
           label: Operazioni
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Voci per pagina'
+      exposed_form:
+        options:
+          submit_button: Filtra
       filters:
         status:
           group_info:
             label: Stato
             group_items:
-              1:
-                title: Attivo
+              2:
+                title: Bloccato
+        roles_target_id:
+          expose:
+            label: Ruolo
