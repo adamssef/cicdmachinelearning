@@ -36,6 +36,7 @@ enforce:
         - 'https://www.gstatic.com'
         - '*.clarity.ms'
         - 'https://js-agent.newrelic.com'
+        - 'https://pi.pardot.com'
     frame-ancestors:
       base: self
   reporting:

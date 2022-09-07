@@ -6,6 +6,8 @@ display:
     display_options:
       title: Dateien
       fields:
+        filename:
+          separator: ', '
         filemime:
           label: MIME-Typ
         filesize:

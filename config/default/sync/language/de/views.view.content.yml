@@ -9,6 +9,7 @@ display:
           label: Titel
         type:
           label: Inhaltstyp
+          separator: ', '
         name:
           label: Autor
         status:

@@ -1,2 +1,4 @@
 settings:
+  default_submit_button_label: Invia
+  default_reset_button_label: Ripristina
   default_delete_button_label: Elimina

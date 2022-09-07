@@ -1,19 +1,41 @@
 display:
   default:
+    display_title: Predefinito
     display_options:
       fields:
+        thumbnail__target_id:
+          separator: ', '
+        name:
+          separator: ', '
+        bundle:
+          label: Tipo
+          separator: ', '
+        uid:
+          separator: ', '
         status:
           label: Stato
+          separator: ', '
+        changed:
+          separator: ', '
         operations:
           label: Operazioni
       pager:
         options:
           expose:
             items_per_page_label: 'Voci per pagina'
+            items_per_page_options_all_label: '- Tutto -'
+            offset_label: Scostamento
       exposed_form:
         options:
           submit_button: Filtra
+          reset_button_label: Ripristina
+          exposed_sorts_label: 'Ordina per'
+          sort_asc_label: Asc
+          sort_desc_label: Disc
       filters:
+        bundle:
+          expose:
+            label: Tipo
         langcode:
           expose:
             label: Lingua

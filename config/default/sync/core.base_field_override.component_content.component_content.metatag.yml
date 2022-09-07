@@ -1,0 +1,18 @@
+uuid: a9268cd2-5b2a-4319-9a15-2e878096a62c
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion_elements
+id: component_content.component_content.metatag
+field_name: metatag
+entity_type: component_content
+bundle: component_content
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
