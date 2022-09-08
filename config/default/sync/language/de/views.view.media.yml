@@ -10,19 +10,25 @@ display:
           action_title: Aktion
         thumbnail__target_id:
           label: Miniaturbild
+          separator: ', '
         name:
           label: Medienname
+          separator: ', '
         bundle:
           label: Typ
+          separator: ', '
         uid:
           label: Autor
+          separator: ', '
         status:
           label: Status
           settings:
             format_custom_false: 'Nicht veröffentlicht'
             format_custom_true: Veröffentlicht
+          separator: ', '
         changed:
           label: Aktualisiert
+          separator: ', '
         operations:
           label: Aktionen
       pager:
