@@ -8,10 +8,10 @@ site_id: f066f74c-ded8-4f55-934b-953e9cbcb232
 use_dx8: enable
 google_map_api_key: ''
 asset_is_imported: '1'
+animate_on_view_mobile: DISABLED
 elements_permissions: '{}'
 sidebar_view_style: thumbnails
 log_dx8_error: disable
-animate_on_view_mobile: DISABLED
 add_animation_classes: DISABLED
 image_browser:
   config:

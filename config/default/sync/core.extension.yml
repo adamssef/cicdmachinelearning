@@ -104,10 +104,10 @@ module:
   views_ui: 0
   wb_countries: 0
   webform: 0
+  webform_node: 0
   webform_pardot: 0
   webform_submission_export_import: 0
   webform_submission_log: 0
-  webform_node: 0
   webform_ui: 0
   content_translation: 10
   password_policy: 10

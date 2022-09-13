@@ -1,7 +1,16 @@
 uuid: 232c9686-decc-4110-83f9-37c626710232
-langcode: en
+langcode: fr
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - entity_language_fallback
+third_party_settings:
+  entity_language_fallback:
+    fallback_langcodes:
+      - en
+      - ''
+      - ''
+      - ''
 id: fr
 label: French
 direction: ltr

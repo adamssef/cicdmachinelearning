@@ -86,11 +86,13 @@ class LanguageSwitcherBlock extends BlockBase implements ContainerFactoryPluginI
     foreach ($languages as $lid => $language) {
       $node = $this->routeMatch->getParameter('node');
       if ($node instanceof NodeInterface) {
-        $langcode = $node->hasTranslation($lid) ? $lid : $defaultLanguage;
-        $links[$lid]['url'] = $node->getTranslation($langcode)->toUrl()->toString();
-      }
+        // Get the node url.
+        $path_parts = explode('/', $node->toUrl()->toString());
 
-      $links[$lid]['name'] = $language->getName();
+        // Add the url with language.
+        $links[$lid]['url'] = '/' . $lid . '/' . $path_parts[2];
+        $links[$lid]['name'] = $language->getName();
+      }
     }
 
     // Remove current language from dropdown list.
