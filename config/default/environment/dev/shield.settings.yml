@@ -5,7 +5,7 @@ credential_provider: shield
 credentials:
   shield:
     user: planet_user
-    pass: 'FI4Y#HJVZP'
+    pass: 'FI4Y$HJVZP'
 allow_cli: true
 debug_header: false
 unset_basic_auth_headers: true
