@@ -1,0 +1,5 @@
+name: Planet Core
+description: "Provides fixes and features for drupal core elements."
+type: module
+package: planet
+core_version_requirement: ^8 || ^9
