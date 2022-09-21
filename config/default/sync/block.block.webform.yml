@@ -1,0 +1,30 @@
+uuid: cb8ffb20-2919-4d46-b417-a6c787d2dc12
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.sign_up
+  module:
+    - cohesion
+    - webform
+  theme:
+    - cohesion_theme
+id: webform
+theme: cohesion_theme
+region: dx8_hidden
+weight: -3
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  label_display: '0'
+  provider: webform
+  webform_id: sign_up
+  default_data: ''
+  redirect: false
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: false
