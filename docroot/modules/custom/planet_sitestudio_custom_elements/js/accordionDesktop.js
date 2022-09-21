@@ -13,6 +13,12 @@
                     $(".whychooseplanetbutton").first().trigger("click");
                     alreadyRun = 1;
                 }
+
+                $(".whychooseplanetbutton").on('click', function(e) {
+                    if (!$(this).hasClass("open")) {
+                        $('body').scrollTo(".whychooseplanetcomponent");
+                    }
+                  });
             });
         }
     };
