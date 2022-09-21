@@ -3,6 +3,11 @@
 helperJs:
   js:
     js/planetHelperJs.js: {}
+# Accordion Desktop
 accordionDesktop:
   js:
     js/accordionDesktop.js: {}
+# Planet - Header
+header:
+  js:
+    js/planetHeader.js: {}
