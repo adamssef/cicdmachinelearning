@@ -1,0 +1,101 @@
+uuid: 53595cbc-06a8-404f-9a8c-5d885fc01254
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.resources.field_resources_author
+    - field.field.node.resources.field_resources_author_role
+    - field.field.node.resources.field_resources_background_media
+    - field.field.node.resources.field_resources_body
+    - field.field.node.resources.field_resources_published_time
+    - field.field.node.resources.field_resources_subtitle
+    - field.field.node.resources.field_resources_tags
+    - field.field.node.resources.field_resources_template
+    - field.field.node.resources.field_resources_title
+    - image.style.webp
+    - node.type.resources
+  module:
+    - image
+    - text
+    - user
+id: node.resources.default
+targetEntityType: node
+bundle: resources
+mode: default
+content:
+  field_resources_author:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_resources_author_role:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_resources_background_media:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: webp
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_resources_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_resources_published_time:
+    type: timestamp
+    label: hidden
+    settings:
+      date_format: planet_date
+      custom_date_format: d-F-Y
+      timezone: ''
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_resources_subtitle:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_resources_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_resources_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_resources_template: true
+  langcode: true
+  search_api_excerpt: true

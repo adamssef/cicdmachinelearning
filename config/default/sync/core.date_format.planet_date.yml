@@ -1,0 +1,8 @@
+uuid: e310b05d-a74c-4891-afe7-244181f7c71a
+langcode: en
+status: true
+dependencies: {  }
+id: planet_date
+label: 'Planet - Date'
+locked: false
+pattern: 'd F Y'
