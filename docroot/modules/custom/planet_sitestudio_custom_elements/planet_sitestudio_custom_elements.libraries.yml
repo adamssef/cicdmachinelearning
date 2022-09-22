@@ -11,3 +11,7 @@ accordionDesktop:
 header:
   js:
     js/planetHeader.js: {}
+# Accordion Mobile
+accordionMobile:
+  js:
+    js/accordionMobile.js: {}
