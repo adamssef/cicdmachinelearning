@@ -12,7 +12,7 @@ dependencies:
 id: get_in_touch_form
 theme: cohesion_theme
 region: dx8_hidden
-weight: 0
+weight: -4
 provider: null
 plugin: webform_block
 settings:

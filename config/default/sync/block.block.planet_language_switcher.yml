@@ -10,14 +10,16 @@ dependencies:
 id: planet_language_switcher
 theme: cohesion_theme
 region: dx8_hidden
-weight: -4
+weight: -5
 provider: null
 plugin: planet_language_switcher_block
 settings:
   id: planet_language_switcher_block
   label: 'Planet Language Switcher'
-  label_display: '0'
+  label_display: visible
   provider: planet_language_switcher
+  context_mapping:
+    node: '@node.node_route_context:node'
 visibility:
   cohesion_master_template:
     id: cohesion_master_template

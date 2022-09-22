@@ -1,0 +1,14 @@
+uuid: 7e8e2ca5-76f5-4942-82cb-512469c78e4b
+langcode: en
+status: true
+dependencies: {  }
+name: icon_37_x31
+label: 'Icon 37x31'
+effects:
+  c01cb801-9db4-4270-ac71-9e365268077f:
+    uuid: c01cb801-9db4-4270-ac71-9e365268077f
+    id: image_resize
+    weight: 1
+    data:
+      width: 37
+      height: 31

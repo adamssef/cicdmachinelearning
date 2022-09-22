@@ -107,7 +107,7 @@ elements: |-
         actions:
           '#type': webform_actions
           '#title': 'Submit button(s)'
-          '#submit__label': 'Send enqiry'
+          '#submit__label': 'Send enquiry'
           '#submit__attributes':
             class:
               - coh-style-primary-button

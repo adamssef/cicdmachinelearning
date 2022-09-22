@@ -1,8 +1,0 @@
-uuid: a0658576-2dfa-43e5-99e8-7524084083a6
-langcode: en
-status: true
-dependencies: {  }
-id: planet-main-menu-left
-label: 'Planet Main Menu Left'
-description: ''
-locked: false
