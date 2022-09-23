@@ -5,17 +5,15 @@ dependencies:
   config:
     - field.field.node.resources.field_resources_author
     - field.field.node.resources.field_resources_author_role
-    - field.field.node.resources.field_resources_background_media
+    - field.field.node.resources.field_resources_background_image
     - field.field.node.resources.field_resources_body
     - field.field.node.resources.field_resources_published_time
     - field.field.node.resources.field_resources_subtitle
     - field.field.node.resources.field_resources_tags
     - field.field.node.resources.field_resources_template
     - field.field.node.resources.field_resources_title
-    - image.style.webp
     - node.type.resources
   module:
-    - image
     - text
     - user
 id: node.resources.default
@@ -39,14 +37,12 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_resources_background_media:
-    type: image
+  field_resources_background_image:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: webp
-      image_loading:
-        attribute: lazy
+      view_mode: media_library
+      link: false
     third_party_settings: {  }
     weight: 5
     region: content
@@ -55,7 +51,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_resources_published_time:
     type: timestamp
@@ -65,7 +61,7 @@ content:
       custom_date_format: d-F-Y
       timezone: ''
     third_party_settings: {  }
-    weight: 10
+    weight: 9
     region: content
   field_resources_subtitle:
     type: basic_string
@@ -80,7 +76,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_resources_title:
     type: string
