@@ -4,7 +4,7 @@
  */
 
 (function ($, Drupal) {
-    Drupal.behaviors.planet_sitestudio_planetHelperJs = {
+    Drupal.behaviors.planet_sitestudio_accordionMobile = {
         attach: function () {
             $(document).ready(function () {
                 $(".coh-solving-challenges-button").on('click', function(e) {

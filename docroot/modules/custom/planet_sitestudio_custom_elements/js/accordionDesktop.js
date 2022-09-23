@@ -6,7 +6,7 @@
 
 (function ($, Drupal) {
     let alreadyRun = 0;
-    Drupal.behaviors.planet_sitestudio_planetHelperJs = {
+    Drupal.behaviors.planet_sitestudio_accordionDesktop = {
         attach: function () {
             $(document).ready(function () {
                 if ($(window).width() >= 768 && alreadyRun === 0) {
