@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.resources.field_resources_author
     - field.field.node.resources.field_resources_author_role
-    - field.field.node.resources.field_resources_background_media
     - field.field.node.resources.field_resources_body
     - field.field.node.resources.field_resources_published_time
     - field.field.node.resources.field_resources_subtitle
@@ -29,6 +28,7 @@ content:
 hidden:
   field_resources_author: true
   field_resources_author_role: true
+  field_resources_background_image: true
   field_resources_background_media: true
   field_resources_body: true
   field_resources_published_time: true
