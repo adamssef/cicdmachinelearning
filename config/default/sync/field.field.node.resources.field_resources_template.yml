@@ -14,7 +14,7 @@ bundle: resources
 label: Template
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     selected_template: ctn_tpl_resources_template
