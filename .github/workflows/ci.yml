@@ -7,11 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run script
-        run: 'echo "$SSH_AUT" > key && cat key'
-        shell: bash
-        env:
-          SSH_KEY: ${{secrets.SSH_AUT}}
       - uses: actions/checkout@v2
       - name: install ssh key
         uses: shimataro/ssh-key-action@v2
@@ -20,4 +15,7 @@ jobs:
           name: ssh-key
           known_hosts: 'planetpayment@svn-41605.prod.hosting.acquia.com:planetpayment.git'
       - run: echo "" >> ~/.ssh/known_hosts
-
+      - name: Clone acquia repo
+        run: git clone planetpayment@svn-41605.prod.hosting.acquia.com:planetpayment.git
+      - name: Verify acquia info
+        run: cd planetpayment && ls -al
