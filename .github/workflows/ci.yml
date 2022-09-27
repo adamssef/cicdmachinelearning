@@ -15,5 +15,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
-      - name: Run script
-        run: composer --version
+      - name: Test composer
+        run: composer --no-ansi validate --no-check-lock
+      - name: Run composer
+        run: composer install --optimize-autoloader --ignore-platform-reqs
