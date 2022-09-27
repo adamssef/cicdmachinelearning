@@ -1,13 +1,26 @@
-name: Build project
+name: CI
+
 on:
-  pull_request:
-    types:
-      - closed
+  push:
+    branches: [ PLNT-0000-github-actions ]
 
 jobs:
-  if_merged:
-    if: github.event.pull_request.merged == true
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - run: |
-          echo The PR was merged
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        uses: php-actions/composer@v6
+        with:
+          php_version: "8.0"
+          version: 2.x
+      - name: Pushes to acquia repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_AUT }}
+        with:
+          source-directory: 'output'
+          destination-github-username: 'rzanetti'
+          destination-repository-name: 'planetpayment@svn-41605.prod.hosting.acquia.com:planetpayment.git'
+          target-branch: main
