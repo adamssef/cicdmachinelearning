@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: install ssh key
-          uses: shimataro/ssh-key-action@v2
-          with:
-            key: ${{ secrets.SSH_AUT }}
-            name: ssh-key
-            known_hosts: 'planetpayment@svn-41605.prod.hosting.acquia.com:planetpayment.git'
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_AUT }}
+          name: ssh-key
+          known_hosts: 'planetpayment@svn-41605.prod.hosting.acquia.com:planetpayment.git'
       - run: echo "" >> ~/.ssh/known_hosts
 
