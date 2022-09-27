@@ -9,13 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run script
-        run: ls -al
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.0'
-      - name: Test composer
-        run: composer --no-ansi validate --no-check-lock
-      - name: Run composer
-        run: composer install --optimize-autoloader --ignore-platform-reqs
+      - name: install ssh key
+          uses: shimataro/ssh-key-action@v2
+          with:
+            key: ${{ secrets.SSH_AUT }}
+            name: ssh-key
+            known_hosts: 'planetpayment@svn-41605.prod.hosting.acquia.com:planetpayment.git'
+      - run: echo "" >> ~/.ssh/known_hosts
+
