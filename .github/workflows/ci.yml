@@ -12,8 +12,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_AUT }}
-          name: ssh-key
-          known_hosts: 'planetpayment@svn-41605.prod.hosting.acquia.com:planetpayment.git'
+          name: id_rsa
       - name: Clone acquia repo
         run: GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git clone planetpayment@svn-41605.prod.hosting.acquia.com:planetpayment.git
       - name: Verify acquia info
