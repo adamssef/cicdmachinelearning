@@ -35,4 +35,4 @@ jobs:
       - name: add git info
         run: cd planetpayment && git config --global user.email "noreply@planetpayment.com" && git config --global user.name "CI Deploy"
       - name: add, commit and push
-        run: cd planetpayment && git add config && git commit -m "dev deploy" && git push
+        run: cd planetpayment && git add config && git commit -m "dev deploy" && GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push
