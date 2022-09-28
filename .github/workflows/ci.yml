@@ -19,10 +19,10 @@ jobs:
       - name: Verify acquia info
         run: cd planetpayment && ls -al
       - name: Remove old files
-        run: ls -al && rm -rf config && rm -rf docroot && rm -rf vendor && rm -rf patches
+        run: cd planetpayment && rm -rf config && rm -rf docroot && rm -rf vendor && rm -rf patches
       - name: copy files
-        run: cd .. && cp -R config ./planetpayment/ && cp -R docroot ./planetpayment/ && cp -R vendor ./planetpayment/ && cp -R patches ./planetpayment/
+        run: cp -R config ./planetpayment/ && cp -R docroot ./planetpayment/ && cp -R vendor ./planetpayment/ && cp -R patches ./planetpayment/
       - name: remove submodules git
         run: cd planetpayment && rm -rf docroot/modules/contrib/wb_countries/.git && rm -rf docroot/modules/contrib/webform_pardot/.git
       - name: add, commit and push
-        run: git add . && git commit -m "dev deploy" && git push
+        run: cd planetpayment && git add . && git commit -m "dev deploy" && git push
