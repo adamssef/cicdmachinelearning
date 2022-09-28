@@ -19,7 +19,7 @@ jobs:
       - name: Verify acquia info
         run: cd planetpayment && ls -al
       - name: Remove old files
-        run: rm -rf config && rm -rf docroot && rm -rf vendor && rm -rf patches
+        run: ls -al && rm -rf config && rm -rf docroot && rm -rf vendor && rm -rf patches
       - name: copy files
         run: cd .. && cp -R config ./planetpayment/ && cp -R docroot ./planetpayment/ && cp -R vendor ./planetpayment/ && cp -R patches ./planetpayment/
       - name: remove submodules git
