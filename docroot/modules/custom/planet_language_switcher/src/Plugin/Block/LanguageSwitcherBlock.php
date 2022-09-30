@@ -3,6 +3,7 @@
 namespace Drupal\planet_language_switcher\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -15,10 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @Block(
  *   id = "planet_language_switcher_block",
  *   admin_label = @Translation("Planet Language Switcher"),
- *   category = @Translation("Custom Blocks"),
- *   context_definitions = {
- *     "node" = @ContextDefinition("entity:node", label = @Translation("Node"))
- *   }
+ *   category = @Translation("Custom Blocks")
  * )
  */
 class LanguageSwitcherBlock extends BlockBase implements ContainerFactoryPluginInterface {
@@ -108,6 +106,25 @@ class LanguageSwitcherBlock extends BlockBase implements ContainerFactoryPluginI
         'library' => ['planet_language_switcher/language-switcher'],
       ],
     ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheTags() {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      return Cache::mergeTags(parent::getCacheTags(), ['node:' . $node->id()]);
+    }
+    else {
+      return parent::getCacheTags();
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheContexts() {
+    return Cache::mergeContexts(parent::getCacheContexts(), ['route']);
   }
 
 }
