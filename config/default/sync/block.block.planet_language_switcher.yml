@@ -1,4 +1,4 @@
-uuid: 1fa7b400-468e-4734-83ea-07c176bae3e9
+uuid: 6681b22c-5bad-488e-86ee-b017444d4828
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
 id: planet_language_switcher
 theme: cohesion_theme
 region: dx8_hidden
-weight: -4
+weight: -5
 provider: null
 plugin: planet_language_switcher_block
 settings:
