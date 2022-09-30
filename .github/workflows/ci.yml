@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: [ PLNT-0000-github-actions ]
+    branches: [ dev ]
 
 jobs:
   build:
