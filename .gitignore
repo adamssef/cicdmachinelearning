@@ -9,6 +9,7 @@
 
 # Ignore Drupal's file directory
 /docroot/sites/*/files/
+/docroot/sites/*/files-private/
 
 # Ignore SimpleTest multi-site environment.
 /docroot/sites/simpletest
