@@ -23,6 +23,8 @@ elements: |-
   _don_t_worry_no_spam_allowed_:
     '#type': label
     '#title': '(Don''t worry, no spam allowed)'
+  captcha:
+    '#type': captcha
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
