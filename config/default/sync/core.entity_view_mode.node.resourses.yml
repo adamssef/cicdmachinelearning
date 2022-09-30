@@ -1,0 +1,10 @@
+uuid: 84b874ec-7f54-411e-99d9-e66fd51ee63f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.resourses
+label: Resourses
+targetEntityType: node
+cache: true
