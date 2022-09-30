@@ -45,3 +45,4 @@ tmp config folder already configured on system.file.yml yet.)
 4. If an error occur when you attempt to `composer require`, you must give permissions.
   1. If you get => `Could not delete /app/drupal/web/sites/default/default.services.yml`
   2. Try => `sudo chmod 775 -R drupal/web/sites/default`
+
