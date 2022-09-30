@@ -8,7 +8,6 @@ description: ''
 weight: 0
 folder: ../config/default/environment/dev
 module:
-  acquia_connector: 0
   dblog: 0
   shield: 0
   syslog: 0
