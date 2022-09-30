@@ -29,7 +29,7 @@ jobs:
       - name: Remove old files
         run: cd planetpayment && rm -rf config && rm -rf docroot && rm -rf vendor && rm -rf patches
       - name: copy files
-        run: cp -R config ./planetpayment/ && cp -R docroot ./planetpayment/ && cp -R vendor ./planetpayment/ && cp -R patches ./planetpayment/
+        run: cp -R config ./planetpayment/ && cp -R docroot ./planetpayment/ && cp -R vendor ./planetpayment/ && cp -R patches ./planetpayment/ && cp composer.json ./planetpayment/ && cp composer.lock ./planetpayment/
       - name: remove submodules git
         run: cd planetpayment && rm -rf docroot/modules/contrib/wb_countries/.git && rm -rf docroot/modules/contrib/webform_pardot/.git
       - name: add git info
