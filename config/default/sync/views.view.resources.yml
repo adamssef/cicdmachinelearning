@@ -264,19 +264,19 @@ display:
       tags:
         - 'config:field.storage.node.field_resources_published_time'
         - 'config:field.storage.node.field_resources_title'
-  resources:
-    id: resources
-    display_title: Resources
-    display_plugin: block
+  resources_page:
+    id: resources_page
+    display_title: 'Resources Page'
+    display_plugin: page
     position: 1
     display_options:
       display_description: ''
+      rendering_language: '***LANGUAGE_site_default***'
       display_extenders: {  }
-      block_description: Resources
+      path: resources
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
