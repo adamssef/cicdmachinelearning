@@ -8,8 +8,8 @@
   Drupal.behaviors.planet_sitestudio_carouselPartner = {
     attach: function () {
       $(document).ready(function () {
-        jQuery('.coh-style-tab-planet-partner-panel').on('click',function(){
-          jQuery('.slick-slider').slick('setPosition');
+        $('.coh-style-tab-planet-partner-panel').on('click',function(){
+          $('.slick-slider').slick('setPosition');
         })
       });
     }
