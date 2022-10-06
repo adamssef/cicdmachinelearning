@@ -28,6 +28,7 @@
     "drupal/entity_language_fallback": "^1.4",
     "drupal/environment_indicator": "^4.0",
     "drupal/flood_control": "^2.2",
+    "drupal/google_analytics": "^4.0",
     "drupal/google_tag": "^1.5",
     "drupal/hal-hal": "^1.0",
     "drupal/jsonapi_extras": "^3.21",

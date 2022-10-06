@@ -15,3 +15,7 @@ header:
 accordionMobile:
   js:
     js/accordionMobile.js: {}
+# Tab products panel GA
+tabProductsPanel:
+  js:
+    js/tabProductsPanel.js: {}
