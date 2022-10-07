@@ -8,6 +8,7 @@ use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\NodeInterface;
+use Drupal\path_alias\AliasManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -36,6 +37,13 @@ class LanguageSwitcherBlock extends BlockBase implements ContainerFactoryPluginI
   protected $routeMatch;
 
   /**
+   * The path alias manager.
+   *
+   * @var \Drupal\path_alias\AliasManagerInterface
+   */
+  protected $aliasManager;
+
+  /**
    * Constructs a new LanguageSwitcherBlock.
    *
    * @param array $configuration
@@ -48,11 +56,14 @@ class LanguageSwitcherBlock extends BlockBase implements ContainerFactoryPluginI
    *   The language manager.
    * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
    *   The current route match.
+   * @param \Drupal\path_alias\AliasManagerInterface $alias_manager
+   *   The path alias manager.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, LanguageManagerInterface $language_manager, RouteMatchInterface $route_match) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, LanguageManagerInterface $language_manager, RouteMatchInterface $route_match, AliasManagerInterface $alias_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->languageManager = $language_manager;
     $this->routeMatch = $route_match;
+    $this->aliasManager = $alias_manager;
   }
 
   /**
@@ -65,30 +76,25 @@ class LanguageSwitcherBlock extends BlockBase implements ContainerFactoryPluginI
       $plugin_definition,
       $container->get('language_manager'),
       $container->get('current_route_match'),
+      $container->get('path_alias.manager')
     );
   }
 
   /**
    * {@inheritdoc}
-   *
-   * @throws \Drupal\Core\Entity\EntityMalformedException
    */
-  public function build() {
+  public function build(): array {
     $languages = $this->languageManager->getLanguages();
     $currentLangCode = $this->languageManager->getCurrentLanguage()->getId();
-
-    // Node to be shown in 'en' lang when there is no translation.
-    $defaultLanguage = 'en';
 
     $links = [];
     foreach ($languages as $lid => $language) {
       $node = $this->routeMatch->getParameter('node');
       if ($node instanceof NodeInterface) {
-        // Get the node url.
-        $path_parts = explode('/', $node->toUrl()->toString());
+        $nodePath = $this->aliasManager->getAliasByPath('/node/' . $node->id());
 
         // Add the url with language.
-        $links[$lid]['url'] = '/' . $lid . '/' . $path_parts[2];
+        $links[$lid]['url'] = '/' . $lid . $nodePath;
         $links[$lid]['name'] = $language->getName();
       }
     }
