@@ -1,4 +1,4 @@
-uuid: 6681b22c-5bad-488e-86ee-b017444d4828
+uuid: ba786a45-5918-4b63-8d1b-9acc1a29c8ac
 langcode: en
 status: true
 dependencies:
@@ -16,10 +16,8 @@ plugin: planet_language_switcher_block
 settings:
   id: planet_language_switcher_block
   label: 'Planet Language Switcher'
-  label_display: visible
+  label_display: '0'
   provider: planet_language_switcher
-  context_mapping:
-    node: '@node.node_route_context:node'
 visibility:
   cohesion_master_template:
     id: cohesion_master_template
