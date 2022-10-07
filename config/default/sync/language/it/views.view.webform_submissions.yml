@@ -7,64 +7,24 @@ display:
           submit_button: Applica
           reset_button_label: Ripristina
           exposed_sorts_label: 'Ordina per'
-          sort_asc_label: Asc
           sort_desc_label: Disc
       pager:
         options:
-          tags:
-            previous: ‹‹
-            next: ››
           expose:
             items_per_page_label: 'Voci per pagina'
             items_per_page_options_all_label: '- Tutto -'
             offset_label: Scostamento
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        created:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Operazioni
   embed_administer:
     display_options:
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
-        created:
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         operations:
           label: Operazioni
   embed_manage:
     display_options:
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
-        created:
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Operazioni
         edit_webform_submission:
@@ -72,19 +32,5 @@ display:
   embed_review:
     display_options:
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
-        created:
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Operazioni

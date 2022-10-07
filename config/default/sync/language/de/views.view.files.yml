@@ -7,13 +7,12 @@ display:
       title: Dateien
       fields:
         filename:
-          separator: ', '
+          label: Name
         filemime:
           label: MIME-Typ
         filesize:
           label: Größe
         status:
-          label: Status
           settings:
             format_custom_false: Temporär
             format_custom_true: Dauerhaft
@@ -34,7 +33,6 @@ display:
             offset_label: Versatz
       exposed_form:
         options:
-          submit_button: Filter
           reset_button_label: Zurücksetzen
           exposed_sorts_label: 'Sortieren nach'
           sort_asc_label: Aufsteigend
@@ -49,9 +47,6 @@ display:
         filemime:
           expose:
             label: MIME-Typ
-        status:
-          expose:
-            label: Status
   page_1:
     display_title: Dateiübersicht
     display_options:

@@ -5,19 +5,8 @@ display:
       fields:
         subject:
           label: Oggetto
-          separator: ', '
-        uid:
-          separator: ', '
-        name:
-          separator: ', '
-        entity_id:
-          separator: ', '
-        changed:
-          separator: ', '
         operations:
           label: Operazioni
-        name_1:
-          separator: ', '
       pager:
         options:
           expose:
@@ -29,7 +18,6 @@ display:
           submit_button: Filtra
           reset_button_label: Ripristina
           exposed_sorts_label: 'Ordina per'
-          sort_asc_label: Asc
           sort_desc_label: Disc
       filters:
         subject:
@@ -43,19 +31,8 @@ display:
       fields:
         subject:
           label: Oggetto
-          separator: ', '
-        uid:
-          separator: ', '
-        name:
-          separator: ', '
-        entity_id:
-          separator: ', '
-        changed:
-          separator: ', '
         operations:
           label: Operazioni
-        name_1:
-          separator: ', '
       filters:
         subject:
           expose:

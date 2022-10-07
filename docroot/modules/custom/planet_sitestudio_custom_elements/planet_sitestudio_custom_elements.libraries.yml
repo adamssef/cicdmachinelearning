@@ -15,7 +15,19 @@ header:
 accordionMobile:
   js:
     js/accordionMobile.js: {}
-# Tab products panel GA
+# Tab products panel
 tabProductsPanel:
   js:
     js/tabProductsPanel.js: {}
+# Tab partners panel
+tabPartnersIntegrationsPanel:
+  js:
+    js/tabPartnersIntegrationsPanel.js: {}
+# Get in touch webform
+getInTouchWebForm:
+  js:
+    js/getInTouchWebForm.js: {}
+# Get in touch webform
+relatedContentPanel:
+  js:
+    js/relatedContentPanel.js: {}
