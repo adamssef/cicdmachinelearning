@@ -5,8 +5,6 @@ display:
       fields:
         title:
           label: Titolo
-        type:
-          separator: ', '
         status:
           label: Stato
         operations:
@@ -16,7 +14,6 @@ display:
           submit_button: Filtra
           reset_button_label: Ripristina
           exposed_sorts_label: 'Ordina per'
-          sort_asc_label: Asc
           sort_desc_label: Disc
       filters:
         title:

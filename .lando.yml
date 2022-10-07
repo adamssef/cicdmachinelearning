@@ -153,7 +153,6 @@ tooling:
     service: appserver
     cmd:
       - rsync -a --stats --progress planetpayment.dev@planetpaymentdev.ssh.prod.acquia-sites.com:/mnt/files/planetpayment.dev/sites/default/files/ ./docroot/sites/default/files/
-      - rsync -a --stats --progress planetpayment.dev@planetpaymentdev.ssh.prod.acquia-sites.com:/mnt/files/planetpayment.dev/sites/default/files-private/ ./docroot/sites/default/files-private/
     description: Downloads all file resources from the development environment.
 
 proxy:

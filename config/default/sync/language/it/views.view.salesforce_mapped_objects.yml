@@ -7,7 +7,6 @@ display:
           submit_button: Applica
           reset_button_label: Ripristina
           exposed_sorts_label: 'Ordina per'
-          sort_asc_label: Asc
           sort_desc_label: Disc
       pager:
         options:
@@ -15,23 +14,11 @@ display:
             items_per_page_label: 'Voci per pagina'
             items_per_page_options_all_label: '- Tutto -'
             offset_label: Scostamento
-          tags:
-            previous: ‹‹
-            next: ››
       fields:
-        id:
-          label: ID
-          separator: ', '
         drupal_entity__target_id:
           label: Entità
-          separator: ', '
-        salesforce_id_1:
-          separator: ', '
         salesforce_mapping:
           label: Mappatura
-          separator: ', '
-        changed:
-          separator: ', '
         operations:
           label: 'Link operativi'
   page_1:

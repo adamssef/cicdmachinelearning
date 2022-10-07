@@ -4,9 +4,6 @@ display:
     display_options:
       pager:
         options:
-          tags:
-            next: ››
-            previous: ‹‹
           expose:
             items_per_page_label: 'Voci per pagina'
             items_per_page_options_all_label: '- Tutto -'
@@ -15,9 +12,11 @@ display:
         options:
           reset_button_label: Ripristina
           exposed_sorts_label: 'Ordina per'
-          sort_asc_label: Asc
           sort_desc_label: Disc
       filters:
+        name:
+          expose:
+            label: Name
         langcode:
           expose:
             label: Lingua
@@ -25,9 +24,22 @@ display:
     display_title: Pagina
     display_options:
       fields:
-        name:
-          separator: ', '
         edit_media:
           text: Modifica
         delete_media:
           text: Elimina
+  widget:
+    display_options:
+      filters:
+        name:
+          expose:
+            label: Name
+  widget_table:
+    display_options:
+      fields:
+        name:
+          label: Name
+      filters:
+        name:
+          expose:
+            label: Name

@@ -11,7 +11,6 @@ display:
         name:
           label: Benutzername
         status:
-          label: Status
           settings:
             format_custom_false: Gesperrt
             format_custom_true: Aktiv
@@ -26,8 +25,6 @@ display:
             past_format: 'Vor @interval'
         operations:
           label: Aktionen
-        mail:
-          separator: ', '
       pager:
         options:
           tags:
@@ -41,7 +38,6 @@ display:
             offset_label: Versatz
       exposed_form:
         options:
-          submit_button: Filter
           reset_button_label: Zurücksetzen
           exposed_sorts_label: 'Sortieren nach'
           sort_asc_label: Aufsteigend
@@ -55,7 +51,6 @@ display:
             label: 'Name oder E-Mail-Adresse enthält'
         status:
           group_info:
-            label: Status
             group_items:
               1:
                 title: Aktiv

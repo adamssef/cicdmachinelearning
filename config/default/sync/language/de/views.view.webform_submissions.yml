@@ -1,6 +1,5 @@
 display:
   default:
-    display_title: Master
     display_options:
       exposed_form:
         options:
@@ -12,8 +11,6 @@ display:
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
             first: '« Anfang'
             last: 'Ende »'
           expose:
@@ -21,14 +18,6 @@ display:
             items_per_page_options_all_label: '- Alle -'
             offset_label: Versatz
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        created:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Aktionen
       arguments:
@@ -40,20 +29,6 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Aktion
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
-        created:
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         operations:
           label: Aktionen
   embed_manage:
@@ -61,20 +36,6 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Aktion
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
-        created:
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Aktionen
         edit_webform_submission:
@@ -82,19 +43,5 @@ display:
   embed_review:
     display_options:
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
-        created:
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Aktionen
