@@ -15,6 +15,10 @@ header:
 accordionMobile:
   js:
     js/accordionMobile.js: {}
+# Accordion Mobile
+carouselPartner:
+  js:
+    js/carouselPartner.js: {}
 # Tab products panel
 tabProductsPanel:
   js:
