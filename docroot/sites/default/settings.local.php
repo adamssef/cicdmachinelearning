@@ -66,3 +66,6 @@ $settings['file_private_path'] = 'sites/default/files-private';
 
 // Enabling JSON Debugging for SS:
 $settings['dx8_json_fields'] = TRUE;
+
+// Skip file system permissions hardening.
+$settings['skip_permissions_hardening'] = TRUE;
