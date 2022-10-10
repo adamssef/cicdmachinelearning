@@ -1,6 +1,6 @@
 _core:
   default_config_hash: 6phbBhcYjncqxncwDHAImFHb0MAKamGB_HQy53AfN9s
-subscription_name: ''
+subscription_name: 'Planet Payment'
 debug: false
 cron_interval: 30
 cron_interval_override: 0
