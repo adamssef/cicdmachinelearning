@@ -30,6 +30,9 @@ elements: |-
     '#type': webform_actions
     '#title': 'Submit button(s)'
     '#submit__label': 'Sign up now'
+    '#submit__attributes':
+      class:
+        - coh-style-primary-light-button-icon
 css: ''
 javascript: ''
 settings:
