@@ -1,0 +1,8 @@
+uuid: 4bdcbf6d-6c81-4f46-b330-5e615c6222a2
+langcode: en
+status: true
+dependencies: {  }
+name: Regions
+vid: regions
+description: 'List of all WB regions.'
+weight: 0
