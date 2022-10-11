@@ -10,9 +10,12 @@
     attach: function () {
       $(document).ready(function () {
         if (alreadyRun === 0) {
-          $(".form-item").each(function (index) {
+          $(".webform-submission-get-in-touch-form .form-item").each(function (index) {
             // GA Webform input fields.
             if ($('input', this).attr('type') === 'text' && $('input', this).attr('name') !== 'captcha_response') {
+              $('input', this).attr("data-analytics", '[{"trigger":"click","eventCategory":"Get in touch","eventAction":"Form: Fill","eventLabel":"' + $('input', this).attr('name') + '","eventValue":1}]' );
+            }
+            if ($('input', this).attr('type') === 'email' && $('input', this).attr('name') !== 'captcha_response') {
               $('input', this).attr("data-analytics", '[{"trigger":"click","eventCategory":"Get in touch","eventAction":"Form: Fill","eventLabel":"' + $('input', this).attr('name') + '","eventValue":1}]' );
             }
             // GA Webform textarea fields.
@@ -24,7 +27,7 @@
               $('select', this).attr("data-analytics", '[{"trigger":"click","eventCategory":"Get in touch","eventAction":"Form: Fill","eventLabel":"' + $('select', this).attr('name') + '","eventValue":1}]' );
             }
           });
-          $(".form-actions").each(function (index) {
+          $(".webform-submission-get-in-touch-form .form-actions").each(function (index) {
             // GA Webform submit button.
             if ($('input', this).attr('type') === 'submit') {
               $('input', this).attr("data-analytics", '[{"trigger":"click","eventCategory":"Get in touch","eventAction":"Form: Click","eventLabel":"' + $('input', this).attr('value') + '","eventValue":1}]' );
