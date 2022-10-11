@@ -9,6 +9,7 @@ dependencies:
     - node.type.locations_contacts
     - taxonomy.vocabulary.regions
   module:
+    - cohesion
     - node
     - taxonomy
     - user
@@ -36,6 +37,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
           plugin_id: field
           label: ''
           exclude: false
@@ -268,7 +271,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: email_mailto
+          type: basic_string
           settings: {  }
           group_column: value
           group_columns: {  }
@@ -434,11 +437,10 @@ display:
           limit: true
           error_message: true
       style:
-        type: default
+        type: cohesion_layout
         options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
+          views_template: view_tpl_locations_contacts
+          master_template: __none__
       row:
         type: fields
       query:
