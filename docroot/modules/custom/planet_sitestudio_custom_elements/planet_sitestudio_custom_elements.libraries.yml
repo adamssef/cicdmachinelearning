@@ -35,3 +35,7 @@ getInTouchWebForm:
 relatedContentPanel:
   js:
     js/relatedContentPanel.js: {}
+# Sign Up webform
+signUpWebForm:
+  js:
+    js/signUpWebForm.js: {}
