@@ -6,14 +6,22 @@ dependencies:
     - field.storage.node.field_address
     - field.storage.node.field_email
     - field.storage.node.field_phone
+    - field.storage.node.field_region
     - node.type.locations_contacts
     - taxonomy.vocabulary.regions
+  content:
+    - 'taxonomy_term:regions:0db9b33b-4542-49c8-91ae-ec13f2ec34ae'
+    - 'taxonomy_term:regions:43ebd01e-fb35-4fdb-85c0-5fb64e8fd648'
+    - 'taxonomy_term:regions:550fcd97-5a9d-40e8-a98c-f742cf4c95d8'
+    - 'taxonomy_term:regions:c05fab70-537f-4b87-a623-965cc469939d'
+    - 'taxonomy_term:regions:ccaecf85-2ef4-4ef1-8e3d-6a8d2c00cae9'
   module:
     - cohesion
     - node
     - taxonomy
     - user
     - views_autosubmit
+    - views_fieldsets
 id: locations_contacts
 label: 'Locations & Contacts'
 module: views
@@ -30,6 +38,64 @@ display:
     display_options:
       title: 'Locations & Contacts'
       fields:
+        fieldset_1:
+          id: fieldset_1
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - title
+            - field_address
+            - fieldset
+          wrapper: div
+          legend: ''
+          classes: coh-view-content-item
+          collapsible: 0
+          collapsed: 0
         title:
           id: title
           table: node_field_data
@@ -69,13 +135,13 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: h3
+          element_class: coh-style-heading-3-planet
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: div
+          element_wrapper_class: coh-item-title
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -134,11 +200,11 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
-          element_label_class: ''
+          element_label_type: h4
+          element_label_class: coh-style-heading-4-planet
           element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: div
+          element_wrapper_class: coh-item-address
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -158,6 +224,63 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_phone
+            - field_email
+          wrapper: div
+          legend: ''
+          classes: coh-item-contacts
+          collapsible: 0
+          collapsed: 0
         field_phone:
           id: field_phone
           table: node__field_phone
@@ -198,7 +321,7 @@ display:
           element_type: ''
           element_class: ''
           element_label_type: ''
-          element_label_class: ''
+          element_label_class: item-label
           element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
@@ -261,7 +384,7 @@ display:
           element_type: ''
           element_class: ''
           element_label_type: ''
-          element_label_class: ''
+          element_label_class: item-label
           element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
@@ -283,6 +406,141 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_region:
+          id: field_region
+          table: node__field_region
+          field: field_region
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{{field_region}}:'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: pre
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: blockquote
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        title_1:
+          id: title_1
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: count
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          set_precision: false
+          precision: 0
+          decimal: .
+          format_plural: 0
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ''
       pager:
         type: none
         options:
@@ -361,7 +619,7 @@ display:
           break_phrase: false
           add_table: false
           require_value: false
-          reduce_duplicates: false
+          reduce_duplicates: true
       filters:
         status:
           id: status
@@ -397,7 +655,12 @@ display:
           admin_label: ''
           plugin_id: taxonomy_index_tid
           operator: or
-          value: {  }
+          value:
+            8: 8
+            7: 7
+            10: 10
+            9: 9
+            6: 6
           group: 1
           exposed: true
           expose:
@@ -409,7 +672,7 @@ display:
             operator_limit_selection: false
             operator_list: {  }
             identifier: tid
-            required: false
+            required: true
             remember: false
             multiple: false
             remember_roles:
@@ -417,7 +680,7 @@ display:
               anonymous: '0'
               content_editor: '0'
               administrator: '0'
-            reduce: false
+            reduce: true
           is_grouped: false
           group_info:
             label: ''
@@ -448,7 +711,7 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_tags: {  }
       relationships:
@@ -461,7 +724,7 @@ display:
           admin_label: term
           entity_type: node
           plugin_id: node_term_data
-          required: false
+          required: true
           vids:
             - regions
         reverse__node__field_region:
@@ -475,7 +738,21 @@ display:
           plugin_id: entity_reverse
           required: true
       use_ajax: true
-      header: {  }
+      group_by: true
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<div class="coh-header coh-style-heading-4-planet">We operate in {{ title_1 }} locations across {{ field_region }}</div>'
+            format: cohesion
+          tokenize: true
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -491,6 +768,7 @@ display:
         - 'config:field.storage.node.field_address'
         - 'config:field.storage.node.field_email'
         - 'config:field.storage.node.field_phone'
+        - 'config:field.storage.node.field_region'
   locations_contacts_list:
     id: locations_contacts_list
     display_title: 'Locations & Contacts'
@@ -513,3 +791,4 @@ display:
         - 'config:field.storage.node.field_address'
         - 'config:field.storage.node.field_email'
         - 'config:field.storage.node.field_phone'
+        - 'config:field.storage.node.field_region'
