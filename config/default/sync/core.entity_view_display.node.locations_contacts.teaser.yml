@@ -1,0 +1,30 @@
+uuid: 4fcc2c23-e016-4dbc-acaa-31a0340f47c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.locations_contacts.field_address
+    - field.field.node.locations_contacts.field_email
+    - field.field.node.locations_contacts.field_phone
+    - field.field.node.locations_contacts.field_region
+    - node.type.locations_contacts
+  module:
+    - user
+id: node.locations_contacts.teaser
+targetEntityType: node
+bundle: locations_contacts
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_address: true
+  field_email: true
+  field_phone: true
+  field_region: true
+  langcode: true
+  search_api_excerpt: true

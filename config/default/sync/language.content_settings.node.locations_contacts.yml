@@ -1,0 +1,16 @@
+uuid: 30563c3c-8347-44ee-9ffa-4fdfd5e624c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.locations_contacts
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.locations_contacts
+target_entity_type_id: node
+target_bundle: locations_contacts
+default_langcode: site_default
+language_alterable: false
