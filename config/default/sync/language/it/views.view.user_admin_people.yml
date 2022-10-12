@@ -7,7 +7,6 @@ display:
           label: Stato
           settings:
             format_custom_false: Bloccato
-            format_custom_true: Active
         roles_target_id:
           label: Ruoli
         operations:
@@ -29,8 +28,6 @@ display:
           group_info:
             label: Stato
             group_items:
-              1:
-                title: Active
               2:
                 title: Bloccato
         roles_target_id:

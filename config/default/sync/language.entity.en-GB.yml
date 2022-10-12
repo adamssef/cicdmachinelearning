@@ -1,5 +1,5 @@
-uuid: 131958aa-655e-45d0-abd0-5ea0e6c0e342
-langcode: de
+uuid: 91d242f3-de57-4e52-86b9-a823f750bce3
+langcode: en-GB
 status: true
 dependencies:
   module:
@@ -11,8 +11,9 @@ third_party_settings:
       - ''
       - ''
       - ''
-id: de
-label: German
+      - ''
+id: en-GB
+label: 'English (United Kingdom)'
 direction: ltr
-weight: -6
+weight: -9
 locked: false
