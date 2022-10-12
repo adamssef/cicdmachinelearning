@@ -47,6 +47,7 @@
     "drupal/simplelogin": "^6.0",
     "drupal/site_studio_webform": "^1.1",
     "drupal/views_autosubmit": "^1.4",
+    "drupal/views_fieldsets": "^3.4",
     "drupal/wb_countries": "1.0.x-dev#dcfbad6754d04f42adce49f7f9f89b5010fe4be8",
     "drupal/webform": "^6.1",
     "drupal/webform_pardot": "^2.0",
@@ -139,6 +140,9 @@
       },
       "drupal/pardot": {
         "Disable pardot js": "patches/path_pardot.patch"
+      },
+      "drupal/autologout": {
+        "Undefined index destination": "https://www.drupal.org/files/issues/2022-07-28/3300118-undefined-index-destination.patch"
       }
     }
   },
