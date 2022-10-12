@@ -784,7 +784,7 @@ if (file_exists($app_root . '/' . $site_path . '/settings.' . $environment . '.p
 
 // Config Environments.
 $settings['config_sync_directory'] = '../config/default/sync';
-$config_envs = ['local', 'dev', 'test', 'prod'];
+$config_envs = ['local', 'dev', 'stg', 'prod'];
 
 // Get Actual Environment.
 $env = isset($_ENV['AH_SITE_ENVIRONMENT']) ? $_ENV['AH_SITE_ENVIRONMENT'] : 'local';
