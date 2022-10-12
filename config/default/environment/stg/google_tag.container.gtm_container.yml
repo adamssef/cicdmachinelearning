@@ -44,26 +44,3 @@ conditions:
     id: cohesion_master_template
     using_master_template: 0
     negate: 0
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles: {  }
-  'entity_bundle:taxonomy_term':
-    id: 'entity_bundle:taxonomy_term'
-    negate: false
-    context_mapping:
-      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
-    bundles: {  }
-  'entity_bundle:webform_submission':
-    id: 'entity_bundle:webform_submission'
-    negate: false
-    context_mapping:
-      webform_submission: '@webform.webform_submission_route_context:webform_submission'
-    bundles: {  }
-  webform:
-    id: webform
-    negate: false
-    context_mapping: {  }
-    webforms: {  }
