@@ -35,6 +35,8 @@ elements: |-
         last_name:
           '#type': textfield
           '#title': 'Last Name*'
+          '#minlength': 2
+          '#maxlength': 50
           '#autocomplete': 'off'
           '#required': true
       your_contact_details:
