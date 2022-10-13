@@ -1,9 +1,3 @@
 tips:
-  search-api-index-fields-label:
-    label: Etichetta
-  search-api-index-fields-machine-name:
-    label: 'Nome ad uso interno'
   search-api-index-fields-type:
     label: Tipo
-  search-api-index-fields-submit:
-    label: 'Salva le modifiche'

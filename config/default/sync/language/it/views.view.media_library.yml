@@ -14,9 +14,6 @@ display:
           exposed_sorts_label: 'Ordina per'
           sort_desc_label: Disc
       filters:
-        name:
-          expose:
-            label: Name
         langcode:
           expose:
             label: Lingua
@@ -28,18 +25,3 @@ display:
           text: Modifica
         delete_media:
           text: Elimina
-  widget:
-    display_options:
-      filters:
-        name:
-          expose:
-            label: Name
-  widget_table:
-    display_options:
-      fields:
-        name:
-          label: Name
-      filters:
-        name:
-          expose:
-            label: Name

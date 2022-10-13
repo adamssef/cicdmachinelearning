@@ -39,9 +39,6 @@ display:
                 title: Veröffentlicht
               2:
                 title: 'Nicht veröffentlicht'
-        name:
-          expose:
-            label: Name
         bundle:
           expose:
             label: Medientyp
@@ -73,10 +70,6 @@ display:
         bundle:
           exception:
             title: Alle
-      filters:
-        name:
-          expose:
-            label: Name
       header:
         display_link_grid:
           label: Raster
@@ -88,8 +81,6 @@ display:
       fields:
         thumbnail__target_id:
           label: Miniaturbild
-        name:
-          label: Name
         uid:
           label: Autor
         changed:
@@ -98,10 +89,6 @@ display:
         bundle:
           exception:
             title: Alle
-      filters:
-        name:
-          expose:
-            label: Name
       header:
         display_link_grid:
           label: Raster

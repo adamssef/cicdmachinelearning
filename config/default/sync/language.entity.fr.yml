@@ -14,5 +14,5 @@ third_party_settings:
 id: fr
 label: French
 direction: ltr
-weight: 1
+weight: -5
 locked: false
