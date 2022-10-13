@@ -43,7 +43,6 @@
     "drupal/recaptcha_v3": "^1.6",
     "drupal/robotstxt": "^1.4",
     "drupal/search_api_solr": "^4.2",
-    "drupal/seo_hreflang": "1.x-dev#02f9bc7f219acf819cf033ff3d808beaf9641c83",
     "drupal/shield": "^1.6",
     "drupal/simple_sitemap": "^4.1",
     "drupal/simplelogin": "^6.0",
