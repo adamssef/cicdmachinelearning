@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "804c3884a4c1c26067764de58eab118c",
+    "content-hash": "826f8a74977789eb62ac90e594e6935b",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -4651,52 +4651,6 @@
                 "source": "http://git.drupal.org/project/search_api_solr.git",
                 "issues": "https://www.drupal.org/project/issues/search_api_solr",
                 "chat": "https://drupalchat.me/channel/search"
-            }
-        },
-        {
-            "name": "drupal/seo_hreflang",
-            "version": "dev-1.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/seo_hreflang.git",
-                "reference": "02f9bc7f219acf819cf033ff3d808beaf9641c83"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1592309126",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "amarlata",
-                    "homepage": "https://www.drupal.org/user/3504572"
-                }
-            ],
-            "description": "SEO hreflang module to add the hreflang attribute of each page.",
-            "homepage": "https://www.drupal.org/project/seo_hreflang",
-            "keywords": [
-                "hreflang",
-                "keyword",
-                "seo"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/seo_hreflang"
             }
         },
         {
@@ -15902,7 +15856,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/pardot": 10,
-        "drupal/seo_hreflang": 20,
         "drupal/wb_countries": 20
     },
     "prefer-stable": true,
