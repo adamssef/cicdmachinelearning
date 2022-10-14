@@ -39,3 +39,11 @@ relatedContentPanel:
 signUpWebForm:
   js:
     js/signUpWebForm.js: {}
+# Our Approach Container
+ourApproachContainer:
+  js:
+    js/ourApproachContainer.js: {}
+# Accordion With Two Titles
+accordionWithTwoTitles:
+  js:
+    js/accordionWithTwoTitles.js: {}
