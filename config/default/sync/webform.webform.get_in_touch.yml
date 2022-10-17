@@ -123,6 +123,9 @@ elements: |-
             trainings, reports and services
           '#title_display': none
           '#description_display': after
+        captcha:
+          '#type': captcha
+          '#captcha_type': recaptcha_v3/get_in_touch
         actions:
           '#type': webform_actions
           '#title': 'Submit button(s)'
