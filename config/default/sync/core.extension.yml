@@ -109,7 +109,6 @@ module:
   views_autosubmit: 0
   views_fieldsets: 0
   views_ui: 0
-  wb_countries: 0
   webform: 0
   webform_node: 0
   webform_pardot: 0
