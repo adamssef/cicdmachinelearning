@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4ff084f25a911aad8781aebf3bef100",
+    "content-hash": "7bbf821a94cf4a0af0fbf1a1c91214ed",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -7505,6 +7505,18 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.1"
             },
             "time": "2022-09-04T07:30:47+00:00"
+        },
+        {
+            "name": "npm-asset/jquery-validation",
+            "version": "1.19.5",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/jquery-validation/-/jquery-validation-1.19.5.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "oomphinc/composer-installers-extender",
