@@ -3,13 +3,19 @@ langcode: en
 status: true
 dependencies:
   config:
+    - media.type.image
     - node.type.article
+    - node.type.locations_contacts
     - node.type.page
+    - node.type.resources
     - taxonomy.vocabulary.tags
   module:
+    - cohesion_elements
     - comment
+    - content_translation
     - contextual
     - file
+    - media
     - node
     - path
     - system
@@ -27,22 +33,42 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access media overview'
   - 'access toolbar'
   - 'access tour'
   - 'administer url aliases'
   - 'create article content'
+  - 'create content translations'
+  - 'create image media'
+  - 'create media'
   - 'create page content'
   - 'create terms in tags'
   - 'create url aliases'
   - 'delete article revisions'
+  - 'delete content translations'
+  - 'delete media'
   - 'delete own article content'
+  - 'delete own image media'
   - 'delete own page content'
   - 'delete page revisions'
+  - 'edit any image media'
+  - 'edit any locations_contacts content'
+  - 'edit any page content'
+  - 'edit any resources content'
   - 'edit own article content'
   - 'edit own comments'
+  - 'edit own image media'
   - 'edit own page content'
   - 'edit terms in tags'
   - 'revert all revisions'
+  - 'translate any entity'
+  - 'translate cohesion_layout'
+  - 'translate editable entities'
+  - 'translate locations_contacts node'
+  - 'translate page node'
+  - 'translate resources node'
+  - 'update content translations'
+  - 'update media'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
