@@ -47,3 +47,7 @@ ourApproachContainer:
 accordionWithTwoTitles:
   js:
     js/accordionWithTwoTitles.js: {}
+# Exposed Filter Tab w/ ajax
+tabAjaxExposedFilter:
+  js:
+    js/tabAjaxExposedFilter.js: {}
