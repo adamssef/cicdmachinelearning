@@ -3,6 +3,8 @@ display:
     display_title: Predefinito
     display_options:
       fields:
+        filename:
+          label: Nome
         status:
           label: Stato
       pager:
@@ -18,6 +20,9 @@ display:
           exposed_sorts_label: 'Ordina per'
           sort_desc_label: Disc
       filters:
+        filename:
+          expose:
+            label: Filename
         status:
           expose:
             label: Stato

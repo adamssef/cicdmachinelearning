@@ -9,6 +9,8 @@ display:
           admin_label: Icône
         severity:
           label: Importance
+        message:
+          label: Message
         name:
           label: Utilisateur
         link:
