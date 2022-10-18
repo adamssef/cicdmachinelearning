@@ -1,12 +1,22 @@
+label: Contenuto
 display:
   default:
     display_title: Predefinito
     display_options:
+      title: Contenuto
       fields:
         title:
           label: Titolo
+        type:
+          label: 'Tipo di contenuto'
+        name:
+          label: Autore
         status:
           label: Stato
+          settings:
+            format_custom_true: Pubblicato
+        changed:
+          label: Aggiornato
         operations:
           label: Operazioni
       exposed_form:
@@ -19,11 +29,23 @@ display:
         title:
           expose:
             label: Titolo
+        type:
+          expose:
+            label: 'Tipo di contenuto'
         status:
           expose:
             label: Stato
+          group_info:
+            group_items:
+              1:
+                title: Pubblicato
         langcode:
           expose:
             label: Lingua
   page_1:
     display_title: Pagina
+    display_options:
+      menu:
+        title: Contenuto
+      tab_options:
+        title: Contenuto

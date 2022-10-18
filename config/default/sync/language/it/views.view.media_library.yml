@@ -14,6 +14,12 @@ display:
           exposed_sorts_label: 'Ordina per'
           sort_desc_label: Disc
       filters:
+        status:
+          group_info:
+            label: Pubblicato
+            group_items:
+              1:
+                title: Pubblicato
         name:
           expose:
             label: Nome
@@ -39,6 +45,10 @@ display:
       fields:
         name:
           label: Nome
+        uid:
+          label: Autore
+        changed:
+          label: Aggiornato
       filters:
         name:
           expose:

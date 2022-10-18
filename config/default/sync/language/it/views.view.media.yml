@@ -5,8 +5,14 @@ display:
       fields:
         bundle:
           label: Tipo
+        uid:
+          label: Autore
         status:
           label: Stato
+          settings:
+            format_custom_true: Pubblicato
+        changed:
+          label: Aggiornato
         operations:
           label: Operazioni
       pager:
@@ -25,6 +31,11 @@ display:
         bundle:
           expose:
             label: Tipo
+        status:
+          group_info:
+            group_items:
+              1:
+                title: Pubblicato
         langcode:
           expose:
             label: Lingua

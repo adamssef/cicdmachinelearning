@@ -5,6 +5,8 @@ display:
       fields:
         title:
           label: Titolo
+        name:
+          label: Autore
       pager:
         options:
           expose:
