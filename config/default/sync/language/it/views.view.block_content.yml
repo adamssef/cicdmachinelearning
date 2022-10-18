@@ -3,6 +3,8 @@ display:
     display_title: Predefinito
     display_options:
       fields:
+        changed:
+          label: Aggiornato
         operations:
           label: Operazioni
       pager:
