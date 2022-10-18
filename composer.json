@@ -59,6 +59,7 @@
     "erusev/parsedown": "^1.7",
     "highlightjs/highlightjs": "^9.7",
     "mglaman/phpstan-drupal": "0.12.12",
+    "npm-asset/jquery-validation": "^1.17",
     "oomphinc/composer-installers-extender": "^2.0",
     "sainsburys/guzzle-oauth2-plugin": "^3.0",
     "vlucas/phpdotenv": "^2.4",
@@ -180,6 +181,10 @@
               "reference": "tags/9.7.0"
           }
       }
+    },
+    "npm-assets": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
     }
   },
   "scripts": {
