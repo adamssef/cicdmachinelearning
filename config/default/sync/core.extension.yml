@@ -104,6 +104,7 @@ module:
   toolbar: 0
   tour: 0
   typed_data: 0
+  ultimate_cron: 0
   update: 0
   user: 0
   views_autosubmit: 0
