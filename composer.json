@@ -148,6 +148,9 @@
       },
       "drupal/autologout": {
         "Undefined index destination": "https://www.drupal.org/files/issues/2022-07-28/3300118-undefined-index-destination.patch"
+      },
+      "acquia/cohesion": {
+        "Media alt and name": "patches/cohesion_690.patch"
       }
     }
   },
