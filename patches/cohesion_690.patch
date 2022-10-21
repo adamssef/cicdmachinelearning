@@ -1,8 +1,8 @@
 diff --git a/modules/cohesion_templates/src/TwigExtension/TwigExtension.php b/modules/cohesion_templates/src/TwigExtension/TwigExtension.php
-index 4e48c83..a47331a 100644
+index 4e48c83..de688a3 100644
 --- a/modules/cohesion_templates/src/TwigExtension/TwigExtension.php
 +++ b/modules/cohesion_templates/src/TwigExtension/TwigExtension.php
-@@ -1753,6 +1753,59 @@ class TwigExtension extends \Twig_Extension {
+@@ -1753,6 +1753,65 @@ class TwigExtension extends \Twig_Extension {
     *
     */
    public function getComponentFieldValue($context, $key, $sub_key_path = NULL) {
@@ -10,7 +10,13 @@ index 4e48c83..a47331a 100644
 +    if (in_array($sub_key_path, ['alternative_value', 'name_value'])) {
 +      // Return media alt.
 +      // Get media uri.
-+      $uri = $context['componentFieldsValues'][$key];
++      if (isset($context['componentFieldsValues'][$key])) {
++        $uri = $context['componentFieldsValues'][$key];
++      } elseif (isset($context['coh_repeater_val']['#' . $key])) {
++        $uri = $context['coh_repeater_val']['#' . $key];
++      } else {
++        return FALSE;
++      }
 +
 +      // Get current language.
 +      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
