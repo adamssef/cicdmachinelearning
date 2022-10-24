@@ -1,0 +1,94 @@
+diff --git a/modules/cohesion_templates/src/TwigExtension/TwigExtension.php b/modules/cohesion_templates/src/TwigExtension/TwigExtension.php
+index 4e48c83..de688a3 100644
+--- a/modules/cohesion_templates/src/TwigExtension/TwigExtension.php
++++ b/modules/cohesion_templates/src/TwigExtension/TwigExtension.php
+@@ -1753,6 +1753,65 @@ class TwigExtension extends \Twig_Extension {
+    *
+    */
+   public function getComponentFieldValue($context, $key, $sub_key_path = NULL) {
++
++    if (in_array($sub_key_path, ['alternative_value', 'name_value'])) {
++      // Return media alt.
++      // Get media uri.
++      if (isset($context['componentFieldsValues'][$key])) {
++        $uri = $context['componentFieldsValues'][$key];
++      } elseif (isset($context['coh_repeater_val']['#' . $key])) {
++        $uri = $context['coh_repeater_val']['#' . $key];
++      } else {
++        return FALSE;
++      }
++
++      // Get current language.
++      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
++
++      try {
++        // Get the file itself.
++        /** @var \Drupal\file\FileInterface[] $files */
++        $files = \Drupal::entityTypeManager()
++          ->getStorage('file')
++          ->loadByProperties(['uri' => $uri]);
++        /** @var \Drupal\file\FileInterface|null $file */
++        $file = reset($files) ?: NULL;
++
++        // Get media.
++        if (!empty($file)) {
++          $media_entities = \Drupal::entityTypeManager()->getStorage('media')->loadByProperties([
++            'field_media_image' => $file->id(),
++          ]);
++
++          if (!empty($media_entities)) {
++            $media_entity = is_array($media_entities) ? array_pop($media_entities) : NULL;
++
++            if ($sub_key_path == 'alternative_value') {
++              if (array_key_exists($langcode, $media_entity->getTranslationLanguages())) {
++                // Return the alt value translated.
++                return ($media_entity->getTranslation($langcode)->field_media_image->alt);
++              } else {
++                // Return the default alt value.
++                return ($media_entity->field_media_image->alt);
++              }
++            } else {
++              if (array_key_exists($langcode, $media_entity->getTranslationLanguages())) {
++                // Return the name value translated.
++                return ($media_entity->getTranslation($langcode)->getName());
++              } else {
++                // Return the default name value.
++                return ($media_entity->getName());
++              }
++            }
++          }
++        }
++      } catch (\Exception $e) {
++        return FALSE;
++      }
++
++      return FALSE;
++    }
++
+     $keys = [];
+     // If we need to find the find further down the array
+     if (is_string($sub_key_path) && !empty($sub_key_path)) {
+diff --git a/src/Plugin/Api/TemplatesApi.php b/src/Plugin/Api/TemplatesApi.php
+index 430134b..7d700e2 100644
+--- a/src/Plugin/Api/TemplatesApi.php
++++ b/src/Plugin/Api/TemplatesApi.php
+@@ -94,6 +94,19 @@ class TemplatesApi extends ApiPluginBase {
+     foreach ($this->getData() as $index => $responseData) {
+       if (isset($responseData['template'])) {
+         $template_values = Json::decode($responseData['template']);
++
++        // Replace media tokens.
++        $media_alt_tag = '") | raw }}[media_alt]';
++        $pos = strpos($template_values['twig'], $media_alt_tag);
++        if ($pos !== false) {
++          $template_values['twig'] = str_replace($media_alt_tag, '", "alternative_value") | raw }}', $template_values['twig']);
++        }
++        $media_alt_tag = '") | raw }}[media_name]';
++        $pos = strpos($template_values['twig'], $media_alt_tag);
++        if ($pos !== false) {
++          $template_values['twig'] = str_replace($media_alt_tag, '", "name_value") | raw }}', $template_values['twig']);
++        }
++
+         if (is_array($this->content_hashes)) {
+           foreach ($this->content_hashes as $hash => $string) {
+ 
