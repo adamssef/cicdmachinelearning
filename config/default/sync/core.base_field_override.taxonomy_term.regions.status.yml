@@ -1,20 +1,20 @@
-uuid: bca18b56-a511-4b2e-9102-10aa3b47c02c
+uuid: 746721ed-2ba3-4f06-a581-fcbef425be76
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.article
-id: node.article.sticky
-field_name: sticky
-entity_type: node
-bundle: article
-label: 'Sticky at top of lists'
+    - taxonomy.vocabulary.regions
+id: taxonomy_term.regions.status
+field_name: status
+entity_type: taxonomy_term
+bundle: regions
+label: Published
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'

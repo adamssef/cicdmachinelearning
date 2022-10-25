@@ -1,13 +1,13 @@
-uuid: 5fd485d7-d038-435b-b4d1-65977e0ff928
+uuid: c0eb7f77-cd38-4604-82ed-b25ec0ec0dc7
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.article
-id: node.article.metatag
+    - taxonomy.vocabulary.regions
+id: taxonomy_term.regions.metatag
 field_name: metatag
-entity_type: node
-bundle: article
+entity_type: taxonomy_term
+bundle: regions
 label: 'Metatags (Hidden field for JSON support)'
 description: 'The meta tags for the entity.'
 required: false
