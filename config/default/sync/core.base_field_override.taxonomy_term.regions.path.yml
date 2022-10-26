@@ -1,15 +1,15 @@
-uuid: eb2740e3-4f95-499a-a64e-8fc35d231675
+uuid: 396c09e7-440a-4f19-abd9-4f26d4bad341
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.article
+    - taxonomy.vocabulary.regions
   module:
     - path
-id: node.article.path
+id: taxonomy_term.regions.path
 field_name: path
-entity_type: node
-bundle: article
+entity_type: taxonomy_term
+bundle: regions
 label: 'URL alias'
 description: ''
 required: false

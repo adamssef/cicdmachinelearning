@@ -17,7 +17,6 @@ display:
         uid:
           label: Autor
         status:
-          label: Status
           settings:
             format_custom_false: 'Nicht veröffentlicht'
             format_custom_true: Veröffentlicht

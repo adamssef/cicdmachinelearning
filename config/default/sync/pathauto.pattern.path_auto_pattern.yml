@@ -1,0 +1,23 @@
+uuid: 2afeccc0-c45f-486c-973b-1a965e7d7a75
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: path_auto_pattern
+label: 'Path Auto Pattern'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  cf948657-4f2b-49cf-914e-054283188900:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: cf948657-4f2b-49cf-914e-054283188900
+    context_mapping:
+      node: node
+    bundles:
+      page: page
+      resources: resources
+selection_logic: and
+weight: -5
+relationships: {  }

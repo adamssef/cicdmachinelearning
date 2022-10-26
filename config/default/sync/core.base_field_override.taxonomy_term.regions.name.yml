@@ -1,14 +1,14 @@
-uuid: 5cb51369-5c0d-437f-9977-9e22e5839cd3
+uuid: c6618a85-957a-4c24-86c6-ab7412e35f7c
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.article
-id: node.article.title
-field_name: title
-entity_type: node
-bundle: article
-label: Title
+    - taxonomy.vocabulary.regions
+id: taxonomy_term.regions.name
+field_name: name
+entity_type: taxonomy_term
+bundle: regions
+label: Name
 description: ''
 required: true
 translatable: false
