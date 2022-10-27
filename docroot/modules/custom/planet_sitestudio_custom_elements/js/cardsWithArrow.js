@@ -1,21 +1,21 @@
 /**
- * Add GA data-analytics to Our Approach Container.
+ * Add GA data-analytics to Cards With Arrow (tax free).
  * @file
- * File ourApproachContainer.js.
+ * File cardsWithArrow.js.
  */
 
 (function ($, Drupal) {
   let alreadyRun = 0;
-  Drupal.behaviors.planet_sitestudio_ourApproachContainer = {
+  Drupal.behaviors.planet_sitestudio_cardsWithArrow = {
     attach: function () {
       $(document).ready(function () {
         if (alreadyRun === 0) {
-          $(".coh-ce-cpt_card_feature_icon_and_text-a305ba2").each(function (index) {
+          $(".coh-ce-cpt_component_with_cards_with_ar-cb728f0c").each(function (index) {
             if (typeof gtag === typeof Function) {
               $('a', this).on('click', function (e) {
-                gtag('event', 'Our Approach Container', {
-                  'event_category': 'Content',
-                  'event_label': $('h3', this).html(),
+                gtag('event', 'Cards With Arrow', {
+                  'event_category': 'Get in touch',
+                  'event_label': $('h4', this).html(),
                   'event_value': 1
                 });
               });
