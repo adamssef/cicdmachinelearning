@@ -92,10 +92,13 @@ class LanguageSwitcherBlock extends BlockBase implements ContainerFactoryPluginI
       $node = $this->routeMatch->getParameter('node');
       if ($node instanceof NodeInterface) {
         $nodePath = $this->aliasManager->getAliasByPath('/node/' . $node->id());
+        $nativeLanguage = $this->languageManager->getNativeLanguages()[$lid];
 
         // Add the url with language.
         $links[$lid]['url'] = '/' . $lid . $nodePath;
+
         $links[$lid]['name'] = $language->getName();
+        $links[$lid]['native_lang_name'] = $this->t($nativeLanguage->getName());
       }
     }
 

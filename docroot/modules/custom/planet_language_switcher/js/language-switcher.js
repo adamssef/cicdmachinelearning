@@ -22,12 +22,16 @@
           $dropdown.slideToggle();
           $selectMenu.attr("aria-expanded", "true");
           $selectMenu.addClass("is-expanded");
+
+          $('.language-switcher').addClass("language-switcher-whitebg");
         });
 
-        $("body").click(function () {
+        $("body, .language-switcher__select-menu").click(function () {
           $dropdown.slideUp();
           $selectMenu.attr("aria-expanded", "false");
           $selectMenu.removeClass("is-expanded");
+
+          $('.language-switcher').removeClass("language-switcher-whitebg");
         });
       });
     }
