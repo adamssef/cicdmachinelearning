@@ -79,3 +79,7 @@ cardsWithArrow:
 textsButtonCards:
   js:
     js/textsButtonCards.js: {}
+# Text Video
+textVideo:
+  js:
+    js/textVideo.js: {}
