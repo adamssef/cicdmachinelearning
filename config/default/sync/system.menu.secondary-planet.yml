@@ -1,0 +1,8 @@
+uuid: 8f6aeda5-98e6-42f6-acda-9ebe72618551
+langcode: en
+status: true
+dependencies: {  }
+id: secondary-planet
+label: 'Secondary Planet'
+description: ''
+locked: false

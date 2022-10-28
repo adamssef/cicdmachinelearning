@@ -1,0 +1,48 @@
+.language-switcher {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 196px;
+}
+
+.language-switcher__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-switcher__button-wrapper {
+  display: inline-block;
+  position: relative;
+  color: #FFFFFF;
+  text-transform: capitalize;
+}
+
+.language-switcher__button {
+  display: flex;
+  position: relative;
+  padding: 0.625rem 1rem;
+  margin-right: 0;
+  cursor: pointer;
+}
+
+.language-switcher__link {
+  text-decoration: none !important;
+}
+
+.language-switcher__drop-down {
+  display: none;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 2;
+  background-color: #FFFFFF;
+}
+
+.language-switcher__item {
+  display: flex;
+  margin: 0;
+}

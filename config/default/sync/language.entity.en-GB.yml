@@ -1,0 +1,19 @@
+uuid: 91d242f3-de57-4e52-86b9-a823f750bce3
+langcode: en-GB
+status: true
+dependencies:
+  module:
+    - entity_language_fallback
+third_party_settings:
+  entity_language_fallback:
+    fallback_langcodes:
+      - en
+      - ''
+      - ''
+      - ''
+      - ''
+id: en-GB
+label: 'English (United Kingdom)'
+direction: ltr
+weight: -9
+locked: false

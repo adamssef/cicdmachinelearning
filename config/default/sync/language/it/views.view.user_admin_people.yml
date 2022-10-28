@@ -1,0 +1,37 @@
+display:
+  default:
+    display_title: Predefinito
+    display_options:
+      fields:
+        status:
+          label: Stato
+          settings:
+            format_custom_false: Bloccato
+        roles_target_id:
+          label: Ruoli
+        operations:
+          label: Operazioni
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Voci per pagina'
+            items_per_page_options_all_label: '- Tutto -'
+            offset_label: Scostamento
+      exposed_form:
+        options:
+          submit_button: Filtra
+          reset_button_label: Ripristina
+          exposed_sorts_label: 'Ordina per'
+          sort_desc_label: Disc
+      filters:
+        status:
+          group_info:
+            label: Stato
+            group_items:
+              2:
+                title: Bloccato
+        roles_target_id:
+          expose:
+            label: Ruolo
+  page_1:
+    display_title: Pagina

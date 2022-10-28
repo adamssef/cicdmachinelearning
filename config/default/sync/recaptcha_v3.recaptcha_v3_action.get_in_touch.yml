@@ -1,0 +1,8 @@
+uuid: 0e43a6e4-61a5-42ee-82b7-d3c9088a847d
+langcode: en
+status: true
+dependencies: {  }
+id: get_in_touch
+label: 'Get in touch'
+threshold: 0.5
+challenge: default

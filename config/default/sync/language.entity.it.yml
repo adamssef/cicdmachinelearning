@@ -1,0 +1,18 @@
+uuid: ad522509-8f90-419d-a2c1-fb6cce67f62d
+langcode: it
+status: true
+dependencies:
+  module:
+    - entity_language_fallback
+third_party_settings:
+  entity_language_fallback:
+    fallback_langcodes:
+      - en
+      - ''
+      - ''
+      - ''
+id: it
+label: Italian
+direction: ltr
+weight: -8
+locked: false

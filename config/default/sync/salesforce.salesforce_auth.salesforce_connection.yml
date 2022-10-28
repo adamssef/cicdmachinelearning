@@ -1,0 +1,16 @@
+uuid: 8b377f4b-5297-49cc-94f5-0cb857539340
+langcode: en
+status: true
+dependencies:
+  config:
+    - key.key.salesforce_key
+  module:
+    - salesforce_jwt
+id: salesforce_connection
+label: 'Salesforce Connection'
+provider: jwt
+provider_settings:
+  consumer_key: 3MVG9Rd3qC6oMalW8synhM4ezlp1coLFvX4GWCU.NSEkIgtjc32Jn_zUlu__vgkT8NSrzbNFo79KA6wk3dr1r
+  login_user: rzanetti@ciandt.com
+  login_url: 'https://login.salesforce.com'
+  encrypt_key: salesforce_key

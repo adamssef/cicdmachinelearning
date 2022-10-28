@@ -1,0 +1,20 @@
+uuid: 396c09e7-440a-4f19-abd9-4f26d4bad341
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.regions
+  module:
+    - path
+id: taxonomy_term.regions.path
+field_name: path
+entity_type: taxonomy_term
+bundle: regions
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

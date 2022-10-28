@@ -1,0 +1,8 @@
+uuid: 4ab285d5-5dcc-4545-b1ce-835d95634f92
+langcode: en
+status: true
+dependencies: {  }
+id: resources_date_format
+label: 'Resources Date Format'
+locked: false
+pattern: 'd M Y'

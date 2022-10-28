@@ -1,0 +1,22 @@
+uuid: 738ca3ae-6801-495f-9808-388a4ef55201
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cohesion_theme
+_core:
+  default_config_hash: 6_eJxtyfANKFE_nfriHKgrARRIPHH88sI6jvQ4EHbBc
+id: cohesion_theme_content
+theme: cohesion_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

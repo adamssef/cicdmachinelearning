@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: QWRzxOnTtQtWyQMQPTHC-P82M5BX-CDuIlI_DjVhhoI
+account_id: '1001'
+default_campaign_id: '118387'
+api_url: 'https://pi.pardot.com'
+salesforce_auth_provider: salesforce_connection
+salesforce_pardot_business_unit_id: 0Uv5J000000PAweSAG
+path_condition:
+  id: request_path
+  negate: false
+  pages: ''
+user_role_condition:
+  id: user_role
+  negate: false
+  roles: {  }

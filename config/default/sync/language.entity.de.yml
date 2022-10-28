@@ -1,0 +1,18 @@
+uuid: 131958aa-655e-45d0-abd0-5ea0e6c0e342
+langcode: de
+status: true
+dependencies:
+  module:
+    - entity_language_fallback
+third_party_settings:
+  entity_language_fallback:
+    fallback_langcodes:
+      - en
+      - ''
+      - ''
+      - ''
+id: de
+label: German
+direction: ltr
+weight: -6
+locked: false

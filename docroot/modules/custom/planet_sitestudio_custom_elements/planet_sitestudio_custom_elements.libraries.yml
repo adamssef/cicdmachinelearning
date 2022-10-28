@@ -1,0 +1,81 @@
+---
+# Planet - Helper JS
+helperJs:
+  js:
+    js/planetHelperJs.js: {}
+# Accordion Desktop
+accordionDesktop:
+  js:
+    js/accordionDesktop.js: {}
+# Planet - Header
+header:
+  js:
+    js/planetHeader.js: {}
+# Accordion Mobile
+accordionMobile:
+  js:
+    js/accordionMobile.js: {}
+# Accordion Mobile
+carouselPartner:
+  js:
+    js/carouselPartner.js: {}
+# Tab products panel
+tabProductsPanel:
+  js:
+    js/tabProductsPanel.js: {}
+# Tab partners panel
+tabPartnersIntegrationsPanel:
+  js:
+    js/tabPartnersIntegrationsPanel.js: {}
+# Get in touch webform
+getInTouchWebForm:
+  js:
+    js/getInTouchWebForm.js: {}
+# Get in touch webform
+relatedContentPanel:
+  js:
+    js/relatedContentPanel.js: {}
+# Sign Up webform
+signUpWebForm:
+  js:
+    js/signUpWebForm.js: {}
+# Our Approach Container
+ourApproachContainer:
+  js:
+    js/ourApproachContainer.js: {}
+# Accordion With Two Titles
+accordionWithTwoTitles:
+  js:
+    js/accordionWithTwoTitles.js: {}
+# Exposed Filter Tab w/ ajax
+tabAjaxExposedFilter:
+  js:
+    js/tabAjaxExposedFilter.js: {}
+# Resources
+resources:
+  js:
+    js/resources.js: {}
+# Our Solutions
+tabOurSolutions:
+  js:
+    js/tabOurSolutions.js: {}
+# Tab Global Reach
+tabGlobalReach:
+  js:
+    js/tabGlobalReach.js: {}
+# Tab Team
+tabTeam:
+  js:
+    js/tabTeam.js: {}
+# Tab Extra Team
+tabExtraTeam:
+  js:
+    js/tabExtraTeam.js: {}
+# Cards With Arrow
+cardsWithArrow:
+  js:
+    js/cardsWithArrow.js: {}
+# Texts Button Cards
+textsButtonCards:
+  js:
+    js/textsButtonCards.js: {}

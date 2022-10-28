@@ -1,0 +1,15 @@
+diff --git a/js/pardot.js b/js/pardot.js
+index bfbe9ce..39fdb14 100644
+--- a/js/pardot.js
++++ b/js/pardot.js
+@@ -4,6 +4,10 @@
+  */
+ Drupal.behaviors.pardot_js = {
+   attach: function attach(context) {
++
++    // Disable pardot js   
++    return;
++  
+     // Global Variables
+     window.piAId = drupalSettings.pardot.accountId;
+     window.piCId = drupalSettings.pardot.campaignId;

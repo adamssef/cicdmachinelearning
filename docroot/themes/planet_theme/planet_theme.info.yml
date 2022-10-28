@@ -1,0 +1,45 @@
+name: Planet
+description: Planet theme.
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: theme
+base theme: false
+
+# Image appears on admin/appearance
+screenshot: screenshot.png
+
+libraries:
+  - planet_theme/global-styling
+
+ckeditor_stylesheets:
+  - dist/admin.css
+
+# Components module
+components:
+  namespaces:
+    base:
+      - src/components/00-base
+    atoms:
+      - src/components/01-atoms
+    molecules:
+      - src/components/02-molecules
+    organisms:
+      - src/components/03-organisms
+    templates:
+      - src/components/04-templates
+    pages:
+      - src/components/05-pages
+
+# Regions
+regions:
+  header_top: 'Top Header'
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  breadcrumb: 'Breadcrumb'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  sidebar_first: 'Left sidebar'
+  content: 'Content'
+  sidebar_second: 'Right sidebar'
+  footer: 'Footer'

@@ -1,0 +1,18 @@
+uuid: e6f89641-bf23-4263-a5c8-95c7dd594a31
+langcode: es
+status: true
+dependencies:
+  module:
+    - entity_language_fallback
+third_party_settings:
+  entity_language_fallback:
+    fallback_langcodes:
+      - en
+      - ''
+      - ''
+      - ''
+id: es
+label: Spanish
+direction: ltr
+weight: -7
+locked: false

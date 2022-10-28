@@ -1,0 +1,21 @@
+uuid: e7ec0755-58a9-4596-8861-1bc45ab9d622
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion_elements
+id: component_content.component_content.layout_canvas
+field_name: layout_canvas
+entity_type: component_content
+bundle: component_content
+label: 'Layout canvas'
+description: 'The Site Studio layout canvas associated to this content'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+  access_elements: '0'
+field_type: cohesion_entity_reference_revisions

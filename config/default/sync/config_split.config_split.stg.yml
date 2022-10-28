@@ -1,0 +1,20 @@
+uuid: f9a312c7-0e1f-4ce8-b835-8994e8d7c8f7
+langcode: en
+status: false
+dependencies: {  }
+id: stg
+label: stg
+description: ''
+weight: 0
+folder: ../config/default/environment/stg
+module:
+  acquia_connector: 0
+  dblog: 0
+  shield: 0
+  syslog: 0
+theme: {  }
+blacklist: {  }
+graylist:
+  - environment_indicator.indicator
+graylist_dependents: true
+graylist_skip_equal: true

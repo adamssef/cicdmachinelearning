@@ -1,0 +1,19 @@
+uuid: c024bf6b-b9e0-4161-9f28-6d613ca5e5d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion_templates
+    - node
+id: node.field_resources_template
+field_name: field_resources_template
+entity_type: node
+type: cohesion_template_selector
+settings: {  }
+module: cohesion_templates
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

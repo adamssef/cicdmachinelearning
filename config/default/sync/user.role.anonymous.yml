@@ -1,0 +1,20 @@
+uuid: ba21b667-e9b7-41ee-8ea2-c500d59ed2db
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - contact
+    - media
+    - system
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'view media'

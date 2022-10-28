@@ -1,0 +1,30 @@
+uuid: 70a2c0db-fe97-4d10-9c97-3869137875bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.get_in_touch
+  module:
+    - cohesion
+    - webform
+  theme:
+    - cohesion_theme
+id: get_in_touch_form
+theme: cohesion_theme
+region: dx8_hidden
+weight: -4
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Get in touch'
+  label_display: '0'
+  provider: webform
+  webform_id: get_in_touch
+  default_data: ''
+  redirect: false
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: false

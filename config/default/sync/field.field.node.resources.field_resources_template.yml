@@ -1,0 +1,23 @@
+uuid: a500e260-11be-4171-a8b0-348250089d68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resources_template
+    - node.type.resources
+  module:
+    - cohesion_templates
+id: node.resources.field_resources_template
+field_name: field_resources_template
+entity_type: node
+bundle: resources
+label: Template
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    selected_template: ctn_tpl_resources_template
+default_value_callback: ''
+settings: {  }
+field_type: cohesion_template_selector
