@@ -27,8 +27,10 @@
               // do something once the iframe is loaded
               //$("coh-youtube-embed-item").attr('src', $(".frameVideo").attr('src') + '?autoplay=1');
 
-              //$(".coh-youtube-embed-item").attr("allow","autoplay");
-              //$('.coh-youtube-embed-item').attr("src", function() { return $(this).attr("src") + "&enablejsapi=1" });
+              $(".coh-youtube-embed-item").attr("allow","autoplay");
+              //$('.coh-youtube-embed-item').attr("src", function() { return $(this).attr("src") + "&mute=1&" });
+
+              //$(".coh-youtube-embed-item").attr('src', '//www.youtube.com/embed/hABD7YAuwc8' + '?autoplay=1&mute=1');
 
 
 
@@ -45,7 +47,7 @@
 
               $(".video_youtube").show();
 
-              $(".ytp-large-play-button-red-bg", this).trigger('click');
+              //$(".ytp-large-play-button-red-bg", this).trigger('click');
 
 
 
