@@ -4,7 +4,7 @@ display:
     display_options:
       fields:
         filename:
-          label: Name
+          label: Nome
         status:
           label: Stato
       pager:

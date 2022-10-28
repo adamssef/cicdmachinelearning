@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the seo_hreflang module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function seo_hreflang_install() {
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function seo_hreflang_uninstall() {
+   \Drupal::configFactory()->getEditable('seo_hreflang')->delete();
+}

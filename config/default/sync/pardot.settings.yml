@@ -1,6 +1,6 @@
 _core:
   default_config_hash: QWRzxOnTtQtWyQMQPTHC-P82M5BX-CDuIlI_DjVhhoI
-account_id: '937'
+account_id: '1001'
 default_campaign_id: '118387'
 api_url: 'https://pi.pardot.com'
 salesforce_auth_provider: salesforce_connection

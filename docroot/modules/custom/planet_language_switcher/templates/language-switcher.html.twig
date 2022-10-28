@@ -19,7 +19,7 @@
           <ul class="dropdown-menu" role="listbox">
             {% for key, item in data.links %}
               <li class="language-switcher__item" role="option" tabindex="0">
-                <a class="language-switcher__link" href="{{ item.url }}">{{ key }}</a>
+                <a class="language-switcher__link" href="{{ item.url }}">{{ item.name }} ({{ item.native_lang_name }})</a>
               </li>
             {% endfor %}
           </ul>

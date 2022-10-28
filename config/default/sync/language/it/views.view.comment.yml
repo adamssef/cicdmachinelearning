@@ -5,6 +5,10 @@ display:
       fields:
         subject:
           label: Oggetto
+        name:
+          label: Autore
+        changed:
+          label: Aggiornato
         operations:
           label: Operazioni
       pager:
@@ -31,6 +35,10 @@ display:
       fields:
         subject:
           label: Oggetto
+        name:
+          label: Autore
+        changed:
+          label: Aggiornato
         operations:
           label: Operazioni
       filters:

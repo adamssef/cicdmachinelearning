@@ -1,7 +1,9 @@
 uuid: 6095d42d-c003-4f35-8ece-649723ec716f
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - webform_pardot
 weight: 0
 open: null
 close: null
@@ -20,97 +22,113 @@ elements: |-
       '#attributes':
         class:
           - column-flex
-      about_you:
-        '#type': fieldset
-        '#title': 'About you'
-        first_name:
-          '#type': textfield
-          '#title': 'First Name*'
-          '#required': true
-        last_name:
-          '#type': textfield
-          '#title': 'Last Name*'
-          '#required': true
-      your_contact_details:
-        '#type': fieldset
-        '#title': 'Your contact details'
-        '#attributes':
-          class:
-            - fieldset-section
-        phone:
-          '#type': textfield
-          '#title': 'Phone*'
-          '#required': true
-        email:
-          '#type': email
-          '#title': 'E-mail*'
-          '#required': true
-      about_your_project:
-        '#type': fieldset
-        '#title': 'About your project'
-        '#attributes':
-          class:
-            - fieldset-section
-        textarea:
-          '#type': textarea
-          '#title': Textarea
-          '#placeholder': 'Tell us more about your project'
+      first_name:
+        '#type': textfield
+        '#title': 'First Name*'
+        '#minlength': 2
+        '#maxlength': 50
+        '#autocomplete': 'off'
+        '#required': true
+      last_name:
+        '#type': textfield
+        '#title': 'Last Name*'
+        '#minlength': 2
+        '#maxlength': 50
+        '#autocomplete': 'off'
+        '#required': true
+      phone_intl:
+        '#type': webform_telephone
+        '#title': 'Phone*'
+        '#required': true
+        '#wrapper_type': form_element
+        '#type__access': false
+        '#phone__required': true
+        '#ext__access': false
+        '#phone__international_initial_country': US
+      email:
+        '#type': email
+        '#title': 'E-mail*'
+        '#autocomplete': 'off'
+        '#required': true
+      company_business_name:
+        '#type': textfield
+        '#title': 'Company name*'
+        '#minlength': 2
+        '#maxlength': 50
+        '#autocomplete': 'off'
+        '#required': true
     second_column:
       '#type': container
       '#attributes':
         class:
           - column-flex
-      about_your_business:
-        '#type': fieldset
-        '#title': 'About your business'
-        company_business_name:
-          '#type': textfield
-          '#title': 'Company or business name*'
-          '#required': true
-        where_are_you_based:
-          '#type': webform_entity_radios
-          '#title': 'Where are you based'
-          '#wrapper_type': form_element
-          '#target_type': taxonomy_term
-          '#selection_handler': 'default:taxonomy_term'
-          '#selection_settings':
-            target_bundles:
-              wb_regions: wb_regions
-            sort:
-              field: name
-              direction: ASC
-        country:
-          '#type': webform_entity_select
-          '#title': Country
-          '#states':
-            visible:
-              ':input[name="where_are_you_based"]':
-                checked: true
-          '#target_type': taxonomy_term
-          '#selection_handler': 'default:taxonomy_term'
-          '#selection_settings':
-            target_bundles:
-              wb_countries: wb_countries
-            sort:
-              field: name
-              direction: ASC
-        type_of_business:
-          '#type': select
-          '#title': 'Type of Business'
-          '#options':
-            Retail: Retail
-            Hospitality: Hospitality
-            Financial: Financial
-            Partner: Partner
-            Other: Other
-          '#default_value': Other
-        actions:
-          '#type': webform_actions
-          '#title': 'Submit button(s)'
-          '#submit__label': 'Send enquiry'
-          '#submit__attributes':
-            class:
-              - coh-style-primary-button
+      type_of_business:
+        '#type': select
+        '#title': 'Company sector*'
+        '#options':
+          Retail: Retail
+          Hospitality: Hospitality
+          Financial: Financial
+          Partner: Partner
+          Parking: Parking
+          Other: Other
+        '#required': true
+      address_country:
+        '#type': webform_address
+        '#title': 'Country*'
+        '#title_display': none
+        '#required': true
+        '#wrapper_type': form_element
+        '#address__access': false
+        '#address_2__access': false
+        '#city__access': false
+        '#state_province__access': false
+        '#postal_code__access': false
+        '#country__title': 'Country*'
+        '#country__title_display': before
+        '#country__required': true
+        '#flexbox': '0'
+      single_opt_in:
+        '#type': checkbox
+        '#title': 'Receive updates about Planet'
+        '#description': 'Check this box to give consent to receiving updates about Planet&rsquo;s products, events, trainings, reports and services'
+        '#title_display': none
+        '#description_display': after
+      captcha:
+        '#type': captcha
+        '#captcha_type': recaptcha_v3/get_in_touch
+      textarea:
+        '#type': textarea
+        '#title': 'About your project*'
+        '#maxlength': 250
+        '#placeholder': 'Tell us more about your project'
+        '#autocomplete': 'off'
+        '#required': true
+        '#counter_type': character
+        '#counter_maximum': 250
+      actions:
+        '#type': webform_actions
+        '#title': 'Submit button(s)'
+        '#submit__label': Submit
+        '#submit__attributes':
+          class:
+            - coh-style-primary-dark-button
+  website_language:
+    '#type': textfield
+    '#title': 'Website language'
+    '#autocomplete': 'off'
+    '#default_value': '[language:langcode]'
+    '#access': false
+  website_origin_page:
+    '#type': textfield
+    '#title': 'website origin page'
+    '#default_value': '[current-page:url]'
+    '#access': false
+  lead_source:
+    '#type': textfield
+    '#title': 'lead source'
+    '#default_value': Web
+    '#access': false
 css: ''
 javascript: ''
 settings:
@@ -292,5 +310,16 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  submit_data_to_pardot:
+    id: pardot_submission
+    handler_id: submit_data_to_pardot
+    label: 'Submit data to Pardot'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      pardot_url: 'http://info.weareplanet.com/l/975513/2022-09-07/26d2t'
+      pardot_fields_mapping: "first_name|First Name\r\nlast_name|Last Name\r\nphone_intl.phone|Phone\r\naddress_country.country|Country\r\ncompany_business_name|Company\r\ntype_of_business|Company Sector\r\ntextarea|Message\r\nsingle_opt_in|Opt in\r\nlead_source|Lead Source\r\nwebsite_language|Website language\r\nwebsite_origin_page|Website origin page\r\nemail|email"
 variants: {  }

@@ -83,6 +83,17 @@ function planet_sitestudio_custom_elements_theme($existing, $type, $theme, $path
       ],
       'render element' => 'children',
     ],
+    'views_resources' => [
+      'template' => 'views-resources',
+      'variables' => [
+        'elementSettings' => NULL,
+        'elementMarkup' => NULL,
+        'elementContext' => NULL,
+        'elementClass' => NULL,
+        'items' => NULL,
+      ],
+      'render element' => 'children',
+    ],
     'html__no_accessibility' => [
       'base hook' => 'html',
       'render element' => 'html',

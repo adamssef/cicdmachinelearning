@@ -14,6 +14,8 @@
     "drupal/acquia_connector": "^3.0",
     "drupal/admin_toolbar": "^3.1",
     "drupal/autologout": "^1.4",
+    "drupal/clientside_validation": "^4.0",
+    "drupal/color": "^1.0",
     "drupal/color-color": "^1.0",
     "drupal/config_filter": "^1.10",
     "drupal/config_ignore": "^2.3",
@@ -37,8 +39,10 @@
     "drupal/login_security": "^2.0",
     "drupal/memcache": "^2.4",
     "drupal/metatag": "^1.21",
+    "drupal/node_revision_delete": "^1.0@RC",
     "drupal/pardot": "^2.0@beta",
     "drupal/password_policy": "^3.1",
+    "drupal/pathauto": "^1.11",
     "drupal/recaptcha_v3": "^1.6",
     "drupal/robotstxt": "^1.4",
     "drupal/search_api_solr": "^4.2",
@@ -46,6 +50,7 @@
     "drupal/simple_sitemap": "^4.1",
     "drupal/simplelogin": "^6.0",
     "drupal/site_studio_webform": "^1.1",
+    "drupal/ultimate_cron": "^2.0@alpha",
     "drupal/views_autosubmit": "^1.4",
     "drupal/views_fieldsets": "^3.4",
     "drupal/wb_countries": "1.0.x-dev#dcfbad6754d04f42adce49f7f9f89b5010fe4be8",
@@ -55,6 +60,7 @@
     "erusev/parsedown": "^1.7",
     "highlightjs/highlightjs": "^9.7",
     "mglaman/phpstan-drupal": "0.12.12",
+    "npm-asset/jquery-validation": "^1.17",
     "oomphinc/composer-installers-extender": "^2.0",
     "sainsburys/guzzle-oauth2-plugin": "^3.0",
     "vlucas/phpdotenv": "^2.4",
@@ -143,6 +149,9 @@
       },
       "drupal/autologout": {
         "Undefined index destination": "https://www.drupal.org/files/issues/2022-07-28/3300118-undefined-index-destination.patch"
+      },
+      "acquia/cohesion": {
+        "Media alt and name": "patches/cohesion_690.patch"
       }
     }
   },
@@ -176,6 +185,10 @@
               "reference": "tags/9.7.0"
           }
       }
+    },
+    "npm-assets": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
     }
   },
   "scripts": {

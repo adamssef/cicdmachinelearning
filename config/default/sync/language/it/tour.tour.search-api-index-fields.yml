@@ -5,5 +5,3 @@ tips:
     label: 'Nome ad uso interno'
   search-api-index-fields-type:
     label: Tipo
-  search-api-index-fields-submit:
-    label: 'Salva le modifiche'

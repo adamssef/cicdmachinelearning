@@ -14,9 +14,15 @@ display:
           exposed_sorts_label: 'Ordina per'
           sort_desc_label: Disc
       filters:
+        status:
+          group_info:
+            label: Pubblicato
+            group_items:
+              1:
+                title: Pubblicato
         name:
           expose:
-            label: Name
+            label: Nome
         langcode:
           expose:
             label: Lingua
@@ -33,13 +39,17 @@ display:
       filters:
         name:
           expose:
-            label: Name
+            label: Nome
   widget_table:
     display_options:
       fields:
         name:
-          label: Name
+          label: Nome
+        uid:
+          label: Autore
+        changed:
+          label: Aggiornato
       filters:
         name:
           expose:
-            label: Name
+            label: Nome

@@ -14,5 +14,5 @@ third_party_settings:
 id: de
 label: German
 direction: ltr
-weight: 2
+weight: -6
 locked: false

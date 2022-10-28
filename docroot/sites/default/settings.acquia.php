@@ -16,6 +16,10 @@ if (getenv('AH_SITE_ENVIRONMENT')) {
 
   // Environment settings.php.
   if (file_exists('/var/www/site-php')) {
+    // Workaround for database error
+    /** @var \Composer\Autoload\ClassLoader $class_loader */
+    $class_loader->addPsr4('Drupal\\mysql\\', 'core/modules/mysql/src/');
+
     require_once '/var/www/site-php/' . getenv('AH_SITE_GROUP') . '/' . getenv('AH_SITE_GROUP') . '-settings.inc';
   }
 

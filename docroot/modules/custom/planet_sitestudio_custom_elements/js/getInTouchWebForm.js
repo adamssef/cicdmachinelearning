@@ -24,7 +24,16 @@
             }
             // GA Webform select fields.
             if ($('select', this).attr('name') !== undefined) {
-              $('select', this).attr("data-analytics", '[{"trigger":"click","eventCategory":"Get in touch","eventAction":"Form: Fill","eventLabel":"' + $('select', this).attr('name') + '","eventValue":1}]' );
+              if (typeof gtag === typeof Function) {
+                $('select').on('change', function (e) {
+                  e.preventDefault();
+                  gtag('event', 'Form: Fill', {
+                    'event_category': 'Get in touch',
+                    'event_label': $(this).attr('name') + ' | ' + this.value,
+                    'event_value': 1
+                  });
+                });
+              }
             }
           });
           $(".webform-submission-get-in-touch-form .form-actions").each(function (index) {

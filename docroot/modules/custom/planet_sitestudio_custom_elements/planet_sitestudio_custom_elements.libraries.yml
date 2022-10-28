@@ -39,3 +39,43 @@ relatedContentPanel:
 signUpWebForm:
   js:
     js/signUpWebForm.js: {}
+# Our Approach Container
+ourApproachContainer:
+  js:
+    js/ourApproachContainer.js: {}
+# Accordion With Two Titles
+accordionWithTwoTitles:
+  js:
+    js/accordionWithTwoTitles.js: {}
+# Exposed Filter Tab w/ ajax
+tabAjaxExposedFilter:
+  js:
+    js/tabAjaxExposedFilter.js: {}
+# Resources
+resources:
+  js:
+    js/resources.js: {}
+# Our Solutions
+tabOurSolutions:
+  js:
+    js/tabOurSolutions.js: {}
+# Tab Global Reach
+tabGlobalReach:
+  js:
+    js/tabGlobalReach.js: {}
+# Tab Team
+tabTeam:
+  js:
+    js/tabTeam.js: {}
+# Tab Extra Team
+tabExtraTeam:
+  js:
+    js/tabExtraTeam.js: {}
+# Cards With Arrow
+cardsWithArrow:
+  js:
+    js/cardsWithArrow.js: {}
+# Texts Button Cards
+textsButtonCards:
+  js:
+    js/textsButtonCards.js: {}

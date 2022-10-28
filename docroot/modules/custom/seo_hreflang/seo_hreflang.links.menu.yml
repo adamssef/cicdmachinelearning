@@ -1,0 +1,5 @@
+seo_hreflang.hreflang:
+  title: "SEO HrefLang Settings"
+  description: 'SEO HrefLang Settings.'
+  parent: system.admin_config_regional
+  route_name: seo_hreflang.hreflang
