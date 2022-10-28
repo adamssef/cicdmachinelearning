@@ -2,8 +2,9 @@
   display: flex;
   flex: 1;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   position: relative;
+  width: 196px;
 }
 
 .language-switcher__wrapper {
@@ -16,7 +17,7 @@
   display: inline-block;
   position: relative;
   color: #FFFFFF;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .language-switcher__button {
@@ -29,9 +30,6 @@
 
 .language-switcher__link {
   text-decoration: none !important;
-  display: flex;
-  width: 100%;
-  text-transform: uppercase;
 }
 
 .language-switcher__drop-down {
@@ -41,12 +39,10 @@
   left: 0;
   top: 100%;
   z-index: 2;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   background-color: #FFFFFF;
 }
 
 .language-switcher__item {
-  padding: 15px;
   display: flex;
   margin: 0;
 }
