@@ -1,7 +1,16 @@
 uuid: e5832a83-5049-44c5-86ac-2483a13e6fc1
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - entity_language_fallback
+third_party_settings:
+  entity_language_fallback:
+    fallback_langcodes:
+      - ''
+      - ''
+      - ''
+      - ''
 _core:
   default_config_hash: lBXDpdDPXQtrfTJQhr6MjRJJEEyYSoRJ0acdvHLsWeA
 id: en
