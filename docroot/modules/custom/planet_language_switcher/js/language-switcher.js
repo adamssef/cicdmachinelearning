@@ -19,11 +19,12 @@
         $selectButton.click(function (event) {
           event.stopPropagation();
 
-          $dropdown.slideToggle();
+          $dropdown.slideToggle('fast', function() {
+            $(".language-switcher").toggleClass('language-switcher-whitebg', $(this).is(':visible'));
+          });
+
           $selectMenu.attr("aria-expanded", "true");
           $selectMenu.addClass("is-expanded");
-
-          $('.language-switcher').addClass("language-switcher-whitebg");
         });
 
         $("body, .language-switcher__select-menu").click(function () {
