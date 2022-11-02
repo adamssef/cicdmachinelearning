@@ -10,7 +10,8 @@
         attach: function () {
             $(document).ready(function () {
                 if ($(window).width() >= 768 && alreadyRun === 0) {
-                    $(".whychooseplanetbutton").first().trigger("click");
+                    $(".whychooseplanetcontent").addClass("open");
+                    $(".whychooseplanetbutton").addClass("open");
                     alreadyRun = 1;
                 }
 
