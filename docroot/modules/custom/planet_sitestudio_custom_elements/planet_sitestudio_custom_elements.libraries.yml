@@ -79,3 +79,11 @@ cardsWithArrow:
 textsButtonCards:
   js:
     js/textsButtonCards.js: {}
+# Text Video
+textVideo:
+  js:
+    js/textVideo.js: {}
+# Tab Team Video
+tabTeamVideo:
+  js:
+    js/tabTeamVideo.js: {}
