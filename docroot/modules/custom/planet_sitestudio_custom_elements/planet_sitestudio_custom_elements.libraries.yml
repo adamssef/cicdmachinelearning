@@ -83,3 +83,7 @@ textsButtonCards:
 textVideo:
   js:
     js/textVideo.js: {}
+# Tab Team Video
+tabTeamVideo:
+  js:
+    js/tabTeamVideo.js: {}

@@ -37,6 +37,7 @@ enforce:
         - '*.clarity.ms'
         - 'https://js-agent.newrelic.com'
         - 'https://pi.pardot.com'
+        - 'https://www.youtube.com'
     frame-ancestors:
       base: self
   reporting:

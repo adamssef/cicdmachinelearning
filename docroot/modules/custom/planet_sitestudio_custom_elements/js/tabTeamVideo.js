@@ -1,12 +1,12 @@
 /**
- * Text and Video Component.
+ * Tab Team Video.
  * @file
- * File textVideo.js.
+ * File tabTeamVideo.js.
  */
 
 (function ($, Drupal) {
   let alreadyRun = 0;
-  Drupal.behaviors.planet_sitestudio_textVideo = {
+  Drupal.behaviors.planet_sitestudio_tabTeamVideo = {
     attach: function () {
       $(document).ready(function () {
         if (alreadyRun === 0) {
@@ -19,7 +19,7 @@
 
           let playerInfoList = [];
 
-          $(".textAndVideoYoutube").each(function (index) {
+          $(".tabTeamYoutube").each(function (index) {
 
             // Create a random player id.
             window['player'] = 'player' + Math.random().toString(36).substr(2, 6);
@@ -74,7 +74,7 @@
           }
 
           window.onYouTubeIframeAPIReady = function () {
-            setTimeout(onYouTubeIframeAPIReady, 10);
+            setTimeout(onYouTubeIframeAPIReady, 100);
           }
 
           function onPlayerReady(event) {
