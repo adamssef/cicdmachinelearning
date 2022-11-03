@@ -11,6 +11,11 @@
       $(document).ready(function () {
         if (alreadyRun === 0) {
 
+          if ($('script[src="https://www.youtube.com/iframe_api"]').length > 0) {
+            // Api already initiated.
+            return;
+          }
+
           // Create youtube api element.
           let tag = document.createElement('script');
           tag.src = "https://www.youtube.com/iframe_api";
@@ -19,7 +24,7 @@
 
           let playerInfoList = [];
 
-          $(".textAndVideoYoutube").each(function (index) {
+          $(".tabTeamYoutube, .textAndVideoYoutube").each(function (index) {
 
             // Create a random player id.
             window['player'] = 'player' + Math.random().toString(36).substr(2, 6);
