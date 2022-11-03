@@ -56,6 +56,16 @@
                 playerInfoList[i].video_thumbnail.hide();
                 playerInfoList[i].video_youtube.show();
                 curplayer.playVideo();
+
+                // Send data to GA.
+                let video_title = curplayer.getVideoData().title;
+                if (typeof video_title !== 'undefined' && typeof gtag === typeof Function) {
+                  gtag('event', 'Text and Video', {
+                    'event_category': 'Content',
+                    'event_label': 'Video: ' + video_title,
+                    'event_value': 1
+                  });
+                }
               });
             }
           }

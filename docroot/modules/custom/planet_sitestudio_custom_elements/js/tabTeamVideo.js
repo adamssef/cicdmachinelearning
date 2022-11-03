@@ -11,6 +11,10 @@
       $(document).ready(function () {
         if (alreadyRun === 0) {
 
+          $(".coh-style-tab-planet-team-panel").each(function (index) {
+            $('a', this).attr("data-analytics", '[{"trigger":"click","eventCategory":"Content","eventAction":"Meet our Team","eventLabel":"' + $('a', this).html() + '","eventValue":1}]' );
+          });
+
           // Create youtube api element.
           let tag = document.createElement('script');
           tag.src = "https://www.youtube.com/iframe_api";
@@ -56,6 +60,16 @@
                 playerInfoList[i].video_thumbnail.hide();
                 playerInfoList[i].video_youtube.show();
                 curplayer.playVideo();
+
+                // Send data to GA.
+                let video_title = curplayer.getVideoData().title;
+                if (typeof video_title !== 'undefined' && typeof gtag === typeof Function) {
+                  gtag('event', 'Meet our Team', {
+                    'event_category': 'Content',
+                    'event_label': 'Video: ' + video_title,
+                    'event_value': 1
+                  });
+                }
               });
             }
           }
