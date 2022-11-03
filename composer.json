@@ -152,6 +152,9 @@
       },
       "acquia/cohesion": {
         "Media alt and name": "patches/cohesion_690.patch"
+      },
+      "drupal/webform_pardot": {
+        "Custom pardot for planet": "patches/webform_pardot.patch"
       }
     }
   },
