@@ -87,3 +87,7 @@ textVideo:
 tabTeamVideo:
   js:
     js/tabTeamVideo.js: {}
+# Planet - Hero - We Are Planet
+hero5050:
+  js:
+    js/planetHero5050.js: {}
