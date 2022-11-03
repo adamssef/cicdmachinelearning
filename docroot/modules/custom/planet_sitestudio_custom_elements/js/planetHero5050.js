@@ -8,7 +8,7 @@
     showMenu();
 
     window.addEventListener("scroll", function () {
-      if (window.scrollY == 0) {
+      if (window.scrollY < 50) {
         showMenu();
       }
     });
