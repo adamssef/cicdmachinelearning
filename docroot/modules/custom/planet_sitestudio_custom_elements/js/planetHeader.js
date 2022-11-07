@@ -40,12 +40,16 @@
           e.preventDefault();
           if (menuState === 0) {
             // Menu is opened;
-            disableScroll();
+            //disableScroll();
             menuState = 1;
             $("body").css("overflow", "hidden");
+
+            $(".coh-container .menu-container").css("position", "fixed");
+            $(".coh-container .menu-container").css("height", "100%");
+            $(".coh-container .menu-container").css("overflow-y", "scroll");
           } else {
             // Menu is closed;
-            enableScroll();
+            //enableScroll();
             menuState = 0;
             $("body").css("overflow", "");
           }

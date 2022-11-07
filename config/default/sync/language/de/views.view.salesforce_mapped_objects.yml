@@ -15,8 +15,6 @@ display:
             items_per_page_options_all_label: '- Alle -'
             offset_label: Versatz
       fields:
-        id:
-          label: ID
         drupal_entity__target_id:
           label: Entität
         salesforce_mapping:

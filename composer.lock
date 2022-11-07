@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e75d1c0135f0b0d8ce9cfe31a5d3737",
+    "content-hash": "caf7ccefead7c373512f0c361b2890e5",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -3748,6 +3748,58 @@
             "homepage": "https://www.drupal.org/project/hal",
             "support": {
                 "source": "https://git.drupalcode.org/project/hal"
+            }
+        },
+        {
+            "name": "drupal/hidden_language",
+            "version": "2.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/hidden_language.git",
+                "reference": "2.0.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/hidden_language-2.0.0-beta1.zip",
+                "reference": "2.0.0-beta1",
+                "shasum": "83c185ee1c71386dd611aca03956556a45e0acf3"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-beta1",
+                    "datestamp": "1616768512",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "RenatoG",
+                    "homepage": "https://www.drupal.org/user/3326031"
+                },
+                {
+                    "name": "bdziewierz",
+                    "homepage": "https://www.drupal.org/user/37286"
+                },
+                {
+                    "name": "rafenden",
+                    "homepage": "https://www.drupal.org/user/1576260"
+                }
+            ],
+            "description": "Hide specific languages on a site.",
+            "homepage": "https://drupal.org/project/hidden_language",
+            "support": {
+                "source": "https://git.drupalcode.org/project/hidden_language"
             }
         },
         {
@@ -16138,6 +16190,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/hidden_language": 10,
         "drupal/node_revision_delete": 5,
         "drupal/pardot": 10,
         "drupal/ultimate_cron": 15,
