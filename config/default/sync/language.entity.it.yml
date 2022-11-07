@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - entity_language_fallback
+    - hidden_language
 third_party_settings:
   entity_language_fallback:
     fallback_langcodes:
@@ -11,8 +12,10 @@ third_party_settings:
       - ''
       - ''
       - ''
+  hidden_language:
+    hidden: true
 id: it
 label: Italian
 direction: ltr
-weight: -8
+weight: -7
 locked: false

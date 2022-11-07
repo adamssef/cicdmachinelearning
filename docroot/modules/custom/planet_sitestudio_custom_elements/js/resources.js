@@ -29,7 +29,6 @@
                   'event_label': $(this).attr('title'),
                   'event_value': 1
                 });
-                //console.log($(this).attr('title'));
               });
             }
           });

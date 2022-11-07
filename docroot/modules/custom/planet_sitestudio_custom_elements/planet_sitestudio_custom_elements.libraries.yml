@@ -79,3 +79,15 @@ cardsWithArrow:
 textsButtonCards:
   js:
     js/textsButtonCards.js: {}
+# Text Video
+textVideo:
+  js:
+    js/textVideo.js: {}
+# Tab Team Video
+tabTeamVideo:
+  js:
+    js/tabTeamVideo.js: {}
+# Planet - Hero - We Are Planet
+hero5050:
+  js:
+    js/planetHero5050.js: {}
