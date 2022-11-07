@@ -53,6 +53,7 @@ module:
   google_analytics: 0
   google_tag: 0
   help: 0
+  hidden_language: 0
   history: 0
   image: 0
   imce: 0
