@@ -62,6 +62,11 @@
                 playerInfoList[i].video_youtube.show();
                 curplayer.playVideo();
 
+                // Pause video on mouseout.
+                playerInfoList[i].video_youtube.mouseout(function () {
+                  curplayer.pauseVideo();
+                });
+
                 // Send data to GA.
                 let video_title = curplayer.getVideoData().title;
                 if (typeof video_title !== 'undefined' && typeof gtag === typeof Function) {
