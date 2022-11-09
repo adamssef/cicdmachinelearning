@@ -38,6 +38,8 @@ enforce:
         - 'https://js-agent.newrelic.com'
         - 'https://pi.pardot.com'
         - 'https://www.youtube.com'
+        - 'https://in2.taskanalytics.com'
+        - 'https://bam.nr-data.net'
     frame-ancestors:
       base: self
   reporting:
