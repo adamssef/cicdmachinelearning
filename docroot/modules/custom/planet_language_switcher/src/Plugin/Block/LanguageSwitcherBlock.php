@@ -96,6 +96,9 @@ class LanguageSwitcherBlock extends BlockBase implements ContainerFactoryPluginI
 
         // Add the url with language.
         $links[$lid]['url'] = '/' . $lid . $nodePath;
+        if ($lid === 'en') {
+          $links[$lid]['url'] = $nodePath;
+        }
 
         $links[$lid]['name'] = $language->getName();
         $links[$lid]['native_lang_name'] = $this->t($nativeLanguage->getName());

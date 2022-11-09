@@ -15,8 +15,6 @@ display:
             items_per_page_options_all_label: '- Tutto -'
             offset_label: Scostamento
       fields:
-        id:
-          label: ID
         drupal_entity__target_id:
           label: Entità
         salesforce_mapping:

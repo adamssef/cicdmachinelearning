@@ -6,14 +6,12 @@ url:
   source: path_prefix
   prefixes:
     en: ''
-    en-GB: en
     it: it
     es: es
     de: de
     fr: fr
   domains:
     en: ''
-    en-GB: ''
     it: ''
     es: ''
     de: ''

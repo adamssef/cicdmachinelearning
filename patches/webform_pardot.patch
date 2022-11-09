@@ -1,0 +1,19 @@
+diff --git a/src/PardotHandler.php b/src/PardotHandler.php
+index 55819d1..dbc17f5 100644
+--- a/src/PardotHandler.php
++++ b/src/PardotHandler.php
+@@ -76,6 +76,14 @@ class PardotHandler implements PardotHandlerInterface {
+     }
+ 
+     $data = $webform_submission->getData();
++
++    // Planet Custom Pardot.
++    if ($data['single_opt_in'] == '1') {
++      $data['single_opt_in'] = 'true';
++    } else {
++      $data['single_opt_in'] = 'false';
++    }
++
+     $mapping = $this->getPardotFieldsMapping($webform_submission);
+     $data = $this->mapData($mapping, $data);
+ 
