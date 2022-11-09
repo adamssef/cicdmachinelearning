@@ -44,7 +44,7 @@ elements: |-
         '#type__access': false
         '#phone__required': true
         '#ext__access': false
-        '#phone__international_initial_country': US
+        '#phone__international_initial_country': GB
       email:
         '#type': email
         '#title': 'E-mail*'
