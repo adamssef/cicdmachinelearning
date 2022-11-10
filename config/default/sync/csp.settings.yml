@@ -40,6 +40,7 @@ enforce:
         - 'https://www.youtube.com'
         - 'https://in2.taskanalytics.com'
         - 'https://bam.nr-data.net'
+        - 'https://snap.licdn.com'
     frame-ancestors:
       base: self
   reporting:
