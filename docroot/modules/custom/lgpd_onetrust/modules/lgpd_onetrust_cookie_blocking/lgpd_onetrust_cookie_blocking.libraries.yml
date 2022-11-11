@@ -1,0 +1,11 @@
+# lgpd_onetrust_cookie_blocking.libraries.yml
+cookie-blocking:
+  version: 1.x
+  js:
+    js/lgpd_onetrust_cookie_blocking.js: {}
+  css:
+    theme:
+      css/lgpd_onetrust_cookie_blocking.css: {}
+  dependencies:
+      - core/jquery
+      - core/drupalSettings

@@ -33,7 +33,6 @@ module:
   config_translation: 0
   contact: 0
   contextual: 0
-  cookiepro: 0
   csp: 0
   csp_extras: 0
   ctools: 0
@@ -59,6 +58,8 @@ module:
   imce: 0
   key: 0
   language: 0
+  lgpd_onetrust: 0
+  lgpd_onetrust_cookie_blocking: 0
   link: 0
   locale: 0
   login_security: 0

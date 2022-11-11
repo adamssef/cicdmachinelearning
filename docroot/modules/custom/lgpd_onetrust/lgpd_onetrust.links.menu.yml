@@ -1,0 +1,6 @@
+# In lgpd_onetrust.links.menu.yml file.
+lgpd_onetrust.admin:
+  title: 'LGPD compliance'
+  description: 'Make your website compliant with the LGPD Directive on Privacy and Data protection regulations using One Trust.'
+  parent: system.admin_config_development
+  url: internal:/admin/config/system/lgpd-onetrust

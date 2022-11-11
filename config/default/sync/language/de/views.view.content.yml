@@ -12,6 +12,7 @@ display:
         name:
           label: Autor
         status:
+          label: Status
           settings:
             format_custom_false: 'Nicht veröffentlicht'
             format_custom_true: Veröffentlicht
@@ -40,6 +41,8 @@ display:
           expose:
             label: Inhaltstyp
         status:
+          expose:
+            label: Status
           group_info:
             label: Veröffentlichungsstatus
             group_items:

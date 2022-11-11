@@ -1,0 +1,4 @@
+lgpd_onetrust.settings:
+  route_name: lgpd_onetrust.settings
+  title: 'LGPD compliance'
+  base_route: lgpd_onetrust.settings
