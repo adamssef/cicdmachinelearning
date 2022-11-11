@@ -117,7 +117,7 @@ elements: |-
     '#type': textfield
     '#title': 'Website language'
     '#autocomplete': 'off'
-    '#default_value': '[language:langcode]'
+    '#default_value': '[language:name]'
     '#access': false
   website_origin_page:
     '#type': textfield
