@@ -91,3 +91,7 @@ tabTeamVideo:
 hero5050:
   js:
     js/planetHero5050.js: {}
+# Registered Companies
+registeredCompanies:
+  js:
+    js/registeredCompanies.js: {}
