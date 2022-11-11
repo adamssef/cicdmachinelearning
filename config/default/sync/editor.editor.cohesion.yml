@@ -55,6 +55,10 @@ settings:
             - Styles
             - DX8Styles
             - DX8InlineStyles
+        -
+          name: Table
+          items:
+            - Table
   plugins:
     stylescombo:
       styles: ''
