@@ -91,3 +91,7 @@ tabTeamVideo:
 hero5050:
   js:
     js/planetHero5050.js: {}
+#Products Panel Tabs Scroll
+tabsNavScroll:
+  js:
+    js/tabsNavScrollDesktop.js: {}
