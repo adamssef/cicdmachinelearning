@@ -69,8 +69,7 @@ elements: |-
           Retail: Retail
           Hospitality: Hospitality
           Financial: Financial
-          Partner: Partner
-          Parking: Parking
+          Partners: Partners
           Other: Other
         '#required': true
       address_country:
@@ -128,6 +127,31 @@ elements: |-
     '#type': textfield
     '#title': 'lead source'
     '#default_value': Web
+    '#access': false
+  utm_source:
+    '#type': textfield
+    '#title': utm_source
+    '#default_value': '[current-page:query:utm_source:clear]'
+    '#access': false
+  utm_medium:
+    '#type': textfield
+    '#title': utm_medium
+    '#default_value': '[current-page:query:utm_medium:clear]'
+    '#access': false
+  utm_campaign:
+    '#type': textfield
+    '#title': utm_campaign
+    '#default_value': '[current-page:query:utm_campaign:clear]'
+    '#access': false
+  utm_content:
+    '#type': textfield
+    '#title': utm_content
+    '#default_value': '[current-page:query:utm_content:clear]'
+    '#access': false
+  utm_term:
+    '#type': textfield
+    '#title': utm_term
+    '#default_value': '[current-page:query:utm_term:clear]'
     '#access': false
 css: ''
 javascript: ''
