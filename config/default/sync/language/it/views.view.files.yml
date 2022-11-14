@@ -5,6 +5,8 @@ display:
       fields:
         filename:
           label: Nome
+        filesize:
+          label: Dimensione
         status:
           label: Stato
       pager:

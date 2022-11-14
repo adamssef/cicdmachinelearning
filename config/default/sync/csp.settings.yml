@@ -41,6 +41,8 @@ enforce:
         - 'https://in2.taskanalytics.com'
         - 'https://bam.nr-data.net'
         - 'https://snap.licdn.com'
+        - 'https://googleads.g.doubleclick.net'
+        - 'https://info.weareplanet.com'
     frame-ancestors:
       base: self
   reporting:

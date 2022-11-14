@@ -136,7 +136,7 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: url
-  confirmation_url: /success-submition
+  confirmation_url: /success-submission
   confirmation_title: ''
   confirmation_message: ''
   confirmation_attributes: {  }
