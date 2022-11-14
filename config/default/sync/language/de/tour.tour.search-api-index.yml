@@ -7,6 +7,7 @@ tips:
     label: 'Index Status'
     body: 'Dies ist eine Zusammenfassung darüber, wie viele Elemente in diesem Index bekannt sind und wie viele Elemente in ihrer neuesten Version indiziert wurden. Elemente, die noch nicht indiziert wurden, können von der Suchfunktion nicht gefunden werden.'
   search-api-index-status:
+    label: Status
     body: 'Zeigt an, ob der Index aktuell aktiviert oder deaktiviert ist.'
   search-api-index-datasources:
     label: Datenquellen
