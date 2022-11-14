@@ -10,7 +10,6 @@ enabled_entity_types:
   cohesion_helper: cohesion_helper
   cohesion_helper_category: cohesion_helper_category
   cohesion_icon_library: cohesion_icon_library
-  cohesion_master_templates: cohesion_master_templates
   cohesion_menu_templates: cohesion_menu_templates
   cohesion_scss_variable: cohesion_scss_variable
   cohesion_style_guide: cohesion_style_guide
@@ -21,5 +20,6 @@ enabled_entity_types:
   cohesion_website_settings: cohesion_website_settings
   image_style: image_style
   view: view
+  cohesion_master_templates: '0'
 package_export_limit: 10
 full_export_limit: 10

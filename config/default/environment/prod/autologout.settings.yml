@@ -1,6 +1,6 @@
 _core:
   default_config_hash: kwGGKvKSU7cPTEgTMWrbW0o9Jwe6FSDmpgdUWmIXCdg
-enabled: false
+enabled: true
 timeout: 1800
 max_timeout: 172800
 padding: 20
