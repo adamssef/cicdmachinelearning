@@ -94,20 +94,7 @@ function planet_sitestudio_custom_elements_theme($existing, $type, $theme, $path
       ],
       'render element' => 'children',
     ],
-    'html__no_accessibility' => [
-      'base hook' => 'html',
-      'render element' => 'html',
-    ],
   ];
-}
-
-/**
- * Implements hook_theme_suggestions_HOOK_alter().
- *
- * @codeCoverageIgnore
- */
-function planet_sitestudio_custom_elements_theme_suggestions_html_alter(array &$suggestions, array $variables) {
-  $suggestions[] = 'html__no_accessibility';
 }
 
 /**
