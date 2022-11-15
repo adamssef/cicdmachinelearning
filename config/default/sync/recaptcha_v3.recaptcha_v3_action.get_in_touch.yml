@@ -5,4 +5,4 @@ dependencies: {  }
 id: get_in_touch
 label: 'Get in touch'
 threshold: 0.5
-challenge: default
+challenge: ''
