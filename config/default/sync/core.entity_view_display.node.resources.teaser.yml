@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.resources.field_in_this_article
-    - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_resources_author
     - field.field.node.resources.field_resources_author_role
     - field.field.node.resources.field_resources_background_image
@@ -29,8 +27,6 @@ content:
     weight: 100
     region: content
 hidden:
-  field_in_this_article: true
-  field_layout_canvas: true
   field_resources_author: true
   field_resources_author_role: true
   field_resources_background_image: true

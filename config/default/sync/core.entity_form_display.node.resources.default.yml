@@ -3,8 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.resources.field_in_this_article
-    - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_resources_author
     - field.field.node.resources.field_resources_author_role
     - field.field.node.resources.field_resources_background_image
@@ -16,7 +14,6 @@ dependencies:
     - field.field.node.resources.field_resources_title
     - node.type.resources
   module:
-    - cohesion_elements
     - cohesion_templates
     - media_library
     - path
@@ -32,25 +29,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_in_this_article:
-    type: text_textarea_with_summary
-    weight: 14
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
-  field_layout_canvas:
-    type: cohesion_layout_builder_widget
-    weight: 16
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_resources_author:
     type: string_textfield
-    weight: 12
+    weight: 11
     region: content
     settings:
       size: 60
@@ -58,7 +39,7 @@ content:
     third_party_settings: {  }
   field_resources_author_role:
     type: string_textfield
-    weight: 13
+    weight: 12
     region: content
     settings:
       size: 60
@@ -83,7 +64,7 @@ content:
         enabled: false
   field_resources_body:
     type: text_textarea_with_summary
-    weight: 15
+    weight: 13
     region: content
     settings:
       rows: 9
@@ -93,7 +74,7 @@ content:
     third_party_settings: {  }
   field_resources_published_time:
     type: datetime_timestamp
-    weight: 19
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -107,7 +88,7 @@ content:
     third_party_settings: {  }
   field_resources_tags:
     type: entity_reference_autocomplete
-    weight: 17
+    weight: 14
     region: content
     settings:
       match_operator: CONTAINS
@@ -117,7 +98,7 @@ content:
     third_party_settings: {  }
   field_resources_template:
     type: cohesion_template_selector_widget
-    weight: 18
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -177,7 +158,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

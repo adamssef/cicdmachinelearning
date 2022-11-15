@@ -3,8 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.resources.field_in_this_article
-    - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_resources_author
     - field.field.node.resources.field_resources_author_role
     - field.field.node.resources.field_resources_background_image
@@ -16,7 +14,6 @@ dependencies:
     - field.field.node.resources.field_resources_title
     - node.type.resources
   module:
-    - cohesion_elements
     - text
     - user
 id: node.resources.default
@@ -24,22 +21,6 @@ targetEntityType: node
 bundle: resources
 mode: default
 content:
-  field_in_this_article:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 10
-    region: content
-  field_layout_canvas:
-    type: cohesion_entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 11
-    region: content
   field_resources_author:
     type: string
     label: hidden
@@ -93,7 +74,7 @@ content:
     type: entity_reference_label
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 8
     region: content
