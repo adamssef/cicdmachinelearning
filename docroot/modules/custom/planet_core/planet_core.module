@@ -12,9 +12,36 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * Changes the title of the user page.
  */
-function planet_core_preprocess_html(&$variables): void {
+function planet_core_preprocess_html(&$variables): void
+{
   $routeName = \Drupal::routeMatch()->getRouteName();
-  if($routeName === 'entity.user.canonical') {
+  if ($routeName === 'entity.user.canonical') {
     $variables['head_title']['title'] = '';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * @codeCoverageIgnore
+ */
+function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+  // Add UTM to the get in touch webform.
+  if (str_contains($form_id, "webform_submission_get_in_touch")) {
+    // Get X-Acquia-Stripped-Query header.
+    // This is because of acquia varnish.
+    $request = \Drupal::requestStack()->getCurrentRequest();
+    $xAcquiaStrippedQuery = $request->headers->get('X-Acquia-Stripped-Query');
+    if (!empty($xAcquiaStrippedQuery)) {
+      parse_str($xAcquiaStrippedQuery, $get_array);
+      if (is_array($get_array) && !empty($get_array)) {
+        $form['elements']['utm_source']['#default_value'] = (isset($get_array['utm_source'])) ? $get_array['utm_source'] : '';
+        $form['elements']['utm_medium']['#default_value'] = (isset($get_array['utm_medium'])) ? $get_array['utm_medium'] : '';
+        $form['elements']['utm_campaign']['#default_value'] = (isset($get_array['utm_campaign'])) ? $get_array['utm_campaign'] : '';
+        $form['elements']['utm_content']['#default_value'] = (isset($get_array['utm_content'])) ? $get_array['utm_content'] : '';
+        $form['elements']['utm_term']['#default_value'] = (isset($get_array['utm_term'])) ? $get_array['utm_term'] : '';
+      }
+    }
   }
 }
