@@ -5,73 +5,50 @@
  * Custom hooks functions for the planet_core module.
  */
 
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\OpenDialogCommand;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements hook_form_BASE_FORM_ID_alter().
+ * Implements hook_preprocess_html().
+ *
+ * Changes the title of the user page.
  */
-function planet_core_form_webform_submission_get_in_touch_form_alter(&$form, FormStateInterface $form_state, $form_id): void {
-  unset($form['#token']);
-
-  $form['elements']['layout']['second_column']['about_your_business']['country']['#title'] = '';
-  $form['elements']['layout']['first_column']['about_your_project']['textarea']['#title'] = '';
-
-  $form['elements']['layout']['second_column']['about_your_business']['where_are_you_based']['#ajax'] = [
-    'callback' => '_updated_region_checkbox_action',
-    'wrapper' => 'country-region-wrapper',
-    'progress' => [
-      'message' => '',
-    ],
-  ];
-
-  $form['elements']['layout']['second_column']['about_your_business']['country']['#prefix'] = '<div id="country-region-wrapper">';
-  $form['elements']['layout']['second_column']['about_your_business']['country']['#suffix'] = '</div>';
-}
-
-/**
- * Implements custom ajax callback function.
- *
- * Updates the country field from the region field.
- *
- * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
- * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
- */
-function _updated_region_checkbox_action(array &$form, FormStateInterface &$form_state) {
-  $form['elements']['layout']['second_column']['about_your_business']['country']['#options'] = _get_countries_by_region(
-    $form_state->getValue('where_are_you_based')
-  );
-
-  return $form['elements']['layout']['second_column']['about_your_business']['country'];
-}
-
-/**
- * Returns a list of countries from a region.
- *
- * @param int $regionTid
- *   The tid of a region.
- *
- * @return array
- *   The list of countries from a region.
- *
- * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
- * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
- */
-function _get_countries_by_region(int $regionTid): array
-{
-  $countries = [];
-  $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
-    'field_wbregion' => $regionTid,
-  ]);
-
-  foreach ($terms as $term) {
-    $countries[$term->id()] = $term->label();
+function planet_core_preprocess_html(&$variables): void {
+  $routeName = \Drupal::routeMatch()->getRouteName();
+  if ($routeName === 'entity.user.canonical') {
+    $variables['head_title']['title'] = '';
   }
-
-  return $countries;
 }
 
+/**
+ * Implements hook_form_alter().
+ *
+ * @codeCoverageIgnore
+ */
+function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Add UTM to the get in touch webform.
+  if (str_contains($form_id, "webform_submission_get_in_touch")) {
+    // Get X-Acquia-Stripped-Query header.
+    // This is because of acquia varnish.
+    $request = \Drupal::requestStack()->getCurrentRequest();
+    $xAcquiaStrippedQuery = $request->headers->get('X-Acquia-Stripped-Query');
+    if (!empty($xAcquiaStrippedQuery)) {
+      parse_str($xAcquiaStrippedQuery, $get_array);
+      if (is_array($get_array) && !empty($get_array)) {
+        $form['elements']['utm_source']['#default_value'] = (isset($get_array['utm_source'])) ? $get_array['utm_source'] : '';
+        $form['elements']['utm_medium']['#default_value'] = (isset($get_array['utm_medium'])) ? $get_array['utm_medium'] : '';
+        $form['elements']['utm_campaign']['#default_value'] = (isset($get_array['utm_campaign'])) ? $get_array['utm_campaign'] : '';
+        $form['elements']['utm_content']['#default_value'] = (isset($get_array['utm_content'])) ? $get_array['utm_content'] : '';
+        $form['elements']['utm_term']['#default_value'] = (isset($get_array['utm_term'])) ? $get_array['utm_term'] : '';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_views_exposed_form_alter().
+ *
+ * Creates region/country dependent filter.
+ */
 function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
   if ($form['#id'] === 'views-exposed-form-companies-registered-companies') {
     unset($form['region']['#options']['All']);
@@ -89,6 +66,9 @@ function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
   }
 }
 
+/**
+ * Gets countries associated with the region.
+ */
 function _get_associative_countries_with_region(string $regionId): array {
   $countries = [];
   $countries['All'] = 'All';

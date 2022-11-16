@@ -1,0 +1,9 @@
+name: LGPD One Trust Implementation
+description: LGPD One Trust Implementation for Brazil sites.
+package: LGPD Onetrust
+
+type: module
+core_version_requirement: ^8 || ^9
+
+configure: lgpd_onetrust.settings
+version: 8.x-1.1

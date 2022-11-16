@@ -95,3 +95,7 @@ hero5050:
 registeredCompanies:
   js:
     js/registeredCompanies.js: {}
+#Products Panel Tabs Scroll
+tabsNavScroll:
+  js:
+    js/tabsNavScrollDesktop.js: {}

@@ -1,0 +1,8 @@
+name: LGPD - Block cookies from Javascript
+description: Block the external cookies load from Javascripts
+package: LGPD Onetrust
+
+type: module
+core_version_requirement: ^8 || ^9
+
+version: 8.x-1.2
