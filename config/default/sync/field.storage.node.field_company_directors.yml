@@ -1,0 +1,21 @@
+uuid: 2b567331-fbd8-46ec-b640-5121b80b9859
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_company_directors
+field_name: field_company_directors
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
