@@ -68,7 +68,6 @@ elements: |-
         '#options':
           Retail: Retail
           Hospitality: Hospitality
-          Financial: Financial
           Partners: Partners
           Other: Other
         '#required': true
