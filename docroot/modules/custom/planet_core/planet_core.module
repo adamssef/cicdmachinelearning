@@ -31,6 +31,7 @@ function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id
     // This is because of acquia varnish.
     $request = \Drupal::requestStack()->getCurrentRequest();
     $xAcquiaStrippedQuery = $request->headers->get('X-Acquia-Stripped-Query');
+
     if (!empty($xAcquiaStrippedQuery)) {
       parse_str($xAcquiaStrippedQuery, $get_array);
       if (is_array($get_array) && !empty($get_array)) {
