@@ -35,11 +35,11 @@ function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id
     if (!empty($xAcquiaStrippedQuery)) {
       parse_str($xAcquiaStrippedQuery, $get_array);
       if (is_array($get_array) && !empty($get_array)) {
-        $form['elements']['utm_source']['#default_value'] = (isset($get_array['utm_source'])) ? $get_array['utm_source'] : '';
-        $form['elements']['utm_medium']['#default_value'] = (isset($get_array['utm_medium'])) ? $get_array['utm_medium'] : '';
-        $form['elements']['utm_campaign']['#default_value'] = (isset($get_array['utm_campaign'])) ? $get_array['utm_campaign'] : '';
-        $form['elements']['utm_content']['#default_value'] = (isset($get_array['utm_content'])) ? $get_array['utm_content'] : '';
-        $form['elements']['utm_term']['#default_value'] = (isset($get_array['utm_term'])) ? $get_array['utm_term'] : '';
+        $form['elements']['utm_source']['#value'] = (isset($get_array['utm_source'])) ? $get_array['utm_source'] : '';
+        $form['elements']['utm_medium']['#value'] = (isset($get_array['utm_medium'])) ? $get_array['utm_medium'] : '';
+        $form['elements']['utm_campaign']['#value'] = (isset($get_array['utm_campaign'])) ? $get_array['utm_campaign'] : '';
+        $form['elements']['utm_content']['#value'] = (isset($get_array['utm_content'])) ? $get_array['utm_content'] : '';
+        $form['elements']['utm_term']['#value'] = (isset($get_array['utm_term'])) ? $get_array['utm_term'] : '';
       }
     }
   }
