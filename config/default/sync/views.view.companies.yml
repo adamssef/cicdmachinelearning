@@ -839,7 +839,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<h3 class=\"coh-style-heading-3-planet\">{{ field_country }}</h3>\r\n<div class=\"coh-header\">We operate in [view:total-rows] locations across {{ field_region }}</div>"
+            value: "<h3 class=\"coh-active-country coh-style-heading-3-planet\">{{ field_country }}</h3>\r\n<div class=\"coh-header\">We operate in [view:total-rows] locations across {{ field_region }}</div>"
             format: cohesion
           tokenize: true
       footer: {  }
