@@ -1,0 +1,19 @@
+uuid: 9d105a50-c34b-44cb-8ebe-4b5cf2cc6bf9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_preview
+field_name: field_preview
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
