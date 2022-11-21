@@ -1,0 +1,16 @@
+uuid: 80a99c17-ef22-4fdc-a440-2a7c3cc8d5c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.companies
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.companies
+target_entity_type_id: node
+target_bundle: companies
+default_langcode: site_default
+language_alterable: true

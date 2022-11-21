@@ -1,0 +1,66 @@
+uuid: 19581b4e-cfec-425d-a8e2-57bd6a7a6a0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.companies.field_address
+    - field.field.node.companies.field_company_directors
+    - field.field.node.companies.field_company_number
+    - field.field.node.companies.field_company_secretary
+    - field.field.node.companies.field_country
+    - node.type.companies
+  module:
+    - user
+id: node.companies.default
+targetEntityType: node
+bundle: companies
+mode: default
+content:
+  field_address:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_company_directors:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_company_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_company_secretary:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_country:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
