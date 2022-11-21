@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform\WebformSubmissionInterface;
 
 /**
  * Implements hook_preprocess_html().
@@ -35,12 +36,53 @@ function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id
     if (!empty($xAcquiaStrippedQuery)) {
       parse_str($xAcquiaStrippedQuery, $get_array);
       if (is_array($get_array) && !empty($get_array)) {
-        $form['elements']['utm_source']['#value'] = (isset($get_array['utm_source'])) ? $get_array['utm_source'] : '';
-        $form['elements']['utm_medium']['#value'] = (isset($get_array['utm_medium'])) ? $get_array['utm_medium'] : '';
-        $form['elements']['utm_campaign']['#value'] = (isset($get_array['utm_campaign'])) ? $get_array['utm_campaign'] : '';
-        $form['elements']['utm_content']['#value'] = (isset($get_array['utm_content'])) ? $get_array['utm_content'] : '';
-        $form['elements']['utm_term']['#value'] = (isset($get_array['utm_term'])) ? $get_array['utm_term'] : '';
+
+        $tempstore = \Drupal::service('tempstore.private')->get('planet_tempstore');
+
+        if (isset($get_array['utm_source']) && !empty($get_array['utm_source'])) {
+          $tempstore->set('utm_source', $get_array['utm_source']);
+        }
+        if (isset($get_array['utm_medium']) && !empty($get_array['utm_medium'])) {
+          $tempstore->set('utm_medium', $get_array['utm_medium']);
+        }
+        if (isset($get_array['utm_campaign']) && !empty($get_array['utm_campaign'])) {
+          $tempstore->set('utm_campaign', $get_array['utm_campaign']);
+        }
+        if (isset($get_array['utm_content']) && !empty($get_array['utm_content'])) {
+          $tempstore->set('utm_content', $get_array['utm_content']);
+        }
+        if (isset($get_array['utm_term']) && !empty($get_array['utm_term'])) {
+          $tempstore->set('utm_term', $get_array['utm_term']);
+        }
       }
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for webform_submission entities.
+ */
+function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission)
+{
+  // Add UTM to the get in touch webform.
+  if ($webform_submission->getWebform()->id() == 'get_in_touch') {
+
+    $tempstore = \Drupal::service('tempstore.private')->get('planet_tempstore');
+
+    if (!empty($tempstore->get('utm_source'))) {
+      $webform_submission->setElementData('utm_source', $tempstore->get('utm_source'));
+    }
+    if (!empty($tempstore->get('utm_medium'))) {
+      $webform_submission->setElementData('utm_medium', $tempstore->get('utm_medium'));
+    }
+    if (!empty($tempstore->get('utm_campaign'))) {
+      $webform_submission->setElementData('utm_campaign', $tempstore->get('utm_campaign'));
+    }
+    if (!empty($tempstore->get('utm_content'))) {
+      $webform_submission->setElementData('utm_content', $tempstore->get('utm_content'));
+    }
+    if (!empty($tempstore->get('utm_term'))) {
+      $webform_submission->setElementData('utm_term', $tempstore->get('utm_term'));
     }
   }
 }
