@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.resources.field_field_resources_metatag
     - field.field.node.resources.field_in_this_article
     - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_resources_author
@@ -19,6 +20,7 @@ dependencies:
     - cohesion_elements
     - cohesion_templates
     - media_library
+    - metatag
     - path
     - text
 id: node.resources.default
@@ -31,6 +33,14 @@ content:
     weight: 2
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_field_resources_metatag:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_in_this_article:
     type: text_textarea_with_summary
