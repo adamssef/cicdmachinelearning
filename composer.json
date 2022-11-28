@@ -29,6 +29,7 @@
     "drupal/csp": "^1.16",
     "drupal/ctools": "^3.11",
     "drupal/devel": "^4.1",
+    "drupal/duplicate_role": "^1.2",
     "drupal/dynamic_entity_reference": "^1.16",
     "drupal/entity_language_fallback": "^1.4",
     "drupal/environment_indicator": "^4.0",
