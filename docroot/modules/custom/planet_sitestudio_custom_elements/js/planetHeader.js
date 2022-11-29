@@ -19,7 +19,7 @@
           !menu.classList.contains("menu-visible")
         ) {
           header.classList.add("white-bg");
-        } else {
+        } else if (!header.classList.contains("white-bg-fixed")) {
           header.classList.remove("white-bg");
         }
       });
