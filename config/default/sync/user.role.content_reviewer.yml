@@ -1,4 +1,4 @@
-uuid: 90758f4c-22b5-4047-8d53-d354b6a27ff4
+uuid: 3fe69270-8364-4ccf-825f-75514b3935fe
 langcode: en
 status: true
 dependencies:
@@ -24,12 +24,10 @@ dependencies:
     - system
     - toolbar
     - tour
-_core:
-  default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
-id: content_editor
-label: 'Content editor'
-weight: -8
-is_admin: false
+id: content_reviewer
+label: 'Content reviewer'
+weight: -7
+is_admin: null
 permissions:
   - 'access administration pages'
   - 'access analytics'
@@ -104,11 +102,15 @@ permissions:
   - 'update content translations'
   - 'use custom component builder'
   - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
   - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
   - 'use editorial transition publish_to_in_review'
   - 'use text format cohesion'
   - 'view all revisions'
   - 'view any unpublished content'
+  - 'view latest version'
   - 'view locations_contacts revisions'
   - 'view own unpublished content'
   - 'view resources revisions'
