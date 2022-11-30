@@ -96,6 +96,11 @@ function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
   if ($form['#id'] === 'views-exposed-form-companies-registered-companies') {
     unset($form['region']['#options']['All']);
 
+    $regions = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('regions');
+    if ($region = reset($regions)) {
+      $form['region']['#default_value'] = $region->tid;
+    }
+
     $input = $form_state->getUserInput();
     $selectedRegion = $input['region'];
     if ($selectedRegion === 'All') {
