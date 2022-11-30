@@ -4,4 +4,5 @@ ignored_config_entities:
   - 'cohesion_*'
   - system.site
   - views.view.locations_contacts
+  - views.view.companies
 enable_export_filtering: true
