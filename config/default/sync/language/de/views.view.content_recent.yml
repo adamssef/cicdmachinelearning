@@ -2,6 +2,9 @@ display:
   default:
     display_title: Standard
     display_options:
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: Anwenden

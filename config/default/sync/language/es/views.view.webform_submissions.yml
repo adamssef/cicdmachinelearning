@@ -7,9 +7,13 @@ display:
           submit_button: Aplicar
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         options:
           tags:
+            previous: ‹‹
+            next: ››
             first: '« Primero'
             last: 'Último »'
           expose:
@@ -17,6 +21,15 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
       fields:
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        created:
+          label: Created
+          separator: ', '
+        remote_addr:
+          separator: ', '
         view_webform_submission:
           label: Operaciones
       arguments:
@@ -28,6 +41,21 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Acción
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          separator: ', '
+        locked:
+          separator: ', '
+        created:
+          label: Created
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          separator: ', '
         operations:
           label: Operaciones
   embed_manage:
@@ -35,6 +63,21 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Acción
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          separator: ', '
+        locked:
+          separator: ', '
+        created:
+          label: Created
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          separator: ', '
         view_webform_submission:
           label: Operaciones
         edit_webform_submission:
@@ -42,5 +85,20 @@ display:
   embed_review:
     display_options:
       fields:
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          separator: ', '
+        locked:
+          separator: ', '
+        created:
+          label: Created
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          separator: ', '
         view_webform_submission:
           label: Operaciones

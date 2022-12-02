@@ -1,0 +1,13 @@
+diff --git a/modules/redirect_domain/src/EventSubscriber/DomainRedirectRequestSubscriber.php b/modules/redirect_domain/src/EventSubscriber/DomainRedirectRequestSubscriber.php
+index 0668692..45f3fdd 100644
+--- a/modules/redirect_domain/src/EventSubscriber/DomainRedirectRequestSubscriber.php
++++ b/modules/redirect_domain/src/EventSubscriber/DomainRedirectRequestSubscriber.php
+@@ -76,7 +76,7 @@ class DomainRedirectRequestSubscriber implements EventSubscriberInterface {
+     $domains = $this->domainConfig->get('domain_redirects');
+     if (!empty($domains)) {
+       $host = $request->getHost();
+-      $path = $request->getPathInfo();
++      $path = rtrim($request->getPathInfo(), '/');
+       $protocol = $request->getScheme() . '://';
+       $destination = NULL;
+ 
