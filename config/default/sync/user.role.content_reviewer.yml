@@ -1,0 +1,117 @@
+uuid: 3fe69270-8364-4ccf-825f-75514b3935fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.cohesion
+    - media.type.image
+    - node.type.locations_contacts
+    - node.type.page
+    - node.type.resources
+    - workflows.workflow.editorial
+  module:
+    - cohesion
+    - cohesion_elements
+    - comment
+    - content_moderation
+    - content_translation
+    - contextual
+    - filter
+    - media
+    - menu_link_content
+    - node
+    - path
+    - system
+    - toolbar
+    - tour
+id: content_reviewer
+label: 'Content reviewer'
+weight: -7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access analytics'
+  - 'access animate on view'
+  - 'access component builder elements group'
+  - 'access components'
+  - 'access content elements group'
+  - 'access content overview'
+  - 'access context visibility'
+  - 'access contextual links'
+  - 'access cpt_cat_general_components cohesion_component_category group'
+  - 'access cpt_cat_layout_components cohesion_component_category group'
+  - 'access cpt_cat_planet_components cohesion_component_category group'
+  - 'access custom elements group'
+  - 'access drupal core elements group'
+  - 'access elements'
+  - 'access fields'
+  - 'access form fields fields group'
+  - 'access form help fields group'
+  - 'access form layout fields group'
+  - 'access helpers'
+  - 'access hide no data'
+  - 'access hlp_cat_uncategorized cohesion_helper_category group'
+  - 'access interactive elements group'
+  - 'access layout elements group'
+  - 'access markup'
+  - 'access media elements group'
+  - 'access media overview'
+  - 'access menu elements group'
+  - 'access seo'
+  - 'access styles'
+  - 'access tokens'
+  - 'access toolbar'
+  - 'access tour'
+  - 'access view elements group'
+  - 'administer component categories'
+  - 'administer component content'
+  - 'administer components'
+  - 'administer helper categories'
+  - 'administer helpers'
+  - 'administer url aliases'
+  - 'create content translations'
+  - 'create image media'
+  - 'create locations_contacts content'
+  - 'create page content'
+  - 'create resources content'
+  - 'create url aliases'
+  - 'delete content translations'
+  - 'delete own image media'
+  - 'delete own locations_contacts content'
+  - 'delete own page content'
+  - 'delete own resources content'
+  - 'delete page revisions'
+  - 'edit any image media'
+  - 'edit any locations_contacts content'
+  - 'edit any page content'
+  - 'edit any resources content'
+  - 'edit own comments'
+  - 'edit own image media'
+  - 'edit own locations_contacts content'
+  - 'edit own page content'
+  - 'edit own resources content'
+  - 'revert all revisions'
+  - 'translate any entity'
+  - 'translate cohesion_layout'
+  - 'translate editable entities'
+  - 'translate image media'
+  - 'translate locations_contacts node'
+  - 'translate menu_link_content'
+  - 'translate page node'
+  - 'translate resources node'
+  - 'update content translations'
+  - 'use custom component builder'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use editorial transition publish_to_in_review'
+  - 'use text format cohesion'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view locations_contacts revisions'
+  - 'view own unpublished content'
+  - 'view resources revisions'
+  - 'view the administration theme'

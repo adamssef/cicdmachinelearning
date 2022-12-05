@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.resources.field_field_resources_metatag
     - field.field.node.resources.field_in_this_article
     - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_resources_author
@@ -17,6 +18,7 @@ dependencies:
     - node.type.resources
   module:
     - cohesion_elements
+    - metatag
     - text
     - user
 id: node.resources.default
@@ -24,12 +26,19 @@ targetEntityType: node
 bundle: resources
 mode: default
 content:
+  field_field_resources_metatag:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
   field_in_this_article:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 9
     region: content
   field_layout_canvas:
     type: cohesion_entity_reference_revisions_entity_view
@@ -38,7 +47,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 11
+    weight: 10
     region: content
   field_resources_author:
     type: string
@@ -70,7 +79,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_resources_published_time:
     type: timestamp
@@ -80,7 +89,7 @@ content:
       custom_date_format: d-F-Y
       timezone: ''
     third_party_settings: {  }
-    weight: 9
+    weight: 8
     region: content
   field_resources_subtitle:
     type: basic_string
@@ -95,7 +104,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_resources_title:
     type: string
@@ -111,6 +120,7 @@ content:
     weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   field_resources_template: true
   langcode: true
   search_api_excerpt: true

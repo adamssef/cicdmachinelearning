@@ -1,5 +1,6 @@
 display:
   default:
+    display_title: Master
     display_options:
       exposed_form:
         options:
@@ -14,15 +15,24 @@ display:
             items_per_page_label: 'Elemente pro Seite'
             items_per_page_options_all_label: '- Alle -'
             offset_label: Versatz
+          tags:
+            previous: ‹‹
+            next: ››
       fields:
         id:
           label: ID
+          separator: ', '
         drupal_entity__target_id:
           label: Entität
+          separator: ', '
+        salesforce_id_1:
+          separator: ', '
         salesforce_mapping:
           label: Zuordnung
+          separator: ', '
         changed:
           label: 'Zuletzt aktualisiert'
+          separator: ', '
         operations:
           label: Aktionslinks
   page_1:

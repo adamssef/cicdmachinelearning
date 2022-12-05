@@ -1,0 +1,26 @@
+uuid: 24bc977b-a17b-4161-847f-609ed2f984da
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.case_studies.field_layout_canvas
+    - field.field.node.case_studies.field_preview
+    - node.type.case_studies
+  module:
+    - user
+id: node.case_studies.teaser
+targetEntityType: node
+bundle: case_studies
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_layout_canvas: true
+  field_preview: true
+  langcode: true
+  search_api_excerpt: true

@@ -8,10 +8,12 @@ dependencies:
     - node.type.locations_contacts
     - node.type.page
     - node.type.resources
+    - workflows.workflow.editorial
   module:
     - cohesion
     - cohesion_elements
     - comment
+    - content_moderation
     - content_translation
     - contextual
     - filter
@@ -26,7 +28,7 @@ _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
 label: 'Content editor'
-weight: 2
+weight: -8
 is_admin: false
 permissions:
   - 'access administration pages'
@@ -101,8 +103,12 @@ permissions:
   - 'translate resources node'
   - 'update content translations'
   - 'use custom component builder'
+  - 'use editorial transition archive'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish_to_in_review'
   - 'use text format cohesion'
   - 'view all revisions'
+  - 'view any unpublished content'
   - 'view locations_contacts revisions'
   - 'view own unpublished content'
   - 'view resources revisions'

@@ -1,0 +1,18 @@
+uuid: b5fbacb4-39ed-47de-b2a9-ee75de1dbed6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Case studies'
+type: case_studies
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

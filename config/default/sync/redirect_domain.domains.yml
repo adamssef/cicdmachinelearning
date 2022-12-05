@@ -1,0 +1,83 @@
+_core:
+  default_config_hash: CgXLPQkHCGerCdDtMO8wK9Er4j6iy1iMOyalk8iRgrE
+domain_redirects:
+  'www:proximis:com':
+    -
+      sub_path: /contact
+      destination: www.weareplanet.com/contact
+    -
+      sub_path: /es/contact
+      destination: www.weareplanet.com/contact
+    -
+      sub_path: /en/contact
+      destination: www.weareplanet.com/contact
+    -
+      sub_path: /ressources
+      destination: www.weareplanet.com/resources
+    -
+      sub_path: /en/resources
+      destination: www.weareplanet.com/resources
+    -
+      sub_path: /es/recursos
+      destination: www.weareplanet.com/resources
+    -
+      sub_path: /a-propos
+      destination: www.weareplanet.com/about
+    -
+      sub_path: /en/about
+      destination: www.weareplanet.com/about
+    -
+      sub_path: /es/nosotros
+      destination: www.weareplanet.com/about
+    -
+      sub_path: /votre-carriere-chez-proximis
+      destination: www.weareplanet.com/careers
+    -
+      sub_path: /en/career
+      destination: www.weareplanet.com/careers
+    -
+      sub_path: /es/votre-carriere-chez-proximis
+      destination: www.weareplanet.com/careers
+    -
+      sub_path: '/*'
+      destination: www.weareplanet.com/unified-commerce
+  'proximis:com':
+    -
+      sub_path: /contact
+      destination: www.weareplanet.com/contact
+    -
+      sub_path: /es/contact
+      destination: www.weareplanet.com/contact
+    -
+      sub_path: /en/contact
+      destination: www.weareplanet.com/contact
+    -
+      sub_path: /ressources
+      destination: www.weareplanet.com/resources
+    -
+      sub_path: /en/resources
+      destination: www.weareplanet.com/resources
+    -
+      sub_path: /es/recursos
+      destination: www.weareplanet.com/resources
+    -
+      sub_path: /a-propos
+      destination: www.weareplanet.com/about
+    -
+      sub_path: /en/about
+      destination: www.weareplanet.com/about
+    -
+      sub_path: /es/nosotros
+      destination: www.weareplanet.com/about
+    -
+      sub_path: /votre-carriere-chez-proximis
+      destination: www.weareplanet.com/careers
+    -
+      sub_path: /en/career
+      destination: www.weareplanet.com/careers
+    -
+      sub_path: /es/votre-carriere-chez-proximis
+      destination: www.weareplanet.com/careers
+    -
+      sub_path: '/*'
+      destination: www.weareplanet.com/unified-commerce

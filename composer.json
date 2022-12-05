@@ -12,7 +12,7 @@
     "cweagans/composer-patches": "^1.6",
     "d3/d3": "^3.5",
     "drupal/acquia_analytics_redirects": "^1.0",
-    "drupal/acquia_connector": "^3.0",
+    "drupal/acquia_connector": "^4.0",
     "drupal/admin_toolbar": "^3.1",
     "drupal/autologout": "^1.4",
     "drupal/clientside_validation": "^4.0",
@@ -29,6 +29,7 @@
     "drupal/csp": "^1.16",
     "drupal/ctools": "^3.11",
     "drupal/devel": "^4.1",
+    "drupal/duplicate_role": "^1.2",
     "drupal/dynamic_entity_reference": "^1.16",
     "drupal/entity_language_fallback": "^1.4",
     "drupal/environment_indicator": "^4.0",
@@ -48,6 +49,7 @@
     "drupal/pathauto": "^1.11",
     "drupal/recaptcha": "^3.1",
     "drupal/recaptcha_v3": "^1.6",
+    "drupal/redirect": "^1.8",
     "drupal/robotstxt": "^1.4",
     "drupal/search_api_solr": "^4.2",
     "drupal/shield": "^1.6",
@@ -159,6 +161,9 @@
       },
       "drupal/webform_pardot": {
         "Custom pardot for planet": "patches/webform_pardot.patch"
+      },
+      "drupal/redirect": {
+        "Remove trailing slash": "patches/redirect_domain.patch"
       }
     }
   },
