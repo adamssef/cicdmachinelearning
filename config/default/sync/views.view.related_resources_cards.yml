@@ -1,16 +1,16 @@
-uuid: d6f43702-c5a1-4eb2-aa82-3f90ea1492ef
+uuid: b401e2ef-0ceb-457a-b003-17ecb2796ac8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_preview
-    - node.type.case_studies
+    - field.storage.node.field_resources_subtitle
+    - node.type.resources
   module:
     - cohesion
     - node
     - user
-id: case_studies_cards
-label: 'Case Studies Cards'
+id: related_resources_cards
+label: 'Related resources cards'
 module: views
 description: ''
 tag: ''
@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Case Studies Cards'
+      title: 'Related resources cards'
       fields:
         title:
           id: title
@@ -90,10 +90,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_preview:
-          id: field_preview
-          table: node__field_preview
-          field: field_preview
+        field_resources_subtitle:
+          id: field_resources_subtitle
+          table: node__field_resources_subtitle
+          field: field_resources_subtitle
           relationship: none
           group_type: group
           admin_label: ''
@@ -127,7 +127,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: p
+          element_type: ''
           element_class: coh-style-body-large---tt-commons-planet
           element_label_type: ''
           element_label_class: ''
@@ -268,7 +268,7 @@ display:
           entity_field: type
           plugin_id: bundle
           value:
-            case_studies: case_studies
+            resources: resources
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -299,7 +299,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_preview'
+        - 'config:field.storage.node.field_resources_subtitle'
   block_1:
     id: block_1
     display_title: Block
@@ -315,4 +315,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_preview'
+        - 'config:field.storage.node.field_resources_subtitle'
