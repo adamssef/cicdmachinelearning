@@ -3,16 +3,24 @@ display:
     display_title: Predefinito
     display_options:
       fields:
+        thumbnail__target_id:
+          separator: ', '
+        name:
+          separator: ', '
         bundle:
           label: Tipo
+          separator: ', '
         uid:
           label: Autore
+          separator: ', '
         status:
           label: Stato
           settings:
             format_custom_true: Pubblicato
+          separator: ', '
         changed:
           label: Aggiornato
+          separator: ', '
         operations:
           label: Operazioni
       pager:
@@ -26,6 +34,7 @@ display:
           submit_button: Filtra
           reset_button_label: Ripristina
           exposed_sorts_label: 'Ordina per'
+          sort_asc_label: Asc
           sort_desc_label: Disc
       filters:
         bundle:

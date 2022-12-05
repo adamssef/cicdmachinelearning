@@ -49,6 +49,7 @@
     "drupal/pathauto": "^1.11",
     "drupal/recaptcha": "^3.1",
     "drupal/recaptcha_v3": "^1.6",
+    "drupal/redirect": "^1.8",
     "drupal/robotstxt": "^1.4",
     "drupal/search_api_solr": "^4.2",
     "drupal/shield": "^1.6",
@@ -160,6 +161,9 @@
       },
       "drupal/webform_pardot": {
         "Custom pardot for planet": "patches/webform_pardot.patch"
+      },
+      "drupal/redirect": {
+        "Remove trailing slash": "patches/redirect_domain.patch"
       }
     }
   },

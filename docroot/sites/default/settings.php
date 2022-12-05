@@ -719,6 +719,8 @@ $settings['trusted_host_patterns'] = [
  '^server_name.*\.prod\.acquia-sites\.com$',
  '^weareplanet\.com$',
  '^.+\.weareplanet\.com$',
+ '^proximis\.com$',
+ '^.+\.proximis\.com$',
 ];
 
 /**

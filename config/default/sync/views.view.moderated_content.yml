@@ -2,7 +2,11 @@ uuid: f56b1244-f3f4-4b60-9320-abbecbde4cc6
 langcode: en
 status: true
 dependencies:
+  config:
+    - system.menu.admin
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - node
     - user
   enforced:
@@ -811,7 +815,8 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:workflow_list'
   moderated_content:
     id: moderated_content
     display_title: 'Moderated content'
@@ -821,6 +826,20 @@ display:
       display_description: ''
       display_extenders: {  }
       path: admin/content/moderated
+      menu:
+        type: normal
+        title: 'Moderated Content'
+        description: ''
+        weight: 0
+        expanded: false
+        menu_name: admin
+        parent: system.admin_content
+        context: '0'
+      tab_options:
+        type: tab
+        title: 'Moderated Content'
+        description: ''
+        weight: 0
     cache_metadata:
       max-age: -1
       contexts:
@@ -830,4 +849,5 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:workflow_list'
