@@ -33,10 +33,12 @@ function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id
     $request = \Drupal::requestStack()->getCurrentRequest();
     $xAcquiaStrippedQuery = $request->headers->get('X-Acquia-Stripped-Query');
 
+    \Drupal::logger('getInTouch')->notice('<pre><code>' . print_r($xAcquiaStrippedQuery, TRUE) . '</code></pre>' );
+
     if (!empty($xAcquiaStrippedQuery)) {
       parse_str($xAcquiaStrippedQuery, $get_array);
-      if (is_array($get_array) && !empty($get_array)) {
 
+      if (is_array($get_array) && !empty($get_array)) {
         $tempstore = \Drupal::service('tempstore.private')->get('planet_tempstore');
 
         if (isset($get_array['utm_source']) && !empty($get_array['utm_source'])) {
@@ -56,14 +58,14 @@ function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id
         }
       }
     }
+
   }
 }
 
 /**
  * Implements hook_ENTITY_TYPE_presave() for webform_submission entities.
  */
-function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission)
-{
+function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission) {
   // Add UTM to the get in touch webform.
   if ($webform_submission->getWebform()->id() == 'get_in_touch') {
 
