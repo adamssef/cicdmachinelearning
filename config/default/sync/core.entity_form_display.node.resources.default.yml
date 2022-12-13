@@ -4,25 +4,24 @@ status: true
 dependencies:
   config:
     - field.field.node.resources.field_field_resources_metatag
-    - field.field.node.resources.field_in_this_article
     - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_resources_author
     - field.field.node.resources.field_resources_author_role
     - field.field.node.resources.field_resources_background_image
-    - field.field.node.resources.field_resources_body
     - field.field.node.resources.field_resources_published_time
     - field.field.node.resources.field_resources_subtitle
     - field.field.node.resources.field_resources_tags
     - field.field.node.resources.field_resources_template
     - field.field.node.resources.field_resources_title
     - node.type.resources
+    - workflows.workflow.editorial
   module:
     - cohesion_elements
     - cohesion_templates
+    - content_moderation
     - media_library
     - metatag
     - path
-    - text
 id: node.resources.default
 targetEntityType: node
 bundle: resources
@@ -41,16 +40,6 @@ content:
     settings:
       sidebar: true
       use_details: true
-    third_party_settings: {  }
-  field_in_this_article:
-    type: text_textarea_with_summary
-    weight: 14
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
     third_party_settings: {  }
   field_layout_canvas:
     type: cohesion_layout_builder_widget
@@ -91,16 +80,6 @@ content:
     third_party_settings:
       imce:
         enabled: false
-  field_resources_body:
-    type: text_textarea_with_summary
-    weight: 15
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   field_resources_published_time:
     type: datetime_timestamp
     weight: 19
@@ -194,6 +173,11 @@ content:
     third_party_settings: {  }
   translation:
     weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }
