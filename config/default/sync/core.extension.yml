@@ -68,6 +68,7 @@ module:
   media_library: 0
   memcache: 0
   menu_link_attributes: 0
+  menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
@@ -106,6 +107,8 @@ module:
   shortcut: 0
   simple_sitemap: 0
   simplelogin: 0
+  site_settings: 0
+  site_settings_type_permissions: 0
   site_studio_webform: 0
   sitestudio_page_builder: 0
   system: 0
