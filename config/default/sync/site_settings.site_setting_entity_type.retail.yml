@@ -1,0 +1,8 @@
+uuid: eb82e688-5b51-48f8-a736-2e2bc6070e52
+langcode: en
+status: true
+dependencies: {  }
+id: retail
+label: Retail
+fieldset: Planet
+multiple: false
