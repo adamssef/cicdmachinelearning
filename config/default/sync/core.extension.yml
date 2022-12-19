@@ -77,6 +77,7 @@ module:
   node_revision_delete: 0
   options: 0
   page_cache: 0
+  page_cache_query_ignore: 0
   pardot: 0
   password_policy_character_types: 0
   password_policy_characters: 0
