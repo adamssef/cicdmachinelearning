@@ -57,11 +57,6 @@ elements: |-
         '#maxlength': 50
         '#autocomplete': 'off'
         '#required': true
-    second_column:
-      '#type': container
-      '#attributes':
-        class:
-          - column-flex
       type_of_business:
         '#type': select
         '#title': 'Company sector*'
@@ -71,6 +66,11 @@ elements: |-
           Partners: Partners
           Other: Other
         '#required': true
+    second_column:
+      '#type': container
+      '#attributes':
+        class:
+          - column-flex
       address_country:
         '#type': webform_address
         '#title': 'Country*'
