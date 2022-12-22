@@ -17,8 +17,7 @@
           let titleHeight = card.querySelector(".coh-title-wrapper").clientHeight;
           let linkHeight = card.querySelector(".coh-link-wrapper").clientHeight;
 
-          // Limit the number of visible lines basead on the number
-          // of lines on the title
+          // Limit the number of visible lines basead on the height left to fill the card
           let maxNumberOfLines = Math.round((cardHeight - titleHeight - linkHeight) / textLineHeight);
           text.style.webkitLineClamp = maxNumberOfLines; 
         })
