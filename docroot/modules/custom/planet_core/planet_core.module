@@ -22,65 +22,66 @@ function planet_core_preprocess_html(&$variables): void {
 
 /**
  * Implements hook_form_alter().
- *
- * @codeCoverageIgnore
  */
-function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Add UTM to the get in touch webform.
+function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id): void {
   if (str_contains($form_id, "webform_submission_get_in_touch")) {
-    // Get X-Acquia-Stripped-Query header.
-    // This is because of acquia varnish.
+    // Get query parameters ignored by cache.
     $request = \Drupal::requestStack()->getCurrentRequest();
-    $xAcquiaStrippedQuery = $request->headers->get('X-Acquia-Stripped-Query');
+    $queryParams = $request->query->all();
 
-    if (!empty($xAcquiaStrippedQuery)) {
-      parse_str($xAcquiaStrippedQuery, $get_array);
-      if (is_array($get_array) && !empty($get_array)) {
-
+    if (!empty($queryParams)) {
+      if (is_array($queryParams)) {
         $tempstore = \Drupal::service('tempstore.private')->get('planet_tempstore');
 
-        if (isset($get_array['utm_source']) && !empty($get_array['utm_source'])) {
-          $tempstore->set('utm_source', $get_array['utm_source']);
+        if (isset($queryParams['utm_source']) && !empty($queryParams['utm_source'])) {
+          $tempstore->set('utm_source', $queryParams['utm_source']);
         }
-        if (isset($get_array['utm_medium']) && !empty($get_array['utm_medium'])) {
-          $tempstore->set('utm_medium', $get_array['utm_medium']);
+
+        if (isset($queryParams['utm_medium']) && !empty($queryParams['utm_medium'])) {
+          $tempstore->set('utm_medium', $queryParams['utm_medium']);
         }
-        if (isset($get_array['utm_campaign']) && !empty($get_array['utm_campaign'])) {
-          $tempstore->set('utm_campaign', $get_array['utm_campaign']);
+
+        if (isset($queryParams['utm_campaign']) && !empty($queryParams['utm_campaign'])) {
+          $tempstore->set('utm_campaign', $queryParams['utm_campaign']);
         }
-        if (isset($get_array['utm_content']) && !empty($get_array['utm_content'])) {
-          $tempstore->set('utm_content', $get_array['utm_content']);
+
+        if (isset($queryParams['utm_content']) && !empty($queryParams['utm_content'])) {
+          $tempstore->set('utm_content', $queryParams['utm_content']);
         }
-        if (isset($get_array['utm_term']) && !empty($get_array['utm_term'])) {
-          $tempstore->set('utm_term', $get_array['utm_term']);
+
+        if (isset($queryParams['utm_term']) && !empty($queryParams['utm_term'])) {
+          $tempstore->set('utm_term', $queryParams['utm_term']);
         }
       }
+
     }
   }
 }
 
 /**
- * Implements hook_ENTITY_TYPE_presave() for webform_submission entities.
+ * Implements hook_ENTITY_TYPE_presave().
  */
-function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission)
-{
-  // Add UTM to the get in touch webform.
+function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void {
+  // Add UTM to the 'Get in touch' webform.
   if ($webform_submission->getWebform()->id() == 'get_in_touch') {
-
     $tempstore = \Drupal::service('tempstore.private')->get('planet_tempstore');
 
     if (!empty($tempstore->get('utm_source'))) {
       $webform_submission->setElementData('utm_source', $tempstore->get('utm_source'));
     }
+
     if (!empty($tempstore->get('utm_medium'))) {
       $webform_submission->setElementData('utm_medium', $tempstore->get('utm_medium'));
     }
+
     if (!empty($tempstore->get('utm_campaign'))) {
       $webform_submission->setElementData('utm_campaign', $tempstore->get('utm_campaign'));
     }
+
     if (!empty($tempstore->get('utm_content'))) {
       $webform_submission->setElementData('utm_content', $tempstore->get('utm_content'));
     }
+
     if (!empty($tempstore->get('utm_term'))) {
       $webform_submission->setElementData('utm_term', $tempstore->get('utm_term'));
     }
@@ -107,7 +108,7 @@ function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
       $selectedRegion = array_key_first($form['region']['#options']);
     }
 
-    $countries = _get_associative_countries_with_region($selectedRegion);
+    $countries = _planet_core_get_associative_countries_with_region($selectedRegion);
     $form['country']['#options'] = $countries;
 
     $form['#attached']['library'][] = 'planet_sitestudio_custom_elements/registeredCompanies';
@@ -117,7 +118,7 @@ function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
 /**
  * Gets countries associated with the region.
  */
-function _get_associative_countries_with_region(string $regionId): array {
+function _planet_core_get_associative_countries_with_region(string $regionId): array {
   $countries = [];
   $countries['All'] = 'All';
   $vid = 'countries';
