@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc6f3e1306a5fe31855d380b3fab477b",
+    "content-hash": "084f445e40eb20a6a75f4ce0d2217e9d",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -4136,6 +4136,10 @@
             ],
             "authors": [
                 {
+                    "name": "Anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
                     "name": "cYu",
                     "homepage": "https://www.drupal.org/user/202205"
                 },
@@ -4146,6 +4150,10 @@
                 {
                     "name": "deetergp",
                     "homepage": "https://www.drupal.org/user/1134002"
+                },
+                {
+                    "name": "Grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
                 },
                 {
                     "name": "ilo",
@@ -4287,55 +4295,76 @@
             }
         },
         {
-            "name": "drupal/menu_link_attributes",
-            "version": "1.3.0",
+            "name": "drupal/menu_item_extras",
+            "version": "2.17.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/menu_link_attributes.git",
-                "reference": "8.x-1.3"
+                "url": "https://git.drupalcode.org/project/menu_item_extras.git",
+                "reference": "8.x-2.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/menu_link_attributes-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "431c7954cc614a1b9677173f0209f1df15592503"
+                "url": "https://ftp.drupal.org/files/projects/menu_item_extras-8.x-2.17.zip",
+                "reference": "8.x-2.17",
+                "shasum": "1bb89c6cad458ba9140684fd0e02bccb238023c8"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^8 || ^9"
+            },
+            "require-dev": {
+                "drupal/ckeditor": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1671026425",
+                    "version": "8.x-2.17",
+                    "datestamp": "1655020997",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
-                    "name": "jcnventura",
-                    "homepage": "https://www.drupal.org/user/122464"
+                    "name": "Andriy Khomych",
+                    "homepage": "https://www.drupal.org/u/andriy-khomych",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "yannickoo",
-                    "homepage": "https://www.drupal.org/user/531118"
+                    "name": "Bogdan Hepting",
+                    "homepage": "https://www.drupal.org/u/bogdan-hepting",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Oleh Vehera",
+                    "homepage": "https://www.drupal.org/u/voleger",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Mykhailo Gurei",
+                    "homepage": "https://www.drupal.org/u/ozin",
+                    "role": "Maintainer"
                 }
             ],
-            "description": "Allows you to add attributes to menu links.",
-            "homepage": "http://drupal.org/project/menu_link_attributes",
+            "description": "Provide an additional custom fields which can be used on Menu link",
+            "homepage": "https://www.drupal.org/project/menu_item_extras",
             "keywords": [
-                "Drupal"
+                "Drupal",
+                "Mega Menu"
             ],
             "support": {
-                "source": "http://cgit.drupalcode.org/menu_link_attributes",
-                "issues": "http://drupal.org/project/issues/menu_link_attributes"
+                "source": "https://git.drupalcode.org/project/menu_item_extras",
+                "issues": "https://www.drupal.org/project/issues/menu_item_extras"
             }
         },
         {
@@ -5032,12 +5061,12 @@
                     "homepage": "https://www.drupal.org/node/53579/committers"
                 },
                 {
-                    "name": "ccjjmartin",
-                    "homepage": "https://www.drupal.org/user/3210801"
-                },
-                {
                     "name": "mikeegoulding",
                     "homepage": "https://www.drupal.org/user/2867877"
+                },
+                {
+                    "name": "Todd Nienkerk",
+                    "homepage": "https://www.drupal.org/user/92096"
                 }
             ],
             "description": "Generates the robots.txt file dynamically and gives you the chance to edit it, on a per-site basis, from the web UI.",
@@ -5542,6 +5571,54 @@
             }
         },
         {
+            "name": "drupal/site_settings",
+            "version": "1.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/site_settings.git",
+                "reference": "8.x-1.20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/site_settings-8.x-1.20.zip",
+                "reference": "8.x-1.20",
+                "shasum": "b1e3b07437ef0ff7a907b7b6319f16db3942fb1c"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.20",
+                    "datestamp": "1669790573",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "scott_euser",
+                    "homepage": "https://www.drupal.org/user/3267594"
+                }
+            ],
+            "description": "Provides a site settings entity",
+            "homepage": "https://www.drupal.org/project/site_settings",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/site_settings",
+                "issues": "http://drupal.org/project/issues/site_settings"
+            }
+        },
+        {
             "name": "drupal/site_studio_webform",
             "version": "1.1.3",
             "source": {
@@ -5700,12 +5777,12 @@
             ],
             "authors": [
                 {
-                    "name": "TR",
-                    "homepage": "https://www.drupal.org/user/202830"
-                },
-                {
                     "name": "fago",
                     "homepage": "https://www.drupal.org/user/16747"
+                },
+                {
+                    "name": "TR",
+                    "homepage": "https://www.drupal.org/user/202830"
                 }
             ],
             "description": "Extends the core Typed Data API with new APIs and features.",
@@ -5976,12 +6053,12 @@
                 "drupal/telephone_validation": "~2.0",
                 "drupal/token": "~1.0",
                 "drupal/variationcache": "~1.0",
+                "drupal/webform-webform_group": "*",
                 "drupal/webform_access": "*",
                 "drupal/webform_attachment": "*",
                 "drupal/webform_clientside_validation": "*",
                 "drupal/webform_devel": "*",
                 "drupal/webform_entity_print": "*",
-                "drupal/webform_group": "*",
                 "drupal/webform_node": "*",
                 "drupal/webform_options_limit": "*",
                 "drupal/webform_scheduled_email": "*",
@@ -7642,6 +7719,10 @@
                 "source": "https://github.com/maennchen/ZipStream-PHP/tree/2.2.1"
             },
             "funding": [
+                {
+                    "url": "https://github.com/maennchen",
+                    "type": "github"
+                },
                 {
                     "url": "https://opencollective.com/zipstream",
                     "type": "open_collective"

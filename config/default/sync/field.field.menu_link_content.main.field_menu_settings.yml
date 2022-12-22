@@ -1,0 +1,29 @@
+uuid: b8f3cd12-c4a8-46d7-81f1-f06cb4fae9e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_menu_settings
+    - site_settings.site_setting_entity_type.retail
+    - system.menu.main
+id: menu_link_content.main.field_menu_settings
+field_name: field_menu_settings
+entity_type: menu_link_content
+bundle: main
+label: 'Menu settings'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:site_setting_entity'
+  handler_settings:
+    target_bundles:
+      retail: retail
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
