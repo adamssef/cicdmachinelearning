@@ -99,3 +99,7 @@ registeredCompanies:
 tabsNavScroll:
   js:
     js/tabsNavScrollDesktop.js: {}
+# Related Content Card
+relatedContentCard:
+  js:
+    js/relatedContentCard.js: {}
