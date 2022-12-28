@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.menu_link_content.field_menu_settings
-    - site_settings.site_setting_entity_type.retail
     - system.menu.main
 id: menu_link_content.main.field_menu_settings
 field_name: field_menu_settings
@@ -17,13 +16,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:site_setting_entity'
+  handler: views
   handler_settings:
-    target_bundles:
-      retail: retail
-    sort:
-      field: _none
-      direction: ASC
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: menu_settings
+      display_name: menu_settings_list
+      arguments: {  }
 field_type: entity_reference
