@@ -1,19 +1,19 @@
-uuid: e36d93ec-6860-4afa-b05c-2e464b6ecbf7
+uuid: 0dda6dc6-4698-4445-b548-5349f42692cd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.site_setting_entity.retail.field_description
-    - field.field.site_setting_entity.retail.field_link
-    - field.field.site_setting_entity.retail.field_title
-    - site_settings.site_setting_entity_type.retail
+    - field.field.site_setting_entity.menu.field_description
+    - field.field.site_setting_entity.menu.field_link
+    - field.field.site_setting_entity.menu.field_title
+    - site_settings.site_setting_entity_type.menu
   module:
     - link
     - text
     - user
-id: site_setting_entity.retail.default
+id: site_setting_entity.menu.default
 targetEntityType: site_setting_entity
-bundle: retail
+bundle: menu
 mode: default
 content:
   field_description:
