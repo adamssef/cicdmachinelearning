@@ -53,7 +53,6 @@ function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id
           $tempstore->set('utm_term', $queryParams['utm_term']);
         }
       }
-
     }
   }
 }
