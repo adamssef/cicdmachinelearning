@@ -33,6 +33,10 @@ elements: |-
         '#type': textfield
         '#title': 'Your full name*'
         '#required': true
+      email:
+        '#type': email
+        '#title': 'Your e-mail*'
+        '#required': true
     second_column:
       '#type': container
       '#attributes':
@@ -46,6 +50,11 @@ elements: |-
         '#type__access': false
         '#ext__access': false
         '#phone__international_initial_country': GB
+      countries:
+        '#type': select
+        '#title': 'Where are you based'
+        '#options': country_names
+        '#empty_option': ' '
       single_opt_in:
         '#type': checkbox
         '#title': 'Receive updates about Planet'
