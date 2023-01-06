@@ -1,0 +1,19 @@
+uuid: 9e661ec9-7a52-4883-9e4f-4de32558d06e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_title
+    - site_settings.site_setting_entity_type.menu
+id: site_setting_entity.menu.field_title
+field_name: field_title
+entity_type: site_setting_entity
+bundle: menu
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 18222abe-74c3-41ef-8b76-097ef9a9bfa5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_description
+    - site_settings.site_setting_entity_type.menu
+  module:
+    - text
+id: site_setting_entity.menu.field_description
+field_name: field_description
+entity_type: site_setting_entity
+bundle: menu
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

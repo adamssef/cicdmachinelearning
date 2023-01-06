@@ -1,0 +1,23 @@
+uuid: 3a3ae245-a90d-4d0b-b331-d346a67b95e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_link
+    - site_settings.site_setting_entity_type.menu
+  module:
+    - link
+id: site_setting_entity.menu.field_link
+field_name: field_link
+entity_type: site_setting_entity
+bundle: menu
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
