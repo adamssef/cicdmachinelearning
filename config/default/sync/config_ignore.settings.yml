@@ -5,4 +5,5 @@ ignored_config_entities:
   - system.site
   - views.view.locations_contacts
   - views.view.companies
+  - planet.pardot
 enable_export_filtering: true

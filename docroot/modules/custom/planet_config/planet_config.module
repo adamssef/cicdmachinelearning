@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function planet_config_help($route_name, RouteMatchInterface $route_match) {
+  $output = '';
+  switch ($route_name) {
+    case 'planet_config.admin_planet_pardot':
+      $output = '<p>' . t('The pardot url configuration. Please add only the exception config, because the default will be used from the webform pardot handler') . '</p>';
+      $output .= '<h5>' . t('Example Configuration') . '</h5>';
+      $output .= '<ul>';
+      $output .= '<li> weareplanet.com/partners => get_in_touch => should use the https://my_custom_partners_pardot_url.com/12345 </li>';
+      $output .= '<li> get_in_touch | partners | https://my_custom_partners_pardot_url.com/12345</li>';
+      $output .= '</ul>';
+
+      return $output;
+  }
+}

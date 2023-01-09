@@ -1,0 +1,14 @@
+---
+planet_config.admin_planet:
+  title: 'Planet Config'
+  description: 'Planet Configuration'
+  parent: system.admin
+  route_name: planet_config.admin_planet
+  weight: 99
+
+planet_config.admin_planet_pardot:
+  title: 'Pardot Configuration'
+  description: 'Pardot custom Configuration'
+  route_name: planet_config.admin_planet_pardot
+  parent: planet_config.admin_planet
+  weight: 99

@@ -1,0 +1,5 @@
+planet_config.admin_planet_pardot:
+  title: 'Pardot Configuration'
+  base_route: planet_config.admin_planet
+  route_name: planet_config.admin_planet_pardot
+  weight: 60

@@ -1,0 +1,17 @@
+---
+planet_config.admin_planet:
+  path: '/admin/planet'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: true
+
+planet_config.admin_planet_pardot:
+  path: '/admin/planet/pardot'
+  defaults:
+    _form: '\Drupal\planet_config\Form\PlanetPardotForm'
+    _title: 'Pardot Configuration'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: true
