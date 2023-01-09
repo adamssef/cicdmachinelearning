@@ -50,46 +50,9 @@ function planet_core_preprocess_html(&$variables): void {
   if ($routeName === 'entity.user.canonical') {
     $variables['head_title']['title'] = '';
   }
-  utms_init();
+  utms_init(); // temporary solution
 }
 
-
-/**
- * Implements hook_form_alter().
- */
-function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id): void {
-  if (str_contains($form_id, "webform_submission_get_in_touch")) {
-    // Get query parameters ignored by cache.
-    $request = \Drupal::requestStack()->getCurrentRequest();
-    $queryParams = $request->query->all();
-
-    if (!empty($queryParams)) {
-      if (is_array($queryParams)) {
-        $tempstore = \Drupal::service('tempstore.private')->get('planet_tempstore');
-
-        if (isset($queryParams['utm_source']) && !empty($queryParams['utm_source'])) {
-          $tempstore->set('utm_source', $queryParams['utm_source']);
-        }
-
-        if (isset($queryParams['utm_medium']) && !empty($queryParams['utm_medium'])) {
-          $tempstore->set('utm_medium', $queryParams['utm_medium']);
-        }
-
-        if (isset($queryParams['utm_campaign']) && !empty($queryParams['utm_campaign'])) {
-          $tempstore->set('utm_campaign', $queryParams['utm_campaign']);
-        }
-
-        if (isset($queryParams['utm_content']) && !empty($queryParams['utm_content'])) {
-          $tempstore->set('utm_content', $queryParams['utm_content']);
-        }
-
-        if (isset($queryParams['utm_term']) && !empty($queryParams['utm_term'])) {
-          $tempstore->set('utm_term', $queryParams['utm_term']);
-        }
-      }
-    }
-  }
-}
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
@@ -106,30 +69,29 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
     $cookie_utm_term = isset($_COOKIE['utm_term']) ? filter_var($_COOKIE['utm_term'], FILTER_SANITIZE_STRING) : '';
     $cookie_utm_content = isset($_COOKIE['utm_content']) ? filter_var($_COOKIE['utm_content'], FILTER_SANITIZE_STRING) : '';
     
-    $tempstore = \Drupal::service('tempstore.private')->get('planet_tempstore');
 
     // @Romulo I guess we can remove the $tempstore->get('{cookie name}') as on page load
     // we read the query string and save the cookies. Seems like the tempstore was created
     // specifically to get cookies from the querystring.
 
-    if (!empty($tempstore->get('utm_source'))) {
-      $webform_submission->setElementData('utm_source', $tempstore->get('utm_source') || $cookie_utm_source);
+    if ($cookie_utm_source) {
+      $webform_submission->setElementData('utm_source', $cookie_utm_source);
     }
 
-    if (!empty($tempstore->get('utm_medium'))) {
-      $webform_submission->setElementData('utm_medium', $tempstore->get('utm_medium') || $cookie_utm_medium);
+    if ($cookie_utm_medium) {
+      $webform_submission->setElementData('utm_medium', $cookie_utm_medium);
     }
 
-    if (!empty($tempstore->get('utm_campaign'))) {
-      $webform_submission->setElementData('utm_campaign', $tempstore->get('utm_campaign') || $cookie_utm_campaign);
+    if ($cookie_utm_campaign) {
+      $webform_submission->setElementData('utm_campaign', $cookie_utm_campaign);
     }
 
-    if (!empty($tempstore->get('utm_content'))) {
-      $webform_submission->setElementData('utm_content', $tempstore->get('utm_content') || $cookie_utm_content);
+    if ($cookie_utm_content) {
+      $webform_submission->setElementData('utm_content', $cookie_utm_content);
     }
 
-    if (!empty($tempstore->get('utm_term'))) {
-      $webform_submission->setElementData('utm_term', $tempstore->get('utm_term') || $cookie_utm_term);
+    if ($cookie_utm_term) {
+      $webform_submission->setElementData('utm_term', $cookie_utm_term);
     }
   }
 }
