@@ -1,0 +1,42 @@
+uuid: 9f701594-00dd-4e8a-9e68-1e4bec86724e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_menu_settings
+    - system.menu.main
+  module:
+    - link
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content:
+  field_menu_settings:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  simple_sitemap: true
+  view_mode: true
