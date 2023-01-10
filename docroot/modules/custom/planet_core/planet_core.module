@@ -8,6 +8,38 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\webform\WebformSubmissionInterface;
 
+
+/**
+ * Reads UTMs from the URL and stores them as cookies if they do not already exist.
+ *
+ * The function reads the UTM parameters in the URL, checks if the cookie doesn't already exist and
+ * stores the value of that UTM as cookie.
+ */
+function utms_init() {
+  $cookie_duration = 2592000; // 30 days in seconds
+  
+  if (isset($_GET['utm_source']) && !isset($_COOKIE['utm_source'])) {
+    $utm_source = filter_var($_GET['utm_source'], FILTER_SANITIZE_STRING);
+    setcookie('utm_source', $utm_source, $cookie_duration, '/');
+  }
+  if (isset($_GET['utm_medium']) && !isset($_COOKIE['utm_medium'])) {
+    $utm_medium = filter_var($_GET['utm_medium'], FILTER_SANITIZE_STRING);
+    setcookie('utm_medium', $utm_medium, $cookie_duration, '/');
+  }
+  if (isset($_GET['utm_campaign']) && !isset($_COOKIE['utm_campaign'])) {
+    $utm_campaign = filter_var($_GET['utm_campaign'], FILTER_SANITIZE_STRING);
+    setcookie('utm_campaign', $utm_campaign, $cookie_duration, '/');
+  }
+  if (isset($_GET['utm_term']) && !isset($_COOKIE['utm_term'])) {
+    $utm_term = filter_var($_GET['utm_term'], FILTER_SANITIZE_STRING);
+    setcookie('utm_term', $utm_term, $cookie_duration, '/');
+  }
+  if (isset($_GET['utm_content']) && !isset($_COOKIE['utm_content'])) {
+    $utm_content = filter_var($_GET['utm_content'], FILTER_SANITIZE_STRING);
+    setcookie('utm_content', $utm_content, $cookie_duration, '/');
+  }
+}
+
 /**
  * Implements hook_preprocess_html().
  *
@@ -18,44 +50,9 @@ function planet_core_preprocess_html(&$variables): void {
   if ($routeName === 'entity.user.canonical') {
     $variables['head_title']['title'] = '';
   }
+  utms_init(); // temporary solution
 }
 
-/**
- * Implements hook_form_alter().
- */
-function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id): void {
-  if (str_contains($form_id, "webform_submission_get_in_touch")) {
-    // Get query parameters ignored by cache.
-    $request = \Drupal::requestStack()->getCurrentRequest();
-    $queryParams = $request->query->all();
-
-    if (!empty($queryParams)) {
-      if (is_array($queryParams)) {
-        $tempstore = \Drupal::service('tempstore.private')->get('planet_tempstore');
-
-        if (isset($queryParams['utm_source']) && !empty($queryParams['utm_source'])) {
-          $tempstore->set('utm_source', $queryParams['utm_source']);
-        }
-
-        if (isset($queryParams['utm_medium']) && !empty($queryParams['utm_medium'])) {
-          $tempstore->set('utm_medium', $queryParams['utm_medium']);
-        }
-
-        if (isset($queryParams['utm_campaign']) && !empty($queryParams['utm_campaign'])) {
-          $tempstore->set('utm_campaign', $queryParams['utm_campaign']);
-        }
-
-        if (isset($queryParams['utm_content']) && !empty($queryParams['utm_content'])) {
-          $tempstore->set('utm_content', $queryParams['utm_content']);
-        }
-
-        if (isset($queryParams['utm_term']) && !empty($queryParams['utm_term'])) {
-          $tempstore->set('utm_term', $queryParams['utm_term']);
-        }
-      }
-    }
-  }
-}
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
@@ -63,26 +60,38 @@ function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id
 function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void {
   // Add UTM to the 'Get in touch' webform.
   if ($webform_submission->getWebform()->id() == 'get_in_touch') {
-    $tempstore = \Drupal::service('tempstore.private')->get('planet_tempstore');
 
-    if (!empty($tempstore->get('utm_source'))) {
-      $webform_submission->setElementData('utm_source', $tempstore->get('utm_source'));
+    // Check for UTMs cookies and sets them as a variable. 
+    // Later we check for the variables to send the UTMs to the form
+    $cookie_utm_source = isset($_COOKIE['utm_source']) ? filter_var($_COOKIE['utm_source'], FILTER_SANITIZE_STRING) : '';
+    $cookie_utm_medium = isset($_COOKIE['utm_medium']) ? filter_var($_COOKIE['utm_medium'], FILTER_SANITIZE_STRING) : '';
+    $cookie_utm_campaign = isset($_COOKIE['utm_campaign']) ? filter_var($_COOKIE['utm_campaign'], FILTER_SANITIZE_STRING) : '';
+    $cookie_utm_term = isset($_COOKIE['utm_term']) ? filter_var($_COOKIE['utm_term'], FILTER_SANITIZE_STRING) : '';
+    $cookie_utm_content = isset($_COOKIE['utm_content']) ? filter_var($_COOKIE['utm_content'], FILTER_SANITIZE_STRING) : '';
+    
+
+    // @Romulo I guess we can remove the $tempstore->get('{cookie name}') as on page load
+    // we read the query string and save the cookies. Seems like the tempstore was created
+    // specifically to get cookies from the querystring.
+
+    if ($cookie_utm_source) {
+      $webform_submission->setElementData('utm_source', $cookie_utm_source);
     }
 
-    if (!empty($tempstore->get('utm_medium'))) {
-      $webform_submission->setElementData('utm_medium', $tempstore->get('utm_medium'));
+    if ($cookie_utm_medium) {
+      $webform_submission->setElementData('utm_medium', $cookie_utm_medium);
     }
 
-    if (!empty($tempstore->get('utm_campaign'))) {
-      $webform_submission->setElementData('utm_campaign', $tempstore->get('utm_campaign'));
+    if ($cookie_utm_campaign) {
+      $webform_submission->setElementData('utm_campaign', $cookie_utm_campaign);
     }
 
-    if (!empty($tempstore->get('utm_content'))) {
-      $webform_submission->setElementData('utm_content', $tempstore->get('utm_content'));
+    if ($cookie_utm_content) {
+      $webform_submission->setElementData('utm_content', $cookie_utm_content);
     }
 
-    if (!empty($tempstore->get('utm_term'))) {
-      $webform_submission->setElementData('utm_term', $tempstore->get('utm_term'));
+    if ($cookie_utm_term) {
+      $webform_submission->setElementData('utm_term', $cookie_utm_term);
     }
   }
 }
