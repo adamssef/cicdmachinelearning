@@ -40,7 +40,7 @@ $config['system.performance']['css']['preprocess'] = FALSE;
 $config['system.performance']['js']['preprocess'] = FALSE;
 
 // Disable the render cache and disable dynamic page cache.
-$settings['cache']['bins']['render'] = 'cache.backend.null';
+// $settings['cache']['bins']['render'] = 'cache.backend.null';
 // $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 // This code will prevent needing to clear caches to register a status change
 // in a configuration split.
