@@ -15,28 +15,37 @@ use Drupal\webform\WebformSubmissionInterface;
  * The function reads the UTM parameters in the URL, checks if the cookie doesn't already exist and
  * stores the value of that UTM as cookie.
  */
-function utms_init() {
+
+function sanitize_cookie($value) {
+  return filter_var($value, FILTER_SANITIZE_STRING);
+}
+
+function utms_cookie_storage_init() {
   $cookie_duration = 2592000; // 30 days in seconds
   
-  if (isset($_GET['utm_source']) && !isset($_COOKIE['utm_source'])) {
-    $utm_source = filter_var($_GET['utm_source'], FILTER_SANITIZE_STRING);
-    setcookie('utm_source', $utm_source, $cookie_duration, '/');
+  $request = \Drupal::requestStack()->getCurrentRequest();
+  $queryParams = $request->query->all();
+
+  
+  if (isset($queryParams['utm_source']) && !isset($_COOKIE['utm_source'])) {
+    $utm_source = sanitize_cookie($queryParams['utm_source']);
+    user_cookie_save(array("utm_source" => $utm_source));
   }
-  if (isset($_GET['utm_medium']) && !isset($_COOKIE['utm_medium'])) {
-    $utm_medium = filter_var($_GET['utm_medium'], FILTER_SANITIZE_STRING);
-    setcookie('utm_medium', $utm_medium, $cookie_duration, '/');
+  if (isset($queryParams['utm_medium']) && !isset($_COOKIE['utm_medium'])) {
+    $utm_medium = sanitize_cookie($queryParams['utm_medium']);
+    user_cookie_save(array("utm_medium" => $utm_medium));
   }
-  if (isset($_GET['utm_campaign']) && !isset($_COOKIE['utm_campaign'])) {
-    $utm_campaign = filter_var($_GET['utm_campaign'], FILTER_SANITIZE_STRING);
-    setcookie('utm_campaign', $utm_campaign, $cookie_duration, '/');
+  if (isset($queryParams['utm_campaign']) && !isset($_COOKIE['utm_campaign'])) {
+    $utm_campaign = sanitize_cookie($queryParams['utm_campaign']);
+    user_cookie_save(array("utm_campaign" => $utm_campaign));
   }
-  if (isset($_GET['utm_term']) && !isset($_COOKIE['utm_term'])) {
-    $utm_term = filter_var($_GET['utm_term'], FILTER_SANITIZE_STRING);
-    setcookie('utm_term', $utm_term, $cookie_duration, '/');
+  if (isset($queryParams['utm_term']) && !isset($_COOKIE['utm_term'])) {
+    $utm_term = sanitize_cookie($queryParams['utm_term']);
+    user_cookie_save(array("utm_term" => $utm_term));
   }
-  if (isset($_GET['utm_content']) && !isset($_COOKIE['utm_content'])) {
-    $utm_content = filter_var($_GET['utm_content'], FILTER_SANITIZE_STRING);
-    setcookie('utm_content', $utm_content, $cookie_duration, '/');
+  if (isset($queryParams['utm_content']) && !isset($_COOKIE['utm_content'])) {
+    $utm_content = sanitize_cookie($queryParams['utm_content']);
+    user_cookie_save(array("utm_content" => $utm_content));
   }
 }
 
@@ -50,7 +59,7 @@ function planet_core_preprocess_html(&$variables): void {
   if ($routeName === 'entity.user.canonical') {
     $variables['head_title']['title'] = '';
   }
-  utms_init(); // temporary solution
+  utms_cookie_storage_init();
 }
 
 
@@ -63,11 +72,11 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
 
     // Check for UTMs cookies and sets them as a variable. 
     // Later we check for the variables to send the UTMs to the form
-    $cookie_utm_source = isset($_COOKIE['utm_source']) ? filter_var($_COOKIE['utm_source'], FILTER_SANITIZE_STRING) : '';
-    $cookie_utm_medium = isset($_COOKIE['utm_medium']) ? filter_var($_COOKIE['utm_medium'], FILTER_SANITIZE_STRING) : '';
-    $cookie_utm_campaign = isset($_COOKIE['utm_campaign']) ? filter_var($_COOKIE['utm_campaign'], FILTER_SANITIZE_STRING) : '';
-    $cookie_utm_term = isset($_COOKIE['utm_term']) ? filter_var($_COOKIE['utm_term'], FILTER_SANITIZE_STRING) : '';
-    $cookie_utm_content = isset($_COOKIE['utm_content']) ? filter_var($_COOKIE['utm_content'], FILTER_SANITIZE_STRING) : '';
+    $cookie_utm_source = isset($_COOKIE['Drupal.visitor.utm_source']) ? sanitize_cookie($_COOKIE['Drupal.visitor.utm_source']) : '';
+    $cookie_utm_medium = isset($_COOKIE['Drupal.visitor.utm_medium']) ? sanitize_cookie($_COOKIE['Drupal.visitor.utm_medium']) : '';
+    $cookie_utm_campaign = isset($_COOKIE['Drupal.visitor.utm_campaign']) ? sanitize_cookie($_COOKIE['Drupal.visitor.utm_campaign']) : '';
+    $cookie_utm_term = isset($_COOKIE['Drupal.visitor.utm_term']) ? sanitize_cookie($_COOKIE['Drupal.visitor.utm_term']) : '';
+    $cookie_utm_content = isset($_COOKIE['Drupal.visitor.utm_content']) ? sanitize_cookie($_COOKIE['Drupal.visitor.utm_content']) : '';
     
 
     // @Romulo I guess we can remove the $tempstore->get('{cookie name}') as on page load
