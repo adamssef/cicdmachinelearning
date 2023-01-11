@@ -28,7 +28,7 @@ class PlanetPardotForm extends ConfigFormBase{
    */
   protected function getEditableConfigNames() {
     return [
-      'planet.pardot',
+      'planet_config.pardot',
     ];
   }
 
@@ -50,7 +50,7 @@ class PlanetPardotForm extends ConfigFormBase{
     ];
 
     // Obtain config.
-    if ($domain_redirects = $this->config('planet.pardot')->get('webform_redirects')) {
+    if ($domain_redirects = $this->config('planet_config.pardot')->get('webform_redirects')) {
       foreach ($domain_redirects as $key => $value) {
         foreach ($value as $item) {
           $form['redirects'][] = [
@@ -117,7 +117,7 @@ class PlanetPardotForm extends ConfigFormBase{
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $domain_redirects = [];
-    $domain_config = $this->config('planet.pardot');
+    $domain_config = $this->config('planet_config.pardot');
 
     if ($redirects = $form_state->getValue('redirects')) {
       foreach ($redirects as $redirect) {

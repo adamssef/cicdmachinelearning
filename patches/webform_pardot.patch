@@ -4,7 +4,7 @@ index 55819d1..ffe2c21 100644
 +++ b/src/PardotHandler.php
 @@ -76,6 +76,31 @@ class PardotHandler implements PardotHandlerInterface {
      }
- 
+
      $data = $webform_submission->getData();
 +
 +    // Verify custom pardot url. See: /admin/planet/pardot.
@@ -12,7 +12,7 @@ index 55819d1..ffe2c21 100644
 +    $source_url = $data['website_origin_page'];
 +
 +    // Obtain config for specific pardot url.
-+    if ($domain_redirects = \Drupal::config('planet.pardot')->get('webform_redirects')) {
++    if ($domain_redirects = \Drupal::config('planet_config.pardot')->get('webform_redirects')) {
 +      foreach ($domain_redirects as $key => $value) {
 +        if ($webform_machinename == $key && (str_contains($source_url, str_replace('/', '', $value[0]["sub_path"])))) {
 +          // set new url
@@ -33,4 +33,4 @@ index 55819d1..ffe2c21 100644
 +
      $mapping = $this->getPardotFieldsMapping($webform_submission);
      $data = $this->mapData($mapping, $data);
- 
+
