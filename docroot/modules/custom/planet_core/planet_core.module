@@ -21,18 +21,10 @@ function sanitize_cookie($value) {
 }
 
 function utms_cookie_storage_init() {
-  $cookie_duration = 2592000; // 30 days in seconds
-
   $request = \Drupal::requestStack()->getCurrentRequest();
   $queryParams = $request->query->all();
 
   $utms = array("utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content");
-  $utms_in_query_string = !empty(array_intersect($utms, array_keys($queryParams)));
-
-  if ($utms_in_query_string) {
-    // We have UTMs in the query string, so we disable the cache for this case
-    \Drupal::service('page_cache_kill_switch')->trigger();
-  }
 
   foreach($utms as $utm) {
     if (isset($queryParams[$utm]) && !isset($_COOKIE[$utm])) {
@@ -55,11 +47,12 @@ function planet_core_preprocess_html(&$variables): void {
 }
 
 /**
- * Implements hook_preprocess_page().
+ * Implements hook_form_alter().
  */
-function planet_core_preprocess_page(&$variables)
-{
-  utms_cookie_storage_init();
+function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id): void {
+  if (str_contains($form_id, "webform_submission_get_in_touch")) {
+    utms_cookie_storage_init();
+  }
 }
 
 /**
