@@ -26,26 +26,19 @@ function utms_cookie_storage_init() {
   $request = \Drupal::requestStack()->getCurrentRequest();
   $queryParams = $request->query->all();
 
-  
-  if (isset($queryParams['utm_source']) && !isset($_COOKIE['utm_source'])) {
-    $utm_source = sanitize_cookie($queryParams['utm_source']);
-    user_cookie_save(array("utm_source" => $utm_source));
+  $utms = array("utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content");
+  $utms_in_query_string = !empty(array_intersect($utms, array_keys($queryParams)));
+
+  if ($utms_in_query_string) {
+    // We have UTMs in the query string, so we disable the cache for this case
+    \Drupal::service('page_cache_kill_switch')->trigger();
   }
-  if (isset($queryParams['utm_medium']) && !isset($_COOKIE['utm_medium'])) {
-    $utm_medium = sanitize_cookie($queryParams['utm_medium']);
-    user_cookie_save(array("utm_medium" => $utm_medium));
-  }
-  if (isset($queryParams['utm_campaign']) && !isset($_COOKIE['utm_campaign'])) {
-    $utm_campaign = sanitize_cookie($queryParams['utm_campaign']);
-    user_cookie_save(array("utm_campaign" => $utm_campaign));
-  }
-  if (isset($queryParams['utm_term']) && !isset($_COOKIE['utm_term'])) {
-    $utm_term = sanitize_cookie($queryParams['utm_term']);
-    user_cookie_save(array("utm_term" => $utm_term));
-  }
-  if (isset($queryParams['utm_content']) && !isset($_COOKIE['utm_content'])) {
-    $utm_content = sanitize_cookie($queryParams['utm_content']);
-    user_cookie_save(array("utm_content" => $utm_content));
+
+  foreach($utms as $utm) {
+    if (isset($queryParams[$utm]) && !isset($_COOKIE[$utm])) {
+      $utm_value = sanitize_cookie($queryParams[$utm]);
+      user_cookie_save(array($utm => $utm_value));
+    }
   }
 }
 
