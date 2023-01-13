@@ -5,33 +5,15 @@
  * Custom hooks functions for the planet_core module.
  */
 
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\webform\WebformSubmissionInterface;
 
 
 /**
- * Reads UTMs from the URL and stores them as cookies if they do not already exist.
+ * Sanitize cookie
  *
- * The function reads the UTM parameters in the URL, checks if the cookie doesn't already exist and
- * stores the value of that UTM as cookie.
  */
-
 function sanitize_cookie($value) {
   return filter_var($value, FILTER_SANITIZE_STRING);
-}
-
-function utms_cookie_storage_init() {
-  $request = \Drupal::requestStack()->getCurrentRequest();
-  $queryParams = $request->query->all();
-
-  $utms = array("utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content");
-
-  foreach($utms as $utm) {
-    if (isset($queryParams[$utm]) && !isset($_COOKIE[$utm])) {
-      $utm_value = sanitize_cookie($queryParams[$utm]);
-      user_cookie_save(array($utm => $utm_value));
-    }
-  }
 }
 
 /**
@@ -47,33 +29,18 @@ function planet_core_preprocess_html(&$variables): void {
 }
 
 /**
- * Implements hook_form_alter().
- */
-function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id): void {
-  if (str_contains($form_id, "webform_submission_get_in_touch")) {
-    utms_cookie_storage_init();
-  }
-}
-
-/**
  * Implements hook_ENTITY_TYPE_presave().
  */
 function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void {
   // Add UTM to the 'Get in touch' webform.
   if ($webform_submission->getWebform()->id() == 'get_in_touch') {
 
-    // Check for UTMs cookies and sets them as a variable.
-    // Later we check for the variables to send the UTMs to the form
+    // Check for the variables to send the UTMs to the form.
     $cookie_utm_source = isset($_COOKIE['Drupal_visitor_utm_source']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_source']) : '';
     $cookie_utm_medium = isset($_COOKIE['Drupal_visitor_utm_medium']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_medium']) : '';
     $cookie_utm_campaign = isset($_COOKIE['Drupal_visitor_utm_campaign']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_campaign']) : '';
     $cookie_utm_term = isset($_COOKIE['Drupal_visitor_utm_term']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_term']) : '';
     $cookie_utm_content = isset($_COOKIE['Drupal_visitor_utm_content']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_content']) : '';
-
-
-    // @Romulo I guess we can remove the $tempstore->get('{cookie name}') as on page load
-    // we read the query string and save the cookies. Seems like the tempstore was created
-    // specifically to get cookies from the querystring.
 
     if ($cookie_utm_source) {
       $webform_submission->setElementData('utm_source', $cookie_utm_source);

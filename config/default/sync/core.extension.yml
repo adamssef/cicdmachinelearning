@@ -4,7 +4,6 @@ module:
   webform_clientside_validation: -1
   lgpd_onetrust: -49
   lgpd_onetrust_cookie_blocking: -50
-  planet_core: -60
   admin_toolbar: 0
   admin_toolbar_tools: 0
   autologout: 0
@@ -88,6 +87,7 @@ module:
   path: 0
   path_alias: 0
   planet_config: 0
+  planet_core: 0
   planet_language_switcher: 0
   planet_sitestudio_custom_elements: 0
   rdf: 0
