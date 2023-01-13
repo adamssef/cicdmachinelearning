@@ -24,15 +24,22 @@ class PageCachePlanet extends PageCache
    */
   protected function getCacheId(Request $request)
   {
-    // Reads UTMs from the URL and stores them as cookies if they do not already exist.
-    $queryParams = $request->query->all();
+    // Get X-Acquia-Stripped-Query header.
+    // This is because of acquia varnish.
+    $xAcquiaStrippedQuery = $request->headers->get('X-Acquia-Stripped-Query');
 
-    $utms = array("utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content");
+    if (!empty($xAcquiaStrippedQuery)) {
+      parse_str($xAcquiaStrippedQuery, $get_array);
+      if (is_array($get_array) && !empty($get_array)) {
 
-    foreach ($utms as $utm) {
-      if (isset($queryParams[$utm]) && !isset($_COOKIE[$utm])) {
-        $utm_value = filter_var($queryParams[$utm], FILTER_SANITIZE_STRING);
-        setrawcookie('Drupal.visitor.' . $utm, rawurlencode($utm_value), REQUEST_TIME + 31536000, '/');
+        $utms = array("utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content");
+
+        foreach ($utms as $utm) {
+          if (isset($get_array[$utm]) && !isset($_COOKIE[$utm])) {
+            $utm_value = filter_var($get_array[$utm], FILTER_SANITIZE_STRING);
+            setrawcookie('Drupal.visitor.' . $utm, rawurlencode($utm_value), REQUEST_TIME + 31536000, '/');
+          }
+        }
       }
     }
 
