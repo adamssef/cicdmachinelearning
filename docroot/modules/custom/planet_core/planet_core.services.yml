@@ -1,9 +1,0 @@
-services:
-  http_middleware.page_cache_planet:
-    class: Drupal\planet_core\StackMiddleware\PageCachePlanet
-    arguments: [
-        '@cache.page',
-        '@page_cache_request_policy',
-        '@page_cache_response_policy']
-    tags:
-      - {name: http_middleware, priority: 200, responder: true}
