@@ -154,6 +154,21 @@ tooling:
     cmd:
       - rsync -a --stats --progress planetpayment.dev@planetpaymentdev.ssh.prod.acquia-sites.com:/mnt/files/planetpayment.dev/sites/default/files/ ./docroot/sites/default/files/
     description: Downloads all file resources from the development environment.
+  start-develop:
+    service: appserver
+    cmd:
+      - composer install
+      - drush cr
+      - drush -y updb
+      - drush cr
+      - drush -y cim sync
+      - drush -y cim sync
+      - drush cr
+      - find site_studio_components/global -iname "*.yml" -exec drush sync:import --overwrite-all --force --path=../{} \;
+      - find site_studio_components/planet -iname "*.yml" -exec drush sync:import --overwrite-all --force --path=../{} \;
+      #- drush cohesion:rebuild
+      - drush cr
+    description: Runs all necessary commands (composer, cohesion) to start the development. Be careful, this process takes a long time!!!
 
 proxy:
   mailhog:

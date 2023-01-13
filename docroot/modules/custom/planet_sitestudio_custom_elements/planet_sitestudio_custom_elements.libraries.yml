@@ -88,9 +88,13 @@ tabTeamVideo:
   js:
     js/tabTeamVideo.js: {}
 # Planet - Hero - We Are Planet
-hero5050:
+fixedHeaderDesktop:
   js:
-    js/planetHero5050.js: {}
+    js/fixedHeaderDesktop.js: {}
+# Planet - Campaign Page Top
+fixedHeaderDesktopMobile:
+  js:
+    js/fixedHeaderDesktopMobile.js: {}
 # Registered Companies
 registeredCompanies:
   js:
@@ -99,3 +103,7 @@ registeredCompanies:
 tabsNavScroll:
   js:
     js/tabsNavScrollDesktop.js: {}
+# Related Content Card
+relatedContentCard:
+  js:
+    js/relatedContentCard.js: {}

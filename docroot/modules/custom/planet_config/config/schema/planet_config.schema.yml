@@ -1,0 +1,18 @@
+planet_config.pardot:
+  type: config_object
+  label: 'Pardot webform config'
+  mapping:
+    webform_redirects:
+      type: sequence
+      label: 'Pardot webform config'
+      sequence:
+        type: sequence
+        sequence:
+          type: mapping
+          mapping:
+            sub_path:
+              type: string
+              label: 'Sub path'
+            destination:
+              type: string
+              label: 'Destination'

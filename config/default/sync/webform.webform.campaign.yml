@@ -1,20 +1,21 @@
-uuid: 6095d42d-c003-4f35-8ece-649723ec716f
+uuid: 6b99cbb7-2287-4070-a118-8752deb47853
 langcode: en
 status: open
-dependencies:
-  module:
-    - webform_pardot
+dependencies: {  }
 weight: 0
 open: null
 close: null
 uid: 1
 template: false
 archive: false
-id: get_in_touch
-title: 'Get in touch'
+id: campaign
+title: Campaign
 description: ''
 category: ''
 elements: |-
+  required_fields:
+    '#type': webform_markup
+    '#markup': 'All fields marked with * are required'
   layout:
     '#type': webform_flexbox
     first_column:
@@ -36,120 +37,57 @@ elements: |-
         '#maxlength': 50
         '#autocomplete': 'off'
         '#required': true
-      phone_intl:
-        '#type': webform_telephone
-        '#title': 'Phone*'
-        '#required': true
-        '#wrapper_type': form_element
-        '#type__access': false
-        '#phone__required': true
-        '#ext__access': false
-        '#phone__international_initial_country': GB
-      email:
-        '#type': email
-        '#title': 'E-mail*'
-        '#autocomplete': 'off'
-        '#required': true
       company_business_name:
         '#type': textfield
-        '#title': 'Company name*'
+        '#title': 'Company or business name'
         '#minlength': 2
         '#maxlength': 50
         '#autocomplete': 'off'
-        '#required': true
-      type_of_business:
-        '#type': select
-        '#title': 'Company sector*'
-        '#options':
-          Retail: Retail
-          Hospitality: Hospitality
-          Partners: Partners
-          Other: Other
-        '#required': true
+      textarea:
+        '#type': textarea
+        '#title': 'About your project'
     second_column:
       '#type': container
       '#attributes':
         class:
           - column-flex
-      address_country:
-        '#type': webform_address
-        '#title': 'Country*'
-        '#title_display': none
+      email:
+        '#type': email
+        '#title': 'Your e-mail*'
+        '#required': true
+      phone:
+        '#type': webform_telephone
+        '#title': 'Your phone*'
         '#required': true
         '#wrapper_type': form_element
-        '#address__access': false
-        '#address_2__access': false
-        '#city__access': false
-        '#state_province__access': false
-        '#postal_code__access': false
-        '#country__title': 'Country*'
-        '#country__title_display': before
-        '#country__required': true
-        '#flexbox': '0'
+        '#type__access': false
+        '#ext__access': false
+        '#phone__international_initial_country': GB
+      company_sector:
+        '#type': select
+        '#title': 'Company sector'
+        '#options':
+          Retail: Retail
+          Hospitality: Hospitality
+          Partners: Partners
+          Other: Other
+      countries:
+        '#type': select
+        '#title': 'Where are you based'
+        '#options': country_names
+        '#empty_option': ' '
       single_opt_in:
         '#type': checkbox
         '#title': 'Receive updates about Planet'
         '#description': 'Check this box to give consent to receiving updates about Planet&rsquo;s products, events, trainings, reports and services'
         '#title_display': none
-        '#description_display': after
-      captcha:
-        '#type': captcha
-        '#captcha_type': recaptcha_v3/get_in_touch
-      textarea:
-        '#type': textarea
-        '#title': 'About your project*'
-        '#maxlength': 250
-        '#placeholder': 'Tell us more about your project'
-        '#autocomplete': 'off'
-        '#required': true
-        '#counter_type': character
-        '#counter_maximum': 250
-      markup:
-        '#type': webform_markup
-        '#markup': '<p>By submitting this form, you accept the terms in our&nbsp;<a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Privacy Policy</a>.</p>'
-      actions:
-        '#type': webform_actions
-        '#title': 'Submit button(s)'
-        '#submit__label': Submit
-        '#submit__attributes':
-          class:
-            - coh-style-primary-dark-button
-  website_language:
-    '#type': textfield
-    '#title': 'Website language'
-    '#autocomplete': 'off'
-    '#default_value': '[language:name]'
-    '#access': false
-  website_origin_page:
-    '#type': textfield
-    '#title': 'website origin page'
-    '#default_value': '[current-page:url]'
-    '#access': false
-  lead_source:
-    '#type': textfield
-    '#title': 'lead source'
-    '#default_value': Web
-    '#access': false
-  utm_source:
-    '#type': textfield
-    '#title': utm_source
-    '#access': false
-  utm_medium:
-    '#type': textfield
-    '#title': utm_medium
-    '#access': false
-  utm_campaign:
-    '#type': textfield
-    '#title': utm_campaign
-    '#access': false
-  utm_content:
-    '#type': textfield
-    '#title': utm_content
-    '#access': false
-  utm_term:
-    '#type': textfield
-    '#title': utm_term
-    '#access': false
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Read now'
+    '#submit__attributes':
+      class:
+        - coh-style-primary-dark-button
 css: ''
 javascript: ''
 settings:
@@ -331,16 +269,5 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers:
-  submit_data_to_pardot:
-    id: pardot_submission
-    handler_id: submit_data_to_pardot
-    label: 'Submit data to Pardot'
-    notes: ''
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      pardot_url: 'https://info.weareplanet.com/l/975513/2022-09-07/26d2t'
-      pardot_fields_mapping: "first_name|First Name\r\nlast_name|Last Name\r\nphone_intl.phone|Phone\r\naddress_country.country|Country\r\ncompany_business_name|Company\r\ntype_of_business|Company Sector\r\ntextarea|Message\r\nsingle_opt_in|Opt in\r\nlead_source|Lead Source\r\nwebsite_language|Website language\r\nwebsite_origin_page|Website origin page\r\nemail|email\r\nutm_source|utm_source\r\nutm_medium|utm_medium\r\nutm_campaign|utm_campaign\r\nutm_content|utm_content\r\nutm_term|utm_term"
+handlers: {  }
 variants: {  }

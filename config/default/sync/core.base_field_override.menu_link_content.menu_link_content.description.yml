@@ -9,7 +9,7 @@ field_name: description
 entity_type: menu_link_content
 bundle: menu_link_content
 label: Description
-description: 'Shown when hovering over the menu link.'
+description: 'Shown when hovering over the menu link. Recommended limit of characters: 80'
 required: false
 translatable: true
 default_value: {  }
