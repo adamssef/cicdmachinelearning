@@ -64,13 +64,13 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h2
-          element_class: coh-style-heading-2-planet
+          element_type: h4
+          element_class: coh-style-heading-4-planet
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: div
+          element_wrapper_class: coh-title-wrapper
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -79,7 +79,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -127,13 +127,13 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: coh-style-body-large---tt-commons-planet
+          element_type: p
+          element_class: coh-style--body-regular---tt-commons-planet
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: div
+          element_wrapper_class: coh-text-wrapper
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -195,14 +195,67 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: div
+          element_wrapper_class: coh-link-wrapper
           element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           text: 'Read more'
+          output_url_as_text: false
+          absolute: false
+        view_node_1:
+          id: view_node_1
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: entity_link
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: coh-hidden-link
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: ' '
           output_url_as_text: false
           absolute: false
       pager:
@@ -276,7 +329,7 @@ display:
         type: cohesion_layout
         options:
           views_template: view_tpl_related_content_cards
-          master_template: __none__
+          master_template: mstr_tpl_planet_master_template
       row:
         type: fields
       query:

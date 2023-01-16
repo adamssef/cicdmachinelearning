@@ -397,7 +397,7 @@ $settings['update_free_access'] = FALSE;
  * getting cached pages from the proxy.
  */
 # $settings['omit_vary_cookie'] = TRUE;
-
+# $settings['cache']['bins']['render'] = 'cache.backend.null';
 
 /**
  * Cache TTL for client error (4xx) responses.

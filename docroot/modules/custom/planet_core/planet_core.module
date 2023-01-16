@@ -5,8 +5,16 @@
  * Custom hooks functions for the planet_core module.
  */
 
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\webform\WebformSubmissionInterface;
+
+
+/**
+ * Sanitize cookie
+ *
+ */
+function sanitize_cookie($value) {
+  return filter_var($value, FILTER_SANITIZE_STRING);
+}
 
 /**
  * Implements hook_preprocess_html().
@@ -21,69 +29,37 @@ function planet_core_preprocess_html(&$variables): void {
 }
 
 /**
- * Implements hook_form_alter().
- */
-function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id): void {
-  if (str_contains($form_id, "webform_submission_get_in_touch")) {
-    // Get query parameters ignored by cache.
-    $request = \Drupal::requestStack()->getCurrentRequest();
-    $queryParams = $request->query->all();
-
-    if (!empty($queryParams)) {
-      if (is_array($queryParams)) {
-        $tempstore = \Drupal::service('tempstore.private')->get('planet_tempstore');
-
-        if (isset($queryParams['utm_source']) && !empty($queryParams['utm_source'])) {
-          $tempstore->set('utm_source', $queryParams['utm_source']);
-        }
-
-        if (isset($queryParams['utm_medium']) && !empty($queryParams['utm_medium'])) {
-          $tempstore->set('utm_medium', $queryParams['utm_medium']);
-        }
-
-        if (isset($queryParams['utm_campaign']) && !empty($queryParams['utm_campaign'])) {
-          $tempstore->set('utm_campaign', $queryParams['utm_campaign']);
-        }
-
-        if (isset($queryParams['utm_content']) && !empty($queryParams['utm_content'])) {
-          $tempstore->set('utm_content', $queryParams['utm_content']);
-        }
-
-        if (isset($queryParams['utm_term']) && !empty($queryParams['utm_term'])) {
-          $tempstore->set('utm_term', $queryParams['utm_term']);
-        }
-      }
-
-    }
-  }
-}
-
-/**
  * Implements hook_ENTITY_TYPE_presave().
  */
 function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void {
   // Add UTM to the 'Get in touch' webform.
   if ($webform_submission->getWebform()->id() == 'get_in_touch') {
-    $tempstore = \Drupal::service('tempstore.private')->get('planet_tempstore');
 
-    if (!empty($tempstore->get('utm_source'))) {
-      $webform_submission->setElementData('utm_source', $tempstore->get('utm_source'));
+    // Check for the variables to send the UTMs to the form.
+    $cookie_utm_source = isset($_COOKIE['Drupal_visitor_utm_source']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_source']) : '';
+    $cookie_utm_medium = isset($_COOKIE['Drupal_visitor_utm_medium']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_medium']) : '';
+    $cookie_utm_campaign = isset($_COOKIE['Drupal_visitor_utm_campaign']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_campaign']) : '';
+    $cookie_utm_term = isset($_COOKIE['Drupal_visitor_utm_term']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_term']) : '';
+    $cookie_utm_content = isset($_COOKIE['Drupal_visitor_utm_content']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_content']) : '';
+
+    if ($cookie_utm_source) {
+      $webform_submission->setElementData('utm_source', $cookie_utm_source);
     }
 
-    if (!empty($tempstore->get('utm_medium'))) {
-      $webform_submission->setElementData('utm_medium', $tempstore->get('utm_medium'));
+    if ($cookie_utm_medium) {
+      $webform_submission->setElementData('utm_medium', $cookie_utm_medium);
     }
 
-    if (!empty($tempstore->get('utm_campaign'))) {
-      $webform_submission->setElementData('utm_campaign', $tempstore->get('utm_campaign'));
+    if ($cookie_utm_campaign) {
+      $webform_submission->setElementData('utm_campaign', $cookie_utm_campaign);
     }
 
-    if (!empty($tempstore->get('utm_content'))) {
-      $webform_submission->setElementData('utm_content', $tempstore->get('utm_content'));
+    if ($cookie_utm_content) {
+      $webform_submission->setElementData('utm_content', $cookie_utm_content);
     }
 
-    if (!empty($tempstore->get('utm_term'))) {
-      $webform_submission->setElementData('utm_term', $tempstore->get('utm_term'));
+    if ($cookie_utm_term) {
+      $webform_submission->setElementData('utm_term', $cookie_utm_term);
     }
   }
 }
