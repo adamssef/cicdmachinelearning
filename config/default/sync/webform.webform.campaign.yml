@@ -317,5 +317,5 @@ handlers:
     weight: 0
     settings:
       pardot_url: 'https://info.weareplanet.com/l/975513/2023-01-06/3x85l'
-      pardot_fields_mapping: "first_name|First Name\r\nlast_name|Last Name\r\nphone_intl.phone|Phone\r\nemail|email\r\ncountries|Country\r\ncompany_business_name|Company\r\ntype_of_business|Company Sector\r\ntextarea|Message\r\nsingle_opt_in|Opt in\r\nlead_source|Lead Source\r\nwebsite_language|Website language\r\nwebsite_origin_page|Website origin page\r\nlead_source|Lead Source\r\nutm_source|utm_source\r\nutm_medium|utm_medium\r\nutm_campaign|utm_campaign\r\nutm_content|utm_content\r\nutm_term|utm_term"
+      pardot_fields_mapping: "first_name|First Name\r\nlast_name|Last Name\r\nphone.phone|Phone\r\nemail|email\r\ncountries|Country\r\ncompany_business_name|Company\r\ntype_of_business|Company Sector\r\ntextarea|Message\r\nsingle_opt_in|Opt in\r\nlead_source|Lead Source\r\nwebsite_language|Website language\r\nwebsite_origin_page|Website origin page\r\nutm_source|utm_source\r\nutm_medium|utm_medium\r\nutm_campaign|utm_campaign\r\nutm_content|utm_content\r\nutm_term|utm_term"
 variants: {  }
