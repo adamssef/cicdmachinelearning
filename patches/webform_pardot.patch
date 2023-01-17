@@ -1,10 +1,10 @@
 diff --git a/src/PardotHandler.php b/src/PardotHandler.php
-index 55819d1..ffe2c21 100644
+index 55819d1..3f2de19 100644
 --- a/src/PardotHandler.php
 +++ b/src/PardotHandler.php
-@@ -76,6 +76,31 @@ class PardotHandler implements PardotHandlerInterface {
+@@ -76,6 +76,33 @@ class PardotHandler implements PardotHandlerInterface {
      }
-
+ 
      $data = $webform_submission->getData();
 +
 +    // Verify custom pardot url. See: /admin/planet/pardot.
@@ -22,15 +22,17 @@ index 55819d1..ffe2c21 100644
 +    }
 +
 +    // Planet Custom Pardot.
-+    if ($data['single_opt_in'] == '1') {
-+      $data['single_opt_in'] = 'true';
-+    } else {
-+      $data['single_opt_in'] = 'false';
++    if (isset($data['single_opt_in'])) {
++      if ($data['single_opt_in'] == '1') {
++        $data['single_opt_in'] = 'true';
++      } else {
++        $data['single_opt_in'] = 'false';
++      }
 +    }
-+    if ($data['type_of_business'] == 'Other') {
++    if (isset($data['type_of_business']) && $data['type_of_business'] == 'Other') {
 +      $data['type_of_business'] = 'Partners';
 +    }
 +
      $mapping = $this->getPardotFieldsMapping($webform_submission);
      $data = $this->mapData($mapping, $data);
-
+ 

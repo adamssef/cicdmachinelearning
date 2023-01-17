@@ -32,35 +32,31 @@ function planet_core_preprocess_html(&$variables): void {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void {
-  // Add UTM to the 'Get in touch' webform.
-  if ($webform_submission->getWebform()->id() == 'get_in_touch') {
+  // Check for the variables to send the UTMs to the form.
+  $cookie_utm_source = isset($_COOKIE['Drupal_visitor_utm_source']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_source']) : '';
+  $cookie_utm_medium = isset($_COOKIE['Drupal_visitor_utm_medium']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_medium']) : '';
+  $cookie_utm_campaign = isset($_COOKIE['Drupal_visitor_utm_campaign']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_campaign']) : '';
+  $cookie_utm_term = isset($_COOKIE['Drupal_visitor_utm_term']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_term']) : '';
+  $cookie_utm_content = isset($_COOKIE['Drupal_visitor_utm_content']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_content']) : '';
 
-    // Check for the variables to send the UTMs to the form.
-    $cookie_utm_source = isset($_COOKIE['Drupal_visitor_utm_source']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_source']) : '';
-    $cookie_utm_medium = isset($_COOKIE['Drupal_visitor_utm_medium']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_medium']) : '';
-    $cookie_utm_campaign = isset($_COOKIE['Drupal_visitor_utm_campaign']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_campaign']) : '';
-    $cookie_utm_term = isset($_COOKIE['Drupal_visitor_utm_term']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_term']) : '';
-    $cookie_utm_content = isset($_COOKIE['Drupal_visitor_utm_content']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_content']) : '';
+  if ($cookie_utm_source) {
+    $webform_submission->setElementData('utm_source', $cookie_utm_source);
+  }
 
-    if ($cookie_utm_source) {
-      $webform_submission->setElementData('utm_source', $cookie_utm_source);
-    }
+  if ($cookie_utm_medium) {
+    $webform_submission->setElementData('utm_medium', $cookie_utm_medium);
+  }
 
-    if ($cookie_utm_medium) {
-      $webform_submission->setElementData('utm_medium', $cookie_utm_medium);
-    }
+  if ($cookie_utm_campaign) {
+    $webform_submission->setElementData('utm_campaign', $cookie_utm_campaign);
+  }
 
-    if ($cookie_utm_campaign) {
-      $webform_submission->setElementData('utm_campaign', $cookie_utm_campaign);
-    }
+  if ($cookie_utm_content) {
+    $webform_submission->setElementData('utm_content', $cookie_utm_content);
+  }
 
-    if ($cookie_utm_content) {
-      $webform_submission->setElementData('utm_content', $cookie_utm_content);
-    }
-
-    if ($cookie_utm_term) {
-      $webform_submission->setElementData('utm_term', $cookie_utm_term);
-    }
+  if ($cookie_utm_term) {
+    $webform_submission->setElementData('utm_term', $cookie_utm_term);
   }
 }
 
