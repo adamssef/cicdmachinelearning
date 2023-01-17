@@ -1,0 +1,39 @@
+uuid: 54e5163c-2e54-4098-99f8-86d3ada3b322
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.support_locations_contacts.field_phone
+    - field.field.node.support_locations_contacts.field_region
+    - node.type.support_locations_contacts
+  module:
+    - user
+id: node.support_locations_contacts.default
+targetEntityType: node
+bundle: support_locations_contacts
+mode: default
+content:
+  field_phone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_region:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
