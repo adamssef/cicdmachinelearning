@@ -1,7 +1,9 @@
 uuid: 6b99cbb7-2287-4070-a118-8752deb47853
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - webform_pardot
 weight: 0
 open: null
 close: null
@@ -269,5 +271,16 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  submit_data_to_pardot:
+    id: pardot_submission
+    handler_id: submit_data_to_pardot
+    label: 'Submit data to Pardot'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      pardot_url: 'https://info.weareplanet.com/l/975513/2023-01-06/3x85l'
+      pardot_fields_mapping: "first_name|First Name\r\nlast_name|Last Name\r\nphone_intl.phone|Phone\r\nemail|email\r\ncountries|Country\r\ncompany_business_name|Company\r\ncompany_sector|Company Sector\r\ntextarea|Message\r\nsingle_opt_in|Opt in\r\nlead_source|Lead Source\r\nwebsite_language|Website language\r\nwebsite_origin_page|Website origin page"
 variants: {  }
