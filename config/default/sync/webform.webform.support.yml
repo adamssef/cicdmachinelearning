@@ -62,10 +62,7 @@ elements: |-
         '#type': textarea
         '#title': 'About your project'
         '#title_display': none
-        '#placeholder': |-
-          If you’d like to provide us with a bit more detail about your needs, we can support you more efficiently:
-          - Your main reason for needing a new solution
-          - Your budget
+        '#placeholder': 'If you’d like to provide us with a bit more detail about your needs, we can support you more efficiently. Information such as the main reason for needing a new solution or your budget, are some examples.'
         '#counter_type': character
         '#counter_maximum': 250
   actions:
