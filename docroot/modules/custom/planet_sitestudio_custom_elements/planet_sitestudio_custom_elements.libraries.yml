@@ -107,3 +107,7 @@ tabsNavScroll:
 relatedContentCard:
   js:
     js/relatedContentCard.js: {}
+# Locations Button
+locationsButton:
+  js:
+    js/locationsButton.js: {}
