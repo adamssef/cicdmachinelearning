@@ -111,3 +111,7 @@ relatedContentCard:
 locationsButton:
   js:
     js/locationsButton.js: {}
+# Notification Bar
+notificationBar:
+  js:
+    js/notificationBar.js: {}

@@ -20,7 +20,21 @@
         ) {
           header.classList.add("white-bg");
         } else if (!header.classList.contains("white-bg-fixed")) {
-          header.classList.remove("white-bg");
+          if (document.getElementsByClassName("notification-bar-container").length > 0 &&
+          !document.querySelector(".notification-bar-container").classList.contains('closed')) {
+            if (header.classList.contains("white-bg-fixed") &&
+            $(window).width() < 1023) {
+              header.classList.add("white-bg");
+            } else {
+              if ($(window).width() < 1023) {
+                header.classList.add("white-bg");
+              } else {
+                header.classList.remove("white-bg");
+              }
+            }
+          } else {
+            header.classList.remove("white-bg");
+          }
         }
       });
 
