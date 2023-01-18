@@ -7,33 +7,20 @@ display:
           submit_button: Appliquer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       pager:
         options:
           expose:
             items_per_page_label: 'Éléments par page'
             items_per_page_options_all_label: '- Tout -'
             offset_label: Décalage
-          tags:
-            previous: ‹‹
-            next: ››
       fields:
         id:
           label: 'Identifiant (ID)'
-          separator: ', '
         drupal_entity__target_id:
           label: Entité
-          separator: ', '
-        salesforce_id_1:
-          separator: ', '
         salesforce_mapping:
           label: Correspondance
-          separator: ', '
         changed:
           label: 'Dernière mise à jour'
-          separator: ', '
         operations:
           label: 'Liens d''actions'
-  page_1:
-    display_title: Page
