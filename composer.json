@@ -40,6 +40,7 @@
     "drupal/hidden_language": "^2.0@beta",
     "drupal/jsonapi_extras": "^3.21",
     "drupal/login_security": "^2.0",
+    "drupal/media_bulk_upload": "^3.0",
     "drupal/media_entity_file_replace": "^1.1",
     "drupal/memcache": "^2.4",
     "drupal/menu_item_extras": "^2.17",
