@@ -26,8 +26,6 @@ display:
             past_format: 'Vor @interval'
         operations:
           label: Aktionen
-        mail:
-          separator: ', '
       pager:
         options:
           tags:
@@ -41,7 +39,6 @@ display:
             offset_label: Versatz
       exposed_form:
         options:
-          submit_button: Filter
           reset_button_label: Zurücksetzen
           exposed_sorts_label: 'Sortieren nach'
           sort_asc_label: Aufsteigend
