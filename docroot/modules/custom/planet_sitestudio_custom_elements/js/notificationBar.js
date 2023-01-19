@@ -21,7 +21,9 @@
         if($('body').find('.notification-bar-container')) {
           if ($(window).width() < 1023) {
           $(".notification-bar-button").click(function(){
-            $('header').removeClass('white-bg');
+            if (!$('header').hasClass('white-bg-fixed')) {
+              $('header').removeClass('white-bg');
+            }
           })
         }
           $(window).on('scroll', function(){
