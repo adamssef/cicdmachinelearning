@@ -1,8 +1,8 @@
 diff --git a/src/PardotHandler.php b/src/PardotHandler.php
-index 55819d1..3f2de19 100644
+index 55819d1..89af3fa 100644
 --- a/src/PardotHandler.php
 +++ b/src/PardotHandler.php
-@@ -76,6 +76,33 @@ class PardotHandler implements PardotHandlerInterface {
+@@ -76,6 +76,38 @@ class PardotHandler implements PardotHandlerInterface {
      }
  
      $data = $webform_submission->getData();
@@ -14,9 +14,14 @@ index 55819d1..3f2de19 100644
 +    // Obtain config for specific pardot url.
 +    if ($domain_redirects = \Drupal::config('planet_config.pardot')->get('webform_redirects')) {
 +      foreach ($domain_redirects as $key => $value) {
-+        if ($webform_machinename == $key && (str_contains($source_url, str_replace('/', '', $value[0]["sub_path"])))) {
-+          // set new url
-+          $url = $value[0]["destination"];
++        if ($webform_machinename == $key) {
++          foreach ($value as $source_url_config) {
++            if (str_contains($source_url, str_replace('/', '', $source_url_config["sub_path"]))) {
++              // set new url
++              $url = $source_url_config["destination"];
++              break;
++            }
++          }
 +        }
 +      }
 +    }
