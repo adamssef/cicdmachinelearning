@@ -9,7 +9,6 @@ display:
           label: Titel
         type:
           label: Inhaltstyp
-          separator: ', '
         name:
           label: Autor
         status:
@@ -30,7 +29,6 @@ display:
             last: 'Ende »'
       exposed_form:
         options:
-          submit_button: Filter
           reset_button_label: Zurücksetzen
           exposed_sorts_label: 'Sortieren nach'
           sort_asc_label: Aufsteigend

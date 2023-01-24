@@ -1,0 +1,17 @@
+uuid: 3ff46ba5-f135-4145-bc33-5ef8838673f3
+langcode: en
+status: true
+dependencies: {  }
+id: pdf
+label: PDF
+media_types:
+  pdf: pdf
+  audio: 0
+  document: 0
+  image: 0
+  remote_video: 0
+  video: 0
+form_mode: media_library
+upload_location: 'public://sites/default/files/tmp/'
+show_alt: null
+show_title: null

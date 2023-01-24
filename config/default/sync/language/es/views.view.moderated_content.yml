@@ -5,18 +5,12 @@ display:
       fields:
         title:
           label: Título
-          separator: ', '
         type:
           label: 'Tipo de contenido'
-          separator: ', '
         name:
           label: Autor
-          separator: ', '
-        moderation_state:
-          separator: ', '
         changed:
           label: Actualizado
-          separator: ', '
         operations:
           label: Operaciones
       pager:
@@ -35,8 +29,6 @@ display:
           submit_button: Filtro
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       filters:
         title:
           expose:

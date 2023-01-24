@@ -10,9 +10,6 @@ display:
           action_title: Aktion
       pager:
         options:
-          tags:
-            next: ››
-            previous: ‹‹
           expose:
             items_per_page_label: 'Elemente pro Seite'
             items_per_page_options_all_label: '- Alle -'
@@ -59,8 +56,6 @@ display:
       fields:
         media_bulk_form:
           action_title: Aktion
-        name:
-          separator: ', '
         edit_media:
           alter:
             text: '{{ name }} bearbeiten'
