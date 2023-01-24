@@ -94,6 +94,7 @@ module:
   planet_language_switcher: 0
   planet_sitestudio_custom_elements: 0
   rdf: 0
+  recaptcha: 0
   redirect: 0
   redirect_domain: 0
   responsive_image: 0
