@@ -1,0 +1,11 @@
+uuid: 5859e27a-4fb4-400e-93fb-d70c4b554154
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.support_locations_contacts
+id: node.support_locations_contacts
+target_entity_type_id: node
+target_bundle: support_locations_contacts
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,29 @@
+uuid: d46ba6db-28d7-4388-91e9-595bc7af3481
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_region
+    - node.type.support_locations_contacts
+    - taxonomy.vocabulary.regions
+id: node.support_locations_contacts.field_region
+field_name: field_region
+entity_type: node
+bundle: support_locations_contacts
+label: Region
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      regions: regions
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

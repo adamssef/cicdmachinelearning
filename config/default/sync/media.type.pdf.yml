@@ -1,0 +1,13 @@
+uuid: 0c0a42b2-6730-48ed-a436-2f2ee17035dd
+langcode: en
+status: true
+dependencies: {  }
+id: pdf
+label: PDF
+description: "An uploaded PDF file.\r\n"
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map: {  }

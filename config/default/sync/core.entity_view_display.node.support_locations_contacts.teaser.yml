@@ -1,0 +1,26 @@
+uuid: 3db7b058-26c7-42e7-a5b2-3ac9047df39f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.support_locations_contacts.field_phone
+    - field.field.node.support_locations_contacts.field_region
+    - node.type.support_locations_contacts
+  module:
+    - user
+id: node.support_locations_contacts.teaser
+targetEntityType: node
+bundle: support_locations_contacts
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_phone: true
+  field_region: true
+  langcode: true
+  search_api_excerpt: true

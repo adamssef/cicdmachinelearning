@@ -7,15 +7,9 @@ display:
           submit_button: Filtra
           reset_button_label: Ripristina
           exposed_sorts_label: 'Ordina per'
-          sort_asc_label: Asc
           sort_desc_label: Disc
       pager:
         options:
-          tags:
-            previous: '‹ previous'
-            next: 'next ›'
-            first: '« first'
-            last: 'last »'
           expose:
             items_per_page_label: 'Voci per pagina'
             items_per_page_options_all_label: '- Tutto -'
@@ -25,9 +19,6 @@ display:
           action_title: 'Con la selezione'
         redirect_source__path:
           label: Da
-          separator: ', '
-        created:
-          label: Created
       filters:
         redirect_source__path:
           expose:
