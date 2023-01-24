@@ -63,6 +63,7 @@ elements: |-
         '#required': true
         '#wrapper_type': form_element
         '#type__access': false
+        '#phone__required': true
         '#ext__access': false
         '#phone__international_initial_country': GB
       type_of_business:
