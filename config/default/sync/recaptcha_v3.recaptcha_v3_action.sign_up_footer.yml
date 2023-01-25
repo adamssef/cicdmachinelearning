@@ -5,4 +5,4 @@ dependencies: {  }
 id: sign_up_footer
 label: 'Sign Up Footer'
 threshold: 0.5
-challenge: ''
+challenge: recaptcha/reCAPTCHA
