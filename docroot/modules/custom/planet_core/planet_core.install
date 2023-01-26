@@ -16,6 +16,7 @@ function planet_core_update_8001(): void {
     'Payments',
     'Hospitality',
     'Partners',
+    'Retail',
   ];
 
   foreach ($company_sectors as $sector) {
