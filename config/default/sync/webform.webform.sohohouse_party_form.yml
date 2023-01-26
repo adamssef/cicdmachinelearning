@@ -1,4 +1,4 @@
-uuid: 4843384b-a3e3-43d0-b3c2-36bca73e2524
+uuid: 59e67f91-31e5-4cc0-b741-bf7be4d039d9
 langcode: en
 status: open
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
 weight: 0
 open: null
 close: null
-uid: 46
+uid: 1
 template: false
 archive: false
-id: _lp_shortcuts_get_in_touch
-title: '[LP] Shortcuts - Get in touch'
+id: sohohouse_party_form
+title: 'SohoHouse - Party form'
 description: ''
 category: ''
 elements: |-
@@ -50,6 +50,11 @@ elements: |-
         '#title': 'E-mail*'
         '#autocomplete': 'off'
         '#required': true
+    second_column:
+      '#type': container
+      '#attributes':
+        class:
+          - column-flex
       company_business_name:
         '#type': textfield
         '#title': 'Company name*'
@@ -57,20 +62,6 @@ elements: |-
         '#maxlength': 50
         '#autocomplete': 'off'
         '#required': true
-      type_of_business:
-        '#type': select
-        '#title': 'Company sector*'
-        '#options':
-          Retail: Retail
-          Hospitality: Hospitality
-          Partners: Partners
-          Other: Other
-        '#required': true
-    second_column:
-      '#type': container
-      '#attributes':
-        class:
-          - column-flex
       address_country:
         '#type': webform_address
         '#title': 'Country*'
@@ -86,6 +77,12 @@ elements: |-
         '#country__title_display': before
         '#country__required': true
         '#flexbox': '0'
+      dietary_requirements:
+        '#type': textfield
+        '#title': 'Dietary Requirements'
+        '#minlength': 2
+        '#maxlength': 100
+        '#autocomplete': 'off'
       single_opt_in:
         '#type': checkbox
         '#title': 'Receive updates about Planet'
@@ -95,15 +92,6 @@ elements: |-
       captcha:
         '#type': captcha
         '#captcha_type': recaptcha_v3/get_in_touch
-      textarea:
-        '#type': textarea
-        '#title': 'About your project*'
-        '#maxlength': 250
-        '#placeholder': 'Tell us more about your project'
-        '#autocomplete': 'off'
-        '#required': true
-        '#counter_type': character
-        '#counter_maximum': 250
       markup:
         '#type': webform_markup
         '#markup': '<p>By submitting this form, you accept the terms in our&nbsp;<a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Privacy Policy</a>.</p>'
@@ -341,23 +329,6 @@ handlers:
     conditions: {  }
     weight: 0
     settings:
-      pardot_url: 'https://info.weareplanet.com/l/975513/2023-01-09/44pq3'
-      pardot_fields_mapping: |-
-        first_name|First Name
-        last_name|Last Name
-        phone_intl.phone|Phone
-        address_country.country|Country
-        company_business_name|Company
-        type_of_business|Company Sector
-        textarea|Message
-        single_opt_in|Opt in
-        lead_source|Lead Source
-        website_language|Website language
-        website_origin_page|Website origin page
-        email|email
-        utm_source|utm_source
-        utm_medium|utm_medium
-        utm_campaign|utm_campaign
-        utm_content|utm_content
-        utm_term|utm_term
+      pardot_url: 'https://info.weareplanet.com/l/975513/2023-01-25/46njz'
+      pardot_fields_mapping: "first_name|First Name\r\nlast_name|Last Name\r\nphone_intl.phone|Phone\r\naddress_country.country|Country\r\ncompany_business_name|Company\r\ndietary_requirements|dietary-requirements\r\nsingle_opt_in|Opt in\r\nlead_source|Lead Source\r\nwebsite_language|Website language\r\nwebsite_origin_page|Website origin page\r\nemail|email\r\nutm_source|utm_source\r\nutm_medium|utm_medium\r\nutm_campaign|utm_campaign\r\nutm_content|utm_content\r\nutm_term|utm_term"
 variants: {  }
