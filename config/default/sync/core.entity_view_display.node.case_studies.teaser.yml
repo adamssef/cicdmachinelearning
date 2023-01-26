@@ -4,8 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.case_studies.field_company_sector
     - field.field.node.case_studies.field_layout_canvas
-    - field.field.node.case_studies.field_preview
+    - field.field.node.case_studies.field_logo
+    - field.field.node.case_studies.field_pre_heading
+    - field.field.node.case_studies.field_promoted_case_study
+    - field.field.node.case_studies.field_summary
+    - field.field.node.case_studies.field_tags
     - node.type.case_studies
   module:
     - user
@@ -14,13 +19,23 @@ targetEntityType: node
 bundle: case_studies
 mode: teaser
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
 hidden:
+  field_company_sector: true
   field_layout_canvas: true
-  field_preview: true
+  field_logo: true
+  field_pre_heading: true
+  field_promoted_case_study: true
+  field_summary: true
+  field_tags: true
   langcode: true
   search_api_excerpt: true

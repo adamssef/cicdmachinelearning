@@ -1,15 +1,17 @@
-uuid: 9d105a50-c34b-44cb-8ebe-4b5cf2cc6bf9
+uuid: 5ab7ed07-6455-4a69-8521-f7cb63a6785c
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_preview
-field_name: field_preview
+id: node.field_pre_heading
+field_name: field_pre_heading
 entity_type: node
-type: string_long
+type: string
 settings:
+  max_length: 255
   case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
 cardinality: 1
