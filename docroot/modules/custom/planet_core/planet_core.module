@@ -6,6 +6,9 @@
  */
 
 use Drupal\webform\WebformSubmissionInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
 
 
 /**
@@ -108,4 +111,15 @@ function _planet_core_get_associative_countries_with_region(string $regionId): a
   }
 
   return $countries;
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function planet_core_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  if ($account->isAnonymous() && $node->gettype() == 'webform') {
+    return AccessResult::forbidden()->cachePerPermissions();
+  }
+
+  return AccessResult::neutral()->cachePerPermissions();
 }
