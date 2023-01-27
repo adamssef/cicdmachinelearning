@@ -1,0 +1,8 @@
+uuid: aeb16684-470f-4b8f-8186-15f5d0a47150
+langcode: en
+status: true
+dependencies: {  }
+name: 'Company Sectors'
+vid: company_sectors
+description: 'List of all Planet Payments sectors.'
+weight: 0
