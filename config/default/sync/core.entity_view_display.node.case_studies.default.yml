@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.case_studies.field_layout_canvas
     - field.field.node.case_studies.field_logo
     - field.field.node.case_studies.field_pre_heading
+    - field.field.node.case_studies.field_preview
     - field.field.node.case_studies.field_promoted_case_study
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
@@ -55,6 +56,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_preview:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_promoted_case_study:
     type: boolean

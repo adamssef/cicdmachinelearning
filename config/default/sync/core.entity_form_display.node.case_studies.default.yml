@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.case_studies.field_layout_canvas
     - field.field.node.case_studies.field_logo
     - field.field.node.case_studies.field_pre_heading
+    - field.field.node.case_studies.field_preview
     - field.field.node.case_studies.field_promoted_case_study
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
@@ -59,6 +60,14 @@ content:
     region: content
     settings:
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_preview:
+    type: string_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_promoted_case_study:
