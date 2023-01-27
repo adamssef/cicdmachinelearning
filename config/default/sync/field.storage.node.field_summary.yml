@@ -1,11 +1,11 @@
-uuid: 0347cd07-a8b5-439d-89fa-86412833a4b3
+uuid: 34410b07-2bbc-40b5-aebe-e798901cb894
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_preview
-field_name: field_preview
+id: node.field_summary
+field_name: field_summary
 entity_type: node
 type: string_long
 settings:

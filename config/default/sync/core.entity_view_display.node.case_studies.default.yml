@@ -3,17 +3,32 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.case_studies.field_company_sector
     - field.field.node.case_studies.field_layout_canvas
+    - field.field.node.case_studies.field_logo
+    - field.field.node.case_studies.field_pre_heading
     - field.field.node.case_studies.field_preview
+    - field.field.node.case_studies.field_promoted_case_study
+    - field.field.node.case_studies.field_summary
+    - field.field.node.case_studies.field_tags
     - node.type.case_studies
   module:
     - cohesion_elements
+    - image
     - user
 id: node.case_studies.default
 targetEntityType: node
 bundle: case_studies
 mode: default
 content:
+  field_company_sector:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_layout_canvas:
     type: cohesion_entity_reference_revisions_entity_view
     label: hidden
@@ -23,12 +38,56 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_pre_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_preview:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 8
+    region: content
+  field_promoted_case_study:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_summary:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   content_moderation_control: true

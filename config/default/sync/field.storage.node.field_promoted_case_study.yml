@@ -1,15 +1,14 @@
-uuid: 0347cd07-a8b5-439d-89fa-86412833a4b3
+uuid: f3bd63b5-37bc-4da8-9e1a-0861685417d1
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_preview
-field_name: field_preview
+id: node.field_promoted_case_study
+field_name: field_promoted_case_study
 entity_type: node
-type: string_long
-settings:
-  case_sensitive: false
+type: boolean
+settings: {  }
 module: core
 locked: false
 cardinality: 1

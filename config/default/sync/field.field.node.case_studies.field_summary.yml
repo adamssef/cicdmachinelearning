@@ -1,0 +1,19 @@
+uuid: 95160ecd-f075-459f-8ac9-f63f6c1c28a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.case_studies
+id: node.case_studies.field_summary
+field_name: field_summary
+entity_type: node
+bundle: case_studies
+label: Summary
+description: 'A summary of what this case study is about.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
