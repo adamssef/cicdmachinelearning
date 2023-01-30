@@ -518,6 +518,7 @@ display:
           required: true
           vids:
             - company_sectors
+      css_class: cs-featured-slider-logos
       header:
         area_text_custom:
           id: area_text_custom
