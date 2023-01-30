@@ -1,0 +1,41 @@
+-
+  type: cohesion_component
+  export:
+    uuid: 0ab9f4a1-b5bd-4770-8cea-468ad9f94b51
+    langcode: en
+    status: true
+    dependencies:
+      config:
+        - cohesion_elements.cohesion_component_category.cpt_cat_planet_components
+    label: Image
+    id: cpt_image
+    json_values: '{"canvas":[{"type":"container","uid":"container","title":"Container","status":{"collapsed":false},"iconColor":"layout","uuid":"418039fd-8ca2-4ab7-99de-479011ba8090","parentUid":"root","children":[{"type":"item","uid":"image","title":"Image","status":{"collapsed":true},"iconColor":"media","uuid":"75e9d515-9320-4c3b-99db-b84c05169fd3","parentUid":"container","children":[]}]}],"componentForm":[{"type":"form-field","uid":"form-image","title":"Image uploader","status":{"collapsed":false},"iconColor":"formField","uuid":"26c28409-1af6-41eb-afef-924e9f8f0408","parentUid":"root","children":[]}],"mapper":{"418039fd-8ca2-4ab7-99de-479011ba8090":{},"75e9d515-9320-4c3b-99db-b84c05169fd3":{"settings":{"formDefinition":[{"formKey":"image-settings","children":[{"formKey":"image-image","breakpoints":[],"activeFields":[{"name":"image","active":true},{"name":"title","active":true},{"name":"alt","active":true},{"name":"lazyload","active":true}]},{"formKey":"image-size","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"displaySize","active":true},{"name":"imageAlignment","active":true}]},{"formKey":"image-style","breakpoints":[],"activeFields":[{"name":"imageStyle","active":true},{"name":"customStyle","active":true},{"name":"customStyle","active":true}]}]}],"selectorType":"topLevel","form":null,"items":[]},"styles":{"formDefinition":[{"formKey":"layout","children":[{"formKey":"height","breakpoints":[{"name":"sm"}],"activeFields":[{"name":"min-height","active":false},{"name":"max-height","active":false},{"name":"height","active":true}]}]},{"formKey":"custom-css","children":[{"formKey":"css-property-and-css-value","breakpoints":[{"name":"xl"},{"name":"sm"}],"activeFields":[{"name":"custom-css","active":true},{"name":"customCssProperty","active":true},{"name":"customCss","active":true}]}]}],"selectorType":"topLevel","items":[],"form":null}}},"model":{"418039fd-8ca2-4ab7-99de-479011ba8090":{"settings":{"width":"fluid"}},"75e9d515-9320-4c3b-99db-b84c05169fd3":{"settings":{"title":"Image","styles":{"xl":{"displaySize":"coh-image-responsive","imageAlignment":"coh-image-align-left"}},"customStyle":[{"customStyle":""}],"lazyload":false,"settings":{"lazyload":false,"styles":{"xl":{"displaySize":"coh-image-responsive"}},"imageStyle":"","customStyle":[{"customStyle":""}]},"imageStyle":"","image":"[field.26c28409-1af6-41eb-afef-924e9f8f0408]"},"context-visibility":{"contextVisibility":{"condition":"ALL"}},"styles":{"settings":{"element":"img"},"styles":{"xl":{"custom-css":[{"customCssProperty":{"value":"object-fit"},"customCss":{"value":"cover"}}]},"sm":{"height":{"value":"240"},"custom-css":[{"customCss":{"value":"240px !important"},"customCssProperty":{"value":"height"}}]}}}},"26c28409-1af6-41eb-afef-924e9f8f0408":{"settings":{"title":"Image uploader","type":"cohFileBrowser","options":{"buttonText":"Select image","imageUploader":false,"allowedDescription":"Allowed: png, gif, jpg, jpeg \nMax file size: 2MB","removeLabel":"Remove"},"isStyle":true,"defaultActive":true,"schema":{"type":"string"},"machineName":"image-uploader","tooltipPlacement":"auto right"},"contextVisibility":{"condition":"ALL"}}},"previewModel":{"26c28409-1af6-41eb-afef-924e9f8f0408":{},"75e9d515-9320-4c3b-99db-b84c05169fd3":{"settings":{"image":""}}},"variableFields":{"26c28409-1af6-41eb-afef-924e9f8f0408":[],"75e9d515-9320-4c3b-99db-b84c05169fd3":["settings.image"]},"disabledNodes":[],"meta":{"fieldHistory":[{"uuid":"26c28409-1af6-41eb-afef-924e9f8f0408","type":"form-image","machineName":"image-uploader"}]}}'
+    json_mapper: '{}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: true
+    selectable: true
+    category: cpt_cat_planet_components
+    preview_image: ''
+    has_quick_edit: null
+    entity_type_access: {  }
+    bundle_access: {  }
+    twig_template: component--cohesion-cpt-image
+    weight: 5
+-
+  type: cohesion_component_category
+  export:
+    uuid: 8873c611-2d85-4be1-ba45-2d14c1f12dc3
+    langcode: en
+    status: true
+    dependencies: {  }
+    label: 'Planet Components'
+    id: cpt_cat_planet_components
+    json_values: '{}'
+    json_mapper: '{}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: false
+    selectable: true
+    class: category-11
+    weight: -5
