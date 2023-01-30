@@ -43,6 +43,8 @@ enforce:
         - 'https://snap.licdn.com'
         - 'https://googleads.g.doubleclick.net'
         - 'https://info.weareplanet.com'
+        - 'https://www.googleadservices.com'
+        - 'https://static.hotjar.com'
         - 'https://script.hotjar.com'
         - 'https://tag.demandbase.com'
         - 'https://j.6sc.co'
