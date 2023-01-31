@@ -11,7 +11,7 @@
         return 'slide-'+(i);
       });
 
-      $('.coh-slider-nav-top button').click(function() {
+      $('.coh-slider-nav-inner-top button').click(function() {
         let index = $('.slick-active').attr('data-slick-index');
         let slideLogoItem = 'slide-'+index;
 
