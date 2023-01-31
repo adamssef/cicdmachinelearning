@@ -45,6 +45,10 @@ enforce:
         - 'https://info.weareplanet.com'
         - 'https://www.googleadservices.com'
         - 'https://static.hotjar.com'
+        - 'https://script.hotjar.com'
+        - 'https://tag.demandbase.com'
+        - 'https://j.6sc.co'
+        - 'https://tracking.g2crowd.com'
     frame-ancestors:
       base: self
   reporting:
