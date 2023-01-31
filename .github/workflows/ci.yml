@@ -29,7 +29,20 @@ jobs:
       - name: Clone acquia dev
         run: GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git clone -b dev --single-branch planetpayment@svn-41605.prod.hosting.acquia.com:planetpayment.git
       - name: Verify acquia info
-        run: cd planetpayment && ls -al
+        run: cd planetpayment && ls -al && pwd
+      - name: Remove acquia site studio global import components
+        run: cd planetpayment/site_studio_components/ && rm -rf import_acquia
+      - name: Copy global site studio different components
+        run: rsync -rvcm --itemize-changes --compare-dest="$PWD"/planetpayment/site_studio_components/global/ site_studio_components/global/ planetpayment/site_studio_components/import_acquia/
+      - name: Copy planet site studio different components
+        run: rsync -rvcm --itemize-changes --compare-dest="$PWD"/planetpayment/site_studio_components/planet/ site_studio_components/planet/ planetpayment/site_studio_components/import_acquia/
+      - name: List selected global import components
+        run: cd planetpayment/site_studio_components/import_acquia/ && ls -al && pwd
+      - name: Wait
+        uses: 1itachi/sleep-random@v1.0.0
+        with:
+          minutes: '3'
+          random: 'true'
       - name: Remove old files
         run: cd planetpayment && rm -rf config && rm -rf docroot && rm -rf vendor && rm -rf patches && rm -rf hooks && rm -rf site_studio_components
       - name: copy files
