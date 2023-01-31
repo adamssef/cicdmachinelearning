@@ -44,7 +44,7 @@ jobs:
           minutes: '3'
           random: 'true'
       - name: Remove old files
-        run: cd planetpayment && rm -rf config && rm -rf docroot && rm -rf vendor && rm -rf patches && rm -rf hooks && rm -rf site_studio_components
+        run: cd planetpayment && rm -rf config && rm -rf docroot && rm -rf vendor && rm -rf patches && rm -rf hooks
       - name: copy files
         run: cp -R config ./planetpayment/ && cp -R docroot ./planetpayment/ && cp -R vendor ./planetpayment/ && cp -R patches ./planetpayment/ && cp composer.json ./planetpayment/ && cp composer.lock ./planetpayment/ && cp -R hooks ./planetpayment/ && cp -R site_studio_components ./planetpayment/
       - name: remove submodules git
