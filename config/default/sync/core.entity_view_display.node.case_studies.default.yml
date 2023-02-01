@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.case_studies.field_company_sector
     - field.field.node.case_studies.field_layout_canvas
     - field.field.node.case_studies.field_logo
+    - field.field.node.case_studies.field_main_image
     - field.field.node.case_studies.field_pre_heading
     - field.field.node.case_studies.field_preview
     - field.field.node.case_studies.field_promoted_case_study
@@ -48,6 +49,17 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_main_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_pre_heading:
     type: string
