@@ -123,3 +123,16 @@ function planet_core_node_access(NodeInterface $node, $op, AccountInterface $acc
 
   return AccessResult::neutral()->cachePerPermissions();
 }
+
+/**
+ * Implements hook_theme().
+ */
+function planet_core_theme(): array {
+  return [
+    'views_view_fields__case_studies__featured_slider' => [
+      'template' => 'views-view-fields--case-studies--featured_slider',
+      'render element' => 'elements',
+      'base hook' => 'views_view',
+    ]
+  ];
+}

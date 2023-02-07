@@ -13,7 +13,7 @@ third_party_settings:
       - ''
       - ''
   hidden_language:
-    hidden: true
+    hidden: false
 id: fr
 label: French
 direction: ltr

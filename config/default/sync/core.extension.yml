@@ -110,6 +110,7 @@ module:
   search_api_solr: 0
   seo_hreflang: 0
   serialization: 0
+  sfweb2lead_webform: 0
   shortcut: 0
   simple_sitemap: 0
   simplelogin: 0
@@ -147,8 +148,7 @@ module:
   views: 10
   standard: 1000
 theme:
-  bartik: 0
-  seven: 0
   stable: 0
   cohesion_theme: 0
+  claro: 0
 profile: standard
