@@ -1,4 +1,4 @@
-uuid: 98355115-855b-4ecf-9858-9fb7201c57a2
+uuid: b37cf58f-3ae1-4aee-b415-60afb51eaf89
 langcode: en
 status: true
 dependencies:
@@ -10,8 +10,8 @@ field_name: field_preview
 entity_type: node
 bundle: case_studies
 label: Preview
-description: 'A summary of what this case study is about'
-required: true
+description: ''
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

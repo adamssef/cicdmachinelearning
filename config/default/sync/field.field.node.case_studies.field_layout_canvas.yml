@@ -11,7 +11,7 @@ id: node.case_studies.field_layout_canvas
 field_name: field_layout_canvas
 entity_type: node
 bundle: case_studies
-label: 'layout canvas'
+label: 'Layout canvas'
 description: ''
 required: false
 translatable: true

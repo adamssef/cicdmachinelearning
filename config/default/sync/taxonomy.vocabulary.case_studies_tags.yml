@@ -1,0 +1,8 @@
+uuid: 8a133394-f02d-4f2c-b2cb-a9763770c28f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Tags (Case Studies)'
+vid: case_studies_tags
+description: 'Tags to group case studies into categories.'
+weight: 0

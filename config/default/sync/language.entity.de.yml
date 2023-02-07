@@ -13,7 +13,7 @@ third_party_settings:
       - ''
       - ''
   hidden_language:
-    hidden: true
+    hidden: false
 id: de
 label: German
 direction: ltr
