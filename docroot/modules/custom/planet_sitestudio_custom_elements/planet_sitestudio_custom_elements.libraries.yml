@@ -47,6 +47,10 @@ ourApproachContainer:
 accordionWithTwoTitles:
   js:
     js/accordionWithTwoTitles.js: {}
+# Hero 50/50 with video, handling video height
+heroWithVideoHeightAdjustment:
+  js:
+    js/heroWithVideoHeightAdjustment.js: {}
 # Exposed Filter Tab w/ ajax
 tabAjaxExposedFilter:
   js:
