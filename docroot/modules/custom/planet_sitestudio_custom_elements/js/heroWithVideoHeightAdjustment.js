@@ -19,7 +19,7 @@
           else {
             $(".coh-video-inner").height("297px");
           }
-        }, 500));
+        }, 2000));
 
         alreadyRun = 1;
       }
