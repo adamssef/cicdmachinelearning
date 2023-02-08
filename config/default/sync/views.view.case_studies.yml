@@ -903,12 +903,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: image_url
           settings:
-            image_link: ''
             image_style: ''
-            image_loading:
-              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -927,8 +924,8 @@ display:
       style:
         type: cohesion_layout
         options:
-          views_template: view_tpl_cs_featured_slider_four
-          master_template: master_template
+          views_template: view_tpl_cs_featured_block_one
+          master_template: mstr_tpl_planet_master_template
       row:
         type: fields
         options:
@@ -948,18 +945,7 @@ display:
       css_class: ''
       display_description: ''
       header: {  }
-      footer:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text_custom
-          empty: false
-          content: '{{ field_main_image }}'
-          tokenize: true
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -1357,7 +1343,7 @@ display:
         type: cohesion_layout
         options:
           views_template: view_tpl_cs_featured_slider_four
-          master_template: master_template
+          master_template: mstr_tpl_planet_master_template
       row:
         type: fields
         options:
