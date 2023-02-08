@@ -8,4 +8,6 @@ id: global
 label: Global
 tags:
   canonical_url: '[current-page:url]'
+  image_src: /sites/default/files/images/placeholder-images/placeholder-og_1.jpg
+  og_image: /sites/default/files/images/placeholder-images/placeholder-og_1.jpg
   title: '[current-page:title] | [site:name]'
