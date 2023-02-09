@@ -1,0 +1,46 @@
+uuid: 833f4d96-540b-480e-97de-36134b20b092
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.right_side_mega_menu.field_description
+    - field.field.paragraph.right_side_mega_menu.field_link
+    - field.field.paragraph.right_side_mega_menu.field_title
+    - paragraphs.paragraphs_type.right_side_mega_menu
+  module:
+    - link
+    - text
+id: paragraph.right_side_mega_menu.default
+targetEntityType: paragraph
+bundle: right_side_mega_menu
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
