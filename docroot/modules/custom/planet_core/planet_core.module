@@ -139,5 +139,9 @@ function planet_core_theme(): array {
       'render element' => 'elements',
       'base hook' => 'views_view',
     ],
+    'paragraph__right_side_mega_menu' => [
+      'template' => 'paragraph--right-side-mega-menu',
+      'base hook' => 'paragraph'
+    ],
   ];
 }
