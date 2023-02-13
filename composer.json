@@ -23,6 +23,7 @@
     "drupal/config_ignore": "^2.3",
     "drupal/config_split": "^1.9",
     "drupal/config_split_ignore": "^1.9",
+    "drupal/content_lock": "^2.3",
     "drupal/content_moderation_edit_notify": "^2.0",
     "drupal/cookiepro": "^2.0",
     "drupal/core-composer-scaffold": "^9.0.0",
