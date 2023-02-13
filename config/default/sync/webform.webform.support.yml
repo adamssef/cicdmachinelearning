@@ -77,6 +77,10 @@ elements: |-
         '#placeholder': 'If you’d like to provide us with a bit more detail about your needs, we can support you more efficiently. Information such as the main reason for needing a new solution or your budget, are some examples.'
         '#counter_type': character
         '#counter_maximum': 250
+      status:
+        '#type': hidden
+        '#title': status
+        '#default_value': New
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -187,7 +191,7 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: url
-  confirmation_url: /success-submission
+  confirmation_url: /thank-you-support
   confirmation_title: ''
   confirmation_message: ''
   confirmation_attributes: {  }
@@ -284,6 +288,7 @@ handlers:
         email: email
         country: 00N5J00000322St
         subject: subject
+        status: status
         nature_of_enquiry: recordType
         textarea: description
       excluded_data: {  }
