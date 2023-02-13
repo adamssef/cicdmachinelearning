@@ -6,6 +6,7 @@ dependencies:
     - comment
     - contact
     - media
+    - site_settings_type_permissions
     - system
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
@@ -18,3 +19,4 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'view media'
+  - 'view published menu site setting entities'
