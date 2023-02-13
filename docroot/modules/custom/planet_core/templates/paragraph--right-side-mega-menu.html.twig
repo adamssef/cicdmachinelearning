@@ -10,13 +10,13 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% if content.field_title is not empty %}
-      <div class="right-side-mega-menu__title">{{ content.field_title }}</div>
+      <div class="right-side-mega-menu__title coh-style-h300">{{ content.field_title }}</div>
     {% endif %}
     {% if content.field_description is not empty %}
-      <div class="right-side-mega-menu__description">{{ content.field_description }}</div>
+      <div class="right-side-mega-menu__description coh-style-b100">{{ content.field_description }}</div>
     {% endif %}
     {% if content.field_link is not empty %}
-      <div class="right-side-mega-menu__link">{{ content.field_link }}</div>
+      <div class="right-side-mega-menu__link coh-style-t100">{{ content.field_link }}</div>
     {% endif %}
   </div>
 {% endblock paragraph %}
