@@ -127,3 +127,7 @@ csFeaturedSlider:
 formFlagIcon:
   js:
     js/formFlagIcon.js: { }
+# Mega Menu
+megaMenu:
+  js:
+    js/megaMenu.js: { }
