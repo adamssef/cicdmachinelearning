@@ -8,7 +8,7 @@
     attach: function () {
       $(document).ready(function () {
         $(".coh-paragraph-items").html(function(index, html) {
-          return html.replace(" , ", "");
+          return html.replace(",", "");
         });
       });
     }
