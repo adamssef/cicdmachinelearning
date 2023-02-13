@@ -81,6 +81,18 @@ elements: |-
         '#type': hidden
         '#title': status
         '#default_value': New
+      returl:
+        '#type': hidden
+        '#title': retURL
+        '#default_value': 'https://www.weareplanet.com/thank-you-support'
+      orgid:
+        '#type': hidden
+        '#title': orgid
+        '#default_value': 00D24000000ac79
+      external:
+        '#type': hidden
+        '#title': external
+        '#default_value': '1'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -175,6 +187,8 @@ settings:
   wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -288,9 +302,12 @@ handlers:
         email: email
         country: 00N5J00000322St
         subject: subject
-        status: status
         nature_of_enquiry: recordType
         textarea: description
+        status: status
+        returl: retURL
+        orgid: orgid
+        external: external
       excluded_data: {  }
       custom_data: ''
       debug: false
