@@ -10,6 +10,15 @@
         $(".coh-paragraph-items").html(function(index, html) {
           return html.replace(",", "");
         });
+        $(".menu-level-1-li").click(function(){
+          $(".menu-level-1-li").removeClass("menu-li-active");
+          if($(this).hasClass("is-expanded")){
+            $(this).addClass("menu-li-active");
+          }
+        })
+        $(".coh-button-back").click(function(){
+          $(".menu-li-active").children("a").click();
+        })
       });
     }
   };
