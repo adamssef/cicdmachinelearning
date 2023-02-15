@@ -4,6 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.case_studies.field_challenge_solution_text
+    - field.field.node.case_studies.field_challenge_solution_title
+    - field.field.node.case_studies.field_challenge_text
+    - field.field.node.case_studies.field_challenge_title
+    - field.field.node.case_studies.field_challenge_video
     - field.field.node.case_studies.field_company_sector
     - field.field.node.case_studies.field_layout_canvas
     - field.field.node.case_studies.field_logo
@@ -32,6 +37,11 @@ content:
     weight: 100
     region: content
 hidden:
+  field_challenge_solution_text: true
+  field_challenge_solution_title: true
+  field_challenge_text: true
+  field_challenge_title: true
+  field_challenge_video: true
   field_company_sector: true
   field_layout_canvas: true
   field_logo: true
