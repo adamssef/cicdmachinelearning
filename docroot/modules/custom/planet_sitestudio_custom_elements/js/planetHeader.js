@@ -59,7 +59,7 @@
             $("body").css("overflow", "hidden");
 
             $(".coh-container .menu-container").css("position", "fixed");
-            //$(".coh-container .menu-container").css("height", "100%");
+            $(".coh-container .menu-container").css("height", "100%");
             $(".coh-container .menu-container").css("overflow-y", "scroll");
           } else {
             // Menu is closed;
