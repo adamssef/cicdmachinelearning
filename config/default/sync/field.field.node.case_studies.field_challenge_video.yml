@@ -1,0 +1,19 @@
+uuid: 69959616-c3c7-4d36-b5d6-2a6123c2e314
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challenge_video
+    - node.type.case_studies
+id: node.case_studies.field_challenge_video
+field_name: field_challenge_video
+entity_type: node
+bundle: case_studies
+label: 'Challenge Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -3,6 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.case_studies.field_challenge_solution_text
+    - field.field.node.case_studies.field_challenge_solution_title
+    - field.field.node.case_studies.field_challenge_text
+    - field.field.node.case_studies.field_challenge_title
+    - field.field.node.case_studies.field_challenge_video
     - field.field.node.case_studies.field_company_sector
     - field.field.node.case_studies.field_layout_canvas
     - field.field.node.case_studies.field_logo
@@ -30,6 +35,46 @@ content:
     weight: 11
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_challenge_solution_text:
+    type: string_textarea
+    weight: 29
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_challenge_solution_title:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_challenge_text:
+    type: string_textarea
+    weight: 27
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_challenge_title:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_challenge_video:
+    type: string_textarea
+    weight: 30
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_company_sector:
     type: entity_reference_autocomplete
