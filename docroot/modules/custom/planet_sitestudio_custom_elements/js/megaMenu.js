@@ -19,6 +19,10 @@
         $(".coh-button-back").click(function(){
           $(".menu-li-active").children("a").click();
         })
+        $(".coh-button-close").click(function(){
+          $(".coh-button-back").click();
+          $(".mobile-menu-button, .header-container, .menu-container").removeClass("menu-visible")
+        })
       });
     }
   };
