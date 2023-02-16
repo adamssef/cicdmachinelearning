@@ -131,3 +131,7 @@ formFlagIcon:
 megaMenu:
   js:
     js/megaMenu.js: { }
+# Tags - Case Studies
+tagsCaseStudies:
+  js:
+    js/tagsCaseStudies.js: { }
