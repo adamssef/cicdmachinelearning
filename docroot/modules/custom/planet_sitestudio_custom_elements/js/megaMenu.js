@@ -21,7 +21,8 @@
         })
         $(".coh-button-close").click(function(){
           $(".coh-button-back").click();
-          $(".mobile-menu-button, .header-container, .menu-container").removeClass("menu-visible")
+          $(".mobile-menu-button, .header-container, .menu-container").removeClass("menu-visible");
+          $("body").css("overflow","");
         })
       });
     }
