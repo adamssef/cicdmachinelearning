@@ -1,0 +1,10 @@
+elements: |
+  first_name:
+    '#title': 'Nombre*'
+  last_name:
+    '#title': 'Apellido*'
+  phone_intl:
+    '#title': 'Teléfono*'
+    '#phone__title': Teléfono
+  company_business_name:
+    '#title': 'Empresa*'
