@@ -51,17 +51,12 @@ settings:
         -
           name: Styles
           items:
-            - Format
-            - Styles
-            - DX8Styles
             - DX8InlineStyles
         -
           name: Table
           items:
             - Table
-  plugins:
-    stylescombo:
-      styles: ''
+  plugins: {  }
 image_upload:
   status: true
   scheme: public

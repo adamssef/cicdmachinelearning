@@ -6,6 +6,9 @@
  */
 
 use Drupal\webform\WebformSubmissionInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
 
 
 /**
@@ -108,4 +111,28 @@ function _planet_core_get_associative_countries_with_region(string $regionId): a
   }
 
   return $countries;
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function planet_core_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  if ($account->isAnonymous() && $node->gettype() == 'webform') {
+    return AccessResult::forbidden()->cachePerPermissions();
+  }
+
+  return AccessResult::neutral()->cachePerPermissions();
+}
+
+/**
+ * Implements hook_theme().
+ */
+function planet_core_theme(): array {
+  return [
+    'views_view_fields__case_studies__featured_slider' => [
+      'template' => 'views-view-fields--case-studies--featured_slider',
+      'render element' => 'elements',
+      'base hook' => 'views_view',
+    ]
+  ];
 }

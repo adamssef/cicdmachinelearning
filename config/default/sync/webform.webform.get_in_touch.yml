@@ -92,9 +92,6 @@ elements: |-
         '#description': 'Check this box to give consent to receiving updates about Planet&rsquo;s products, events, trainings, reports and services'
         '#title_display': none
         '#description_display': after
-      captcha:
-        '#type': captcha
-        '#captcha_type': recaptcha_v3/get_in_touch
       textarea:
         '#type': textarea
         '#title': 'About your project*'
@@ -107,6 +104,9 @@ elements: |-
       markup:
         '#type': webform_markup
         '#markup': '<p>By submitting this form, you accept the terms in our&nbsp;<a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Privacy Policy</a>.</p>'
+      captcha:
+        '#type': captcha
+        '#captcha_type': recaptcha_v3/get_in_touch
       actions:
         '#type': webform_actions
         '#title': 'Submit button(s)'
@@ -337,7 +337,7 @@ handlers:
     handler_id: submit_data_to_pardot
     label: 'Submit data to Pardot'
     notes: ''
-    status: true
+    status: false
     conditions: {  }
     weight: 0
     settings:

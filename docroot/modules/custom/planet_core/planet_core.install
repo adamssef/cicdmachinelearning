@@ -1,0 +1,31 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_update_N().
+ *
+ * Create mandatory sectors for the 'Company Sectors' vocabulary.
+ *
+ * @return void
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function planet_core_update_8001(): void {
+  $vid = 'company_sectors';
+  $company_sectors = [
+    'Payments',
+    'Hospitality',
+    'Partners',
+    'Retail',
+  ];
+
+  foreach ($company_sectors as $sector) {
+    $term = Term::create(array(
+      'parent' => array(),
+      'name' => $sector,
+      'vid' => $vid,
+    ));
+
+    $term->save();
+  }
+}

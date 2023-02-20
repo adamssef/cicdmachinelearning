@@ -1,0 +1,41 @@
+-
+  type: cohesion_component
+  export:
+    uuid: d825e699-0505-46d3-a6a0-5dfbbb2da801
+    langcode: en
+    status: true
+    dependencies:
+      config:
+        - cohesion_elements.cohesion_component_category.cpt_cat_planet_components
+    label: Webform
+    id: cpt_webform
+    json_values: '{"canvas":[{"type":"item","uid":"attach_js_element","isCustom":true,"title":"Element to Attach JS","selected":false,"status":{"collapsed":true},"iconColor":"custom","uuid":"3ad8cf70-2f70-4f6e-931a-66ff8410ddbf","parentUid":"root","children":[]},{"type":"container","uid":"container","title":"Container","status":{"collapsed":false},"uuid":"51c9c37d-c36f-4a1c-9c3a-55e8927fb4a5","parentUid":"root","children":[{"type":"item","uid":"site_studio_webform_node_element","isCustom":true,"title":"Webform Node Element","selected":false,"status":{"collapsed":true},"uuid":"2c069881-db5c-4a13-9cf3-287f4c5988d5","parentUid":"container","children":[]}]}],"componentForm":[{"type":"form-container","uid":"form-section","title":"Field group","status":{"collapsed":false},"options":{"formBuilder":true},"uuid":"89b987e3-6759-441e-b962-3e5e46fcb3dc","parentUid":"root","children":[{"type":"form-field","uid":"form-entity-browser","title":"Entity browser","status":{"collapsed":false},"uuid":"1ed197ba-edd9-441e-bb89-19c34d91e849","parentUid":"form-section","children":[]}]}],"mapper":{"51c9c37d-c36f-4a1c-9c3a-55e8927fb4a5":{},"2c069881-db5c-4a13-9cf3-287f4c5988d5":{"settings":{"formDefinition":[{"formKey":"site_studio_webform_node_element_settings","children":[{"formKey":"site_studio_webform_node_element_dynamic","breakpoints":[],"activeFields":[{"name":"webform_node_id","active":true}]}]}],"selectorType":"topLevel","form":null,"items":[]}},"3ad8cf70-2f70-4f6e-931a-66ff8410ddbf":{}},"model":{"3ad8cf70-2f70-4f6e-931a-66ff8410ddbf":{"settings":{"title":"Element to Attach JS","hook_theme_name":"attach_js_element","template_name":"attach-js-template","module_name":"planet_sitestudio_custom_elements","library_name":"getInTouchWebForm"},"context-visibility":{"contextVisibility":{"condition":"ALL"}},"styles":{"settings":{"element":"attach_js_element"}}},"51c9c37d-c36f-4a1c-9c3a-55e8927fb4a5":{"settings":{"width":"fluid"}},"2c069881-db5c-4a13-9cf3-287f4c5988d5":{"settings":{"title":"Webform Node Element","webform_node_id":"[field.1ed197ba-edd9-441e-bb89-19c34d91e849]"},"context-visibility":{"contextVisibility":{"condition":"ALL"}},"styles":{"settings":{"element":"site_studio_webform_node_element"}}},"89b987e3-6759-441e-b962-3e5e46fcb3dc":{"settings":{"title":"Webform Settings","type":"cohSection","hideRowHeading":0,"removePadding":0,"columnCount":"coh-component-field-group-1-col","breakpointIcon":"","breakpoints":false,"propertiesMenu":false,"disableScrollbar":true,"disableEllipsisMenu":true,"isOpen":true},"contextVisibility":{"condition":"ALL"}},"1ed197ba-edd9-441e-bb89-19c34d91e849":{"settings":{"title":"Webform","type":"cohEntityBrowser","showConfig":false,"hideRowHeading":true,"schema":{"type":"object"},"machineName":"webform","options":{"entityBrowserTypeDisabled":true,"entityTypeDisabled":true,"entityBrowserBundlesDisabled":true,"entityBrowserType":"typeahead","entityType":"node","bundles":{"webform":true}},"entityBrowserTypeTooltipPlacement":"auto right","entityTypeTooltipPlacement":"auto right","entityBrowserTooltipPlacement":"auto right"},"contextVisibility":{"condition":"ALL"},"model":{"value":{"entity":{"entityType":"node"}}}}},"previewModel":{"89b987e3-6759-441e-b962-3e5e46fcb3dc":{},"1ed197ba-edd9-441e-bb89-19c34d91e849":{},"2c069881-db5c-4a13-9cf3-287f4c5988d5":{},"3ad8cf70-2f70-4f6e-931a-66ff8410ddbf":{}},"variableFields":{"89b987e3-6759-441e-b962-3e5e46fcb3dc":[],"1ed197ba-edd9-441e-bb89-19c34d91e849":[],"2c069881-db5c-4a13-9cf3-287f4c5988d5":["settings.webform_node_id"],"3ad8cf70-2f70-4f6e-931a-66ff8410ddbf":[]},"disabledNodes":[],"meta":{"fieldHistory":[{"uuid":"1ed197ba-edd9-441e-bb89-19c34d91e849","type":"form-entity-browser","machineName":"webform"}]}}'
+    json_mapper: '{}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: true
+    selectable: true
+    category: cpt_cat_planet_components
+    preview_image: ''
+    has_quick_edit: true
+    entity_type_access: {  }
+    bundle_access: {  }
+    twig_template: component--cohesion-cpt-webform
+    weight: 89
+-
+  type: cohesion_component_category
+  export:
+    uuid: 8873c611-2d85-4be1-ba45-2d14c1f12dc3
+    langcode: en
+    status: true
+    dependencies: {  }
+    label: 'Planet Components'
+    id: cpt_cat_planet_components
+    json_values: '{}'
+    json_mapper: '{}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: false
+    selectable: true
+    class: category-11
+    weight: -5

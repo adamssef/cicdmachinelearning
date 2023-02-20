@@ -115,3 +115,7 @@ locationsButton:
 notificationBar:
   js:
     js/notificationBar.js: {}
+# Case Studies Featured Slider
+csFeaturedSlider:
+  js:
+    js/csFeaturedSlider.js: { }

@@ -6,4 +6,5 @@ ignored_config_entities:
   - views.view.locations_contacts
   - views.view.companies
   - planet_config.pardot
+  - views.view.support_locations_contacts
 enable_export_filtering: true

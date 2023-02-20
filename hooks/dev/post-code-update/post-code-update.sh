@@ -19,8 +19,9 @@ repo_type="$6"
 
 echo "drush sync:import"
 cd "/var/www/html/${site}.${target_env}/"
-find site_studio_components/global -iname "*.yml" -exec drush9 @$site.$target_env sync:import --overwrite-all --path=../{} \;
-find site_studio_components/planet -iname "*.yml" -exec drush9 @$site.$target_env sync:import --overwrite-all --path=../{} \;
+#find site_studio_components/global -iname "*.yml" -exec drush9 @$site.$target_env sync:import --overwrite-all --path=../{} \;
+#find site_studio_components/planet -iname "*.yml" -exec drush9 @$site.$target_env sync:import --overwrite-all --path=../{} \;
+find site_studio_components/import_acquia -iname "*.yml" -exec drush9 @$site.$target_env sync:import --overwrite-all --path=../{} \;
 
 echo "drush cache-rebuild"
 drush9 @$site.$target_env -y cr --strict=0

@@ -1,0 +1,158 @@
+-
+  type: cohesion_component
+  export:
+    uuid: 821ec79f-f7dc-47e0-92a5-3fdaa87a17f6
+    langcode: en
+    status: true
+    dependencies:
+      config:
+        - cohesion_custom_styles.cohesion_custom_style.c288f946
+        - cohesion_custom_styles.cohesion_custom_style.ca0877c3
+        - cohesion_custom_styles.cohesion_custom_style.e8d3b55a
+        - cohesion_elements.cohesion_component_category.cpt_cat_planet_components
+        - cohesion_website_settings.cohesion_color.planet-black
+        - cohesion_website_settings.cohesion_color.planet-white
+    label: 'Cards tab panel'
+    id: cpt_cards_tab_panel
+    json_values: '{"canvas":[{"type":"container","uid":"container","title":"Container","status":{"collapsed":false},"iconColor":"layout","uuid":"4ea361fc-fec4-454e-a611-a012e7103531","parentUid":"root","children":[{"type":"container","uid":"container","title":"Container","status":{"collapsed":false},"iconColor":"layout","uuid":"56ccc1b0-5774-4fed-898b-62828f4bea75","parentUid":"container","children":[{"type":"container","uid":"container","title":"Container","status":{"collapsed":false},"iconColor":"layout","uuid":"cafc4059-664e-4345-9567-8ed2b8c781f3","parentUid":"container","children":[{"type":"container","uid":"heading","title":"Heading","status":{"collapsed":true},"iconColor":"content","uuid":"5be30a84-f53f-4113-bac1-70d29c8ad02a","parentUid":"container","children":[]},{"type":"container","uid":"paragraph","title":"Paragraph","status":{"collapsed":true},"iconColor":"content","uuid":"fb84239a-7dcd-46e7-891f-3c7ea457a34e","parentUid":"container","children":[]}]}]},{"type":"container","uid":"accordion-tabs-container","title":"Accordion tabs container","status":{"collapsed":false},"iconColor":"interactive","uuid":"c4655804-9403-433a-ad8a-17c27e98f47f","parentUid":"container","children":[{"type":"item","uid":"component-drop-zone-placeholder","title":"Component drop zone","status":{"collapsed":true},"iconColor":"content","uuid":"a0af8259-92f6-45e9-8a4c-809de0ae7872","parentUid":"accordion-tabs-container","children":[]}]}]}],"componentForm":[{"type":"form-container","uid":"form-tab-container","title":"Tab container","status":{"collapsed":false},"options":{"formBuilder":true},"iconColor":"formLayout","uuid":"4aa42dca-d698-4728-ac04-cf4e3dabd26a","parentUid":"root","children":[{"type":"form-container","uid":"form-tab-item","title":"Tab item","status":{"collapsed":false},"options":{"formBuilder":true},"iconColor":"formLayout","uuid":"d110bb5b-d623-4906-97a3-81d7b7b9b10b","parentUid":"form-tab-container","children":[{"type":"form-field","uid":"form-input","title":"Input","translate":true,"status":{"collapsed":false},"iconColor":"formField","uuid":"90fb3102-c921-42dc-8b1c-371e6dd84714","parentUid":"form-tab-item","children":[]},{"type":"form-field","uid":"form-input","title":"Input","translate":true,"status":{"collapsed":false},"iconColor":"formField","uuid":"beb9a3af-8d79-4c55-8567-4dc847867057","parentUid":"form-tab-item","children":[]},{"type":"form-help","uid":"form-helptext","title":"Help text","status":{"collapsed":false},"iconColor":"formHelp","uuid":"9e46d679-90c1-4220-bad9-2fb11444585a","parentUid":"form-tab-item","children":[]}]}]}],"mapper":{"c4655804-9403-433a-ad8a-17c27e98f47f":{"settings":{"formDefinition":[{"formKey":"accordion-tabs-container-settings","children":[{"formKey":"accordion-tabs-container-accordion-or-tab","breakpoints":[{"name":"xl"},{"name":"sm"}],"activeFields":[{"name":"accordionOrTab","active":true},{"name":"collapsible","active":true}]},{"formKey":"accordion-tabs-container-transition","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"animation","active":true},{"name":"duration","active":true},{"name":"durationMs","active":true}]},{"formKey":"accordion-tabs-container-start-state","breakpoints":[{"name":"xl"},{"name":"sm"}],"activeFields":[{"name":"startCollapsed","active":true},{"name":"active","active":true}]}]},{"formKey":"accordion-tabs-container-accordion-accordion-settings","children":[{"formKey":"accordion-tabs-container-behavior","breakpoints":[],"activeFields":[{"name":"scrollToAccordion","active":true},{"name":"setHash","active":true}]},{"formKey":"accordion-tabs-container-offset-scroll-position","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"offsetPositionAgainst","active":true},{"name":"scrollToAccordionOffset","active":true},{"name":"scrollToAccordionOffsetClass","active":true}]}]},{"formKey":"accordion-tabs-container-tab-settings","children":[{"formKey":"accordion-tabs-container-position","breakpoints":[],"activeFields":[{"name":"horizontalVertical","active":true},{"name":"HorizontalPosition","active":true},{"name":"VerticalPosition","active":true}]},{"formKey":"accordion-tabs-container-width","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"accordionTabWidth","active":true},{"name":"accordionTabBleed","active":true}]}]}],"selectorType":"topLevel","form":null,"items":[]},"styles":{"formDefinition":[{"formKey":"layout","children":[{"formKey":"margin","breakpoints":[{"name":"xl"},{"name":"sm"}],"activeFields":[{"name":"margin-equal","active":false},{"name":"margin-top","active":true},{"name":"margin-bottom","active":false},{"name":"margin-left","active":false},{"name":"margin-right","active":false},{"name":"margin-block-start","active":false},{"name":"margin-block-end","active":false},{"name":"margin-inline-start","active":false},{"name":"margin-inline-end","active":false}]}]}],"selectorType":"topLevel","items":[],"form":null},"markup":{"formDefinition":[{"formKey":"tab-markup-classes-and-ids","children":[{"formKey":"tab-markup-add-classes","breakpoints":[],"activeFields":[{"name":"classes","active":true}]}]}],"title":"Markup","selectorType":"topLevel","form":null,"items":[]}},"a0af8259-92f6-45e9-8a4c-809de0ae7872":{},"56ccc1b0-5774-4fed-898b-62828f4bea75":{"settings":{"formDefinition":[{"formKey":"container-settings","children":[{"formKey":"container-width","breakpoints":[],"activeFields":[{"name":"width","active":true}]},{"formKey":"common-link-animation","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"linkAnimation","active":true},{"name":"animationType","active":true},{"name":"animationScope","active":true},{"name":"animationParent","active":true},{"name":"animationTarget","active":true},{"name":"animationScale","active":true},{"name":"animationDirection","active":true},{"name":"animationDirection","active":true},{"name":"animationDirection","active":true},{"name":"animationDistance","active":true},{"name":"animationPieces","active":true},{"name":"animationOrigin","active":true},{"name":"animationFoldHeight","active":true},{"name":"animationHorizontalFirst","active":true},{"name":"animationIterations","active":true},{"name":"animationEasing","active":true},{"name":"animationDuration","active":true}]},{"formKey":"common-link-modifier","breakpoints":[],"activeFields":[{"name":"modifier","active":true},{"name":"modifierType","active":true},{"name":"interactionScope","active":true},{"name":"interactionParent","active":true},{"name":"interactionTarget","active":true},{"name":"modifierName","active":true}]},{"formKey":"container-style","breakpoints":[],"activeFields":[{"name":"customStyle","active":true},{"name":"customStyle","active":true}]}]}],"selectorType":"topLevel","form":null,"items":[]},"styles":{"formDefinition":[{"formKey":"layout","children":[{"formKey":"display","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"display","active":true},{"name":"visibility","active":false},{"name":"overflow","active":false},{"name":"overflow-x","active":false},{"name":"overflow-y","active":false}]},{"formKey":"flex-container","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"flex-direction","active":true},{"name":"flex-wrap","active":false},{"name":"justify-content","active":false},{"name":"justify-content-safety","active":true},{"name":"align-content","active":false},{"name":"align-content-safety","active":true},{"name":"align-items","active":true},{"name":"align-items-safety","active":true}]},{"formKey":"padding","breakpoints":[{"name":"xl"},{"name":"sm"}],"activeFields":[{"name":"padding-equal","active":false},{"name":"padding-top","active":false},{"name":"padding-bottom","active":true},{"name":"padding-left","active":false},{"name":"padding-right","active":false},{"name":"padding-block-start","active":false},{"name":"padding-block-end","active":false},{"name":"padding-inline-start","active":false},{"name":"padding-inline-end","active":false}]}]},{"formKey":"background","children":[{"formKey":"background-color","breakpoints":[{"name":"xl"},{"name":"sm"}],"activeFields":[{"name":"background-color","active":true}]}]}],"selectorType":"topLevel","items":[],"form":null}},"5be30a84-f53f-4113-bac1-70d29c8ad02a":{"settings":{"formDefinition":[{"formKey":"heading-settings","children":[{"formKey":"heading-element","breakpoints":[],"activeFields":[{"name":"element","active":true}]},{"formKey":"heading-heading","breakpoints":[],"activeFields":[{"name":"content","active":true}]},{"formKey":"heading-style","breakpoints":[],"activeFields":[{"name":"customStyle","active":true},{"name":"customStyle","active":true}]}]}],"selectorType":"topLevel","form":null,"items":[]},"styles":{"formDefinition":[{"formKey":"font","children":[{"formKey":"font-and-color","breakpoints":[{"name":"xl"},{"name":"sm"}],"activeFields":[{"name":"font-family","active":false},{"name":"font-weight","active":false},{"name":"color","active":true}]},{"formKey":"font-sizing-and-alignment","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"font-size","active":false},{"name":"line-height","active":false},{"name":"text-align","active":true},{"name":"letter-spacing","active":false},{"name":"word-spacing","active":false},{"name":"text-indent","active":false}]}]},{"formKey":"layout","children":[{"formKey":"padding","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"padding-equal","active":false},{"name":"padding-top","active":true},{"name":"padding-bottom","active":true},{"name":"padding-left","active":false},{"name":"padding-right","active":false},{"name":"padding-block-start","active":false},{"name":"padding-block-end","active":false},{"name":"padding-inline-start","active":false},{"name":"padding-inline-end","active":false}]}]}],"selectorType":"topLevel","items":[],"form":null}},"4ea361fc-fec4-454e-a611-a012e7103531":{"settings":{"formDefinition":[{"formKey":"container-settings","children":[{"formKey":"container-width","breakpoints":[],"activeFields":[{"name":"width","active":true}]},{"formKey":"common-link-animation","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"linkAnimation","active":true},{"name":"animationType","active":true},{"name":"animationScope","active":true},{"name":"animationParent","active":true},{"name":"animationTarget","active":true},{"name":"animationScale","active":true},{"name":"animationDirection","active":true},{"name":"animationDirection","active":true},{"name":"animationDirection","active":true},{"name":"animationDistance","active":true},{"name":"animationPieces","active":true},{"name":"animationOrigin","active":true},{"name":"animationFoldHeight","active":true},{"name":"animationHorizontalFirst","active":true},{"name":"animationIterations","active":true},{"name":"animationEasing","active":true},{"name":"animationDuration","active":true}]},{"formKey":"common-link-modifier","breakpoints":[],"activeFields":[{"name":"modifier","active":true},{"name":"modifierType","active":true},{"name":"interactionScope","active":true},{"name":"interactionParent","active":true},{"name":"interactionTarget","active":true},{"name":"modifierName","active":true}]},{"formKey":"container-style","breakpoints":[],"activeFields":[{"name":"customStyle","active":true},{"name":"customStyle","active":true}]}]}],"selectorType":"topLevel","form":null,"items":[]},"styles":{"formDefinition":[{"formKey":"background","children":[{"formKey":"background-color","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"background-color","active":true}]}]},{"formKey":"layout","children":[{"formKey":"padding","breakpoints":[{"name":"sm"}],"activeFields":[{"name":"padding-equal","active":false},{"name":"padding-top","active":false},{"name":"padding-bottom","active":true},{"name":"padding-left","active":false},{"name":"padding-right","active":false},{"name":"padding-block-start","active":false},{"name":"padding-block-end","active":false},{"name":"padding-inline-start","active":false},{"name":"padding-inline-end","active":false}]}]}],"selectorType":"topLevel","items":[],"form":null},"markup":{"formDefinition":[{"formKey":"tab-markup-classes-and-ids","children":[{"formKey":"tab-markup-add-classes","breakpoints":[],"activeFields":[{"name":"classes","active":true}]},{"formKey":"tab-markup-add-id","breakpoints":[],"activeFields":[{"name":"id","active":true}]}]}],"title":"Markup","selectorType":"topLevel","form":null,"items":[]}},"fb84239a-7dcd-46e7-891f-3c7ea457a34e":{"settings":{"formDefinition":[{"formKey":"paragraph-settings","children":[{"formKey":"paragraph-paragraph","breakpoints":[],"activeFields":[{"name":"content","active":true}]},{"formKey":"paragraph-style","breakpoints":[],"activeFields":[{"name":"customStyle","active":true},{"name":"customStyle","active":true}]}]}],"selectorType":"topLevel","form":null,"items":[]},"styles":{"formDefinition":[{"formKey":"font","children":[{"formKey":"font-and-color","breakpoints":[{"name":"xl"},{"name":"sm"}],"activeFields":[{"name":"font-family","active":false},{"name":"font-weight","active":false},{"name":"color","active":true}]},{"formKey":"font-sizing-and-alignment","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"font-size","active":false},{"name":"line-height","active":true},{"name":"text-align","active":true},{"name":"letter-spacing","active":false},{"name":"word-spacing","active":false},{"name":"text-indent","active":false}]}]},{"formKey":"layout","children":[{"formKey":"padding","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"padding-equal","active":false},{"name":"padding-top","active":false},{"name":"padding-bottom","active":true},{"name":"padding-left","active":false},{"name":"padding-right","active":false},{"name":"padding-block-start","active":false},{"name":"padding-block-end","active":false},{"name":"padding-inline-start","active":false},{"name":"padding-inline-end","active":false}]}]}],"selectorType":"topLevel","items":[],"form":null},"markup":{"formDefinition":[{"formKey":"tab-markup-classes-and-ids","children":[{"formKey":"tab-markup-add-classes","breakpoints":[],"activeFields":[{"name":"classes","active":true}]}]}],"title":"Markup","selectorType":"topLevel","form":null,"items":[]}},"cafc4059-664e-4345-9567-8ed2b8c781f3":{}},"model":{"4ea361fc-fec4-454e-a611-a012e7103531":{"settings":{"title":"Container","width":"fluid","customStyle":[{"customStyle":""}],"settings":{"width":"fluid","customStyle":[{"customStyle":""}]}},"context-visibility":{"contextVisibility":{"condition":"ALL"}},"styles":{"settings":{"element":"container"},"styles":{"xl":{"background-color":{"value":{"link":true,"value":{"hex":"#ffffff","rgba":"rgba(255, 255, 255, 1)"},"wysiwyg":true,"name":"Planet White","uid":"planet-white","class":".coh-color-planet-white","variable":"$coh-color-planet-white","inuse":true}}},"sm":{"padding":{"padding-bottom":{"value":"45"}}}}},"markup":{"id":"cards-tab-panel"}},"56ccc1b0-5774-4fed-898b-62828f4bea75":{"settings":{"title":"Container black background","width":"fluid","customStyle":[{"customStyle":"coh-style-planet-padding-top---extra-small"}],"settings":{"width":"fluid","customStyle":[{"customStyle":""}]}},"context-visibility":{"contextVisibility":{"condition":"ALL"}},"styles":{"settings":{"element":"container"},"styles":{"xl":{"display":{"value":"flex"},"flex-container":{"flex-direction":{"value":"column"},"align-items":{"value":"center"}},"background-color":{"value":{"link":true,"value":{"hex":"#000000","rgba":"rgba(0, 0, 0, 1)"},"wysiwyg":true,"name":"Planet Black","uid":"planet-black","class":".coh-color-planet-black","variable":"$coh-color-planet-black","inuse":true}},"padding":{"padding-bottom":{"value":"80"}}},"sm":{"padding":{"padding-bottom":{"value":"0"}},"background-color":{"value":{"link":true,"value":{"hex":"#ffffff","rgba":"rgba(255, 255, 255, 1)"},"wysiwyg":true,"name":"Planet White","uid":"planet-white","class":".coh-color-planet-white","variable":"$coh-color-planet-white","inuse":true}}}}}},"cafc4059-664e-4345-9567-8ed2b8c781f3":{"settings":{"title":"Container boxed","width":"boxed","customStyle":[{"customStyle":""}],"settings":{"width":"fluid","customStyle":[{"customStyle":""}]}},"context-visibility":{"contextVisibility":{"condition":"ALL"}},"styles":{"settings":{"element":"container"}}},"5be30a84-f53f-4113-bac1-70d29c8ad02a":{"settings":{"title":"Heading","element":"h3","customStyle":[{"customStyle":"coh-style-heading-3-planet"}],"settings":{"element":"h1","customStyle":[{"customStyle":""}]},"content":"[field.90fb3102-c921-42dc-8b1c-371e6dd84714]"},"context-visibility":{"contextVisibility":{"condition":"ALL"}},"styles":{"settings":{"element":"heading"},"styles":{"xl":{"color":{"value":{"link":true,"value":{"hex":"#ffffff","rgba":"rgba(255, 255, 255, 1)"},"wysiwyg":true,"name":"Planet White","uid":"planet-white","class":".coh-color-planet-white","variable":"$coh-color-planet-white","inuse":true}},"padding":{"padding-top":{"value":"30"},"padding-bottom":{"value":"20"}},"text-align":{"value":"center"}},"sm":{"color":{"value":{"link":true,"value":{"hex":"#000000","rgba":"rgba(0, 0, 0, 1)"},"wysiwyg":true,"name":"Planet Black","uid":"planet-black","class":".coh-color-planet-black","variable":"$coh-color-planet-black","inuse":true}}}}}},"fb84239a-7dcd-46e7-891f-3c7ea457a34e":{"settings":{"title":"Paragraph","customStyle":[{"customStyle":"coh-style--body-xl---tt-commons-planet"}],"settings":{"customStyle":[{"customStyle":""}]},"content":"[field.beb9a3af-8d79-4c55-8567-4dc847867057]"},"context-visibility":{"contextVisibility":{"condition":"ALL"}},"styles":{"settings":{"element":"p"},"styles":{"xl":{"padding":{"padding-bottom":{"value":"30"}},"text-align":{"value":"center"},"color":{"value":{"link":true,"value":{"hex":"#ffffff","rgba":"rgba(255, 255, 255, 1)"},"wysiwyg":true,"name":"Planet White","uid":"planet-white","class":".coh-color-planet-white","variable":"$coh-color-planet-white","inuse":true}},"line-height":{"value":"36"}},"sm":{"color":{"value":{"link":true,"value":{"hex":"#000000","rgba":"rgba(0, 0, 0, 1)"},"wysiwyg":true,"name":"Planet Black","uid":"planet-black","class":".coh-color-planet-black","variable":"$coh-color-planet-black","inuse":true}}}}},"markup":{}},"c4655804-9403-433a-ad8a-17c27e98f47f":{"settings":{"title":"Accordion tabs container","styles":{"xl":{"accordionOrTab":"tabs","collapsible":false,"startCollapsed":false,"animation":"default","duration":100,"active":1,"accordionTabWidth":-2,"accordionTabBleed":"retain_gutters","offsetPositionAgainst":"px","scrollToAccordionOffset":50},"sm":{"collapsible":true,"accordionOrTab":"accordion","startCollapsed":true}},"scrollToAccordion":true,"setHash":false,"horizontalVertical":"horizontal_top","HorizontalPosition":"center_aligned","VerticalPosition":"left","settings":{"styles":{"xl":{"accordionOrTab":"accordion","collapsible":true,"animation":"slide","duration":700,"startCollapsed":false,"active":1,"offsetPositionAgainst":"px","scrollToAccordionOffset":0}},"scrollToAccordion":false,"setHash":false,"horizontalVertical":"horizontal_top","HorizontalPosition":"left_aligned"}},"context-visibility":{"contextVisibility":{"condition":"ALL"}},"styles":{"settings":{"element":"accordion-tabs-container"},"styles":{"xl":{"margin":{"margin-top":{"value":"-83"}}},"sm":{"margin":{"margin-top":{"value":"0"}}}}},"markup":{}},"a0af8259-92f6-45e9-8a4c-809de0ae7872":{"settings":{"title":"Drop \"Cards\" components here","dropzoneHideSelector":""}},"4aa42dca-d698-4728-ac04-cf4e3dabd26a":{"settings":{"type":"cohTabContainer","title":"Tab container","responsiveMode":true}},"d110bb5b-d623-4906-97a3-81d7b7b9b10b":{"settings":{"title":"Content","type":"cohTabItem","breakpointIcon":""},"contextVisibility":{"condition":"ALL"}},"90fb3102-c921-42dc-8b1c-371e6dd84714":{"settings":{"title":"Component title","schema":{"type":"string","escape":true},"machineName":"component-title","tooltipPlacement":"auto right"},"contextVisibility":{"condition":"ALL"}},"beb9a3af-8d79-4c55-8567-4dc847867057":{"settings":{"title":"Component subtitle","schema":{"type":"string","escape":true},"machineName":"component-subtitle","tooltipPlacement":"auto right"},"contextVisibility":{"condition":"ALL"}},"9e46d679-90c1-4220-bad9-2fb11444585a":{"settings":{"title":"Help text","type":"cohHelpText","options":{"showClose":false,"helpType":"coh-help-text--help","helpText":"This component should be unique to the page. Drop up to 8 \"Tab - Products tab panel\" components to this drop zone."}},"contextVisibility":{"condition":"ALL"}}},"previewModel":{"d110bb5b-d623-4906-97a3-81d7b7b9b10b":{},"9e46d679-90c1-4220-bad9-2fb11444585a":{},"c4655804-9403-433a-ad8a-17c27e98f47f":{},"56ccc1b0-5774-4fed-898b-62828f4bea75":{},"a0af8259-92f6-45e9-8a4c-809de0ae7872":{},"5be30a84-f53f-4113-bac1-70d29c8ad02a":{},"90fb3102-c921-42dc-8b1c-371e6dd84714":{},"4ea361fc-fec4-454e-a611-a012e7103531":{},"beb9a3af-8d79-4c55-8567-4dc847867057":{},"fb84239a-7dcd-46e7-891f-3c7ea457a34e":{},"cafc4059-664e-4345-9567-8ed2b8c781f3":{}},"variableFields":{"d110bb5b-d623-4906-97a3-81d7b7b9b10b":[],"9e46d679-90c1-4220-bad9-2fb11444585a":[],"c4655804-9403-433a-ad8a-17c27e98f47f":[],"56ccc1b0-5774-4fed-898b-62828f4bea75":[],"a0af8259-92f6-45e9-8a4c-809de0ae7872":[],"5be30a84-f53f-4113-bac1-70d29c8ad02a":["settings.content"],"90fb3102-c921-42dc-8b1c-371e6dd84714":[],"4ea361fc-fec4-454e-a611-a012e7103531":[],"beb9a3af-8d79-4c55-8567-4dc847867057":[],"fb84239a-7dcd-46e7-891f-3c7ea457a34e":["settings.content"],"cafc4059-664e-4345-9567-8ed2b8c781f3":[]},"disabledNodes":[],"meta":{"fieldHistory":[{"uuid":"beb9a3af-8d79-4c55-8567-4dc847867057","type":"form-input","machineName":"component-subtitle"},{"uuid":"90fb3102-c921-42dc-8b1c-371e6dd84714","type":"form-input","machineName":"component-title"}]}}'
+    json_mapper: '{}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: true
+    selectable: true
+    category: cpt_cat_planet_components
+    preview_image: ''
+    has_quick_edit: null
+    entity_type_access: {  }
+    bundle_access: {  }
+    twig_template: component--cohesion-cpt-cards-tab-panel
+    weight: 69
+-
+  type: cohesion_custom_style
+  export:
+    uuid: 023de931-8d43-4172-ab7c-4f0a724e865f
+    langcode: en
+    status: true
+    dependencies:
+      config:
+        - cohesion_website_settings.cohesion_font_stack.tt-commons
+    label: 'H3 - TT Commons Planet'
+    id: c288f946
+    json_values: '{"preview":{"text":"<h1 class=\"coh-preview\">Default content for ''Heading''.<\/h1>\n","textFormat":"cohesion"},"styles":{"settings":{"element":"h1","class":"","combinator":"","pseudo":""},"styles":{"xl":{"font-weight":{"value":"600"},"font-size":{"value":"36"},"line-height":{"value":"38"},"font-style":{"value":"normal"},"font-family":{"value":"$coh-font-tt-commons"}},"xs":{"font-size":{"value":"28"},"line-height":{"value":"30"}},"lg":{"font-size":{"value":"32"},"line-height":{"value":"34"}}}},"sBackgroundColour":"#FFFFFF","variableFields":[]}'
+    json_mapper: '{"styles":{"title":"Heading","selectorType":"topLevel","formDefinition":[{"formKey":"font","children":[{"formKey":"font-and-color","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"font-family","active":true},{"name":"font-weight","active":true},{"name":"color","active":false}]},{"formKey":"font-sizing-and-alignment","breakpoints":[{"name":"xl"},{"name":"lg"},{"name":"xs"}],"activeFields":[{"name":"font-size","active":true},{"name":"line-height","active":true},{"name":"text-align","active":false},{"name":"letter-spacing","active":false},{"name":"word-spacing","active":false},{"name":"text-indent","active":false}]},{"formKey":"font-style-and-wrapping","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"font-style","active":true},{"name":"text-transform","active":true},{"name":"text-decoration","active":true},{"name":"word-wrap","active":true},{"name":"direction","active":true}]}]}],"items":[],"form":null}}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: true
+    selectable: true
+    class_name: .coh-style-heading-3-planet
+    custom_style_type: heading
+    available_in_wysiwyg: true
+    parent: null
+    weight: 32
+-
+  type: cohesion_font_stack
+  export:
+    uuid: 5399cc0c-0e7d-462f-814b-adc08f4830e0
+    langcode: en
+    status: true
+    dependencies: {  }
+    label: 'TT Commons'
+    id: tt-commons
+    json_values: '{"inuse":true,"systemfont":false,"link":true,"name":"TT Commons","uid":"tt-commons","class":".coh-font-tt-commons","variable":"$coh-font-tt-commons","fontStack":"''TT Commons''","smoothing":{"firefox":true,"webkit":true}}'
+    json_mapper: '{}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: true
+    selectable: true
+    source: fontStacks
+-
+  type: cohesion_custom_style
+  export:
+    uuid: 5ca927e3-0299-4350-b94b-42c05cefb255
+    langcode: en
+    status: true
+    dependencies:
+      config:
+        - cohesion_website_settings.cohesion_font_stack.tt-commons
+    label: 'Body XL - TT Commons Planet'
+    id: ca0877c3
+    json_values: '{"preview":{"text":"<p class=\"coh-preview\">Default content for ''Paragraph''.<\/p>\n","textFormat":"cohesion"},"sBackgroundColour":"#FFFFFF","styles":{"settings":{"element":"p","class":"","combinator":"","pseudo":""},"styles":{"xl":{"font-family":{"value":"$coh-font-tt-commons"},"font-weight":{"value":"300"},"font-size":{"value":"28"},"line-height":{"value":"30"},"font-style":{"value":"normal"}},"ps":{"font-size":{"value":"28"},"line-height":{"value":"30"}},"lg":{"font-size":{"value":"24"},"line-height":{"value":"26"}}}},"variableFields":[]}'
+    json_mapper: '{"styles":{"title":"Paragraph","selectorType":"topLevel","formDefinition":[{"formKey":"font","children":[{"formKey":"font-and-color","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"font-family","active":true},{"name":"font-weight","active":true},{"name":"color","active":false}]},{"formKey":"font-sizing-and-alignment","breakpoints":[{"name":"xl"},{"name":"lg"},{"name":"ps"}],"activeFields":[{"name":"font-size","active":true},{"name":"line-height","active":true},{"name":"text-align","active":false},{"name":"letter-spacing","active":false},{"name":"word-spacing","active":false},{"name":"text-indent","active":false}]},{"formKey":"font-style-and-wrapping","breakpoints":[{"name":"xl"}],"activeFields":[{"name":"font-style","active":true},{"name":"text-transform","active":false},{"name":"text-decoration","active":false},{"name":"word-wrap","active":false},{"name":"direction","active":false}]}]}],"items":[],"form":null}}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: true
+    selectable: true
+    class_name: .coh-style--body-xl---tt-commons-planet
+    custom_style_type: paragraph
+    available_in_wysiwyg: true
+    parent: null
+    weight: 61
+-
+  type: cohesion_custom_style
+  export:
+    uuid: 1e33a084-99a1-4a79-881f-254a0bffdf7c
+    langcode: en
+    status: true
+    dependencies: {  }
+    label: 'Planet Padding top - extra small'
+    id: e8d3b55a
+    json_values: '{"preview":{"text":"<div class=\"coh-preview\">Default content for ''Layout''.<\/div>\n","textFormat":"cohesion"},"styles":{"settings":{"element":"div","class":"","combinator":"","pseudo":""},"styles":{"xl":{"padding":{"padding-top":{"value":"45"}}},"lg":{"padding":{"padding-top":{},"padding-bottom":{}}},"sm":{"padding":{"padding-top":{},"padding-bottom":{}}},"ps":{"padding":{"padding-top":{"value":"22"}}},"md":{"padding":{"padding-top":{"value":"35"}}}}},"sBackgroundColour":"#FFFFFF","variableFields":[]}'
+    json_mapper: '{"styles":{"selectorType":"topLevel","items":[],"title":"Layout","formDefinition":[{"formKey":"layout","children":[{"formKey":"padding","breakpoints":[{"name":"xl"},{"name":"md"},{"name":"ps"}],"activeFields":[{"name":"padding-equal","active":false},{"name":"padding-top","active":true},{"name":"padding-bottom","active":false},{"name":"padding-left","active":false},{"name":"padding-right","active":false},{"name":"padding-block-start","active":false},{"name":"padding-block-end","active":false},{"name":"padding-inline-start","active":false},{"name":"padding-inline-end","active":false}]}]}],"form":null}}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: true
+    selectable: true
+    class_name: .coh-style-planet-padding-top---extra-small
+    custom_style_type: layout
+    available_in_wysiwyg: false
+    parent: null
+    weight: 109
+-
+  type: cohesion_component_category
+  export:
+    uuid: 8873c611-2d85-4be1-ba45-2d14c1f12dc3
+    langcode: en
+    status: true
+    dependencies: {  }
+    label: 'Planet Components'
+    id: cpt_cat_planet_components
+    json_values: '{}'
+    json_mapper: '{}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: false
+    selectable: true
+    class: category-11
+    weight: -5
+-
+  type: cohesion_color
+  export:
+    uuid: 3db1933e-c4c1-4e65-b620-6899c2c3af11
+    langcode: en
+    status: true
+    dependencies: {  }
+    label: 'Planet White'
+    id: planet-white
+    json_values: '{"link":true,"value":{"value":{"hex":"#ffffff","rgba":"rgba(255, 255, 255, 1)"}},"wysiwyg":true,"name":"Planet White","uid":"planet-white","class":".coh-color-planet-white","variable":"$coh-color-planet-white","inuse":true}'
+    json_mapper: '{}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: true
+    selectable: true
+    weight: 2
+-
+  type: cohesion_color
+  export:
+    uuid: 6ca6382e-f5a8-4009-8933-1d856ed8f7a3
+    langcode: en
+    status: true
+    dependencies: {  }
+    label: 'Planet Black'
+    id: planet-black
+    json_values: '{"link":true,"value":{"value":{"hex":"#000000","rgba":"rgba(0, 0, 0, 1)"}},"wysiwyg":true,"name":"Planet Black","uid":"planet-black","class":".coh-color-planet-black","variable":"$coh-color-planet-black","inuse":true}'
+    json_mapper: '{}'
+    last_entity_update: entityupdate_0035
+    locked: false
+    modified: true
+    selectable: true
+    weight: null

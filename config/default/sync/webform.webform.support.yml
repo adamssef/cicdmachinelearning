@@ -1,7 +1,9 @@
 uuid: a544baf9-0bb9-48dc-8dda-9c89f62c9131
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - sfweb2lead_webform
 weight: 0
 open: null
 close: null
@@ -44,6 +46,11 @@ elements: |-
         '#type': email
         '#title': 'E-mail*'
         '#required': true
+      country:
+        '#type': select
+        '#title': Country
+        '#options': country_names
+        '#required': true
       subject:
         '#type': textfield
         '#title': Subject
@@ -54,10 +61,15 @@ elements: |-
         '#type': select
         '#title': 'Nature of enquiry'
         '#options':
-          Retail: Retail
-          Hospitality: Hospitality
-          Partners: Partners
-          Other: Other
+          0125J000000LUUw: 'Customer Support'
+          0125J000000LUUR: 'Hospitality Network Support'
+          012240000006uBc: 'Merchant Support'
+          0125J000000LUUS: 'Merchant Support Tax Free'
+          0125J000000LUUT: 'Payment Acquiring Support'
+          0125J000000LUUU: 'Planet Hospitality - PMS'
+          0125J000000LUUV: 'Planet Partners Support'
+          01224000000B9eQ: 'POS Support'
+          01224000000B9dh: 'Tourist Tax Free'
       textarea:
         '#type': textarea
         '#title': 'About your project'
@@ -65,6 +77,22 @@ elements: |-
         '#placeholder': 'If you’d like to provide us with a bit more detail about your needs, we can support you more efficiently. Information such as the main reason for needing a new solution or your budget, are some examples.'
         '#counter_type': character
         '#counter_maximum': 250
+      status:
+        '#type': hidden
+        '#title': status
+        '#default_value': New
+      returl:
+        '#type': hidden
+        '#title': retURL
+        '#default_value': 'https://www.weareplanet.com/thank-you-support'
+      orgid:
+        '#type': hidden
+        '#title': orgid
+        '#default_value': 00D24000000ac79
+      external:
+        '#type': hidden
+        '#title': external
+        '#default_value': '1'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -159,6 +187,8 @@ settings:
   wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -175,7 +205,7 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: url
-  confirmation_url: /success-submission
+  confirmation_url: /thank-you-support
   confirmation_title: ''
   confirmation_message: ''
   confirmation_attributes: {  }
@@ -253,5 +283,32 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  salesforce_web_to_lead_post:
+    id: sfweb2lead_post
+    handler_id: salesforce_web_to_lead_post
+    label: 'Salesforce Web-to-Lead post'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      type: x-www-form-urlencoded
+      salesforce_url: 'https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8'
+      salesforce_oid: 00D24000000ac79
+      salesforce_mapping:
+        contact_name: name
+        phone_phone: phone
+        email: email
+        country: 00N5J00000322St
+        subject: subject
+        nature_of_enquiry: recordType
+        textarea: description
+        status: status
+        returl: retURL
+        orgid: orgid
+        external: external
+      excluded_data: {  }
+      custom_data: ''
+      debug: false
 variants: {  }
