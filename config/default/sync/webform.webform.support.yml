@@ -77,6 +77,22 @@ elements: |-
         '#placeholder': 'If you’d like to provide us with a bit more detail about your needs, we can support you more efficiently. Information such as the main reason for needing a new solution or your budget, are some examples.'
         '#counter_type': character
         '#counter_maximum': 250
+      status:
+        '#type': hidden
+        '#title': status
+        '#default_value': New
+      returl:
+        '#type': hidden
+        '#title': retURL
+        '#default_value': 'https://www.weareplanet.com/thank-you-support'
+      orgid:
+        '#type': hidden
+        '#title': orgid
+        '#default_value': 00D24000000ac79
+      external:
+        '#type': hidden
+        '#title': external
+        '#default_value': '1'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -171,6 +187,8 @@ settings:
   wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -187,7 +205,7 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: url
-  confirmation_url: /success-submission
+  confirmation_url: /thank-you-support
   confirmation_title: ''
   confirmation_message: ''
   confirmation_attributes: {  }
@@ -286,6 +304,10 @@ handlers:
         subject: subject
         nature_of_enquiry: recordType
         textarea: description
+        status: status
+        returl: retURL
+        orgid: orgid
+        external: external
       excluded_data: {  }
       custom_data: ''
       debug: false
