@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.case_studies.field_logo
     - field.field.node.case_studies.field_main_image
     - field.field.node.case_studies.field_pre_heading
-    - field.field.node.case_studies.field_preview
     - field.field.node.case_studies.field_promoted_case_study
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
@@ -23,8 +22,30 @@ dependencies:
   module:
     - cohesion_elements
     - content_moderation
+    - field_group
     - image
     - path
+third_party_settings:
+  field_group:
+    group_challenge_solution:
+      children:
+        - field_challenge_title
+        - field_challenge_text
+        - field_challenge_solution_title
+        - field_challenge_solution_text
+        - field_challenge_video
+      label: 'Challenge & Solution'
+      region: content
+      parent_name: ''
+      weight: 13
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
 id: node.case_studies.default
 targetEntityType: node
 bundle: case_studies
@@ -32,13 +53,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   field_challenge_solution_text:
     type: string_textarea
-    weight: 29
+    weight: 15
     region: content
     settings:
       rows: 5
@@ -46,7 +67,7 @@ content:
     third_party_settings: {  }
   field_challenge_solution_title:
     type: string_textfield
-    weight: 28
+    weight: 14
     region: content
     settings:
       size: 60
@@ -54,7 +75,7 @@ content:
     third_party_settings: {  }
   field_challenge_text:
     type: string_textarea
-    weight: 27
+    weight: 13
     region: content
     settings:
       rows: 5
@@ -62,7 +83,7 @@ content:
     third_party_settings: {  }
   field_challenge_title:
     type: string_textfield
-    weight: 26
+    weight: 12
     region: content
     settings:
       size: 60
@@ -70,7 +91,7 @@ content:
     third_party_settings: {  }
   field_challenge_video:
     type: string_textarea
-    weight: 30
+    weight: 16
     region: content
     settings:
       rows: 5
@@ -88,7 +109,7 @@ content:
     third_party_settings: {  }
   field_layout_canvas:
     type: cohesion_layout_builder_widget
-    weight: 8
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -114,14 +135,6 @@ content:
     region: content
     settings:
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_preview:
-    type: string_textarea
-    weight: 19
-    region: content
-    settings:
-      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_promoted_case_study:
@@ -151,45 +164,45 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 9
+    weight: 15
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 18
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 15
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 13
+    weight: 19
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   simple_sitemap:
-    weight: 12
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 16
+    weight: 22
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 14
+    weight: 20
     region: content
     settings:
       display_label: true
@@ -204,7 +217,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 16
     region: content
     settings:
       match_operator: CONTAINS
@@ -213,7 +226,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 17
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }

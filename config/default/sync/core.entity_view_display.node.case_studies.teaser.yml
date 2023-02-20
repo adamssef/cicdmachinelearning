@@ -14,7 +14,6 @@ dependencies:
     - field.field.node.case_studies.field_logo
     - field.field.node.case_studies.field_main_image
     - field.field.node.case_studies.field_pre_heading
-    - field.field.node.case_studies.field_preview
     - field.field.node.case_studies.field_promoted_case_study
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
@@ -47,7 +46,6 @@ hidden:
   field_logo: true
   field_main_image: true
   field_pre_heading: true
-  field_preview: true
   field_promoted_case_study: true
   field_summary: true
   field_tags: true
