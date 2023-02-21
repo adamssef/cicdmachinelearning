@@ -35,6 +35,10 @@ function planet_core_preprocess_html(&$variables): void {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void {
+  
+  $webform = $webform_submission->getWebform();
+  $webform_id = $webform->id();
+  
   // Check for the variables to send the UTMs to the form.
   $cookie_utm_source = isset($_COOKIE['Drupal_visitor_utm_source']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_source']) : '';
   $cookie_utm_medium = isset($_COOKIE['Drupal_visitor_utm_medium']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_medium']) : '';
@@ -60,6 +64,14 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
 
   if ($cookie_utm_term) {
     $webform_submission->setElementData('utm_term', $cookie_utm_term);
+  }
+
+  /** SUPPORT FORM - temporary */
+  if ($webform_id === 'support') {
+    // Populate the value of 'Support_Address__c' with the same value as 'email'.
+    // Need it in order to have Salesforce to send an e-mail.
+    $email = $webform_submission->getElementData('email');
+    $webform_submission->setElementData('support_address__c', $email );
   }
 }
 
