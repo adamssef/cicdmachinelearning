@@ -93,6 +93,10 @@ elements: |-
         '#type': hidden
         '#title': external
         '#default_value': '1'
+  support_address__c:
+    '#type': hidden
+    '#title': Support_Address__c
+    '#default_value': '1'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -308,6 +312,7 @@ handlers:
         returl: retURL
         orgid: orgid
         external: external
+        support_address__c: Support_Address__c
       excluded_data: {  }
       custom_data: ''
       debug: false
