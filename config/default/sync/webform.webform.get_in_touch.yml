@@ -337,7 +337,7 @@ handlers:
     handler_id: submit_data_to_pardot
     label: 'Submit data to Pardot'
     notes: ''
-    status: false
+    status: true
     conditions: {  }
     weight: 0
     settings:
