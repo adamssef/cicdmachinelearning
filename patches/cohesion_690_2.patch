@@ -1,0 +1,35 @@
+diff --git a/src/CohesionApiClient.php b/src/CohesionApiClient.php
+index 9051441..7f7561e 100644
+--- a/src/CohesionApiClient.php
++++ b/src/CohesionApiClient.php
+@@ -201,6 +201,30 @@ class CohesionApiClient {
+       }
+     }
+ 
++    // Implement Planet font-style.
++    if (isset($response_data) && is_array($response_data) && isset($response_data[0]["css"]["base"])) {
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-ExtraBold.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-ExtraBold.ttf") format("truetype"); font-display: swap; font-weight: bold; font-style: normal;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-ExtraLight.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-ExtraLight.ttf") format("truetype"); font-display: swap; font-weight: 200; font-style: normal;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-ThinItalic.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-ThinItalic.ttf") format("truetype"); font-display: swap; font-weight: 100; font-style: italic;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-Book.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-Book.ttf") format("truetype"); font-display: swap; font-weight: normal; font-style: normal;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-DemiBold.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-DemiBold.ttf") format("truetype"); font-display: swap; font-weight: 600; font-style: normal;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-XLightItalic.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-XLightItalic.ttf") format("truetype"); font-display: swap; font-weight: 200; font-style: italic;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-BookItalic.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-BookItalic.ttf") format("truetype"); font-display: swap; font-weight: normal; font-style: italic;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-Black.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-Black.ttf") format("truetype"); font-display: swap; font-weight: 900; font-style: normal;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-BlackItalic.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-BlackItalic.ttf") format("truetype"); font-display: swap; font-weight: 900; font-style: italic;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-Italic.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-Italic.ttf") format("truetype"); font-display: swap; font-weight: normal; font-style: italic;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-LightItalic.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-LightItalic.ttf") format("truetype"); font-display: swap; font-weight: 300; font-style: italic;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-Thin.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-Thin.ttf") format("truetype"); font-display: swap; font-weight: 100; font-style: normal;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-MediumItalic.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-MediumItalic.ttf") format("truetype"); font-display: swap; font-weight: 500; font-style: italic;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-Regular.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-Regular.ttf") format("truetype"); font-display: swap; font-weight: normal; font-style: normal;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-XBoldItalic.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-XBoldItalic.ttf") format("truetype"); font-display: swap; font-weight: bold; font-style: italic;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-DemiBoldItalic.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-DemiBoldItalic.ttf") format("truetype"); font-display: swap; font-weight: 600; font-style: italic;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-Bold.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-Bold.ttf") format("truetype"); font-display: swap; font-weight: bold; font-style: normal;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-BoldItalic.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-BoldItalic.ttf") format("truetype"); font-display: swap; font-weight: bold; font-style: italic;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-Light.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-Light.ttf") format("truetype"); font-display: swap; font-weight: 300; font-style: normal;', $response_data[0]["css"]["base"]);
++      $response_data[0]["css"]["base"] = str_replace('TTCommonsClassic-Medium.ttf") format("truetype"); font-display: swap;', 'TTCommonsClassic-Medium.ttf") format("truetype"); font-display: swap; font-weight: 500; font-style: normal;', $response_data[0]["css"]["base"]);
++    }
++
+     return ['code' => $code, 'data' => $response_data];
+   }
+ 
