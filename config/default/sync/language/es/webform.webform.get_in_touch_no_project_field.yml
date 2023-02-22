@@ -1,4 +1,4 @@
-title: 'Get in touch (es)'
+title: 'Get in touch - no project field (es)'
 elements: |
   first_name:
     '#title': 'Nombre*'
@@ -24,9 +24,6 @@ elements: |
   single_opt_in:
     '#title': 'Recibir comunicaciones de Planet'
     '#description': 'Marque esta casilla para dar su consentimiento para recibir comunicaciones sobre los productos, eventos, formaciones, informes y servicios de Planet'
-  textarea:
-    '#title': 'Su consulta*'
-    '#placeholder': '¿De qué trata su consulta?'
   markup:
     '#markup': '<p>Al enviar este formulario, acepta los t&eacute;rminos de nuestra <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Pol&iacute;tica de privacidad</a>.</p>'
   actions:
