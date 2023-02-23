@@ -235,7 +235,7 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: url
-  confirmation_url: /retail-forum-2023-gracias
+  confirmation_url: /es/retail-forum-2023-gracias
   confirmation_title: ''
   confirmation_message: ''
   confirmation_attributes: {  }
