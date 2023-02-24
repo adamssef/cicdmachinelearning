@@ -7,6 +7,11 @@
   let alreadyRun = 0;
   Drupal.behaviors.planet_sitestudio_tabProductsPanel = {
     attach: function () {
+      if (getCookie('Drupal.visitor.notification_bar_container') === '1') {
+        $('.notification-bar-button').click();
+        return false;
+      }
+
       if (alreadyRun === 0) {
         let position = jQuery(window).scrollTop();
         if ($(window).width() < 1023) {
@@ -37,10 +42,6 @@
             })
           }
 
-          if (getCookie('Drupal.visitor.notification_bar_container') === '1') {
-            $('.notification-bar-button').click();
-            return false;
-          }
 
         })
 
