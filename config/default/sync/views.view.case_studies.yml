@@ -2160,7 +2160,7 @@ display:
     display_plugin: block
     position: 4
     display_options:
-      title: Library
+      title: 'Case Studies: Library'
       fields:
         fieldset_1:
           id: fieldset_1
@@ -2824,7 +2824,7 @@ display:
       header: {  }
       footer: {  }
       display_extenders: {  }
-      block_description: Library
+      block_description: 'Case Studies: Library'
     cache_metadata:
       max-age: -1
       contexts:
