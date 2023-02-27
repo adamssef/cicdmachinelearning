@@ -1,0 +1,34 @@
+uuid: d05d8342-392f-4d98-97a0-88bf16c7fc37
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.lottie_animation.field_media_lottie_file
+    - image.style.medium
+    - media.type.lottie_animation
+  module:
+    - image
+id: media.lottie_animation.media_library
+targetEntityType: media
+bundle: lottie_animation
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_lottie_file: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

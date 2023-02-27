@@ -1,0 +1,16 @@
+uuid: 8540d755-ab75-4bc8-adca-ac233e3884da
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.lottie_animation
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: media.lottie_animation
+target_entity_type_id: media
+target_bundle: lottie_animation
+default_langcode: site_default
+language_alterable: true

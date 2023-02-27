@@ -1,0 +1,27 @@
+uuid: 1117dea4-2b0d-4507-a4b2-67e98835cea6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_lottie_file
+    - media.type.lottie_animation
+  module:
+    - file
+id: media.lottie_animation.field_media_lottie_file
+field_name: field_media_lottie_file
+entity_type: media
+bundle: lottie_animation
+label: 'Lottie file'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: json
+  max_filesize: ''
+  description_field: false
+field_type: file
