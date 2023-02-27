@@ -1,0 +1,29 @@
+uuid: cfeb8347-a7da-45f1-aa34-1107f8f451ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.case_studies
+  module:
+    - cohesion
+    - views
+  theme:
+    - cohesion_theme
+id: views_block__case_studies_library
+theme: cohesion_theme
+region: dx8_hidden
+weight: 0
+provider: null
+plugin: 'views_block:case_studies-library'
+settings:
+  id: 'views_block:case_studies-library'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: false
