@@ -142,9 +142,18 @@ function planet_core_node_access(NodeInterface $node, $op, AccountInterface $acc
 function planet_core_theme(): array {
   return [
     'views_view_fields__case_studies__featured_slider' => [
-      'template' => 'views-view-fields--case-studies--featured_slider',
+      'template' => 'views-view-fields--case-studies--featured-slider',
       'render element' => 'elements',
       'base hook' => 'views_view',
-    ]
+    ],
+    'views_view_fields__case_studies__featured_block' => [
+      'template' => 'views-view-fields--case-studies--featured-block',
+      'render element' => 'elements',
+      'base hook' => 'views_view',
+    ],
+    'paragraph__right_side_mega_menu' => [
+      'template' => 'paragraph--right-side-mega-menu',
+      'base hook' => 'paragraph'
+    ],
   ];
 }

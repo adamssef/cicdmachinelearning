@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.site_setting_entity.menu.field_description
     - field.field.site_setting_entity.menu.field_link
+    - field.field.site_setting_entity.menu.field_right_side_menu
     - field.field.site_setting_entity.menu.field_title
     - site_settings.site_setting_entity_type.menu
   module:
+    - entity_reference_revisions
     - link
     - text
     - user
@@ -35,13 +37,22 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_right_side_menu:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
   field_title:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 9
     region: content
   fieldset:
     type: string

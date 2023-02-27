@@ -1,0 +1,44 @@
+uuid: 71e38275-a61c-4aa4-953a-7c1cdbd27385
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.right_side_mega_menu.field_description
+    - field.field.paragraph.right_side_mega_menu.field_link
+    - field.field.paragraph.right_side_mega_menu.field_title
+    - paragraphs.paragraphs_type.right_side_mega_menu
+  module:
+    - link
+    - text
+id: paragraph.right_side_mega_menu.default
+targetEntityType: paragraph
+bundle: right_side_mega_menu
+mode: default
+content:
+  field_description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

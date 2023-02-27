@@ -3,12 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.case_studies.field_challenge_solution_text
+    - field.field.node.case_studies.field_challenge_solution_title
+    - field.field.node.case_studies.field_challenge_text
+    - field.field.node.case_studies.field_challenge_title
+    - field.field.node.case_studies.field_challenge_video
     - field.field.node.case_studies.field_company_sector
     - field.field.node.case_studies.field_layout_canvas
     - field.field.node.case_studies.field_logo
     - field.field.node.case_studies.field_main_image
     - field.field.node.case_studies.field_pre_heading
-    - field.field.node.case_studies.field_preview
     - field.field.node.case_studies.field_promoted_case_study
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
@@ -22,6 +26,43 @@ targetEntityType: node
 bundle: case_studies
 mode: default
 content:
+  field_challenge_solution_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_challenge_solution_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_challenge_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_challenge_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_challenge_video:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 14
+    region: content
   field_company_sector:
     type: entity_reference_label
     label: above
@@ -68,13 +109,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 6
-    region: content
-  field_preview:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 8
     region: content
   field_promoted_case_study:
     type: boolean

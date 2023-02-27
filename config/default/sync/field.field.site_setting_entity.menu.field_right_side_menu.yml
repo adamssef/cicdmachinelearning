@@ -1,0 +1,31 @@
+uuid: 12483970-32cc-41f3-8227-fc3f3c61c68a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_right_side_menu
+    - paragraphs.paragraphs_type.right_side_mega_menu
+    - site_settings.site_setting_entity_type.menu
+  module:
+    - entity_reference_revisions
+id: site_setting_entity.menu.field_right_side_menu
+field_name: field_right_side_menu
+entity_type: site_setting_entity
+bundle: menu
+label: 'Right side menu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      right_side_mega_menu: right_side_mega_menu
+    negate: 0
+    target_bundles_drag_drop:
+      right_side_mega_menu:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

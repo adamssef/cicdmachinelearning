@@ -1,13 +1,13 @@
 /**
  * @file
- * File planetHero5050.js.
+ * File hero5050DS.js.
  */
 
 (function ($) {
-  document.addEventListener("DOMContentLoaded", (event) => {
-      if ($(window).width() > 1023) {
-        $(".header-container").addClass("white-bg-fixed");
-        $(".header-container").addClass("white-bg");
-      }
+  $(document).ready(function () {
+    if ($('.hero5050').hasClass('coh-hero-top')) {
+      $('.header-container').addClass('white-bg-fixed');
+      $('.header-container').addClass('white-bg');
+    }
   });
 })(jQuery);

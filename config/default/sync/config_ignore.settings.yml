@@ -7,4 +7,5 @@ ignored_config_entities:
   - views.view.companies
   - planet_config.pardot
   - views.view.support_locations_contacts
+  - 'webform.webform.generic_form*'
 enable_export_filtering: true

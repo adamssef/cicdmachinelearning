@@ -23,6 +23,7 @@
     "drupal/config_ignore": "^2.3",
     "drupal/config_split": "^1.9",
     "drupal/config_split_ignore": "^1.9",
+    "drupal/content_lock": "^2.3",
     "drupal/content_moderation_edit_notify": "^2.0",
     "drupal/cookiepro": "^2.0",
     "drupal/core-composer-scaffold": "^9.0.0",
@@ -35,6 +36,7 @@
     "drupal/dynamic_entity_reference": "^1.16",
     "drupal/entity_language_fallback": "^1.4",
     "drupal/environment_indicator": "^4.0",
+    "drupal/field_group": "^3.4",
     "drupal/flood_control": "^2.3",
     "drupal/google_analytics": "^4.0",
     "drupal/google_tag": "^1.5",
@@ -52,9 +54,11 @@
     "drupal/modules_weight": "^1.9",
     "drupal/node_revision_delete": "^1.0@RC",
     "drupal/page_cache_query_ignore": "^2.2",
+    "drupal/paragraphs": "^1.15",
     "drupal/pardot": "^2.0@beta",
     "drupal/password_policy": "^4.0",
     "drupal/pathauto": "^1.11",
+    "drupal/quick_node_clone": "^1.15",
     "drupal/recaptcha": "^3.1",
     "drupal/recaptcha_v3": "^1.6",
     "drupal/redirect": "^1.8",
@@ -167,7 +171,8 @@
         "Undefined index destination": "https://www.drupal.org/files/issues/2022-07-28/3300118-undefined-index-destination.patch"
       },
       "acquia/cohesion": {
-        "Media alt and name": "patches/cohesion_690.patch"
+        "Media alt and name": "patches/cohesion_690.patch",
+        "Planet font-style": "patches/cohesion_690_2.patch"
       },
       "drupal/webform_pardot": {
         "Custom pardot for planet": "patches/webform_pardot.patch"
