@@ -3,44 +3,74 @@
  * File notificationBar.js.
  */
 
- (function ($, Drupal) {
+(function ($, Drupal) {
   Drupal.behaviors.planet_sitestudio_tabProductsPanel = {
     attach: function () {
-      lastKnowScrollPosition = window.scrollY
-      let position = jQuery(window).scrollTop();
-      if ($(window).width() < 1023) {
-        $(window).on('load', function() {
-          if(position == 0) {
-            $('header').addClass('white-bg');
-          }
-        })
-      }
-      $('.notification-bar-button').click(function(){
-        $('.notification-bar-container').addClass('closed');
-        if (lastKnowScrollPosition == 0 && 
-          $(window).width() < 1023) {
-            $('.hero5050').addClass('remove-padding-top');
-          $('header').removeClass('white-bg');
+      $(document).ready(function () {
+        let navBarButton = $('.notification-bar-button');
+
+        if (getCookie('Drupal.visitor.notification_bar_container') != '1') {
+          $('.notification-bar-container').addClass('notification-shown');
         }
 
-      })
-      $(document).ready(function () {
-        if($('body').find('.notification-bar-container')) {
-          if ($(window).width() < 1023) {
-          $('.notification-bar-button').click(function(){
-            if (!$('header').hasClass('white-bg-fixed')) {
-              $('header').removeClass('white-bg');
-            }
-          })
-        }
-          $(window).on('scroll', function(){
-            if(position == 0) {
+        navBarButton.click(function () {
+          createCookie('Drupal.visitor.notification_bar_container', 1, 1);
+          $('.notification-bar-container').removeClass('notification-shown');
+
+        });
+
+        let position = jQuery(window).scrollTop();
+        if ($(window).width() < 1023) {
+          $(window).on('load', function () {
+            if (position === 0) {
               $('header').addClass('white-bg');
             }
-          })
+          });
         }
-      })
+
+        if ($('body').find('.notification-bar-container')) {
+          if ($(window).width() < 1023) {
+            navBarButton.click(function () {
+              if (!$('header').hasClass('white-bg-fixed')) {
+                $(this).removeClass('white-bg');
+              }
+            });
+          }
+
+          $(window).on('scroll', function () {
+            if (position === 0) {
+              $('header').addClass('white-bg');
+            }
+          });
+        }
+      });
     }
   };
 
-  })(jQuery, Drupal);
+  function createCookie(name, value, days) {
+    let expires = '';
+    if (days) {
+      let date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toGMTString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return '';
+  }
+
+})(jQuery, Drupal);
