@@ -72,6 +72,7 @@ module:
   media: 0
   media_bulk_upload: 0
   media_entity_file_replace: 0
+  media_entity_lottie: 0
   media_library: 0
   memcache: 0
   menu_item_extras: 0
