@@ -10,6 +10,7 @@
     attach: function (context) {
       let header = document.querySelector(".header-container");
       let menu = document.querySelector(".menu-container");
+      let cpt_hero_background_image = $('[class*="cpt_hero_background_image"]').get();
 
       if ($(".hero5050").hasClass("coh-hero-on-top") &&
         $(window).width() >= 1023) {
@@ -46,17 +47,23 @@
         }
 
         if (
-          lastKnowScrollPosition == 0 &&
+          lastKnowScrollPosition === 0 &&
           $(".hero5050").hasClass("remove-padding-top") &&
           $(window).width() < 1023) {
           header.classList.remove("white-bg");
-        } else if (lastKnowScrollPosition == 0 &&
-          $(".hero5050").hasClass("coh-hero-on-top") &&
-          $(window).width() >= 1023) {
+        } else if (lastKnowScrollPosition === 0 &&
+          $(".hero5050").hasClass("coh-hero-on-top")) {
             header.classList.add("white-bg");
-        } else if (lastKnowScrollPosition == 0 &&
+        } else if (lastKnowScrollPosition === 0 &&
           $(".hero5050").hasClass("coh-hero-not-top") &&
           $(window).width() >= 1023) {
+            header.classList.remove("white-bg");
+        } else if (lastKnowScrollPosition === 0 &&
+          $(".notification-bar-container").hasClass("notification-shown") &&
+          $(window).width() < 1023) {
+            header.classList.add("white-bg");
+        } else if (lastKnowScrollPosition === 0 &&
+          !jQuery.isEmptyObject(cpt_hero_background_image)) {
             header.classList.remove("white-bg");
         } else {
           header.classList.add("white-bg");
