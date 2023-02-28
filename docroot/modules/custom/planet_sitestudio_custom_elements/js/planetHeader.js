@@ -11,6 +11,11 @@
       let header = document.querySelector(".header-container");
       let menu = document.querySelector(".menu-container");
 
+      if ($(".hero5050").hasClass("coh-hero-on-top") &&
+        $(window).width() >= 1023) {
+          header.classList.add("white-bg");
+      }
+
       window.addEventListener("scroll", (e) => {
         lastKnowScrollPosition = window.scrollY;
 
@@ -21,16 +26,16 @@
           header.classList.add("white-bg");
         } else if (!header.classList.contains("white-bg-fixed")) {
           if (document.getElementsByClassName("notification-bar-container").length > 0 &&
-          !document.querySelector(".notification-bar-container").classList.contains('closed')) {
+          !document.querySelector(".notification-bar-container").classList.contains("closed")) {
             if (header.classList.contains("white-bg-fixed") &&
             $(window).width() < 1023) {
               header.classList.add("white-bg");
-            } else if ($('.hero5050').hasClass('coh-hero-top') &&
+            } else if ($(".hero5050").hasClass("coh-hero-not-top") &&
             $(window).width() < 1023) {
               header.classList.remove("white-bg");
               } else {
               if ($(window).width() < 1023) {
-                header.classList.add("white-bg");
+                header.classList.remove("white-bg");
               } else {
                 header.classList.remove("white-bg");
               }
@@ -42,9 +47,19 @@
 
         if (
           lastKnowScrollPosition == 0 &&
-          $('.hero5050').hasClass('remove-padding-top') &&
+          $(".hero5050").hasClass("remove-padding-top") &&
           $(window).width() < 1023) {
           header.classList.remove("white-bg");
+        } else if (lastKnowScrollPosition == 0 &&
+          $(".hero5050").hasClass("coh-hero-on-top") &&
+          $(window).width() >= 1023) {
+            header.classList.add("white-bg");
+        } else if (lastKnowScrollPosition == 0 &&
+          $(".hero5050").hasClass("coh-hero-not-top") &&
+          $(window).width() >= 1023) {
+            header.classList.remove("white-bg");
+        } else {
+          header.classList.add("white-bg");
         }
       });
 
