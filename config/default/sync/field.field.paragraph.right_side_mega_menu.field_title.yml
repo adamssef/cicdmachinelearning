@@ -1,0 +1,19 @@
+uuid: 7041abdb-0d5d-49dc-850f-1eb88570b353
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.right_side_mega_menu
+id: paragraph.right_side_mega_menu.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: right_side_mega_menu
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

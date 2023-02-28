@@ -1,15 +1,15 @@
-uuid: b37cf58f-3ae1-4aee-b415-60afb51eaf89
+uuid: 369cb9c2-bcaa-46bf-b048-21b8e9b241b2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_preview
+    - field.storage.node.field_challenge_text
     - node.type.case_studies
-id: node.case_studies.field_preview
-field_name: field_preview
+id: node.case_studies.field_challenge_text
+field_name: field_challenge_text
 entity_type: node
 bundle: case_studies
-label: Preview
+label: 'Challenge Text'
 description: ''
 required: false
 translatable: false

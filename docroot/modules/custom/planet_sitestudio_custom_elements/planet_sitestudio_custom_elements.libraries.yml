@@ -47,6 +47,10 @@ ourApproachContainer:
 accordionWithTwoTitles:
   js:
     js/accordionWithTwoTitles.js: {}
+# Hero 50/50 with video, handling video height
+heroWithVideoHeightAdjustment:
+  js:
+    js/heroWithVideoHeightAdjustment.js: {}
 # Exposed Filter Tab w/ ajax
 tabAjaxExposedFilter:
   js:
@@ -119,3 +123,15 @@ notificationBar:
 csFeaturedSlider:
   js:
     js/csFeaturedSlider.js: { }
+# Form - Adjust icon on insert mobile field
+formFlagIcon:
+  js:
+    js/formFlagIcon.js: { }
+# Mega Menu
+megaMenu:
+  js:
+    js/megaMenu.js: { }
+# Tags - Case Studies
+tagsCaseStudies:
+  js:
+    js/tagsCaseStudies.js: { }

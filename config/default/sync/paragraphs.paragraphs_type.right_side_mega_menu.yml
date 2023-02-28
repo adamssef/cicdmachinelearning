@@ -1,0 +1,10 @@
+uuid: 0fd82593-4f29-47cf-ac67-61c6732c21cf
+langcode: en
+status: true
+dependencies: {  }
+id: right_side_mega_menu
+label: 'Right Side Mega Menu'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

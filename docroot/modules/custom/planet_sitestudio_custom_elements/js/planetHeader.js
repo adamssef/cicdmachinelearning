@@ -25,7 +25,10 @@
             if (header.classList.contains("white-bg-fixed") &&
             $(window).width() < 1023) {
               header.classList.add("white-bg");
-            } else {
+            } else if ($('.hero5050').hasClass('coh-hero-top') &&
+            $(window).width() < 1023) {
+              header.classList.remove("white-bg");
+              } else {
               if ($(window).width() < 1023) {
                 header.classList.add("white-bg");
               } else {
@@ -35,6 +38,13 @@
           } else {
             header.classList.remove("white-bg");
           }
+        }
+
+        if (
+          lastKnowScrollPosition == 0 &&
+          $('.hero5050').hasClass('remove-padding-top') &&
+          $(window).width() < 1023) {
+          header.classList.remove("white-bg");
         }
       });
 
