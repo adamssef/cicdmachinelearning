@@ -24,6 +24,12 @@
           $(".mobile-menu-button, .header-container, .menu-container").removeClass("menu-visible");
           $("body").css("overflow","");
         })
+        $(".menu-level-1-li").hover(function(){
+          $("body").css("overflow-y","scroll");
+          $("body").css("position","fixed");
+      }, function() {
+         $("body").css("position","relative"); 
+      })
       });
     }
   };
