@@ -8,7 +8,7 @@
 
   Drupal.behaviors.planet_sitestudio_csFeaturedSlider = {
     attach: function () {
-      caseStudiesBlock = $('.coh-style-case-studies');
+      let caseStudiesBlock = $('.coh-style-case-studies-featured-slider-4-items');
 
       caseStudiesBlock.once('case-studies-4-action').each(function () {
         // add on click event on logo
@@ -24,10 +24,10 @@
 
         // Update active on slide button click
         $(this).find('.coh-slider-nav-inner-top button').click(function() {
-          const parent = $(this).parents('.coh-style-case-studies');
+          const parent = $(this).parents('.coh-style-case-studies-featured-slider-4-items');
           const slideIndex = parent.find('.slick-active').attr('data-slick-index');
           const slideLogoItem = `slide-${slideIndex}`;
-  
+
           parent.find('.slide-logo').each(function(){
             if($(this).hasClass(slideLogoItem)) {
               parent.find('.slide-logo').removeClass('active');
