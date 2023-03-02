@@ -42,7 +42,7 @@
   // Update active on logo click
   Drupal.planet.transformInLink = (slideDiv) => {
     slideDiv.find('.slide-logo').on('click', function() {
-      const parent = $(this).parents('.coh-style-case-studies');
+      const parent = $(this).parents('.coh-style-case-studies-featured-slider-4-items');
       const slidePosition = $(this).attr('class').split('-').pop().replace(' active', '');
 
       parent.find('.slide-logo').removeClass('active');
