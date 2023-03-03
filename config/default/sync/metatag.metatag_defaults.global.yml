@@ -8,6 +8,7 @@ id: global
 label: Global
 tags:
   canonical_url: '[current-page:url]'
-  image_src: /sites/default/files/images/placeholder-images/placeholder-og_1.jpg
-  og_image: /sites/default/files/images/placeholder-images/placeholder-og_1.jpg
+  image_src: 'https://www.weareplanet.com/sites/default/files/2022-11/homepage-hero_0.jpg'
+  og_image: 'https://www.weareplanet.com/sites/default/files/2022-11/homepage-hero_0.jpg'
+  og_image_url: 'https://www.weareplanet.com/sites/default/files/2022-11/homepage-hero_0.jpg'
   title: '[current-page:title] | [site:name]'
