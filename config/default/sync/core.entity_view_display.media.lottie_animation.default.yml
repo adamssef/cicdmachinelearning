@@ -1,0 +1,38 @@
+uuid: 1ffd3e1c-1b4d-45fd-9699-58095b179b88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.lottie_animation.field_media_lottie_file
+    - media.type.lottie_animation
+  module:
+    - media_entity_lottie
+id: media.lottie_animation.default
+targetEntityType: media
+bundle: lottie_animation
+mode: default
+content:
+  field_media_lottie_file:
+    type: file_lottie_player
+    label: visually_hidden
+    settings:
+      controls: false
+      autoplay: true
+      loop: true
+      multiple_file_display_type: tags
+      background: '#ffffff'
+      hover: false
+      mode: normal
+      speed: 1
+      count: 0
+      background_transparent: '1'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,15 @@
+uuid: 639170e0-3c70-49f0-8cac-ed2e6c6bfc04
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity_lottie
+id: lottie_animation
+label: 'Lottie Animation'
+description: ''
+source: lottie_file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_lottie_file
+field_map: {  }

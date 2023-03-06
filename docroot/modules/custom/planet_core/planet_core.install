@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains install and update functions for Planet Core.
+ */
+
 use Drupal\taxonomy\Entity\Term;
 
 /**
@@ -7,7 +12,6 @@ use Drupal\taxonomy\Entity\Term;
  *
  * Create mandatory sectors for the 'Company Sectors' vocabulary.
  *
- * @return void
  * @throws \Drupal\Core\Entity\EntityStorageException
  */
 function planet_core_update_8001(): void {
@@ -20,11 +24,11 @@ function planet_core_update_8001(): void {
   ];
 
   foreach ($company_sectors as $sector) {
-    $term = Term::create(array(
-      'parent' => array(),
+    $term = Term::create([
+      'parent' => [],
       'name' => $sector,
       'vid' => $vid,
-    ));
+    ]);
 
     $term->save();
   }
