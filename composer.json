@@ -180,6 +180,9 @@
       },
       "drupal/redirect": {
         "Remove trailing slash": "patches/redirect_domain.patch"
+      },
+      "drupal/entity_reference_revisions": {
+        "https://www.drupal.org/project/entity_reference_revisions/issues/3150084": "https://www.drupal.org/files/issues/2020-06-09/3150084_2.patch"
       }
     }
   },
