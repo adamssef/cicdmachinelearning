@@ -26,7 +26,6 @@
         })
         $(".menu-level-1-li").hover(function(){
           $("body").css("overflow-y","scroll");
-          $("body").css("position","fixed");
       }, function() {
          $("body").css("position","relative"); 
       })
