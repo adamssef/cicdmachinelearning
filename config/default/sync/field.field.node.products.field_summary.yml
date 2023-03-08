@@ -1,0 +1,19 @@
+uuid: d9a12447-a9a9-4729-8fe9-e3cd6eac4ba4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.products
+id: node.products.field_summary
+field_name: field_summary
+entity_type: node
+bundle: products
+label: Summary
+description: 'A summary of what this product is about.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
