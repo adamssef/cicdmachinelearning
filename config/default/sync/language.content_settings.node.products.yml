@@ -1,0 +1,11 @@
+uuid: 438fb608-0e3f-4dfe-a5da-2221b7309830
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.products
+id: node.products
+target_entity_type_id: node
+target_bundle: products
+default_langcode: site_default
+language_alterable: false

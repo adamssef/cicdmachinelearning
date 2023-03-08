@@ -1,0 +1,23 @@
+uuid: 1efa3047-de46-4f7f-b3fc-d0329bbb728a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promoted_product
+    - node.type.products
+id: node.products.field_promoted_product
+field_name: field_promoted_product
+entity_type: node
+bundle: products
+label: 'Promoted to Featured Slider'
+description: 'Promote the product to be displayed as a highlight.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
