@@ -135,3 +135,7 @@ megaMenu:
 tagsCaseStudies:
   js:
     js/tagsCaseStudies.js: { }
+# Case Studies Library
+caseStudiesLibrary:
+  js:
+    js/caseStudiesLibrary.js: { }

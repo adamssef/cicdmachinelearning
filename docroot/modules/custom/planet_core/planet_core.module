@@ -2,20 +2,20 @@
 
 /**
  * @file
- * Custom hooks functions for the planet_core module.
+ * Custom hooks functions for Planet Core.
  */
 
 use Drupal\webform\WebformSubmissionInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
-
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\TranslatableInterface;
 
 /**
- * Sanitize cookie
- *
+ * Sanitize cookie.
  */
-function sanitize_cookie($value) {
+function _planet_core_sanitize_cookie($value) {
   return filter_var($value, FILTER_SANITIZE_STRING);
 }
 
@@ -35,16 +35,16 @@ function planet_core_preprocess_html(&$variables): void {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void {
-  
+
   $webform = $webform_submission->getWebform();
   $webform_id = $webform->id();
-  
+
   // Check for the variables to send the UTMs to the form.
-  $cookie_utm_source = isset($_COOKIE['Drupal_visitor_utm_source']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_source']) : '';
-  $cookie_utm_medium = isset($_COOKIE['Drupal_visitor_utm_medium']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_medium']) : '';
-  $cookie_utm_campaign = isset($_COOKIE['Drupal_visitor_utm_campaign']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_campaign']) : '';
-  $cookie_utm_term = isset($_COOKIE['Drupal_visitor_utm_term']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_term']) : '';
-  $cookie_utm_content = isset($_COOKIE['Drupal_visitor_utm_content']) ? sanitize_cookie($_COOKIE['Drupal_visitor_utm_content']) : '';
+  $cookie_utm_source = isset($_COOKIE['Drupal_visitor_utm_source']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_source']) : '';
+  $cookie_utm_medium = isset($_COOKIE['Drupal_visitor_utm_medium']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_medium']) : '';
+  $cookie_utm_campaign = isset($_COOKIE['Drupal_visitor_utm_campaign']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_campaign']) : '';
+  $cookie_utm_term = isset($_COOKIE['Drupal_visitor_utm_term']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_term']) : '';
+  $cookie_utm_content = isset($_COOKIE['Drupal_visitor_utm_content']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_content']) : '';
 
   if ($cookie_utm_source) {
     $webform_submission->setElementData('utm_source', $cookie_utm_source);
@@ -153,7 +153,58 @@ function planet_core_theme(): array {
     ],
     'paragraph__right_side_mega_menu' => [
       'template' => 'paragraph--right-side-mega-menu',
-      'base hook' => 'paragraph'
+      'base hook' => 'paragraph',
     ],
   ];
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function planet_core_entity_insert(EntityInterface $entity): void {
+  _planet_core_update_untranslated_path($entity, 'insert');
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function planet_core_entity_update(EntityInterface $entity): void {
+  _planet_core_update_untranslated_path($entity, 'update');
+}
+
+/**
+ * Trigger pathauto for untranslated content.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *   The entity object.
+ * @param string $action
+ *   The action performed in the entity.
+ */
+function _planet_core_update_untranslated_path(EntityInterface $entity, string $action): void {
+  $pathautoGenerator = \Drupal::service('pathauto.generator');
+
+  // Check if entity has pathauto enabled and is translatable.
+  if (!$pathautoGenerator->getPatternByEntity($entity) || !($entity instanceof TranslatableInterface)) {
+    return;
+  }
+
+  $translatedLanguages = $entity->getTranslationLanguages();
+  $allLanguages = \Drupal::languageManager()->getLanguages();
+  $untranslatedLanguages = array_diff_key($allLanguages, $translatedLanguages);
+
+  foreach ($untranslatedLanguages as $langcode => $language) {
+    $translation = $entity->addTranslation($langcode, $entity->toArray());
+    $pathautoGenerator->updateEntityAlias($translation, $action);
+  }
+}
+
+/**
+ * Fix "Non-translatable fields can only be changed when updating the original language." issue.
+ */
+function planet_core_entity_type_alter(array &$entity_types) {
+  foreach ($entity_types as $entity_type) {
+    $constraints = $entity_type->getConstraints();
+    unset($constraints['EntityUntranslatableFields']);
+    $entity_type->setConstraints($constraints);
+  }
 }

@@ -1,0 +1,29 @@
+uuid: bce03699-753f-4511-a939-dd52c43b7f06
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.lottie_animation.field_media_lottie_file
+    - media.type.lottie_animation
+id: media.lottie_animation.media_library
+targetEntityType: media
+bundle: lottie_animation
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_lottie_file: true
+  langcode: true
+  path: true
+  replace_file: true
+  status: true
+  uid: true
