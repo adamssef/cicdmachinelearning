@@ -1,0 +1,20 @@
+uuid: e6a3e502-712f-4eec-ba17-f6efdc5d6091
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.support_locations_contacts
+id: node.support_locations_contacts.menu_link
+field_name: menu_link
+entity_type: node
+bundle: support_locations_contacts
+label: 'Menu link'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

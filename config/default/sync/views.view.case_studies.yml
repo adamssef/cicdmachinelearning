@@ -4,17 +4,17 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_logo
-    - field.storage.node.field_main_image
+    - field.storage.node.field_logo_media
+    - field.storage.node.field_main_image_media
     - field.storage.node.field_pre_heading
     - field.storage.node.field_summary
     - field.storage.node.field_tags
-    - image.style.large
-    - image.style.max_325x325
     - node.type.case_studies
     - taxonomy.vocabulary.company_sectors
   module:
     - cohesion
     - image
+    - media_thumbnail_url_formatter
     - node
     - taxonomy
     - user
@@ -610,17 +610,17 @@ display:
           empty_zero: false
           hide_alter_empty: true
           fields:
-            - field_main_image
-            - field_logo
+            - field_main_image_media
+            - field_logo_media
           wrapper: div
           legend: ''
           classes: case-studies__card--top
           collapsible: 0
           collapsed: 0
-        field_main_image:
-          id: field_main_image
-          table: node__field_main_image
-          field: field_main_image
+        field_main_image_media:
+          id: field_main_image_media
+          table: node__field_main_image_media
+          field: field_main_image_media
           relationship: none
           group_type: group
           admin_label: ''
@@ -667,13 +667,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: entity_reference_entity_view
           settings:
-            image_link: ''
-            image_style: large
-            image_loading:
-              attribute: lazy
-          group_column: ''
+            view_mode: default
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -683,10 +680,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_logo:
-          id: field_logo
-          table: node__field_logo
-          field: field_logo
+        field_logo_media:
+          id: field_logo_media
+          table: node__field_logo_media
+          field: field_logo_media
           relationship: none
           group_type: group
           admin_label: ''
@@ -733,13 +730,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: entity_reference_entity_view
           settings:
-            image_link: ''
-            image_style: ''
-            image_loading:
-              attribute: lazy
-          group_column: ''
+            view_mode: default
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -1198,8 +1192,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_logo'
-        - 'config:field.storage.node.field_main_image'
+        - 'config:field.storage.node.field_logo_media'
+        - 'config:field.storage.node.field_main_image_media'
         - 'config:field.storage.node.field_pre_heading'
         - 'config:field.storage.node.field_summary'
         - 'config:field.storage.node.field_tags'
@@ -1621,10 +1615,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-        field_main_image:
-          id: field_main_image
-          table: node__field_main_image
-          field: field_main_image
+        field_main_image_media:
+          id: field_main_image_media
+          table: node__field_main_image_media
+          field: field_main_image_media
           relationship: none
           group_type: group
           admin_label: ''
@@ -1671,10 +1665,12 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image_url
+          type: media_thumbnail_url
           settings:
             image_style: ''
-          group_column: ''
+            image_loading:
+              attribute: lazy
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -1724,7 +1720,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_main_image'
+        - 'config:field.storage.node.field_main_image_media'
         - 'config:field.storage.node.field_pre_heading'
         - 'config:field.storage.node.field_summary'
         - 'config:field.storage.node.field_tags'
@@ -2088,10 +2084,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-        field_main_image:
-          id: field_main_image
-          table: node__field_main_image
-          field: field_main_image
+        field_main_image_media:
+          id: field_main_image_media
+          table: node__field_main_image_media
+          field: field_main_image_media
           relationship: none
           group_type: group
           admin_label: ''
@@ -2138,10 +2134,12 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image_url
+          type: media_thumbnail_url
           settings:
             image_style: ''
-          group_column: ''
+            image_loading:
+              attribute: lazy
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -2188,7 +2186,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_main_image'
+        - 'config:field.storage.node.field_main_image_media'
         - 'config:field.storage.node.field_pre_heading'
         - 'config:field.storage.node.field_summary'
         - 'config:field.storage.node.field_tags'
@@ -2200,10 +2198,10 @@ display:
     display_options:
       title: 'Featured Slider (Logos)'
       fields:
-        field_logo:
-          id: field_logo
-          table: node__field_logo
-          field: field_logo
+        field_logo_media:
+          id: field_logo_media
+          table: node__field_logo_media
+          field: field_logo_media
           relationship: none
           group_type: group
           admin_label: ''
@@ -2250,13 +2248,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: entity_reference_entity_view
           settings:
-            image_link: ''
-            image_style: max_325x325
-            image_loading:
-              attribute: lazy
-          group_column: ''
+            view_mode: default
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -2308,7 +2303,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_logo'
+        - 'config:field.storage.node.field_logo_media'
   library:
     id: library
     display_title: Library
@@ -2367,17 +2362,17 @@ display:
           empty_zero: false
           hide_alter_empty: true
           fields:
-            - field_main_image
-            - field_logo
+            - field_main_image_media
+            - field_logo_media
           wrapper: div
           legend: ''
           classes: case-studies__card--top
           collapsible: 0
           collapsed: 0
-        field_main_image:
-          id: field_main_image
-          table: node__field_main_image
-          field: field_main_image
+        field_main_image_media:
+          id: field_main_image_media
+          table: node__field_main_image_media
+          field: field_main_image_media
           relationship: none
           group_type: group
           admin_label: ''
@@ -2424,13 +2419,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: entity_reference_entity_view
           settings:
-            image_link: ''
-            image_style: large
-            image_loading:
-              attribute: lazy
-          group_column: ''
+            view_mode: default
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -2440,10 +2432,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_logo:
-          id: field_logo
-          table: node__field_logo
-          field: field_logo
+        field_logo_media:
+          id: field_logo_media
+          table: node__field_logo_media
+          field: field_logo_media
           relationship: none
           group_type: group
           admin_label: ''
@@ -2490,13 +2482,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: entity_reference_entity_view
           settings:
-            image_link: ''
-            image_style: ''
-            image_loading:
-              attribute: lazy
-          group_column: ''
+            view_mode: default
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -2989,8 +2978,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_logo'
-        - 'config:field.storage.node.field_main_image'
+        - 'config:field.storage.node.field_logo_media'
+        - 'config:field.storage.node.field_main_image_media'
         - 'config:field.storage.node.field_pre_heading'
         - 'config:field.storage.node.field_summary'
         - 'config:field.storage.node.field_tags'

@@ -1,0 +1,18 @@
+uuid: 3605a724-18d7-438e-90f2-f246376660fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.company_sectors
+id: taxonomy_term.company_sectors.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: company_sectors
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

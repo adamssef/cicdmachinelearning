@@ -6,14 +6,7 @@ dependencies:
     - field.storage.node.field_main_image
     - node.type.products
   module:
-    - content_translation
     - image
-third_party_settings:
-  content_translation:
-    translation_sync:
-      alt: alt
-      title: title
-      file: '0'
 id: node.products.field_main_image
 field_name: field_main_image
 entity_type: node
@@ -21,7 +14,7 @@ bundle: products
 label: 'Main image'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
