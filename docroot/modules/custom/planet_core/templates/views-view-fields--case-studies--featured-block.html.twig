@@ -1,6 +1,6 @@
 <div class="coh-column coh-column-one-item coh-visible-ps coh-col-ps-12 coh-col-ps-push-0 coh-col-ps-pull-0 coh-col-ps-offset-0 coh-visible-xl coh-col-lg-6 coh-col-xl-5">
   <div class="coh-container coh-container-text-items">
-    {% for key, field in fields if key != 'field_main_image' -%}
+    {% for key, field in fields if key != 'field_main_image_media' -%}
       {{ field.separator }}
       {%- if field.wrapper_element -%}
         <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
@@ -24,6 +24,6 @@
   </div>
 </div>
 
-{% set background_image = fields.field_main_image.content|striptags|trim %}
+{% set background_image = fields.field_main_image_media.content|striptags|trim %}
 <div class="coh-column coh-background-image-one-item coh-background-image coh-col-xl coh-col-xl-push-0 coh-col-xl-pull-0 coh-col-xl-offset-0" style="background-image:url({{ background_image }});">
 </div>

@@ -10,8 +10,8 @@ dependencies:
     - field.field.node.case_studies.field_challenge_video
     - field.field.node.case_studies.field_company_sector
     - field.field.node.case_studies.field_layout_canvas
-    - field.field.node.case_studies.field_logo
-    - field.field.node.case_studies.field_main_image
+    - field.field.node.case_studies.field_logo_media
+    - field.field.node.case_studies.field_main_image_media
     - field.field.node.case_studies.field_pre_heading
     - field.field.node.case_studies.field_promoted_case_study
     - field.field.node.case_studies.field_summary
@@ -19,7 +19,6 @@ dependencies:
     - node.type.case_studies
   module:
     - cohesion_elements
-    - image
     - user
 id: node.case_studies.default
 targetEntityType: node
@@ -80,27 +79,23 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_logo:
-    type: image
+  field_logo_media:
+    type: entity_reference_entity_view
     label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 15
     region: content
-  field_main_image:
-    type: image
+  field_main_image_media:
+    type: entity_reference_entity_view
     label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 9
+    weight: 16
     region: content
   field_pre_heading:
     type: string

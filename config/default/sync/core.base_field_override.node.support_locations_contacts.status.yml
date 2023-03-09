@@ -1,0 +1,22 @@
+uuid: 3bce5c0b-1081-4187-bda1-7d42405abcc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.support_locations_contacts
+id: node.support_locations_contacts.status
+field_name: status
+entity_type: node
+bundle: support_locations_contacts
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

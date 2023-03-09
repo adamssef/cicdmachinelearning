@@ -1,0 +1,22 @@
+uuid: 4b5db3d6-29e8-4644-967e-53da4b97347a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.support_locations_contacts
+id: node.support_locations_contacts.sticky
+field_name: sticky
+entity_type: node
+bundle: support_locations_contacts
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

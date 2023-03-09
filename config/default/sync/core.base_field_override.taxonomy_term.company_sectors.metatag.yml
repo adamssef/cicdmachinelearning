@@ -1,0 +1,18 @@
+uuid: a7d80845-9686-4235-8041-07e43a55256a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.company_sectors
+id: taxonomy_term.company_sectors.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: company_sectors
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
