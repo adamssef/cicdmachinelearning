@@ -75,6 +75,7 @@ module:
   media_entity_file_replace: 0
   media_entity_lottie: 0
   media_library: 0
+  media_thumbnail_url_formatter: 0
   memcache: 0
   menu_item_extras: 0
   menu_link_attributes: 0
