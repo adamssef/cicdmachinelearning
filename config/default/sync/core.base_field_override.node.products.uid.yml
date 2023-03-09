@@ -1,0 +1,20 @@
+uuid: 690f0e07-9dba-40a6-af80-d92dde95c913
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.products
+id: node.products.uid
+field_name: uid
+entity_type: node
+bundle: products
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

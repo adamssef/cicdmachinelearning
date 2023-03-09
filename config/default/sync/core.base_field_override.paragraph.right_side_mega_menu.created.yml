@@ -1,0 +1,18 @@
+uuid: f3f03ebc-9ab3-49c2-b9bf-89a0e988ade6
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.right_side_mega_menu
+id: paragraph.right_side_mega_menu.created
+field_name: created
+entity_type: paragraph
+bundle: right_side_mega_menu
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,18 @@
+uuid: b2747bbd-f401-4d71-baa2-d3d8c433eeb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.support_locations_contacts
+id: node.support_locations_contacts.metatag
+field_name: metatag
+entity_type: node
+bundle: support_locations_contacts
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

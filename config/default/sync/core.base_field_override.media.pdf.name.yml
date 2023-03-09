@@ -1,0 +1,20 @@
+uuid: 55e367d3-fd14-412e-972f-4cc4d39cdb10
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.pdf
+id: media.pdf.name
+field_name: name
+entity_type: media
+bundle: pdf
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string
