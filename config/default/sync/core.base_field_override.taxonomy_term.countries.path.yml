@@ -1,0 +1,20 @@
+uuid: 0b4882dc-91b6-48e6-8bbf-af8d8d76e743
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.countries
+  module:
+    - path
+id: taxonomy_term.countries.path
+field_name: path
+entity_type: taxonomy_term
+bundle: countries
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

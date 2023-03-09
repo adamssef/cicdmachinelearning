@@ -1,0 +1,18 @@
+uuid: 6d3a6d0c-9dc3-42c6-9b3b-fee0dd04b8cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.support_locations_contacts
+id: node.support_locations_contacts.moderation_state
+field_name: moderation_state
+entity_type: node
+bundle: support_locations_contacts
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
