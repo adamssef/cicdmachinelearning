@@ -1,0 +1,20 @@
+uuid: 5906701d-65c5-491d-900f-20b9d48da6a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.company_sectors
+  module:
+    - path
+id: taxonomy_term.company_sectors.path
+field_name: path
+entity_type: taxonomy_term
+bundle: company_sectors
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

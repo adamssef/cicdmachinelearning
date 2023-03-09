@@ -1,0 +1,18 @@
+uuid: e08f8ce9-8050-4cf5-bbab-3d1dee943bcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.support_locations_contacts
+id: node.support_locations_contacts.title
+field_name: title
+entity_type: node
+bundle: support_locations_contacts
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

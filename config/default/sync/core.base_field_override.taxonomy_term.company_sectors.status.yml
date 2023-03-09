@@ -1,0 +1,22 @@
+uuid: 9c3a9dba-6c57-4862-9548-4e72fc857924
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.company_sectors
+id: taxonomy_term.company_sectors.status
+field_name: status
+entity_type: taxonomy_term
+bundle: company_sectors
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
