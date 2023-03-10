@@ -1,29 +1,29 @@
-uuid: 8ae61151-61a0-457d-bed7-275acab88dc5
+uuid: 4dc59d26-24bf-46fd-a9d9-002394314ac6
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_company_sector
+    - field.storage.node.field_logo_media
+    - media.type.image
     - node.type.products
-    - taxonomy.vocabulary.company_sectors
-id: node.products.field_company_sector
-field_name: field_company_sector
+id: node.products.field_logo_media
+field_name: field_logo_media
 entity_type: node
 bundle: products
-label: 'Company sector'
+label: 'Logo Media'
 description: ''
 required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:media'
   handler_settings:
     target_bundles:
-      company_sectors: company_sectors
+      image: image
     sort:
-      field: name
-      direction: asc
+      field: _none
+      direction: ASC
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference
