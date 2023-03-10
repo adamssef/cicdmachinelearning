@@ -1,5 +1,5 @@
 title: 'Get in touch - no project field (de)'
-elements: |
+elements: |-
   first_name:
     '#title': 'Vorname*'
   last_name:

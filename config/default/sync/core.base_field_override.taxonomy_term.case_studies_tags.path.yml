@@ -1,0 +1,20 @@
+uuid: da651168-aac1-4097-bdbb-48495a464906
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.case_studies_tags
+  module:
+    - path
+id: taxonomy_term.case_studies_tags.path
+field_name: path
+entity_type: taxonomy_term
+bundle: case_studies_tags
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
