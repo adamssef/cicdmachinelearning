@@ -131,3 +131,7 @@ tagsCaseStudies:
 caseStudiesLibrary:
   js:
     js/caseStudiesLibrary.js: { }
+# gridContainer
+gridContainer:
+  js:
+    js/gridContainer.js: { }
