@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.case_studies.field_promoted_case_study
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
+    - field.field.node.case_studies.field_video_subtext
     - field.field.node.case_studies.field_video_thumb
     - node.type.case_studies
     - workflows.workflow.editorial
@@ -35,6 +36,7 @@ third_party_settings:
         - field_challenge_solution_text
         - field_challenge_video
         - field_video_thumb
+        - field_video_subtext
       label: 'Challenge & Solution'
       region: content
       parent_name: ''
@@ -110,7 +112,7 @@ content:
     third_party_settings: {  }
   field_layout_canvas:
     type: cohesion_layout_builder_widget
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -158,6 +160,14 @@ content:
     settings:
       match_operator: CONTAINS
       match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_video_subtext:
+    type: string_textfield
+    weight: 18
+    region: content
+    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
