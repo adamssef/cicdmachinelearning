@@ -42,3 +42,40 @@ jobs:
         run: cd planetpayment && git config --global user.email "noreply@planetpayment.com" && git config --global user.name "CI Deploy"
       - name: add, commit and push
         run: cd planetpayment && git add config docroot vendor patches composer.json composer.lock hooks && git commit -m "production deploy" && GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%dT%H:%M:%S.000Z')" >> $GITHUB_OUTPUT
+      - name: Test with environment variables
+        run: echo $TAG_NAME
+        env:
+          TAG_NAME: '{
+                     "teamId": "76585817-3c1e-4454-bc22-3d3d96564571",
+                     "deploymentDate": "${{ steps.date.outputs.date }}",
+                     "deploymentSucceeded": true,
+                     "artifactId": "${{ github.ref_name }}",
+                     "artifactName": "MTP",
+                     "deploymentId": "${{ github.run_id }}",
+                     "previousBuildId": "-",
+                     "deploymentMarker": "Planet MTP"
+                 }'
+      - name: "Call Galaxyops API"
+        uses: indiesdev/curl@v1.1
+        with:
+          # https://github.com/marketplace/actions/curl-axiosjs
+          url: https://galaxyops-dataingestion-api-deployment-fl45i7mn4q-ue.a.run.app/rest/api/v2/data-ingestion/deployment
+          method: "POST"
+          accept: 200,201,204
+          body: '{
+                                     "teamId": "76585817-3c1e-4454-bc22-3d3d96564571",
+                                     "deploymentDate": "${{ steps.date.outputs.date }}",
+                                     "deploymentSucceeded": true,
+                                     "artifactId": "${{ github.ref_name }}",
+                                     "artifactName": "MTP",
+                                     "deploymentId": "${{ github.run_id }}",
+                                     "previousBuildId": "-",
+                                     "deploymentMarker": "Planet MTP"
+                                 }'
+          timeout: 60000
+          bearer-token: ${{ secrets.BEARER_TOKEN }}
+          log-response: false
+          retries: 1
