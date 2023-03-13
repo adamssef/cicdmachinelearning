@@ -24,9 +24,9 @@
         coh-grid-four:
           T: 2 - SD: 4 - LD: 4; (4, 7, 8 CARDS)
         */
-        let container = document.querySelectorAll(".coh-grid-container");
+        let featureCards = document.querySelectorAll(".coh-feature-cards-container");
 
-        container.forEach((grid) => {
+        featureCards.forEach((grid) => {
           let countCards = grid.childElementCount;
 
           if (countCards > 1 && countCards === 2) {
@@ -35,6 +35,19 @@
             grid.classList.add("coh-grid-four");
           } else {
             grid.classList.add("coh-grid-three");
+          }
+        });
+
+
+        let factCards = document.querySelectorAll(".coh-fact-cards-container");
+
+        factCards.forEach((grid) => {
+          let countCards = grid.childElementCount;
+
+          if (countCards == 4) {
+            grid.classList.add("coh-flex-four-cards");
+          } else if (countCards > 4) {
+            grid.classList.add("coh-flex-t-two-cards");
           }
         });
       });
