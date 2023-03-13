@@ -1,0 +1,19 @@
+uuid: 8c4d7a94-98fc-4746-8196-6f880ed7611a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_subtext
+    - node.type.case_studies
+id: node.case_studies.field_video_subtext
+field_name: field_video_subtext
+entity_type: node
+bundle: case_studies
+label: 'Video subtext'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

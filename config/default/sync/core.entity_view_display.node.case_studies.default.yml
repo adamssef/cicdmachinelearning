@@ -16,6 +16,8 @@ dependencies:
     - field.field.node.case_studies.field_promoted_case_study
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
+    - field.field.node.case_studies.field_video_subtext
+    - field.field.node.case_studies.field_video_thumb
     - node.type.case_studies
   module:
     - cohesion_elements
@@ -129,6 +131,23 @@ content:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_video_subtext:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_video_thumb:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 17
     region: content
 hidden:
   content_moderation_control: true
