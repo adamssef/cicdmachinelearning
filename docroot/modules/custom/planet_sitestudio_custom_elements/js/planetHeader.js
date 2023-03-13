@@ -53,9 +53,9 @@
               header.classList.add("white-bg");
               // On mobile
               if ($(window).width() < 1023) {
-                $("#block-cohesion-theme-content").css("padding-top","138px");
+                $("#block-cohesion-theme-content").css("padding-top","72px");
               } else {
-                $("#block-cohesion-theme-content").css("padding-top","96px");
+                $("#block-cohesion-theme-content").css("padding-top","138px");
               }
             }
           })
@@ -65,9 +65,9 @@
           header.classList.add("white-bg");
           // On mobile
           if ($(window).width() < 1023) {
-            $("#block-cohesion-theme-content").css("padding-top","138px");
+            $("#block-cohesion-theme-content").css("padding-top","72px");
           } else {
-            $("#block-cohesion-theme-content").css("padding-top","96px");
+            $("#block-cohesion-theme-content").css("padding-top","138px");
           }
         }
 
