@@ -1,0 +1,18 @@
+uuid: 25698c39-72c2-4dc7-a80d-fb6d82f34085
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.pdf
+id: media.pdf.changed
+field_name: changed
+entity_type: media
+bundle: pdf
+label: Changed
+description: 'The time the media item was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

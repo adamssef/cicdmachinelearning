@@ -135,3 +135,7 @@ caseStudiesLibrary:
 brandsWeWorkWithAnimation:
   js:
     js/brandsWeWorkWithAnimation.js: { }
+# Cards - Grid Container
+cardsGridContainer:
+  js:
+    js/cardsGridContainer.js: { }

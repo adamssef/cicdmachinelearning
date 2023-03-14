@@ -6,8 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.products.field_company_sector
     - field.field.node.products.field_layout_canvas
-    - field.field.node.products.field_logo
-    - field.field.node.products.field_main_image
+    - field.field.node.products.field_logo_media
+    - field.field.node.products.field_main_image_media
     - field.field.node.products.field_pre_heading
     - field.field.node.products.field_promoted_product
     - field.field.node.products.field_summary
@@ -27,8 +27,8 @@ content:
 hidden:
   field_company_sector: true
   field_layout_canvas: true
-  field_logo: true
-  field_main_image: true
+  field_logo_media: true
+  field_main_image_media: true
   field_pre_heading: true
   field_promoted_product: true
   field_summary: true

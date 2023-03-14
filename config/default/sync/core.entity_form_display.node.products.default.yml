@@ -5,17 +5,16 @@ dependencies:
   config:
     - field.field.node.products.field_company_sector
     - field.field.node.products.field_layout_canvas
-    - field.field.node.products.field_logo
-    - field.field.node.products.field_main_image
+    - field.field.node.products.field_logo_media
+    - field.field.node.products.field_main_image_media
     - field.field.node.products.field_pre_heading
     - field.field.node.products.field_promoted_product
     - field.field.node.products.field_summary
-    - image.style.thumbnail
     - node.type.products
   module:
     - cohesion_elements
     - content_moderation
-    - image
+    - media_library
     - path
 id: node.products.default
 targetEntityType: node
@@ -44,21 +43,19 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_logo:
-    type: image_image
+  field_logo_media:
+    type: media_library_widget
     weight: 3
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
-  field_main_image:
-    type: image_image
+  field_main_image_media:
+    type: media_library_widget
     weight: 5
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
   field_pre_heading:
     type: string_textfield
@@ -135,6 +132,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

@@ -1,0 +1,22 @@
+uuid: cf8b53f3-a673-4287-bc5e-6c63d331ce95
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.support_locations_contacts
+id: node.support_locations_contacts.promote
+field_name: promote
+entity_type: node
+bundle: support_locations_contacts
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

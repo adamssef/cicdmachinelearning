@@ -55,7 +55,7 @@
               if ($(window).width() < 1023) {
                 $("#block-cohesion-theme-content").css("padding-top","72px");
               } else {
-                $("#block-cohesion-theme-content").css("padding-top","96px");
+                $("#block-cohesion-theme-content").css("padding-top","138px");
               }
             }
           })
@@ -67,7 +67,7 @@
           if ($(window).width() < 1023) {
             $("#block-cohesion-theme-content").css("padding-top","72px");
           } else {
-            $("#block-cohesion-theme-content").css("padding-top","96px");
+            $("#block-cohesion-theme-content").css("padding-top","138px");
           }
         }
 
@@ -82,6 +82,8 @@
             $(".coh-container .menu-container").css("height", "100%");
             $(".coh-container .menu-container").css("overflow-y", "scroll");
           } else {
+            // Menu is closed;
+            //enableScroll();
             menuState = 0;
             $("body").css("overflow", "");
           }
