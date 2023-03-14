@@ -22,62 +22,64 @@
       }
 
       if (alreadyRun === 0) {
-        let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
-        let hasHero = $("body").find(".coh-hero").length;
-        //if has Hero        
-        if (hasHero > 0) {
-          $(".coh-hero").each(function(){
-            let hero = $(this);
-            // if has Hero on the top of the page
-            // Considering height of header + notificationBar
-            if($(this).position().top < 200){
-              // if has Hero 5050
-              if($(this).hasClass("coh-hero-5050")){
-                // On Mobile
-                if ($(window).width() < 1023) {
-                  headerBehaviorwithNotificationBar(hero, header);
+        $(document).ready(function(){
+          let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
+          let hasHero = $("body").find(".coh-hero").length;
+          //if has Hero        
+          if (hasHero > 0) {
+            $(".coh-hero").each(function(){
+              let hero = $(this);
+              // if has Hero on the top of the page
+              // Considering height of header + notificationBar
+              if($(this).position().top < 200){
+                // if has Hero 5050
+                if($(this).hasClass("coh-hero-5050")){
+                  // On Mobile
+                  if ($(window).width() < 1023) {
+                    headerBehaviorwithNotificationBar(hero, header);
+                    headerBehaviorOnScroll(header);
+                  // On desktop
+                  } else {
+                    header.classList.add("white-bg");
+                  }
+                // if has Hero Full Width
+                } else if ($(this).hasClass("coh-hero-full-width")) {
+                  // On mobile
+                  if ($(window).width() < 1023) {
+                    headerBehaviorwithNotificationBar(hero, header);
+                  }
                   headerBehaviorOnScroll(header);
-                // On desktop
-                } else {
-                  header.classList.add("white-bg");
                 }
-              // if has Hero Full Width
-              } else if ($(this).hasClass("coh-hero-full-width")) {
+              } else {
+                header.classList.add("white-bg");
                 // On mobile
                 if ($(window).width() < 1023) {
-                  headerBehaviorwithNotificationBar(hero, header);
-                }
-                headerBehaviorOnScroll(header);
-              }
-            } else {
-              header.classList.add("white-bg");
-              // On mobile
-              if ($(window).width() < 1023) {
-                $("#block-cohesion-theme-content").css("padding-top","72px");
-              } else {
-                if (hasNotificationBar > 0) {
-                  $("#block-cohesion-theme-content").css("padding-top","138px");
+                  $("#block-cohesion-theme-content").css("padding-top","72px");
                 } else {
-                  $("#block-cohesion-theme-content").css("padding-top","96px");
+                  if (hasNotificationBar > 0) {
+                    $("#block-cohesion-theme-content").css("padding-top","138px");
+                  } else {
+                    $("#block-cohesion-theme-content").css("padding-top","96px");
+                  }
                 }
               }
-            }
-          })
-        // if doesn't have Hero 
-        // Pages without Hero or with Hero in the middle of the pag
-        } else {
-          header.classList.add("white-bg");
-          // On mobile
-          if ($(window).width() < 1023) {
-            $("#block-cohesion-theme-content").css("padding-top","72px");
+            })
+          // if doesn't have Hero 
+          // Pages without Hero or with Hero in the middle of the pag
           } else {
-            if (hasNotificationBar > 0) {
-              $("#block-cohesion-theme-content").css("padding-top","138px");
+            header.classList.add("white-bg");
+            // On mobile
+            if ($(window).width() < 1023) {
+              $("#block-cohesion-theme-content").css("padding-top","72px");
             } else {
-              $("#block-cohesion-theme-content").css("padding-top","96px");
+              if (hasNotificationBar > 0) {
+                $("#block-cohesion-theme-content").css("padding-top","138px");
+              } else {
+                $("#block-cohesion-theme-content").css("padding-top","96px");
+              }
             }
           }
-        }
+        })
 
         $('.mobile-menu-button').click(function (e) {
           e.preventDefault();
