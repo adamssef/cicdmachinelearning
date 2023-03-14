@@ -22,7 +22,7 @@
       }
 
       if (alreadyRun === 0) {
-
+        let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
         let hasHero = $("body").find(".coh-hero").length;
         //if has Hero        
         if (hasHero > 0) {
@@ -55,7 +55,11 @@
               if ($(window).width() < 1023) {
                 $("#block-cohesion-theme-content").css("padding-top","72px");
               } else {
-                $("#block-cohesion-theme-content").css("padding-top","138px");
+                if (hasNotificationBar > 0) {
+                  $("#block-cohesion-theme-content").css("padding-top","138px");
+                } else {
+                  $("#block-cohesion-theme-content").css("padding-top","96px");
+                }
               }
             }
           })
@@ -67,7 +71,11 @@
           if ($(window).width() < 1023) {
             $("#block-cohesion-theme-content").css("padding-top","72px");
           } else {
-            $("#block-cohesion-theme-content").css("padding-top","138px");
+            if (hasNotificationBar > 0) {
+              $("#block-cohesion-theme-content").css("padding-top","138px");
+            } else {
+              $("#block-cohesion-theme-content").css("padding-top","96px");
+            }
           }
         }
 
