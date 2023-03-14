@@ -23,8 +23,8 @@
 
                             // In the component we have a custom style just for animated class.
                             slide.parentNode.classList.add("animated");
-                            slide.classList.add("animated");;
-                            //
+                            slide.classList.add("animated");
+
                             /**
                              * Multiplicate the content, makes the animation smother,
                              * and helps in case of feel content (you can't loop only 3 cards).
