@@ -31,7 +31,7 @@
               let hero = $(this);
               // if has Hero on the top of the page
               // Considering height of header + notificationBar
-              if($(this).position().top < 200){
+              if($(this).position().top < 300){
                 // if has Hero 5050
                 if($(this).hasClass("coh-hero-5050")){
                   // On Mobile
