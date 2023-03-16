@@ -17,6 +17,8 @@ dependencies:
     - field.field.node.case_studies.field_promoted_case_study
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
+    - field.field.node.case_studies.field_video_subtext
+    - field.field.node.case_studies.field_video_thumb
     - node.type.case_studies
   module:
     - user
@@ -49,5 +51,7 @@ hidden:
   field_promoted_case_study: true
   field_summary: true
   field_tags: true
+  field_video_subtext: true
+  field_video_thumb: true
   langcode: true
   search_api_excerpt: true
