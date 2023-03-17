@@ -26,9 +26,12 @@
         })
         $(".menu-level-1-li").hover(function(){
           $("body").css("overflow-y","scroll");
-      }, function() {
-         $("body").css("position","relative"); 
-      })
+        }, function() {
+          $("body").css("position","relative"); 
+        })
+        $(".right-side-mega-menu__link div div").each(function(){
+          $(this).attr('tabindex', '0');
+        });
       });
     }
   };
