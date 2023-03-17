@@ -25,6 +25,7 @@
         $(document).ready(function(){
           let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
           let hasHero = $("body").find(".coh-hero").length;
+          let hasHeroOnTop = 0;
           //if has Hero        
           if (hasHero > 0) {
             $(".coh-hero").each(function(){
@@ -32,6 +33,8 @@
               // if has Hero on the top of the page
               // Considering height of header + notificationBar
               if($(this).position().top < 300){
+                $(this).addClass("coh-hero-top");
+                hasHeroOnTop = 1;
                 // if has Hero 5050
                 if($(this).hasClass("coh-hero-5050")){
                   // On Mobile
@@ -56,10 +59,12 @@
                 if ($(window).width() < 1023) {
                   $("#block-cohesion-theme-content").css("padding-top","72px");
                 } else {
-                  if (hasNotificationBar > 0) {
-                    $("#block-cohesion-theme-content").css("padding-top","138px");
-                  } else {
-                    $("#block-cohesion-theme-content").css("padding-top","96px");
+                  if (hasHeroOnTop == 0){
+                    if (hasNotificationBar > 0) {
+                      $("#block-cohesion-theme-content").css("padding-top","138px");
+                    } else {
+                      $("#block-cohesion-theme-content").css("padding-top","96px");
+                    }
                   }
                 }
               }
@@ -72,10 +77,12 @@
             if ($(window).width() < 1023) {
               $("#block-cohesion-theme-content").css("padding-top","72px");
             } else {
-              if (hasNotificationBar > 0) {
-                $("#block-cohesion-theme-content").css("padding-top","138px");
-              } else {
-                $("#block-cohesion-theme-content").css("padding-top","96px");
+              if (hasHeroOnTop == 0){
+                if (hasNotificationBar > 0) {
+                  $("#block-cohesion-theme-content").css("padding-top","138px");
+                } else {
+                  $("#block-cohesion-theme-content").css("padding-top","96px");
+                }
               }
             }
           }
@@ -142,9 +149,15 @@
         $(".notification-bar-button").click(function(){
           header.classList.remove("white-bg");
           $("#block-cohesion-theme-content").css("padding-top","0px");
+          if($(hero).hasClass("coh-hero-full-width")) {
+            $(hero).css("top","0px");
+          }
         })
       } else {
+        header.classList.remove("white-bg");
+        $("#block-cohesion-theme-content").css("padding-top","0px");
         hero.addClass("menu-invisible");
+        $(".hero-background").addClass("menu-invisible");
       }
     })
   }
