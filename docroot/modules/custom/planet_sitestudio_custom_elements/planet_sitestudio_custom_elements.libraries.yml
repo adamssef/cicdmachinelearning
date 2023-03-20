@@ -91,14 +91,6 @@ textVideo:
 tabTeamVideo:
   js:
     js/tabTeamVideo.js: {}
-# Planet - Hero - We Are Planet
-fixedHeaderDesktop:
-  js:
-    js/fixedHeaderDesktop.js: {}
-# Planet - Campaign Page Top
-fixedHeaderDesktopMobile:
-  js:
-    js/fixedHeaderDesktopMobile.js: {}
 # Registered Companies
 registeredCompanies:
   js:
@@ -139,3 +131,11 @@ tagsCaseStudies:
 caseStudiesLibrary:
   js:
     js/caseStudiesLibrary.js: { }
+# Brands we work with animation
+brandsWeWorkWithAnimation:
+  js:
+    js/brandsWeWorkWithAnimation.js: { }
+# Cards - Grid Container
+cardsGridContainer:
+  js:
+    js/cardsGridContainer.js: { }

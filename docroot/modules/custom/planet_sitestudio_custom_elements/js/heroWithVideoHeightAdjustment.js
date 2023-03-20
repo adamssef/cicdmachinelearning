@@ -9,11 +9,6 @@
       $(document).ready(function () {
         if (alreadyRun === 0) {
 
-          if ($(window).width() > 1023) {
-            $(".header-container").addClass("white-bg-fixed");
-            $(".header-container").addClass("white-bg");
-          }
-
           $(window).bind("load", function () {
 
             if ($(window).width() > 1280) {
