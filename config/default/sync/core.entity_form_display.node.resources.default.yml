@@ -5,10 +5,13 @@ dependencies:
   config:
     - field.field.node.resources.field_field_resources_metatag
     - field.field.node.resources.field_layout_canvas
+    - field.field.node.resources.field_promoted_resource
     - field.field.node.resources.field_resources_author
+    - field.field.node.resources.field_resources_author_photo
     - field.field.node.resources.field_resources_author_role
     - field.field.node.resources.field_resources_background_image
     - field.field.node.resources.field_resources_published_time
+    - field.field.node.resources.field_resources_reading_time
     - field.field.node.resources.field_resources_subtitle
     - field.field.node.resources.field_resources_tags
     - field.field.node.resources.field_resources_template
@@ -47,6 +50,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_promoted_resource:
+    type: boolean_checkbox
+    weight: 101
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_resources_author:
     type: string_textfield
     weight: 12
@@ -54,6 +64,13 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_resources_author_photo:
+    type: media_library_widget
+    weight: 104
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_resources_author_role:
     type: string_textfield
@@ -85,6 +102,13 @@ content:
     weight: 19
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_resources_reading_time:
+    type: number
+    weight: 105
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_resources_subtitle:
     type: string_textarea

@@ -1,0 +1,23 @@
+uuid: 4ed6af11-22b0-4ccf-bfcd-e8f7bf64d39c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resources_reading_time
+    - node.type.resources
+id: node.resources.field_resources_reading_time
+field_name: field_resources_reading_time
+entity_type: node
+bundle: resources
+label: 'Reading Time'
+description: 'Reading time must be added in minutes'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: minute|minutes
+field_type: integer
