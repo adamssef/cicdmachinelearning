@@ -1,4 +1,4 @@
-uuid: a148b845-bdbc-4db6-b8d2-ac73bf6bf2c2
+uuid: a165d4e7-bff2-4524-8aaf-a38d974daaa9
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,10 @@ dependencies:
 id: node.field_resources_reading_time
 field_name: field_resources_reading_time
 entity_type: node
-type: string
+type: integer
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

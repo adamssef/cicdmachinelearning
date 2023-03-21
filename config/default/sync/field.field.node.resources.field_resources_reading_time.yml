@@ -1,4 +1,4 @@
-uuid: ccb51862-d450-4aac-b3e2-51842a4f0b3a
+uuid: 4ed6af11-22b0-4ccf-bfcd-e8f7bf64d39c
 langcode: en
 status: true
 dependencies:
@@ -10,10 +10,14 @@ field_name: field_resources_reading_time
 entity_type: node
 bundle: resources
 label: 'Reading Time'
-description: ''
+description: 'Reading time must be added in minutes'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: minute|minutes
+field_type: integer
