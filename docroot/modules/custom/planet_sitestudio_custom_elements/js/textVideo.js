@@ -86,7 +86,7 @@
               height: '100%',
               width: '100%',
               videoId: playerInfo.video_id,
-              playerVars: {'autoplay': 1, 'playsinline': 1},
+              playerVars: {'autoplay': 1, 'playsinline': 1, 'rel': 0},
               events: {
                 'onReady': onPlayerReady
               }

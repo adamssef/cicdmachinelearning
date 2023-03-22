@@ -9,66 +9,6 @@
   Drupal.behaviors.planet_sitestudio_planetHeader = {
     attach: function (context) {
       let header = document.querySelector(".header-container");
-      let menu = document.querySelector(".menu-container");
-      let cpt_hero_background_image = $('[class*="cpt_hero_background_image"]').get();
-
-      if ($(".hero5050").hasClass("coh-hero-on-top") &&
-        $(window).width() >= 1023) {
-          header.classList.add("white-bg");
-      }
-
-      window.addEventListener("scroll", (e) => {
-        lastKnowScrollPosition = window.scrollY;
-
-        if (
-          lastKnowScrollPosition >= 5 &&
-          !menu.classList.contains("menu-visible")
-        ) {
-          header.classList.add("white-bg");
-        } else if (!header.classList.contains("white-bg-fixed")) {
-          if (document.getElementsByClassName("notification-bar-container").length > 0 &&
-          !document.querySelector(".notification-bar-container").classList.contains("closed")) {
-            if (header.classList.contains("white-bg-fixed") &&
-            $(window).width() < 1023) {
-              header.classList.add("white-bg");
-            } else if ($(".hero5050").hasClass("coh-hero-not-top") &&
-            $(window).width() < 1023) {
-              header.classList.remove("white-bg");
-              } else {
-              if ($(window).width() < 1023) {
-                header.classList.remove("white-bg");
-              } else {
-                header.classList.remove("white-bg");
-              }
-            }
-          } else {
-            header.classList.remove("white-bg");
-          }
-        }
-
-        if (
-          lastKnowScrollPosition === 0 &&
-          $(".hero5050").hasClass("remove-padding-top") &&
-          $(window).width() < 1023) {
-          header.classList.remove("white-bg");
-        } else if (lastKnowScrollPosition === 0 &&
-          $(".hero5050").hasClass("coh-hero-on-top")) {
-            header.classList.add("white-bg");
-        } else if (lastKnowScrollPosition === 0 &&
-          $(".hero5050").hasClass("coh-hero-not-top") &&
-          $(window).width() >= 1023) {
-            header.classList.remove("white-bg");
-        } else if (lastKnowScrollPosition === 0 &&
-          $(".notification-bar-container").hasClass("notification-shown") &&
-          $(window).width() < 1023) {
-            header.classList.add("white-bg");
-        } else if (lastKnowScrollPosition === 0 &&
-          !jQuery.isEmptyObject(cpt_hero_background_image)) {
-            header.classList.remove("white-bg");
-        } else {
-          header.classList.add("white-bg");
-        }
-      });
 
       function preventDefault(e){
         e.preventDefault();
@@ -82,6 +22,72 @@
       }
 
       if (alreadyRun === 0) {
+        $(document).ready(function(){
+          let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
+          let hasHero = $("body").find(".coh-hero").length;
+          let hasHeroOnTop = 0;
+          //if has Hero        
+          if (hasHero > 0) {
+            $(".coh-hero").each(function(){
+              let hero = $(this);
+              // if has Hero on the top of the page
+              // Considering height of header + notificationBar
+              if($(this).position().top < 300){
+                $(this).addClass("coh-hero-top");
+                hasHeroOnTop = 1;
+                // if has Hero 5050
+                if($(this).hasClass("coh-hero-5050")){
+                  // On Mobile
+                  if ($(window).width() < 1023) {
+                    headerBehaviorwithNotificationBar(hero, header);
+                    headerBehaviorOnScroll(header);
+                  // On desktop
+                  } else {
+                    header.classList.add("white-bg");
+                  }
+                // if has Hero Full Width
+                } else if ($(this).hasClass("coh-hero-full-width")) {
+                  // On mobile
+                  if ($(window).width() < 1023) {
+                    headerBehaviorwithNotificationBar(hero, header);
+                  }
+                  headerBehaviorOnScroll(header);
+                }
+              } else {
+                header.classList.add("white-bg");
+                // On mobile
+                if ($(window).width() < 1023) {
+                  $("#block-cohesion-theme-content").css("padding-top","72px");
+                } else {
+                  if (hasHeroOnTop == 0){
+                    if (hasNotificationBar > 0) {
+                      $("#block-cohesion-theme-content").css("padding-top","138px");
+                    } else {
+                      $("#block-cohesion-theme-content").css("padding-top","96px");
+                    }
+                  }
+                }
+              }
+            })
+          // if doesn't have Hero 
+          // Pages without Hero or with Hero in the middle of the pag
+          } else {
+            header.classList.add("white-bg");
+            // On mobile
+            if ($(window).width() < 1023) {
+              $("#block-cohesion-theme-content").css("padding-top","72px");
+            } else {
+              if (hasHeroOnTop == 0){
+                if (hasNotificationBar > 0) {
+                  $("#block-cohesion-theme-content").css("padding-top","138px");
+                } else {
+                  $("#block-cohesion-theme-content").css("padding-top","96px");
+                }
+              }
+            }
+          }
+        })
+
         $('.mobile-menu-button').click(function (e) {
           e.preventDefault();
           if (menuState === 0) {
@@ -89,7 +95,6 @@
             //disableScroll();
             menuState = 1;
             $("body").css("overflow", "hidden");
-
             $(".coh-container .menu-container").css("position", "fixed");
             $(".coh-container .menu-container").css("height", "100%");
             $(".coh-container .menu-container").css("overflow-y", "scroll");
@@ -133,6 +138,49 @@
       }
     },
   };
+
+  function headerBehaviorwithNotificationBar(hero, header) {
+    $(document).ready(function(){
+      let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
+      // if has Notification Bar
+      if(hasNotificationBar > 0) {
+        header.classList.add("white-bg");
+        // When click to close Notification Bar
+        $(".notification-bar-button").click(function(){
+          header.classList.remove("white-bg");
+          $("#block-cohesion-theme-content").css("padding-top","0px");
+          if($(hero).hasClass("coh-hero-full-width")) {
+            $(hero).css("top","0px");
+          }
+        })
+      } else {
+        header.classList.remove("white-bg");
+        $("#block-cohesion-theme-content").css("padding-top","0px");
+        hero.addClass("menu-invisible");
+        $(".hero-background").addClass("menu-invisible");
+      }
+    })
+  }
+  function headerBehaviorOnScroll(header) {
+    // On Scroll
+    $(window).on('scroll', function () {
+      let scrollPosition = jQuery(window).scrollTop();
+      let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
+      // if scroll position is on the top 
+      if (scrollPosition === 0) {
+        // if has Notification Bar and is Mobile
+        if(hasNotificationBar > 0 && $(window).width() < 1023) {
+          header.classList.add("white-bg");
+        // if doesn't have Notification Bar and/or is on Desktop
+        } else {
+          header.classList.remove("white-bg");
+        }
+      // if Scroll position isn't on the top
+      } else {
+        header.classList.add("white-bg");
+      }
+    });
+  }
 
   function createCookie(name, value, days) {
     if (days) {

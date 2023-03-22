@@ -18,31 +18,6 @@
           $('.notification-bar-container').removeClass('notification-shown');
 
         });
-
-        let position = jQuery(window).scrollTop();
-        if ($(window).width() < 1023) {
-          $(window).on('load', function () {
-            if (position === 0) {
-              $('header').addClass('white-bg');
-            }
-          });
-        }
-
-        if ($('body').find('.notification-bar-container')) {
-          if ($(window).width() < 1023) {
-            navBarButton.click(function () {
-              if (!$('header').hasClass('white-bg-fixed')) {
-                $(this).removeClass('white-bg');
-              }
-            });
-          }
-
-          $(window).on('scroll', function () {
-            if (position === 0) {
-              $('header').addClass('white-bg');
-            }
-          });
-        }
       });
     }
   };
