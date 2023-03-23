@@ -393,7 +393,7 @@ display:
             - field_resources_background_image
           wrapper: div
           legend: ''
-          classes: blog__card--top
+          classes: publications__card--top
           collapsible: 0
           collapsed: 0
         field_resources_background_image:
@@ -439,7 +439,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: blog__card__main-image
+          element_wrapper_class: publications__card__main-image
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -515,7 +515,7 @@ display:
             - view_node
           wrapper: div
           legend: ''
-          classes: blog__card--bottom
+          classes: publications__card--bottom
           collapsible: 0
           collapsed: 0
         field_resources_title:
@@ -561,7 +561,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: 'blog__card__title coh-style-h300'
+          element_wrapper_class: 'publications__card__title coh-style-h300'
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -624,7 +624,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: 'blog__card__summary coh-style-b100'
+          element_wrapper_class: 'publications__card__summary coh-style-b100'
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -686,7 +686,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: 'blog__card__tags coh-style-l50'
+          element_wrapper_class: 'publications__card__tags coh-style-l50'
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -750,13 +750,13 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: 'blog__card__link coh-style-t100'
+          element_wrapper_class: 'publications__card__link coh-style-t100'
           element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: 'Read full content'
+          text: 'Read full post'
           output_url_as_text: false
           absolute: false
       pager:
