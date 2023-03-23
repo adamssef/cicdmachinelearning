@@ -11,7 +11,7 @@ id: node.resources.field_layout_canvas
 field_name: field_layout_canvas
 entity_type: node
 bundle: resources
-label: 'layout canvas'
+label: 'Layout Canvas'
 description: ''
 required: false
 translatable: true
