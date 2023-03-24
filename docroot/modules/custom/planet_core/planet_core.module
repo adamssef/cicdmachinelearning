@@ -11,6 +11,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\TranslatableInterface;
+use Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList;
 
 /**
  * Sanitize cookie.
@@ -199,12 +200,43 @@ function _planet_core_update_untranslated_path(EntityInterface $entity, string $
 }
 
 /**
- * Fix "Non-translatable fields can only be changed when updating the original language." issue.
+ * Fix "Non-translatable fields can only be changed when updating the original
+ * language." issue.
  */
 function planet_core_entity_type_alter(array &$entity_types) {
   foreach ($entity_types as $entity_type) {
     $constraints = $entity_type->getConstraints();
     unset($constraints['EntityUntranslatableFields']);
     $entity_type->setConstraints($constraints);
+  }
+}
+
+/**
+ * Implements hook_cloned_node_alter().
+ */
+function planet_core_cloned_node_alter(NodeInterface &$node): void {
+  $configName = 'exclude.node.' . $node->getType();
+  $excludeFields = \Drupal::config('quick_node_clone.settings')->get($configName);
+  $excludeFields = $excludeFields ?: [];
+
+  foreach ($node->getFieldDefinitions() as $fieldDefinition) {
+    $fieldStorageDefinition = $fieldDefinition->getFieldStorageDefinition();
+    $fieldSettings = $fieldStorageDefinition->getSettings();
+    $fieldName = $fieldStorageDefinition->getName();
+
+    if (!in_array($fieldName, $excludeFields)) {
+      if (isset($fieldSettings['target_type']) && $fieldSettings['target_type'] != "paragraph") {
+        $field = $node->get($fieldName);
+        if (!$field->isEmpty()) {
+          if ($field instanceof EntityReferenceRevisionsFieldItemList) {
+            foreach ($field as $value) {
+              if ($value->entity) {
+                $value->entity = $value->entity->createDuplicate();
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
