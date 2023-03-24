@@ -27,31 +27,29 @@
                      * Multiplicate the content, makes the animation smother,
                      * and helps in case of feel content (you can't loop only 3 cards).
                      */
-                    this.innerHTML = this.innerHTML + this.innerHTML + this.innerHTML;
+                    this.innerHTML = this.innerHTML + this.innerHTML + this.innerHTML + this.innerHTML + this.innerHTML;
 
                     // Set's the point where the animation will end.
-                    slide_endpoint = (82 + this.offsetWidth / 2) + "px";
-
-                    console.log(slide_endpoint);
+                    slide_endpoint = (62 + this.offsetWidth / 2) + "px";
 
                     // Getting the speed of the animation.
                     if (this.dataset.speed == "slow") {
                         timing = {
-                            duration: 35000,
+                            duration: 45000,
                             iterations: iteration,
                         };
                     }
 
                     if (this.dataset.speed == "medium") {
                         timing = {
-                            duration: 25000,
+                            duration: 35000,
                             iterations: iteration,
                         };
                     }
 
                     if (this.dataset.speed == "fast") {
                         timing = {
-                            duration: 15000,
+                            duration: 25000,
                             iterations: iteration,
                         };
                     }
