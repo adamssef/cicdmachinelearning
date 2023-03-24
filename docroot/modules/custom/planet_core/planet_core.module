@@ -68,7 +68,7 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
   }
 
   if ($cookie_gclid) {
-    $webform_submission->setElementData('gclid', $cookie_gclid);
+    $webform_submission->setElementData('GCLID', $cookie_gclid);
   }
 
   /** SUPPORT FORM - temporary */
