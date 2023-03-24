@@ -109,31 +109,60 @@
 
         // Search for utm parameters in url.
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('utm_campaign') || urlParams.has('utm_medium') || urlParams.has('utm_source') || urlParams.has('utm_content') || urlParams.has('utm_term')){
+        if (urlParams.has('utm_campaign') || urlParams.has('utm_medium') || urlParams.has('utm_source') || urlParams.has('utm_content') || urlParams.has('utm_term') || urlParams.has('gclid')){
 
           // Get the cookies.
           let cookies = document.cookie;
           if (cookies !== undefined) {
 
-            // Add the url get to cookies.
-            if (urlParams.get('utm_source') && cookies.indexOf('Drupal.visitor.utm_source') < 0) {
-              createCookie('Drupal.visitor.utm_source', urlParams.get('utm_source'), 1);
+            const utmSource = urlParams.get('utm_source')
+            const utmMedium = urlParams.get('utm_medium')
+            const utmCampaign = urlParams.get('utm_campaign')
+            const utmContent = urlParams.get('utm_content')
+            const utmTerm = urlParams.get('utm_term')
+            const gclid = urlParams.get('gclid')
+
+            const shortUTMTime = 1
+            const longUTMTime = 60
+
+            // Save UTMs cookies
+            if (utmSource && cookies.indexOf('Drupal.visitor.utm_source') < 0) {
+              createCookie('Drupal.visitor.utm_source', utmSource, shortUTMTime);
             }
-            if (urlParams.get('utm_medium') && cookies.indexOf('Drupal.visitor.utm_medium') < 0) {
-              createCookie('Drupal.visitor.utm_medium', urlParams.get('utm_medium'), 1);
+            if (utmMedium && cookies.indexOf('Drupal.visitor.utm_medium') < 0) {
+              createCookie('Drupal.visitor.utm_medium', utmMedium, shortUTMTime);
             }
-            if (urlParams.get('utm_campaign') && cookies.indexOf('Drupal.visitor.utm_campaign') < 0) {
-              createCookie('Drupal.visitor.utm_campaign', urlParams.get('utm_campaign'), 1);
+            if (utmCampaign && cookies.indexOf('Drupal.visitor.utm_campaign') < 0) {
+              createCookie('Drupal.visitor.utm_campaign', utmCampaign, shortUTMTime);
             }
-            if (urlParams.get('utm_content') && cookies.indexOf('Drupal.visitor.utm_content') < 0) {
-              createCookie('Drupal.visitor.utm_content', urlParams.get('utm_content'), 1);
+            if (utmContent && cookies.indexOf('Drupal.visitor.utm_content') < 0) {
+              createCookie('Drupal.visitor.utm_content', utmContent, shortUTMTime);
             }
-            if (urlParams.get('utm_term') && cookies.indexOf('Drupal.visitor.utm_term') < 0) {
-              createCookie('Drupal.visitor.utm_term', urlParams.get('utm_term'), 1);
+            if (utmTerm && cookies.indexOf('Drupal.visitor.utm_term') < 0) {
+              createCookie('Drupal.visitor.utm_term', utmTerm, shortUTMTime);
+            }
+            if (gclid && cookies.indexOf('Drupal.visitor.gclid') < 0) {
+              createCookie('Drupal.visitor.gclid', gclid, shortUTMTime);
+            }
+
+            // Save original UTMs cookies
+            if (utmSource && cookies.indexOf('Drupal.visitor.orig_utm_source') < 0) {
+              createCookie('Drupal.visitor.orig_utm_source', utmSource, longUTMTime);
+            }
+            if (utmMedium && cookies.indexOf('Drupal.visitor.orig_utm_medium') < 0) {
+              createCookie('Drupal.visitor.orig_utm_medium', utmMedium, longUTMTime);
+            }
+            if (utmCampaign && cookies.indexOf('Drupal.visitor.orig_utm_campaign') < 0) {
+              createCookie('Drupal.visitor.orig_utm_campaign', utmCampaign, longUTMTime);
+            }
+            if (utmContent && cookies.indexOf('Drupal.visitor.orig_utm_content') < 0) {
+              createCookie('Drupal.visitor.orig_utm_content', utmContent, longUTMTime);
+            }
+            if (utmTerm && cookies.indexOf('Drupal.visitor.orig_utm_term') < 0) {
+              createCookie('Drupal.visitor.orig_utm_term', utmTerm, longUTMTime);
             }
           }
         }
-
         alreadyRun = 1;
       }
     },
