@@ -109,7 +109,7 @@
 
         // Search for utm parameters in url.
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('utm_campaign') || urlParams.has('utm_medium') || urlParams.has('utm_source') || urlParams.has('utm_content') || urlParams.has('utm_term')){
+        if (urlParams.has('utm_campaign') || urlParams.has('utm_medium') || urlParams.has('utm_source') || urlParams.has('utm_content') || urlParams.has('utm_term') || urlParams.has('gclid')){
 
           // Get the cookies.
           let cookies = document.cookie;
@@ -120,6 +120,7 @@
             const utmCampaign = urlParams.get('utm_campaign')
             const utmContent = urlParams.get('utm_content')
             const utmTerm = urlParams.get('utm_term')
+            const gclid = urlParams.get('gclid')
 
             const shortUTMTime = 1
             const longUTMTime = 60
@@ -140,6 +141,9 @@
             if (utmTerm && cookies.indexOf('Drupal.visitor.utm_term') < 0) {
               createCookie('Drupal.visitor.utm_term', utmTerm, shortUTMTime);
             }
+            if (gclid && cookies.indexOf('Drupal.visitor.gclid') < 0) {
+              createCookie('Drupal.visitor.gclid', gclid, shortUTMTime);
+            }
 
             // Save original UTMs cookies
             if (utmSource && cookies.indexOf('Drupal.visitor.orig_utm_source') < 0) {
@@ -159,7 +163,6 @@
             }
           }
         }
-
         alreadyRun = 1;
       }
     },
