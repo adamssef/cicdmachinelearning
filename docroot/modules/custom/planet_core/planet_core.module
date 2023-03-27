@@ -45,6 +45,7 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
   $cookie_utm_campaign = isset($_COOKIE['Drupal_visitor_utm_campaign']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_campaign']) : '';
   $cookie_utm_term = isset($_COOKIE['Drupal_visitor_utm_term']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_term']) : '';
   $cookie_utm_content = isset($_COOKIE['Drupal_visitor_utm_content']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_content']) : '';
+  $cookie_gclid = isset($_COOKIE['Drupal_visitor_gclid']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_gclid']) : '';
 
   if ($cookie_utm_source) {
     $webform_submission->setElementData('utm_source', $cookie_utm_source);
@@ -64,6 +65,10 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
 
   if ($cookie_utm_term) {
     $webform_submission->setElementData('utm_term', $cookie_utm_term);
+  }
+
+  if ($cookie_gclid) {
+    $webform_submission->setElementData('gclid', $cookie_gclid);
   }
 
   /** SUPPORT FORM - temporary */
