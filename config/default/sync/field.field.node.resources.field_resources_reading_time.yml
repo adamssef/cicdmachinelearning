@@ -19,5 +19,5 @@ settings:
   min: null
   max: null
   prefix: ''
-  suffix: minute|minutes
+  suffix: ' MIN| MINS'
 field_type: integer
