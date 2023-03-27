@@ -37,21 +37,21 @@
                             // Getting the speed of the animation.
                             if (slide.dataset.speed == "slow") {
                                 timing = {
-                                    duration: 30000,
+                                    duration: 360000,
                                     iterations: iteration,
                                 };
                             }
 
                             if (slide.dataset.speed == "medium") {
                                 timing = {
-                                    duration: 20000,
+                                    duration: 260000,
                                     iterations: iteration,
                                 };
                             }
 
                             if (slide.dataset.speed == "fast") {
                                 timing = {
-                                    duration: 10000,
+                                    duration: 160000,
                                     iterations: iteration,
                                 };
                             }
