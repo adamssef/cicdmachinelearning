@@ -1,0 +1,19 @@
+uuid: 026d5ff4-04c1-4fae-bdae-ef79ce9bc78f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pre_heading_2
+    - node.type.products
+id: node.products.field_pre_heading_2
+field_name: field_pre_heading_2
+entity_type: node
+bundle: products
+label: 'Pre Heading 2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
