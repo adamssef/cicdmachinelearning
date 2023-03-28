@@ -1,7 +1,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.linkScrollTo = {
-    attach: function () {
-      $('a.coh-js-scroll-to').on('click', (e) => {
+    attach: function (context, settings) {
+      $('a.coh-js-scroll-to', context).once("scroll-to-js").click(function (e) {
         const targetSelector = $(e.currentTarget).attr('data-coh-scroll-to');
         const target = $(targetSelector);
         const targetOffset = target.offset().top;
