@@ -14,12 +14,31 @@
         e.preventDefault();
       }
 
+      function functiondisable() {
+        // To get the scroll position of current webpage
+        TopScroll = window.pageYOffset || document.documentElement.scrollTop;
+        LeftScroll = window.pageXOffset || document.documentElement.scrollLeft,
+        
+          // if scroll happens, set it to the previous value
+          window.onscroll = function() {
+            window.scrollTo(LeftScroll, TopScroll);
+          };
+        }
+        
+        function functionenable() {
+          window.onscroll = function() {};
+        }
+
       function disableScroll(){
         document.body.addEventListener('touchmove', preventDefault, { passive: false });
+        functiondisable();
       }
+
       function enableScroll(){
         document.body.removeEventListener('touchmove', preventDefault);
+        functionenable();
       }
+
 
       if (alreadyRun === 0) {
         $(document).ready(function(){
@@ -92,7 +111,7 @@
           e.preventDefault();
           if (menuState === 0) {
             // Menu is opened;
-            //disableScroll();
+            disableScroll();
             menuState = 1;
             $("body").css("overflow", "hidden");
             $(".coh-container .menu-container").css("position", "fixed");
@@ -100,7 +119,7 @@
             $(".coh-container .menu-container").css("overflow-y", "scroll");
           } else {
             // Menu is closed;
-            //enableScroll();
+            enableScroll();
             menuState = 0;
             $("body").css("overflow", "");
           }
