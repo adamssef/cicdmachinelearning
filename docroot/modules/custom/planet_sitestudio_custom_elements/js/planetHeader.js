@@ -131,7 +131,7 @@
           if (menuState === 0) {
             // Menu is opened;
             disableScroll();
-          menuState = 1;
+            menuState = 1;
           } else {
             // Menu is closed;
             enableScroll();
