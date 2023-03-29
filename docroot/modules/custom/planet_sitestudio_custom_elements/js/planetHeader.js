@@ -126,6 +126,20 @@
           return false;
         });
 
+        $(".menu-level-1-li").hover(function (e) {
+          e.preventDefault();
+          if (menuState === 0) {
+            // Menu is opened;
+            disableScroll();
+          menuState = 1;
+          } else {
+            // Menu is closed;
+            enableScroll();
+            menuState = 0;
+          }
+          return false;
+        }) 
+
         // Search for utm parameters in url.
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('utm_campaign') || urlParams.has('utm_medium') || urlParams.has('utm_source') || urlParams.has('utm_content') || urlParams.has('utm_term') || urlParams.has('gclid')){
