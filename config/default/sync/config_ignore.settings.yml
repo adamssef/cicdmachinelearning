@@ -3,9 +3,9 @@ _core:
 ignored_config_entities:
   - 'cohesion_*'
   - system.site
-  - views.view.locations_contacts
-  - views.view.companies
+  - 'views.view.locations_contacts*'
+  - 'views.view.support_locations_contacts*'
+  - 'views.view.companies*'
   - planet_config.pardot
-  - views.view.support_locations_contacts
   - 'webform.webform.generic_form*'
 enable_export_filtering: true
