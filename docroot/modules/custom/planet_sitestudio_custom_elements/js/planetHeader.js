@@ -152,6 +152,7 @@
         ]
         const urlMaxLength = 150
 
+        
         if (urlParams.has('utm_campaign') || urlParams.has('utm_medium') || urlParams.has('utm_source') || urlParams.has('utm_content') || urlParams.has('utm_term') || urlParams.has('gclid')){
 
           // Get the cookies.
@@ -164,7 +165,7 @@
             const utmContent = urlParams.get('utm_content')
             const utmTerm = urlParams.get('utm_term')
             const gclid = urlParams.get('gclid')
-           
+
             /**
              * Save recent UTMs as cookies.
              * We want to set the cookies only if they don't exist already
@@ -220,7 +221,9 @@
           createCookie('Drupal.visitor.referrer', referrer.substring(0, urlMaxLength), shortUTMTime);
         }
 
-        const originalLp = (containsAny(document.referrer, planetUrls)) ? document.referrer : false
+        const firstVisitedPage = (containsAny(document.referrer, planetUrls)) ? document.referrer : false
+        const currentPage = window.location.href.split('?')[0]
+        const originalLp = firstVisitedPage || currentPage
         if (originalLp && !cookieExists('Drupal.visitor.orig_lp')) {
           createCookie('Drupal.visitor.orig_lp', originalLp.substring(0, urlMaxLength), shortUTMTime);
         }
@@ -294,6 +297,6 @@
        }
     }
     return null; 
-}
+  }
 
 })(jQuery, Drupal);
