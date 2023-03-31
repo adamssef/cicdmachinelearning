@@ -46,7 +46,16 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
   $cookie_utm_campaign = isset($_COOKIE['Drupal_visitor_utm_campaign']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_campaign']) : '';
   $cookie_utm_term = isset($_COOKIE['Drupal_visitor_utm_term']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_term']) : '';
   $cookie_utm_content = isset($_COOKIE['Drupal_visitor_utm_content']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_content']) : '';
+  
+  $cookie_orig_utm_source = isset($_COOKIE['Drupal_visitor_orig_utm_source']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_source']) : '';
+  $cookie_orig_utm_medium = isset($_COOKIE['Drupal_visitor_orig_utm_medium']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_medium']) : '';
+  $cookie_orig_utm_campaign = isset($_COOKIE['Drupal_visitor_orig_utm_campaign']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_campaign']) : '';
+  $cookie_orig_utm_term = isset($_COOKIE['Drupal_visitor_orig_utm_term']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_term']) : '';
+  $cookie_orig_utm_content = isset($_COOKIE['Drupal_visitor_orig_utm_content']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_content']) : '';
+  
   $cookie_gclid = isset($_COOKIE['Drupal_visitor_gclid']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_gclid']) : '';
+  $cookie_referrer = isset($_COOKIE['Drupal_visitor_referrer']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_referrer']) : '';
+  $cookie_orig_lp = isset($_COOKIE['Drupal_visitor_orig_lp']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_lp']) : '';
 
   if ($cookie_utm_source) {
     $webform_submission->setElementData('utm_source', $cookie_utm_source);
@@ -72,6 +81,36 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
     $webform_submission->setElementData('gclid', $cookie_gclid);
   }
 
+
+  if ($cookie_orig_utm_source) {
+    $webform_submission->setElementData('orig_utm_source', $cookie_orig_utm_source);
+  }
+
+  if ($cookie_orig_utm_medium) {
+    $webform_submission->setElementData('orig_utm_medium', $cookie_orig_utm_medium);
+  }
+
+  if ($cookie_orig_utm_campaign) {
+    $webform_submission->setElementData('orig_utm_campaign', $cookie_orig_utm_campaign);
+  }
+
+  if ($cookie_orig_utm_content) {
+    $webform_submission->setElementData('orig_utm_content', $cookie_orig_utm_content);
+  }
+
+  if ($cookie_orig_utm_term) {
+    $webform_submission->setElementData('orig_utm_term', $cookie_orig_utm_term);
+  }
+
+  if ($cookie_referrer) {
+    $webform_submission->setElementData('referrer', $cookie_referrer);
+  }
+  
+  if ($cookie_orig_lp) {
+    $webform_submission->setElementData('orig_lp', $cookie_orig_lp);
+  }
+  
+
   /** SUPPORT FORM - temporary */
   if ($webform_id === 'support') {
     // Populate the value of 'Support_Address__c' with the same value as 'email'.
@@ -80,6 +119,7 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
     $webform_submission->setElementData('support_address__c', $email );
   }
 }
+
 
 /**
  * Implements hook_form_views_exposed_form_alter().
