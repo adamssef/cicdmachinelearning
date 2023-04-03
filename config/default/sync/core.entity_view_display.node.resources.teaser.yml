@@ -6,10 +6,13 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.resources.field_field_resources_metatag
     - field.field.node.resources.field_layout_canvas
+    - field.field.node.resources.field_promoted_resource
     - field.field.node.resources.field_resources_author
+    - field.field.node.resources.field_resources_author_photo
     - field.field.node.resources.field_resources_author_role
     - field.field.node.resources.field_resources_background_image
     - field.field.node.resources.field_resources_published_time
+    - field.field.node.resources.field_resources_reading_time
     - field.field.node.resources.field_resources_subtitle
     - field.field.node.resources.field_resources_tags
     - field.field.node.resources.field_resources_template
@@ -35,11 +38,14 @@ content:
 hidden:
   field_field_resources_metatag: true
   field_layout_canvas: true
+  field_promoted_resource: true
   field_resources_author: true
+  field_resources_author_photo: true
   field_resources_author_role: true
   field_resources_background_image: true
   field_resources_background_media: true
   field_resources_published_time: true
+  field_resources_reading_time: true
   field_resources_subtitle: true
   field_resources_tags: true
   field_resources_template: true

@@ -3,11 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.products.field_button_layout_canvas
     - field.field.node.products.field_company_sector
     - field.field.node.products.field_layout_canvas
     - field.field.node.products.field_logo_media
     - field.field.node.products.field_main_image_media
     - field.field.node.products.field_pre_heading
+    - field.field.node.products.field_pre_heading_2
     - field.field.node.products.field_promoted_product
     - field.field.node.products.field_summary
     - node.type.products
@@ -19,70 +21,87 @@ targetEntityType: node
 bundle: products
 mode: default
 content:
+  field_button_layout_canvas:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_company_sector:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 107
+    weight: 4
     region: content
   field_layout_canvas:
     type: cohesion_entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 108
+    weight: 6
     region: content
   field_logo_media:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 110
+    weight: 8
     region: content
   field_main_image_media:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 111
+    weight: 9
     region: content
   field_pre_heading:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 103
+    weight: 1
+    region: content
+  field_pre_heading_2:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_promoted_product:
     type: boolean
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 109
+    weight: 7
     region: content
   field_summary:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 3
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   langcode: true

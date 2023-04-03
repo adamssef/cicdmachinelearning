@@ -5,4 +5,4 @@ dependencies: {  }
 id: planet_date
 label: 'Planet - Date'
 locked: false
-pattern: 'd F Y'
+pattern: 'M d, Y'
