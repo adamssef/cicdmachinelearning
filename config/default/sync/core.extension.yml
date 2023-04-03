@@ -124,6 +124,7 @@ module:
   site_settings_type_permissions: 0
   site_studio_webform: 0
   sitestudio_page_builder: 0
+  smtp: 0
   syslog: 0
   system: 0
   taxonomy: 0
