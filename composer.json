@@ -73,6 +73,7 @@
     "drupal/simplelogin": "^6.0",
     "drupal/site_settings": "^1.20",
     "drupal/site_studio_webform": "^1.1",
+    "drupal/smtp": "^1.2",
     "drupal/ultimate_cron": "^2.0@alpha",
     "drupal/views_autosubmit": "^1.4",
     "drupal/views_fieldsets": "^3.4",
