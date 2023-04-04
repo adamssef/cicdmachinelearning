@@ -4,7 +4,7 @@
   "description": "Planet",
   "license": "GPL-2.0-or-later",
   "require": {
-    "php": ">=8.0",
+    "php": ">=8.1",
     "ext-json": "*",
     "acquia/cohesion": "6.9.0",
     "acquia/cohesion-theme": "6.9.0",
