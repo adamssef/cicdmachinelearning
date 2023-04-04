@@ -17,14 +17,14 @@
         );
 
         // Get index list
-        let list = document.querySelector(".coh-index-list");
+        let list = document.querySelector(".coh-blog-index-list");
         $(headings).each(function (i) {
 
-          let id = `coh-index-heading-${i}`;
+          let id = `coh-blog-index-heading-${i}`;
 
           // Add each to index list
           $(list).append(
-            `<li id="${id}" class="coh-list-item coh-index-item">
+            `<li id="${id}" class="coh-list-item coh-blog-index-item">
               <p class="coh-paragraph coh-style--body-regular---tt-commons-planet">
                 ${$(this).text()}
               </p>
@@ -39,10 +39,10 @@
             
             // If the height scrolled is bigger than the height where is the title
             if ((winScroll + headerHeight) > headingTop) {
-              $(`#${id}`).addClass("coh-index-item-active");
+              $(`#${id}`).addClass("coh-blog-index-item-active");
             // If the opposite
             } else if ((winScroll + headerHeight) < headingTop) {
-              $(`#${id}`).removeClass("coh-index-item-active");
+              $(`#${id}`).removeClass("coh-blog-index-item-active");
             }
           });
         });
