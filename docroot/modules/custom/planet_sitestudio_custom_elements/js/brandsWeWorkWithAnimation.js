@@ -11,7 +11,7 @@
                 let alreadyRun = 0;
 
                 var slides = document.querySelectorAll(".slide-track");
-                var slider_direction, timing;
+                var slider_direction, slide_endpoint, timing;
 
                 const iteration = Infinity;
 
@@ -29,42 +29,45 @@
                              * Multiplicate the content, makes the animation smother,
                              * and helps in case of feel content (you can't loop only 3 cards).
                              */
-                            slide.innerHTML += slide.innerHTML;
+                            slide.innerHTML = slide.innerHTML + slide.innerHTML + slide.innerHTML + slide.innerHTML;
+
+                            // Set's the point where the animation will end.
+                            slide_endpoint = (62 + slide.offsetWidth / 2) + "px";
 
                             // Getting the speed of the animation.
                             if (slide.dataset.speed == "slow") {
                                 timing = {
-                                    duration: 300000,
+                                    duration: 360000,
                                     iterations: iteration,
                                 };
                             }
 
                             if (slide.dataset.speed == "medium") {
                                 timing = {
-                                    duration: 180000,
+                                    duration: 260000,
                                     iterations: iteration,
                                 };
                             }
 
                             if (slide.dataset.speed == "fast") {
                                 timing = {
-                                    duration: 100000,
+                                    duration: 160000,
                                     iterations: iteration,
                                 };
                             }
 
                             // Getting the direction of the animation.
-                            if (slide.dataset.direction == "right") {
+                            if (slide.dataset.direction == "left") {
                                 slider_direction = [
-                                    { transform: "translateX(-15%)" },
-                                    { transform: "translateX(-60%)" },
+                                    { transform: "translateX(0)" },
+                                    { transform: "translateX(-" + slide_endpoint + ")" },
                                 ];
                             }
 
-                            if (slide.dataset.direction == "left") {
+                            if (slide.dataset.direction == "right") {
                                 slider_direction = [
-                                    { transform: "translateX(-60%)" },
-                                    { transform: "translateX(-15%)" },
+                                    { transform: "translateX(-" + slide_endpoint + ")" },
+                                    { transform: "translateX(0)" },
                                 ];
                             }
 

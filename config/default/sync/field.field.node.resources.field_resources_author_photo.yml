@@ -1,0 +1,29 @@
+uuid: 999259d0-80c2-4108-810c-7d69f791a2fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resources_author_photo
+    - media.type.image
+    - node.type.resources
+id: node.resources.field_resources_author_photo
+field_name: field_resources_author_photo
+entity_type: node
+bundle: resources
+label: 'Author Photo'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -139,3 +139,7 @@ brandsWeWorkWithAnimation:
 cardsGridContainer:
   js:
     js/cardsGridContainer.js: { }
+# Button with variants (scrollTo)
+linkScrollTo:
+  js:
+    js/linkScrollTo.js: { }
