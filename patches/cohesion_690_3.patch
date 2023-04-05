@@ -1,0 +1,36 @@
+diff --git a/src/LayoutCanvas/Element.php b/src/LayoutCanvas/Element.php
+index 1c7e1ec..0f031cb 100644
+--- a/src/LayoutCanvas/Element.php
++++ b/src/LayoutCanvas/Element.php
+@@ -290,6 +290,7 @@ class Element implements LayoutCanvasElementInterface, \JsonSerializable {
+   /**
+    * {@inheritdoc}
+    */
++  #[\ReturnTypeWillChange]
+   public function jsonSerialize() {
+     $json_obj = new \stdClass();
+     foreach ($this->element as $property_name => $property_value) {
+diff --git a/src/LayoutCanvas/ElementModel.php b/src/LayoutCanvas/ElementModel.php
+index 63b3806..2e3d046 100644
+--- a/src/LayoutCanvas/ElementModel.php
++++ b/src/LayoutCanvas/ElementModel.php
+@@ -408,6 +408,7 @@ class ElementModel implements \JsonSerializable {
+   /**
+    * @inheritdoc
+    */
++  #[\ReturnTypeWillChange]
+   public function jsonSerialize() {
+     return $this->model;
+   }
+diff --git a/src/LayoutCanvas/LayoutCanvas.php b/src/LayoutCanvas/LayoutCanvas.php
+index c6ad85d..a2a677a 100644
+--- a/src/LayoutCanvas/LayoutCanvas.php
++++ b/src/LayoutCanvas/LayoutCanvas.php
+@@ -435,6 +435,7 @@ class LayoutCanvas implements LayoutCanvasElementInterface, \JsonSerializable {
+   /**
+    * @return array|\Drupal\cohesion\LayoutCanvas\Element[]|mixed
+    */
++  #[\ReturnTypeWillChange]
+   public function jsonSerialize() {
+     $canvas = ['canvas' => $this->canvasElements];
+     if (!is_null($this->componentFormElements)) {
