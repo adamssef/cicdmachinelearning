@@ -145,6 +145,9 @@ AddEncoding gzip svgz
   # Simplesaml library.
   RewriteCond %{REQUEST_URI} !/simplesaml
 
+  # Allow access to image-diff PHP files:
+  RewriteCond %{REQUEST_URI} !/image-diff/index.php
+
   # Allow access to test-specific PHP files:
   RewriteCond %{REQUEST_URI} !/core/modules/system/tests/https?.php
   # Allow access to Statistics module's custom front controller.

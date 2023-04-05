@@ -1,0 +1,109 @@
+@import 'partials/colors';
+@import 'partials/typography';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import 'partials/menu';
+@import 'partials/accordion';
+
+.container {
+  @media (min-width: 992px) { transition: all .5s ease; }
+  @media (min-width: 768px) { transition: all .5s ease; }
+  @media (min-width: 576px) { transition: all .5s ease; }
+}
+
+#grid {
+  padding-left: 75px;
+  padding-bottom: 100px;
+  padding-top: 135px;
+}
+
+.title-page {
+  text-shadow: 0px 0px 6px $primary;
+}
+
+.bar-top {
+  background: $darkness;
+  margin-left: 60px;
+  max-height: 120px;
+  overflow: hidden;
+  position: fixed;
+  width: calc(100% - 60px);
+  z-index: 1;
+
+  .date {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  @media (max-width: 991.98px) {
+    h1 {
+      font-size: 2.7rem;
+    }
+  }
+}
+
+.btn-to-top {
+  bottom: 10px;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+
+  .fa-angle-up {
+    color: $primary;
+    font-size: 3rem;
+  }
+}
+
+.date {
+  color: $primary;
+  font-size: 1.3rem;
+  text-shadow: 0px 0px 6px $primary;
+}
+
+// Mouse Effect
+.trail {
+  position: absolute;
+  height: 3px;
+  width: 3px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px $primary;
+  background: $primary;
+  pointer-events: none;
+}
+
+.report {
+  background: lighten($darkness, 6%);
+  border-radius: 0px 75px 5px 15px;
+  border: 1px solid $primary;
+  box-shadow: 6px 6px 0px $primary, inset 0px -3px 0px $primary, inset 5px 0px 0px $primary;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 15px 30px 15px 15px;
+  @media (max-width: 991.98px) {
+    font-size: 1rem;
+  }
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.search {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid $primary;
+    color: $primary;
+    font-size: 27px;
+    height: 90px;
+    left: 61px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: fixed;
+    top: -90px;
+    transition: all .5s ease;
+    width: calc(100% - 61px);
+    z-index: 2;
+
+    &.showSearch {
+      top: 0;
+    }
+}
