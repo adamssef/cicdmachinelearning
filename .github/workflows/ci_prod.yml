@@ -7,7 +7,7 @@ on:
       - closed
 
 jobs:
-  if_merged:
+  prod_deploy:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
@@ -36,6 +36,8 @@ jobs:
         run: cp -R config ./planetpayment/ && cp -R docroot ./planetpayment/ && cp -R vendor ./planetpayment/ && cp -R patches ./planetpayment/ && cp composer.json ./planetpayment/ && cp composer.lock ./planetpayment/ && cp -R hooks ./planetpayment/
       - name: remove submodules git
         run: cd planetpayment && rm -rf docroot/modules/contrib/wb_countries/.git && rm -rf docroot/modules/contrib/webform_pardot/.git
+      - name: remove imagediff
+        run: cd planetpayment && rm -rf docroot/image-diff
       - name: copy prod htaccess
         run: cd planetpayment/docroot && cp .htaccess_prod .htaccess
       - name: add git info
