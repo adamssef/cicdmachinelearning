@@ -24,96 +24,104 @@ elements: |-
           - column-flex
       first_name:
         '#type': textfield
-        '#title': 'First Name*'
+        '#title': 'First name*'
         '#minlength': 2
         '#maxlength': 50
         '#autocomplete': 'off'
-        '#required': true
-      last_name:
-        '#type': textfield
-        '#title': 'Last Name*'
-        '#minlength': 2
-        '#maxlength': 50
-        '#autocomplete': 'off'
-        '#required': true
-      phone_intl:
-        '#type': webform_telephone
-        '#title': 'Phone*'
-        '#required': true
-        '#wrapper_type': form_element
-        '#type__access': false
-        '#phone__required': true
-        '#ext__access': false
-        '#phone__international_initial_country': GB
-      email:
-        '#type': email
-        '#title': 'E-mail*'
-        '#autocomplete': 'off'
-        '#required': true
-      company_business_name:
-        '#type': textfield
-        '#title': 'Company name*'
-        '#minlength': 2
-        '#maxlength': 50
-        '#autocomplete': 'off'
-        '#required': true
-      type_of_business:
-        '#type': select
-        '#title': 'Company sector*'
-        '#options':
-          Retail: Retail
-          Hospitality: Hospitality
-          Partners: Partners
-          Other: Other
         '#required': true
     second_column:
       '#type': container
       '#attributes':
         class:
           - column-flex
-      address_country:
-        '#type': webform_address
-        '#title': 'Country*'
-        '#title_display': none
-        '#required': true
-        '#wrapper_type': form_element
-        '#address__access': false
-        '#address_2__access': false
-        '#city__access': false
-        '#state_province__access': false
-        '#postal_code__access': false
-        '#country__title': 'Country*'
-        '#country__title_display': before
-        '#country__required': true
-        '#flexbox': '0'
-      single_opt_in:
-        '#type': checkbox
-        '#title': 'Receive updates about Planet'
-        '#description': 'Check this box to give consent to receiving updates about Planet&rsquo;s products, events, trainings, reports and services'
-        '#title_display': none
-        '#description_display': after
-      textarea:
-        '#type': textarea
-        '#title': 'About your project*'
-        '#maxlength': 250
-        '#placeholder': 'Tell us more about your project'
+      last_name:
+        '#type': textfield
+        '#title': 'Last name*'
+        '#minlength': 2
+        '#maxlength': 50
         '#autocomplete': 'off'
         '#required': true
-        '#counter_type': character
-        '#counter_maximum': 250
-      markup:
-        '#type': webform_markup
-        '#markup': '<p>By submitting this form, you accept the terms in our&nbsp;<a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Privacy Policy</a>.</p>'
-      captcha:
-        '#type': captcha
-        '#captcha_type': recaptcha_v3/get_in_touch
-      actions:
-        '#type': webform_actions
-        '#title': 'Submit button(s)'
-        '#submit__label': Submit
-        '#submit__attributes':
-          class:
-            - coh-style-primary-dark-button
+  email:
+    '#type': email
+    '#title': 'E-mail*'
+    '#autocomplete': 'off'
+    '#required': true
+  type_of_business:
+    '#type': select
+    '#title': 'Company sector*'
+    '#options':
+      Retail: Retail
+      Hospitality: Hospitality
+      Partners: Partners
+      Other: Other
+    '#required': true
+  phone_intl:
+    '#type': webform_telephone
+    '#title': 'Phone*'
+    '#required': true
+    '#wrapper_type': form_element
+    '#type__access': false
+    '#phone__required': true
+    '#ext__access': false
+    '#phone__international_initial_country': GB
+  company_business_name:
+    '#type': textfield
+    '#title': 'Company name*'
+    '#minlength': 2
+    '#maxlength': 50
+    '#autocomplete': 'off'
+    '#required': true
+  address_country:
+    '#type': webform_address
+    '#title': 'Country*'
+    '#title_display': none
+    '#required': true
+    '#wrapper_type': form_element
+    '#address__access': false
+    '#address_2__access': false
+    '#city__access': false
+    '#state_province__access': false
+    '#postal_code__access': false
+    '#country__title': 'Country*'
+    '#country__title_display': before
+    '#country__required': true
+    '#flexbox': '0'
+  textarea:
+    '#type': textarea
+    '#title': 'About your project*'
+    '#maxlength': 250
+    '#placeholder': 'Tell us more about your project'
+    '#autocomplete': 'off'
+    '#required': true
+    '#counter_type': character
+    '#counter_maximum': 250
+  single_opt_in:
+    '#type': checkbox
+    '#title': 'Receive updates about Planet'
+    '#description': 'Check this box to give consent to receiving updates about Planet&rsquo;s products, events, trainings, reports and services'
+    '#title_display': none
+    '#description_display': after
+  markup:
+    '#type': webform_markup
+    '#markup': '<p>By submitting this form, you accept the terms in our&nbsp;<a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Privacy Policy</a>.</p>'
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha_v3/get_in_touch
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#attributes':
+      class:
+        - coh-button-filled
+        - coh-button-dynamic
+        - coh-button-large
+        - coh-button-enable
+        - coh-button-light-mode
+        - coh-style-button-variants
+    '#submit__label': Submit
+    '#submit__attributes':
+      class:
+        - coh-style-primary-dark-button
   website_language:
     '#type': textfield
     '#title': 'Website language'
@@ -374,5 +382,30 @@ handlers:
     weight: 0
     settings:
       pardot_url: 'https://info.weareplanet.com/l/975513/2022-09-07/26d2t'
-      pardot_fields_mapping: "first_name|First Name\r\nlast_name|Last Name\r\nphone_intl.phone|Phone\r\naddress_country.country|Country\r\ncompany_business_name|Company\r\ntype_of_business|Company Sector\r\ntextarea|Message\r\nsingle_opt_in|Opt in\r\nlead_source|Lead Source\r\nwebsite_language|Website language\r\nwebsite_origin_page|Website origin page\r\nemail|email\r\nutm_source|utm_source\r\nutm_medium|utm_medium\r\nutm_campaign|utm_campaign\r\nutm_content|utm_content\r\nutm_term|utm_term\r\ngclid|gclid\r\nreferrer|referrer\r\norig_lp|orig_lp\r\norig_utm_campaign|orig_utm_campaign\r\norig_utm_medium|orig_utm_medium\r\norig_utm_source|orig_utm_source\r\norig_utm_content|orig_utm_content\r\norig_utm_term|orig_utm_term"
+      pardot_fields_mapping: |-
+        first_name|First Name
+        last_name|Last Name
+        phone_intl.phone|Phone
+        address_country.country|Country
+        company_business_name|Company
+        type_of_business|Company Sector
+        textarea|Message
+        single_opt_in|Opt in
+        lead_source|Lead Source
+        website_language|Website language
+        website_origin_page|Website origin page
+        email|email
+        utm_source|utm_source
+        utm_medium|utm_medium
+        utm_campaign|utm_campaign
+        utm_content|utm_content
+        utm_term|utm_term
+        gclid|gclid
+        referrer|referrer
+        orig_lp|orig_lp
+        orig_utm_campaign|orig_utm_campaign
+        orig_utm_medium|orig_utm_medium
+        orig_utm_source|orig_utm_source
+        orig_utm_content|orig_utm_content
+        orig_utm_term|orig_utm_term
 variants: {  }
