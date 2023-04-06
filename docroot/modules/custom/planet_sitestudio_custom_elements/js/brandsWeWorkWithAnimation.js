@@ -14,13 +14,27 @@
                 var slider_direction, slide_endpoint, timing;
 
                 const iteration = Infinity;
+                const window_width = window.innerWidth;
 
                 if (alreadyRun === 0) {
                     slides.forEach(slide => {
-                        if (slide.dataset.enabled == "1"
-                            && slide.dataset.speed != ""
-                            && slide.dataset.direction != "") {
 
+                        // Check if it is set to work in mobile, and/or in desktop.
+                        if (!(slide.dataset.desktop == "1" || slide.dataset.mobile == "1")) {
+                            return;
+                        }
+
+                        // To work on desktop.
+                        if (slide.dataset.desktop != "1" && window_width >= 1024) {
+                            return;
+                        }
+
+                        // To work on mobile.
+                        if (slide.dataset.mobile != "1" && window_width < 1024) {
+                            return;
+                        }
+
+                        if (slide.dataset.speed != "" && slide.dataset.direction != "") {
                             // In the component we have a custom style just for animated class.
                             slide.parentNode.classList.add("animated");
                             slide.classList.add("animated");
@@ -73,7 +87,6 @@
 
                             // Plays the animation.
                             slide.animate(slider_direction, timing);
-
                         }
                     });
                 }
