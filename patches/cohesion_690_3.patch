@@ -1,3 +1,31 @@
+diff --git a/modules/cohesion_elements/src/Plugin/Field/FieldWidget/CohesionLayoutBuilderWidget.php b/modules/cohesion_elements/src/Plugin/Field/FieldWidget/CohesionLayoutBuilderWidget.php
+index e7f282d..553ed63 100644
+--- a/modules/cohesion_elements/src/Plugin/Field/FieldWidget/CohesionLayoutBuilderWidget.php
++++ b/modules/cohesion_elements/src/Plugin/Field/FieldWidget/CohesionLayoutBuilderWidget.php
+@@ -210,8 +210,8 @@ class CohesionLayoutBuilderWidget extends WidgetBase implements ContainerFactory
+     $element['target_id']['#canvas_name'] = $items->getName() . '_' . $delta;
+ 
+     $element['target_id'] += [
+-      '#json_values' => mb_strlen($layout_entity->json_values->value) ? $layout_entity->json_values->value : '{}',
+-      '#styles' => mb_strlen($layout_entity->styles->value) ? $layout_entity->styles->value : '/* */',
++      '#json_values' => mb_strlen((string)$layout_entity->json_values->value) ? $layout_entity->json_values->value : '{}',
++      '#styles' => mb_strlen((string)$layout_entity->styles->value) ? $layout_entity->styles->value : '/* */',
+       '#template' => $layout_entity->template->value,
+       '#entity' => $layout_entity,
+       '#cohFormGroup' => $cohFormGroupId,
+diff --git a/src/ApiPluginBase.php b/src/ApiPluginBase.php
+index 0576ee3..a58489b 100644
+--- a/src/ApiPluginBase.php
++++ b/src/ApiPluginBase.php
+@@ -461,7 +461,7 @@ abstract class ApiPluginBase extends PluginBase implements ApiPluginInterface, C
+       if (is_array($value) || is_object($value)) {
+         $value = $this->patchUri($value);
+       }
+-      elseif (strpos($value, '://') !== FALSE) {
++      elseif (strpos(strval($value), '://') !== FALSE) {
+         if ($local_stream_wrappers = $this->streamWrapperManager->getWrappers(StreamWrapperInterface::ALL)) {
+           foreach ($local_stream_wrappers as $scheme => $scheme_value) {
+             $uri = $scheme . '://';
 diff --git a/src/LayoutCanvas/Element.php b/src/LayoutCanvas/Element.php
 index 1c7e1ec..0f031cb 100644
 --- a/src/LayoutCanvas/Element.php
@@ -11,9 +39,18 @@ index 1c7e1ec..0f031cb 100644
      $json_obj = new \stdClass();
      foreach ($this->element as $property_name => $property_value) {
 diff --git a/src/LayoutCanvas/ElementModel.php b/src/LayoutCanvas/ElementModel.php
-index 63b3806..2e3d046 100644
+index 63b3806..95f5411 100644
 --- a/src/LayoutCanvas/ElementModel.php
 +++ b/src/LayoutCanvas/ElementModel.php
+@@ -259,7 +259,7 @@ class ElementModel implements \JsonSerializable {
+               foreach ($element->getModel()->getLeavesWithPathToRoot() as $component_model_value) {
+                 // Check if the form element field is attached to one or more
+                 // component field (field.[uuid])
+-                if (preg_match_all(self::MATCH_COMPONENT_FIELD, $component_model_value['value'], $matches) && isset($matches[1])) {
++                if (preg_match_all(self::MATCH_COMPONENT_FIELD, (string)$component_model_value['value'], $matches) && isset($matches[1])) {
+                   foreach ($matches[1] as $uuid) {
+                     // If it is a component in component.
+                     if ($is_nested_component) {
 @@ -408,6 +408,7 @@ class ElementModel implements \JsonSerializable {
    /**
     * @inheritdoc
