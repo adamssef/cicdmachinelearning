@@ -54,6 +54,7 @@ elements: |-
       Hospitality: Hospitality
       Partners: Partners
       Other: Other
+    '#empty_option': '- select -'
     '#required': true
   phone_intl:
     '#type': webform_telephone
@@ -83,6 +84,7 @@ elements: |-
     '#state_province__access': false
     '#postal_code__access': false
     '#country__title': 'Country*'
+    '#country__placeholder': '- select -'
     '#country__title_display': before
     '#country__required': true
     '#flexbox': '0'
@@ -121,7 +123,7 @@ elements: |-
     '#submit__label': Submit
     '#submit__attributes':
       class:
-        - coh-style-primary-dark-button
+        - coh-link
   website_language:
     '#type': textfield
     '#title': 'Website language'
