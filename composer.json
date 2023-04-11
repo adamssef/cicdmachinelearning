@@ -162,7 +162,8 @@
     "patches": {
       "drupal/core": {
         "Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch",
-        "https://www.drupal.org/project/drupal/issues/3091336": "https://www.drupal.org/files/issues/2021-01-05/AliasRepository-proper-language-fallback-3091336-62.patch"
+        "https://www.drupal.org/project/drupal/issues/3091336": "https://www.drupal.org/files/issues/2021-01-05/AliasRepository-proper-language-fallback-3091336-62.patch",
+        "Deprecated function: mb_strtolower(): Passing null to parameter #1 ($string)": "patches/core_condition.patch"
       },
       "drupal/config_ignore": {
         "Support for export filtering via Drush": "https://www.drupal.org/files/issues/2021-01-04/config_ignore_2857247-61.patch"
