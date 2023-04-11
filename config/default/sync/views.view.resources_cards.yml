@@ -252,7 +252,7 @@ display:
           element_wrapper_class: 'case-studies__card__pre-heading coh-style-e50'
           element_default_classes: true
           empty: ''
-          hide_empty: true
+          hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
