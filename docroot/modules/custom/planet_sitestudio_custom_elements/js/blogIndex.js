@@ -28,22 +28,24 @@
         });
 
         $(headings).each(function (i, heading) {
-          let id = `coh-blog-index-heading-${i}`;
+          let headingId = `coh-blog-index-heading-${i}`;
+          let indexId = `coh-blog-heading-${i}`;
+          $(this).attr("id", headingId);
 
           // Add each to index list
           $(list).append(
-            `<li id="${id}" class="coh-list-item coh-blog-index-item ${id}">
-              <p class="coh-paragraph coh-style--body-regular---tt-commons-planet">
+            `<li id="${indexId}" class="coh-list-item coh-blog-index-item ${indexId}">
+              <a href="#${headingId}" class="coh-paragraph coh-style--body-regular---tt-commons-planet">
                 ${$(this).text()}
-              </p>
+              </a>
             </li>`
           );
 
           $(listTablet).append(
-            `<li id="${id}" class="coh-list-item coh-blog-index-item ${id}">
-              <p class="coh-paragraph coh-style--body-regular---tt-commons-planet">
+            `<li id="${indexId}" class="coh-list-item coh-blog-index-item ${indexId}">
+              <a href="#${headingId}" class="coh-paragraph coh-style--body-regular---tt-commons-planet">
                 ${$(this).text()}
-              </p>
+              </a>
             </li>`
           );
 
@@ -55,11 +57,11 @@
 
             // If the height scrolled is bigger than the height where is the title
             if (winScroll + headerHeight > headingTop) {
-              $(`.${id}`).addClass("coh-blog-index-item-active");
+              $(`.${indexId}`).addClass("coh-blog-index-item-active");
               $(indexHeading).text($(heading).text());
               // If the opposite
             } else if (winScroll + headerHeight < headingTop) {
-              $(`.${id}`).removeClass("coh-blog-index-item-active");
+              $(`.${indexId}`).removeClass("coh-blog-index-item-active");
             }
           });
         });
