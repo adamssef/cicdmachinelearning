@@ -19,5 +19,5 @@ settings:
   min: null
   max: null
   prefix: ''
-  suffix: ' MIN| MINS'
+  suffix: ' MIN'
 field_type: integer
