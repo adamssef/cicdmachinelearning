@@ -43,9 +43,9 @@
 
           $(listTablet).append(
             `<li id="${indexId}" class="coh-list-item coh-blog-index-item ${indexId}">
-              <p class="coh-paragraph coh-style--body-regular---tt-commons-planet">
+              <a href="#${headingId}" class="coh-paragraph coh-style--body-regular---tt-commons-planet">
                 ${$(this).text()}
-              </p>
+              </a>
             </li>`
           );
 
