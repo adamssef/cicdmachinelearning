@@ -322,7 +322,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: coh-resources-image
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -347,63 +347,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        fieldset:
-          id: fieldset
-          table: views
-          field: fieldset
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: fieldset
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          fields:
-            - field_pre_heading_3
-            - nothing
-          wrapper: div
-          legend: ''
-          classes: ''
-          collapsible: 1
-          collapsed: 0
         field_pre_heading_3:
           id: field_pre_heading_3
           table: node__field_pre_heading_3
@@ -479,7 +422,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<span class="coh-style-e50">Blog • {{ field_pre_heading_3 }}</span>'
+            text: '<span class="coh-resources-label coh-style-e50">Blog • {{ field_pre_heading_3 }}</span>'
             make_link: false
             path: ''
             absolute: false
@@ -617,7 +560,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: span
-          element_class: coh-style-b100
+          element_class: 'coh-resources-reading-time coh-style-b100'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -681,7 +624,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: span
-          element_class: coh-style-b100
+          element_class: 'coh-resources-subtitle coh-style-b100'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -765,9 +708,66 @@ display:
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: separator
+          multi_type: ol
           separator: ''
           field_api_classes: false
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_resources_author_photo
+            - fieldset_1
+          wrapper: div
+          legend: ''
+          classes: coh-author-information
+          collapsible: 0
+          collapsed: 0
         field_resources_author_photo:
           id: field_resources_author_photo
           table: node__field_resources_author_photo
@@ -806,7 +806,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: coh-resources-author-foto
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -831,6 +831,63 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        fieldset_1:
+          id: fieldset_1
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_resources_author
+            - field_resources_published_time
+          wrapper: div
+          legend: ''
+          classes: coh-author-name-date
+          collapsible: 0
+          collapsed: 0
         field_resources_author:
           id: field_resources_author
           table: node__field_resources_author
@@ -869,7 +926,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: span
-          element_class: coh-style-h100
+          element_class: 'coh-resources-author coh-style-h100'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -946,8 +1003,8 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: planet_date
-            custom_date_format: ''
+            date_format: custom
+            custom_date_format: 'd F, Y'
             timezone: ''
           group_column: value
           group_columns: {  }
@@ -997,8 +1054,8 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: 'coh-button-filled coh-button-dynamic coh-button-large coh-button-enable coh-button-light-mode  coh-style-button-variants'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
