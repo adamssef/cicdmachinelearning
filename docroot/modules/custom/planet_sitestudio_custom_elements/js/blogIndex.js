@@ -8,7 +8,7 @@
     attach: function () {
       $(document).ready(function () {
         let content = document.querySelector(".coh-layout-canvas-content");
-        let headerHeight = $(".header-container").height();
+        let headerHeight = $(".header-container").height() + $(".notification-bar-container").height();
         // Get all headings on layout canvas
         let headings = content.querySelectorAll(
           ".coh-style-h700, .coh-style-h600, .coh-style-h500"
@@ -60,9 +60,8 @@
             if (winScroll + headerHeight > headingTop) {
               $(`.${indexId}`).addClass("coh-blog-index-item-active");
               $(indexHeading).text($(heading).text());
-              // If the opposite
-            } else if (winScroll + headerHeight < headingTop) {
-              $(`.${indexId}`).removeClass("coh-blog-index-item-active");
+              // Remove active state from all indexes except the actual one.
+              $(".coh-blog-index-item").not(`.${indexId}`).removeClass("coh-blog-index-item-active");
             }
           });
         });
