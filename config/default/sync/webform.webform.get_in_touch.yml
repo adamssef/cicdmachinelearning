@@ -41,9 +41,25 @@ elements: |-
         '#maxlength': 50
         '#autocomplete': 'off'
         '#required': true
+  phone_intl:
+    '#type': webform_telephone
+    '#title': 'Phone*'
+    '#required': true
+    '#wrapper_type': form_element
+    '#type__access': false
+    '#phone__required': true
+    '#ext__access': false
+    '#phone__international_initial_country': GB
   email:
     '#type': email
-    '#title': 'E-mail*'
+    '#title': 'Email*'
+    '#autocomplete': 'off'
+    '#required': true
+  company_business_name:
+    '#type': textfield
+    '#title': 'Company name*'
+    '#minlength': 2
+    '#maxlength': 50
     '#autocomplete': 'off'
     '#required': true
   type_of_business:
@@ -55,22 +71,6 @@ elements: |-
       Partners: Partners
       Other: Other
     '#empty_option': '- select -'
-    '#required': true
-  phone_intl:
-    '#type': webform_telephone
-    '#title': 'Phone*'
-    '#required': true
-    '#wrapper_type': form_element
-    '#type__access': false
-    '#phone__required': true
-    '#ext__access': false
-    '#phone__international_initial_country': GB
-  company_business_name:
-    '#type': textfield
-    '#title': 'Company name*'
-    '#minlength': 2
-    '#maxlength': 50
-    '#autocomplete': 'off'
     '#required': true
   address_country:
     '#type': webform_address
