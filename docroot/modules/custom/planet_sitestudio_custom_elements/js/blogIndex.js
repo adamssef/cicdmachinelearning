@@ -8,7 +8,7 @@
     attach: function () {
       $(document).ready(function () {
         let content = document.querySelector(".coh-layout-canvas-content");
-        let headerHeight = $(".header-container").height() + $(".notification-bar-container").height();
+        let headerHeight = $(".header-container").height();
         // Get all headings on layout canvas
         let headings = content.querySelectorAll(
           ".coh-style-h700, .coh-style-h600, .coh-style-h500"
