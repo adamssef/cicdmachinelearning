@@ -126,7 +126,7 @@
           return false;
         });
 
-        $(".menu-level-1-li").hover(function (e) {
+        /*$(".menu-level-1-li").hover(function (e) {
           e.preventDefault();
           if (menuState === 0) {
             // Menu is opened;
@@ -138,7 +138,7 @@
             menuState = 0;
           }
           return false;
-        }) 
+        }) */
 
         // Search for utm parameters in url.
         const urlParams = new URLSearchParams(window.location.search);
