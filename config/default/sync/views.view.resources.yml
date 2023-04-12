@@ -1686,7 +1686,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<span class="field-content resources__card__author oh-style-h100">by {{ field_resources_author }}</span>'
+            text: '<span class="field-content resources__card__author coh-style-h100">by {{ field_resources_author }}</span>'
             make_link: false
             path: ''
             absolute: false
