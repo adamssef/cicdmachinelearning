@@ -1113,6 +1113,62 @@ display:
     position: 7
     display_options:
       fields:
+        fieldset_1:
+          id: fieldset_1
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_resources_background_image
+          wrapper: div
+          legend: ''
+          classes: 'resources__card--top  case-studies__card--top'
+          collapsible: 0
+          collapsed: 0
         field_resources_background_image:
           id: field_resources_background_image
           table: node__field_resources_background_image
@@ -1151,7 +1207,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: resources__card__main-image
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -1176,6 +1232,70 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_pre_heading_3
+            - field_resources_title
+            - field_resources_reading_time
+            - field_resources_subtitle
+            - field_resources_tags
+            - field_resources_author
+            - nothing
+            - field_resources_published_time
+            - view_node
+          wrapper: div
+          legend: ''
+          classes: 'resources__card--bottom  case-studies__card--bottom'
+          collapsible: 0
+          collapsed: 0
         field_pre_heading_3:
           id: field_pre_heading_3
           table: node__field_pre_heading_3
@@ -1214,7 +1334,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: span
-          element_class: coh-style-e50
+          element_class: 'resources__card__pre-heading coh-style-e50'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -1222,7 +1342,7 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
@@ -1277,7 +1397,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: h3
-          element_class: 'coh-resources-title coh-style-h300'
+          element_class: 'resources__card__title coh-resources-title coh-style-h300'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -1340,7 +1460,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: span
-          element_class: coh-style-b100
+          element_class: 'resources__card__reading--time coh-style-b100'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -1404,7 +1524,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: coh-style-b100
+          element_class: 'resources__card__summary  coh-style-b100'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -1466,7 +1586,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: 'resources__card__tags coh-style-l50'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -1480,7 +1600,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -1488,7 +1608,7 @@ display:
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: separator
+          multi_type: ul
           separator: ', '
           field_api_classes: false
         field_resources_author:
@@ -1500,7 +1620,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -1554,6 +1674,55 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<span class="field-content resources__card__author oh-style-h100">by {{ field_resources_author }}</span>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
         field_resources_published_time:
           id: field_resources_published_time
           table: node__field_resources_published_time
@@ -1592,7 +1761,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: span
-          element_class: coh-style-b100
+          element_class: 'resources__card__date coh-style-b100'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -1663,7 +1832,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_class: 'resources__card__link case-studies__card__link coh-style-t100'
           element_default_classes: true
           empty: ''
           hide_empty: false
