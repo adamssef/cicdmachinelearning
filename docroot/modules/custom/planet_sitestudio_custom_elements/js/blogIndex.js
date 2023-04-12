@@ -60,9 +60,8 @@
             if (winScroll + headerHeight > headingTop) {
               $(`.${indexId}`).addClass("coh-blog-index-item-active");
               $(indexHeading).text($(heading).text());
-              // If the opposite
-            } else if (winScroll + headerHeight < headingTop) {
-              $(`.${indexId}`).removeClass("coh-blog-index-item-active");
+              // Remove active state from all indexes except the actual one.
+              $(".coh-blog-index-item").not(`.${indexId}`).removeClass("coh-blog-index-item-active");
             }
           });
         });
