@@ -1775,8 +1775,8 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: medium
-            custom_date_format: ''
+            date_format: custom
+            custom_date_format: 'd F, Y'
             timezone: ''
           group_column: value
           group_columns: {  }
