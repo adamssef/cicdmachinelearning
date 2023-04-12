@@ -1,0 +1,34 @@
+title: 'Get in touch (de)'
+elements: |
+  first_name:
+    '#title': 'Vorname*'
+  last_name:
+    '#title': 'Nachname*'
+  phone_intl:
+    '#title': 'Tel.*'
+    '#phone__title': Tel.
+  company_business_name:
+    '#title': 'Unternehmen*'
+  type_of_business:
+    '#title': 'Branche*'
+    '#options':
+      Partners: Partner
+      Other: Andere
+  address_country:
+    '#title': 'Land*'
+    '#country__title': 'Land*'
+    '#address__title': Addresse
+    '#address_2__title': 'Addresse 2'
+    '#city__title': Stadt
+    '#state_province__title': Staat/Bundesland
+    '#postal_code__title': Postleitzahl
+  single_opt_in:
+    '#title': 'Erhalten Sie Updates über Planet'
+    '#description': 'Aktivieren Sie dieses K&auml;stchen, um den Erhalt von Updates zu Produkten, Veranstaltungen, Schulungen, Berichten und Dienstleistungen von Planet zuzustimmen'
+  textarea:
+    '#title': 'Über Ihr Projekt*'
+    '#placeholder': 'Erzählen Sie uns mehr über Ihr Projekt'
+  markup:
+    '#markup': '<p>Mit dem Absenden dieses Formulars akzeptieren Sie die Bedingungen unserer <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Datenschutzrichtlinie.</a></p>'
+  actions:
+    '#submit__label': Senden

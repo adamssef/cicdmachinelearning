@@ -1,0 +1,33 @@
+title: 'Get in touch (es)'
+elements: |
+  first_name:
+    '#title': 'Nombre*'
+  last_name:
+    '#title': 'Apellido*'
+  phone_intl:
+    '#title': 'Teléfono*'
+    '#phone__title': Teléfono
+  company_business_name:
+    '#title': 'Empresa*'
+  type_of_business:
+    '#title': 'Sector*'
+    '#options':
+      Other: Otro
+  address_country:
+    '#title': 'País*'
+    '#country__title': 'País*'
+    '#address__title': Dirección
+    '#address_2__title': 'Dirección 2'
+    '#city__title': Ciudad
+    '#state_province__title': Provincia
+    '#postal_code__title': 'Código Postal'
+  single_opt_in:
+    '#title': 'Recibir comunicaciones de Planet'
+    '#description': 'Marque esta casilla para dar su consentimiento para recibir comunicaciones sobre los productos, eventos, formaciones, informes y servicios de Planet'
+  textarea:
+    '#title': 'Su consulta*'
+    '#placeholder': '¿De qué trata su consulta?'
+  markup:
+    '#markup': '<p>Al enviar este formulario, acepta los t&eacute;rminos de nuestra <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Pol&iacute;tica de privacidad</a>.</p>'
+  actions:
+    '#submit__label': Enviar
