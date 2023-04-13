@@ -7,6 +7,7 @@
   Drupal.behaviors.planet_sitestudio_blogIndex = {
     attach: function () {
       $(document).ready(function () {
+
         let content = document.querySelector(".coh-layout-canvas-content");
         let headerHeight = $(".header-container").height();
         // Get all headings on layout canvas
@@ -22,12 +23,12 @@
 
         let indexButton = document.querySelector(".coh-blog-index-button");
 
-        $(indexButton).click(() => {
+        $(indexButton).once("blog-index-tablet-action").click(() => {
           $(indexButton).toggleClass("coh-blog-index-button-active");
           $(listTablet).toggleClass("coh-blog-index-list-tablet-active");
         });
 
-        $(headings).each(function (i, heading) {
+        $(headings).once("blog-index-action").each(function (i, heading) {
           let headingId = `coh-blog-index-heading-${i}`;
           let indexId = `coh-blog-heading-${i}`;
           $(this).attr("id", headingId);
