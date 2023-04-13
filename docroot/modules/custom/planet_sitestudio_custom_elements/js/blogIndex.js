@@ -31,7 +31,7 @@
           let headingId = `coh-blog-index-heading-${i}`;
           let indexId = `coh-blog-heading-${i}`;
           $(this).attr("id", headingId);
-          $(this).addClass("coh-blog-heading");
+          $(this).css("paddingTop", headerHeight);
 
           // Add each to index list
           $(list).append(
