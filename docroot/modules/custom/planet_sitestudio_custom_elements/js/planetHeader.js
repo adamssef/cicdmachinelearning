@@ -31,12 +31,16 @@
 
       function disableScroll(){
         document.body.addEventListener('touchmove', preventDefault, { passive: false });
-        functiondisable();
+        if ($(window).width() >= 1024) {
+          functiondisable();
+        }
       }
 
       function enableScroll(){
         document.body.removeEventListener('touchmove', preventDefault);
-        functionenable();
+        if ($(window).width() >= 1024) {
+          functionenable();
+        }
       }
 
 
