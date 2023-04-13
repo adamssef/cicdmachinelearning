@@ -30,17 +30,20 @@
       }
 
       function disableScroll(){
-        document.body.addEventListener('touchmove', preventDefault, { passive: false });
+        functiondisable();
+        /*document.body.addEventListener('touchmove', preventDefault, { passive: false });
         if ($(window).width() >= 1024) {
           functiondisable();
-        }
+        }*/
       }
 
       function enableScroll(){
-        document.body.removeEventListener('touchmove', preventDefault);
+        functionenable();
+        /*document.body.removeEventListener('touchmove', preventDefault);
+        header.addEventListener("touchstart", preventDefault);
         if ($(window).width() >= 1024) {
           functionenable();
-        }
+        }*/
       }
 
 
