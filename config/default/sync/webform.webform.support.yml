@@ -95,6 +95,9 @@ elements: |-
     '#type': hidden
     '#title': Support_Address__c
     '#default_value': '1'
+  markup:
+    '#type': webform_markup
+    '#markup': '<p>By submitting this form, you accept the terms in our&nbsp;<a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Privacy Policy</a>.</p>'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
