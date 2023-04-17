@@ -48,7 +48,6 @@ elements: |-
         '#title': Country
         '#options': country_names
         '#empty_option': '- select -'
-        '#required': true
       subject:
         '#type': textfield
         '#title': Subject
