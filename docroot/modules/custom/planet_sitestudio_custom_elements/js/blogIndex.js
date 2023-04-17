@@ -27,7 +27,8 @@
          */
         $(indexButton)
           .once("blog-index-tablet-action")
-          .click(() => {
+          .click((event) => {
+            event.preventDefault()
             $(indexButton).toggleClass("coh-blog-index-button-active");
             $(listTablet).toggleClass("coh-blog-index-list-tablet-active");
           });
@@ -36,12 +37,16 @@
          * TABLET INDEX - SHOW/HIDE CONTAINER
          */
         let contentTop = $(content).offset().top;
+        let contentBottom = $(content).height() + contentTop;
+
         $(window).scroll(function () {
           let winScroll =
             document.body.scrollTop || document.documentElement.scrollTop;
 
+          let winScrollPlusHeader = winScroll + headerHeight;
+
           // If the height scrolled is bigger than the height where is the title
-          if (winScroll + headerHeight > contentTop) {
+          if (winScrollPlusHeader > contentTop && winScrollPlusHeader < contentBottom) {
             $(".coh-blog-index-tablet-container").addClass(
               "coh-blog-index-tablet-container-active"
             );
