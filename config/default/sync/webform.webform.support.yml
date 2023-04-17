@@ -15,9 +15,6 @@ title: Support
 description: ''
 category: ''
 elements: |-
-  required_fields:
-    '#type': webform_markup
-    '#markup': 'All fields marked with * are required'
   layout:
     '#type': webform_flexbox
     first_column:
@@ -50,6 +47,7 @@ elements: |-
         '#type': select
         '#title': Country
         '#options': country_names
+        '#empty_option': '- select -'
         '#required': true
       subject:
         '#type': textfield
@@ -70,10 +68,10 @@ elements: |-
           0125J000000LUUV: 'Planet Partners Support'
           01224000000B9eQ: 'POS Support'
           01224000000B9dh: 'Tourist Tax Free'
+        '#empty_option': '- select -'
       textarea:
         '#type': textarea
-        '#title': 'About your project'
-        '#title_display': none
+        '#title': Comments
         '#placeholder': 'If you’d like to provide us with a bit more detail about your needs, we can support you more efficiently. Information such as the main reason for needing a new solution or your budget, are some examples.'
         '#counter_type': character
         '#counter_maximum': 250
@@ -97,13 +95,24 @@ elements: |-
     '#type': hidden
     '#title': Support_Address__c
     '#default_value': '1'
+  markup:
+    '#type': webform_markup
+    '#markup': '<p>By submitting this form, you accept the terms in our&nbsp;<a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Privacy Policy</a>.</p>'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
+    '#attributes':
+      class:
+        - coh-button-filled
+        - coh-button-dynamic
+        - coh-button-large
+        - coh-button-enable
+        - coh-button-light-mode
+        - coh-style-button-variants
     '#submit__label': Submit
     '#submit__attributes':
       class:
-        - coh-style-primary-dark-button
+        - coh-link
 css: ''
 javascript: ''
 settings:

@@ -1,0 +1,13 @@
+diff --git a/core/lib/Drupal/Core/Config/Entity/Query/Condition.php b/core/lib/Drupal/Core/Config/Entity/Query/Condition.php
+index a1a03409cc..c5035316f0 100644
+--- a/core/lib/Drupal/Core/Config/Entity/Query/Condition.php
++++ b/core/lib/Drupal/Core/Config/Entity/Query/Condition.php
+@@ -35,7 +35,7 @@ public function compile($configs) {
+           if (is_array($condition['value'])) {
+             $condition['value'] = array_map('mb_strtolower', $condition['value']);
+           }
+-          elseif (!is_bool($condition['value'])) {
++          elseif (!is_bool($condition['value']) && !is_null($condition['value'])) {
+             $condition['value'] = mb_strtolower($condition['value']);
+           }
+         }

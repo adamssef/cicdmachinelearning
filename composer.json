@@ -4,7 +4,7 @@
   "description": "Planet",
   "license": "GPL-2.0-or-later",
   "require": {
-    "php": ">=8.0",
+    "php": ">=8.1",
     "ext-json": "*",
     "acquia/cohesion": "6.9.0",
     "acquia/cohesion-theme": "6.9.0",
@@ -73,6 +73,7 @@
     "drupal/simplelogin": "^6.0",
     "drupal/site_settings": "^1.20",
     "drupal/site_studio_webform": "^1.1",
+    "drupal/smtp": "^1.2",
     "drupal/ultimate_cron": "^2.0@alpha",
     "drupal/views_autosubmit": "^1.4",
     "drupal/views_fieldsets": "^3.4",
@@ -161,7 +162,10 @@
     "patches": {
       "drupal/core": {
         "Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch",
-        "https://www.drupal.org/project/drupal/issues/3091336": "https://www.drupal.org/files/issues/2021-01-05/AliasRepository-proper-language-fallback-3091336-62.patch"
+        "https://www.drupal.org/project/drupal/issues/3091336": "https://www.drupal.org/files/issues/2021-01-05/AliasRepository-proper-language-fallback-3091336-62.patch",
+        "Deprecated function: mb_strtolower(): Passing null to parameter #1 ($string)": "patches/core_condition.patch",
+        "Invalid translation language (it) specified": "patches/core_contentedit.patch",
+        "https://www.drupal.org/project/drupal/issues/3006897": "https://www.drupal.org/files/issues/2022-11-15/3006897-17.patch"
       },
       "drupal/config_ignore": {
         "Support for export filtering via Drush": "https://www.drupal.org/files/issues/2021-01-04/config_ignore_2857247-61.patch"
@@ -175,6 +179,7 @@
       "acquia/cohesion": {
         "Media alt and name": "patches/cohesion_690.patch",
         "Planet font-style": "patches/cohesion_690_2.patch",
+        "php 8.1 fix": "patches/cohesion_690_3.patch",
         "Editing a clone before saving changes the source node": "patches/cohesion_quick_node_clone.patch"
       },
       "drupal/webform_pardot": {
