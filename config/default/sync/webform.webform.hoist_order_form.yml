@@ -99,19 +99,19 @@ elements: |-
       specify_quantities:
         '#type': textfield
         '#title': 'Specify Quantities'
-        '#minlength': 2
+        '#minlength': 1
         '#maxlength': 50
         '#autocomplete': 'off'
       size_tv_only_:
         '#type': textfield
         '#title': 'Size (TV only)'
-        '#minlength': 2
+        '#minlength': 1
         '#maxlength': 50
         '#autocomplete': 'off'
       length_cables_only_:
         '#type': textfield
         '#title': 'Length (cables only)'
-        '#minlength': 2
+        '#minlength': 1
         '#maxlength': 50
         '#autocomplete': 'off'
   textarea:
