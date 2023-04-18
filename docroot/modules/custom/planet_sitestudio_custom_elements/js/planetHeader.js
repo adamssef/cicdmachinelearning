@@ -30,13 +30,20 @@
       }
 
       function disableScroll(){
-        document.body.addEventListener('touchmove', preventDefault, { passive: false });
         functiondisable();
+        /*document.body.addEventListener('touchmove', preventDefault, { passive: false });
+        if ($(window).width() >= 1024) {
+          functiondisable();
+        }*/
       }
 
       function enableScroll(){
-        document.body.removeEventListener('touchmove', preventDefault);
         functionenable();
+        /*document.body.removeEventListener('touchmove', preventDefault);
+        header.addEventListener("touchstart", preventDefault);
+        if ($(window).width() >= 1024) {
+          functionenable();
+        }*/
       }
 
 
@@ -126,19 +133,30 @@
           return false;
         });
 
-        $(".menu-level-1-li").hover(function (e) {
-          e.preventDefault();
-          if (menuState === 0) {
-            // Menu is opened;
-            disableScroll();
-            menuState = 1;
-          } else {
-            // Menu is closed;
-            enableScroll();
-            menuState = 0;
-          }
-          return false;
-        }) 
+        if ($(window).width() >= 1024) {
+          $(".menu-level-1-li").hover(function() {
+            if ($(this).find(".menu-level-2-ul-content").html().trim() !== "") {
+              $(this).find(".menu-level-2-ul-content").addClass("active");
+            }
+          }, function() {
+            $(this).find(".menu-level-2-ul-content").removeClass("active");
+          })
+
+          $(".menu-level-1-li").hover(function(e) {
+            e.preventDefault();
+            let menu2 = $(this).find(".menu-level-2-ul-content")
+              if (menuState === 0 && menu2.hasClass("active")) {
+                // Menu is opened;
+                disableScroll();
+                menuState = 1;
+              } else {
+              // Menu is closed;
+              enableScroll();
+              menuState = 0;
+            }
+            return false;
+          })
+        }
 
         // Search for utm parameters in url.
         const urlParams = new URLSearchParams(window.location.search);
