@@ -406,7 +406,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: hospitality.hotelcare@weareplanet.com
+      to_mail: 'florin.cotovanu@weareplanet.com, salesadmin.nordic@weareplanet.com'
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
@@ -415,8 +415,8 @@ handlers:
       from_mail: _default
       from_options: {  }
       from_name: _default
-      subject: 'Order request'
-      body: _default
+      subject: 'New order: [webform_submission:values:address_country:country:raw]'
+      body: "<p>Submitted on [webform_submission:created]</p>\r\nHotel name: [webform_submission:values:last_name:raw]<br />\r\nDelivery Address: [webform_submission:values:delivery_address_:raw]<br />\r\nZip Code / City: [webform_submission:values:zip_code_city_:raw]<br />\r\nCountry: [webform_submission:values:address_country:country:raw]<br />\r\nScandic Ref No.: [webform_submission:values:scandic_reference_no_:raw]<br />\r\nContact Person: [webform_submission:values:contact_person_:raw]<br />\r\nContact E-mail: [webform_submission:values:contact_e_mail_:raw]<br />\r\nI would like to order: [webform_submission:values:would_like_to_order:raw]<br />\r\nSpecify Quantities: [webform_submission:values:specify_quantities:raw]<br />\r\nSize - TV only: [webform_submission:values:size_tv_only_:raw]<br />\r\nLength - Cables only: [webform_submission:values:length_cables_only_:raw]<br />\r\nAdditional Information: [webform_submission:values:textarea:raw]"
       excluded_elements:
         utm_source: utm_source
         utm_medium: utm_medium
@@ -434,9 +434,9 @@ handlers:
       ignore_access: 0
       exclude_empty: true
       exclude_empty_checkbox: 0
-      exclude_attachments: false
+      exclude_attachments: 0
       html: true
-      attachments: false
+      attachments: 0
       twig: false
       debug: false
       reply_to: ''

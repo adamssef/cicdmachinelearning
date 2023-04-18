@@ -17,7 +17,7 @@ use Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList;
  * Sanitize cookie.
  */
 function _planet_core_sanitize_cookie($value) {
-  return filter_var($value, FILTER_SANITIZE_STRING);
+  return htmlspecialchars($value);
 }
 
 /**
