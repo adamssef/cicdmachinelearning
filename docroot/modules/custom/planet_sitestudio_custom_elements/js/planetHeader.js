@@ -114,7 +114,7 @@
           }
         })
 
-        $('.mobile-menu-button, .coh-button-close').click(function (e) {
+        $('.mobile-menu-button, .menu-level-2-ul .coh-button-close').click(function (e) {
           e.preventDefault();
           if (menuState === 0) {
             // Menu is opened;
