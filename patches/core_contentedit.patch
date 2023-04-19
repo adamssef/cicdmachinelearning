@@ -1,0 +1,28 @@
+diff --git a/core/lib/Drupal/Core/Entity/ContentEntityBase.php b/core/lib/Drupal/Core/Entity/ContentEntityBase.php
+index 75dd42564b..a4f223fb3f 100644
+--- a/core/lib/Drupal/Core/Entity/ContentEntityBase.php
++++ b/core/lib/Drupal/Core/Entity/ContentEntityBase.php
+@@ -11,6 +11,8 @@
+ use Drupal\Core\StringTranslation\TranslatableMarkup;
+ use Drupal\Core\TypedData\TranslationStatusInterface;
+ use Drupal\Core\TypedData\TypedDataInterface;
++use Drupal\Core\Url;
++use Symfony\Component\HttpFoundation\RedirectResponse;
+ 
+ /**
+  * Implements Entity Field API specific enhancements to the Entity class.
+@@ -953,6 +955,14 @@ public function addTranslation($langcode, array $values = []) {
+     // language is specified or the entity cannot be translated.
+     $this->getLanguages();
+     if (!isset($this->languages[$langcode]) || $this->hasTranslation($langcode) || $this->languages[$langcode]->isLocked()) {
++
++      // Redirect user to the correct edit page if this translation already exists.
++      if ($this->hasTranslation($langcode)) {
++        $route = 'entity.' . $this->getEntityTypeId() . '.edit_form';
++        $redirect = new RedirectResponse(Url::fromRoute($route, [$this->getEntityTypeId() => $this->id()])->toString());
++        $redirect->send();
++      }
++
+       throw new \InvalidArgumentException("Invalid translation language ($langcode) specified.");
+     }
+     if ($this->languages[$this->defaultLangcode]->isLocked()) {

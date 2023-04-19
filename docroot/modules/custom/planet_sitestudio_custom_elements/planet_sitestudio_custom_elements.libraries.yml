@@ -143,3 +143,7 @@ cardsGridContainer:
 linkScrollTo:
   js:
     js/linkScrollTo.js: { }
+# Blog Index
+blogIndex:
+  js:
+    js/blogIndex.js: { }

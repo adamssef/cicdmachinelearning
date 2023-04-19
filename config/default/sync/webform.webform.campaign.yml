@@ -15,9 +15,6 @@ title: Campaign
 description: ''
 category: ''
 elements: |-
-  required_fields:
-    '#type': webform_markup
-    '#markup': 'All fields marked with * are required'
   layout:
     '#type': webform_flexbox
     first_column:
@@ -27,70 +24,82 @@ elements: |-
           - column-flex
       first_name:
         '#type': textfield
-        '#title': 'First Name*'
+        '#title': 'First name*'
         '#minlength': 2
         '#maxlength': 50
         '#autocomplete': 'off'
         '#required': true
-      last_name:
-        '#type': textfield
-        '#title': 'Last Name*'
-        '#minlength': 2
-        '#maxlength': 50
-        '#autocomplete': 'off'
-        '#required': true
-      company_business_name:
-        '#type': textfield
-        '#title': 'Company or business name'
-        '#minlength': 2
-        '#maxlength': 50
-        '#autocomplete': 'off'
-      textarea:
-        '#type': textarea
-        '#title': 'About your project'
     second_column:
       '#type': container
       '#attributes':
         class:
           - column-flex
-      email:
-        '#type': email
-        '#title': 'Your e-mail*'
+      last_name:
+        '#type': textfield
+        '#title': 'Last name*'
+        '#minlength': 2
+        '#maxlength': 50
+        '#autocomplete': 'off'
         '#required': true
-      phone:
-        '#type': webform_telephone
-        '#title': 'Your phone*'
-        '#required': true
-        '#wrapper_type': form_element
-        '#type__access': false
-        '#phone__required': true
-        '#ext__access': false
-        '#phone__international_initial_country': GB
-      type_of_business:
-        '#type': select
-        '#title': 'Company sector'
-        '#options':
-          Retail: Retail
-          Hospitality: Hospitality
-          Partners: Partners
-          Other: Other
-      countries:
-        '#type': select
-        '#title': 'Where are you based'
-        '#options': country_names
-        '#empty_option': ' '
-      single_opt_in:
-        '#type': checkbox
-        '#title': 'Receive updates about Planet'
-        '#description': 'Check this box to give consent to receiving updates about Planet&rsquo;s products, events, trainings, reports and services'
-        '#title_display': none
+  phone:
+    '#type': webform_telephone
+    '#title': 'Phone*'
+    '#required': true
+    '#wrapper_type': form_element
+    '#type__access': false
+    '#phone__required': true
+    '#ext__access': false
+    '#phone__international_initial_country': GB
+  email:
+    '#type': email
+    '#title': 'Email*'
+    '#required': true
+  company_business_name:
+    '#type': textfield
+    '#title': 'Company or business name'
+    '#minlength': 2
+    '#maxlength': 50
+    '#autocomplete': 'off'
+  type_of_business:
+    '#type': select
+    '#title': 'Company sector'
+    '#options':
+      Retail: Retail
+      Hospitality: Hospitality
+      Partners: Partners
+      Other: Other
+    '#empty_option': '- select -'
+  countries:
+    '#type': select
+    '#title': 'Where are you based'
+    '#options': country_names
+    '#empty_option': ' '
+  textarea:
+    '#type': textarea
+    '#title': 'About your project'
+  single_opt_in:
+    '#type': checkbox
+    '#title': 'Receive updates about Planet'
+    '#description': 'Check this box to give consent to receiving updates about Planet&rsquo;s products, events, trainings reports and services'
+    '#title_display': none
+  markup:
+    '#type': webform_markup
+    '#markup': '<p>By submitting this form, you accept the terms in our&nbsp;<a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Privacy Policy</a>.</p>'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
+    '#attributes':
+      class:
+        - coh-button-filled
+        - coh-button-dynamic
+        - coh-button-large
+        - coh-button-enable
+        - coh-button-light-mode
+        - coh-style-button-variants
     '#submit__label': 'Read now'
     '#submit__attributes':
       class:
-        - coh-style-primary-dark-button
+        - coh-link
   website_language:
     '#type': textfield
     '#title': 'Website language'
@@ -318,5 +327,22 @@ handlers:
     weight: 0
     settings:
       pardot_url: 'https://info.weareplanet.com/l/975513/2023-01-06/3x85l'
-      pardot_fields_mapping: "first_name|First Name\r\nlast_name|Last Name\r\nphone.phone|Phone\r\nemail|email\r\ncountries|Country\r\ncompany_business_name|Company\r\ntype_of_business|Company Sector\r\ntextarea|Message\r\nsingle_opt_in|Opt in\r\nlead_source|Lead Source\r\nwebsite_language|Website language\r\nwebsite_origin_page|Website origin page\r\nutm_source|utm_source\r\nutm_medium|utm_medium\r\nutm_campaign|utm_campaign\r\nutm_content|utm_content\r\nutm_term|utm_term"
+      pardot_fields_mapping: |-
+        first_name|First Name
+        last_name|Last Name
+        phone.phone|Phone
+        email|email
+        countries|Country
+        company_business_name|Company
+        type_of_business|Company Sector
+        textarea|Message
+        single_opt_in|Opt in
+        lead_source|Lead Source
+        website_language|Website language
+        website_origin_page|Website origin page
+        utm_source|utm_source
+        utm_medium|utm_medium
+        utm_campaign|utm_campaign
+        utm_content|utm_content
+        utm_term|utm_term
 variants: {  }

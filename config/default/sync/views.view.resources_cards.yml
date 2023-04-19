@@ -3,12 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_resources_published_time
+    - field.storage.node.field_pre_heading_3
+    - field.storage.node.field_resources_background_image
+    - field.storage.node.field_resources_tags
     - node.type.resources
   module:
     - cohesion
     - node
     - user
+    - views_fieldsets
 id: resources_cards
 label: 'Resources Cards'
 module: views
@@ -25,10 +28,66 @@ display:
     display_options:
       title: 'Resources Cards'
       fields:
-        field_resources_published_time:
-          id: field_resources_published_time
-          table: node__field_resources_published_time
-          field: field_resources_published_time
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_resources_background_image
+          wrapper: div
+          legend: ''
+          classes: case-studies__card--top
+          collapsible: 0
+          collapsed: 0
+        field_resources_background_image:
+          id: field_resources_background_image
+          table: node__field_resources_background_image
+          field: field_resources_background_image
           relationship: none
           group_type: group
           admin_label: ''
@@ -68,18 +127,138 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: coh-resources-date
+          element_wrapper_class: case-studies__card__main-image
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_entity_view
+          settings:
+            view_mode: default
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        fieldset_1:
+          id: fieldset_1
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_pre_heading_3
+            - title
+            - field_resources_tags
+            - view_node
+          wrapper: div
+          legend: ''
+          classes: case-studies__card--bottom
+          collapsible: 0
+          collapsed: 0
+        field_pre_heading_3:
+          id: field_pre_heading_3
+          table: node__field_pre_heading_3
+          field: field_pre_heading_3
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '• {{ field_pre_heading_3 }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: 'case-studies__card__pre-heading coh-style-e50'
           element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: timestamp
+          type: string
           settings:
-            date_format: resources_date_format
-            custom_date_format: ''
-            timezone: ''
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -135,7 +314,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: coh-resources-title
+          element_wrapper_class: 'case-studies__card__title coh-style-h300'
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -153,6 +332,69 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_resources_tags:
+          id: field_resources_tags
+          table: node__field_resources_tags
+          field: field_resources_tags
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: 'case-studies__card__tags coh-style-l50'
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: ul
           separator: ', '
           field_api_classes: false
         view_node:
@@ -199,20 +441,20 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: coh-resources-link
+          element_wrapper_class: 'case-studies__card__link coh-style-t100'
           element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: 'Find out more'
+          text: 'Read more'
           output_url_as_text: false
           absolute: false
       pager:
         type: some
         options:
           offset: 0
-          items_per_page: 4
+          items_per_page: 3
       exposed_form:
         type: basic
         options:
@@ -302,7 +544,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_resources_published_time'
+        - 'config:field.storage.node.field_pre_heading_3'
+        - 'config:field.storage.node.field_resources_background_image'
+        - 'config:field.storage.node.field_resources_tags'
   block_1:
     id: block_1
     display_title: Block
@@ -318,4 +562,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_resources_published_time'
+        - 'config:field.storage.node.field_pre_heading_3'
+        - 'config:field.storage.node.field_resources_background_image'
+        - 'config:field.storage.node.field_resources_tags'

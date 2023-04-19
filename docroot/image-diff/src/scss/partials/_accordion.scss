@@ -1,0 +1,115 @@
+.accordion {
+  .bar-title-image {
+    margin-top: 20px;
+    border-bottom: none;
+    border-left: 5px solid $primary;
+    border-radius: 25px 25px 0 0;
+    border-right: 5px solid $primary;
+    border-top-style: dotted;
+    box-shadow: 0px 0px 0px $primary;
+    transition: border-radius box-shadow .8s ease;
+
+    svg {
+      transform: rotate(0deg);
+      transition: transform .5s ease;
+    }
+
+    &.collapsed {
+      border-radius: 25px;
+      border-bottom: 1px dotted $light;
+
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+
+    &:hover {
+      background-color: transparent;
+      box-shadow: 0px 3px 10px $primary, inset 0px -3px 10px $primary;
+
+      &.collapsed {
+        border-bottom: 1px dotted $primary;
+        border-top: 1px dotted $primary;
+        box-shadow: 0px 0px 10px $primary, inset 0px 0px 10px $primary;
+      }
+    }
+  }
+
+  .box {
+    min-height: 180px;
+
+    h6 {
+      font-size: 1.2rem;
+      margin: 10px 0 3px;
+      text-shadow: 0px 0px 5px $primary;
+    }
+  }
+
+  .name-image {
+    margin-bottom: 0;
+  }
+
+  // No Image
+  .no-image {
+    background: $darkness;
+    height: calc(100% - 47px);
+    width: 100%;
+
+    @media (max-width: 767.98px) {
+      height: 77%;
+    }
+
+    span {
+    color: $light;
+    font-size: 1.3rem;
+    font-weight: 500;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-65%);
+
+      @media (max-width: 767.98px) {
+        top: 40%;
+      }
+    }
+
+    svg.fa-image {
+      color: $light;
+      font-size: 3rem;
+      left: 50%;
+      position: relative;
+      top: 60%;
+      transform: translate(-50%,-40%);
+    }
+  }
+
+  .crosshair { cursor: crosshair; }
+
+  .btn-outline-success {
+    &:hover {
+      background: #037773;
+      border: 1px solid transparent;
+    }
+  }
+
+  .approved {
+    background: $success;
+    border-color: darken($success, 10%);
+
+    &:hover {
+      background: darken($success, 10%);
+      border-color: $success;
+      box-shadow: 0px 3px 10px $success, inset 0px -3px 10px $success;
+
+      &.collapsed {
+        border-bottom: 1px dotted $success;
+        border-top: 1px dotted $success;
+        box-shadow: 0px 0px 10px $success, inset 0px 0px 10px $success;
+      }
+    }
+
+    p {
+      color: white !important;
+    }
+  }
+}
