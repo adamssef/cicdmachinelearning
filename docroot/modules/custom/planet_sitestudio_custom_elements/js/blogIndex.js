@@ -54,6 +54,7 @@
             $(".coh-blog-index-tablet-container").removeClass(
               "coh-blog-index-tablet-container-active"
             );
+            $(indexHeading).text("INDEX");
           }
         });
 
@@ -92,7 +93,7 @@
               let winScroll =
                 document.body.scrollTop || document.documentElement.scrollTop;
 
-              if (winScroll + headerHeight > headingTop) {
+              if (winScroll + headerHeight >= headingTop) {
                 $(`.${indexId}`).addClass("coh-blog-index-item-active");
                 $(indexHeading).text($(heading).text());
                 // Remove active state from all indexes except the actual one.
