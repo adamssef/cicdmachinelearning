@@ -1,0 +1,21 @@
+uuid: 013e8e41-08fa-46d4-9d2a-6d3501d1eeb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_basic_page_metatag
+    - node.type.case_studies
+  module:
+    - metatag
+id: node.case_studies.field_basic_page_metatag
+field_name: field_basic_page_metatag
+entity_type: node
+bundle: case_studies
+label: Metatag
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

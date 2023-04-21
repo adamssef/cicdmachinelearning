@@ -1,0 +1,21 @@
+uuid: b38d6bca-4ddb-446b-a192-815c9bffc5f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_basic_page_metatag
+    - node.type.products
+  module:
+    - metatag
+id: node.products.field_basic_page_metatag
+field_name: field_basic_page_metatag
+entity_type: node
+bundle: products
+label: Metatag
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

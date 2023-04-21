@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.products.field_basic_page_metatag
     - field.field.node.products.field_button_layout_canvas
     - field.field.node.products.field_company_sector
     - field.field.node.products.field_layout_canvas
@@ -15,12 +16,20 @@ dependencies:
     - node.type.products
   module:
     - cohesion_elements
+    - metatag
     - user
 id: node.products.default
 targetEntityType: node
 bundle: products
 mode: default
 content:
+  field_basic_page_metatag:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_button_layout_canvas:
     type: cohesion_entity_reference_revisions_entity_view
     label: hidden

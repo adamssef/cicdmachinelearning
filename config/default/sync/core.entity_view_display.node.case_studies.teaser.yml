@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.case_studies.field_basic_page_metatag
     - field.field.node.case_studies.field_challenge_solution_text
     - field.field.node.case_studies.field_challenge_solution_title
     - field.field.node.case_studies.field_challenge_text
@@ -38,6 +39,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_basic_page_metatag: true
   field_challenge_solution_text: true
   field_challenge_solution_title: true
   field_challenge_text: true
