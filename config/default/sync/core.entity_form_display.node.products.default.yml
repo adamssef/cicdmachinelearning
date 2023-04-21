@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.products.field_basic_page_metatag
     - field.field.node.products.field_button_layout_canvas
     - field.field.node.products.field_company_sector
     - field.field.node.products.field_layout_canvas
@@ -17,6 +18,7 @@ dependencies:
     - cohesion_elements
     - content_moderation
     - media_library
+    - metatag
     - path
 id: node.products.default
 targetEntityType: node
@@ -28,6 +30,14 @@ content:
     weight: 12
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_basic_page_metatag:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_button_layout_canvas:
     type: cohesion_layout_builder_widget
