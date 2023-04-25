@@ -124,9 +124,9 @@ megaMenu:
   js:
     js/megaMenu.js: { }
 # Tags - Case Studies
-tagsCaseStudies:
+fullCaseStudyPage:
   js:
-    js/tagsCaseStudies.js: { }
+    js/fullCaseStudyPage.js: { }
 # Case Studies Library
 caseStudiesLibrary:
   js:
