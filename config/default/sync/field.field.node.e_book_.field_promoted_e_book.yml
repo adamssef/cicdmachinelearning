@@ -1,0 +1,23 @@
+uuid: 65f24b69-5464-40f7-80cf-30828337ad66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promoted_e_book
+    - node.type.e_book_
+id: node.e_book_.field_promoted_e_book
+field_name: field_promoted_e_book
+entity_type: node
+bundle: e_book_
+label: 'Promoted to Featured Slider'
+description: 'Promote the e-book to be displayed as a highlight.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
