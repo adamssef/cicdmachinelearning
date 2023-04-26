@@ -1,0 +1,21 @@
+uuid: 792b9221-6488-43ac-8365-06dff19e4996
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_basic_page_metatag
+    - node.type.e_book_
+  module:
+    - metatag
+id: node.e_book_.field_basic_page_metatag
+field_name: field_basic_page_metatag
+entity_type: node
+bundle: e_book_
+label: Metatag
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag
