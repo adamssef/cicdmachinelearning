@@ -12,7 +12,7 @@ bundle: e_book_
 label: 'Promoted to Featured Slider'
 description: 'Promote the e-book to be displayed as a highlight.'
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0
