@@ -14,7 +14,7 @@ bundle: e_book_
 label: 'Button Layout Canvas'
 description: 'Add only Button with variants components in this layout canvas'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
