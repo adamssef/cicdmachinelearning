@@ -1,0 +1,24 @@
+uuid: fd3ecbae-10de-4fe5-814f-a93aaab350a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_layout_canvas
+    - node.type.e_book_
+  module:
+    - cohesion_elements
+id: node.e_book_.field_layout_canvas
+field_name: field_layout_canvas
+entity_type: node
+bundle: e_book_
+label: 'Layout canvas'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cohesion_layout'
+  handler_settings: {  }
+  access_elements: '0'
+field_type: cohesion_entity_reference_revisions

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.case_studies.field_basic_page_metatag
     - field.field.node.case_studies.field_challenge_solution_text
     - field.field.node.case_studies.field_challenge_solution_title
     - field.field.node.case_studies.field_challenge_text
@@ -25,6 +26,7 @@ dependencies:
     - content_moderation
     - field_group
     - media_library
+    - metatag
     - path
 third_party_settings:
   field_group:
@@ -59,6 +61,14 @@ content:
     weight: 14
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_basic_page_metatag:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_challenge_solution_text:
     type: string_textarea

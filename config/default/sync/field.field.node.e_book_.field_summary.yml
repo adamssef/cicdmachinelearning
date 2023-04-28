@@ -1,0 +1,21 @@
+uuid: 1010c9f0-a052-4e9d-ac22-9b65951e5849
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.e_book_
+id: node.e_book_.field_summary
+field_name: field_summary
+entity_type: node
+bundle: e_book_
+label: Summary
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 'A summary of what this e-book is about.'
+default_value_callback: ''
+settings: {  }
+field_type: string_long

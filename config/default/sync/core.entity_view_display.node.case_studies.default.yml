@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.case_studies.field_basic_page_metatag
     - field.field.node.case_studies.field_challenge_solution_text
     - field.field.node.case_studies.field_challenge_solution_title
     - field.field.node.case_studies.field_challenge_text
@@ -21,12 +22,20 @@ dependencies:
     - node.type.case_studies
   module:
     - cohesion_elements
+    - metatag
     - user
 id: node.case_studies.default
 targetEntityType: node
 bundle: case_studies
 mode: default
 content:
+  field_basic_page_metatag:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: content
   field_challenge_solution_text:
     type: basic_string
     label: above

@@ -1,0 +1,19 @@
+uuid: 62a91b62-7836-4c94-89cb-20e18ce761b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pre_heading_2
+    - node.type.e_book_
+id: node.e_book_.field_pre_heading_2
+field_name: field_pre_heading_2
+entity_type: node
+bundle: e_book_
+label: 'Pre Heading 2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
