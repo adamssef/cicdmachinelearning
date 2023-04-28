@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.e_book_.field_pre_heading
     - field.field.node.e_book_.field_pre_heading_2
     - field.field.node.e_book_.field_promoted_e_book
+    - field.field.node.e_book_.field_resources_tags
     - field.field.node.e_book_.field_summary
     - node.type.e_book_
   module:
@@ -99,6 +100,14 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_resources_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_summary:
     type: basic_string

@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.e_book_.field_pre_heading
     - field.field.node.e_book_.field_pre_heading_2
     - field.field.node.e_book_.field_promoted_e_book
+    - field.field.node.e_book_.field_resources_tags
     - field.field.node.e_book_.field_summary
     - node.type.e_book_
   module:
@@ -37,6 +38,7 @@ hidden:
   field_pre_heading: true
   field_pre_heading_2: true
   field_promoted_e_book: true
+  field_resources_tags: true
   field_summary: true
   langcode: true
   search_api_excerpt: true
