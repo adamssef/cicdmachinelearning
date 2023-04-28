@@ -1,0 +1,117 @@
+uuid: bf63f391-0a41-4650-a31a-fbdac1bfa029
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.e_book_.field_basic_page_metatag
+    - field.field.node.e_book_.field_button_layout_canvas
+    - field.field.node.e_book_.field_company_sector
+    - field.field.node.e_book_.field_layout_canvas
+    - field.field.node.e_book_.field_logo_media
+    - field.field.node.e_book_.field_main_image_media
+    - field.field.node.e_book_.field_pre_heading
+    - field.field.node.e_book_.field_pre_heading_2
+    - field.field.node.e_book_.field_promoted_e_book
+    - field.field.node.e_book_.field_summary
+    - node.type.e_book_
+  module:
+    - cohesion_elements
+    - metatag
+    - search_api_solr
+    - user
+id: node.e_book_.default
+targetEntityType: node
+bundle: e_book_
+mode: default
+content:
+  field_basic_page_metatag:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_button_layout_canvas:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_company_sector:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_layout_canvas:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_logo_media:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_main_image_media:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_pre_heading:
+    type: solr_highlighted_string
+    label: hidden
+    settings:
+      prefix: '<strong>'
+      suffix: '</strong>'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_pre_heading_2:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_promoted_e_book:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

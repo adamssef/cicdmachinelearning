@@ -11,7 +11,7 @@
         let headerHeight = $(".header-container").height();
         // Get all headings on layout canvas
         let headings = content.querySelectorAll(
-          ".coh-style-h700, .coh-style-h600, .coh-style-h500"
+          ".coh-style-h800, .coh-style-h700, .coh-style-h600, .coh-style-h500"
         );
         let indexHeading = document.querySelector(
           ".coh-blog-index-header .coh-heading"
@@ -28,7 +28,7 @@
         $(indexButton)
           .once("blog-index-tablet-action")
           .click((event) => {
-            event.preventDefault()
+            event.preventDefault();
             $(indexButton).toggleClass("coh-blog-index-button-active");
             $(listTablet).toggleClass("coh-blog-index-list-tablet-active");
           });
@@ -46,7 +46,10 @@
           let winScrollPlusHeader = winScroll + headerHeight;
 
           // If the height scrolled is bigger than the height where is the title
-          if (winScrollPlusHeader > contentTop && winScrollPlusHeader < contentBottom) {
+          if (
+            winScrollPlusHeader > contentTop &&
+            winScrollPlusHeader < contentBottom
+          ) {
             $(".coh-blog-index-tablet-container").addClass(
               "coh-blog-index-tablet-container-active"
             );
@@ -54,6 +57,7 @@
             $(".coh-blog-index-tablet-container").removeClass(
               "coh-blog-index-tablet-container-active"
             );
+            $(indexHeading).text("INDEX");
           }
         });
 
@@ -61,6 +65,14 @@
          * ACTIVE/DESACTIVE INDEX INDICATORS
          * ADD INDICATORS TO EACH HEADING
          */
+        let indexActive = (index, indexTitle) => {
+          $(index).addClass("coh-blog-index-item-active");
+          $(indexHeading).text(indexTitle);
+          // Remove active state from all indexes except the actual one.
+          $(".coh-blog-index-item")
+            .not(index)
+            .removeClass("coh-blog-index-item-active");
+        };
         $(headings)
           .once("blog-index-action")
           .each(function (i, heading) {
@@ -73,18 +85,24 @@
             // Add each to index list
             $(list).append(
               `<li id="${indexId}" class="coh-list-item coh-blog-index-item ${indexId}">
-              <a href="#${headingId}" class="coh-paragraph coh-style--body-regular---tt-commons-planet">
+                <a href="#${headingId}" 
+                class="coh-paragraph 
+                coh-style--body-regular---tt-commons-planet
+                coh-blog-index-link">
                 ${$(this).text()}
-              </a>
-            </li>`
+                </a>
+              </li>`
             );
 
             $(listTablet).append(
               `<li id="${indexId}" class="coh-list-item coh-blog-index-item ${indexId}">
-              <a href="#${headingId}" class="coh-paragraph coh-style--body-regular---tt-commons-planet">
+                <a href="#${headingId}" 
+                class="coh-paragraph 
+                coh-style--body-regular---tt-commons-planet
+                coh-blog-index-link">
                 ${$(this).text()}
-              </a>
-            </li>`
+                </a>
+              </li>`
             );
 
             let headingTop = $(this).offset().top;
@@ -93,16 +111,16 @@
               let winScroll =
                 document.body.scrollTop || document.documentElement.scrollTop;
 
-              if (winScroll + headerHeight > headingTop) {
-                $(`.${indexId}`).addClass("coh-blog-index-item-active");
-                $(indexHeading).text($(heading).text());
-                // Remove active state from all indexes except the actual one.
-                $(".coh-blog-index-item")
-                  .not(`.${indexId}`)
-                  .removeClass("coh-blog-index-item-active");
+              if (winScroll + headerHeight >= headingTop) {
+                indexActive(`.${indexId}`, $(heading).text());
               }
             });
           });
+
+        $(".coh-blog-index-link").click((event) => {
+          let blogItem = $(event.target).parent();
+          indexActive(blogItem, $(event.target).text());
+        });
       });
     },
   };
