@@ -198,15 +198,71 @@ display:
           empty_zero: false
           hide_alter_empty: true
           fields:
-            - field_pre_heading
-            - title
-            - field_summary
-            - field_resources_tags
-            - view_node
+            - fieldset_3
+            - fieldset_2
           wrapper: div
           legend: ''
           classes: publications__card--bottom
           collapsible: 0
+          collapsed: 0
+        fieldset_3:
+          id: fieldset_3
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_pre_heading
+            - title
+            - field_resources_tags
+            - field_summary
+          wrapper: fieldset
+          legend: ''
+          classes: ''
+          collapsible: 1
           collapsed: 0
         field_pre_heading:
           id: field_pre_heading
@@ -251,7 +307,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: 'case-studies__card__pre-heading coh-style-e50. . '
+          element_wrapper_class: 'case-studies__card__pre-heading coh-style-e50 publications__card__pre-heading'
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -336,6 +392,69 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_resources_tags:
+          id: field_resources_tags
+          table: node__field_resources_tags
+          field: field_resources_tags
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: 'publications__card__tags coh-style-l50'
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: ul
+          separator: ', '
+          field_api_classes: false
         field_summary:
           id: field_summary
           table: node__field_summary
@@ -398,14 +517,14 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_resources_tags:
-          id: field_resources_tags
-          table: node__field_resources_tags
-          field: field_resources_tags
+        fieldset_2:
+          id: fieldset_2
+          table: views
+          field: fieldset
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: field
+          plugin_id: fieldset
           label: ''
           exclude: false
           alter:
@@ -439,28 +558,21 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
-          element_wrapper_class: 'publications__card__tags coh-style-l50'
+          element_wrapper_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          fields:
+            - view_node
+          wrapper: fieldset
+          legend: ''
+          classes: ''
+          collapsible: 1
+          collapsed: 0
         view_node:
           id: view_node
           table: node
