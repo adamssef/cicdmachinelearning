@@ -1,0 +1,29 @@
+uuid: ee5acf71-e7d5-4b79-998f-d68465f9e0a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_sector
+    - node.type.e_book_
+    - taxonomy.vocabulary.company_sectors
+id: node.e_book_.field_company_sector
+field_name: field_company_sector
+entity_type: node
+bundle: e_book_
+label: 'Company sector'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      company_sectors: company_sectors
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

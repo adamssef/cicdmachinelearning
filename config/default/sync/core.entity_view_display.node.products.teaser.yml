@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.products.field_basic_page_metatag
     - field.field.node.products.field_button_layout_canvas
     - field.field.node.products.field_company_sector
     - field.field.node.products.field_layout_canvas
@@ -27,6 +28,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_basic_page_metatag: true
   field_button_layout_canvas: true
   field_company_sector: true
   field_layout_canvas: true

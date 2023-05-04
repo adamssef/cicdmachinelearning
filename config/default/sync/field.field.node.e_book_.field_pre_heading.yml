@@ -1,0 +1,19 @@
+uuid: e0507b33-b9a2-4b17-a0b8-e2e7421a9db4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pre_heading
+    - node.type.e_book_
+id: node.e_book_.field_pre_heading
+field_name: field_pre_heading
+entity_type: node
+bundle: e_book_
+label: 'Pre heading'
+description: 'Pre-title before the main title.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
