@@ -131,6 +131,10 @@ fullCaseStudyPage:
 caseStudiesLibrary:
   js:
     js/caseStudiesLibrary.js: { }
+# Publications Library
+publicationsLibrary:
+  js:
+    js/publicationsLibrary.js: { }
 # Brands we work with animation
 brandsWeWorkWithAnimation:
   js:
