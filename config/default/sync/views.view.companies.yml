@@ -711,13 +711,14 @@ display:
             operator_limit_selection: false
             operator_list: {  }
             identifier: region
-            required: false
+            required: true
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
               content_editor: '0'
+              content_reviewer: '0'
               administrator: '0'
             reduce: false
           is_grouped: false
@@ -800,7 +801,7 @@ display:
         type: cohesion_layout
         options:
           views_template: view_tpl_registered_companies
-          master_template: __none__
+          master_template: mstr_tpl_planet_master_template
       row:
         type: fields
         options:
