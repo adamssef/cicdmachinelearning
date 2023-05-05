@@ -10,13 +10,6 @@ dependencies:
     - node.type.locations_contacts
     - node.type.support_locations_contacts
     - taxonomy.vocabulary.regions
-  content:
-    - 'taxonomy_term:regions:14bbde67-29e4-425c-9d8f-30cae648f483'
-    - 'taxonomy_term:regions:323f5406-a1ef-4be9-9eda-dbeac7268ab8'
-    - 'taxonomy_term:regions:32aae3dc-b38f-4be1-b861-04ece0f40c80'
-    - 'taxonomy_term:regions:45aa2b06-eb56-44b2-824b-fe0460e40e76'
-    - 'taxonomy_term:regions:689c3bd7-339f-4160-915b-99a4cf19a2f8'
-    - 'taxonomy_term:regions:71b33f36-5c82-4631-9ff8-de4478369737'
   module:
     - cohesion
     - node
@@ -657,13 +650,7 @@ display:
           admin_label: ''
           plugin_id: taxonomy_index_tid
           operator: or
-          value:
-            11: 11
-            6: 6
-            16: 16
-            21: 21
-            26: 26
-            31: 31
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -1168,13 +1155,7 @@ display:
           admin_label: ''
           plugin_id: taxonomy_index_tid
           operator: or
-          value:
-            11: 11
-            6: 6
-            16: 16
-            21: 21
-            26: 26
-            31: 31
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -1195,7 +1176,7 @@ display:
               content_editor: '0'
               content_reviewer: '0'
               administrator: '0'
-            reduce: true
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -1208,7 +1189,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
+          reduce_duplicates: true
           vid: regions
           type: select
           hierarchy: false
