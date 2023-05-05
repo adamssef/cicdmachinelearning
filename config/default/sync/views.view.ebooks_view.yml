@@ -616,8 +616,8 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: 'publications__card__link coh-style-t100'
+          element_wrapper_type: div
+          element_wrapper_class: 'coh-button-text coh-button-light-mode  coh-button-icon  coh-button-icon-right coh-style-button-variants'
           element_default_classes: true
           empty: ''
           hide_empty: false
