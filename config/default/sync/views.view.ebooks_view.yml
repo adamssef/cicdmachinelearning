@@ -307,7 +307,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: 'case-studies__card__pre-heading coh-style-e50 publications__card__pre-heading'
+          element_wrapper_class: 'case-studies__card__pre-heading coh-style-l50 publications__card__pre-heading'
           element_default_classes: true
           empty: ''
           hide_empty: false
