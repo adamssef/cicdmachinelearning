@@ -9,12 +9,6 @@ dependencies:
     - field.storage.node.field_region
     - node.type.locations_contacts
     - taxonomy.vocabulary.regions
-  content:
-    - 'taxonomy_term:regions:0db9b33b-4542-49c8-91ae-ec13f2ec34ae'
-    - 'taxonomy_term:regions:43ebd01e-fb35-4fdb-85c0-5fb64e8fd648'
-    - 'taxonomy_term:regions:550fcd97-5a9d-40e8-a98c-f742cf4c95d8'
-    - 'taxonomy_term:regions:c05fab70-537f-4b87-a623-965cc469939d'
-    - 'taxonomy_term:regions:ccaecf85-2ef4-4ef1-8e3d-6a8d2c00cae9'
   module:
     - cohesion
     - node
@@ -655,12 +649,7 @@ display:
           admin_label: ''
           plugin_id: taxonomy_index_tid
           operator: or
-          value:
-            8: 8
-            7: 7
-            10: 10
-            9: 9
-            6: 6
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -679,8 +668,9 @@ display:
               authenticated: authenticated
               anonymous: '0'
               content_editor: '0'
+              content_reviewer: '0'
               administrator: '0'
-            reduce: true
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -703,7 +693,7 @@ display:
         type: cohesion_layout
         options:
           views_template: view_tpl_locations_contacts
-          master_template: __none__
+          master_template: mstr_tpl_planet_master_template
       row:
         type: fields
       query:

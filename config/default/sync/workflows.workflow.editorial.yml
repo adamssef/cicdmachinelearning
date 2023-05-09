@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - node.type.case_studies
+    - node.type.e_book_
     - node.type.page
+    - node.type.products
     - node.type.resources
   module:
     - content_moderation
@@ -79,6 +81,8 @@ type_settings:
   entity_types:
     node:
       - case_studies
+      - e_book_
       - page
+      - products
       - resources
   default_moderation_state: draft
