@@ -8,11 +8,11 @@ dependencies:
     - field.field.node.e_book_.field_button_layout_canvas
     - field.field.node.e_book_.field_company_sector
     - field.field.node.e_book_.field_layout_canvas
-    - field.field.node.e_book_.field_logo_media
     - field.field.node.e_book_.field_main_image_media
     - field.field.node.e_book_.field_pre_heading
     - field.field.node.e_book_.field_pre_heading_2
     - field.field.node.e_book_.field_promoted_e_book
+    - field.field.node.e_book_.field_resources_tags
     - field.field.node.e_book_.field_summary
     - node.type.e_book_
   module:
@@ -32,11 +32,11 @@ hidden:
   field_button_layout_canvas: true
   field_company_sector: true
   field_layout_canvas: true
-  field_logo_media: true
   field_main_image_media: true
   field_pre_heading: true
   field_pre_heading_2: true
   field_promoted_e_book: true
+  field_resources_tags: true
   field_summary: true
   langcode: true
   search_api_excerpt: true

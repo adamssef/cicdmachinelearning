@@ -3,9 +3,6 @@ _core:
 ignored_config_entities:
   - 'cohesion_*'
   - system.site
-  - 'views.view.locations_contacts*'
-  - 'views.view.support_locations_contacts*'
-  - 'views.view.companies*'
   - planet_config.pardot
   - 'webform.webform.generic_form*'
   - 'webform.webform.ebook_my_title_here*'
