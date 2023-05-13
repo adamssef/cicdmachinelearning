@@ -13,6 +13,15 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\TranslatableInterface;
 use Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList;
 
+
+/** Debug function */
+function printtf($content) {
+  $myfile = fopen("./debug.txt", "a") or die("Unable to open file!");
+  $txt = var_export($content, true);
+  fwrite($myfile, "\n". $txt);
+  fclose($myfile);
+}
+
 /**
  * Sanitize cookie.
  */
