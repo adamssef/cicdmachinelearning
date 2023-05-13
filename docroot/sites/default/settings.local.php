@@ -46,6 +46,9 @@ $config['system.performance']['js']['preprocess'] = FALSE;
 // in a configuration split.
 // reference: https://docs.acquia.com/blt/developer/config-split/
 $settings['cache']['bins']['discovery'] = 'cache.backend.null';
+// Disable caching.
+$settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 
 // Memcache config.
 /*
