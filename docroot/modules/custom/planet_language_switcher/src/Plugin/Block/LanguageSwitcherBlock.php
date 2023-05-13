@@ -83,41 +83,58 @@ class LanguageSwitcherBlock extends BlockBase implements ContainerFactoryPluginI
   /**
    * {@inheritdoc}
    */
+  public function pretty_lang_name($id):string {
+    $lang_dict = array(
+      "en" => "Global",
+      "fr" => "France",
+      "it" => "Italia",
+      "de" => "Deutschland",
+      "es" => "España"
+    );
+    $name = $this->languageManager->getLanguageName($id);
+    return $lang_dict[$id] . " (" . $name . ")";
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function build(): array {
+
+    /**
+     * Array to be updated every time we add a new language
+     */
+    $base_path = \Drupal::request()->getBasePath();
     $languages = $this->languageManager->getLanguages();
-    $currentLangCode = $this->languageManager->getCurrentLanguage()->getId();
+    $current_lang_id = $this->languageManager->getCurrentLanguage()->getId();
 
-    $links = [];
-    foreach ($languages as $lid => $language) {
-      $node = $this->routeMatch->getParameter('node');
-      if ($node instanceof NodeInterface) {
-        $nodePath = $this->aliasManager->getAliasByPath('/node/' . $node->id());
-        $nativeLanguage = $this->languageManager->getNativeLanguages()[$lid];
-
-        // Add the url with language.
-        $links[$lid]['url'] = '/' . $lid . $nodePath;
-        if ($lid === 'en') {
-          $links[$lid]['url'] = $nodePath;
-        }
-
-        $links[$lid]['name'] = $language->getName();
-        $links[$lid]['native_lang_name'] = $this->t($nativeLanguage->getName());
-      }
+    $lang_url_list = [];
+    foreach ($languages as $language) {
+      // Get the current URL in each language.
+      $url = \Drupal\Core\Url::fromRoute('<current>')
+        ->setOption('language', $language)->toString();
+    
+      $lang_url_list[$language->getId()] = array(
+        "url" => $url,
+        "name" => $this->pretty_lang_name($language->getId()),
+        "flag" => $base_path . '/resources/flag-icons/'. $language->getId() .'.svg'
+      );
     }
 
-    // Remove current language from dropdown list.
-    unset($links[$currentLangCode]);
+    $current_lang = $lang_url_list[$current_lang_id];
+    unset($lang_url_list[$current_lang_id]);
 
-    return [
+
+    $lang_arr = [
       '#theme' => 'language_switcher',
       '#data' => [
-        'links' => $links,
-        'current_language' => $currentLangCode,
+        'links' => $lang_url_list,
+        'current_language' => $current_lang,
       ],
       '#attached' => [
         'library' => ['planet_language_switcher/language-switcher'],
       ],
     ];
+    return $lang_arr;
   }
 
   /**
