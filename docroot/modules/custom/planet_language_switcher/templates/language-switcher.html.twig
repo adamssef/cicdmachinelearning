@@ -20,7 +20,7 @@
         <div class="language-switcher__drop-down__wrapper">
           <ul class="language-switcher__dropdown-menu" role="listbox">
             {% for key, item in data.links %}
-              <li class="language-switcher__item" role="option" tabindex="0">
+              <li class="language-switcher__item {{ not item.active ? ' disabled' }}" role="option" tabindex="0">
                 <a class="language-switcher__link" href="{{ item.url }}"><img class="language-switcher__flag" src="{{ item.flag }}"><span>{{ item.name }}</span></a>
               </li>
             {% endfor %}
