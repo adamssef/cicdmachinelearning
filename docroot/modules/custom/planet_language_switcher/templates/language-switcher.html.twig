@@ -10,16 +10,18 @@
       tabindex="0">
       <div class="language-switcher__button-wrapper">
         <div class="language-switcher__button" id="language-switcher-button" role="option">
-          <span class="custom-language__country">{{ data.current_language }}</span>
+          <div class="custom-language__country language-switcher__item">
+            <img class="language-switcher__flag" src="{{ data.current_language.flag }}"><span>{{ data.current_language.name }}</span>
+          </div>
         </div>
       </div>
 
       <div class="language-switcher__drop-down">
         <div class="language-switcher__drop-down__wrapper">
-          <ul class="dropdown-menu" role="listbox">
+          <ul class="language-switcher__dropdown-menu" role="listbox">
             {% for key, item in data.links %}
-              <li class="language-switcher__item" role="option" tabindex="0">
-                <a class="language-switcher__link" href="{{ item.url }}">{{ item.name }} ({{ item.native_lang_name }})</a>
+              <li class="language-switcher__item {{ not item.active ? ' disabled' }}" role="option" tabindex="0">
+                <a class="language-switcher__link" href="{{ item.url }}"><img class="language-switcher__flag" src="{{ item.flag }}"><span>{{ item.name }}</span></a>
               </li>
             {% endfor %}
           </ul>
