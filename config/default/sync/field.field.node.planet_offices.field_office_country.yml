@@ -1,0 +1,29 @@
+uuid: 8604f89e-a022-4844-abde-a3fced9f13de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_office_country
+    - node.type.planet_offices
+    - taxonomy.vocabulary.planet_offices_countries
+id: node.planet_offices.field_office_country
+field_name: field_office_country
+entity_type: node
+bundle: planet_offices
+label: 'Office Country'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      planet_offices_countries: planet_offices_countries
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

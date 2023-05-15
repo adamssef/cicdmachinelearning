@@ -1,0 +1,36 @@
+uuid: fd1fabb3-c35f-492a-8878-c7d11f60691d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.planet_offices.field_address_1
+    - field.field.node.planet_offices.field_address_2
+    - field.field.node.planet_offices.field_address_3
+    - field.field.node.planet_offices.field_city
+    - field.field.node.planet_offices.field_county_state
+    - field.field.node.planet_offices.field_office_country
+    - field.field.node.planet_offices.field_postcode
+    - node.type.planet_offices
+  module:
+    - user
+id: node.planet_offices.teaser
+targetEntityType: node
+bundle: planet_offices
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_address_1: true
+  field_address_2: true
+  field_address_3: true
+  field_city: true
+  field_county_state: true
+  field_office_country: true
+  field_postcode: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,29 @@
+uuid: 2ae69578-f8bb-4fc6-a6cc-be09540e2b89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_office_region
+    - taxonomy.vocabulary.planet_offices_countries
+    - taxonomy.vocabulary.planet_offices_regions
+id: taxonomy_term.planet_offices_countries.field_office_region
+field_name: field_office_region
+entity_type: taxonomy_term
+bundle: planet_offices_countries
+label: Region
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      planet_offices_regions: planet_offices_regions
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
