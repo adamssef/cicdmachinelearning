@@ -1,0 +1,8 @@
+uuid: 0f755983-49fb-4f17-aa40-d39e6a3754d6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Planet Offices Regions'
+vid: planet_offices_regions
+description: 'Regions used for Companies'
+weight: 0
