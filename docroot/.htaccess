@@ -203,3 +203,12 @@ AddEncoding gzip svgz
   Order deny,allow
   Deny from all
 </FilesMatch>
+
+
+<IfModule mod_rewrite.c>
+	RewriteCond %{REQUEST_URI} ^/sites/default/files/2022-12/planet-nrf-2023-brochure.pdf
+	RewriteCond %{QUERY_STRING} utm_campaign=rtl-ab-nrf_2023
+	RewriteRule (.*) /ls-retail-houston?utm_campaign=ptr-ab-LSretailUS23-event&utm_medium=event&utm_source=LS-Retail [R=301,L]
+</IfModule>
+
+Redirect 301 /sites/default/files/2022-12/planet-nrf-2023-brochure.pdf https://www.weareplanet.com/ls-retail-houston?utm_campaign=ptr-ab-LSretailUS23-event&utm_medium=event&utm_source=LS-Retail
