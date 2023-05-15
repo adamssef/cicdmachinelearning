@@ -1,0 +1,19 @@
+uuid: 1a6c3e0a-c1f8-4ee4-966e-b13d1acaa8cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_county_state
+    - node.type.planet_offices
+id: node.planet_offices.field_county_state
+field_name: field_county_state
+entity_type: node
+bundle: planet_offices
+label: 'County / State'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

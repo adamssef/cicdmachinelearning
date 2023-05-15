@@ -1,0 +1,11 @@
+uuid: 6be5288b-6452-44a1-aefe-62aa7c05c045
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.planet_offices
+id: node.planet_offices
+target_entity_type_id: node
+target_bundle: planet_offices
+default_langcode: site_default
+language_alterable: false

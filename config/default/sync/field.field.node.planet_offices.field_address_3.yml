@@ -1,0 +1,19 @@
+uuid: 4c75accb-0177-469d-b22e-8dc3f0ef2d4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address_3
+    - node.type.planet_offices
+id: node.planet_offices.field_address_3
+field_name: field_address_3
+entity_type: node
+bundle: planet_offices
+label: 'Address 3'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,8 @@
+uuid: 49f30848-0ad7-494d-953a-41b6e84f645e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Planet Offices Countries'
+vid: planet_offices_countries
+description: ''
+weight: 0
