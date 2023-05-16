@@ -30,7 +30,6 @@ class OfficesForm extends FormBase
     ];
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties($properties);
     $term = reset($terms);
-    log_to_file(var_export($term, true));
     return !empty($term) ? $term->id() : 0;
   }
 
@@ -58,8 +57,6 @@ class OfficesForm extends FormBase
       'field_postcode' => preg_replace('/[^\x20-\x7E]/', "", $postcode),
     ];
 
-
-    log_to_file(var_export($to_create, true));
 
     $node = \Drupal\node\Entity\Node::create($to_create);
 
@@ -103,7 +100,6 @@ class OfficesForm extends FormBase
 
       // Parse the CSV file.
       $csv_contents = file_get_contents($file->getFileUri());
-      log_to_file($file->getFileUri());
 
       // Delete existing companies
       $nodes = \Drupal::entityTypeManager()
