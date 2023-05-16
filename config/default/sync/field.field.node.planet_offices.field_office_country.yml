@@ -1,4 +1,4 @@
-uuid: 8604f89e-a022-4844-abde-a3fced9f13de
+uuid: 3e6ece4a-f223-4b92-959f-cee99dcac517
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ entity_type: node
 bundle: planet_offices
 label: 'Office Country'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

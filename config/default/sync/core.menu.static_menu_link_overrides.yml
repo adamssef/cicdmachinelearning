@@ -13,3 +13,9 @@ definitions:
     weight: -50
     expanded: false
     enabled: false
+  planet_config__admin_planet_pardot:
+    weight: 1
+    menu_name: admin
+    parent: planet_config.admin_planet
+    expanded: false
+    enabled: true

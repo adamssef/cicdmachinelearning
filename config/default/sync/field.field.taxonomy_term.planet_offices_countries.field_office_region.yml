@@ -1,4 +1,4 @@
-uuid: 2ae69578-f8bb-4fc6-a6cc-be09540e2b89
+uuid: 4b201e58-b688-459e-b60f-90ee6823ac80
 langcode: en
 status: true
 dependencies:
@@ -10,9 +10,9 @@ id: taxonomy_term.planet_offices_countries.field_office_region
 field_name: field_office_region
 entity_type: taxonomy_term
 bundle: planet_offices_countries
-label: Region
+label: 'Office Region'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
