@@ -140,8 +140,8 @@ class LanguageSwitcherBlock extends BlockBase implements ContainerFactoryPluginI
                 $url = \Drupal\Core\Url::fromRoute('<current>')
                     ->setOption('language', $default_language)->toString();
             }
-
-            $url = $is_frontpage ? "/" . $language->getId() : $url;
+            $homepage_url = $language->getId() == "en" ? "/" : "/" . $language->getId();
+            $url = $is_frontpage ? $homepage_url : $url;
             $name = $this->pretty_lang_name($language->getId());
             $flag = $base_path . '/resources/flag-icons/' . $language->getId() . '.svg';
 
