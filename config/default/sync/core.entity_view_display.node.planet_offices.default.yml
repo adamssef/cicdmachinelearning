@@ -1,4 +1,4 @@
-uuid: 46f9bc7d-2f9b-4298-a53e-be4e12bf9742
+uuid: 93c43681-1f25-4fc1-ae8f-f591f9fc8654
 langcode: en
 status: true
 dependencies:
@@ -48,7 +48,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 104
+    weight: 105
     region: content
   field_county_state:
     type: string
@@ -56,7 +56,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 105
+    weight: 106
     region: content
   field_office_country:
     type: entity_reference_label
@@ -64,7 +64,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 107
+    weight: 104
     region: content
   field_postcode:
     type: string
@@ -72,7 +72,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 106
+    weight: 107
     region: content
   links:
     settings: {  }

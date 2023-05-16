@@ -1,8 +1,8 @@
-uuid: 0f755983-49fb-4f17-aa40-d39e6a3754d6
+uuid: e1c2ffca-8d9d-4899-852a-b0c37077b483
 langcode: en
 status: true
 dependencies: {  }
 name: 'Planet Offices Regions'
 vid: planet_offices_regions
-description: 'Regions used for Companies'
+description: ''
 weight: 0
