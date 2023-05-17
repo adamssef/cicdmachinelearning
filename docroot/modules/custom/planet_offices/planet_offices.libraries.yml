@@ -1,0 +1,11 @@
+planet-offices:
+  version: VERSION
+  js:
+    js/planet-offices.js: {}
+  css:
+    theme:
+      css/planet-offices.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once

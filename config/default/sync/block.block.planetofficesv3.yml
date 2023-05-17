@@ -1,0 +1,25 @@
+uuid: 2447dd2c-171e-4615-884a-963f19618a53
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion
+    # - planet_offices
+  theme:
+    - cohesion_theme
+id: planetofficesv3
+theme: cohesion_theme
+region: dx8_hidden
+weight: 0
+provider: null
+plugin: planet_offices_block
+settings:
+  id: planet_offices_block
+  label: 'Planet Offices V3'
+  label_display: '0'
+  provider: planet_offices
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: false

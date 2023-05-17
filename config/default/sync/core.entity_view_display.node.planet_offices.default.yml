@@ -1,0 +1,84 @@
+uuid: 93c43681-1f25-4fc1-ae8f-f591f9fc8654
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.planet_offices.field_address_1
+    - field.field.node.planet_offices.field_address_2
+    - field.field.node.planet_offices.field_address_3
+    - field.field.node.planet_offices.field_city
+    - field.field.node.planet_offices.field_county_state
+    - field.field.node.planet_offices.field_office_country
+    - field.field.node.planet_offices.field_postcode
+    - node.type.planet_offices
+  module:
+    - user
+id: node.planet_offices.default
+targetEntityType: node
+bundle: planet_offices
+mode: default
+content:
+  field_address_1:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_address_2:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_address_3:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_city:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_county_state:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_office_country:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_postcode:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
