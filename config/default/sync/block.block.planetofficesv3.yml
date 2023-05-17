@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - cohesion
-    - planet_offices
+    # - planet_offices
   theme:
     - cohesion_theme
 id: planetofficesv3
