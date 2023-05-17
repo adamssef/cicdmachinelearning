@@ -1,0 +1,11 @@
+uuid: 8a5e89ab-8f78-4854-b1b5-40e2c7ed2431
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.planet_offices_regions
+id: taxonomy_term.planet_offices_regions
+target_entity_type_id: taxonomy_term
+target_bundle: planet_offices_regions
+default_langcode: site_default
+language_alterable: false

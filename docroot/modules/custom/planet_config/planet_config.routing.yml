@@ -15,3 +15,12 @@ planet_config.admin_planet_pardot:
     _permission: 'access administration pages'
   options:
     _admin_route: true
+planet_config.admin_planet_offices:
+  path: '/admin/planet/offices'
+  defaults:
+    _controller: '\Drupal\planet_config\Controller\OfficesController::content'
+    _title: 'Offices Configuration'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: true

@@ -1,0 +1,5 @@
+name: Planet Offices
+description: "Provides a block with planet offices."
+type: module
+package: planet
+core_version_requirement: ^8 || ^9
