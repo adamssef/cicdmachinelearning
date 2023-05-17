@@ -1,0 +1,57 @@
+<div id="planet-offices" class="planet-offices-wrapper">
+  <div class="coh-container coh-style-world-regions-filter coh-container-boxed">
+    <ul class="coh-view-filter coh-style-world-regions-filter">
+      {% for key, item in data.regions %}
+        <li data-id="{{ item.id }}" class="region ssa-field_region_target_id-{{ item.id }}">
+          <a href="#">{{ item.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="coh-container coh-style-region-countries coh-container-boxed">
+    <ul class="coh-view-filter">
+      {% for key, item in data.countries %}
+        <li data-id="{{ item.id }}" class="country region-id region-id-{{ item.region_id }} ssa-field_country_target_id-{{ item.id }}">
+          <a href="#">{{ item.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="coh-container coh-style-region-offices coh-container-boxed">
+    <div class="offices-list">
+      {% for key, item in data.offices %}
+        <div class="coh-view-content-item office-id-{{item.node_id}} region-id region-id-{{item.region_id}} country-id country-id-{{item.country_id}}">
+          <div class="views-field views-field-title coh-style-title">
+            <span class="field-content">{{ item.title }}</span>
+          </div>
+          <div class="views-field views-field-fieldset-1">
+            <span class="field-content">
+              <div class="coh-view-content-info">
+                <div class="views-field views-field-field-address coh-item-content coh-item-address">
+                  <h5 class="views-label views-label-field-address coh-style-heading-5-planet">{{ 'Company Address'|t }}</h5>
+                 <div class="field-content">
+                    {% if item.address_1 is not null %}
+                      {{ item.address_1 }}<br>
+                    {% endif %}
+                    {% if item.address_2 is not null %}
+                      {{ item.address_2 }}<br>
+                    {% endif %}
+                    {% if item.address_3 is not null %}
+                      {{ item.address_3 }}<br>
+                    {% endif %}
+                    {% if item.city is not null and item.county_state is not null %}
+                      {{ item.city }}, {{ item.county_state }}<br>
+                    {% endif %}
+                    {% if item.postcode is not null %}
+                      {{ item.postcode }}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

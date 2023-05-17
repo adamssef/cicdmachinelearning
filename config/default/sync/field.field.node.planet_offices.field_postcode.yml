@@ -1,0 +1,19 @@
+uuid: 216f91aa-c53d-4296-8984-e54db3e3853f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_postcode
+    - node.type.planet_offices
+id: node.planet_offices.field_postcode
+field_name: field_postcode
+entity_type: node
+bundle: planet_offices
+label: Postcode
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
