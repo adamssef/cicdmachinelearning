@@ -4,12 +4,12 @@ namespace Drupal\planet_config\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-function log_to_file($text)
-{
-  $f = fopen('my_log.txt', 'a');
-  fwrite($f, date('Ymd H:i:s - ') . $text . "\n");
-  fclose($f);
-}
+// function log_to_file($text)
+// {
+//   $f = fopen('my_log.txt', 'a');
+//   fwrite($f, date('Ymd H:i:s - ') . $text . "\n");
+//   fclose($f);
+// }
 
 class OfficesForm extends FormBase
 {
