@@ -1,0 +1,11 @@
+.offices-list .coh-view-content-item {
+  padding-top: 2.5rem;
+  padding-right: 3.75rem;
+  padding-bottom: 2.5rem;
+  padding-left: 3.75rem;
+  border-bottom-width: 0.0625rem;
+  border-bottom-style: solid;
+}
+.coh-container.coh-style-region-countries.coh-container-boxed {
+  margin-bottom: 0 !important;
+}
