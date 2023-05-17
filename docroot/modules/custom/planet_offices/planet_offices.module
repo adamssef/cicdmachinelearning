@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Custom hooks functions for the planet_offices module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function planet_offices_theme() {
+  return [
+    'planet_offices' => [
+      'variables' => ['data' => []],
+    ],
+  ];
+}
