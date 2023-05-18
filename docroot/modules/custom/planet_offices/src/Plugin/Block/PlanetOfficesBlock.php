@@ -17,43 +17,38 @@ use Drupal\taxonomy\Entity\Term;
  */
 
 class PlanetOfficesBlock extends BlockBase {
-
   public function getTranslatedRegions(): array {
     $vid = 'planet_offices_regions';
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
 
-    $translatedRegions = [];
+    $regions = [];
     foreach ($terms as $term) {
-      $term_entity = Term::load($term->tid);
-      $translatedTerm = $term_entity->getTranslation(\Drupal::languageManager()->getCurrentLanguage()->getId());
-      $translatedRegions[] = [
-        'id' => $translatedTerm->id(),
-        'name' => $translatedTerm->getName(),
-      ];
+        $regions[] = [
+            'id' => $term->tid,
+            'name' => $term->name,
+        ];
     }
 
-    return $translatedRegions;
-  }
-  
-  public function getTranslatedCountries(): array {
+    return $regions;
+}
+
+public function getTranslatedCountries(): array {
     $vid = 'planet_offices_countries';
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
-  
-    $translatedCountries = [];
-    foreach ($terms as $term) {
-      $term_entity = Term::load($term->tid);
-      $translatedTerm = $term_entity->getTranslation(\Drupal::languageManager()->getCurrentLanguage()->getId());
-      $region_id = $translatedTerm->get('field_office_region')->target_id;
-      $translatedCountries[] = [
-        'id' => $translatedTerm->id(),
-        'name' => $translatedTerm->getName(),
-        'region_id' => $region_id,
-      ];
-    }
-  
-    return $translatedCountries;
-  }
 
+    $countries = [];
+    foreach ($terms as $term) {
+        $term_entity = Term::load($term->tid);
+        $region_id = $term_entity->get('field_office_region')->target_id;
+        $countries[] = [
+            'id' => $term->tid,
+            'name' => $term->name,
+            'region_id' => $region_id,
+        ];
+    }
+
+    return $countries;
+}
   function getOffices()
     {
         $query = \Drupal::entityQuery('node')
