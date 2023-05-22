@@ -43,7 +43,7 @@ class OfficesForm extends FormBase
     $county,
     $postcode
   ) {
-    $title = preg_replace('/[^\x20-\x7E]/', '', $country . " - " . $address_1);
+    $title = preg_replace('/[^\x20-\x7E]/', '', $country . " - " . $city);
 
     $to_create = [
       'type' => 'planet_offices',

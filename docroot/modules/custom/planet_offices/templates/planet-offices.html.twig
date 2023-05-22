@@ -28,7 +28,7 @@
             <span class="field-content">
               <div class="coh-view-content-info">
                 <div class="views-field views-field-field-address coh-item-content coh-item-address">
-                  <h5 class="views-label views-label-field-address coh-style-heading-5-planet">{{ 'Company Address'|t }}</h5>
+                  <h5 class="views-label views-label-field-address coh-style-heading-5-planet">{{ 'Address'|t }}</h5>
                  <div class="field-content">
                     {% if item.address_1 is not null %}
                       {{ item.address_1 }}<br>
@@ -39,12 +39,15 @@
                     {% if item.address_3 is not null %}
                       {{ item.address_3 }}<br>
                     {% endif %}
-                    {% if item.city is not null and item.county_state is not null %}
-                      {{ item.city }}, {{ item.county_state }}<br>
+                    {% if item.county_state is not null %}
+                      {{ item.county_state }}<br>
                     {% endif %}
                     {% if item.postcode is not null %}
-                      {{ item.postcode }}
+                    <span style="display: inline-block">{{ item.postcode }}</span>
                     {% endif %}
+                     {% if item.city is not null %}
+                      <span style="display: inline-block">- {{ item.city }}</span><br>
+                    {% endif %} 
                   </div>
                 </div>
               </div>
