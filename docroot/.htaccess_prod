@@ -181,6 +181,16 @@ AddEncoding gzip svgz
   </IfModule>
 </IfModule>
 
+<IfModule mod_rewrite.c>
+
+  # Redirect URLs starting with "index.php/" to the correct address with a 301 redirect:
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^index.php/$ https://%{HTTP_HOST}/ [R=301,L]
+
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^index.php/(.*) https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
 # Various header fixes.
 <IfModule mod_headers.c>
   # Disable content sniffing, since it's an attack vector.
