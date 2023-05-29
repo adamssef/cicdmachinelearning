@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_logo
     - field.storage.node.field_logo_media
     - field.storage.node.field_main_image_media
     - field.storage.node.field_pre_heading
@@ -12,6 +13,7 @@ dependencies:
     - taxonomy.vocabulary.company_sectors
   module:
     - cohesion
+    - image
     - media_thumbnail_url_formatter
     - node
     - taxonomy
@@ -588,6 +590,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_logo'
         - 'config:field.storage.node.field_pre_heading'
         - 'config:field.storage.node.field_summary'
         - 'config:field.storage.node.field_tags'
