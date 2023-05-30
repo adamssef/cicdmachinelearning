@@ -1,0 +1,23 @@
+uuid: f5adb3b9-c895-44dd-9b07-1b719a656c15
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+label: 'IT Lang Context'
+name: it_lang_context
+group: Language
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  language:
+    id: language
+    negate: false
+    uuid: 295a1e0f-bfd0-4931-b939-ded481dbe2de
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
+    langcodes:
+      it: it
+reactions: {  }
+weight: 0
