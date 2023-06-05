@@ -75,3 +75,35 @@ ul.language-switcher__dropdown-menu {
 .language-switcher__select-menu {
   width: 100%;
 }
+
+/** Edit button toolbar */
+a[href^="/node/"].toolbar-icon-edit.toolbar-item {
+  background: white;
+  color: #333 !important;
+}
+
+/** Modal dialog */
+.ui-dialog-titlebar.ui-corner-all.ui-widget-header.ui-helper-clearfix {
+  background: transparent;
+  border: 0;
+}
+.ui-dialog-title {
+  font-family: 'TT Commons';
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+}
+.ui-dialog .ui-dialog-content {
+  font-family: 'TT Commons';
+  font-size: 1.2rem;
+}
+.webform-confirmation-modal {
+  border-left: 0.45rem solid #ff0096 !important;
+  border-radius: 0 !important;
+  padding: 2rem;
+  box-shadow: 0px 0px 2rem rgba(0,0,0,0.2);
+}
+.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+  border: 0;
+  font-size: 1rem;
+}
