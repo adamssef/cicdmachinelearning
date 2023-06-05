@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f14e35df528cdfcaa3343aff457e3cdc",
+    "content-hash": "e8684ada4c6ec36ba1915aef39085040",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -2474,6 +2474,52 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/captcha",
                 "issues": "https://www.drupal.org/project/issues/captcha"
+            }
+        },
+        {
+            "name": "drupal/chatgpt_plugin",
+            "version": "2.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/chatgpt_plugin.git",
+                "reference": "2.1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/chatgpt_plugin-2.1.3.zip",
+                "reference": "2.1.3",
+                "shasum": "d32236089fa7a0e1cbfc55fb1c9d08fd56192f41"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.3",
+                    "datestamp": "1684084214",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Anup Sinha (anupsinha)",
+                    "homepage": "https://www.drupal.org/u/anupsinha",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "This module will integrate OpenAI ChatGPT with our Drupal system.",
+            "homepage": "https://www.drupal.org/project/chatgpt_plugin",
+            "support": {
+                "source": "https://git.drupalcode.org/project/chatgpt_plugin",
+                "issues": "https://www.drupal.org/project/issues/chatgpt_plugin"
             }
         },
         {
@@ -6832,6 +6878,50 @@
             "homepage": "https://www.drupal.org/project/token",
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
+            }
+        },
+        {
+            "name": "drupal/toolbar_edit_page_button",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/toolbar_edit_page_button.git",
+                "reference": "1.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/toolbar_edit_page_button-1.0.3.zip",
+                "reference": "1.0.3",
+                "shasum": "78f8ac5d75169a334a6490191781af0764477340"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.3",
+                    "datestamp": "1684311732",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "acke",
+                    "homepage": "https://www.drupal.org/user/765764"
+                }
+            ],
+            "description": "Adds a link to the toolbar to edit the current node.",
+            "homepage": "https://www.drupal.org/project/toolbar_edit_page_button",
+            "support": {
+                "source": "https://git.drupalcode.org/project/toolbar_edit_page_button"
             }
         },
         {
