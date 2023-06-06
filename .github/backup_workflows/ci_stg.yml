@@ -81,6 +81,41 @@ jobs:
           issue-title: "Deploying to Stage"
           issue-body: "Please approve once you finished the site studio package deploy (yes / no)."
           minimum-approvals: 1
+
+      # - name: Remove before images from reports folder (rm images)
+      #   run: rm ${{ github.workspace }}/reports/*.png
+      # - name: Execute after tests (robot)
+      #   uses: joonvena/robotframework-docker-action@v1.0
+      #   env:
+      #     BROWSER: chrome
+      #     ROBOT_TESTS_DIR: ${{ github.workspace }}/robot_tests
+      #     ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
+      # - name: Upload after test results (artifacts)
+      #   uses: actions/upload-artifact@v1
+      #   if: always()
+      #   with:
+      #     name: after
+      #     path: ${{ github.workspace }}/reports
+      # - name: Copy after images to image-diff (cp after images)
+      #   run: cp ${{ github.workspace }}/reports/*.png ${{ github.workspace }}/docroot/image-diff/images/after/
+      # - name: Show files from after folder (ls6)
+      #   run: cd ${{ github.workspace }}/docroot/image-diff/images/after/ && ls -al
+      # - name: Run diff images
+      #   run: cd ${{ github.workspace }}/docroot/image-diff/images/ && ./diff.sh
+      # - name: Show files from diff folder (ls7)
+      #   run: cd ${{ github.workspace }}/docroot/image-diff/images/diff/ && ls -al
+
+      # - name: Remove after images from reports folder (rm images)
+      #   run: rm ${{ github.workspace }}/reports/*.png
+      # - name: Copy diff images to reports (cp report images)
+      #   run: cp ${{ github.workspace }}/docroot/image-diff/images/diff/*.png ${{ github.workspace }}/reports/
+      # - name: Upload diff test results (artifacts)
+      #   uses: actions/upload-artifact@v1
+      #   if: always()
+      #   with:
+      #     name: diff
+      #     path: ${{ github.workspace }}/reports
+
       - name: Remove docroot old files
         run: cd planetpayment && rm -rf docroot
       - name: copy docroot files
