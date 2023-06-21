@@ -135,6 +135,7 @@ module:
   toolbar: 0
   toolbar_edit_page_button: 0
   tour: 0
+  trash: 0
   typed_data: 0
   ultimate_cron: 0
   update: 0
