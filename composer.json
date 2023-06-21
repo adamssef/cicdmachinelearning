@@ -77,6 +77,7 @@
     "drupal/site_studio_webform": "^1.1",
     "drupal/smtp": "^1.2",
     "drupal/toolbar_edit_page_button": "^1.0",
+    "drupal/trash": "^3.0@beta",
     "drupal/ultimate_cron": "^2.0@alpha",
     "drupal/views_autosubmit": "^1.4",
     "drupal/views_fieldsets": "^3.4",
