@@ -1,0 +1,21 @@
+uuid: 9ad4e6d1-3dad-4962-80aa-7706379c195c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'Prefooter Visibility'
+name: prefooter_visibility
+group: null
+description: 'Where the prefooter must be viewed'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 3270171c-6fa8-476f-ac88-5e1ffa6fecbe
+    context_mapping: {  }
+    pages: /node/521
+reactions: {  }
+weight: 0

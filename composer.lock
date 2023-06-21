@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8684ada4c6ec36ba1915aef39085040",
+    "content-hash": "0c9d92a4a77aba1d239f253660c93402",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -6922,6 +6922,66 @@
             "homepage": "https://www.drupal.org/project/toolbar_edit_page_button",
             "support": {
                 "source": "https://git.drupalcode.org/project/toolbar_edit_page_button"
+            }
+        },
+        {
+            "name": "drupal/trash",
+            "version": "3.0.0-beta4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/trash.git",
+                "reference": "3.0.0-beta4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/trash-3.0.0-beta4.zip",
+                "reference": "3.0.0-beta4",
+                "shasum": "d3ce7f56ce5921c849515be9e181326594980f01"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.0-beta4",
+                    "datestamp": "1687332704",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "amateescu",
+                    "homepage": "https://www.drupal.org/user/729614"
+                },
+                {
+                    "name": "dixon_",
+                    "homepage": "https://www.drupal.org/user/239911"
+                },
+                {
+                    "name": "jeqq",
+                    "homepage": "https://www.drupal.org/user/1427908"
+                },
+                {
+                    "name": "rötzi",
+                    "homepage": "https://www.drupal.org/user/73064"
+                },
+                {
+                    "name": "timmillwood",
+                    "homepage": "https://www.drupal.org/user/227849"
+                }
+            ],
+            "description": "Provides the ability to soft-delete content entities.",
+            "homepage": "https://www.drupal.org/project/trash",
+            "support": {
+                "source": "https://git.drupalcode.org/project/trash"
             }
         },
         {
@@ -18334,6 +18394,7 @@
         "drupal/hidden_language": 10,
         "drupal/node_revision_delete": 5,
         "drupal/pardot": 10,
+        "drupal/trash": 10,
         "drupal/ultimate_cron": 15,
         "drupal/wb_countries": 20
     },
@@ -18344,5 +18405,5 @@
         "ext-json": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
