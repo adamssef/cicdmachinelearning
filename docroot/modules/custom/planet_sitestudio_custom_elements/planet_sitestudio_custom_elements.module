@@ -94,6 +94,18 @@ function planet_sitestudio_custom_elements_theme($existing, $type, $theme, $path
       ],
       'render element' => 'children',
     ],
+    'case_studies_more_reads_view_block' => [
+      'template' => 'case-studies-more-reads-view-block',
+      'variables' => [
+        'elementSettings' => NULL,
+        'elementMarkup' => NULL,
+        'elementContext' => NULL,
+        'elementClass' => NULL,
+        'filteredData' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+ 
   ];
 }
 
