@@ -19,9 +19,10 @@
           // Create youtube api element.
           let tag = document.createElement('script');
           tag.src = "https://www.youtube.com/iframe_api";
+          var a = tag.setAttribute('data-ot-ignore','');
           let firstScriptTag = document.getElementsByTagName('script')[0];
           firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
+          //console.log(tag);
           let playerInfoList = [];
 
           $(".tabTeamYoutube, .textAndVideoYoutube").each(function (index) {
@@ -86,8 +87,7 @@
               height: '100%',
               width: '100%',
               videoId: playerInfo.video_id,
-              host: 'https://www.youtube-nocookie.com',
-              playerVars: { origin: window.location.host, 'autoplay': 1, 'playsinline': 1, 'rel': 0},
+              playerVars: {'autoplay': 1, 'playsinline': 1, 'rel': 0},
               events: {
                 'onReady': onPlayerReady
               }
