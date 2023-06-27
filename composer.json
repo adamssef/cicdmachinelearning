@@ -85,6 +85,7 @@
     "drupal/webform": "^6.1",
     "drupal/webform_pardot": "^2.0",
     "drush/drush": "^10.0.0",
+    "enyo/dropzone": "^4.2",
     "erusev/parsedown": "^1.7",
     "highlightjs/highlightjs": "^9.7",
     "mglaman/phpstan-drupal": "0.12.12",
@@ -228,6 +229,19 @@
           }
       }
     },
+    "dropzone": {
+      "type": "package",
+      "package": {
+          "name": "enyo/dropzone",
+          "version": "4.2.0",
+          "type": "drupal-library",
+          "source": {
+              "url": "https://github.com/enyo/dropzone",
+              "type": "git",
+              "reference": "origin/master"
+          }
+      }
+  },
     "npm-assets": {
       "type": "composer",
       "url": "https://asset-packagist.org"
