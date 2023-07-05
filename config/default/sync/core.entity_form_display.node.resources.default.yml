@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.resources.field_display
     - field.field.node.resources.field_field_resources_metatag
     - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_pre_heading_3
@@ -36,6 +37,13 @@ content:
     weight: 15
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_display:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_field_resources_metatag:
     type: metatag_firehose
