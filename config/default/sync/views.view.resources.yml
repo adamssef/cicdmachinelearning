@@ -246,16 +246,16 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        field_display_value:
-          id: field_display_value
-          table: node__field_display
-          field: field_display_value
+        field_hide_from_components_value:
+          id: field_hide_from_components_value
+          table: node__field_hide_from_components
+          field: field_hide_from_components_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: boolean
-          operator: '!='
-          value: '1'
+          plugin_id: string
+          operator: empty
+          value: ''
           group: 1
           exposed: false
           expose:
@@ -272,6 +272,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
