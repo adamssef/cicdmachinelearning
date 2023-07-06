@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.resources.field_field_resources_metatag
+    - field.field.node.resources.field_hide_from_components
     - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_pre_heading_3
     - field.field.node.resources.field_promoted_resource
@@ -38,6 +39,7 @@ content:
     region: content
 hidden:
   field_field_resources_metatag: true
+  field_hide_from_components: true
   field_layout_canvas: true
   field_pre_heading_3: true
   field_promoted_resource: true

@@ -1,0 +1,19 @@
+uuid: 7d98d3e3-d65b-405f-ba64-4d1d9851109c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_from_components
+    - node.type.resources
+id: node.resources.field_hide_from_components
+field_name: field_hide_from_components
+entity_type: node
+bundle: resources
+label: 'Hide from components'
+description: 'Type "hide" to hide this article from components (Resources Library, etc)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

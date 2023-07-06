@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.resources.field_field_resources_metatag
+    - field.field.node.resources.field_hide_from_components
     - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_pre_heading_3
     - field.field.node.resources.field_promoted_resource
@@ -44,6 +45,14 @@ content:
     settings:
       sidebar: true
       use_details: true
+    third_party_settings: {  }
+  field_hide_from_components:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_layout_canvas:
     type: cohesion_layout_builder_widget

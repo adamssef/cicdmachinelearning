@@ -144,6 +144,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_hide_from_components: true
   field_resources_template: true
   langcode: true
   search_api_excerpt: true
