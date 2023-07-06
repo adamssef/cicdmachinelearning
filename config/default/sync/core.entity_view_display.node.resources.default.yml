@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.resources.field_display
     - field.field.node.resources.field_field_resources_metatag
     - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_pre_heading_3
@@ -28,16 +27,6 @@ targetEntityType: node
 bundle: resources
 mode: default
 content:
-  field_display:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 14
-    region: content
   field_field_resources_metatag:
     type: metatag_empty_formatter
     label: above
@@ -155,6 +144,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_hide_from_components: true
   field_resources_template: true
   langcode: true
   search_api_excerpt: true
