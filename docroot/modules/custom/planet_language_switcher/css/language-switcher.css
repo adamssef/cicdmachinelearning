@@ -124,3 +124,25 @@ a.toolbar-icon.toolbar-icon-edit.toolbar-item {
 .plnt-button:hover {
   background-color:#ff0096
 }
+/** Menu */
+@media (min-width: 992px) {
+  .menu-level-1-li.has-children {
+    padding-right: 20px;
+    margin-right: 0
+  }
+  .menu-level-1-li.has-children {
+    background-image: url('/resources/icons/dropdown.svg');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: right center;
+  }
+}
+@media (max-width: 991px) {
+  .coh-container.cta-wrapper {
+    margin-top: 20px;
+  }
+}
+.cta-wrapper {
+  display: flex;
+  align-items: center;
+}
