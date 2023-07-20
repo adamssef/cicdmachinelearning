@@ -13,14 +13,18 @@
 
       if(window.innerWidth > 992) {
         $(".menu-level-1-li.has-children").on("click", function() {
+          $(".menu-level-1-li.has-children").removeClass("megamenu-opened");
           $(".menu-level-2-ul").hide();
+          $(this).addClass("megamenu-opened");
           $(this).find(".menu-level-2-ul").show();
         })
         $(document).on("click", function (e) {
+          
           // Check if the clicked element is not part of .menu-level-2-ul or .menu-level-1-li
           if (!$(e.target).closest(".menu-level-2-ul").length && !$(e.target).closest(".menu-level-1-li").length) {
             // If the clicked element is not part of .menu-level-2-ul or .menu-level-1-li, hide all .menu-level-2-ul elements
             $(".menu-level-2-ul").hide();
+            $(".menu-level-1-li.has-children").removeClass("megamenu-opened");
           }
         });
       }
