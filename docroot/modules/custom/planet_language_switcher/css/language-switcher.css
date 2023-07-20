@@ -139,6 +139,9 @@ a.toolbar-icon.toolbar-icon-edit.toolbar-item {
     background-size: 15px;
     background-position: right center;
   }
+  .megamenu-opened {
+    border-bottom: 2px solid #e00083;
+  }
 }
 @media (max-width: 991px) {
   .coh-container.cta-wrapper {
