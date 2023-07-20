@@ -126,6 +126,9 @@ a.toolbar-icon.toolbar-icon-edit.toolbar-item {
 }
 /** Menu */
 @media (min-width: 992px) {
+  .desktop-float-left {
+    float: left
+  }
   .menu-level-1-li.has-children {
     padding-right: 20px;
     margin-right: 0
@@ -140,6 +143,12 @@ a.toolbar-icon.toolbar-icon-edit.toolbar-item {
 @media (max-width: 991px) {
   .coh-container.cta-wrapper {
     margin-top: 20px;
+  }
+}
+@media(max-width: 1599px) {
+  .coh-container-fix {
+    padding-right: 4rem;
+    padding-left: 4rem;
   }
 }
 .cta-wrapper {
