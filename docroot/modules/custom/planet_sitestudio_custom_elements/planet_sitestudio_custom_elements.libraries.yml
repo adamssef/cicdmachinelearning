@@ -151,3 +151,6 @@ linkScrollTo:
 blogIndex:
   js:
     js/blogIndex.js: { }
+relatedProducts:
+  js:
+    js/relatedProducts.js: {}
