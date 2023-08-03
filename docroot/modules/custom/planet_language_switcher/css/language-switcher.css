@@ -107,3 +107,128 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   border: 0;
   font-size: 1rem;
 }
+/** Menu */
+@media (min-width: 992px) {
+  .desktop-float-left {
+    float: left
+  }
+  .menu-level-1-li.has-children {
+    padding-right: 20px;
+    margin-right: 0
+  }
+  .menu-level-1-li.has-children {
+    background-image: url('/resources/icons/dropdown.svg');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: right center;
+  }
+  .megamenu-opened {
+    border-bottom: 2px solid #e00083;
+  }
+}
+@media (max-width: 991px) {
+  .coh-container.cta-wrapper {
+    margin-top: 20px;
+  }
+}
+@media(max-width: 1599px) {
+  .coh-container-fix {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
+.cta-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.media-left {
+  flex-direction: row-reverse;
+}
+
+.content-centered {
+  max-width: 900px;
+  margin: 0 auto !important;
+}
+.slick-list {
+  padding: 16px 0;
+}
+
+.coh-style-primary-dark-atom- > input {
+  color: white;
+  font-weight: 600;
+  padding: 0 20px;
+}
+.coh-style-primary-dark-atom-:hover {
+  cursor: pointer;
+}
+
+
+.planSwitch,
+.planSwitch * {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.planSwitch {
+  display: block;
+  width: 100%;
+  max-width: 30em;
+  margin: 2em auto;
+  height: 3em;
+  border-radius: 5rem;
+  background: transparent;
+  position: relative;
+  border: 2px solid #e00083;
+}
+.planSwitch input {
+  display: none;
+}
+.planSwitch label {
+  width: 33.3333%;
+  float: left;
+  text-align: center;
+  height: 100%;
+  color: white;
+  position: relative;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  z-index: 3;
+  font-weight: 600;
+  line-height: 2.7rem;
+}
+.planSwitch input:checked + label {
+  color: #000
+}
+.indicator {
+  display: block;
+  width: calc(33.3333% + 4px);
+  height: calc(100% + 4px);
+  background: white;
+  border-radius: 3rem;
+  position: absolute;
+  top: -2px;
+  transition: left .2s ease-in-out;
+  z-index: 2;
+  margin-left: -2px;
+}
+
+.planSwitch input:first-of-type:checked ~ .indicator {
+  left: 0;
+}
+.planSwitch input:nth-of-type(2):checked ~ .indicator {
+  left: 33.3333%;
+}
+.planSwitch input:nth-of-type(3):checked ~ .indicator {
+  left: 66.6666%;
+}
+@media (min-width: 500px) {
+  .planSwitch {
+    font-size: 12pt;
+  }
+}
