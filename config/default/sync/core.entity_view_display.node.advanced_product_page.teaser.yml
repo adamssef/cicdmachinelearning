@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.advanced_product_page.body
     - field.field.node.advanced_product_page.field_app_layout_canvas
+    - field.field.node.advanced_product_page.field_basic_page_metatag
     - node.type.advanced_product_page
   module:
     - text
@@ -23,6 +24,11 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -30,5 +36,6 @@ content:
     region: content
 hidden:
   field_app_layout_canvas: true
+  field_basic_page_metatag: true
   langcode: true
   search_api_excerpt: true
