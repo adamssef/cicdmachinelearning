@@ -1,0 +1,41 @@
+uuid: a27128ad-8192-4115-b9c8-d5b5c8b92ad5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.advanced_product_page.body
+    - field.field.node.advanced_product_page.field_app_layout_canvas
+    - node.type.advanced_product_page
+  module:
+    - cohesion_elements
+    - text
+    - user
+id: node.advanced_product_page.default
+targetEntityType: node
+bundle: advanced_product_page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_app_layout_canvas:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

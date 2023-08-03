@@ -114,16 +114,9 @@ elements: |-
     '#title': 'Submit button(s)'
     '#attributes':
       class:
-        - coh-button-filled
-        - coh-button-dynamic
-        - coh-button-large
-        - coh-button-enable
-        - coh-button-light-mode
-        - coh-style-button-variants
-    '#submit__label': Submit
-    '#submit__attributes':
-      class:
         - coh-link
+        - coh-style-primary-dark-atom-
+    '#submit__label': Submit
   website_language:
     '#type': textfield
     '#title': 'Website language'
