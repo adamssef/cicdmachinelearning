@@ -1,0 +1,24 @@
+uuid: ae95c3ed-b203-4214-aea7-85c7c850895e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_layout_canvas
+    - node.type.advanced_product_page
+  module:
+    - cohesion_elements
+id: node.advanced_product_page.field_app_layout_canvas
+field_name: field_app_layout_canvas
+entity_type: node
+bundle: advanced_product_page
+label: 'Layout Canvas'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cohesion_layout'
+  handler_settings: {  }
+  access_elements: '0'
+field_type: cohesion_entity_reference_revisions
