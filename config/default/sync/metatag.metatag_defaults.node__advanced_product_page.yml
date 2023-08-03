@@ -1,0 +1,8 @@
+uuid: e7c736e3-efd3-4b3f-a965-f9a3c7329134
+langcode: en
+status: true
+dependencies: {  }
+id: node__advanced_product_page
+label: 'Content: Advanced Product Page'
+tags:
+  robots: noindex
