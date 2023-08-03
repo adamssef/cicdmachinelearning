@@ -1,0 +1,34 @@
+uuid: e5f91f59-e66e-4a2a-850b-a8aee6245fdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.advanced_product_page.body
+    - field.field.node.advanced_product_page.field_app_layout_canvas
+    - node.type.advanced_product_page
+  module:
+    - text
+    - user
+id: node.advanced_product_page.teaser
+targetEntityType: node
+bundle: advanced_product_page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_app_layout_canvas: true
+  langcode: true
+  search_api_excerpt: true

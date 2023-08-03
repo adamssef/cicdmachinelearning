@@ -1,0 +1,21 @@
+uuid: 98d5a3d7-3638-4d12-a9ea-40d3f6b1f396
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+      - secondary-planet
+      - sitemap
+    parent: 'main:'
+name: 'Advanced Product Page'
+type: advanced_product_page
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
