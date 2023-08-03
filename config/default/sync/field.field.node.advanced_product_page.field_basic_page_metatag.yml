@@ -1,0 +1,23 @@
+uuid: 4251f30f-f7c3-44f5-923b-5491ea92a42f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_basic_page_metatag
+    - node.type.advanced_product_page
+  module:
+    - metatag
+id: node.advanced_product_page.field_basic_page_metatag
+field_name: field_basic_page_metatag
+entity_type: node
+bundle: advanced_product_page
+label: Metatag
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:1:{s:6:"robots";s:7:"noindex";}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag
