@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.advanced_product_page
     - node.type.case_studies
     - node.type.e_book_
     - node.type.page
@@ -80,6 +81,7 @@ type_settings:
       weight: -2
   entity_types:
     node:
+      - advanced_product_page
       - case_studies
       - e_book_
       - page
