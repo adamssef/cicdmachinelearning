@@ -5,10 +5,13 @@ dependencies:
   config:
     - field.field.node.advanced_product_page.body
     - field.field.node.advanced_product_page.field_app_layout_canvas
+    - field.field.node.advanced_product_page.field_basic_page_metatag
     - node.type.advanced_product_page
+    - workflows.workflow.editorial
   module:
     - cohesion_elements
     - content_moderation
+    - metatag
     - path
 id: node.advanced_product_page.default
 targetEntityType: node
@@ -26,6 +29,14 @@ content:
     weight: 26
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_basic_page_metatag:
+    type: metatag_firehose
+    weight: 27
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   langcode:
     type: language_select
