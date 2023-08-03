@@ -249,3 +249,6 @@ a.toolbar-icon.toolbar-icon-edit.toolbar-item {
     font-size: 12pt;
   }
 }
+.environment-indicator article footer {
+  display: none !important;
+}
