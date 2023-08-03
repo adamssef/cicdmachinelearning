@@ -1,0 +1,23 @@
+uuid: 2a66e4e9-bb81-4acc-9a65-e7b65be65416
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.advanced_product_page
+  module:
+    - text
+id: node.advanced_product_page.body
+field_name: body
+entity_type: node
+bundle: advanced_product_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
