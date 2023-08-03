@@ -51,6 +51,7 @@ enforce:
         - 'https://tracking.g2crowd.com'
         - 'https://connect.facebook.net'
         - 'https://tpc.googlesyndication.com'
+        - 'https://cdn.weglot.com/weglot.min.js'
     frame-ancestors:
       base: self
   reporting:
