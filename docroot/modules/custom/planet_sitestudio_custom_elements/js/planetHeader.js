@@ -16,7 +16,7 @@
           $(".menu-level-1-li.has-children").removeClass("megamenu-opened");
           $(".menu-level-2-ul").hide();
           $(this).addClass("megamenu-opened");
-          // $(this).find(".menu-level-2-ul").show();
+          $(this).find(".menu-level-2-ul").show();
         })
         $(document).on("click", function (e) {
           
