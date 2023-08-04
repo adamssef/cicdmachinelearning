@@ -298,30 +298,30 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void {
 /**
  * Implements hook_page_attachments_alter().
  */
-function planet_core_page_attachments_alter(array &$attachments) {
-  $attachments['#attached']['html_head'][] = [
-    [
-      '#tag' => 'script',
-      '#attributes' => [
-        'type' => 'text/javascript',
-        'src' => 'https://cdn.weglot.com/weglot.min.js',
-      ],
-    ],
-    'weglot_script',
-  ];
+// function planet_core_page_attachments_alter(array &$attachments) {
+//   $attachments['#attached']['html_head'][] = [
+//     [
+//       '#tag' => 'script',
+//       '#attributes' => [
+//         'type' => 'text/javascript',
+//         'src' => 'https://cdn.weglot.com/weglot.min.js',
+//       ],
+//     ],
+//     'weglot_script',
+//   ];
 
-  $attachments['#attached']['html_head'][] = [
-    [
-      '#tag' => 'script',
-      '#attributes' => [
-        'type' => 'text/javascript',
-      ],
-      '#value' => "
-        Weglot.initialize({
-            api_key: 'wg_c965c2090cc9286958cabac8b7f51f127'
-        });
-      ",
-    ],
-    'weglot_initialize',
-  ];
-}
+//   $attachments['#attached']['html_head'][] = [
+//     [
+//       '#tag' => 'script',
+//       '#attributes' => [
+//         'type' => 'text/javascript',
+//       ],
+//       '#value' => "
+//         Weglot.initialize({
+//             api_key: 'wg_c965c2090cc9286958cabac8b7f51f127'
+//         });
+//       ",
+//     ],
+//     'weglot_initialize',
+//   ];
+// }

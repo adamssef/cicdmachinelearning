@@ -17,7 +17,8 @@
           }
         })
         $(".coh-button-back").click(function(){
-          $(".menu-level-1-ul > li").removeClass("is-expanded");
+          $(".menu-level-1-li").removeClass("is-expanded");
+          $(".menu-level-1-li").removeClass("menu-li-active");
         })
         $(".coh-button-close").click(function(){
           $(".coh-button-back").click();
