@@ -17,7 +17,7 @@
           }
         })
         $(".coh-button-back").click(function(){
-          $(".menu-li-active").children("a").click();
+          $(".menu-level-1-ul > li").removeClass("is-expanded");
         })
         $(".coh-button-close").click(function(){
           $(".coh-button-back").click();
