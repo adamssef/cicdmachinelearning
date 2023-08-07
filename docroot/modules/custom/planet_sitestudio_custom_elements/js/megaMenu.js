@@ -16,10 +16,13 @@
             $(this).addClass("menu-li-active");
           }
         })
-        $(".coh-button-back").click(function(){
-          $(".menu-level-1-li").removeClass("is-expanded");
-          $(".menu-level-1-li").removeClass("menu-li-active");
-        })
+        $(".coh-button-back").click(function () {
+          $(".menu-level-1-ul > li").removeClass("is-expanded");
+          
+          // Close the mega menu by removing the "menu-visible" class from necessary elements.
+          $(".mobile-menu-button, .header-container, .menu-container").removeClass("menu-visible");
+          $("body").css("overflow", "");
+        });
         $(".coh-button-close").click(function(){
           $(".coh-button-back").click();
           $(".mobile-menu-button, .header-container, .menu-container").removeClass("menu-visible");
