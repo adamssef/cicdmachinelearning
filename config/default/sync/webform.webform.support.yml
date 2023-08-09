@@ -37,6 +37,7 @@ elements: |-
         '#wrapper_type': form_element
         '#type__access': false
         '#phone__required': true
+        '#phone__type': textfield
         '#ext__access': false
         '#phone__international_initial_country': GB
       email:
