@@ -1,0 +1,8 @@
+uuid: 309b14c5-b8d1-4f22-9b4c-0571727c94f7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Email Contacts Terms'
+vid: email_contacts_terms
+description: ''
+weight: 0

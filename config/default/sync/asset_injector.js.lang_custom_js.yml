@@ -1,0 +1,59 @@
+uuid: fb63953f-f773-4ff8-b393-7250df85d0cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion
+    - context
+id: lang_custom_js
+label: lang-custom-js
+code: |-
+  var userLang = navigator.language || navigator.userLanguage; 
+  //console.log ("The language is: " + userLang);
+  var siteLang = document.documentElement.lang;
+  //console.log ("Site language is: " + siteLang);
+  var userLangbutton = '';
+  if(userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ){
+  	var userLangbutton = '<a href="/'+userLang+'">'+userLang+'</a>';
+  }
+  jQuery('.homepage-language-modal').find('.modal-body').find('.lang-btn-wrap').html(userLangbutton+'<a class="default_language_sel btn">Stay In English</a>');
+
+  jQuery(document).on('click', '.default_language_sel', function(e){
+  	var siteLang = document.documentElement.lang;
+  	jQuery('.homepage-language-modal').find('.js-modal-page-ok-button').click();
+  	if(siteLang == 'en'){
+  		e.preventDefault();
+  	}else{
+  		window.location.replace(window.location.origin);
+  	}
+  });
+  // jQuery('#js-modal-page-show-modal').modal("show");
+
+  let queryString = window.location.search;
+              let urlParams = new URLSearchParams(queryString);
+              if(urlParams.get('field_resource_category_target_id')){
+                  let field_resource_category_target_id = urlParams.get('field_resource_category_target_id');
+                  if(field_resource_category_target_id){
+                  jQuery('.links-listing-block ul').find('a[class="resource-target-'+field_resource_category_target_id+'"]').addClass('active');
+                }
+              }
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: false
+  context:
+    id: context
+    negate: null
+    values: ''
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+contexts: {  }
+conditions_require_all: true

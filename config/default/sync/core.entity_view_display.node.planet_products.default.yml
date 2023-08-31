@@ -1,0 +1,59 @@
+uuid: 477fd620-d4cd-4a07-a5dd-555ffcf3161f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.planet_products.body
+    - field.field.node.planet_products.field_installation_instructions
+    - field.field.node.planet_products.field_select_faq
+    - field.field.node.planet_products.field_select_resources
+    - node.type.planet_products
+  module:
+    - text
+    - user
+id: node.planet_products.default
+targetEntityType: node
+bundle: planet_products
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_installation_instructions:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_select_faq:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_select_resources:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

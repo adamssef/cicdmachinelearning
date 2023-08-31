@@ -131,6 +131,10 @@ fullCaseStudyPage:
 caseStudiesLibrary:
   js:
     js/caseStudiesLibrary.js: { }
+# Custom Main Script Library
+customMainScript:
+  js:
+    js/customMainScript.js: { }
 # Publications Library
 publicationsLibrary:
   js:
