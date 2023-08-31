@@ -47,3 +47,4 @@ auth.json
 
 # Ignore solr data
 /config/solr/planet/data/
+backup*

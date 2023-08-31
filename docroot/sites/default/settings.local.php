@@ -21,11 +21,11 @@ $databases = [
 
 $settings['file_temp_path'] = 'sites/default/files/tmp';
 
-$settings['trusted_host_patterns'] = [
-  // Production Domains .
-  // Local domains (developers environments).
-  '^planet\.lndo\.site$',
-];
+// $settings['trusted_host_patterns'] = [
+//   // Production Domains .
+//   // Local domains (developers environments).
+//   '^planet\.lndo\.site$',
+// ];
 
 // Config sync.
 // $settings['config_sync_directory'] =
