@@ -1,0 +1,11 @@
+uuid: 52a7caaa-b02a-4467-9ac5-a6e5fd998fd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.resources_categories
+id: taxonomy_term.resources_categories
+target_entity_type_id: taxonomy_term
+target_bundle: resources_categories
+default_langcode: site_default
+language_alterable: false

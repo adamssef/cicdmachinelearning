@@ -1,0 +1,31 @@
+uuid: 8352c41f-c3e3-40a1-bece-4db1b34a933b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.planet_faq.body
+    - field.field.node.planet_faq.field_answer
+    - node.type.planet_faq
+  module:
+    - user
+id: node.planet_faq.default
+targetEntityType: node
+bundle: planet_faq
+mode: default
+content:
+  field_answer:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  langcode: true
+  search_api_excerpt: true

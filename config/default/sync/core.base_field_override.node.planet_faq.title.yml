@@ -1,0 +1,18 @@
+uuid: 5df74bdc-b314-4362-8d6a-582597c863a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.planet_faq
+id: node.planet_faq.title
+field_name: title
+entity_type: node
+bundle: planet_faq
+label: Question
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

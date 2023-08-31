@@ -1,0 +1,100 @@
+uuid: 99463532-28bd-4154-8ad6-1449c06311a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.planet_resources.body
+    - field.field.node.planet_resources.field_image
+    - field.field.node.planet_resources.field_link
+    - field.field.node.planet_resources.field_planet_resource_category
+    - field.field.node.planet_resources.field_planet_resource_type
+    - field.field.node.planet_resources.field_resource_category
+    - field.field.node.planet_resources.field_resource_type
+    - field.field.node.planet_resources.field_sub_heading
+    - node.type.planet_resources
+  module:
+    - dynamic_entity_reference
+    - link
+    - text
+    - user
+id: node.planet_resources.default
+targetEntityType: node
+bundle: planet_resources
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_planet_resource_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_planet_resource_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_resource_category:
+    type: dynamic_entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_resource_type:
+    type: dynamic_entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_sub_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

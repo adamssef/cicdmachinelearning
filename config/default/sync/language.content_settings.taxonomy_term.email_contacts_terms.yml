@@ -1,0 +1,11 @@
+uuid: 18f66d2c-369d-4ef3-8a60-3d42d26d6cef
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.email_contacts_terms
+id: taxonomy_term.email_contacts_terms
+target_entity_type_id: taxonomy_term
+target_bundle: email_contacts_terms
+default_langcode: site_default
+language_alterable: false

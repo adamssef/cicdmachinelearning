@@ -1,0 +1,8 @@
+uuid: 99cef0b8-2b36-4be7-9b5d-bd5339f145a3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Phone Number terms'
+vid: phone_number_terms
+description: ''
+weight: 0

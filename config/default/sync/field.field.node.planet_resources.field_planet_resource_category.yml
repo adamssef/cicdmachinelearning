@@ -1,0 +1,29 @@
+uuid: a33aaf66-446c-46db-a550-44d292c72f6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_planet_resource_category
+    - node.type.planet_resources
+    - taxonomy.vocabulary.resources_categories
+id: node.planet_resources.field_planet_resource_category
+field_name: field_planet_resource_category
+entity_type: node
+bundle: planet_resources
+label: 'Resource Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      resources_categories: resources_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
