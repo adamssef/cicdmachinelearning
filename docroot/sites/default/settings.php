@@ -713,15 +713,15 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  *  server_name.prod.acquia-sites.com
  *  server_name_dev.prod.acquia-sites.com
  */
-$settings['trusted_host_patterns'] = [
- '^planet\.com$',
- '^.+\.planet\.com$',
- '^server_name.*\.prod\.acquia-sites\.com$',
- '^weareplanet\.com$',
- '^.+\.weareplanet\.com$',
- '^proximis\.com$',
- '^.+\.proximis\.com$',
-];
+// $settings['trusted_host_patterns'] = [
+//  '^planet\.com$',
+//  '^.+\.planet\.com$',
+//  '^server_name.*\.prod\.acquia-sites\.com$',
+//  '^weareplanet\.com$',
+//  '^.+\.weareplanet\.com$',
+//  '^proximis\.com$',
+//  '^.+\.proximis\.com$',
+// ];
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.
