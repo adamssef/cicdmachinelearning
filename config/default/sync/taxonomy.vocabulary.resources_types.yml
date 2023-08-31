@@ -1,0 +1,8 @@
+uuid: 150fa8d0-8c19-49e3-bc5f-e2c675bd8155
+langcode: en
+status: true
+dependencies: {  }
+name: 'Resources Types'
+vid: resources_types
+description: ''
+weight: 0

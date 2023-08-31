@@ -1,0 +1,19 @@
+uuid: 3368ee43-d6da-4cd2-9383-04ce1d945068
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_installation_instructions
+    - node.type.planet_products
+id: node.planet_products.field_installation_instructions
+field_name: field_installation_instructions
+entity_type: node
+bundle: planet_products
+label: 'Installation Instructions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

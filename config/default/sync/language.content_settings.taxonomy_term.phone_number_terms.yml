@@ -1,0 +1,11 @@
+uuid: 2b11ed06-fdc9-423f-8178-32ac34fe2382
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.phone_number_terms
+id: taxonomy_term.phone_number_terms
+target_entity_type_id: taxonomy_term
+target_bundle: phone_number_terms
+default_langcode: site_default
+language_alterable: false
