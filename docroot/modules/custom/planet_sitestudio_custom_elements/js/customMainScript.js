@@ -28,14 +28,16 @@
           }
           
           jQuery('#js-modal-page-show-modal').on('hide.bs.modal', function () {
+            console.log('tesing');
             cookies.set('hide_modal_id_hide_modal_id_homepage_language_modal', true, { expires: 365 * 20, path: '/' });
           });
           
           var userLangbutton = '';
+          var url = window.location.origin;
           if(userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ){
-            var userLangbutton = '<a href="/'+userLang+'">'+userLang+'</a>';
+            var userLangbutton = '<a href="'+url+'/'+userLang+'">'+userLang+'</a>';
           }
-          jQuery('.homepage-language-modal').find('.modal-body').find('.lang-btn-wrap').html(userLangbutton+'<a class="default_language_sel btn">Stay In English</a>');
+          jQuery('.homepage-language-modal').find('.modal-body').find('.lang-btn-wrap').html(userLangbutton+'<a class="default_language_sel btn" href="'+url+'">Stay In English</a>');
 
           jQuery(document).on('click', '.default_language_sel', function(e){
             var siteLang = document.documentElement.lang;

@@ -631,7 +631,7 @@ conditions:
     values: ''
   current_theme:
     id: current_theme
-    negate: false
+    negate: true
     theme: cohesion_theme
 contexts: {  }
 conditions_require_all: false
