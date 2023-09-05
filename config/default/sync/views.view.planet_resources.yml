@@ -13,9 +13,9 @@ dependencies:
     - taxonomy.vocabulary.resources_categories
     - taxonomy.vocabulary.resources_types
   content:
-    - 'taxonomy_term:resources_types:21a979e6-d5db-42bb-b1b6-d482e4b188ce'
-    - 'taxonomy_term:resources_types:3c4e2287-b108-4866-9d99-6f4bc7734294'
-    - 'taxonomy_term:resources_types:8fb3ecc1-b908-4c6a-b6a7-eb5f16a28f21'
+    - 'taxonomy_term:resources_types:3395b958-cb8a-402c-9c18-18ce292d818b'
+    - 'taxonomy_term:resources_types:54b5050b-a8f9-4f36-bc17-fcde5edc6e10'
+    - 'taxonomy_term:resources_types:6991cd99-0fc7-4d09-9ee5-c225d7a7ec2d'
   module:
     - cohesion
     - dynamic_entity_reference
@@ -643,7 +643,7 @@ display:
       style:
         type: cohesion_layout
         options:
-          views_template: view_tpl_planet_resources
+          views_template: view_tpl_planet_resources_guide
           master_template: mstr_tpl_planet_master_template
       row:
         type: fields
@@ -817,7 +817,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            - 423
+            - 419
           group: 1
           exposed: false
           expose:
@@ -1506,7 +1506,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            - 421
+            - 418
           group: 1
           exposed: false
           expose:
@@ -1550,7 +1550,7 @@ display:
       style:
         type: cohesion_layout
         options:
-          views_template: view_tpl_planet_resources
+          views_template: view_tpl_planet_resources_guide
           master_template: mstr_tpl_planet_master_template
       row:
         type: fields
@@ -1720,7 +1720,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            - 422
+            - 417
           group: 1
           exposed: false
           expose:

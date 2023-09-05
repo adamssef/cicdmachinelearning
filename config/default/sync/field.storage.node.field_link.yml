@@ -1,15 +1,16 @@
-uuid: 024c7c28-4776-465e-b194-b170cb5540af
+uuid: d05538da-8874-48af-8231-1f7df3ee2b9d
 langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
-id: node.field_email
-field_name: field_email
+id: node.field_link
+field_name: field_link
 entity_type: node
-type: email
+type: link
 settings: {  }
-module: core
+module: link
 locked: false
 cardinality: 1
 translatable: true
