@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.planet_products.body
     - field.field.node.planet_products.field_installation_instructions
+    - field.field.node.planet_products.field_resources
     - field.field.node.planet_products.field_select_faq
     - field.field.node.planet_products.field_select_resources
     - node.type.planet_products
@@ -32,6 +33,7 @@ content:
     region: content
 hidden:
   field_installation_instructions: true
+  field_resources: true
   field_select_faq: true
   field_select_resources: true
   langcode: true

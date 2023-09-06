@@ -5,7 +5,6 @@ enabled_entity_types:
   cohesion_component_category: cohesion_component_category
   cohesion_content_templates: cohesion_content_templates
   cohesion_custom_style: cohesion_custom_style
-  cohesion_font_library: cohesion_font_library
   cohesion_font_stack: cohesion_font_stack
   cohesion_helper: cohesion_helper
   cohesion_helper_category: cohesion_helper_category
@@ -18,8 +17,9 @@ enabled_entity_types:
   cohesion_sync_package: cohesion_sync_package
   cohesion_view_templates: cohesion_view_templates
   cohesion_website_settings: cohesion_website_settings
-  image_style: image_style
   view: view
+  cohesion_font_library: '0'
   cohesion_master_templates: '0'
+  image_style: '0'
 package_export_limit: 10
 full_export_limit: 10

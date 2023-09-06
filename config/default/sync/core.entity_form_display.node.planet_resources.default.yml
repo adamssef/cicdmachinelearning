@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.planet_resources.body
+    - field.field.node.planet_resources.field_download_link
     - field.field.node.planet_resources.field_image
     - field.field.node.planet_resources.field_link
     - field.field.node.planet_resources.field_planet_resource_category
@@ -38,6 +39,14 @@ content:
     weight: 5
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_download_link:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_image:
     type: media_library_widget

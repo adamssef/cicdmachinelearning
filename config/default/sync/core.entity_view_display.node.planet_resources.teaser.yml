@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.planet_resources.body
+    - field.field.node.planet_resources.field_download_link
     - field.field.node.planet_resources.field_image
     - field.field.node.planet_resources.field_link
     - field.field.node.planet_resources.field_planet_resource_category
@@ -35,6 +36,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_download_link: true
   field_image: true
   field_link: true
   field_planet_resource_category: true
