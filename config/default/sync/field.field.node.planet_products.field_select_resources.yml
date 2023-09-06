@@ -5,25 +5,21 @@ dependencies:
   config:
     - field.storage.node.field_select_resources
     - node.type.planet_products
-    - node.type.planet_resources
 id: node.planet_products.field_select_resources
 field_name: field_select_resources
 entity_type: node
 bundle: planet_products
-label: 'Select Resources'
+label: 'Select Resources - Training'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      planet_resources: planet_resources
-    sort:
-      field: _none
-      direction: ASC
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: resource_nodes_by_type
+      display_name: entity_reference_3
+      arguments: {  }
 field_type: entity_reference

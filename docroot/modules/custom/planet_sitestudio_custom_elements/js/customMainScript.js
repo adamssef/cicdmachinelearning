@@ -7,11 +7,16 @@
   Drupal.behaviors.planet_sitestudio_customMainScript = {
     attach: function () {
       $(document).ready(function () {
-
+        if(jQuery('.technical-doc-wrap').find('div').length < 1){
+          jQuery('.technical-doc-wrap').find('h4').hide();
+        }
+        if(jQuery('.training-path-wrap').find('div').length < 1){
+          jQuery('.training-path-wrap').find('h4').hide();
+        }  
         // document.getElementById("search-icon").onclick = function() {searchResource()};
         // function searchResource() {
           var userLang = navigator.language || navigator.userLanguage; 
-          console.log ("The language is: " + userLang);
+          console.log ("userLang language is: " + userLang);
           var siteLang = document.documentElement.lang;
           console.log ("Site language is: " + siteLang);
           // Get cookies for do not show again option and show only once.
@@ -28,7 +33,7 @@
           }
           
           jQuery('#js-modal-page-show-modal').on('hide.bs.modal', function () {
-            console.log('tesing');
+            // console.log('tesing');
             cookies.set('hide_modal_id_hide_modal_id_homepage_language_modal', true, { expires: 365 * 20, path: '/' });
           });
           
