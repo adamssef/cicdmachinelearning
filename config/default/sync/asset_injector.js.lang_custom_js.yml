@@ -30,13 +30,21 @@ code: |-
   // jQuery('#js-modal-page-show-modal').modal("show");
 
   let queryString = window.location.search;
-              let urlParams = new URLSearchParams(queryString);
-              if(urlParams.get('field_resource_category_target_id')){
-                  let field_resource_category_target_id = urlParams.get('field_resource_category_target_id');
-                  if(field_resource_category_target_id){
-                  jQuery('.links-listing-block ul').find('a[class="resource-target-'+field_resource_category_target_id+'"]').addClass('active');
-                }
-              }
+  let urlParams = new URLSearchParams(queryString);
+  if(urlParams.get('field_resource_category_target_id')){
+      let field_resource_category_target_id = urlParams.get('field_resource_category_target_id');
+      if(field_resource_category_target_id){
+      	jQuery('.links-listing-block ul li a').removeClass('active');
+      jQuery('.links-listing-block ul').find('a[class="resource-target-'+field_resource_category_target_id+'"]').addClass('active');
+    }
+  }
+  if(urlParams.get('tid')){
+  	let tid = urlParams.get('tid');
+  	if(tid){
+      jQuery('.links-listing-block ul li a').removeClass('active');
+    	jQuery('.links-listing-block').find('a[class="term-target-'+tid+'"]').addClass('active');
+  	}
+  }
 noscript: ''
 noscriptRegion: {  }
 jquery: false

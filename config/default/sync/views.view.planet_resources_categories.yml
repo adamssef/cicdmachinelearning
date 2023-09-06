@@ -249,7 +249,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<h4>Categories</h4>'
+            value: "<h4>Categories</h4>\r\n<div class=\"links-listing-block\"><ul><li><a href=\"[current-page:url]\" class=\"active\">All</a></li></ul></div>"
             format: cohesion
           tokenize: false
       footer: {  }

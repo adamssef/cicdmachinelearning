@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.planet_products.body
     - field.field.node.planet_products.field_installation_instructions
+    - field.field.node.planet_products.field_resources
     - field.field.node.planet_products.field_select_faq
     - field.field.node.planet_products.field_select_resources
     - node.type.planet_products
@@ -30,6 +31,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_resources:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 105
     region: content
   field_select_faq:
     type: entity_reference_entity_view

@@ -133,6 +133,10 @@ caseStudiesLibrary:
     js/caseStudiesLibrary.js: { }
 # Custom Main Script Library
 customMainScript:
+  css:
+    component:
+      css/customFontScript.css: { }
+      'https://fonts.cdnfonts.com/css/tt-commons': { type: external}
   js:
     js/customMainScript.js: { }
 # Publications Library

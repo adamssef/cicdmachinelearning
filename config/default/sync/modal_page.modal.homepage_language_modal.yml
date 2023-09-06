@@ -5,7 +5,7 @@ dependencies: {  }
 id: homepage_language_modal
 label: 'Homepage Language modal'
 body:
-  value: "<p>Select your preferred language</p>\r\n\r\n<div class=\"lang-btn-wrap\">&nbsp;</div>\r\n"
+  value: "<p><img alt=\"modal-img\" src=\"/sites/default/files/2023-09/Rectangle%201104.png\" /></p>\r\n\r\n<h3>Choose your preferred language!</h3>\r\n\r\n<p>We've detected your location, and we'd like to enhance your browsing experience. Select your preferred language:</p>\r\n\r\n<div class=\"lang-btn-wrap\">&nbsp;</div>\r\n"
   format: cohesion
 pages: ''
 auto_open: true
@@ -47,7 +47,7 @@ enable_left_button: false
 ok_button_class: ''
 left_button_class: ''
 parameters: ''
-enable_right_button: true
+enable_right_button: false
 languages_to_show:
   en: '0'
   es: '0'

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.planet_products.body
     - field.field.node.planet_products.field_installation_instructions
+    - field.field.node.planet_products.field_resources
     - field.field.node.planet_products.field_select_faq
     - field.field.node.planet_products.field_select_resources
     - node.type.planet_products
@@ -41,21 +42,23 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_resources:
+    type: options_select
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_select_faq:
     type: options_select
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   field_select_resources:
-    type: entity_reference_autocomplete
-    weight: 13
+    type: options_select
+    weight: 14
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
