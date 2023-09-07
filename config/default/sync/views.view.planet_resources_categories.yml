@@ -103,7 +103,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="?title=&field_resource_category_target_id={{ tid }}" tabindex="-1" class="resource-target-{{ tid }}">{{ name }}</a>'
+            text: '<a href="#" data="{{ tid }}" tabindex="-1" class="resource-target-{{ tid }}">{{ name }}</a>'
             make_link: false
             path: ''
             absolute: false
@@ -156,9 +156,10 @@ display:
           field_api_classes: false
           convert_spaces: false
       pager:
-        type: none
+        type: some
         options:
           offset: 0
+          items_per_page: 20
       exposed_form:
         type: basic
         options:
@@ -212,7 +213,7 @@ display:
           row_class: ''
           default_row_class: true
           type: ul
-          wrapper_class: links-listing-block
+          wrapper_class: 'links-listing-block planet-cat-filter item-list-products'
           class: ''
       row:
         type: fields
@@ -249,7 +250,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<h4>Categories</h4>\r\n<div class=\"links-listing-block\"><ul><li><a href=\"[current-page:url]\" class=\"active\">All</a></li></ul></div>"
+            value: "<h4>Categories</h4>\r\n<div class=\"links-listing-block planet-cat-filter\"><ul><li><a href=\"#\" data=\"all\" class=\"active\">All</a></li></ul></div>"
             format: cohesion
           tokenize: false
       footer: {  }

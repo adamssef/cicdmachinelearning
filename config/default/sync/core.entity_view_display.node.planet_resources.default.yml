@@ -77,7 +77,7 @@ content:
     region: content
   field_resource_category:
     type: dynamic_entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -85,7 +85,7 @@ content:
     region: content
   field_resource_type:
     type: dynamic_entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }

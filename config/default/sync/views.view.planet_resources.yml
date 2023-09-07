@@ -770,7 +770,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="icon-row">{{ field_image }}</div>'
+            text: '<div class="default-user-{{ field_planet_resource_type }}-logo" ></div>'
             make_link: false
             path: ''
             absolute: false
@@ -1000,8 +1000,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
-          settings: {  }
+          type: text_trimmed
+          settings:
+            trim_length: 200
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1205,6 +1206,33 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'No data found'
+            format: cohesion
+          tokenize: false
+        area_1:
+          id: area_1
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'No data founddddddddddddd'
+            format: cohesion
+          tokenize: false
       filters:
         status:
           id: status
@@ -1232,29 +1260,27 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        combine:
+          id: combine
+          table: views
+          field: combine
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: string
-          operator: contains
+          plugin_id: combine
+          operator: word
           value: ''
           group: 2
           exposed: true
           expose:
-            operator_id: title_op
-            label: Title
+            operator_id: combine_op
+            label: 'Combine fields filter'
             description: ''
             use_operator: false
-            operator: title_op
+            operator: combine_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: title
+            identifier: combine
             required: false
             remember: false
             multiple: false
@@ -1264,7 +1290,7 @@ display:
               content_editor: '0'
               content_reviewer: '0'
               administrator: '0'
-            placeholder: 'Search for documentation'
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1277,6 +1303,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          fields:
+            field_sub_heading: field_sub_heading
+            title: title
+            body: body
         tid:
           id: tid
           table: taxonomy_index
@@ -1344,6 +1374,7 @@ display:
           separator: ''
           hide_empty: false
       defaults:
+        empty: false
         style: false
         row: false
         fields: false
