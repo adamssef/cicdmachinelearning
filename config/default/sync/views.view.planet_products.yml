@@ -90,7 +90,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 7
+          items_per_page: 20
       exposed_form:
         type: basic
         options:
@@ -154,7 +154,14 @@ display:
             operator_limit_selection: false
             operator_list: {  }
       style:
-        type: default
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+          type: ul
+          wrapper_class: item-list-products
+          class: ''
       row:
         type: fields
       query:
@@ -168,6 +175,7 @@ display:
       relationships: {  }
       header: {  }
       footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:

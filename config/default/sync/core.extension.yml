@@ -147,6 +147,7 @@ module:
   verf: 0
   views_autosubmit: 0
   views_fieldsets: 0
+  views_filters_populate: 0
   views_ui: 0
   webform: 0
   webform_node: 0

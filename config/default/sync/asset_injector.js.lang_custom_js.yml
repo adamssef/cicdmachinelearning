@@ -31,13 +31,13 @@ code: |-
 
   let queryString = window.location.search;
   let urlParams = new URLSearchParams(queryString);
-  if(urlParams.get('field_resource_category_target_id')){
-      let field_resource_category_target_id = urlParams.get('field_resource_category_target_id');
-      if(field_resource_category_target_id){
-      	jQuery('.links-listing-block ul li a').removeClass('active');
-      jQuery('.links-listing-block ul').find('a[class="resource-target-'+field_resource_category_target_id+'"]').addClass('active');
-    }
-  }
+  // if(urlParams.get('field_resource_category_target_id')){
+  //     let field_resource_category_target_id = urlParams.get('field_resource_category_target_id');
+  //     if(field_resource_category_target_id){
+  //     	jQuery('.links-listing-block ul li a').removeClass('active');
+  //     jQuery('.links-listing-block ul').find('a[class="resource-target-'+field_resource_category_target_id+'"]').addClass('active');
+  //   }
+  // }
   if(urlParams.get('tid')){
   	let tid = urlParams.get('tid');
   	if(tid){

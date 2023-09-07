@@ -22,6 +22,7 @@ dependencies:
     - filter
     - media
     - media_bulk_upload
+    - menu_link_content
     - node
     - path
     - system
