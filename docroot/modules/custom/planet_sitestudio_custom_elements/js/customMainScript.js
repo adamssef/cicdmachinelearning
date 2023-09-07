@@ -7,36 +7,97 @@
   Drupal.behaviors.planet_sitestudio_customMainScript = {
     attach: function () {
       $(document).ready(function () {
+        // setInterval(function () {
+
+        // }, 1000);
+
+        jQuery('#custom-search-resource').on('click', function(){
+          jQuery('.search-result-head').remove();
+          var keyword = jQuery(this).parent().find('input').val();
+          jQuery('#views-exposed-form-planet-resources-block-1 input[name="combine"]').delay(1000 ).attr('keyword', keyword).val(keyword);
+          jQuery("<div class='search-result-head'><h3>Search results for: "+keyword+"</h3></div>").insertBefore("#block-views-block-planet-resources-block-1");
+          jQuery('#views-exposed-form-planet-resources-block-1 .form-submit').delay(1000 ).click();
+          // if(jQuery('#views-exposed-form-planet-resources-block-1 .cards-grid').text().length == 0) {
+          //   var message = '<p>Sorry, we couldnt find any matches for your search. Feel free to reach out to our support team for assistance!</p>';
+          //   jQuery(".search-result-head").append(message);
+          // }else{
+          //   jQuery(".search-result-head").remove();
+          // }
+        });
+        // show more/less for product listing in product detailing + overview page
+        jQuery('.item-list-products ul').each(function(){
+          var LiN = jQuery(this).find('li').length;
+          if( LiN > 7){
+            jQuery('li', this).eq(6).nextAll().hide().addClass('toggleable');
+            jQuery(this).append('<li class="more">See more</li>');
+          }
+        });
+        jQuery('.item-list-products ul').on('click','.more', function(){
+          if( jQuery(this).hasClass('less') ){
+            jQuery(this).text('See more').removeClass('less');
+          }else{
+            jQuery(this).text('See less').addClass('less');
+          }
+          jQuery(this).siblings('li.toggleable').slideToggle();
+        });
+        jQuery('.btn-wrap .btn-row').each(function(index, value){
+          jQuery(this).find('a').addClass('index-'+index);
+            if(jQuery(this).find('a').attr('href').length == 0){
+            // console.log(jQuery(this));
+            jQuery(this).parent().remove();
+          }
+        });
+
+        // Ajax call from left sidebar categories for resources listing page
+        jQuery('.planet-cat-filter li a').click(function(e){
+          var target = jQuery(this).attr('data');
+          jQuery('.planet-cat-filter li a').removeClass('active');
+          // var target = target.replace('resource-target-', '');
+          if(target == 'all'){
+            jQuery('select[name="field_resource_category_target_id"]').val('All');
+            jQuery(this).addClass('active');
+          }else{
+            jQuery('select[name="field_resource_category_target_id"]').val(target);
+            jQuery(this).addClass('active');
+          }
+          jQuery('select[name="field_resource_category_target_id"]').val(target);
+          jQuery('#views-exposed-form-planet-resources-block-1 .form-submit').click();
+          e.preventDefault();
+        });
+
         if(jQuery('.technical-doc-wrap').find('div').length < 1){
           jQuery('.technical-doc-wrap').find('h4').hide();
         }
         if(jQuery('.training-path-wrap').find('div').length < 1){
           jQuery('.training-path-wrap').find('h4').hide();
-        }  
+        }
         // document.getElementById("search-icon").onclick = function() {searchResource()};
         // function searchResource() {
-          var userLang = navigator.language || navigator.userLanguage; 
+          var userLang = navigator.language || navigator.userLanguage;
           console.log ("userLang language is: " + userLang);
           var siteLang = document.documentElement.lang;
           console.log ("Site language is: " + siteLang);
           // Get cookies for do not show again option and show only once.
           var hide_modal_cookie = cookies.get('hide_modal_id_homepage_language_modal');
           // Verify don't show again and show only once options.
-          
+
           if( (userLang == 'en-US' || userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ) && (siteLang == 'en' || siteLang == 'es' || siteLang == 'fr' || siteLang == 'it' || siteLang == 'de' ) ){
             if (hide_modal_cookie) {
               return;
             }else{
               jQuery('#js-modal-page-show-modal').modal('show');
             }
-            
+
           }
-          
+
+          jQuery('#js-modal-page-show-modal .modal-buttons').on('click', function(){
+            jQuery('#js-modal-page-show-modal').modal('hide');
+          });
           jQuery('#js-modal-page-show-modal').on('hide.bs.modal', function () {
             // console.log('tesing');
             cookies.set('hide_modal_id_hide_modal_id_homepage_language_modal', true, { expires: 365 * 20, path: '/' });
           });
-          
+
           var userLangbutton = '';
           var url = window.location.origin;
           if(userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ){
@@ -54,9 +115,9 @@
             }
           });
 
-          
 
-          
+
+
       });
     },
   };
