@@ -1,0 +1,31 @@
+uuid: 13c2e7c1-87fe-4abf-81ae-e4c9c2eb6932
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upload_link
+    - media.type.image
+    - media.type.pdf
+    - node.type.planet_resources
+id: node.planet_resources.field_upload_link
+field_name: field_upload_link
+entity_type: node
+bundle: planet_resources
+label: 'Upload link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      pdf: pdf
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

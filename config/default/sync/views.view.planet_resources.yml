@@ -1155,7 +1155,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="btn-row"><a download class="download-btn" href="{{ field_download_link }}">Download <img src="sites/default/files/2023-09/Vector_0.png" alt=""></a></div>'
+            text: '<div class="btn-row"><a download class="download-btn" target="_blank" href="{{ field_download_link }}">Download <img src="sites/default/files/2023-09/Vector_0.png" alt=""></a></div>'
             make_link: false
             path: ''
             absolute: false
@@ -1217,20 +1217,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: 'No data found'
-            format: cohesion
-          tokenize: false
-        area_1:
-          id: area_1
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: 'No data founddddddddddddd'
+            value: "Sorry, we couldn't find any matches for your search. \LFeel free to reach out to our support team for assistance!"
             format: cohesion
           tokenize: false
       filters:
