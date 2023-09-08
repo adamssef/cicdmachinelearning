@@ -25,25 +25,28 @@
           // }
         });
         // show more/less for product listing in product detailing + overview page
+
         jQuery('.item-list-products ul').each(function(){
-          var LiN = jQuery(this).find('li').length;
-          if( LiN > 7){
+          var liLength = jQuery(this).find('li').length;
+          var toggleMore = jQuery(this).find('.toggle-more').length;
+          if(liLength > 7 && !toggleMore){
             jQuery('li', this).eq(6).nextAll().hide().addClass('toggleable');
-            jQuery(this).append('<li class="more">See more</li>');
+            jQuery(this).append('<li class="toggle-more more"><img src="http://112.196.0.228:32772/sites/default/files/2023-09/Vector%20%283%29.png"><span>See more</span></li>');
           }
         });
+
         jQuery('.item-list-products ul').on('click','.more', function(){
-          if( jQuery(this).hasClass('less') ){
-            jQuery(this).text('See more').removeClass('less');
+          if(jQuery(this).find('span').hasClass('less') ){
+            jQuery(this).find('span').text('See more').removeClass('less');
           }else{
-            jQuery(this).text('See less').addClass('less');
+            jQuery(this).find('span').text('See less').addClass('less');
           }
           jQuery(this).siblings('li.toggleable').slideToggle();
         });
+        
         jQuery('.btn-wrap .btn-row').each(function(index, value){
           jQuery(this).find('a').addClass('index-'+index);
             if(jQuery(this).find('a').attr('href').length == 0){
-            // console.log(jQuery(this));
             jQuery(this).parent().remove();
           }
         });
@@ -109,6 +112,7 @@
             var siteLang = document.documentElement.lang;
             jQuery('.homepage-language-modal').find('.js-modal-page-ok-button').click();
             if(siteLang == 'en'){
+              jQuery('.modal-buttons').trigger('click');
               e.preventDefault();
             }else{
               window.location.replace(window.location.origin);

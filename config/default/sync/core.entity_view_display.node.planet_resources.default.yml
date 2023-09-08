@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.planet_resources.field_resource_category
     - field.field.node.planet_resources.field_resource_type
     - field.field.node.planet_resources.field_sub_heading
+    - field.field.node.planet_resources.field_upload_link
     - node.type.planet_resources
   module:
     - dynamic_entity_reference
@@ -98,6 +99,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 106
+    region: content
+  field_upload_link:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 110
     region: content
   links:
     settings: {  }

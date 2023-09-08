@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.planet_resources.field_resource_category
     - field.field.node.planet_resources.field_resource_type
     - field.field.node.planet_resources.field_sub_heading
+    - field.field.node.planet_resources.field_upload_link
     - node.type.planet_resources
   module:
     - content_moderation
@@ -86,6 +87,13 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_upload_link:
+    type: media_library_widget
+    weight: 27
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
