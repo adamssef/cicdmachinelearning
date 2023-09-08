@@ -1,0 +1,8 @@
+uuid: e50bb99b-3731-4f37-b060-1d5e6013f342
+langcode: en
+status: true
+dependencies: {  }
+id: acquiring
+label: Acquiring
+description: ''
+locked: false

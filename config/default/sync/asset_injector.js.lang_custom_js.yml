@@ -8,25 +8,59 @@ dependencies:
 id: lang_custom_js
 label: lang-custom-js
 code: |-
-  var userLang = navigator.language || navigator.userLanguage; 
-  //console.log ("The language is: " + userLang);
+  var userLang = navigator.language || navigator.userLanguage;
+  console.log ("userLang language is: " + userLang);
   var siteLang = document.documentElement.lang;
-  //console.log ("Site language is: " + siteLang);
-  var userLangbutton = '';
-  if(userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ){
-  	var userLangbutton = '<a href="/'+userLang+'">'+userLang+'</a>';
+  console.log ("Site language is: " + siteLang);
+  // Get cookies for do not show again option and show only once.
+  // var hide_modal_cookie = cookies.get('hide_modal_id_homepage_language_modal');
+  // Verify don't show again and show only once options.
+
+  if( (userLang == 'en-US' || userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ) && (siteLang == 'en' || siteLang == 'es' || siteLang == 'fr' || siteLang == 'it' || siteLang == 'de' ) ){
+    // if (hide_modal_cookie) {
+    //   //return true;
+    // }else{
+    //   jQuery('#js-modal-page-show-modal').modal('show');
+    // }
+
   }
-  jQuery('.homepage-language-modal').find('.modal-body').find('.lang-btn-wrap').html(userLangbutton+'<a class="default_language_sel btn">Stay In English</a>');
+  // jQuery('.homepage-language-modal').find('.modal-body').find('.lang-btn-wrap').html(userLangbutton+'<a class="default_language_sel btn">Stay In English</a>');
+
+  // jQuery(document).on('click', '.default_language_sel', function(e){
+  // 	var siteLang = document.documentElement.lang;
+  // 	jQuery('.homepage-language-modal').find('.js-modal-page-ok-button').click();
+  // 	if(siteLang == 'en'){
+  // 		e.preventDefault();
+  // 	}else{
+  // 		window.location.replace(window.location.origin);
+  // 	}
+  // });
+  jQuery('#js-modal-page-show-modal .modal-buttons').on('click', function(){
+    jQuery('#js-modal-page-show-modal').modal('hide');
+  });
+  // jQuery('#js-modal-page-show-modal').on('hide.bs.modal', function () {
+  //   // console.log('tesing');
+  //   // cookies.set('hide_modal_id_hide_modal_id_homepage_language_modal', true, { expires: 365 * 20, path: '/' });
+  // });
+
+  var userLangbutton = '';
+  var url = window.location.origin;
+  if(userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ){
+    var userLangbutton = '<a href="'+url+'/'+userLang+'">'+userLang+'</a>';
+  }
+  jQuery('.homepage-language-modal').find('.modal-body').find('.lang-btn-wrap').html(userLangbutton+'<a class="default_language_sel btn" href="'+url+'">Stay In English</a>');
 
   jQuery(document).on('click', '.default_language_sel', function(e){
-  	var siteLang = document.documentElement.lang;
-  	jQuery('.homepage-language-modal').find('.js-modal-page-ok-button').click();
-  	if(siteLang == 'en'){
-  		e.preventDefault();
-  	}else{
-  		window.location.replace(window.location.origin);
-  	}
+    var siteLang = document.documentElement.lang;
+    jQuery('.homepage-language-modal').find('.js-modal-page-ok-button').click();
+    if(siteLang == 'en'){
+      jQuery('.modal-buttons').trigger('click');
+      e.preventDefault();
+    }else{
+      window.location.replace(window.location.origin);
+    }
   });
+
   // jQuery('#js-modal-page-show-modal').modal("show");
 
   let queryString = window.location.search;
