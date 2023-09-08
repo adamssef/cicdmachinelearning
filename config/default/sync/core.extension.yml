@@ -129,6 +129,7 @@ module:
   site_studio_webform: 0
   sitestudio_page_builder: 0
   smtp: 0
+  svg_image_field: 0
   syslog: 0
   system: 0
   taxonomy: 0
