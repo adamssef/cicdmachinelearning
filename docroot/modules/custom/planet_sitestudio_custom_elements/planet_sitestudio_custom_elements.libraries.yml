@@ -135,7 +135,7 @@ caseStudiesLibrary:
 customMainScript:
   css:
     component:
-      css/customFontScript.css: { }
+      css/customFontScript.css: { } 
       'https://fonts.cdnfonts.com/css/tt-commons': { type: external}
   js:
     js/customMainScript.js: { }

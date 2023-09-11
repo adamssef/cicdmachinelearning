@@ -10,7 +10,13 @@
         // setInterval(function () {
 
         // }, 1000);
-
+        jQuery(document).on('keypress',function(e) {
+          if(e.which == 13) {
+            if(jQuery('.search-wrap').find('input').val()){
+              jQuery('#custom-search-resource').click();
+            }
+          }
+        });
         jQuery('#custom-search-resource').on('click', function(){
           jQuery('.search-result-head').remove();
           var keyword = jQuery(this).parent().find('input').val();
@@ -59,6 +65,9 @@
           if(target == 'all'){
             jQuery('select[name="field_resource_category_target_id"]').val('All');
             jQuery(this).addClass('active');
+            jQuery('.search-result-head').html('');
+            jQuery('.search-wrap').find('input').val('');
+            jQuery('#views-exposed-form-planet-resources-block-1 input[name="combine"]').val('');
           }else{
             jQuery('select[name="field_resource_category_target_id"]').val(target);
             jQuery(this).addClass('active');
