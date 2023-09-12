@@ -132,13 +132,13 @@ caseStudiesLibrary:
   js:
     js/caseStudiesLibrary.js: { }
 # Custom Main Script Library
-customMainScript:
+PlanetPages:
   css:
     component:
-      css/customFontScript.css: { } 
+      css/PlanetPages.css: { } 
       'https://fonts.cdnfonts.com/css/tt-commons': { type: external}
   js:
-    js/customMainScript.js: { }
+    js/PlanetPages.js: { }
 # Publications Library
 publicationsLibrary:
   js:

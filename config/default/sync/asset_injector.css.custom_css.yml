@@ -9,10 +9,6 @@ dependencies:
 id: custom_css
 label: 'Custom CSS'
 code: |-
-  body {
-  	font-family: 'TT Commons', sans-serif;
-  }
-
   .coh-container-boxed.custom-container-wrap {
   	margin: 0 auto;
   	max-width: 92rem;
@@ -196,7 +192,8 @@ code: |-
       margin-top: 18px;
   }
   .cards-grid .card-wrap .btn-row + .btn-row {
-    margin-left: 10px;
+    margin-left: 0;
+    float: right;
   }
   .cards-grid .card-wrap .btn-row:last-child a.download-btn img {
       margin-bottom: 0;
@@ -470,7 +467,7 @@ code: |-
 
   .accordion .panel .panel-heading h4.panel-title:after {
   	content: "";
-  	background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/plus-icon.png);
+  	background-image: url(/sites/default/files/2023-08/plus-icon.png);
   	background-size: 20px;
   	width: 20px;
   	height: 20px;
@@ -650,9 +647,9 @@ code: |-
   footer * {
       font-family: 'TT Commons', sans-serif !important;
   }
-  .coh-accordion-title a:after {
+  .accordion.product-wrapp-accordion .coh-accordion-title a:after {
       content: "";
-      background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/plus--icon.png);
+      background-image: url(/sites/default/files/2023-09/plus--icon.png);
       width: 20px;
       height: 20px;
       background-size: 20px;
@@ -661,9 +658,11 @@ code: |-
       top: 5px;
   	transition: all 0.3s;
   }
-  .coh-accordion-title.is-active a:after {
+  .accordion.product-wrapp-accordion .coh-accordion-title.is-active a:after {
       transform: rotate(225deg);
+      font-family: unset;
   }
+
   #homepage_language_modal_desc {
       padding: 96px 32px 0 32px;
   }
@@ -711,25 +710,25 @@ code: |-
       right: 0;
   }
   .default-user-Portal-logo {
-      background: url(/modules/custom/planet_sitestudio_custom_elements/images/Icon-portal.png) no-repeat;
+      background: url(/sites/default/files/2023-09/Icon%20%283%29.png) no-repeat;
       height: 50px;
       margin-bottom: 25px;
   }
 
   .default-user-Training-logo {
-      background: url(/modules/custom/planet_sitestudio_custom_elements/images/Icon-training.png) no-repeat;
+      background: url(/sites/default/files/2023-09/Icon%20%282%29.png) no-repeat;
       height: 50px;
       margin-bottom: 25px;
   }
 
   .default-user-Guide-logo {
-      background: url(/modules/custom/planet_sitestudio_custom_elements/images/Icon-userguide.png) no-repeat;
+      background: url(/sites/default/files/2023-09/Icon%20%281%29.png) no-repeat;
       height: 50px;
       margin-bottom: 25px;
   }
   .lang-btn-wrap a.default_language_sel.btn:before {
       content: "";
-      background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/united-kingdom.png);
+      background-image: url(/sites/default/files/2023-09/united-kingdom.png);
       width: 15px;
       height: 15px;
       background-size: 15px;
@@ -752,7 +751,7 @@ code: |-
       text-decoration: none;
   }
   .modal-footer .modal-buttons {
-      background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/cross.png);
+      background-image: url(/sites/default/files/2023-09/cross.png);
       background-size: 32px;
       width: 32px;
       height: 32px;
@@ -982,21 +981,16 @@ code: |-
   .technical-doc-wrap .cards-grid, .training-path-wrap .cards-grid {
       display: block;
   }
-  a.lang-en-GB.btn-black {
-      padding: 16px 24px;
-      border: 2px solid #202020;
-      line-height: 20px;
-  }
-  a.lang-en-GB.btn-black {
+
+  .lang-btn-wrap a.btn-black {
       padding: 16px 24px;
       border: 2px solid #202020;
       line-height: 20px;
       padding-left: 37px;
       position: relative;
   }
-  a.lang-en-GB.btn-black:before {
+  .lang-btn-wrap a.btn-black:before {
       content: "";
-      background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/flag.png);
       width: 15px;
       height: 15px;
       background-size: 15px;
@@ -1004,6 +998,28 @@ code: |-
       right: auto;
       top: 18px;
       left: 18px;
+  }
+  .lang-btn-wrap a.lang-en-GB:before {
+  	  background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/united-kingdom.png);
+  }
+  .lang-btn-wrap a.lang-es-GB:before {
+  	  background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/spanish.png);
+  }
+  .lang-btn-wrap a.lang-it-GB:before {
+      background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/italy.png);
+  }
+  .lang-btn-wrap a.lang-fr-GB.btn-black:before {
+      background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/france.png);
+  }
+  .lang-btn-wrap a.lang-de-GB.btn-black:before {
+      background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/de.png);
+  }
+  .cards-grid .coh-wysiwyg {
+      justify-content: space-between;
+      flex-direction: row;
+  }
+  .coh-style-primary-dark-atom- input {
+    color: #fff;
   }
   @media(max-width: 575px) {
 
@@ -1184,7 +1200,7 @@ code: |-
   }
 
   @media (min-width:992px) and (max-width: 1199px) {
-  	.cards-grid {
+  	.cards-grid, .technical-doc-wrap > div, .training-path-wrap > div {
   		grid-template-columns: 1fr 1fr !important;
   	}
 
