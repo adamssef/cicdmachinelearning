@@ -127,6 +127,10 @@ display:
             operator_list: {  }
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: parent-term-wrap
+          default_row_class: true
       row:
         type: fields
       query:
@@ -480,7 +484,7 @@ display:
             alter_text: false
             text: ''
             make_link: true
-            path: '/global-support?tid={{ tid }}'
+            path: '#'
             absolute: false
             external: false
             replace_spaces: false
