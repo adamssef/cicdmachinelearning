@@ -37,7 +37,7 @@
           var toggleMore = jQuery(this).find('.toggle-more').length;
           if(liLength > 7 && !toggleMore){
             jQuery('li', this).eq(6).nextAll().hide().addClass('toggleable');
-            jQuery(this).append('<li class="toggle-more more"><img src="http://112.196.0.228:32772/sites/default/files/2023-09/Vector%20%283%29.png"><span>See more</span></li>');
+            jQuery(this).append('<li class="toggle-more more"><img src="/modules/custom/planet_sitestudio_custom_elements/images/arrow-down.png"><span>See more</span></li>');
           }
         });
 
@@ -113,7 +113,12 @@
           var userLangbutton = '';
           var url = window.location.origin;
           if(userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ){
-            var userLangbutton = '<a href="'+url+'/'+userLang+'">'+userLang+'</a>';
+            const languageName = new Intl.DisplayNames([userLang], {
+              type: 'language'
+            });
+            var LangName = languageName.of(userLang);
+            var userLangbutton = '<a class="btn-black lang-'+userLang+'" href="'+url+'/'+userLang+'">Switch to '+LangName+'</a>';
+            // var userLangbutton = '<a href="'+url+'/'+userLang+'">'+userLang+'</a>';
           }
           jQuery('.homepage-language-modal').find('.modal-body').find('.lang-btn-wrap').html(userLangbutton+'<a class="default_language_sel btn" href="'+url+'">Stay In English</a>');
 

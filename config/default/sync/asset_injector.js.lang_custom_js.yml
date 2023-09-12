@@ -46,7 +46,11 @@ code: |-
   var userLangbutton = '';
   var url = window.location.origin;
   if(userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ){
-    var userLangbutton = '<a href="'+url+'/'+userLang+'">'+userLang+'</a>';
+  	const languageName = new Intl.DisplayNames([userLang], {
+  	  type: 'language'
+  	});
+  	var LangName = languageName.of(userLang);
+    var userLangbutton = '<a class="btn-black lang-'+userLang+'" href="'+url+'/'+userLang+'">Switch to '+LangName+'</a>';
   }
   jQuery('.homepage-language-modal').find('.modal-body').find('.lang-btn-wrap').html(userLangbutton+'<a class="default_language_sel btn" href="'+url+'">Stay In English</a>');
 

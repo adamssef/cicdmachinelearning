@@ -49,10 +49,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_select_faq:
-    type: options_select
+    type: entity_reference_autocomplete
     weight: 15
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_select_resources:
     type: options_select
