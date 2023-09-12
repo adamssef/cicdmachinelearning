@@ -1155,7 +1155,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="btn-row"><a download class="download-btn" target="_blank" href="{{ field_download_link }}">Download <img src="sites/default/files/2023-09/Vector_0.png" alt=""></a></div>'
+            text: '<div class="btn-row"><a download class="download-btn" target="_blank" href="{{ field_download_link }}">Download <img src="/modules/custom/planet_sitestudio_custom_elements/images/Vector_0.png" alt=""></a></div>'
             make_link: false
             path: ''
             absolute: false
