@@ -97,7 +97,11 @@
             if (hide_modal_cookie) {
               return;
             }else{
-              jQuery('#js-modal-page-show-modal').modal('show');
+              if (siteLang == 'en' && userLang == 'en-US'){
+                // console.log('off modal');
+              }else{
+                jQuery('#js-modal-page-show-modal').modal('show');
+              }
             }
 
           }
@@ -106,7 +110,6 @@
             jQuery('#js-modal-page-show-modal').modal('hide');
           });
           jQuery('#js-modal-page-show-modal').on('hide.bs.modal', function () {
-            // console.log('tesing');
             cookies.set('hide_modal_id_hide_modal_id_homepage_language_modal', true, { expires: 365 * 20, path: '/' });
           });
 
