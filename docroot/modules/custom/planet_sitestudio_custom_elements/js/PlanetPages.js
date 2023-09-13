@@ -7,9 +7,21 @@
   Drupal.behaviors.planet_sitestudio_customMainScript = {
     attach: function () {
       $(document).ready(function () {
-        // setInterval(function () {
-
-        // }, 1000);
+        jQuery('.parent-term-wrap a').on('click', function(e){
+          jQuery('.parent-term-wrap a').removeClass('active');
+          console.log(jQuery(this).attr('class'));
+           var term_id = jQuery(this).attr('class');
+           if(term_id == 'active'){
+            var term_id = 'All';
+            jQuery('.parent-term-wrap a[data="term-target-all"]').addClass('active');
+           }else{
+            var term_id = term_id.replace('term-target-', '');
+            jQuery(this).addClass('active');
+           }
+           jQuery('select[name="tid"]').val(term_id);
+           jQuery('#views-exposed-form-email-contacts-terms-block-3').find('input[type="submit"]').click();
+           e.preventDefault();
+       });
         jQuery(document).on('keypress',function(e) {
           if(e.which == 13) {
             if(jQuery('.search-wrap').find('input').val()){

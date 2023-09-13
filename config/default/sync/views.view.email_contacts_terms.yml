@@ -657,7 +657,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<div class="links-listing-block"><ul><li><a href="/global-support" class="active">All</a></li></ul></div>'
+            value: '<div class="links-listing-block"><ul><li><a href="#" data="term-target-all" class="active">All</a></li></ul></div>'
             format: cohesion
           tokenize: false
       display_extenders: {  }
@@ -955,6 +955,7 @@ display:
           1: AND
       defaults:
         css_class: false
+        use_ajax: false
         relationships: false
         fields: false
         arguments: false
@@ -973,6 +974,7 @@ display:
           plugin_id: standard
           required: true
       css_class: list-box
+      use_ajax: true
       display_description: ''
       display_extenders: {  }
     cache_metadata:
