@@ -467,7 +467,7 @@ code: |-
 
   .accordion .panel .panel-heading h4.panel-title:after {
   	content: "";
-  	background-image: url(/sites/default/files/2023-08/plus-icon.png);
+  	background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/plus-icon.png);
   	background-size: 20px;
   	width: 20px;
   	height: 20px;
@@ -649,7 +649,7 @@ code: |-
   }
   .accordion.product-wrapp-accordion .coh-accordion-title a:after {
       content: "";
-      background-image: url(/sites/default/files/2023-09/plus--icon.png);
+      background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/plus--icon.png);
       width: 20px;
       height: 20px;
       background-size: 20px;
@@ -710,25 +710,25 @@ code: |-
       right: 0;
   }
   .default-user-Portal-logo {
-      background: url(/sites/default/files/2023-09/Icon%20%283%29.png) no-repeat;
+      background: url(/modules/custom/planet_sitestudio_custom_elements/images/Icon-portal.png) no-repeat;
       height: 50px;
       margin-bottom: 25px;
   }
 
   .default-user-Training-logo {
-      background: url(/sites/default/files/2023-09/Icon%20%282%29.png) no-repeat;
+      background: url(/modules/custom/planet_sitestudio_custom_elements/images/Icon-training.png) no-repeat;
       height: 50px;
       margin-bottom: 25px;
   }
 
   .default-user-Guide-logo {
-      background: url(/sites/default/files/2023-09/Icon%20%281%29.png) no-repeat;
+      background: url(/modules/custom/planet_sitestudio_custom_elements/images/Icon-userguide.png) no-repeat;
       height: 50px;
       margin-bottom: 25px;
   }
   .lang-btn-wrap a.default_language_sel.btn:before {
       content: "";
-      background-image: url(/sites/default/files/2023-09/united-kingdom.png);
+      background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/united-kingdom.png);
       width: 15px;
       height: 15px;
       background-size: 15px;
@@ -751,7 +751,7 @@ code: |-
       text-decoration: none;
   }
   .modal-footer .modal-buttons {
-      background-image: url(/sites/default/files/2023-09/cross.png);
+      background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/cross.png);
       background-size: 32px;
       width: 32px;
       height: 32px;
