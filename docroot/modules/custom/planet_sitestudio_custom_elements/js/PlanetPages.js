@@ -8,7 +8,7 @@
     attach: function () {
       $(document).ready(function () {
         jQuery('.parent-term-wrap a').on('click', function(e){
-          jQuery('.parent-term-wrap a').removeClass('active');
+          jQuery('.parent-term-wrap a, .parent-term-wrap a[data="term-target-all"]').removeClass('active');
           console.log(jQuery(this).attr('class'));
            var term_id = jQuery(this).attr('class');
            if(term_id == 'active'){
@@ -19,7 +19,7 @@
             jQuery(this).addClass('active');
            }
            jQuery('select[name="tid"]').val(term_id);
-           jQuery('#views-exposed-form-email-contacts-terms-block-3').find('input[type="submit"]').click();
+           jQuery('.views-exposed-form').find('input[type="submit"]').click();
            e.preventDefault();
        });
         jQuery(document).on('keypress',function(e) {
