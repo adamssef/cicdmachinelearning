@@ -105,18 +105,53 @@
           var hide_modal_cookie = cookies.get('hide_modal_id_homepage_language_modal');
           // Verify don't show again and show only once options.
 
-          if( (userLang == 'en-US' || userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ) && (siteLang == 'en' || siteLang == 'es' || siteLang == 'fr' || siteLang == 'it' || siteLang == 'de' ) ){
-            if (hide_modal_cookie) {
-              return;
-            }else{
-              if (siteLang == 'en' && userLang == 'en-US'){
-                // console.log('off modal');
-              }else{
-                jQuery('#js-modal-page-show-modal').modal('show');
-              }
-            }
+          // if( (userLang == 'en-US' || userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ) && (siteLang == 'en' || siteLang == 'es' || siteLang == 'fr' || siteLang == 'it' || siteLang == 'de' ) ){
+          //   if (hide_modal_cookie) {
+          //     return;
+          //   }else{
+          //     if (siteLang == 'en' && userLang == 'en-US'){
+          //       // console.log('off modal');
+          //     }else{
+          //       jQuery('#js-modal-page-show-modal').modal('show');
+          //     }
+          //   }
 
-          }
+          // }
+
+          // Hide modal if both are english
+          // if(siteLang == 'en' && userLang == 'en-US' ){
+          //   console.log('modal off');
+          //   hide_modal_cookie = true;
+          // }
+          
+          // // Shw modal if user lang is differnt + if cookie is save then do not show modal
+          // if(userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de'){
+          //   if(hide_modal_cookie){
+          //     return;
+          //   }else{
+          //     jQuery('#js-modal-page-show-modal').modal('show');
+          //   }
+            
+          // }
+
+          // // if user lang is not from configured languages
+          // if(userLang != 'es' || userLang != 'fr' || userLang != 'it' || userLang != 'de'){
+          //   jQuery('#js-modal-page-show-modal').modal('hide');
+          //   console.log('modal off');
+          // }
+
+          // const languages = ["es", "it", "de", "fr", "es-", "it-", "de-", "fr-"];
+          // console.log('languages: ',languages);
+          // console.log(languages.includes(userLang));
+          // console.log('hide_modal_cookie: ', hide_modal_cookie);
+          // if(languages.includes(userLang) && !hide_modal_cookie){
+          if((userLang.startsWith("fr") || userLang.startsWith("it") || userLang.startsWith("de") || userLang.startsWith("es")) && !hide_modal_cookie){
+              // console.log('modal on');
+            jQuery('#js-modal-page-show-modal').modal('show');
+          }else{
+            // console.log('modal off');
+            jQuery('#js-modal-page-show-modal').modal('hide');
+          } 
 
           jQuery('#js-modal-page-show-modal .modal-buttons').on('click', function(){
             jQuery('#js-modal-page-show-modal').modal('hide');
