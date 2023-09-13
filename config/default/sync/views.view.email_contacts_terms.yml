@@ -241,7 +241,7 @@ display:
             alter_text: false
             text: ''
             make_link: true
-            path: '/global-support-email?tid={{ tid }}'
+            path: '#'
             absolute: false
             external: false
             replace_spaces: false
@@ -291,6 +291,7 @@ display:
           separator: ', '
           field_api_classes: false
           convert_spaces: false
+      empty: {  }
       filters:
         status:
           id: status
@@ -368,6 +369,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         fields: false
         filters: false
         filter_groups: false
@@ -384,7 +386,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<div class="links-listing-block"><ul><li><a href="/global-support-email" class="active">All</a></li></ul></div>'
+            value: '<div class="links-listing-block parent-term-wrap"><ul><li><a href="#" data="term-target-all" class="active">All</a></li></ul></div>'
             format: cohesion
           tokenize: false
       display_extenders: {  }
@@ -657,7 +659,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<div class="links-listing-block"><ul><li><a href="#" data="term-target-all" class="active">All</a></li></ul></div>'
+            value: '<div class="links-listing-block parent-term-wrap"><ul><li><a href="#" data="term-target-all" class="active">All</a></li></ul></div>'
             format: cohesion
           tokenize: false
       display_extenders: {  }
@@ -804,6 +806,20 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<p>No data found</p>'
+            format: cohesion
+          tokenize: false
       arguments:
         parent_target_id:
           id: parent_target_id
@@ -954,6 +970,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         css_class: false
         use_ajax: false
         relationships: false
@@ -1124,15 +1141,19 @@ display:
           separator: ', '
           field_api_classes: false
       empty:
-        messages:
-          id: messages
+        area:
+          id: area
           table: views
-          field: messages
+          field: area
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: messages
+          plugin_id: text
           empty: true
+          content:
+            value: '<p>No data found</p>'
+            format: cohesion
+          tokenize: false
       arguments:
         parent_target_id:
           id: parent_target_id
@@ -1304,7 +1325,7 @@ display:
           plugin_id: standard
           required: true
       css_class: list-box
-      use_ajax: false
+      use_ajax: true
       display_description: ''
       display_extenders: {  }
     cache_metadata:
