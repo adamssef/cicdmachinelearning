@@ -7,8 +7,6 @@ dependencies:
     - taxonomy.vocabulary.resources_types
   content:
     - 'taxonomy_term:resources_types:3395b958-cb8a-402c-9c18-18ce292d818b'
-    - 'taxonomy_term:resources_types:54b5050b-a8f9-4f36-bc17-fcde5edc6e10'
-    - 'taxonomy_term:resources_types:6991cd99-0fc7-4d09-9ee5-c225d7a7ec2d'
   module:
     - node
     - taxonomy
@@ -200,7 +198,7 @@ display:
       tags: {  }
   entity_reference_1:
     id: entity_reference_1
-    display_title: 'Entity Reference'
+    display_title: 'Guide type Entity Reference'
     display_plugin: entity_reference
     position: 2
     display_options:
@@ -230,17 +228,18 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        tid:
-          id: tid
-          table: taxonomy_index
-          field: tid
-          relationship: none
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: term_node_tid
           group_type: group
           admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value:
-            418: 418
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: string
+          operator: '='
+          value: Guide
           group: 1
           exposed: false
           expose:
@@ -257,7 +256,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -270,12 +269,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          vid: resources_types
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
       filter_groups:
         operator: AND
         groups:
@@ -294,15 +287,29 @@ display:
           separator: '-'
           hide_empty: false
       defaults:
+        relationships: false
         filters: false
         filter_groups: false
+      relationships:
+        term_node_tid:
+          id: term_node_tid
+          table: node_field_data
+          field: term_node_tid
+          relationship: none
+          group_type: group
+          admin_label: term
+          entity_type: node
+          plugin_id: node_term_data
+          required: false
+          vids:
+            - resources_types
+      display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -416,7 +423,7 @@ display:
       tags: {  }
   entity_reference_3:
     id: entity_reference_3
-    display_title: 'Entity Reference'
+    display_title: 'Training type Entity Reference'
     display_plugin: entity_reference
     position: 2
     display_options:
@@ -446,17 +453,18 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        tid:
-          id: tid
-          table: taxonomy_index
-          field: tid
-          relationship: none
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: term_node_tid
           group_type: group
           admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value:
-            417: 417
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: string
+          operator: '='
+          value: Training
           group: 1
           exposed: false
           expose:
@@ -473,7 +481,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -486,12 +494,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          vid: resources_types
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
       filter_groups:
         operator: AND
         groups:
@@ -510,15 +512,29 @@ display:
           separator: '-'
           hide_empty: false
       defaults:
+        relationships: false
         filters: false
         filter_groups: false
+      relationships:
+        term_node_tid:
+          id: term_node_tid
+          table: node_field_data
+          field: term_node_tid
+          relationship: none
+          group_type: group
+          admin_label: term
+          entity_type: node
+          plugin_id: node_term_data
+          required: false
+          vids:
+            - resources_types
+      display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
