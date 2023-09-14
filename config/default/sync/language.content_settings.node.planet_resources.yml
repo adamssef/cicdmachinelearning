@@ -1,0 +1,11 @@
+uuid: ec74729e-49c1-441c-84d5-bdf200fac163
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.planet_resources
+id: node.planet_resources
+target_entity_type_id: node
+target_bundle: planet_resources
+default_langcode: site_default
+language_alterable: false

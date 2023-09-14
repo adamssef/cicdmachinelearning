@@ -1,0 +1,19 @@
+uuid: 41491990-55dc-4bbb-8244-b9d35b57b3f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_answer
+    - node.type.planet_faq
+id: node.planet_faq.field_answer
+field_name: field_answer
+entity_type: node
+bundle: planet_faq
+label: Answer
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

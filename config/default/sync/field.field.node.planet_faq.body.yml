@@ -1,0 +1,23 @@
+uuid: ddfab2b7-a217-445f-9d53-9c4da9fe0da0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.planet_faq
+  module:
+    - text
+id: node.planet_faq.body
+field_name: body
+entity_type: node
+bundle: planet_faq
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
