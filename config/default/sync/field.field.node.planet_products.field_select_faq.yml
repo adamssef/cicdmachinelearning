@@ -1,0 +1,29 @@
+uuid: 544bdefa-6281-48b9-a4ff-2645adec912f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_select_faq
+    - node.type.planet_faq
+    - node.type.planet_products
+id: node.planet_products.field_select_faq
+field_name: field_select_faq
+entity_type: node
+bundle: planet_products
+label: 'Select FAQ'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      planet_faq: planet_faq
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

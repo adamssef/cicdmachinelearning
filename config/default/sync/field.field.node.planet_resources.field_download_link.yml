@@ -1,0 +1,19 @@
+uuid: e9e58dd9-3907-4ef5-ac41-d644e70f20f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_download_link
+    - node.type.planet_resources
+id: node.planet_resources.field_download_link
+field_name: field_download_link
+entity_type: node
+bundle: planet_resources
+label: 'Download Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

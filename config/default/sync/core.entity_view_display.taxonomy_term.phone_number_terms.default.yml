@@ -1,0 +1,32 @@
+uuid: c61c496c-3d1b-4e51-9dfa-45f491e10ff6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.phone_number_terms.field_enter_phone_number
+    - taxonomy.vocabulary.phone_number_terms
+  module:
+    - text
+id: taxonomy_term.phone_number_terms.default
+targetEntityType: taxonomy_term
+bundle: phone_number_terms
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_enter_phone_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

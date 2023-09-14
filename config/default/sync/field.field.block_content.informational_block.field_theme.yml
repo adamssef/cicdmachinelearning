@@ -1,0 +1,21 @@
+uuid: d35cb28a-1ed2-4c26-acb2-db58e5700ce6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.informational_block
+    - field.storage.block_content.field_theme
+  module:
+    - options
+id: block_content.informational_block.field_theme
+field_name: field_theme
+entity_type: block_content
+bundle: informational_block
+label: Theme
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

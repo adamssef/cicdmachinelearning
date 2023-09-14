@@ -1,0 +1,11 @@
+uuid: 23469aaa-f4de-4a6e-aec4-d6b482945b85
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.planet_products
+id: node.planet_products
+target_entity_type_id: node
+target_bundle: planet_products
+default_langcode: site_default
+language_alterable: false

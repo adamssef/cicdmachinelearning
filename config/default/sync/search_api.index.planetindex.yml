@@ -1,6 +1,6 @@
 uuid: 2afc4df9-a1c4-4fc7-8e93-339ec9bcf096
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.node.field_layout_canvas
@@ -51,7 +51,6 @@ third_party_settings:
     multilingual:
       limit_to_content_language: false
       include_language_independent: true
-      specific_languages: {  }
 id: planetindex
 name: PlanetIndex
 description: ''
