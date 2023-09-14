@@ -1,0 +1,40 @@
+uuid: da4c68f6-a0d8-40f3-8ec7-7b89ad8667ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion
+    - context
+    - system
+id: custom_js
+label: 'Custom JS'
+code: |-
+  // Add Active classes to planet product page for top title + left sidebar title from listing.
+  if(jQuery('#block-views-block-planet-products-block-1').length > 0){
+  	var path = location.pathname;
+  	jQuery('#block-views-block-planet-products-block-1 .field-content a[href="'+path+'"]').addClass('active');
+  }
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: false
+  context:
+    id: context
+    negate: null
+    values: ''
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  current_theme:
+    id: current_theme
+    negate: false
+    theme: cohesion_theme
+contexts: {  }
+conditions_require_all: true

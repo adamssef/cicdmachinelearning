@@ -1,0 +1,8 @@
+uuid: abd98c0f-f7a1-4394-82c9-3c6f7252fd95
+langcode: und
+status: true
+dependencies: {  }
+name: kostumuvemo
+vid: kostumuvemo
+description: 'Description of kostumuvemo'
+weight: 7

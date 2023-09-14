@@ -131,6 +131,14 @@ fullCaseStudyPage:
 caseStudiesLibrary:
   js:
     js/caseStudiesLibrary.js: { }
+# Custom Main Script Library
+PlanetPages:
+  css:
+    component:
+      css/PlanetPages.css: { } 
+      'https://fonts.cdnfonts.com/css/tt-commons': { type: external}
+  js:
+    js/PlanetPages.js: { }
 # Publications Library
 publicationsLibrary:
   js:

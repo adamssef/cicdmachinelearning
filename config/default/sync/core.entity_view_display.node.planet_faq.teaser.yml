@@ -1,0 +1,34 @@
+uuid: 0f1eb88b-1603-4b79-9161-12b5f83c009d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.planet_faq.body
+    - field.field.node.planet_faq.field_answer
+    - node.type.planet_faq
+  module:
+    - text
+    - user
+id: node.planet_faq.teaser
+targetEntityType: node
+bundle: planet_faq
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_answer: true
+  langcode: true
+  search_api_excerpt: true

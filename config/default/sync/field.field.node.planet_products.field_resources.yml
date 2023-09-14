@@ -1,0 +1,25 @@
+uuid: 7681e201-7f74-4d73-8b50-fced746e9c30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resources
+    - node.type.planet_products
+id: node.planet_products.field_resources
+field_name: field_resources
+entity_type: node
+bundle: planet_products
+label: 'Select Resources - Guide'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: resource_nodes_by_type
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

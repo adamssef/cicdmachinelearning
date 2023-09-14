@@ -83,6 +83,7 @@ module:
   menu_ui: 0
   metatag: 0
   metatag_open_graph: 0
+  modal_page: 0
   modules_weight: 0
   mysql: 0
   node: 0
@@ -119,6 +120,7 @@ module:
   seo_hreflang: 0
   serialization: 0
   sfweb2lead_webform: 0
+  shield: 0
   shortcut: 0
   simple_sitemap: 0
   simplelogin: 0
@@ -142,8 +144,10 @@ module:
   ultimate_cron: 0
   update: 0
   user: 0
+  verf: 0
   views_autosubmit: 0
   views_fieldsets: 0
+  views_filters_populate: 0
   views_ui: 0
   webform: 0
   webform_node: 0

@@ -1,0 +1,23 @@
+uuid: db8f48b5-bf70-4acd-a6bf-1f9980d00340
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.planet_products
+  module:
+    - text
+id: node.planet_products.body
+field_name: body
+entity_type: node
+bundle: planet_products
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

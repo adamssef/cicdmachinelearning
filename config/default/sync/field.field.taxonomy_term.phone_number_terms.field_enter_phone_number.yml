@@ -1,0 +1,19 @@
+uuid: 57310df1-1ce5-4498-80f0-4467d21f4477
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_enter_phone_number
+    - taxonomy.vocabulary.phone_number_terms
+id: taxonomy_term.phone_number_terms.field_enter_phone_number
+field_name: field_enter_phone_number
+entity_type: taxonomy_term
+bundle: phone_number_terms
+label: 'Enter Phone Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
