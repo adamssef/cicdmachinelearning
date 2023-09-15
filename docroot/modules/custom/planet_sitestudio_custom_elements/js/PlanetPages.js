@@ -147,11 +147,12 @@
           // if(languages.includes(userLang) && !hide_modal_cookie){
           if((userLang.startsWith("fr") || userLang.startsWith("it") || userLang.startsWith("de") || userLang.startsWith("es")) && !hide_modal_cookie){
               // console.log('modal on');
-            jQuery('#js-modal-page-show-modal').modal('show');
+            //jQuery('#js-modal-page-show-modal').modal('show');
           }else{
             // console.log('modal off');
-            jQuery('#js-modal-page-show-modal').modal('hide');
+            //jQuery('#js-modal-page-show-modal').modal('hide');
           } 
+          jQuery('#js-modal-page-show-modal').modal('hide');
 
           jQuery('#js-modal-page-show-modal .modal-buttons').on('click', function(){
             jQuery('#js-modal-page-show-modal').modal('hide');
