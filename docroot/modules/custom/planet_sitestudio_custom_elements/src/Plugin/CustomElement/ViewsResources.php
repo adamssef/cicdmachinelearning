@@ -63,8 +63,12 @@ class ViewsResources extends CustomElementPluginBase {
       template_preprocess_pager($variables);
     }
 
-    $variables['items']['current'] = $variables['current'];
 
+    if (isset($variables['current'])) {
+      $variables['items']['current'] = $variables['current'];
+    } else {
+        $variables['items']['current'] = [];
+    }
     // Render the element.
     return [
       '#theme' => 'views_resources',

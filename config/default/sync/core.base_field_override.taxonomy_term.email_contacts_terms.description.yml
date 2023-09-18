@@ -1,0 +1,20 @@
+uuid: 7f7d1fd3-9ef7-4e16-886d-726b3f6dcb1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.email_contacts_terms
+  module:
+    - text
+id: taxonomy_term.email_contacts_terms.description
+field_name: description
+entity_type: taxonomy_term
+bundle: email_contacts_terms
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

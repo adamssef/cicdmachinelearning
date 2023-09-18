@@ -1,0 +1,18 @@
+uuid: c50ec2e8-113a-4369-a969-f813f6f548f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.kostumuvemo
+id: taxonomy_term.kostumuvemo.name
+field_name: name
+entity_type: taxonomy_term
+bundle: kostumuvemo
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

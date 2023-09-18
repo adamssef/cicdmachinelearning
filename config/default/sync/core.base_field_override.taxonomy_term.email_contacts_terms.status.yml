@@ -1,0 +1,22 @@
+uuid: c98daa48-ad07-4fdb-8410-d738d22f4dba
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.email_contacts_terms
+id: taxonomy_term.email_contacts_terms.status
+field_name: status
+entity_type: taxonomy_term
+bundle: email_contacts_terms
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

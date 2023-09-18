@@ -1,0 +1,18 @@
+uuid: afa185ba-2c8a-4c66-9824-9a3459d5efc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.phone_number_terms
+id: taxonomy_term.phone_number_terms.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: phone_number_terms
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
