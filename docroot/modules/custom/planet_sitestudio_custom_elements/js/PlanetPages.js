@@ -6,6 +6,12 @@
 (function ($, cookies, Drupal) {
   Drupal.behaviors.planet_sitestudio_customMainScript = {
     attach: function () {
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+      }
+
       $(document).ready(function () {
         jQuery('.parent-term-wrap a').on('click', function(e){
           jQuery('.parent-term-wrap a, .parent-term-wrap a[data="term-target-all"]').removeClass('active');
@@ -98,11 +104,11 @@
         // document.getElementById("search-icon").onclick = function() {searchResource()};
         // function searchResource() {
           var userLang = navigator.language || navigator.userLanguage;
-          console.log ("userLang language is: " + userLang);
+          //console.log ("userLang language is: " + userLang);
           var siteLang = document.documentElement.lang;
-          console.log ("Site language is: " + siteLang);
+          //console.log ("Site language is: " + siteLang);
           // Get cookies for do not show again option and show only once.
-          var hide_modal_cookie = cookies.get('hide_modal_id_homepage_language_modal');
+          var hide_modal_cookie = getCookie('hide_modal_id_homepage_language_modal');
           // Verify don't show again and show only once options.
 
           // if( (userLang == 'en-US' || userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ) && (siteLang == 'en' || siteLang == 'es' || siteLang == 'fr' || siteLang == 'it' || siteLang == 'de' ) ){

@@ -1,0 +1,18 @@
+uuid: 4df4e89b-c662-4181-94f0-e2d016171988
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.acquiring
+id: menu_link_content.acquiring.description
+field_name: description
+entity_type: menu_link_content
+bundle: acquiring
+label: Description
+description: 'Shown when hovering over the menu link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

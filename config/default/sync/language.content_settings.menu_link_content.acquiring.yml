@@ -1,0 +1,18 @@
+uuid: beb559e4-883f-4968-8b21-d5d589eb0f01
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.acquiring
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: menu_link_content.acquiring
+target_entity_type_id: menu_link_content
+target_bundle: acquiring
+default_langcode: site_default
+language_alterable: false

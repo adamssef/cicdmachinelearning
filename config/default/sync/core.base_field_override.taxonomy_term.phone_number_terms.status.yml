@@ -1,0 +1,22 @@
+uuid: fe1a969b-5d8f-43c7-9891-13108d037888
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.phone_number_terms
+id: taxonomy_term.phone_number_terms.status
+field_name: status
+entity_type: taxonomy_term
+bundle: phone_number_terms
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

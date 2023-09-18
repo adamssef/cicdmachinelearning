@@ -1,0 +1,22 @@
+uuid: 6aa597ae-3878-4e43-bab8-d72372817a24
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.planet_offices
+id: node.planet_offices.sticky
+field_name: sticky
+entity_type: node
+bundle: planet_offices
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

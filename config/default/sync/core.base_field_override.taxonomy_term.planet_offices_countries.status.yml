@@ -1,0 +1,22 @@
+uuid: b61ac955-1527-4936-af76-c0c1c417f261
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.planet_offices_countries
+id: taxonomy_term.planet_offices_countries.status
+field_name: status
+entity_type: taxonomy_term
+bundle: planet_offices_countries
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

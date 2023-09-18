@@ -1,0 +1,18 @@
+uuid: 9bceda1e-8182-475b-bfcb-5d64cdde90ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.phone_number_terms
+id: taxonomy_term.phone_number_terms.name
+field_name: name
+entity_type: taxonomy_term
+bundle: phone_number_terms
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
