@@ -1,0 +1,20 @@
+uuid: edd26b8d-a4b9-446b-b762-774d0211725c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.planet_offices_countries
+  module:
+    - path
+id: taxonomy_term.planet_offices_countries.path
+field_name: path
+entity_type: taxonomy_term
+bundle: planet_offices_countries
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

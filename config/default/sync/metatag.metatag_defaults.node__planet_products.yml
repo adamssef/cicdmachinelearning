@@ -1,0 +1,8 @@
+uuid: 1c9f8727-2ca3-424f-8ab1-03fe9ee9d3d0
+langcode: en
+status: true
+dependencies: {  }
+id: node__planet_products
+label: 'Content: Planet Products'
+tags:
+  robots: 'noindex, nofollow'

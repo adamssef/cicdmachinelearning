@@ -15,8 +15,8 @@ dependencies:
     - taxonomy.vocabulary.resources_categories
     - taxonomy.vocabulary.resources_types
   content:
-    - 'taxonomy_term:resources_types:54b5050b-a8f9-4f36-bc17-fcde5edc6e10'
-    - 'taxonomy_term:resources_types:6991cd99-0fc7-4d09-9ee5-c225d7a7ec2d'
+    - 'taxonomy_term:resources_categories:78138e88-2282-404b-b2fc-1902e701ad0b'
+    - 'taxonomy_term:resources_categories:b147a4f8-c915-4cee-b1fa-dcc2c8626fe0'
   module:
     - cohesion
     - dynamic_entity_reference
@@ -223,7 +223,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true

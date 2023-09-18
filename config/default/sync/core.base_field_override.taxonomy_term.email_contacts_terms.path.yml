@@ -1,0 +1,20 @@
+uuid: 8a03c04d-058b-4ac4-b76d-23fa1119f806
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.email_contacts_terms
+  module:
+    - path
+id: taxonomy_term.email_contacts_terms.path
+field_name: path
+entity_type: taxonomy_term
+bundle: email_contacts_terms
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

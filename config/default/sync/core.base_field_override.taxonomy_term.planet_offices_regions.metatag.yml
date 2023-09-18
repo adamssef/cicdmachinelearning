@@ -1,0 +1,18 @@
+uuid: e13a81f0-bca7-456f-b0ed-c56cf0b1bd55
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.planet_offices_regions
+id: taxonomy_term.planet_offices_regions.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: planet_offices_regions
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
