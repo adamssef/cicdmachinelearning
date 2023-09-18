@@ -1,0 +1,20 @@
+uuid: 8c55ae43-a337-4d39-8ae7-4e8a2c818e3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.vector_image
+  module:
+    - path
+id: media.vector_image.path
+field_name: path
+entity_type: media
+bundle: vector_image
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

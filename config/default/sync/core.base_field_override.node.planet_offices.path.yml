@@ -1,0 +1,20 @@
+uuid: d404b44c-8e96-4683-b935-29551b195043
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.planet_offices
+  module:
+    - path
+id: node.planet_offices.path
+field_name: path
+entity_type: node
+bundle: planet_offices
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

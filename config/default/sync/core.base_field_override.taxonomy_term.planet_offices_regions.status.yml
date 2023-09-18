@@ -1,0 +1,22 @@
+uuid: 8dbf3231-de82-4972-adb3-37cd77940287
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.planet_offices_regions
+id: taxonomy_term.planet_offices_regions.status
+field_name: status
+entity_type: taxonomy_term
+bundle: planet_offices_regions
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

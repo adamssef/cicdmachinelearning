@@ -12,7 +12,7 @@ bundle: planet_faq
 label: Answer
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

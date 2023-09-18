@@ -1,0 +1,18 @@
+uuid: 0e1163b2-85e8-42cb-8618-020c5ee112f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.planet_offices
+id: node.planet_offices.title
+field_name: title
+entity_type: node
+bundle: planet_offices
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: 9c99c488-e448-44a3-9e4e-c7e863244e54
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.planet_offices
+id: node.planet_offices.promote
+field_name: promote
+entity_type: node
+bundle: planet_offices
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

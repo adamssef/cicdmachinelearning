@@ -1,0 +1,18 @@
+uuid: daee219a-4fba-495e-9f72-a182adbf7712
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.acquiring
+id: menu_link_content.acquiring.title
+field_name: title
+entity_type: menu_link_content
+bundle: acquiring
+label: 'Menu link title'
+description: 'The text to be used for this link in the menu.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
