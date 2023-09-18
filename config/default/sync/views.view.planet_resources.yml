@@ -308,7 +308,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="btn-row"><a class="btn-black" href="{{ field_link__uri }}">{{ field_link__title }}</a> <a class="download-btn" href="#">Download <img src="/sites/default/files/2023-08/download-icon.png" alt=""></a></div>'
+            text: '<div class="btn-row"><a class="btn-black" target="_blank" href="{{ field_link__uri }}">{{ field_link__title }}</a> <a target="_blank" class="download-btn" href="#">Download <img src="/sites/default/files/2023-08/download-icon.png" alt=""></a></div>'
             make_link: false
             path: ''
             absolute: false
@@ -1025,7 +1025,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="btn-row"><a class="btn-black" href="{{ field_link__uri }}">View {{ field_planet_resource_type }}</a> </div>'
+            text: '<div class="btn-row"><a target="_blank"  class="btn-black" href="{{ field_link__uri }}">View {{ field_planet_resource_type }}</a> </div>'
             make_link: false
             path: ''
             absolute: false
@@ -1704,7 +1704,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="btn-row"><a class="btn-black" href="{{ field_link__uri }}">View guide</a> </div>'
+            text: '<div class="btn-row"><a  target="_blank" class="btn-black" href="{{ field_link__uri }}">View guide</a> </div>'
             make_link: false
             path: ''
             absolute: false
@@ -1771,7 +1771,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="btn-row"><a class="download-btn" href="{{ field_download_link }}" download>Download <img src="/sites/default/files/2023-09/Vector_0.png" alt=""></a></div>'
+            text: '<div class="btn-row"><a class="download-btn"  target="_blank" href="{{ field_download_link }}" download>Download <img src="/sites/default/files/2023-09/Vector_0.png" alt=""></a></div>'
             make_link: false
             path: ''
             absolute: false
@@ -2430,7 +2430,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="btn-row"><a class="btn-black" href="{{ field_link__uri }}">View training</a> </div>'
+            text: '<div class="btn-row"><a class="btn-black"  target="_blank" href="{{ field_link__uri }}">View training</a> </div>'
             make_link: false
             path: ''
             absolute: false
@@ -2560,7 +2560,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="btn-row"><a download class="download-btn" href="{{ field_download_link }}">Download <img src="/sites/default/files/2023-09/Vector_0.png" alt=""></a></div>'
+            text: '<div class="btn-row"><a  target="_blank" download class="download-btn" href="{{ field_download_link }}">Download <img src="/sites/default/files/2023-09/Vector_0.png" alt=""></a></div>'
             make_link: false
             path: ''
             absolute: false
