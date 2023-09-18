@@ -570,10 +570,10 @@ code: |-
     line-height: 22px;
     word-break: break-all;
   }
-
+  /*
   .coh-row-visible-xl {
     width: 100%;
-  }
+  }*/
 
   .plant-resources-wrapp form.views-exposed-form {
     display: none;
@@ -719,11 +719,6 @@ code: |-
       position: relative;
       padding-left: 37px;
   }
-  .modal-footer {
-      position: absolute;
-      top: 0;
-      right: 0;
-  }
   .default-user-Portal-logo {
       background: url(/modules/custom/planet_sitestudio_custom_elements/images/Icon-portal.png) no-repeat;
       height: 50px;
@@ -751,20 +746,6 @@ code: |-
       right: auto;
       top: 18px;
       left: 18px;
-  }
-  .modal-footer {
-      position: absolute;
-      top: 17px;
-      right: 10px;
-      border: 0;
-  }
-  .modal-footer .modal-buttons {
-      background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/cross.png);
-      background-size: 32px;
-      width: 32px;
-      height: 32px;
-      background-repeat: no-repeat;
-    cursor: pointer;
   }
   .product-list > div {
       margin-left: 15px;
@@ -877,7 +858,6 @@ code: |-
   .links-listing-block ul li.less img {
     margin-left: 20px;
     transform: rotate(180deg);
-  
   }
 
   .search-result-head h3 {
