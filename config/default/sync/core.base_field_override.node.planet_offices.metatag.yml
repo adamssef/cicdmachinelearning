@@ -1,0 +1,18 @@
+uuid: 5946c17f-eba4-4734-bb2e-952dfc6dbe97
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.planet_offices
+id: node.planet_offices.metatag
+field_name: metatag
+entity_type: node
+bundle: planet_offices
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

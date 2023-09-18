@@ -1,0 +1,18 @@
+uuid: 75157da8-5edb-4b39-9858-6f4143002ebf
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.planet_offices_countries
+id: taxonomy_term.planet_offices_countries.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: planet_offices_countries
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

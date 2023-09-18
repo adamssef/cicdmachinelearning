@@ -1,0 +1,20 @@
+uuid: 18da8360-51e1-419b-96e1-8e4f2b8bcca8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.planet_offices_regions
+  module:
+    - path
+id: taxonomy_term.planet_offices_regions.path
+field_name: path
+entity_type: taxonomy_term
+bundle: planet_offices_regions
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

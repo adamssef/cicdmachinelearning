@@ -1,0 +1,8 @@
+uuid: fb344c28-e32e-473a-9f06-4ead76f70b45
+langcode: en
+status: true
+dependencies: {  }
+id: node__planet_resources
+label: 'Content: Planet Resources'
+tags:
+  robots: 'noindex, nofollow'
