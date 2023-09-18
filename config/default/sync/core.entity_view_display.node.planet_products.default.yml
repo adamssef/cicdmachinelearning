@@ -22,7 +22,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   field_installation_instructions:
     type: string
@@ -30,7 +30,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
   field_resources:
     type: entity_reference_entity_view
@@ -39,7 +39,7 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 105
+    weight: 5
     region: content
   field_select_faq:
     type: entity_reference_entity_view
@@ -48,7 +48,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_select_resources:
     type: entity_reference_entity_view
@@ -57,13 +57,21 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 104
+    weight: 4
+    region: content
+  langcode:
+    type: language
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+    weight: 6
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
-  langcode: true
   search_api_excerpt: true

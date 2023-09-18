@@ -1,0 +1,8 @@
+uuid: 20e164d1-3401-41cf-ae50-7006c4250d7e
+langcode: en
+status: true
+dependencies: {  }
+id: node__planet_faq
+label: 'Content: Planet FAQ'
+tags:
+  robots: 'noindex, nofollow'

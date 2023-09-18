@@ -1,0 +1,20 @@
+uuid: dc68c89d-f31a-4d60-ad88-a077786650ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.planet_offices
+id: node.planet_offices.menu_link
+field_name: menu_link
+entity_type: node
+bundle: planet_offices
+label: 'Menu link'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,18 @@
+uuid: 47221484-2084-4e7d-ba3a-ca0871e20362
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.email_contacts_terms
+id: taxonomy_term.email_contacts_terms.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: email_contacts_terms
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
