@@ -570,10 +570,10 @@ code: |-
     line-height: 22px;
     word-break: break-all;
   }
-
+  /*
   .coh-row-visible-xl {
     width: 100%;
-  }
+  }*/
 
   .plant-resources-wrapp form.views-exposed-form {
     display: none;
@@ -877,7 +877,6 @@ code: |-
   .links-listing-block ul li.less img {
     margin-left: 20px;
     transform: rotate(180deg);
-  
   }
 
   .search-result-head h3 {
