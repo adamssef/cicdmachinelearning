@@ -40,7 +40,7 @@
           var keyword = jQuery(this).parent().find('input').val();
           jQuery('#views-exposed-form-planet-resources-block-1 input[name="combine"]').delay(1000 ).attr('keyword', keyword).val(keyword);
           jQuery("<div class='search-result-head'><h3>Search results for: "+keyword+"</h3></div>").insertBefore("#block-views-block-planet-resources-block-1");
-          jQuery('#views-exposed-form-planet-resources-block-1 .form-submit').delay(1000 ).click();
+          jQuery('#views-exposed-form-planet-resources-block-1 .form-submit').delay(0).click();
           // if(jQuery('#views-exposed-form-planet-resources-block-1 .cards-grid').text().length == 0) {
           //   var message = '<p>Sorry, we couldnt find any matches for your search. Feel free to reach out to our support team for assistance!</p>';
           //   jQuery(".search-result-head").append(message);

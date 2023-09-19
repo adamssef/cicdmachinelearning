@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'TT Commons';
     src: url('../fonts/TTCommons-Light.eot');
     src: url('../fonts/TTCommons-Light.eot?#iefix') format('embedded-opentype'),
@@ -86,7 +86,7 @@
     font-weight: 100;
     font-style: normal;
     font-display: swap;
-}
+} */
 
 .ajax-progress-fullscreen{
   display:none;
