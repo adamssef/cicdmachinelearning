@@ -232,6 +232,25 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
     font-size: 12pt;
   }
 }
+.planSwitch.planSwitch-black .indicator {
+  background: black;
+}
+.planSwitch.planSwitch-black {
+  max-width: 24rem;
+}
+.planSwitch-black input:checked + label {
+  color: white;
+}
+.planSwitch-black input:nth-of-type(2):checked ~ .indicator {
+  left: 50%;
+}
+.planSwitch-black .indicator {
+  width: calc(50% + 4px);
+}
+.planSwitch-black label {
+  width: 50%;
+  color: black;
+}
 .environment-indicator article footer {
   display: none !important;
 }
