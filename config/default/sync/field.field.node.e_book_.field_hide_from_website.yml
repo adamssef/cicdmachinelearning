@@ -1,0 +1,23 @@
+uuid: da105a5e-7943-4765-ae88-ed4353a27eb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_from_website
+    - node.type.e_book_
+id: node.e_book_.field_hide_from_website
+field_name: field_hide_from_website
+entity_type: node
+bundle: e_book_
+label: 'Hide from website'
+description: 'If you want to hide this ebook from the website (eg. https://www.weareplanet.com/ebooks) please set number 1 in the input.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 1
+  prefix: ''
+  suffix: ''
+field_type: integer
