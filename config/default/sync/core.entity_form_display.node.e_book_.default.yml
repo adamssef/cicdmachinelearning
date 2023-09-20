@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.e_book_.field_basic_page_metatag
     - field.field.node.e_book_.field_button_layout_canvas
     - field.field.node.e_book_.field_company_sector
+    - field.field.node.e_book_.field_hide_from_website
     - field.field.node.e_book_.field_layout_canvas
     - field.field.node.e_book_.field_main_image_media
     - field.field.node.e_book_.field_pre_heading
@@ -14,6 +15,7 @@ dependencies:
     - field.field.node.e_book_.field_resources_tags
     - field.field.node.e_book_.field_summary
     - node.type.e_book_
+    - workflows.workflow.editorial
   module:
     - cohesion_elements
     - content_moderation
@@ -53,6 +55,13 @@ content:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_hide_from_website:
+    type: number
+    weight: 26
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   field_layout_canvas:

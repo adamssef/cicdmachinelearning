@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.e_book_.field_basic_page_metatag
     - field.field.node.e_book_.field_button_layout_canvas
     - field.field.node.e_book_.field_company_sector
+    - field.field.node.e_book_.field_hide_from_website
     - field.field.node.e_book_.field_layout_canvas
     - field.field.node.e_book_.field_main_image_media
     - field.field.node.e_book_.field_pre_heading
@@ -22,6 +23,11 @@ targetEntityType: node
 bundle: e_book_
 mode: teaser
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -31,6 +37,7 @@ hidden:
   field_basic_page_metatag: true
   field_button_layout_canvas: true
   field_company_sector: true
+  field_hide_from_website: true
   field_layout_canvas: true
   field_main_image_media: true
   field_pre_heading: true
