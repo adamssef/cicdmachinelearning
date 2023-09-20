@@ -555,7 +555,7 @@ code: |-
 
   .support-list .list-box span {
     color: #000;
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 600;
     line-height: 20px;
     display: block;
@@ -565,7 +565,7 @@ code: |-
   .support-list .list-box a {
     text-decoration: none;
     color: #000;
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 300;
     line-height: 22px;
     word-break: break-all;
@@ -1037,6 +1037,7 @@ code: |-
     }
     .support-list.email-list .list-box .views-row{
       width: 100%;
+      margin-bottom: 7px;
     }
   }
 
