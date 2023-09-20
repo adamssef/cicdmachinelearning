@@ -15,8 +15,7 @@
       $(document).ready(function () {
         jQuery('.parent-term-wrap a').on('click', function(e){
           jQuery('.parent-term-wrap a, .parent-term-wrap a[data="term-target-all"]').removeClass('active');
-          console.log(jQuery(this).attr('class'));
-           var term_id = jQuery(this).attr('class');
+          var term_id = jQuery(this).attr('class');
            if(term_id == 'active'){
             var term_id = 'All';
             jQuery('.parent-term-wrap a[data="term-target-all"]').addClass('active');

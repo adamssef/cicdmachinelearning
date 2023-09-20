@@ -162,3 +162,6 @@ blogIndex:
 relatedProducts:
   js:
     js/relatedProducts.js: {}
+supportPageToggle:
+  js:
+    js/supportPageToggle.js: {}
