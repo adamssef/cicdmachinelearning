@@ -1,0 +1,17 @@
+uuid: 2df842f7-d571-4c35-b1b6-b559ade19d72
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Authors
+type: author
+description: 'Author pages that are linked in the articles'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false
