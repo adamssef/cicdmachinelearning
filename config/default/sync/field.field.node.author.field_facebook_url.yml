@@ -1,0 +1,19 @@
+uuid: eb877a84-3c2a-47b6-b159-58ff6e9f13a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_facebook_url
+    - node.type.author
+id: node.author.field_facebook_url
+field_name: field_facebook_url
+entity_type: node
+bundle: author
+label: 'Facebook URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

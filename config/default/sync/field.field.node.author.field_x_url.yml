@@ -1,0 +1,19 @@
+uuid: 9715eadb-e982-4369-a73c-c4a058492b67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_x_url
+    - node.type.author
+id: node.author.field_x_url
+field_name: field_x_url
+entity_type: node
+bundle: author
+label: 'X URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
