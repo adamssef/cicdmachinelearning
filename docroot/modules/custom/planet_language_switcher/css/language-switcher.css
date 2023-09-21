@@ -271,3 +271,63 @@ a.toolbar-icon.toolbar-icon-edit.toolbar-item {
 article footer div {
   display: none !important;
 }
+@media(min-width: 1024px) {
+  .plnt-author-page {
+    margin: 32px auto;
+    max-width: 1000px;
+  }
+}
+.author-photo div > div:first-child {
+  display: none;
+}
+.author-photo img {
+  display: block;
+  margin: 10px auto;
+}
+
+.plnt-author-page .coh-row-inner {
+  border: 1px solid #eee;
+  margin-bottom: 24px;
+  box-shadow: 0 0.25rem 1.5625rem rgba(0,0,0,0.1);
+  padding: 40px 0px;
+}
+.author-bio p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-top: 18px;
+}
+.author-social h2, .last-articles h2 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+
+.author-social img {
+  max-width: 32px;
+  height: auto;
+  float: left;
+  margin-right: 8px;
+}
+.author-social-icons-wrapper {
+  height: 50px;
+  display: block;
+}
+.last-articles ul, .last-articles ul li {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+.last-articles a {
+  color: black;
+}
+.linked-author-page img {
+  border-radius: 30rem;
+  height: 32px;
+  width: 32px;
+  margin-right: 16px
+}
+.linked-author-page {
+  display: flex;
+}
