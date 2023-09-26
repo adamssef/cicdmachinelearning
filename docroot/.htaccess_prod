@@ -210,3 +210,7 @@ AddEncoding gzip svgz
   Order deny,allow
   Deny from all
 </FilesMatch>
+
+<FilesMatch "\.pdf$">
+    Header set X-Robots-Tag "noindex, nofollow"
+</FilesMatch>

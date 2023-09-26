@@ -257,7 +257,6 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 @media(min-width: 1024px) {
   .plnt-author-page {
     margin: 32px auto;
-    max-width: 1000px;
   }
 }
 .author-photo div > div:first-child {
@@ -269,9 +268,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 
 .plnt-author-page .coh-row-inner {
-  border: 1px solid #eee;
   margin-bottom: 24px;
-  box-shadow: 0 0.25rem 1.5625rem rgba(0,0,0,0.1);
   padding: 40px 0px;
 }
 .author-bio p {

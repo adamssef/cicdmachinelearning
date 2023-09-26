@@ -1,0 +1,13 @@
+diff --git a/core/modules/path/src/Plugin/Field/FieldWidget/PathWidget.php b/core/modules/path/src/Plugin/Field/FieldWidget/PathWidget.php
+index 5ddc00902d..d5bde05b9e 100644
+--- a/core/modules/path/src/Plugin/Field/FieldWidget/PathWidget.php
++++ b/core/modules/path/src/Plugin/Field/FieldWidget/PathWidget.php
+@@ -32,7 +32,7 @@ public function formElement(FieldItemListInterface $items, $delta, array $elemen
+     $element['alias'] = [
+       '#type' => 'textfield',
+       '#title' => $element['#title'],
+-      '#default_value' => $items[$delta]->alias,
++      '#default_value' => $entity->isNewTranslation() ? '' : $items[$delta]->alias,
+       '#required' => $element['#required'],
+       '#maxlength' => 255,
+       '#description' => $this->t('Specify an alternative path by which this data can be accessed. For example, type "/about" when writing an about page.'),
