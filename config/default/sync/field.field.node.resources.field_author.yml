@@ -1,0 +1,29 @@
+uuid: f2579e1c-e473-406a-b8e8-ef392a29ee61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author
+    - node.type.author
+    - node.type.resources
+id: node.resources.field_author
+field_name: field_author
+entity_type: node
+bundle: resources
+label: Author
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      author: author
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
