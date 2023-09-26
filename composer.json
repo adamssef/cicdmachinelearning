@@ -176,7 +176,8 @@
         "https://www.drupal.org/project/drupal/issues/3091336": "https://www.drupal.org/files/issues/2021-01-05/AliasRepository-proper-language-fallback-3091336-62.patch",
         "Deprecated function: mb_strtolower(): Passing null to parameter #1 ($string)": "patches/core_condition.patch",
         "Invalid translation language (it) specified": "patches/core_contentedit.patch",
-        "https://www.drupal.org/project/drupal/issues/3006897": "https://www.drupal.org/files/issues/2022-11-15/3006897-17.patch"
+        "https://www.drupal.org/project/drupal/issues/3006897": "https://www.drupal.org/files/issues/2022-11-15/3006897-17.patch",
+        "Fix invalid alias": "patches/translations_invalid_path.patch"
       },
       "drupal/config_ignore": {
         "Support for export filtering via Drush": "https://www.drupal.org/files/issues/2021-01-04/config_ignore_2857247-61.patch"

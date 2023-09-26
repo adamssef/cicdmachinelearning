@@ -1,0 +1,67 @@
+{#
+  Custom Twig template for the "Author" content type.
+  Template variables available:
+    - content: An array of content elements.
+    - node: The node entity representing the "Author" content.
+    - label: The node label.
+    - url: The node URL.
+    - attributes: HTML attributes for the node wrapper.
+#}
+<article class="plnt-author-page">
+	<div class="coh-container coh-container-boxed">
+		<div class="coh-row">
+			<div class="coh-row-inner">
+				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-2">
+					<div class="author-photo">
+						{{content.field_photo}}
+					</div>
+				</div>
+				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-10">
+					<h1 class="coh-heading coh-style-heading-1-planet">{{ label }}</h1>
+					<div class="author-bio">
+						{{ content.body }}
+					</div>
+
+					<div class="author-social">
+						<h2>Connect with {{ label }}</h2>
+						<div class="author-social-icons-wrapper">
+							{% if content.field_website_url['#items'][0].value is not empty %}
+									<a href="{{ content.field_website_url['#items'][0].value }}"><img src="/resources/icons/social/web.svg"/>
+									</a>
+							{% endif %}
+							{% if content.field_facebook_url['#items'][0].value is not empty %}
+									<a href="{{ content.field_facebook_url['#items'][0].value }}"><img src="/resources/icons/social/fb.svg"/>
+									</a>
+							{% endif %}
+							{% if content.field_linkedin_url['#items'][0].value is not empty %}
+									<a href="{{ content.field_linkedin_url['#items'][0].value }}"><img src="/resources/icons/social/li.svg"/>
+									</a>
+							{% endif %}
+							{% if content.field_x_url['#items'][0].value is not empty %}
+									<a href="{{ content.field_x_url['#items'][0].value }}"><img src="/resources/icons/social/x-twitter.svg"/>
+									</a>
+							{% endif %}
+						</div>
+					</div>
+
+
+					<div class="last-articles">
+						<h2>Last articles</h2>
+								{% if articles is not empty %}
+									<ul>
+										{% for article in articles %}
+											<li>
+												<a href="{{ article.url }}">{{ article.title }}</a>
+											</li>
+										{% endfor %}
+									</ul>
+								{% else %}
+									<p>No linked articles found.</p>
+								{% endif %}
+							</div>
+							<!-- Add more social media links as needed -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
