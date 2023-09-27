@@ -74,5 +74,3 @@ jobs:
         run: cd planetpayment && rm -rf docroot
       - name: copy docroot files
         run: cp -R docroot ./planetpayment/
-      - name: push new docroot files to acquia
-        run: cd planetpayment && git add docroot && git commit -m "stage deploy" && GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push
