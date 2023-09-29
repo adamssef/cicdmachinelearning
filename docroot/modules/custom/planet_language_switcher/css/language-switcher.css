@@ -282,8 +282,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   .article-title a {margin-top: 8px !important}
 }
 .author-photo {
-  height: 200px;
-  width: 200px;
+  overflow: hidden;
   background-color: gray;
   border-radius: 100rem;
   background-position: center;
@@ -331,7 +330,6 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 .author-photo img {
   display: block;
-  margin: 10px auto;
 }
 
 .plnt-author-page .author-info {
