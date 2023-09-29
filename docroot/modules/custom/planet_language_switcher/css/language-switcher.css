@@ -299,8 +299,7 @@ article footer div {
   .article-title a {margin-top: 8px !important}
 }
 .author-photo {
-  height: 200px;
-  width: 200px;
+  overflow: hidden;
   background-color: gray;
   border-radius: 100rem;
   background-position: center;
@@ -348,7 +347,6 @@ article footer div {
 }
 .author-photo img {
   display: block;
-  margin: 10px auto;
 }
 
 .plnt-author-page .author-info {
