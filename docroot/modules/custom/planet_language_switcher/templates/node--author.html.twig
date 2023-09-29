@@ -7,61 +7,129 @@
     - url: The node URL.
     - attributes: HTML attributes for the node wrapper.
 #}
-<article class="plnt-author-page">
+<div>
+<div class="plnt-author-page">
 	<div class="coh-container coh-container-boxed">
 		<div class="coh-row">
 			<div class="coh-row-inner">
+				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+					<div class="breadcrumbs text-white">
+						<a href="/blog">Back to articles</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="coh-container coh-container-boxed">
+		<div class="coh-row">
+			<div class="coh-row-inner author-info">
 				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-2">
-					<div class="author-photo">
-						{{content.field_photo}}
+					<div class="author-photo" style="background-image:url({{articles.profile_picture}})">
 					</div>
 				</div>
 				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-10">
-					<h1 class="coh-heading coh-style-heading-1-planet">{{ label }}</h1>
-					<div class="author-bio">
-						{{ content.body }}
+					<h1 class="coh-heading author-name">{{ label }}</h1>
+					<div class="author-role">
+						{% if content.field_role['#items'][0].value is not empty %}
+							{{ content.field_role['#items'][0].value }}
+						{% else %}
+						Copywriter
+						{% endif %}
 					</div>
 
 					<div class="author-social">
-						<h2>Connect with {{ label }}</h2>
 						<div class="author-social-icons-wrapper">
-							{% if content.field_website_url['#items'][0].value is not empty %}
-									<a href="{{ content.field_website_url['#items'][0].value }}"><img src="/resources/icons/social/web.svg"/>
-									</a>
-							{% endif %}
-							{% if content.field_facebook_url['#items'][0].value is not empty %}
-									<a href="{{ content.field_facebook_url['#items'][0].value }}"><img src="/resources/icons/social/fb.svg"/>
-									</a>
-							{% endif %}
 							{% if content.field_linkedin_url['#items'][0].value is not empty %}
-									<a href="{{ content.field_linkedin_url['#items'][0].value }}"><img src="/resources/icons/social/li.svg"/>
-									</a>
+								<a href="{{ content.field_linkedin_url['#items'][0].value }}">Linkedin <img src="/resources/icons/arrow-right.svg">
+								</a>
 							{% endif %}
-							{% if content.field_x_url['#items'][0].value is not empty %}
-									<a href="{{ content.field_x_url['#items'][0].value }}"><img src="/resources/icons/social/x-twitter.svg"/>
-									</a>
-							{% endif %}
+
 						</div>
 					</div>
 
 
+					<!-- Add more social media links as needed -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="coh-container coh-container-boxed">
+		<div class="coh-row">
+			<div class="coh-row-inner">
+				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+					<div class="author-bio">
+						{{ content.body }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+</div>
+<div class="coh-container coh-container-boxed last-articles-wrapper">
+		<div class="coh-row">
+			<div class="coh-row-inner">
+				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
 					<div class="last-articles">
-						<h2>Last articles</h2>
-								{% if articles is not empty %}
-									<ul>
-										{% for article in articles %}
-											<li>
-												<a href="{{ article.url }}">{{ article.title }}</a>
-											</li>
+						<h2>{{ label }}'s recent blog posts</h2>
+						{# {{dump(articles)}} #}
+						<div class="last-articles-cards">
+						{% if articles.articles is empty %}
+							<p class="no-articles">No linked articles found.</p>
+						{% else %}
+							{% if articles.tags is not empty %}
+								<div class="tags-pills pink-pills">
+										<span class="selected" data-tagid="all">All</span>
+									{% for tag in articles.tags %}
+										<span data-tagid={{tag.id}}>
+											{{ tag.name }}
+										</span>
+									{% endfor %}
+								</div>
+							{% endif %}
+							
+							<div class="article-cards-wrapper">
+								<div class="coh-row">
+									<div class="coh-row-inner">
+
+										{% for article in articles.articles %}
+											<div data-tagid="[{% for tag in article.tags %}{{ tag.id }}{% if not loop.last %}, {% endif %}{% endfor %}]" class="article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
+											<div class="article-card">
+												<div class="article-bg-image" style="background-image:url({{article.background_image}})"></div>
+												<div class="article-card-content">
+												<div class="article-title">
+													<a href="{{ article.url }}">{{ article.title }}</a>
+												</div>
+												<div class="tags-and-author">
+												<div class="article-tags tags-pills">
+													{% for tag in article.tags %}
+														<span>
+															{{ tag.name }}
+														</span>
+													{% endfor %}
+												</div>
+												<div class="article-author-and-date">
+														<div class="article-author">
+														<div class="author-photo" style="background-image:url({{articles.profile_picture}})"></div>
+														<div class="author-name">{{label}}</div>
+													</div> 
+													<div class="vertical-divider">|</div> 
+													<div class="article-date">{{article.creation_date}}</div>
+												</div>
+												</div>
+												</div>
+												</div>
+											</div>
 										{% endfor %}
-									</ul>
-								{% else %}
-									<p>No linked articles found.</p>
-								{% endif %}
+									</div>
+								</div>
 							</div>
-							<!-- Add more social media links as needed -->
+						{% endif %}
 						</div>
 					</div>
 				</div>
 			</div>
-		</article>
+		</div>
+	</div>
+</div>

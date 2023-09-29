@@ -4,31 +4,91 @@
  * @file
  * Custom hooks functions for the planet_language_switcher module.
  */
+function get_author_articles($authorId) {
+  
+  $author_node = \Drupal\node\Entity\Node::load($authorId);
+  $profile_picture_url = '';
+  // Check if the author node and profile picture field exist.
+  if ($author_node && $author_node->hasField('field_profile_picture')) {
+    $profile_picture_media = $author_node->get('field_profile_picture')->entity;
+    if ($profile_picture_media instanceof \Drupal\media\Entity\Media) {
+      $profile_picture_file = $profile_picture_media->get('field_media_image')->entity;
+      if ($profile_picture_file instanceof \Drupal\file\Entity\File) {
+        $profile_picture_url = file_create_url($profile_picture_file->getFileUri());
+      }
+    }
+  }
 
- function get_author_articles($authorId) {
   $query = \Drupal::entityQuery('node')
     ->condition('type', 'resources') // Adjust to your content type name.
-    ->condition('field_author.target_id', $authorId);
+    ->condition('field_author.target_id', $authorId)
+    ->sort('created', 'DESC'); // Sort by creation date in descending order.
 
   $resource_nids = $query->execute();
   $resource_nodes = \Drupal\node\Entity\Node::loadMultiple($resource_nids);
 
   $articles = [];
+  $unique_tags = []; // Initialize an array to store unique tags.
 
   foreach ($resource_nodes as $node) {
-    // Assuming the title is in the 'title' field.
     $title = $node->getTitle();
-    // Get the URL for the canonical path of the node.
     $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+    
+    // Get Tags (field_resources_tags)
+    $tags_references = $node->get('field_resources_tags')->referencedEntities();
+    $article_tags = [];
+    
+    
+    foreach ($tags_references as $tag) {
+      $tag_name = $tag->getName();
+      $tag_id = $tag->id(); // Get the tag ID.
+      
+      // Add the tag to the unique_tags array if it doesn't exist.
+      if (!in_array($tag_id, array_column($unique_tags, 'id'))) {
+        $unique_tags[] = [
+          'name' => $tag_name,
+          'id' => $tag_id,
+        ];
+      }
+
+      // Add the tag to the article_tags array.
+      $article_tags[] = [
+        'name' => $tag_name,
+        'id' => $tag_id,
+      ];
+    }
+
+    
+    // Get Background Image (field_resources_background_image)
+    $background_image_media = $node->get('field_resources_background_image')->entity;
+    if ($background_image_media instanceof \Drupal\media\Entity\Media) {
+      $background_image_file = $background_image_media->get('field_media_image')->entity;
+      if ($background_image_file instanceof \Drupal\file\Entity\File) {
+        $background_image_url = file_create_url($background_image_file->getFileUri());
+      }
+    }
+
+    // Get Creation Date
+    $creation_timestamp = $node->getCreatedTime();
+    $creation_date = date('F j, Y', $creation_timestamp);
+
 
     $articles[] = [
       'url' => $url,
       'title' => $title,
+      'tags' => $article_tags, // Store the tags for the current article.
+      'background_image' => $background_image_url,
+      'creation_date' => $creation_date,
     ];
   }
 
-  return $articles;
+  return [
+    'articles' => $articles,
+    'tags' => $unique_tags,
+    'profile_picture' => $profile_picture_url,
+  ];
 }
+
 
 /**
  * Implements hook_preprocess_HOOK() for node templates.
