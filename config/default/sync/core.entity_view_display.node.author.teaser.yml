@@ -7,7 +7,8 @@ dependencies:
     - field.field.node.author.body
     - field.field.node.author.field_facebook_url
     - field.field.node.author.field_linkedin_url
-    - field.field.node.author.field_photo
+    - field.field.node.author.field_profile_picture
+    - field.field.node.author.field_role
     - field.field.node.author.field_website_url
     - field.field.node.author.field_x_url
     - node.type.author
@@ -35,7 +36,8 @@ content:
 hidden:
   field_facebook_url: true
   field_linkedin_url: true
-  field_photo: true
+  field_profile_picture: true
+  field_role: true
   field_website_url: true
   field_x_url: true
   langcode: true
