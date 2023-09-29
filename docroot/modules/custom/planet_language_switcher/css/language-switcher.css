@@ -256,8 +256,75 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 @media(min-width: 1024px) {
   .plnt-author-page {
-    margin: 32px auto;
+    margin-bottom: 32px auto;
   }
+}
+.plnt-author-page {
+  background: #202020;
+  padding: 48px 0;
+  color: white;
+  margin-top: 0;
+}
+@media (max-width: 1023px) {
+  .author-name span {
+    font-size: 32px !important;
+    margin-top: 16px !important
+  }
+  .tags-pills span {
+    margin-right: 0 !important
+  }
+  .article-card .author-name span, .article-date, .vertical-divider {
+    font-size: 13px !important
+  }
+  .article-card-content {
+    padding: 0 !important
+  }
+  .article-title a {margin-top: 8px !important}
+}
+.author-photo {
+  height: 200px;
+  width: 200px;
+  background-color: gray;
+  border-radius: 100rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.author-name span {
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 48px;
+}
+.author-role {
+  font-size: 25px;
+  font-weight: 300;
+  margin-top: 8px;
+}
+.author-social {
+  margin-top: 32px;
+  color: white;
+}
+.author-social a {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 8px 0;
+  display: inline-block;
+}
+.last-articles > h2 {
+  text-align: center;
+}
+.last-articles-wrapper {
+  padding: 55px 0
+}
+
+.breadcrumbs.text-white a {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.breadcrumbs {
+  padding-bottom: 24px;
 }
 .author-photo div > div:first-child {
   display: none;
@@ -267,27 +334,114 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   margin: 10px auto;
 }
 
-.plnt-author-page .coh-row-inner {
-  margin-bottom: 24px;
-  padding: 40px 0px;
+.plnt-author-page .author-info {
+  padding: 40px 0 0 0;
+  display: flex;
+  align-items: center;
 }
 .author-bio p {
   font-size: 1.1rem;
+  padding-bottom: 24px;
   line-height: 1.4;
   margin-top: 18px;
 }
-.author-social h2, .last-articles h2 {
+.author-social h2 {
   font-weight: 600;
   font-size: 20px;
   margin-top: 14px;
   margin-bottom: 8px;
 }
+.last-articles h2 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+.tags-pills.pink-pills span {
+  border: 1px solid #e00083;
+}
+.tags-pills span {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  padding: 8px 12px;
+  margin-right: 16px;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+.article-title {
+  padding-bottom: 16px;
+}
+.last-articles-cards {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.tags-pills {
+  padding-bottom: 24px;
+}
+.article-card {
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.article-cards-wrapper .coh-column {
+  display: flex;
+}
+.tags-pills .selected {
+  color: white;
+  background: #e00083;
+}
+.article-card .author-photo {
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+}
+.article-card .author-name span, .article-date, .vertical-divider {
+  font-size: 16px;
+  font-weight: 300;
+}
+.article-author {
+  display: flex;
+  align-items: center;
+}
+.article-author-and-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.article-bg-image {
+  height: 208px;
+  background-color: #ddd;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.article-title a {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  display: block;
+}
+.article-card-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
 
 .author-social img {
-  max-width: 32px;
+  width: 32px;
   height: auto;
-  float: left;
+  float: right;
   margin-right: 8px;
+  margin-top: 3px;
+  margin-left: 16px;
 }
 .author-social-icons-wrapper {
   height: 50px;
@@ -310,4 +464,9 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 .linked-author-page {
   display: flex;
+}
+.author-bio p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-top: 32px;
 }
