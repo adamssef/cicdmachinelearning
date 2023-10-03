@@ -1,0 +1,22 @@
+uuid: 902a8511-7b52-4a72-93be-366060608cde
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: product_guides
+label: 'Product guides'
+type: 'canonical_entities:node'
+pattern: 'product/[node:title]'
+selection_criteria:
+  f6c401cd-fa99-471e-a7cb-a4da18cda638:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: f6c401cd-fa99-471e-a7cb-a4da18cda638
+    context_mapping:
+      node: node
+    bundles:
+      planet_products: planet_products
+selection_logic: and
+weight: -5
+relationships: {  }
