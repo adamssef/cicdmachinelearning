@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.planet_offices.field_postcode
     - node.type.planet_offices
   module:
-    - content_moderation
     - path
 id: node.planet_offices.default
 targetEntityType: node
@@ -91,10 +90,12 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
-    type: moderation_state_default
-    weight: 100
+    type: string_textfield
+    weight: 128
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path

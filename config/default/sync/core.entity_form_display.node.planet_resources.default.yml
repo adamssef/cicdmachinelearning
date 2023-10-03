@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.planet_resources.field_upload_link
     - node.type.planet_resources
   module:
-    - content_moderation
     - link
     - media_library
     - path
@@ -96,10 +95,12 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
-    type: moderation_state_default
-    weight: 10
+    type: string_textfield
+    weight: 26
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path

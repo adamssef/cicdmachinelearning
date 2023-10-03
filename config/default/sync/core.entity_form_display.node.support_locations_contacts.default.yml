@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.support_locations_contacts.field_region
     - node.type.support_locations_contacts
   module:
-    - content_moderation
     - path
 id: node.support_locations_contacts.default
 targetEntityType: node
@@ -46,10 +45,12 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
-    type: moderation_state_default
-    weight: 100
+    type: string_textfield
+    weight: 124
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path
