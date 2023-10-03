@@ -20,11 +20,9 @@ dependencies:
     - field.field.node.resources.field_resources_template
     - field.field.node.resources.field_resources_title
     - node.type.resources
-    - workflows.workflow.editorial
   module:
     - cohesion_elements
     - cohesion_templates
-    - content_moderation
     - media_library
     - metatag
     - path
@@ -178,12 +176,6 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
-  moderation_state:
-    type: moderation_state_default
-    weight: 24
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   path:
     type: path
     weight: 19
@@ -235,4 +227,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  moderation_state: true
   uid: true
