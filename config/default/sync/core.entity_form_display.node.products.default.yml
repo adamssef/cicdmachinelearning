@@ -16,7 +16,6 @@ dependencies:
     - node.type.products
   module:
     - cohesion_elements
-    - content_moderation
     - media_library
     - metatag
     - path
@@ -114,10 +113,12 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
-    type: moderation_state_default
-    weight: 19
+    type: string_textfield
+    weight: 27
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path
