@@ -6,7 +6,8 @@ dependencies:
     - field.field.node.author.body
     - field.field.node.author.field_facebook_url
     - field.field.node.author.field_linkedin_url
-    - field.field.node.author.field_photo
+    - field.field.node.author.field_profile_picture
+    - field.field.node.author.field_role
     - field.field.node.author.field_website_url
     - field.field.node.author.field_x_url
     - node.type.author
@@ -52,12 +53,20 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_photo:
+  field_profile_picture:
     type: media_library_widget
-    weight: 122
+    weight: 128
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_role:
+    type: string_textfield
+    weight: 129
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_website_url:
     type: string_textfield

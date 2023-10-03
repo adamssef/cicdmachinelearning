@@ -1,16 +1,16 @@
-uuid: 28e5d127-8b89-4caf-b272-00e395087e0d
+uuid: 54344878-020e-424f-ab29-50e6eed104ac
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_photo
+    - field.storage.node.field_profile_picture
     - media.type.image
     - node.type.author
-id: node.author.field_photo
-field_name: field_photo
+id: node.author.field_profile_picture
+field_name: field_profile_picture
 entity_type: node
 bundle: author
-label: Photo
+label: 'Profile picture'
 description: ''
 required: false
 translatable: false
@@ -25,5 +25,5 @@ settings:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: document
 field_type: entity_reference
