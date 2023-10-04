@@ -946,7 +946,9 @@ code: |-
     grid-gap: 20px;
   }
   .default-user-Guide-logo, .default-user-Portal-logo, .default-user-Training-logo {
-    color: #fff
+    color: #fff;
+    height: 50px;
+    width: 50px;
   }
   .technical-doc-wrap > div, .training-path-wrap > div {
       display: grid;
