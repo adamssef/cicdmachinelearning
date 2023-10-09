@@ -74,7 +74,12 @@
           let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
           let hasHero = $("body").find(".coh-hero").length;
           let hasHeroOnTop = 0;
-          //if has Hero        
+          const hasTransparentBg = $("body").hasClass("planet-header-transparent");
+          //if has Hero     
+          if(hasTransparentBg) {
+            headerBehaviorOnScroll(header);
+          }
+   
           if (hasHero > 0) {
             $(".coh-hero").each(function(){
               let hero = $(this);
@@ -105,14 +110,19 @@
                 header.classList.add("white-bg");
                 // On mobile
                 if ($(window).width() < 1023) {
+                  if(!hasTransparentBg) {
                   $("#block-cohesion-theme-content").css("padding-top","72px");
+                }
                 } else {
                   if (hasHeroOnTop == 0){
-                    if (hasNotificationBar > 0) {
-                      $("#block-cohesion-theme-content").css("padding-top","138px");
-                    } else {
-                      $("#block-cohesion-theme-content").css("padding-top","96px");
-                    }
+                    if(!hasTransparentBg) {
+                      if (hasNotificationBar > 0) {
+                        $("#block-cohesion-theme-content").css("padding-top","138px");
+                      } else {
+                        $("#block-cohesion-theme-content").css("padding-top","96px");
+                      }
+                   }
+
                   }
                 }
               }
@@ -120,17 +130,23 @@
           // if doesn't have Hero 
           // Pages without Hero or with Hero in the middle of the pag
           } else {
-            header.classList.add("white-bg");
+            if(!hasTransparentBg) {
+              header.classList.add("white-bg");
+            }
             // On mobile
             if ($(window).width() < 1023) {
+              if(!hasTransparentBg) {
               $("#block-cohesion-theme-content").css("padding-top","72px");
+              }
             } else {
               if (hasHeroOnTop == 0){
+                if(!hasTransparentBg) {
                 if (hasNotificationBar > 0) {
                   $("#block-cohesion-theme-content").css("padding-top","138px");
                 } else {
                   $("#block-cohesion-theme-content").css("padding-top","96px");
                 }
+              }
               }
             }
           }

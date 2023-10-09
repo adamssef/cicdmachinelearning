@@ -287,16 +287,30 @@ article footer div {
     font-size: 32px !important;
     margin-top: 16px !important
   }
-  .tags-pills span {
-    margin-right: 0 !important
-  }
   .article-card .author-name span, .article-date, .vertical-divider {
-    font-size: 13px !important
+    font-size: 17.5px !important
   }
-  .article-card-content {
-    padding: 0 !important
-  }
+
   .article-title a {margin-top: 8px !important}
+  .author-photo {
+    max-width: 200px;
+    margin-bottom: 24px
+  }
+  .article-author .author-photo {
+    margin-bottom: 0
+  }
+  .plnt-author-page {padding-top: 96px}
+  .author-bio p {margin-top: 16px !important}
+  .main-pills .main-pill {
+    margin-right: 16px;
+    margin-bottom: 16px
+  }
+}
+@media (min-width: 1024px) {
+  /** Fixes to allow for the transparent header */
+.plnt-author-page {
+  padding-top: 144px;
+}
 }
 .author-photo {
   overflow: hidden;
@@ -307,7 +321,7 @@ article footer div {
   background-repeat: no-repeat;
 }
 .author-name span {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 600;
   line-height: 48px;
 }
@@ -340,7 +354,7 @@ article footer div {
   font-weight: 600;
 }
 .breadcrumbs {
-  padding-bottom: 24px;
+  padding-bottom: 0px;
 }
 .author-photo div > div:first-child {
   display: none;
@@ -350,7 +364,7 @@ article footer div {
 }
 
 .plnt-author-page .author-info {
-  padding: 40px 0 0 0;
+  padding: 48px 0 0 0;
   display: flex;
   align-items: center;
 }
@@ -392,19 +406,36 @@ article footer div {
   padding-bottom: 48px;
 }
 .tags-pills {
-  padding-bottom: 24px;
+  padding-bottom: 12px;
 }
 .article-card {
   border: 1px solid #d1d1d1;
   border-radius: 8px;
   width: 100%;
   margin-bottom: 16px;
-  padding: 5px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.article-card:hover {
+  box-shadow: 0 6px 20px 0 rgba(34,34,34,0.16);
+}
+.article-card:hover .article-bg-image-wrapper {
+  padding: 0;
+} 
+.article-card:hover .article-bg-image {
+  border-radius: 8px 8px 0 0;
+  height: 213px
 }
 .article-cards-wrapper .coh-column {
   display: flex;
+}
+.main-pill {
+  transition: all .2s ease;
+}
+.main-pill:not(.selected):hover {
+  background: #f2d0e4;
 }
 .tags-pills .selected {
   color: white;
@@ -416,8 +447,10 @@ article footer div {
   margin-right: 16px;
 }
 .article-card .author-name span, .article-date, .vertical-divider {
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 17.5px;
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: #979797;
 }
 .article-author {
   display: flex;
@@ -425,8 +458,15 @@ article footer div {
 }
 .article-author-and-date {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
+}
+.vertical-divider {
+  padding: 0 8px;
+}
+.article-bg-image-wrapper {
+  padding: 5px 5px 0 5px;
+  transition: all .2s ease;
 }
 .article-bg-image {
   height: 208px;
@@ -435,6 +475,7 @@ article footer div {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: all .2s ease;
 }
 .article-title a {
   font-size: 24px;
@@ -485,3 +526,8 @@ article footer div {
   font-weight: 300;
   margin-top: 32px;
 }
+
+/** Transparent header */
+/* .planet-header-transparent .header-container {
+  background: transparent;
+} */
