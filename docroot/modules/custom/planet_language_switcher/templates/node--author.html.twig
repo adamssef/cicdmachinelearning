@@ -81,9 +81,9 @@
 							{% else %}
 								{% if author_data.tags is not empty %}
 									<div class="tags-pills pink-pills main-pills">
-										<span class="selected main-pill" data-tagid="all">All</span>
+										<span class="selected main-pill all-pill visible" data-tagid="all">All</span>
 										{% for tag in author_data.tags %}
-											<span class="main-pill" data-tagid={{tag.id}}>
+											<span class="main-pill visible" data-tagid={{tag.id}}>
 												{{ tag.name }}
 											</span>
 										{% endfor %}
