@@ -308,9 +308,12 @@ article footer div {
 }
 @media (min-width: 1024px) {
   /** Fixes to allow for the transparent header */
-.plnt-author-page {
-  padding-top: 144px;
-}
+  .plnt-author-page {
+    padding-top: 144px;
+  }
+  .author-photo {
+    margin: 0 auto
+  }
 }
 .author-photo {
   overflow: hidden;
@@ -319,6 +322,8 @@ article footer div {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  max-width: 160px;
+  max-height: 160px;
 }
 .author-name span {
   font-size: 32px;
@@ -452,7 +457,7 @@ article footer div {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.25rem;
-  color: #979797;
+  color: #545454;
 }
 .article-author {
   display: flex;
