@@ -533,7 +533,12 @@ article footer div {
   font-weight: 300;
   margin-top: 32px;
 }
-
+.linked-author-page .author-name {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  color: #000;
+}
 /** Transparent header */
 /* .planet-header-transparent .header-container {
   background: transparent;
