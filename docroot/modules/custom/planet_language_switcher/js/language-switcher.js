@@ -74,9 +74,9 @@
 
   // Click on main tag pills
   $(".main-pill[data-tagid]").click(function () {
-    if ($(this).data('tagid') == "all") {
-      $(".main-pills .main-pill").addClass("visible");
-    }
+    // if ($(this).data('tagid') == "all") {
+    //   $(".main-pills .main-pill").addClass("visible");
+    // }
     $(".main-pill").removeClass('selected');
     $(this).addClass('selected');
     filterByTagId($(this).data('tagid'))
@@ -87,8 +87,8 @@
     var tagId = $(this).data('tagid');
     filterByTagId(tagId);
     $(".main-pill").removeClass('selected');
-    $(".main-pills .main-pill:not(.all-pill)").removeClass("visible");
-    $(".main-pills .main-pill[data-tagid=" + tagId + "]").addClass(["visible", "selected"]);
+    // $(".main-pills .main-pill:not(.all-pill)").removeClass("visible");
+    $(".main-pills .main-pill[data-tagid=" + tagId + "]").addClass(["selected"]);
   });
 
   function render_articles(data) {
