@@ -304,12 +304,12 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   background-repeat: no-repeat;
 }
 .author-name span {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 600;
   line-height: 48px;
 }
 .author-role {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 300;
   margin-top: 8px;
 }
@@ -319,7 +319,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 .author-social a {
   color: white;
-  font-size: 1.4rem;
+  font-size: 18px;
   font-weight: 600;
   margin: 8px 0;
   display: inline-block;
@@ -333,7 +333,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 
 .breadcrumbs.text-white a {
   color: white;
-  font-size: 1.4rem;
+  font-size: 18px;
   font-weight: 600;
 }
 .breadcrumbs {
@@ -352,7 +352,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   align-items: center;
 }
 .author-bio p {
-  font-size: 1.1rem;
+  font-size: 20px;
   padding-bottom: 24px;
   line-height: 1.4;
   margin-top: 18px;
@@ -417,6 +417,8 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 .main-pill {
   transition: all .2s ease;
 }
+.main-pills .main-pill {display: none}
+.main-pills .main-pill.visible {display: inline-block}
 .main-pill:not(.selected):hover {
   background: #f2d0e4;
 }
@@ -430,7 +432,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   margin-right: 16px;
 }
 .article-card .author-name span, .article-date, .vertical-divider {
-  font-size: 17.5px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.25rem;
   color: #979797;
@@ -475,7 +477,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 
 .author-social img {
-  width: 32px;
+  width: 24px;
   height: auto;
   float: right;
   margin-right: 8px;
@@ -505,7 +507,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   display: flex;
 }
 .author-bio p {
-  font-size: 1.4rem;
+  font-size: 20px;
   font-weight: 300;
   margin-top: 32px;
 }

@@ -74,6 +74,9 @@
 
   // Click on main tag pills
   $(".main-pill[data-tagid]").click(function () {
+    if ($(this).data('tagid') == "all") {
+      $(".main-pills .main-pill").addClass("visible");
+    }
     $(".main-pill").removeClass('selected');
     $(this).addClass('selected');
     filterByTagId($(this).data('tagid'))
@@ -81,7 +84,11 @@
 
   // Click on tag pills within the article
   $(".article-tags span[data-tagid]").click(function () {
-    filterByTagId($(this).data('tagid'))
+    var tagId = $(this).data('tagid');
+    filterByTagId(tagId);
+    $(".main-pill").removeClass('selected');
+    $(".main-pills .main-pill:not(.all-pill)").removeClass("visible");
+    $(".main-pills .main-pill[data-tagid=" + tagId + "]").addClass(["visible", "selected"]);
   });
 
   function render_articles(data) {
@@ -95,8 +102,6 @@
   }
 
   function render_article_card(article, author) {
-    console.log(article);
-    console.log(author);
     const articleCardTemplate = `
     <div data-tagid="[${article.tags.map(tag => tag.id).join(', ')}]" class="article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
       <div class="article-card">
