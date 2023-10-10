@@ -136,7 +136,6 @@ PlanetPages:
   css:
     component:
       css/PlanetPages.css: { } 
-      'https://fonts.cdnfonts.com/css/tt-commons': { type: external}
   js:
     js/PlanetPages.js: { }
 # Publications Library
