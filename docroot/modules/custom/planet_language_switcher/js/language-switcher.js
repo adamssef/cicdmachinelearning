@@ -10,27 +10,6 @@
   Drupal.behaviors.languageSwitcher = {
     attach: function (context, settings) {
 
-      $('#load-more-button').click(function () {
-        const authorId = $(this).data("author-id");
-
-        // Make an asynchronous request to load more articles.
-        fetch('/planet_language_switcher/author_articles/' + authorId)
-          .then(function (response) {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.json();
-          })
-          .then(function (data) {
-            // Handle the JSON data received from the server.
-            render_articles(data); // Access the 'articles' property of the JSON object.
-          })
-          .catch(function (error) {
-            console.error('Error loading more articles:', error);
-          });
-
-
-
         $('#block-language-switcher', context).once('block-language-switcher').each(function () {
           let $el = $(this);
           let $selectMenu = $(".language-switcher__select-menu", $el);
@@ -53,7 +32,26 @@
           });
         });
 
-      });
+        $('#load-more-button').click(function () {
+          const authorId = $(this).data("author-id");
+  
+          // Make an asynchronous request to load more articles.
+          fetch('/planet_language_switcher/author_articles/' + authorId)
+            .then(function (response) {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.json();
+            })
+            .then(function (data) {
+              // Handle the JSON data received from the server.
+              render_articles(data); // Access the 'articles' property of the JSON object.
+            })
+            .catch(function (error) {
+              console.error('Error loading more articles:', error);
+            });
+          });
+
 
     }
   }
