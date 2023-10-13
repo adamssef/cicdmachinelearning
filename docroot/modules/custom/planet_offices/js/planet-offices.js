@@ -10,7 +10,6 @@
   function showCountries(regionID) {
     $(".region-id").hide();
     $(".region-id-" + regionID + "").show();
-    console.log("regionid show", regionID)
   }
 
   function showCountryOffices(countryId) {
