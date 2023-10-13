@@ -7,12 +7,12 @@ dependencies:
 id: product_guides
 label: 'Product guides'
 type: 'canonical_entities:node'
-pattern: 'product/[node:title]'
+pattern: 'getting-started/[node:title]'
 selection_criteria:
-  f6c401cd-fa99-471e-a7cb-a4da18cda638:
+  629a8354-6013-417a-b6ff-c55c60b6396f:
     id: 'entity_bundle:node'
     negate: false
-    uuid: f6c401cd-fa99-471e-a7cb-a4da18cda638
+    uuid: 629a8354-6013-417a-b6ff-c55c60b6396f
     context_mapping:
       node: node
     bundles:
