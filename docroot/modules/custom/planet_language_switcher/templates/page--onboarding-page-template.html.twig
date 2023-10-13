@@ -1,0 +1,186 @@
+<div class="onboarding-main-page">
+	<div class="coh-container coh-container-boxed hero-text">
+		<div class="coh-row">
+			<div class="coh-row-inner">
+				<div class="coh-column">
+					<h1 class="heading-main">Welcome to
+						<span class="pink-text">Planet</span>
+						customer resources</h1>
+					<p>At Planet, we are committed to providing you with exceptional support, valuable resources, and comprehensive product information to ensure a seamless experience from day one.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ellipse-bg">
+	<div class="ellipse-wrapper">
+		<div class="coh-container coh-container-boxed">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-xs coh-col-xs-12 coh-visible-sm coh-col-sm-12 coh-visible-md coh-col-md-4 coh-visible-lg coh-col-lg-4 coh-visible-xl coh-col-xl-4">
+						<a class="planet-white-card" href="/getting-started">
+							<div class="c-icon"><img src="/resources/icons/bulb.svg"></div>
+							<h2 class="white-card-title">Get started with Planet products</h2>
+							<p>Explore every piece of information needed to operate our products.</p>
+							<div class="cta-button">
+								<img src="/resources/icons/card-arrow-right.svg" alt="click"/>
+							</div>
+						</a>
+					</div>
+					<div class="coh-column coh-visible-xs coh-col-xs-12 coh-visible-sm coh-col-sm-12 coh-visible-md coh-col-md-4 coh-visible-lg coh-col-lg-4 coh-visible-xl coh-col-xl-4">
+						<a class="planet-white-card" href="/customer-resources">
+							<div class="c-icon"><img src="/resources/icons/gear.svg"></div>
+							<h2 class="white-card-title">Access our customer resources library</h2>
+							<p>Access customer resources for all products.</p>
+							<div class="cta-button">
+								<img src="/resources/icons/card-arrow-right.svg" alt="click"/>
+							</div>
+						</a>
+					</div>
+					<div class="coh-column coh-visible-xs coh-col-xs-12 coh-visible-sm coh-col-sm-12 coh-visible-md coh-col-md-4 coh-visible-lg coh-col-lg-4 coh-visible-xl coh-col-xl-4">
+						<a class="planet-white-card" href="/support">
+							<div class="c-icon"><img src="/resources/icons/support.svg"></div>
+							<h2 class="white-card-title">Need help? Get support</h2>
+							<p>Contact our Planet support team</p>
+							<div class="cta-button">
+								<img src="/resources/icons/card-arrow-right.svg" alt="click"/>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<a class="visit-our-website" href="https://www.weareplanet.com">Visit our Planet website</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+</div>
+<style>
+	.ellipse-wrapper {
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		background-size: 100%;
+		margin-top: 48px;
+		width: 100%
+	}
+	.planet-white-card p {
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 137.5%;
+		color: #202020;
+		margin-top: 8px
+	}
+	.planet-white-card {
+		padding: 24px;
+		background: white;
+		border: 1px solid #d1d1d1;
+		display: block;
+		border-radius: 8px;
+		transition: all 0.2s ease;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	.planet-white-card:hover {
+		box-shadow: 0 6px 20px 0 rgba(34, 34, 34, 0.16)
+	}
+	.white-card-title {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 125%;
+		color: #202020;
+	}
+	.onboarding-main-page {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	.hero-text {
+		text-align: center
+	}
+	.onboarding-main-page .coh-row-inner {
+		margin: 0 !important
+	}
+	.heading-main {
+		font-family: 'TT Commons';
+		font-size: 48px;
+		font-style: normal;
+		font-weight: 600;
+		margin-bottom: 16px;
+		line-height: 60px;
+	}
+	.hero-text,
+	.ellipse-wrapper {
+		max-width: 1024px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.pink-text {
+		color: #E00083
+	}
+	.hero-text p {
+		font-size: 20px;
+		color: #202020;
+		font-weight: 300;
+		line-height: 140%;
+		text-align: center;
+	}
+	.c-icon {
+		height: 48px;
+		width: 48px;
+		margin-bottom: 24px
+	}
+	.cta-button {
+		margin-top: 16px;
+		display: flex;
+		justify-content: end;
+	}
+	.visit-our-website {
+		color: white;
+		text-decoration: underline;
+		text-align: center;
+		display: block;
+		width: 100%;
+		padding: 32px 0;
+		font-size: 20px;
+		font-weight: 300;
+	}
+	@media(min-width: 1024px) {
+		.ellipse-bg {
+			width: 100%;
+			background-repeat: no-repeat;
+			background-position: center -60%;
+			background-size: 100%;
+		}
+		.hero-text {
+			text-align: center;
+			}
+		.planet-white-card {
+			height: 100%;
+		}
+		.onboarding-main-page {
+			height: 100vh;
+			background-image: url('/resources/icons/ellipse.svg');
+			background-position: center 125%
+		}
+	}
+	@media(max-width: 1023px) {
+		.onboarding-main-page {
+			padding-top: 48px;
+			background-image: none;
+		}
+		.ellipse-wrapper {
+			background-image: url('/resources/icons/ellipse-mobile.svg');
+			background-position: center -20%;
+		}
+		.planet-white-card {
+			margin-bottom: 16px
+		}
+	}
+</style>

@@ -8,7 +8,6 @@
     attach: function (context) {
       $(document, context).on('click', function(e) {
         e.preventDefault();
-        console.log('helper test console log');
       });
     }
   };
