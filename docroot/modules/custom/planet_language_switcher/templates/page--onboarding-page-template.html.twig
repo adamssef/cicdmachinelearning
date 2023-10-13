@@ -131,6 +131,8 @@
 		color: #202020;
 		font-weight: 300;
 		text-align: center;
+		line-height: 140%;
+
 	}
 	.c-icon {
 		height: 48px;
@@ -160,7 +162,6 @@
 		}
 		.hero-text p {
 			font-size: 20px;
-			line-height: 140%;
 		}
 		.ellipse-bg {
 			width: 100%;
@@ -192,7 +193,6 @@
 	}
 	@media(max-width: 1023px) {
 		.heading-main {font-size: 32px;}
-		.hero-text p {font-size: 14px;}
 		.onboarding-main-page {
 			padding-top: 48px;
 			background-image: none;
@@ -205,10 +205,14 @@
 			margin-bottom: 16px
 		}
 	}
-	{# @media (max-width: 384px) {
+	@media (max-width: 384px) {
 		.ellipse-wrapper {
 			background-position: bottom;
 		}
-	} #}
+		.hero-text p {font-size: 14px;}
+		.hero-text {padding-bottom: 24px}
+		.heading-main {line-height: 125%}
+
+	}
 </style>
 
