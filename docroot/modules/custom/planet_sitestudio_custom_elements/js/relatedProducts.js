@@ -27,7 +27,6 @@
         $(".planSwitch label").click(function () {
           // Get the data-box value of the clicked label
           let boxNumber = $(this).attr("data-box");
-          console.log(boxNumber);
           // Hide all related containers
           $(".related-product-wrapper").hide();
 
