@@ -46,7 +46,6 @@
             //     e.preventDefault();
             // });
         });
-          console.log("supportpageeeeee");
       }
     };
   })(jQuery, Drupal);
