@@ -167,7 +167,7 @@ function planet_language_switcher_theme_suggestions_page_alter(array &$suggestio
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$node->id());
 
   /** Onboarding page tempalte */
-  if ($node instanceof \Drupal\node\NodeInterface && $alias == "/getting-started") {
+  if ($node instanceof \Drupal\node\NodeInterface && $alias == "/customer-resources-tobe") {
     $suggestions[] = 'onboarding_page_template';
   }
 }
