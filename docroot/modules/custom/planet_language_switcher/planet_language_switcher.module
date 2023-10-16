@@ -28,6 +28,7 @@ function planet_language_switcher_get_author_articles($authorId) {
   $query = \Drupal::entityQuery('node')
     ->condition('type', 'resources') // Adjust to your content type name.
     ->condition('field_author.target_id', $authorId)
+    ->condition('status', 1) // 1 represents published nodes.
     ->sort('created', 'DESC'); // Sort by creation date in descending order.
 
   $resource_nids = $query->execute();
