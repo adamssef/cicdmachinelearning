@@ -2,6 +2,9 @@ display:
   default:
     display_title: Predefinito
     display_options:
+      fields:
+        media_bulk_form:
+          action_title: Azione
       pager:
         options:
           expose:
@@ -30,6 +33,8 @@ display:
     display_title: Pagina
     display_options:
       fields:
+        media_bulk_form:
+          action_title: Azione
         edit_media:
           text: Modifica
         delete_media:
@@ -40,6 +45,9 @@ display:
         name:
           expose:
             label: Nome
+      header:
+        display_link_table:
+          label: Tabella
   widget_table:
     display_options:
       fields:
@@ -53,3 +61,6 @@ display:
         name:
           expose:
             label: Nome
+      header:
+        display_link_table:
+          label: Tabella

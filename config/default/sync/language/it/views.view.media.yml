@@ -3,6 +3,8 @@ display:
     display_title: Predefinito
     display_options:
       fields:
+        media_bulk_form:
+          action_title: Azione
         bundle:
           label: Tipo
         uid:

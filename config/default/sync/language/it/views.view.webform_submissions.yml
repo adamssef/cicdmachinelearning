@@ -15,16 +15,30 @@ display:
             items_per_page_options_all_label: '- Tutto -'
             offset_label: Scostamento
       fields:
+        created:
+          label: Creato
         view_webform_submission:
           label: Operazioni
   embed_administer:
     display_options:
       fields:
+        webform_submission_bulk_form:
+          action_title: Azione
+        created:
+          label: Creato
+        completed:
+          label: Completato
         operations:
           label: Operazioni
   embed_manage:
     display_options:
       fields:
+        webform_submission_bulk_form:
+          action_title: Azione
+        created:
+          label: Creato
+        completed:
+          label: Completato
         view_webform_submission:
           label: Operazioni
         edit_webform_submission:
@@ -32,5 +46,9 @@ display:
   embed_review:
     display_options:
       fields:
+        created:
+          label: Creato
+        completed:
+          label: Completato
         view_webform_submission:
           label: Operazioni
