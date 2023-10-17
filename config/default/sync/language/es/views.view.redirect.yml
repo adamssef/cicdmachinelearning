@@ -24,6 +24,8 @@ display:
           action_title: 'Con selección'
         redirect_source__path:
           label: Desde
+        created:
+          label: Creado
       filters:
         redirect_source__path:
           expose:

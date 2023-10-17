@@ -48,6 +48,8 @@ display:
     display_options:
       display_description: 'Administrer les soumissions.'
       fields:
+        webform_submission_bulk_form:
+          action_title: Action
         in_draft:
           label: Brouillon
         sticky:
@@ -77,6 +79,8 @@ display:
     display_options:
       display_description: 'Gérer les soumissions.'
       fields:
+        webform_submission_bulk_form:
+          action_title: Action
         in_draft:
           label: Brouillon
         sticky:
