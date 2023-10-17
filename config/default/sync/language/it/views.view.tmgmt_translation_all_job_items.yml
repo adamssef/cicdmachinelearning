@@ -4,7 +4,7 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Filtra
+          submit_button: Applica
           reset_button_label: Ripristina
           exposed_sorts_label: 'Ordina per'
           sort_desc_label: Disc
@@ -15,21 +15,26 @@ display:
             items_per_page_options_all_label: '- Tutto -'
             offset_label: Scostamento
       fields:
-        redirect_bulk_form:
-          action_title: 'Con la selezione'
-        redirect_source__path:
+        state:
+          label: Stato
+        label:
+          label: Etichetta
+        type:
+          label: Tipo
+        source_language:
           label: Da
-        created:
-          label: Creato
+        target_language:
+          label: A
+        changed:
+          label: Modificato
+        operations:
+          label: Operazioni
       filters:
-        redirect_source__path:
+        state:
+          group_info:
+            label: Stato
+        source_language:
           expose:
-            label: Da
-        redirect_redirect__uri:
-          expose:
-            label: A
-        language:
-          expose:
-            label: 'Lingua originale'
+            label: 'Lingua di origine'
   page_1:
     display_title: Pagina

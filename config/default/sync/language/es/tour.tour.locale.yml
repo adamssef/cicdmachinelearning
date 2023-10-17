@@ -1,3 +1,8 @@
+label: Traducción
 tips:
+  locale-search:
+    label: Buscar
+  locale-translate:
+    label: Traducir
   locale-continue:
     label: Continuando

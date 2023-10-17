@@ -80,6 +80,7 @@
     "drupal/site_studio_webform": "^1.1",
     "drupal/smtp": "^1.2",
     "drupal/svg_image_field": "^2.2",
+    "drupal/tmgmt": "^1.15",
     "drupal/toolbar_edit_page_button": "^1.0",
     "drupal/trash": "^3.0@beta",
     "drupal/ultimate_cron": "^2.0@alpha",
