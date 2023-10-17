@@ -25,6 +25,8 @@ display:
           action_title: Auswahl
         redirect_source__path:
           label: Von
+        created:
+          label: Erstellt
       filters:
         redirect_source__path:
           expose:

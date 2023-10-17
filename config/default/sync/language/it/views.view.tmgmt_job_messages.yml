@@ -4,7 +4,7 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Filtra
+          submit_button: Applica
           reset_button_label: Ripristina
           exposed_sorts_label: 'Ordina per'
           sort_desc_label: Disc
@@ -15,21 +15,7 @@ display:
             items_per_page_options_all_label: '- Tutto -'
             offset_label: Scostamento
       fields:
-        redirect_bulk_form:
-          action_title: 'Con la selezione'
-        redirect_source__path:
-          label: Da
         created:
           label: Creato
-      filters:
-        redirect_source__path:
-          expose:
-            label: Da
-        redirect_redirect__uri:
-          expose:
-            label: A
-        language:
-          expose:
-            label: 'Lingua originale'
-  page_1:
-    display_title: Pagina
+        name:
+          label: Nome
