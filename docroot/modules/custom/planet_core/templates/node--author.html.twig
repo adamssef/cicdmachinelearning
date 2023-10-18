@@ -29,7 +29,9 @@
 						</div>
 					</div>
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-10">
-						<h1 class="coh-heading author-name"><span>{{ author_data.author.full_name }}</span></h1>
+						<h1 class="coh-heading author-name">
+							<span>{{ author_data.author.full_name }}</span>
+						</h1>
 						<div class="author-role">
 							{% if content.field_role['#items'][0].value is not empty %}
 								{{ content.field_role['#items'][0].value }}
@@ -80,52 +82,15 @@
 								<p class="no-articles">No linked articles found.</p>
 							{% else %}
 								{% if author_data.tags is not empty %}
-									<div class="tags-pills pink-pills main-pills">
+									<div class="tags-pills pink-pills main-pills" style="display: none">
 										<span class="selected main-pill all-pill visible" data-tagid="all">All</span>
-										{% for tag in author_data.tags %}
-											<span class="main-pill visible" data-tagid={{tag.id}}>
-												{{ tag.name }}
-											</span>
-										{% endfor %}
+										<div class="external-main-tags"></div>
 									</div>
 								{% endif %}
 
 								<div class="article-cards-wrapper">
 									<div class="coh-row">
-										<div class="coh-row-inner">
-
-											{% for article in author_data.articles %}
-												<div data-tagid="[{% for tag in article.tags %}{{ tag.id }}{% if not loop.last %}, {% endif %}{% endfor %}]" class="article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
-													<div class="article-card">
-														<div class="article-bg-image-wrapper">
-															<div class="article-bg-image" style="background-image:url({{article.background_image}})"></div>
-														</div>
-														<div class="article-card-content">
-															<div class="article-title">
-																<a href="{{ article.url }}">{{ article.title }}</a>
-															</div>
-															<div class="tags-and-author">
-																<div class="article-tags tags-pills">
-																	{% for tag in article.tags %}
-																		<span data-tagid={{tag.id}}>
-																			{{ tag.name }}
-																		</span>
-																	{% endfor %}
-																</div>
-																<div class="article-author-and-date">
-																	<div class="article-author">
-																		<div class="author-photo" style="background-image:url({{author_data.author.profile_picture}})"></div>
-																		<div class="author-name"><span>{{author_data.author.full_name}}</span></div>
-																	</div>
-																	<div class="vertical-divider">|</div>
-																	<div class="article-date">{{article.creation_date}}</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											{% endfor %}
-										</div>
+										<div class="coh-row-inner article-js-wrapper"></div>
 									</div>
 								</div>
 							{% endif %}
@@ -134,6 +99,13 @@
 				</div>
 			</div>
 		</div>
+		<div class="coh-row">
+			<div class="coh-row-inner">
+				<div class="load-more-wrapper">
+					<div id="load-more-button" class="coh-link coh-style-primary-dark-atom-" style="display: none" data-offset="0" data-limit="6" data-author-id={{node.id}}>Load more <img src="/resources/icons/down-white-arrow.svg"></div>
+				</div>
+			</div>
+		</div>
 	</div>
+
 </div>
-{# <div id="load-more-button" data-author-id={{node.id}}>LOAD MORE</div> #}
