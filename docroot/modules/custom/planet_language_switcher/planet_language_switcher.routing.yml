@@ -1,7 +1,0 @@
-planet_language_switcher.author_articles:
-  path: '/planet_language_switcher/author_articles/{author_id}'
-  defaults:
-    _controller: '\Drupal\planet_language_switcher\Controller\AuthorArticles::loadAuthorArticles'
-    _title: 'Load More Articles'
-  requirements:
-    _permission: 'access content' # Set the appropriate permission for accessing this route.
