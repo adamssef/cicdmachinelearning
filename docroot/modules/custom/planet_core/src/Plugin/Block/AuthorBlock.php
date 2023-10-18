@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\planet_language_switcher\Plugin\Block;
+namespace Drupal\planet_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\BlockPluginInterface;
@@ -31,7 +31,7 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
         // Get the author ID from the field_author field.
         $author_id = $node->get('field_author')->target_id;
 
-        if (!empty($author_id)) {
+        if ($author_id) {
           // Load the author node.
           $author = Node::load($author_id);
           if ($author instanceof Node && $author->getType() == 'author') {

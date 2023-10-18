@@ -1,0 +1,6 @@
+author-scripts:
+  version: 1.x
+  js:
+    js/AuthorPage.js: {}
+  dependencies:
+    - core/jquery
