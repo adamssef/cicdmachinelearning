@@ -408,7 +408,7 @@ article footer div {
 }
 .last-articles-cards {
   padding-top: 48px;
-  padding-bottom: 48px;
+  padding-bottom: 24px;
 }
 .tags-pills {
   padding-bottom: 12px;
@@ -432,6 +432,9 @@ article footer div {
 .article-card:hover .article-bg-image {
   border-radius: 8px 8px 0 0;
   height: 213px
+}
+.article-cards-wrapper {
+  min-height: 600px
 }
 .article-cards-wrapper .coh-column {
   display: flex;
@@ -543,3 +546,22 @@ article footer div {
 /* .planet-header-transparent .header-container {
   background: transparent;
 } */
+.external-main-tags {
+  display: inline-block;
+}
+#load-more-button {
+  display: inline-block;
+  margin: 0 auto;
+  border-radius: 300rem;
+  color: white;
+  font-weight: 600;
+  padding: 20px 24px;
+  font-size: 16px;
+}
+.load-more-wrapper {text-align: center;display: block;
+  width: 100%;}
+
+.load-more-wrapper img {
+  display: inline-block;
+  margin-left: 4px;
+}
