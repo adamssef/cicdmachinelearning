@@ -1,0 +1,9 @@
+planet_core.author_articles:
+  path: '/planet_core/author_articles/{author_id}/{limit}/{offset}'
+  defaults:
+    _controller: '\Drupal\planet_core\Controller\AuthorArticles::loadAuthorArticles'
+    _title: 'Load More Articles'
+  requirements:
+    _permission: 'access content'
+    limit: '\d+'  # Ensure limit is a positive integer.
+    offset: '\d+' # Ensure offset is a positive integer.
