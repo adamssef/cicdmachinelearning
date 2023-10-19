@@ -18,6 +18,8 @@ display:
             items_per_page_options_all_label: '- Alle -'
             offset_label: Versatz
       fields:
+        created:
+          label: Erstellt
         view_webform_submission:
           label: Aktionen
       arguments:
@@ -29,6 +31,10 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Aktion
+        created:
+          label: Erstellt
+        completed:
+          label: Abgeschlossen
         operations:
           label: Aktionen
   embed_manage:
@@ -36,6 +42,10 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Aktion
+        created:
+          label: Erstellt
+        completed:
+          label: Abgeschlossen
         view_webform_submission:
           label: Aktionen
         edit_webform_submission:
@@ -43,5 +53,9 @@ display:
   embed_review:
     display_options:
       fields:
+        created:
+          label: Erstellt
+        completed:
+          label: Abgeschlossen
         view_webform_submission:
           label: Aktionen
