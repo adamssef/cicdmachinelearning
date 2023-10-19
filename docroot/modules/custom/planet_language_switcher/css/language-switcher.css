@@ -557,6 +557,8 @@ article footer div {
   font-weight: 600;
   padding: 20px 24px;
   font-size: 16px;
+  transition: all .2s ease;
+  margin-top: 16px
 }
 .load-more-wrapper {text-align: center;display: block;
   width: 100%;}
