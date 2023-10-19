@@ -433,8 +433,8 @@ article footer div {
   border-radius: 8px 8px 0 0;
   height: 213px
 }
-.article-cards-wrapper {
-  min-height: 600px
+.last-articles-cards{
+  min-height: 600px 
 }
 .article-cards-wrapper .coh-column {
   display: flex;
