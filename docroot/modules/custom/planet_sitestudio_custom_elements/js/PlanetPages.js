@@ -150,43 +150,43 @@
           // console.log(languages.includes(userLang));
           // console.log('hide_modal_cookie: ', hide_modal_cookie);
           // if(languages.includes(userLang) && !hide_modal_cookie){
-          if((userLang.startsWith("fr") || userLang.startsWith("it") || userLang.startsWith("de") || userLang.startsWith("es")) && !hide_modal_cookie){
-              // console.log('modal on');
-            jQuery('#js-modal-page-show-modal').modal('show');
-          }else{
-            // console.log('modal off');
-            jQuery('#js-modal-page-show-modal').modal('hide');
-          } 
+          // if((userLang.startsWith("fr") || userLang.startsWith("it") || userLang.startsWith("de") || userLang.startsWith("es")) && !hide_modal_cookie){
+          //     // console.log('modal on');
+          //   jQuery('#js-modal-page-show-modal').modal('show');
+          // }else{
+          //   // console.log('modal off');
+          //   jQuery('#js-modal-page-show-modal').modal('hide');
+          // } 
 
-          jQuery('#js-modal-page-show-modal .modal-buttons').on('click', function(){
-            jQuery('#js-modal-page-show-modal').modal('hide');
-          });
-          jQuery('#js-modal-page-show-modal').on('hide.bs.modal', function () {
-            cookies.set('hide_modal_id_hide_modal_id_homepage_language_modal', true, { expires: 365 * 20, path: '/' });
-          });
+          // jQuery('#js-modal-page-show-modal .modal-buttons').on('click', function(){
+          //   jQuery('#js-modal-page-show-modal').modal('hide');
+          // });
+          // jQuery('#js-modal-page-show-modal').on('hide.bs.modal', function () {
+          //   cookies.set('hide_modal_id_hide_modal_id_homepage_language_modal', true, { expires: 365 * 20, path: '/' });
+          // });
 
-          var userLangbutton = '';
-          var url = window.location.origin;
-          if(userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ){
-            const languageName = new Intl.DisplayNames([userLang], {
-              type: 'language'
-            });
-            var LangName = languageName.of(userLang);
-            var userLangbutton = '<a class="btn-black lang-'+userLang+'" href="'+url+'/'+userLang+'">Switch to '+LangName+'</a>';
-            // var userLangbutton = '<a href="'+url+'/'+userLang+'">'+userLang+'</a>';
-          }
-          jQuery('.homepage-language-modal').find('.modal-body').find('.lang-btn-wrap').html(userLangbutton+'<a class="default_language_sel btn" href="'+url+'">Stay In English</a>');
+          // var userLangbutton = '';
+          // var url = window.location.origin;
+          // if(userLang == 'es' || userLang == 'fr' || userLang == 'it' || userLang == 'de' ){
+          //   const languageName = new Intl.DisplayNames([userLang], {
+          //     type: 'language'
+          //   });
+          //   var LangName = languageName.of(userLang);
+          //   var userLangbutton = '<a class="btn-black lang-'+userLang+'" href="'+url+'/'+userLang+'">Switch to '+LangName+'</a>';
+          //   // var userLangbutton = '<a href="'+url+'/'+userLang+'">'+userLang+'</a>';
+          // }
+          // jQuery('.homepage-language-modal').find('.modal-body').find('.lang-btn-wrap').html(userLangbutton+'<a class="default_language_sel btn" href="'+url+'">Stay In English</a>');
 
-          jQuery(document).on('click', '.default_language_sel', function(e){
-            var siteLang = document.documentElement.lang;
-            jQuery('.homepage-language-modal').find('.js-modal-page-ok-button').click();
-            if(siteLang == 'en'){
-              jQuery('.modal-buttons').trigger('click');
-              e.preventDefault();
-            }else{
-              window.location.replace(window.location.origin);
-            }
-          });
+          // jQuery(document).on('click', '.default_language_sel', function(e){
+          //   var siteLang = document.documentElement.lang;
+          //   jQuery('.homepage-language-modal').find('.js-modal-page-ok-button').click();
+          //   if(siteLang == 'en'){
+          //     jQuery('.modal-buttons').trigger('click');
+          //     e.preventDefault();
+          //   }else{
+          //     window.location.replace(window.location.origin);
+          //   }
+          // });
 
 
 
