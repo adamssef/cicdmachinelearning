@@ -87,6 +87,9 @@ function planet_language_switcher_page_bottom(array &$page_bottom)
     if ($route_name === 'entity.node.canonical') {
         if ($node = \Drupal::routeMatch()->getParameter('node')) {
 
+            $config = \Drupal::config('planet_language_switcher.settings');
+            $is_lang_detection_enabled = $config->get('enable_language_detection');
+            
             $pretty_languages = array(
                 "en" => "English",
                 "fr" => "French",
@@ -126,7 +129,8 @@ function planet_language_switcher_page_bottom(array &$page_bottom)
             // and translation exists for that language then show popup.
             $translation_exists = ($current_lang_id != $browser_lang_id) && (in_array($browser_lang_id, $available_translations));
 
-            if (!$translation_exists) {
+
+            if (!$translation_exists or !$is_lang_detection_enabled) {
                 return;
             }
 
