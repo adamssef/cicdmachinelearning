@@ -100,7 +100,7 @@
     background-image: url('/resources/images/language-detection.jpeg');
   }
   .main-banner-text {
-    padding: 56px 0;
+    padding: 56px 0 32px 0;
     text-align: center;
   }
   .main-banner-text p {
@@ -113,14 +113,42 @@
   .buttons-wrapper {
     margin-top: 56px;
   }
-  .buttons-wrapper .coh-link.coh-style-primary-dark-atom- {
-    white-space: nowrap;
-    margin-right: 24px;
-  }
+
   .buttons-wrapper img {
     max-width: 16px;
     float: left;
     margin-right: 6px;
+  }
+  .buttons-wrapper .coh-link {
+    display: flex;
+    margin-bottom: 8px;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+  }
+  .coh-style-secondary-outlined-atom-:hover {
+    background: #e00083;
+    color: white;
+  }
+  .coh-style-secondary-outlined-atom-, .coh-style-primary-dark-atom- {
+    transition: all .2s ease;
+  }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .buttons-wrapper .coh-link.coh-style-primary-dark-atom- {
+    white-space: nowrap;
+  }
+  @media (max-width: 991px) {
+    .buttons-wrapper {
+      flex-direction: column;
+    }
+  }
+  @media (min-width: 992px) {
+    .buttons-wrapper .coh-link.coh-style-primary-dark-atom- {
+      margin-right: 24px;
+    }
   }
   /**************************\
     Demo Animation Style
