@@ -92,12 +92,14 @@
     color: #fff;
   }
   .main-banner-image {
-    height: 275px; width: 100%;
+    width: 100%;
     display: block;
     border-radius: 8px;
   }
   .language-detection-image {
     background-image: url('/resources/images/language-detection.jpeg');
+    background-position: center;
+    background-size: cover;
   }
   .main-banner-text {
     padding: 56px 0 32px 0;
@@ -144,8 +146,25 @@
     .buttons-wrapper {
       flex-direction: column;
     }
+    .modal__container {margin: 0 16px}
+    .modal__container {padding: 16px}
+    .buttons-wrapper .coh-link {margin-bottom: 16px}
+    .buttons-wrapper {
+      margin-top: 32px;
+    }
+    .main-banner-text {
+      padding: 32px 0 0 0;
+      text-align: center;
+    }
+    .main-banner-image {
+      height: 200px;
+    }
+    .modal__header {padding-bottom: 16px}
   }
   @media (min-width: 992px) {
+    .main-banner-image {
+      height: 275px;
+    }
     .buttons-wrapper .coh-link.coh-style-primary-dark-atom- {
       margin-right: 24px;
     }
