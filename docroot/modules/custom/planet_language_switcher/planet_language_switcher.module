@@ -126,26 +126,26 @@ function planet_language_switcher_page_bottom(array &$page_bottom)
             }
 
             // If browser language is different than the current page language
-            // and translation exists for that language then show popup.
+            // but it's not en
+            // and translation exists for that language then show popup
             $translation_exists = ($current_lang_id != $browser_lang_id) && (in_array($browser_lang_id, $available_translations));
 
-
-            if (!$translation_exists or !$is_lang_detection_enabled) {
+            if (!$translation_exists or !$is_lang_detection_enabled or $browser_lang_id == "en") {
                 return;
             }
 
 
             $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id(), $browser_lang_id);
-            $alias = $browser_lang_id == "en" ? $alias : "/" . $browser_lang_id . $alias;
+            $alias = "/" . $browser_lang_id . $alias;
 
-            $homepage_url = $browser_lang_id == "en" ? "/" : "/" . $browser_lang_id;
+            $homepage_url = "/" . $browser_lang_id;
             $url = $is_frontpage ? $homepage_url : $alias;
             
             $modal = '<div class="modal language-detection-modal micromodal-slide" id="modal-language-detection" aria-hidden="true">
                 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
                 <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
                     <header class="modal__header">
-    <img class="modal__close" aria-label="Close modal 1" data-micromodal-close="1" src="/resources/icons/close.svg">
+    <img class="modal__close" aria-label="Close modal 1" data-micromodal-close src="/resources/icons/close.svg">
                     </header>
                     <main class="modal__content" id="modal-1-content">
                         <div>
