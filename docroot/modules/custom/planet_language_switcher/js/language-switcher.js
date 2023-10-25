@@ -46,17 +46,18 @@
                 MicroModal.show('modal-language-detection', {
                     disableFocus: true,
                     closeTrigger: 'data-micromodal-close',
+                    onClose: () => {
+                    const now = new Date();
+                    const expiryDate = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+                    const cookieOptions = {
+                        expires: expiryDate.toUTCString(),
+                        path: '/',
+                        secure: true, // Secure attribute (requires HTTPS)
+                        sameSite: 'Strict' // SameSite attribute (or 'Lax' or 'None' depending on your use case)
+                    };
+                    document.cookie = `modal-lang-detection=true; expires=${cookieOptions.expires}; path=${cookieOptions.path}; secure=${cookieOptions.secure}; SameSite=${cookieOptions.sameSite}`;
+                    }
                 });
-                
-                const now = new Date();
-                const expiryDate = new Date(now.getTime() + 24 * 60 * 60 * 1000);
-                const cookieOptions = {
-                    expires: expiryDate.toUTCString(),
-                    path: '/',
-                    secure: true, // Secure attribute (requires HTTPS)
-                    sameSite: 'Strict' // SameSite attribute (or 'Lax' or 'None' depending on your use case)
-                };
-                document.cookie = `modal-lang-detection=true; expires=${cookieOptions.expires}; path=${cookieOptions.path}; secure=${cookieOptions.secure}; SameSite=${cookieOptions.sameSite}`;
             }
 
         }
