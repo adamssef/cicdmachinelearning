@@ -1,10 +1,12 @@
 language-switcher:
   version: VERSION
   js:
+    js/micromodal.min.js: {}
     js/language-switcher.js: {}
   css:
     theme:
       css/language-switcher.css: {}
+      css/onboarding.css: {}
   dependencies:
     - core/drupal
     - core/jquery
