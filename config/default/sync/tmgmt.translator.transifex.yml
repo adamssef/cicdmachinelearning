@@ -1,4 +1,4 @@
-uuid: 848ff210-7cce-4efd-9d13-e76933a5d89d
+uuid: 076396d9-e268-4f06-817a-da8c00956c2d
 langcode: en
 status: true
 dependencies:
@@ -6,9 +6,18 @@ dependencies:
     - tmgmt_transifex
 name: transifex
 label: Transifex
-description: 'Transifex Drupal connector.'
-auto_accept: null
+description: ''
+auto_accept: false
 weight: null
 plugin: transifex
-settings: {  }
-remote_languages_mappings: {  }
+settings:
+  api: 8b3b458ee2fb0b85d72bb73f3ed23596e2fcc15a
+  project: app.transifex.com/planet-3/planet-file/
+  onlyreviewed: false
+  secret: ''
+remote_languages_mappings:
+  en: en
+  es: es
+  fr: fr
+  it: it
+  de: de
