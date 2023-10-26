@@ -49,9 +49,6 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
               '#markup' => $this->t('<div class="author-@author_class linked-author-page"><div>
                   <img src="@photo_url" alt="@author_name">
                 </div>
-                '.var_export($author_name) . '
-                '.var_export(date("h:i:sa")) . '
-                '.var_export($author_id) . '
                 <div>
                   <a class="author-name" href="@author_url">by @author_name</a>
                 </div></div>', [
@@ -103,4 +100,9 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
         '#markup' => ''
       ];
     }
+
+    public function getCacheMaxAge() {
+      return 0;
+    }
+
 }
