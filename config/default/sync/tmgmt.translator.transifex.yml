@@ -11,7 +11,7 @@ auto_accept: false
 weight: null
 plugin: transifex
 settings:
-  api: 8b3b458ee2fb0b85d72bb73f3ed23596e2fcc15a
+  api: 1/8b3b458ee2fb0b85d72bb73f3ed23596e2fcc15a
   project: app.transifex.com/planet-3/planet-file/
   onlyreviewed: false
   secret: ''
