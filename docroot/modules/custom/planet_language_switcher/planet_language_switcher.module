@@ -100,9 +100,9 @@ function planet_language_switcher_page_bottom(array &$page_bottom)
 
             $language_texts = [
                 'es' => 'Cambiar a Español', // Spanish
-                'fr' => 'Changer en Français', // French
-                'it' => 'Passare all\'italiano', // Italian
-                'de' => 'Wechseln Sie zum Deutsch', // German
+                'fr' => 'Passer en Français', // French
+                'it' => 'Passa all\'italiano', // Italian
+                'de' => 'Auf Deutsch wechseln', // German
                 'en' => 'Change to English',
             ];
 
