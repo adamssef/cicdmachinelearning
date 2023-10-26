@@ -46,7 +46,7 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
 
             // Build the block content for the existing author.
             $build = [
-              '#markup' => $this->t('<div class="linked-author-page"><div>
+              '#markup' => $this->t('<div class="author-@author_class linked-author-page"><div>
                   <img src="@photo_url" alt="@author_name">
                 </div>
                 <div>
@@ -55,6 +55,7 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
                 '@photo_url' => $url,
                 '@author_name' => $author_name,
                 '@author_url' => $author->toUrl()->toString(),
+                '@author_class' => strtolower(str_replace(' ', '-', $author_name)),
               ]),
             ];
 
@@ -77,7 +78,7 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
           }
         
           $build = [
-            '#markup' => $this->t('<div class="linked-author-page"><div>
+            '#markup' => $this->t('<div class="author-@author_class linked-author-page"><div>
                 <img src="@photo_url" alt="@author_name">
               </div>
               <div>
@@ -85,6 +86,7 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
               </div></div>', [
               '@photo_url' => $profile_photo_url,
               '@author_name' => $legacy_author_name,
+              '@author_class' => strtolower(str_replace(' ', '-', $legacy_author_name)),
             ]),
           ];
 
@@ -98,4 +100,9 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
         '#markup' => ''
       ];
     }
+
+    public function getCacheMaxAge() {
+      return 0;
+    }
+
 }
