@@ -223,3 +223,4 @@
   .modal__close {
     max-width: 24px;
   }
+  .modal-lang-detection-btn.btn-lang-all {display: none}

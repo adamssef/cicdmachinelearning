@@ -13,6 +13,18 @@
         if (parts.length === 2) return parts.pop().split(';').shift();
     }
 
+    function setLangCookie() {
+        const now = new Date();
+        const expiryDate = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+        const cookieOptions = {
+            expires: expiryDate.toUTCString(),
+            path: '/',
+            secure: true, // Secure attribute (requires HTTPS)
+            sameSite: 'Strict' // SameSite attribute (or 'Lax' or 'None' depending on your use case)
+        };
+        document.cookie = `modal-lang-detection=true; expires=${cookieOptions.expires}; path=${cookieOptions.path}; secure=${cookieOptions.secure}; SameSite=${cookieOptions.sameSite}`;
+    }
+
     Drupal.behaviors.languageSwitcher = {
         attach: function (context, settings) {
 
@@ -35,29 +47,33 @@
                     $selectMenu.removeClass("is-expanded");
                 });
             });
+            
+            
 
+            const browserLanguage = navigator.language || navigator.userLanguage;
+            const browserLanguageCode = browserLanguage.substr(0, 2);
+            
             // Check if the 'modal-language-detection' div element and cookie are not set
             const modalElement = document.getElementById('modal-language-detection');
-            if (modalElement && !getCookie('modal-lang-detection')) {
-                // Run initialization code
-                // MicroModal.init({
-                //     disableFocus: true
-                // });
+            const hasLanguage = $("#modal-language-detection").hasClass("lang-" + browserLanguageCode);
+            const isEnglish = $("#modal-language-detection").hasClass("en");
+            
+            if (modalElement && isEnglish && hasLanguage && !getCookie('modal-lang-detection')) {
+
+                $(".btn-lang-all").hide();
+                $(".btn-lang-" + browserLanguageCode).show();
+
+                // Show the corresponding language button based on the browser language code
                 MicroModal.show('modal-language-detection', {
                     disableFocus: true,
                     closeTrigger: 'data-micromodal-close',
                     onClose: () => {
-                    const now = new Date();
-                    const expiryDate = new Date(now.getTime() + 24 * 60 * 60 * 1000);
-                    const cookieOptions = {
-                        expires: expiryDate.toUTCString(),
-                        path: '/',
-                        secure: true, // Secure attribute (requires HTTPS)
-                        sameSite: 'Strict' // SameSite attribute (or 'Lax' or 'None' depending on your use case)
-                    };
-                    document.cookie = `modal-lang-detection=true; expires=${cookieOptions.expires}; path=${cookieOptions.path}; secure=${cookieOptions.secure}; SameSite=${cookieOptions.sameSite}`;
+                        setLangCookie();
                     }
                 });
+                $(".btn-lang-all").click(function() {
+                    setLangCookie();
+                })
             }
 
         }
