@@ -169,6 +169,14 @@
       margin-right: 24px;
     }
   }
+
+  @media (max-height: 720px) {
+    .main-banner-image {height: 220px}
+    .modal__header {padding-bottom: 24px}
+    .modal__container {padding: 24px}
+    .main-banner-text {padding: 24px 0 0 0}
+    .buttons-wrapper {margin-top: 24px}
+  }
   /**************************\
     Demo Animation Style
   \**************************/
