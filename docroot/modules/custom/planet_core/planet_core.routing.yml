@@ -1,3 +1,5 @@
+# ROUTES
+
 planet_core.author_articles:
   path: '/planet_core/author_articles/{author_id}/{limit}/{offset}'
   defaults:
@@ -7,3 +9,22 @@ planet_core.author_articles:
     _permission: 'access content'
     limit: '\d+'  # Ensure limit is a positive integer.
     offset: '\d+' # Ensure offset is a positive integer.
+planet_core.blog_articles:
+  path: '/planet_core/blog_articles/{limit}/{offset}'
+  defaults:
+    _controller: '\Drupal\planet_core\Controller\BlogArticles::loadBlogArticles'
+    _title: 'Load More Articles'
+  requirements:
+    _permission: 'access content'
+    limit: '\d+'  # Ensure limit is a positive integer.
+    offset: '\d+' # Ensure offset is a positive integer.
+
+# ADMIN AREAS
+
+planet_core.admin_config:
+  path: '/admin/planet/custom_settings'
+  defaults:
+    _form: '\Drupal\planet_core\Form\PlanetCoreCustomSettingsForm'
+    _title: 'Custom settings'
+  requirements:
+    _permission: 'administer site configuration'
