@@ -17,6 +17,8 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
       fields:
+        created:
+          label: Creado
         view_webform_submission:
           label: Operaciones
       arguments:
@@ -28,6 +30,10 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Acción
+        created:
+          label: Creado
+        completed:
+          label: Completado
         operations:
           label: Operaciones
   embed_manage:
@@ -35,6 +41,10 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Acción
+        created:
+          label: Creado
+        completed:
+          label: Completado
         view_webform_submission:
           label: Operaciones
         edit_webform_submission:
@@ -42,5 +52,9 @@ display:
   embed_review:
     display_options:
       fields:
+        created:
+          label: Creado
+        completed:
+          label: Completado
         view_webform_submission:
           label: Operaciones

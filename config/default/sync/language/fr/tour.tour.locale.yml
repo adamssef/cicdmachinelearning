@@ -1,3 +1,8 @@
+label: Traduction
 tips:
+  locale-search:
+    label: Rechercher
+  locale-translate:
+    label: Traduire
   locale-continue:
     label: 'Continuant sur'
