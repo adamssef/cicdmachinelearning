@@ -19,6 +19,7 @@ $databases = [
   ],
 ];
 
+
 $settings['file_temp_path'] = 'sites/default/files/tmp';
 
 $settings['trusted_host_patterns'] = [
@@ -72,3 +73,6 @@ $settings['dx8_json_fields'] = TRUE;
 
 // Skip file system permissions hardening.
 $settings['skip_permissions_hardening'] = TRUE;
+
+
+$config['display_cache_disable'] = TRUE;
