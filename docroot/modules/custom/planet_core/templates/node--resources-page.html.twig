@@ -38,9 +38,11 @@
 									<div class="article-date">
 										{{ article.creation_date }}
 										{% if article.reading_time %}
-										·
-										{{article.reading_time}}
-										min read {% endif %}</div>
+											·
+											{{article.reading_time}}
+											min read
+										{% endif %}
+									</div>
 								</div>
 								<div class="share-button coh-link coh-style-primary-dark-atom-">
 									Share
@@ -48,7 +50,7 @@
 							</div>
 							<div class="article-main-image"><img src="{{article.background_image}}" alt="{{article.title}}"></div>
 							<div class="single-layout-canvas">
-							{{content.field_layout_canvas}}
+								{{content.field_layout_canvas}}
 							</div>
 						</div>
 					</div>
@@ -56,49 +58,101 @@
 				</div>
 			</div>
 		</div>
+		<div class="article-related-articles">
+		<div class="coh-container-boxed">
+			<div class="coh-row">
+			<div class="coh-row-inner">
+				<div class="coh-column">
+					<h3 class="coh-style-heading-3-planet small-heading">You might also be interested in...</h3>
+				</div>
+			</div>
+			</div>
+			<div class="coh-row">
+				<div class="coh-row-inner">
+
+
+					{% for article in article.related_articles %}
+						<div data-tagid="{{ article.tags|map(tag => tag.id)|join(', ') }}" class="article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
+							<div class="article-card">
+								<div class="article-bg-image-wrapper">
+									<div class="article-bg-image" style="background-image:url({{ article.background_image }})"></div>
+								</div>
+								<div class="article-card-content">
+									<div class="article-title">
+										<a href="{{ article.url }}">{{ article.title }}</a>
+									</div>
+									<div class="tags-and-author">
+										<div class="article-tags tags-pills">
+											{% for tag in article.tags %}
+												<span data-tagid="{{ tag.id }}">{{ tag.name }}</span>
+											{% endfor %}
+										</div>
+										<div class="article-author-and-date">
+											<div class="article-author">
+												<div class="author-photo" style="background-image:url({{ article.author.profile_picture }})"></div>
+												<div class="author-name">
+													<span>{{ article.author.full_name }}</span>
+												</div>
+											</div>
+											<div class="vertical-divider">|</div>
+											<div class="article-date">{{ article.creation_date }}</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+
+
+				</div>
+			</div>
+		</div>
+		</div>
+
+
 	</div>
 
 	<!-- [1] -->
 	<div class="modal share-article-modal micromodal-slide " id="share-article-modal" aria-hidden="true">
-    <div class="modal__overlay" tabindex="-1">
-        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-            <header class="modal__header">
-                <img class="modal__close" aria-label="Close modal 1" data-micromodal-close src="/resources/icons/close.svg">
-            </header>
-            <main class="modal__content" id="modal-1-content">
-                <div class="main-banner-text">
-                    <span class="coh-heading coh-style-heading-2-planet">Share</span>
-					<div class="share-social-wrapper">
-						<div class="social share-li">
-							<a href="https://www.linkedin.com/sharing/share-offsite/?url={{article.share_url}}" target="_blank">
-								<img src="/resources/icons/social/li-rounded.svg">
-								<span>LinkedIn</span>
-							</a>
+		<div class="modal__overlay" tabindex="-1">
+			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+				<header class="modal__header">
+					<img class="modal__close" aria-label="Close modal 1" data-micromodal-close src="/resources/icons/close.svg">
+				</header>
+				<main class="modal__content" id="modal-1-content">
+					<div class="main-banner-text">
+						<span class="coh-heading coh-style-heading-2-planet">Share</span>
+						<div class="share-social-wrapper">
+							<div class="social share-li">
+								<a href="https://www.linkedin.com/sharing/share-offsite/?url={{article.share_url}}" target="_blank">
+									<img src="/resources/icons/social/li-rounded.svg">
+									<span>LinkedIn</span>
+								</a>
+							</div>
+							<div class="social share-x">
+								<a href="https://twitter.com/intent/tweet?url={{article.share_url}}" target="_blank">
+									<img src="/resources/icons/social/x-rounded.svg">
+									<span>X</span>
+								</a>
+							</div>
+							<div class="social share-fb">
+								<a href="https://www.facebook.com/sharer/sharer.php?u={{article.share_url}}" target="_blank">
+									<img src="/resources/icons/social/fb-rounded.svg">
+									<span>Facebook</span>
+								</a>
+							</div>
+
 						</div>
-						<div class="social share-x">
-							<a href="https://twitter.com/intent/tweet?url={{article.share_url}}" target="_blank">
-								<img src="/resources/icons/social/x-rounded.svg">
-								<span>Twitter</span>
-							</a>
+						<div class="share-url-wrapper">
+							<div class="share-input">
+								<span class="share-url">{{article.share_url}}</div>
+								<span class="copy-btn coh-link coh-style-primary-dark-atom-" data-url="{{article.share_url}}">Copy</div>
+							</div>
 						</div>
-						<div class="social share-fb">
-							<a href="https://www.facebook.com/sharer/sharer.php?u={{article.share_url}}" target="_blank">
-								<img src="/resources/icons/social/fb-rounded.svg">
-								<span>Facebook</span>
-							</a>
-						</div>
-	
 					</div>
-					<div class="share-url-wrapper">
-						<div class="share-input">
-						<span class="share-url">{{article.short_share_url}}</div>
-						<span class="copy-btn coh-link coh-style-primary-dark-atom-" data-url="{{article.share_url}}">Copy</div>
-						</div>
-					</div>
-                </div>
-            </main>
-        </div>
-    </div>
-</div>
+				</main>
+			</div>
+		</div>
+	</div>
 
 </div>
