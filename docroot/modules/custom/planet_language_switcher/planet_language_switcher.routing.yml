@@ -2,6 +2,6 @@ planet_language_switcher.admin_config:
   path: '/admin/planet/language_detection'
   defaults:
     _form: '\Drupal\planet_language_switcher\Form\LanguageDetectionSettingsForm'
-    _title: 'Language Detection Settings'
+    _title: 'Language detection'
   requirements:
     _permission: 'administer site configuration'
