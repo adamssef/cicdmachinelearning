@@ -64,7 +64,8 @@ function planet_core_get_author_articles($authorId, $limit = 3, $offset = 0)
   $unique_tags = []; // Initialize an array to store unique tags.
 
   foreach ($resource_nodes as $node) {
-    $title = $node->getTitle();
+    $title = $node->get('field_resources_title')->value;
+
     $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
 
     // Get Tags (field_resources_tags)
@@ -162,7 +163,8 @@ function planet_core_get_last_published_article()
     $article_tags = [];
 
     foreach ($nodes as $node) {
-        $title = $node->getTitle();
+        $title = $node->get('field_resources_title')->value;
+
         $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
 
         // Get Tags (field_resources_tags)
@@ -268,7 +270,8 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0)
   $unique_tags = []; // Initialize an array to store unique tags.
 
   foreach ($resource_nodes as $node) {
-    $title = $node->getTitle();
+    $title = $node->get('field_resources_title')->value;
+
     $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
 
     // Get Tags (field_resources_tags)
@@ -404,7 +407,8 @@ function planet_core_single_article($node_id) {
   $author_url = "";
   $author_photo = "";
 
-  $title = $node->getTitle();
+  $title = $node->get('field_resources_title')->value;
+
   $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
 
   // Get Tags (field_resources_tags)
@@ -448,7 +452,6 @@ function planet_core_single_article($node_id) {
   // Get Creation Date
   $custom_timestamp = $node->get('field_resources_published_time')->value;
   $reading_time = $node->get('field_resources_reading_time')->value;
-  $main_title = $node->get('field_resources_title')->value;
   $blog_urls = planet_core_get_aliases_in_other_languages("blog");
   $domain = $base_url;
 
@@ -459,7 +462,7 @@ function planet_core_single_article($node_id) {
   $creation_date = date('F j, Y', $custom_timestamp);
 
   $article = array(
-    "title" => $main_title,
+    "title" => $title,
     'url' => $url,
     'domain' => $domain,
     'share_url' => $share_url,
