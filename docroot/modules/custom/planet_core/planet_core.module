@@ -242,6 +242,11 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     return;
   }
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+
+  $config = \Drupal::config('planet_core.settings');
+  $is_new_blog_enabled = $config->get('enable_new_blog');
+  
+  if($is_new_blog_enabled) {
   switch ($alias) {
     case "/blog":
       $suggestions[] = 'node__blog-single-page';
@@ -251,6 +256,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     // Add custom template suggestion for 'resources' content type.
     $suggestions[] = 'node__resources-page';
   }
+}
 }
 
 /**
@@ -395,14 +401,20 @@ function planet_core_preprocess_node(array &$variables)
     $variables['#attached']['library'][] = 'planet_core/author-page';
   }
 
-  if ($node->getType() == 'resources') {
-    $variables['article'] = planet_core_single_article($node->id());
-    $variables['#attached']['library'][] = 'planet_core/single-article-page';
-  }
+ 
+  $config = \Drupal::config('planet_core.settings');
+  $is_new_blog_enabled = $config->get('enable_new_blog');
 
-  if ($alias == "/blog") {
-    $variables['featured_article'] = planet_core_get_last_published_article();
-    $variables['#attached']['library'][] = 'planet_core/blog-page';
+  if ($is_new_blog_enabled) {
+    if ($node->getType() == 'resources') {
+      $variables['article'] = planet_core_single_article($node->id());
+      $variables['#attached']['library'][] = 'planet_core/single-article-page';
+    }
+
+    if ($alias == "/blog") {
+      $variables['featured_article'] = planet_core_get_last_published_article();
+      $variables['#attached']['library'][] = 'planet_core/blog-page';
+    }
   }
 }
 
