@@ -214,7 +214,7 @@ function planet_core_get_last_published_article()
 
         // Get the summary/excerpt of the body field.
         $body_summary = $node->get('field_article_summary')->value;
-        $body_summary = truncateText($body_summary, 250);
+        $body_summary = $body_summary ? truncateText($body_summary, 250) : "";
 
         $title = truncateText($title, 90);
 
@@ -398,7 +398,6 @@ function planet_core_single_article($node_id) {
 
   global $base_url;
 
-
   $node = Node::load($node_id);
   
   $article = array();
@@ -461,6 +460,8 @@ function planet_core_single_article($node_id) {
   // Convert the custom timestamp to a formatted date.
   $creation_date = date('F j, Y', $custom_timestamp);
 
+  $related_articles = planet_core_get_related_articles($article_tags[0]['id'], $node->id());
+
   $article = array(
     "title" => $title,
     'url' => $url,
@@ -477,7 +478,110 @@ function planet_core_single_article($node_id) {
       'profile_picture' => $author_photo,
     ],
     'blog_urls' => $blog_urls,
+    'related_articles' => $related_articles,
   );
 
   return $article;
+}
+
+
+
+function planet_core_get_related_articles($tag_id, $exclude_node_id)
+{
+
+  $related_articles = [];
+
+  $query = \Drupal::entityQuery('node')
+    ->condition('type', 'resources') // Adjust to your content type name.
+    ->condition('field_resources_tags.target_id', $tag_id)
+    ->condition('status', 1)
+    ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
+    ->sort('created', 'DESC')
+    ->range(0, 3)
+    ->execute();
+
+  $related_article_ids = array_values($query);
+
+    // If no related articles are found, query the last 3 articles excluding the specified node ID.
+  if (empty($related_article_ids)) {
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'resources') // Adjust to your content type name.
+      ->condition('status', 1)
+      ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
+      ->sort('created', 'DESC')
+      ->range(0, 3)
+      ->execute();
+
+    $related_article_ids = array_values($query);
+  }
+
+  foreach ($related_article_ids as $related_article_id) {
+
+    $node = Node::load($related_article_id);
+
+    if ($node instanceof Node) {
+      $related_article_title = $node->get('field_resources_title')->value;
+      $related_article_url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+
+      $tags_references = $node->get('field_resources_tags')->referencedEntities();
+      $tags_references = array_slice($tags_references, 0, 3);
+      $article_tags = [];
+
+      $author_id = $node->get('field_author')->target_id;
+      if ($author_id) {
+        // Load the author node.
+        $author = Node::load($author_id);
+        if ($author instanceof Node && $author->getType() == 'author') {
+          $author_name = $author->getTitle();
+          $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
+          $media = Media::load($mid);
+          $fid = $media->field_media_image->target_id;
+          $file = File::load($fid);
+          $author_photo = file_create_url($file->getFileUri());
+          $author_url = $author->toUrl()->toString();
+        }
+      }
+
+      foreach ($tags_references as $tag) {
+        $tag_name = $tag->getName();
+        $tag_id = $tag->id(); // Get the tag ID.
+
+        // Add the tag to the article_tags array.
+        $article_tags[] = [
+          'name' => $tag_name,
+          'id' => $tag_id,
+        ];
+      }
+
+
+      // Get Background Image (field_resources_background_image)
+      $background_image_media = $node->get('field_resources_background_image')->entity;
+      if ($background_image_media instanceof \Drupal\media\Entity\Media) {
+        $background_image_file = $background_image_media->get('field_media_image')->entity;
+        if ($background_image_file instanceof \Drupal\file\Entity\File) {
+          $background_image_url = file_create_url($background_image_file->getFileUri());
+        }
+      }
+
+      // Get Creation Date
+      $custom_timestamp = $node->get('field_resources_published_time')->value;
+
+      // Convert the custom timestamp to a formatted date.
+      $creation_date = date('F j, Y', $custom_timestamp);
+
+      $related_articles[] = [
+        'url' => $related_article_url,
+        'title' => $related_article_title,
+        'tags' => $article_tags,
+        'background_image' => $background_image_url,
+        'creation_date' => $creation_date,
+        'author' => [
+          'full_name' => $author_name,
+          'url' => $author_url,
+          'profile_picture' => $author_photo,
+        ]
+      ];
+    }
+  }
+  return $related_articles;
 }
