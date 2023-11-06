@@ -1,6 +1,13 @@
-author-scripts:
-  version: 1.x
+language-popup:
+  css:
+    theme:
+      css/planet_core.css: {}
+author-page:
   js:
     js/AuthorPage.js: {}
-  dependencies:
-    - core/jquery
+blog-page:
+  js:
+    js/BlogPage.js: {}
+single-article-page:
+  js:
+    js/ArticlePage.js: {}

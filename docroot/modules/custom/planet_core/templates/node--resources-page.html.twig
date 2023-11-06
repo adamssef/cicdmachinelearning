@@ -1,0 +1,104 @@
+{#
+  Custom Twig template for the "Author" content type.
+  Template variables available:
+    - content: An array of content elements.
+    - node: The node entity representing the "Author" content.
+    - label: The node label.
+    - url: The node URL.
+    - attributes: HTML attributes for the node wrapper.
+#}
+<div>
+	<div class="plnt-blog-single-page">
+		<div class="coh-container coh-container-boxed">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
+						<div class="breadcrumbs">
+							<a href="/blog">Blog</a>
+							>
+							<a href="/blog?tag={{article.tags[0].id}}">{{article.tags[0].name}}</a>
+						</div>
+					</div>
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-7">
+						<div class="article-content-wrapper">
+							<h1 class="blog-h1">{{article.title}}</h1>
+							<div class="article-author-and-date">
+								<div class="author-and-date">
+									{% if article.author.full_name is not empty %}
+										<div class="article-author">
+											<div class="author-photo" style="background-image:url({{ article.author.profile_picture }})"></div>
+											<div class="author-name">
+												<a href="{{article.author.url}}">
+													<span>{{ article.author.full_name }}</span>
+												</a>
+											</div>
+										</div>
+										<div class="vertical-divider">|</div>
+									{% endif %}
+									<div class="article-date">
+										{{ article.creation_date }}
+										{% if article.reading_time %}
+										·
+										{{article.reading_time}}
+										min read {% endif %}</div>
+								</div>
+								<div class="share-button coh-link coh-style-primary-dark-atom-">
+									Share
+								</div>
+							</div>
+							<div class="article-main-image"><img src="{{article.background_image}}" alt="{{article.title}}"></div>
+							<div class="single-layout-canvas">
+							{{content.field_layout_canvas}}
+							</div>
+						</div>
+					</div>
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- [1] -->
+	<div class="modal share-article-modal micromodal-slide " id="share-article-modal" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <header class="modal__header">
+                <img class="modal__close" aria-label="Close modal 1" data-micromodal-close src="/resources/icons/close.svg">
+            </header>
+            <main class="modal__content" id="modal-1-content">
+                <div class="main-banner-text">
+                    <span class="coh-heading coh-style-heading-2-planet">Share</span>
+					<div class="share-social-wrapper">
+						<div class="social share-li">
+							<a href="https://www.linkedin.com/sharing/share-offsite/?url={{article.share_url}}" target="_blank">
+								<img src="/resources/icons/social/li-rounded.svg">
+								<span>LinkedIn</span>
+							</a>
+						</div>
+						<div class="social share-x">
+							<a href="https://twitter.com/intent/tweet?url={{article.share_url}}" target="_blank">
+								<img src="/resources/icons/social/x-rounded.svg">
+								<span>Twitter</span>
+							</a>
+						</div>
+						<div class="social share-fb">
+							<a href="https://www.facebook.com/sharer/sharer.php?u={{article.share_url}}" target="_blank">
+								<img src="/resources/icons/social/fb-rounded.svg">
+								<span>Facebook</span>
+							</a>
+						</div>
+	
+					</div>
+					<div class="share-url-wrapper">
+						<div class="share-input">
+						<span class="share-url">{{article.short_share_url}}</div>
+						<span class="copy-btn coh-link coh-style-primary-dark-atom-" data-url="{{article.share_url}}">Copy</div>
+						</div>
+					</div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+</div>
