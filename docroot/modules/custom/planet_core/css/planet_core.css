@@ -1056,3 +1056,10 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 .article-related-articles .coh-row-inner {
   justify-content: center;
 }
+.article-related-articles .article-card {
+  flex-grow: 1;
+  height: 100% !important;
+}
+.article-related-articles .article-wrapper {
+  margin-bottom: 16px;
+}
