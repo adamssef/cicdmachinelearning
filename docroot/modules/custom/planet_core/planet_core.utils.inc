@@ -448,6 +448,7 @@ function planet_core_single_article($node_id) {
   // Get Creation Date
   $custom_timestamp = $node->get('field_resources_published_time')->value;
   $reading_time = $node->get('field_resources_reading_time')->value;
+  $main_title = $node->get('field_resources_title')->value;
   $blog_urls = planet_core_get_aliases_in_other_languages("blog");
   $domain = $base_url;
 
@@ -458,7 +459,7 @@ function planet_core_single_article($node_id) {
   $creation_date = date('F j, Y', $custom_timestamp);
 
   $article = array(
-    "title" => $title,
+    "title" => $main_title,
     'url' => $url,
     'domain' => $domain,
     'share_url' => $share_url,
