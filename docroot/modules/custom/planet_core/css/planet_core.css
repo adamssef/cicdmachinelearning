@@ -1019,4 +1019,17 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 .single-layout-canvas  {padding-bottom: 48px}
 @media (max-width: 991px) {
   .article-content-wrapper .vertical-divider {display: none}
+  .featured-article-wrapper .coh-row-inner {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+  .featured-article-wrapper {
+  max-height: none}
+  
+  .featured-article-image {
+  margin-bottom: 32px}
+  
+  .blog-articles-wrapper {padding: 32px 0}
+  
+  .planSwitch-blog {margin: 0 auto}
 }
