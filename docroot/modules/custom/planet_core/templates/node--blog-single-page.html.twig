@@ -61,7 +61,7 @@
 													</div>
 													<p class="article-summary">{{featured_article.body}}</p>
 													<div class="card-button-wrapper">
-														<a class="card-button" href="{{featured_article.url}}">Read post <img src="/resources/icons/blue-right-arrow.svg"></a>
+														<a class="card-button" href="{{featured_article.url}}">Read more <img src="/resources/icons/blue-right-arrow.svg"></a>
 													</div>
 												</div>
 											</div>
@@ -85,11 +85,8 @@
 			<div class="coh-row-inner">
 				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
 					<div class="last-articles">
-						<div>
-							{% if featured_article.total_articles is empty %}
-								<p class="no-articles">No articles found.</p>
-							{% else %}
-									<div class="tags-pills pink-pills main-pills" style="display: none">
+						<div>	
+							<div class="tags-pills pink-pills main-pills" style="display: none">
 										<span class="selected main-pill all-pill visible" data-tagid="all">All</span>
 										<div class="external-main-tags"></div>
 									</div>
@@ -102,7 +99,6 @@
 									<div id="load-more-button" class="coh-link coh-style-primary-dark-atom-" style="display: none" data-offset="0" data-limit="6" data-author-id={{node.id}}>Load more
 										<img src="/resources/icons/down-white-arrow.svg"></div>
 								</div>
-							{% endif %}
 						</div>
 					</div>
 				</div>
