@@ -4,10 +4,13 @@
 
             let offset = 1;
             let limit = 9;
+            const lang = $('html')[0].lang;
 
-            async function fetch_articles(limit = 9, offset = 0) {
+            async function fetch_articles(limit = 9, offset = 0, lang = "en") {
+
+
                 try {
-                    const response = await fetch('/planet_core/blog_articles/' + limit + "/" + offset);
+                    const response = await fetch('/planet_core/blog_articles/' + limit + "/" + offset + "/" + lang);
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
@@ -20,8 +23,9 @@
             }
 
             $(document).ready(async function () {
+                
                 try {
-                    let data = await fetch_articles(limit, offset);
+                    let data = await fetch_articles(limit, offset, lang);
                     render_articles(data);
                     limit = limit + 3;
                 } catch (error) {
@@ -33,7 +37,7 @@
 
             $('#load-more-button').click(async function () {
                 try {
-                    let data = await fetch_articles(limit, offset);
+                    let data = await fetch_articles(limit, offset, lang);
                     render_articles(data);
                     limit = limit + 3;
                 } catch (error) {
