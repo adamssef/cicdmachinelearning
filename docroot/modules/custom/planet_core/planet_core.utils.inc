@@ -5,6 +5,7 @@ use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\path_alias\AliasManagerInterface;
 
+
 function truncateText($text, $maxLength, $suffix = '...') {
     if (mb_strlen($text) <= $maxLength) {
         return $text;
@@ -26,6 +27,7 @@ function planet_core_get_author_articles($authorId, $limit = 3, $offset = 0)
   $author_node = \Drupal\node\Entity\Node::load($authorId);
   $author_name = $author_node->getTitle();
   $author_name_words = explode(' ', $author_name);
+
 
   // Extract the first word only if the author's name has at least two words.
   $first_word = (count($author_name_words) >= 2) ? reset($author_name_words) : $author_name;
@@ -132,172 +134,143 @@ function planet_core_get_author_articles($authorId, $limit = 3, $offset = 0)
   ];
 }
 
+function planet_core_get_last_published_article() {
+  // Get the current page language code.
+  $language_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
-function planet_core_get_last_published_article()
-{
-    // Query for the last published article.
-    $query = \Drupal::entityQuery('node')
-        ->condition('status', 1) // 1 represents published nodes.
-        ->condition('type', 'resources') // Adjust to your content type name.
-        ->sort('created', 'DESC') // Sort by creation date in descending order.
-        ->range(0, 1); // Limit the result to 1 article.
-
-    $nids = $query->execute();
-    $nodes = Node::loadMultiple($nids);
-
-    $total_nodes = \Drupal::entityQuery('node')
+  // Query for the last published article.
+  $query = \Drupal::entityQuery('node')
+    ->condition('status', 1) // 1 represents published nodes.
     ->condition('type', 'resources') // Adjust to your content type name.
-    ->condition('status', 1);
+    ->sort('created', 'DESC') // Sort by creation date in descending order.
+    ->range(0, 1); // Limit the result to 1 article.
 
-    $total_nodes_nids = $total_nodes->execute();
-    $total_articles = count($total_nodes_nids);
+  $nids = $query->execute();
+  $nodes = Node::loadMultiple($nids);
 
-    $latest_article = null;
+  foreach ($nodes as $node) {
+    // Load the node in the current language.
+    if ($node->hasTranslation($language_code)) {
+      $node = $node->getTranslation($language_code);
+    }
 
+    // Get node fields and prepare data.
+    $title = $node->get('field_resources_title')->value;
+    $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+    $url = $language_code != "en" ? "/" . $language_code . $url : $url;
+    $article_tags = [];
     $author_name = "";
     $author_url = "";
     $author_photo = "";
-    $title = "";
-    $url = "";
-    $creation_date = "";
-    $article_tags = [];
+    $background_image_url = "";
 
-    foreach ($nodes as $node) {
-        $title = $node->get('field_resources_title')->value;
-
-        $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
-
-        // Get Tags (field_resources_tags)
-        $tags_references = $node->get('field_resources_tags')->referencedEntities();
-
-        foreach ($tags_references as $tag) {
-            $tag_name = $tag->getName();
-            $tag_id = $tag->id(); // Get the tag ID.
-
-            // Add the tag to the article_tags array.
-            $article_tags[] = [
-                'name' => $tag_name,
-                'id' => $tag_id,
-            ];
-        }
-        $author_id = $node->get('field_author')->target_id;
-        if ($author_id) {
-            // Load the author node.
-            $author = Node::load($author_id);
-            if ($author instanceof Node && $author->getType() == 'author') {
-                $author_name = $author->getTitle();
-                $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
-                $media = Media::load($mid);
-                $fid = $media->field_media_image->target_id;
-                $file = File::load($fid);
-                $author_photo = file_create_url($file->getFileUri());
-                $author_url = $author->toUrl()->toString();
-            }
-        }
-
-        // Get Background Image (field_resources_background_image)
-        $background_image_media = $node->get('field_resources_background_image')->entity;
-        if ($background_image_media instanceof Media) {
-            $background_image_file = $background_image_media->get('field_media_image')->entity;
-            if ($background_image_file instanceof File) {
-                $background_image_url = file_create_url($background_image_file->getFileUri());
-            }
-        }
-
-        // Get Creation Date
-        $custom_timestamp = $node->get('field_resources_published_time')->value;
-
-        // Convert the custom timestamp to a formatted date.
-        $creation_date = date('F j, Y', $custom_timestamp);
-
-        
-
-        // Get the summary/excerpt of the body field.
-        $body_summary = $node->get('field_article_summary')->value;
-        $body_summary = $body_summary ? truncateText($body_summary, 250) : "";
-
-        $title = truncateText($title, 90);
-
-        // Return a single article.
-        $latest_article = [
-            'url' => $url,
-            'title' => $title,
-            'background_image' => $background_image_url,
-            'creation_date' => $creation_date,
-            'tags' => $article_tags,
-            'body' => $body_summary,
-            'author' => [
-                'full_name' => $author_name,
-                'url' => $author_url,
-                'profile_picture' => $author_photo,
-            ],
-            'total_articles' => $total_articles
-        ];
-
-        // Break the loop after finding the latest article.
-        break;
+    // Get Tags (field_resources_tags).
+    $tags_references = $node->get('field_resources_tags')->referencedEntities();
+    foreach ($tags_references as $tag) {
+      $tag_name = $tag->getName();
+      $tag_id = $tag->id();
+      $article_tags[] = [
+        'name' => $tag_name,
+        'id' => $tag_id,
+      ];
     }
 
-    return $latest_article;
-}
+    // Get Author information.
+    $author_id = $node->get('field_author')->target_id;
+    if ($author_id) {
+      // Load the author node.
+      $author = Node::load($author_id);
+      if ($author instanceof Node && $author->getType() == 'author') {
+        $author_name = $author->getTitle();
+        $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
+        $media = Media::load($mid);
+        $fid = $media->field_media_image->target_id;
+        $file = File::load($fid);
+        $author_photo = file_create_url($file->getFileUri());
+        $author_url = $author->toUrl()->toString();
+      }
+    }
 
+    // Get Background Image (field_resources_background_image).
+    $background_image_media = $node->get('field_resources_background_image')->entity;
+    if ($background_image_media instanceof Media) {
+      $background_image_file = $background_image_media->get('field_media_image')->entity;
+      if ($background_image_file instanceof File) {
+        $background_image_url = file_create_url($background_image_file->getFileUri());
+      }
+    }
+
+    // Get Creation Date.
+    $custom_timestamp = $node->get('field_resources_published_time')->value;
+    $creation_date = date('F j, Y', $custom_timestamp);
+
+    // Get the summary/excerpt of the body field.
+    $body_summary = $node->get('field_article_summary')->value;
+    $body_summary = $body_summary ? truncateText($body_summary, 250) : "";
+
+    $title = truncateText($title, 90);
+
+    // Return a single article.
+    return [
+      'url' => $url,
+      'title' => $title,
+      'background_image' => $background_image_url,
+      'creation_date' => $creation_date,
+      'tags' => $article_tags,
+      'body' => $body_summary,
+      'author' => [
+        'full_name' => $author_name,
+        'url' => $author_url,
+        'profile_picture' => $author_photo,
+      ],
+    ];
+  }
+
+  // Return null if no articles are found.
+  return null;
+}
 
 
 /**
  * @file
  * Custom hooks functions for the planet_core module.
  */
-function planet_core_get_blog_articles($limit = 3, $offset = 0)
-{
+function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
+  // Get the current page language code.
+  $language_code = $lang;
 
-  $total_nodes = \Drupal::entityQuery('node')
-    ->condition('type', 'resources') // Adjust to your content type name.
-    ->condition('status', 1);
+  // Initialize arrays to store data.
+  $articles = [];
+  $unique_tags = [];
 
-  $total_nodes_nids = $total_nodes->execute();
-  $total_articles = count($total_nodes_nids);
-
+  // Query published nodes of type 'resources'.
   $query = \Drupal::entityQuery('node')
-    ->condition('type', 'resources') // Adjust to your content type name.
-    ->condition('status', 1) // 1 represents published nodes.
-    ->range($offset, $limit) // Apply offset and limit.
-    ->sort('created', 'DESC'); // Sort by creation date in descending order.
+    ->condition('type', 'resources')
+    ->condition('status', 1)
+    ->range($offset, $limit)
+    ->sort('created', 'DESC')
+    ->execute();
 
-  $resource_nids = $query->execute();
+  $resource_nids = array_values($query);
   $resource_nodes = \Drupal\node\Entity\Node::loadMultiple($resource_nids);
 
-  $articles = [];
-  $unique_tags = []; // Initialize an array to store unique tags.
-
   foreach ($resource_nodes as $node) {
+    // Load the node in the current language.
+    if ($node->hasTranslation($language_code)) {
+      $node = $node->getTranslation($language_code);
+    }
+
     $title = $node->get('field_resources_title')->value;
-
     $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+    $url = $language_code != "en" ? "/" . $language_code . $url : $url;
 
-    // Get Tags (field_resources_tags)
+    // Get Tags (field_resources_tags).
     $tags_references = $node->get('field_resources_tags')->referencedEntities();
     $article_tags = [];
 
-    
-    $author_id = $node->get('field_author')->target_id;
-    if ($author_id) {
-        // Load the author node.
-        $author = Node::load($author_id);
-        if ($author instanceof Node && $author->getType() == 'author') {
-            $author_name = $author->getTitle();
-            $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
-            $media = Media::load($mid);
-            $fid = $media->field_media_image->target_id;
-            $file = File::load($fid);
-            $author_photo = file_create_url($file->getFileUri());
-            $author_url = $author->toUrl()->toString();
-        }
-    }
-
-
     foreach ($tags_references as $tag) {
       $tag_name = $tag->getName();
-      $tag_id = $tag->id(); // Get the tag ID.
+      $tag_id = $tag->id();
 
       // Add the tag to the unique_tags array if it doesn't exist.
       if (!in_array($tag_id, array_column($unique_tags, 'id'))) {
@@ -314,9 +287,9 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0)
       ];
     }
 
-
-    // Get Background Image (field_resources_background_image)
+    // Get Background Image (field_resources_background_image).
     $background_image_media = $node->get('field_resources_background_image')->entity;
+    $background_image_url = '';
     if ($background_image_media instanceof \Drupal\media\Entity\Media) {
       $background_image_file = $background_image_media->get('field_media_image')->entity;
       if ($background_image_file instanceof \Drupal\file\Entity\File) {
@@ -324,12 +297,28 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0)
       }
     }
 
-    // Get Creation Date
+    // Get Author information.
+    $author_id = $node->get('field_author')->target_id;
+    $author_name = '';
+    $author_photo = '';
+    $author_url = '';
+    if ($author_id) {
+      // Load the author node.
+      $author = Node::load($author_id);
+      if ($author instanceof Node && $author->getType() == 'author') {
+        $author_name = $author->getTitle();
+        $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
+        $media = Media::load($mid);
+        $fid = $media->field_media_image->target_id;
+        $file = File::load($fid);
+        $author_photo = file_create_url($file->getFileUri());
+        $author_url = $author->toUrl()->toString();
+      }
+    }
+
+    // Get Creation Date.
     $custom_timestamp = $node->get('field_resources_published_time')->value;
-
-    // Convert the custom timestamp to a formatted date.
     $creation_date = date('F j, Y', $custom_timestamp);
-
 
     $articles[] = [
       'url' => $url,
@@ -341,15 +330,16 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0)
         'full_name' => $author_name,
         'url' => $author_url,
         'profile_picture' => $author_photo,
-        ]
+      ]
     ];
   }
 
+  // Return the result.
   return [
     'tags' => $unique_tags,
     'articles' => $articles,
-    'articles_count' => $total_articles,
-    'articles_finished' => $total_articles == count($articles),
+    'articles_count' => count($resource_nids),
+    'articles_finished' => count($articles) >= count($resource_nids),
   ];
 }
 
@@ -395,11 +385,17 @@ function planet_core_get_aliases_in_other_languages($english_alias) {
 
 
 function planet_core_single_article($node_id) {
-
   global $base_url;
 
+  // Get the current page language code.
+  $language_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  // Load the node in the current language.
   $node = Node::load($node_id);
-  
+  if ($node->hasTranslation($language_code)) {
+    $node = $node->getTranslation($language_code);
+  }
+
   $article = array();
   $article_tags = [];
   $author_name = "";
@@ -409,23 +405,24 @@ function planet_core_single_article($node_id) {
   $title = $node->get('field_resources_title')->value;
 
   $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+  $url = $language_code != "en" ? "/" . $language_code . $url : $url;
 
   // Get Tags (field_resources_tags)
   $tags_references = $node->get('field_resources_tags')->referencedEntities();
-  
+
   $author_id = $node->get('field_author')->target_id;
   if ($author_id) {
-      // Load the author node.
-      $author = Node::load($author_id);
-      if ($author instanceof Node && $author->getType() == 'author') {
-          $author_name = $author->getTitle();
-          $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
-          $media = Media::load($mid);
-          $fid = $media->field_media_image->target_id;
-          $file = File::load($fid);
-          $author_photo = file_create_url($file->getFileUri());
-          $author_url = $author->toUrl()->toString();
-      }
+    // Load the author node.
+    $author = Node::load($author_id);
+    if ($author instanceof Node && $author->getType() == 'author') {
+      $author_name = $author->getTitle();
+      $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
+      $media = Media::load($mid);
+      $fid = $media->field_media_image->target_id;
+      $file = File::load($fid);
+      $author_photo = file_create_url($file->getFileUri());
+      $author_url = $author->toUrl()->toString();
+    }
   }
 
   foreach ($tags_references as $tag) {
@@ -460,8 +457,10 @@ function planet_core_single_article($node_id) {
   // Convert the custom timestamp to a formatted date.
   $creation_date = date('F j, Y', $custom_timestamp);
 
-  $related_articles = planet_core_get_related_articles($article_tags[0]['id'], $node->id());
+  $related_tag = $article_tags ? $article_tags[0]['id'] : false;
 
+  $related_articles = planet_core_get_related_articles($related_tag, $node->id());
+    
   $article = array(
     "title" => $title,
     'url' => $url,
@@ -485,11 +484,11 @@ function planet_core_single_article($node_id) {
 }
 
 
-
-function planet_core_get_related_articles($tag_id, $exclude_node_id)
-{
-
+function planet_core_get_related_articles($tag_id, $exclude_node_id) {
   $related_articles = [];
+
+  // Get the current page language code.
+  $language_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
   $query = \Drupal::entityQuery('node')
     ->condition('type', 'resources') // Adjust to your content type name.
@@ -502,7 +501,7 @@ function planet_core_get_related_articles($tag_id, $exclude_node_id)
 
   $related_article_ids = array_values($query);
 
-    // If no related articles are found, query the last 3 articles excluding the specified node ID.
+  // If no related articles are found, query the last 3 articles excluding the specified node ID.
   if (empty($related_article_ids)) {
     $query = \Drupal::entityQuery('node')
       ->condition('type', 'resources') // Adjust to your content type name.
@@ -516,8 +515,12 @@ function planet_core_get_related_articles($tag_id, $exclude_node_id)
   }
 
   foreach ($related_article_ids as $related_article_id) {
-
     $node = Node::load($related_article_id);
+    
+    // Load the node in the current language.
+    if ($node->hasTranslation($language_code)) {
+      $node = $node->getTranslation($language_code);
+    }
 
     if ($node instanceof Node) {
       $related_article_title = $node->get('field_resources_title')->value;
