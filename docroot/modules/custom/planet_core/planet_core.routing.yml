@@ -10,7 +10,7 @@ planet_core.author_articles:
     limit: '\d+'  # Ensure limit is a positive integer.
     offset: '\d+' # Ensure offset is a positive integer.
 planet_core.blog_articles:
-  path: '/planet_core/blog_articles/{limit}/{offset}'
+  path: '/planet_core/blog_articles/{limit}/{offset}/{lang}'
   defaults:
     _controller: '\Drupal\planet_core\Controller\BlogArticles::loadBlogArticles'
     _title: 'Load More Articles'

@@ -9,14 +9,29 @@
 #}
 <div>
 	<div class="plnt-blog-single-page">
+		<div class="dynamic-index-wrapper mobile-version">
+			<div class="index-sticky">
+				<div class="index-title-wrapper">
+				<div class="index-title">In this article</div><img class="arrow" src="/resources/icons/card-arrow-right.svg"></div>
+				<div class="index-list" style="display: none"></div>
+			</div>
+		</div>
 		<div class="coh-container coh-container-boxed">
 			<div class="coh-row">
 				<div class="coh-row-inner">
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
 						<div class="breadcrumbs">
 							<a href="/blog">Blog</a>
+							{% if article.tags %}
 							>
 							<a href="/blog?tag={{article.tags[0].id}}">{{article.tags[0].name}}</a>
+							{% endif %}
+						</div>
+						<div class="dynamic-index-wrapper desktop-version" >
+							<div class="index-sticky">
+								<div class="index-title">In this article</div>
+								<div class="index-list"></div>
+							</div>
 						</div>
 					</div>
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-7">
@@ -31,11 +46,19 @@
 												<a href="{{article.author.url}}">
 													<span>{{ article.author.full_name }}</span>
 												</a>
+												<div class="article-date mobile">
+												{{ article.creation_date }}
+												{% if article.reading_time %}
+													·
+													{{article.reading_time}}
+													min read
+												{% endif %}
+											</div>
 											</div>
 										</div>
 										<div class="vertical-divider">|</div>
 									{% endif %}
-									<div class="article-date">
+									<div class="article-date desktop">
 										{{ article.creation_date }}
 										{% if article.reading_time %}
 											·
