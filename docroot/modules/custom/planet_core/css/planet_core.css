@@ -1178,3 +1178,11 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 .article-date.mobile {
   margin-top: 6px;
 }
+.js-media-library-item-preview + div {
+  display: none;
+}
+.js-media-library-item-preview img {
+  border-radius: 8px;
+  width: auto;
+  height: auto;
+}
