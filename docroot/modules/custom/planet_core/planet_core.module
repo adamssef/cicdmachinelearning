@@ -419,3 +419,10 @@ function planet_core_preprocess_node(array &$variables)
 }
 
 
+function planet_core_preprocess_page(array &$variables)
+{
+  $current_path = \Drupal::service('path.current')->getPath();
+  if (strpos($current_path, '/user/') === 0) {
+    $variables['#attached']['library'][] = 'planet_core/language-popup';
+  }
+}

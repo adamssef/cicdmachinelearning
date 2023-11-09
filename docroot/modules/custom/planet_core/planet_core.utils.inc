@@ -205,7 +205,7 @@ function planet_core_get_last_published_article() {
     $creation_date = date('F j, Y', $custom_timestamp);
 
     // Get the summary/excerpt of the body field.
-    $body_summary = $node->get('field_article_summary')->value;
+    $body_summary = $node->get('field_resources_subtitle')->value;
     $body_summary = $body_summary ? truncateText($body_summary, 250) : "";
 
     $title = truncateText($title, 90);
