@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.resources.field_article_summary
     - field.field.node.resources.field_author
     - field.field.node.resources.field_field_resources_metatag
     - field.field.node.resources.field_hide_from_components
@@ -30,13 +29,6 @@ targetEntityType: node
 bundle: resources
 mode: default
 content:
-  field_article_summary:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 15
-    region: content
   field_author:
     type: entity_reference_label
     label: above
