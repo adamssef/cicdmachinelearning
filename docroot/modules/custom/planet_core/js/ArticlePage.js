@@ -41,6 +41,8 @@ $(".index-list").each(function() {
     var $indexList = $(this);
     var targetElements = [];
 
+    $indexList.empty();
+
     // Find all .coh-style-h500 headings inside .article-content-wrapper.
     $(".article-content-wrapper .coh-wysiwyg .coh-style-h500").each(function(index, heading) {
         // Store the target offset and the corresponding heading element.
