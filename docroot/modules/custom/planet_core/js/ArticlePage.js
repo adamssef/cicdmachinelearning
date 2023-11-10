@@ -95,6 +95,21 @@ $(".index-list").each(function() {
     
 });
 
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 200) { //use `this`, not `document`
+        $(".header-container.white-bg").css({
+            'display': 'none'
+        });
+        $(".dynamic-index-wrapper.mobile-version").addClass("top-0");
+    } else {
+        $(".header-container.white-bg").css({
+            'display': 'flex'
+        });
+        $(".dynamic-index-wrapper.mobile-version").removeClass("top-0");
+    }
+});
+
+
 $(".dynamic-index-wrapper.mobile-version .index-title-wrapper").click(function() {
     $(".dynamic-index-wrapper.mobile-version .index-list").toggle();
     $(".dynamic-index-wrapper.mobile-version .index-title-wrapper").toggleClass("expanded");
