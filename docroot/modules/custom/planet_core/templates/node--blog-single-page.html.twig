@@ -9,7 +9,7 @@
 #}
 <div>
 	<div class="plnt-blog-single-page">
-		<div class="coh-container coh-container-boxed">
+		<div class="coh-container coh-container-boxed planSwitch-container">
 			<div class="coh-row">
 				<div class="coh-row-inner">
 					<div class="planSwitch planSwitch-black planSwitch-3options planSwitch-blog">
@@ -42,7 +42,7 @@
 													{% if featured_article.tags is not empty %}
 														<div class="article-tags tags-pills cursor-default">
 															{% for tag in featured_article.tags %}
-																<span data-tagid="{{ tag.id }}">{{ tag.name }}</span>
+																<span>{{ tag.name }}</span>
 															{% endfor %}
 														</div>
 													{% endif %}
@@ -96,7 +96,7 @@
 									</div>
 								</div>
 								<div class="load-more-wrapper">
-									<div id="load-more-button" class="coh-link coh-style-primary-dark-atom-" style="display: none" data-offset="0" data-limit="6" data-author-id={{node.id}}>Load more
+									<div id="load-more-button" class="coh-link coh-style-primary-dark-atom-" style="display: none">Load more
 										<img src="/resources/icons/down-white-arrow.svg"></div>
 								</div>
 						</div>

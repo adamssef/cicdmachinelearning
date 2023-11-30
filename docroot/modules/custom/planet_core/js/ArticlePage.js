@@ -65,6 +65,9 @@ $(".index-list").each(function() {
         $indexList.append(indexItem);
     });
 
+    $(".index-title").show();
+
+
     // Add a scroll event listener to the window for the current .index-list container.
     $(window).scroll(function() {
         // Get the current scroll position.
