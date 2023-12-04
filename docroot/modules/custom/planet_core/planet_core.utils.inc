@@ -251,6 +251,13 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
     ->sort('created', 'DESC')
     ->execute();
 
+  $total_count = \Drupal::entityQuery('node')
+    ->condition('type', 'resources')
+    ->condition('status', 1)
+    ->execute();
+  
+  $total_count = array_values($total_count);
+
   $resource_nids = array_values($query);
   $resource_nodes = \Drupal\node\Entity\Node::loadMultiple($resource_nids);
 
@@ -338,8 +345,8 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
   return [
     'tags' => $unique_tags,
     'articles' => $articles,
-    'articles_count' => count($resource_nids),
-    'articles_finished' => count($articles) >= count($resource_nids),
+    'articles_count' => count($total_count),
+    'articles_finished' => count($articles) >= (count($total_count) - 1),
   ];
 }
 

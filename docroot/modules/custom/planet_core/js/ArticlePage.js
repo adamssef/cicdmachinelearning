@@ -65,6 +65,8 @@ $(".index-list").each(function() {
         $indexList.append(indexItem);
     });
 
+    $(".index-title").show();
+
     // Add a scroll event listener to the window for the current .index-list container.
     $(window).scroll(function() {
         // Get the current scroll position.
@@ -92,7 +94,6 @@ $(".index-list").each(function() {
             }
         });
     });
-    
 });
 
 $(window).scroll(function() {
@@ -108,6 +109,12 @@ $(window).scroll(function() {
         $(".dynamic-index-wrapper.mobile-version").removeClass("top-0");
     }
 });
+
+if($(".index-sticky .index-list").is(':empty')) {
+    $(".index-sticky").hide();
+} else {
+    $(".index-sticky").show();
+}
 
 
 $(".dynamic-index-wrapper.mobile-version .index-title-wrapper").click(function() {
