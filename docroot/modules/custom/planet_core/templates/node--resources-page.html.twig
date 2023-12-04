@@ -1,0 +1,181 @@
+{#
+  Custom Twig template for the "Author" content type.
+  Template variables available:
+    - content: An array of content elements.
+    - node: The node entity representing the "Author" content.
+    - label: The node label.
+    - url: The node URL.
+    - attributes: HTML attributes for the node wrapper.
+#}
+<div>
+	<div class="plnt-blog-single-page">
+		<div class="dynamic-index-wrapper mobile-version">
+			<div class="index-sticky">
+				<div class="index-title-wrapper">
+				<div class="index-title" style="display: none">In this article</div><img class="arrow" src="/resources/icons/card-arrow-right.svg"></div>
+				<div class="index-list" style="display: none"></div>
+			</div>
+		</div>
+		<div class="coh-container coh-container-boxed">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
+						<div class="breadcrumbs">
+							<a href="/blog">Blog</a>
+							{% if article.tags %}
+							>
+							<a href="/blog?tag={{article.tags[0].id}}">{{article.tags[0].name}}</a>
+							{% endif %}
+						</div>
+						<div class="dynamic-index-wrapper desktop-version" >
+							<div class="index-sticky" style="display: none">
+								<div class="index-title">IN THIS ARTICLE</div>
+								<div class="index-list"></div>
+							</div>
+						</div>
+					</div>
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-7">
+						<div class="article-content-wrapper">
+							<h1 class="blog-h1">{{article.title}}</h1>
+							<div class="article-author-and-date">
+								<div class="author-and-date">
+									{% if article.author.full_name is not empty %}
+										<div class="article-author">
+											<div class="author-photo" style="background-image:url({{ article.author.profile_picture }})"></div>
+											<div class="author-name">
+												<a href="{{article.author.url}}">
+													<span>{{ article.author.full_name }}</span>
+												</a>
+												<div class="article-date mobile">
+												{{ article.creation_date }}
+												{% if article.reading_time %}
+													·
+													{{article.reading_time}}
+													min read
+												{% endif %}
+											</div>
+											</div>
+										</div>
+										<div class="vertical-divider">|</div>
+									{% endif %}
+									<div class="article-date desktop">
+										{{ article.creation_date }}
+										{% if article.reading_time %}
+											·
+											{{article.reading_time}}
+											min read
+										{% endif %}
+									</div>
+								</div>
+								<div class="share-button coh-link coh-style-primary-dark-atom-">
+									Share
+								</div>
+							</div>
+							<div class="article-main-image"><img src="{{article.background_image}}" alt="{{article.title}}"></div>
+							<div class="single-layout-canvas">
+								{{content.field_layout_canvas}}
+							</div>
+						</div>
+					</div>
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-2"></div>
+				</div>
+			</div>
+		</div>
+		<div class="article-related-articles">
+		<div class="coh-container-boxed">
+			<div class="coh-row">
+			<div class="coh-row-inner">
+				<div class="coh-column">
+					<h3 class="coh-style-heading-3-planet small-heading">You might also be interested in...</h3>
+				</div>
+			</div>
+			</div>
+			<div class="coh-row">
+				<div class="coh-row-inner">
+
+
+					{% for article in article.related_articles %}
+						<div data-tagid="{{ article.tags|map(tag => tag.id)|join(', ') }}" class="article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
+							<div class="article-card">
+								<div class="article-bg-image-wrapper">
+									<div class="article-bg-image" style="background-image:url({{ article.background_image }})"></div>
+								</div>
+								<div class="article-card-content">
+									<div class="article-title">
+										<a href="{{ article.url }}">{{ article.title }}</a>
+									</div>
+									<div class="tags-and-author">
+										<div class="article-tags tags-pills">
+											{% for tag in article.tags %}
+												<span data-tagid="{{ tag.id }}">{{ tag.name }}</span>
+											{% endfor %}
+										</div>
+										<div class="article-author-and-date">
+											<div class="article-author">
+												<div class="author-photo" style="background-image:url({{ article.author.profile_picture }})"></div>
+												<div class="author-name">
+													<span>{{ article.author.full_name }}</span>
+												</div>
+											</div>
+											<div class="vertical-divider">|</div>
+											<div class="article-date">{{ article.creation_date }}</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+
+
+				</div>
+			</div>
+		</div>
+		</div>
+
+
+	</div>
+
+	<!-- [1] -->
+	<div class="modal share-article-modal micromodal-slide " id="share-article-modal" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1">
+			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+				<header class="modal__header">
+					<img class="modal__close" aria-label="Close modal 1" data-micromodal-close src="/resources/icons/close.svg">
+				</header>
+				<main class="modal__content" id="modal-1-content">
+					<div class="main-banner-text">
+						<span class="coh-heading coh-style-heading-2-planet">Share</span>
+						<div class="share-social-wrapper">
+							<div class="social share-li">
+								<a href="https://www.linkedin.com/sharing/share-offsite/?url={{article.share_url}}" target="_blank">
+									<img src="/resources/icons/social/li-rounded.svg">
+									<span>LinkedIn</span>
+								</a>
+							</div>
+							<div class="social share-x">
+								<a href="https://twitter.com/intent/tweet?url={{article.share_url}}" target="_blank">
+									<img src="/resources/icons/social/x-rounded.svg">
+									<span>X</span>
+								</a>
+							</div>
+							<div class="social share-fb">
+								<a href="https://www.facebook.com/sharer/sharer.php?u={{article.share_url}}" target="_blank">
+									<img src="/resources/icons/social/fb-rounded.svg">
+									<span>Facebook</span>
+								</a>
+							</div>
+
+						</div>
+						<div class="share-url-wrapper">
+							<div class="share-input">
+								<span class="share-url">{{article.share_url}}</div>
+								<span class="copy-btn coh-link coh-style-primary-dark-atom-" data-url="{{article.share_url}}">Copy</div>
+							</div>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+	</div>
+
+</div>
