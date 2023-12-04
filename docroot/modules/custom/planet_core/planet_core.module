@@ -235,7 +235,6 @@ function planet_core_theme_suggestions_page_alter(array &$suggestions, array $va
       break;
   }
 }
-
 function planet_core_theme_suggestions_node_alter(array &$suggestions, array $variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   if (!$node or !($node instanceof \Drupal\node\NodeInterface)) {
@@ -252,12 +251,13 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
       $suggestions[] = 'node__blog-single-page';
       break;
   }
-   if ($node->getType() === 'resources') {
+   if ($node->getType() === 'resources' && $node->hasField('field_enable_new_layout') && $node->get('field_enable_new_layout')->value == TRUE) {
     // Add custom template suggestion for 'resources' content type.
     $suggestions[] = 'node__resources-page';
   }
 }
 }
+
 
 /**
  * Implements hook_theme().
