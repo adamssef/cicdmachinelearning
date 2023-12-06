@@ -142,8 +142,10 @@ function planet_core_get_last_published_article() {
   $query = \Drupal::entityQuery('node')
     ->condition('status', 1) // 1 represents published nodes.
     ->condition('type', 'resources') // Adjust to your content type name.
-    ->sort('created', 'DESC') // Sort by creation date in descending order.
+    ->condition('field_promoted_resource', 1) // Filter by field_promoted_resource being true.
+    ->sort('field_resources_published_time', 'DESC') // Sort by field_resources_published_time in descending order.
     ->range(0, 1); // Limit the result to 1 article.
+
 
   $nids = $query->execute();
   $nodes = Node::loadMultiple($nids);
