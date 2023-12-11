@@ -407,12 +407,12 @@ function planet_core_preprocess_node(array &$variables)
   $config = \Drupal::config('planet_core.settings');
   $is_new_blog_enabled = $config->get('enable_new_blog');
 
+  if ($node->getType() == 'resources') {
+    $variables['article'] = planet_core_single_article($node->id());
+    $variables['#attached']['library'][] = 'planet_core/single-article-page';
+  }
+  
   if ($is_new_blog_enabled) {
-    if ($node->getType() == 'resources') {
-      $variables['article'] = planet_core_single_article($node->id());
-      $variables['#attached']['library'][] = 'planet_core/single-article-page';
-    }
-
     if ($alias == "/blog") {
       $variables['featured_article'] = planet_core_get_last_published_article();
       $variables['#attached']['library'][] = 'planet_core/blog-page';
