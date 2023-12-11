@@ -1001,7 +1001,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 
 @media (max-width: 991px) {
   .article-content-wrapper .coh-wysiwyg .coh-style-b200 {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 186%;
     font-weight: 400;
   }
@@ -1281,7 +1281,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 
 .breadcrumbs,
 .breadcrumbs a {
-  color: #0071de;
+  color: #005AB2;
   font-size: 18px;
   font-weight: 600;
 }
@@ -1517,7 +1517,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   font-weight: 400;
   font-size: 16px;
   margin: 4px 0;
-  padding: 8px 0 8px 16px;
+  padding: 8px 0 8px 12px;
 }
 
 .index-list a.active {
