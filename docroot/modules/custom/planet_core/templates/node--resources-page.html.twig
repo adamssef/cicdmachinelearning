@@ -27,12 +27,6 @@
 							<a href="/blog?tag={{article.tags[0].id}}">{{article.tags[0].name}}</a>
 							{% endif %}
 						</div>
-						<div class="dynamic-index-wrapper desktop-version" >
-							<div class="index-sticky" style="display: none">
-								<div class="index-title">IN THIS ARTICLE</div>
-								<div class="index-list"></div>
-							</div>
-						</div>
 					</div>
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-7">
 						<div class="article-content-wrapper">
@@ -71,13 +65,30 @@
 									Share
 								</div>
 							</div>
-							<div class="article-main-image"><img src="{{article.background_image}}" alt="{{article.title}}"></div>
+							<div class="article-main-image" style="background-image:url({{article.background_image}})"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
+						<div class="dynamic-index-wrapper desktop-version" >
+							<div class="index-sticky" style="display: none">
+								<div class="index-title">IN THIS ARTICLE</div>
+								<div class="index-list"></div>
+							</div>
+						</div>
+					</div>
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-7">
+						<div class="article-content-wrapper" style="padding-top: 0">
 							<div class="single-layout-canvas">
 								{{content.field_layout_canvas}}
 							</div>
 						</div>
 					</div>
-					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-2"></div>
+
+					
 				</div>
 			</div>
 		</div>
