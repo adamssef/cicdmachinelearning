@@ -23,7 +23,7 @@ jobs:
       - name: install ssh key
         uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{ secrets.SSH_AUT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           name: id_rsa
           known_hosts: planetpayment@svn-41605.prod.hosting.acquia.com:planetpayment.git
       - name: Clone acquia production
