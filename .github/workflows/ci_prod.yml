@@ -23,7 +23,7 @@ jobs:
       - name: install ssh key
         uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{ secrets.SSH_AUT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           name: id_rsa
           known_hosts: planetpayment@svn-41605.prod.hosting.acquia.com:planetpayment.git
       - name: Clone acquia production
@@ -60,24 +60,3 @@ jobs:
                      "previousBuildId": "-",
                      "deploymentMarker": "Planet MTP"
                  }'
-      - name: "Call Galaxyops API"
-        uses: indiesdev/curl@v1.1
-        with:
-          # https://github.com/marketplace/actions/curl-axiosjs
-          url: https://galaxyops-dataingestion-api-deployment-fl45i7mn4q-ue.a.run.app/rest/api/v2/data-ingestion/deployment
-          method: "POST"
-          accept: 200,201,204
-          body: '{
-                                     "teamId": "76585817-3c1e-4454-bc22-3d3d96564571",
-                                     "deploymentDate": "${{ steps.date.outputs.date }}",
-                                     "deploymentSucceeded": true,
-                                     "artifactId": "${{ github.ref_name }}",
-                                     "artifactName": "MTP",
-                                     "deploymentId": "${{ github.run_id }}",
-                                     "previousBuildId": "-",
-                                     "deploymentMarker": "Planet MTP"
-                                 }'
-          timeout: 60000
-          bearer-token: ${{ secrets.BEARER_TOKEN }}
-          log-response: false
-          retries: 1

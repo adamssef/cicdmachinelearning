@@ -1335,6 +1335,14 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   align-content: center;
   align-items: center;
 }
+.article-main-image {
+  height: 338px;
+  width: 100%;
+  border-radius: 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .article-main-image img {
   border-radius: 8px;
@@ -1417,6 +1425,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   .featured-article-image {margin-bottom: 32px}
 }
 @media (max-width: 991px) {
+  .article-main-image {height: 200px}
   .article-card-content {
     padding: 16px;
     display: flex;
@@ -1527,7 +1536,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 
 .index-sticky {
   position: sticky;
-  top: 40vh;
+  top: 15%;
   align-self: self-start;
 }
 

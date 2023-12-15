@@ -41,21 +41,18 @@ elements: |-
         '#maxlength': 50
         '#autocomplete': 'off'
         '#required': true
-  phone_intl:
-    '#type': webform_telephone
-    '#title': 'Phone*'
-    '#required': true
-    '#wrapper_type': form_element
-    '#type__access': false
-    '#phone__required': true
-    '#phone__type': textfield
-    '#ext__access': false
-    '#phone__international_initial_country': GB
   email:
     '#type': email
     '#title': 'Email*'
     '#autocomplete': 'off'
     '#required': true
+  phone_intl:
+    '#type': textfield
+    '#title': 'Phone*'
+    '#required': true
+    '#required_error': 'Phone number is required.'
+    '#pattern': '^\+\d{1,4}(\s?\d){1,15}$'
+    '#pattern_error': 'The phone number is invalid, please use the prefix of your country (eg. +44 2071234567)'
   company_business_name:
     '#type': textfield
     '#title': 'Company name*'
@@ -74,21 +71,215 @@ elements: |-
     '#empty_option': '- select -'
     '#required': true
   address_country:
-    '#type': webform_address
+    '#type': select
     '#title': 'Country*'
-    '#title_display': none
+    '#options':
+      Afghanistan: Afghanistan
+      Aguilla: Aguilla
+      Albania: Albania
+      Algeria: Algeria
+      Andorra: Andorra
+      Angola: Angola
+      Anguilla: Anguilla
+      Antigua & Barbuda: Antigua & Barbuda
+      Argentina: Argentina
+      Armenia: Armenia
+      Aruba: Aruba
+      Australia: Australia
+      Austria: Austria
+      Azerbaijan: Azerbaijan
+      Bahamas: Bahamas
+      Bahrain: Bahrain
+      Bangladesh: Bangladesh
+      Barbados: Barbados
+      Belarus: Belarus
+      Belgium: Belgium
+      Belize: Belize
+      Benin: Benin
+      Bolivia: Bolivia
+      Bonaire: Bonaire
+      Bosnia: Bosnia
+      Botswana: Botswana
+      Brazil: Brazil
+      British Virgin Islands: British Virgin Islands
+      Brunei: Brunei
+      Bulgaria: Bulgaria
+      Burkina Faso: Burkina Faso
+      Burundi: Burundi
+      Cambodia: Cambodia
+      Cameroon: Cameroon
+      Canada: Canada
+      Canary Islands: Canary Islands
+      Cayman Islands: Cayman Islands
+      Central African Republic: Central African Republic
+      Chad: Chad
+      Chile: Chile
+      China: China
+      Colombia: Colombia
+      Comoros: Comoros
+      Congo: Congo
+      Costa Rica: Costa Rica
+      Côte d'Ivoire: Côte d'Ivoire
+      Croatia: Croatia
+      Curacao: Curacao
+      Cyprus: Cyprus
+      Czechia: Czechia
+      Democratic Republic of Congo: Democratic Republic of Congo
+      Denmark: Denmark
+      Djibouti: Djibouti
+      Dominica: Dominica
+      Dominican Republic: Dominican Republic
+      Ecuador: Ecuador
+      Egypt: Egypt
+      El Salvador: El Salvador
+      Equatorial Guinea: Equatorial Guinea
+      Eritrea: Eritrea
+      Estonia: Estonia
+      Eswatini (Swaziland): Eswatini (Swaziland)
+      Ethiopia: Ethiopia
+      Faroe Islands: Faroe Islands
+      Finland: Finland
+      France: France
+      French Polynesia: French Polynesia
+      French West Indies: French West Indies
+      Gabon: Gabon
+      Gambia: Gambia
+      Georgia: Georgia
+      Germany: Germany
+      Ghana: Ghana
+      Gibraltar: Gibraltar
+      Greece: Greece
+      Greneda: Grenada
+      Greneda & Carriacou: Grenada & Carriacou
+      Guatemala: Guatemala
+      Guinea: Guinea
+      Guinea-Bissau: Guinea-Bissau
+      Guyana: Guyana
+      Herzegovina: Herzegovina
+      Honduras: Honduras
+      Hong Kong: Hong Kong
+      Hungary: Hungary
+      Iceland: Iceland
+      India: India
+      Indonesia: Indonesia
+      Iran: Iran
+      Iraq: Iraq
+      Ireland: Ireland
+      Israel: Israel
+      Italy: Italy
+      Jamaica: Jamaica
+      Japan: Japan
+      Jordan: Jordan
+      Kazakhstan: Kazakhstan
+      Kenya: Kenya
+      Kirgizstan: Kyrgyzstan
+      Kosovo: Kosovo
+      Kuwait: Kuwait
+      Kyrgyzstan: Kyrgyzstan
+      Latvia: Latvia
+      Lebanon: Lebanon
+      Lesotho: Lesotho
+      Liberia: Liberia
+      Libya: Libya
+      Liechtenstein: Liechtenstein
+      Lithuania: Lithuania
+      Luxembourg: Luxembourg
+      Macau: Macau
+      Macedonia: Macedonia
+      Madagascar: Madagascar
+      Malawi: Malawi
+      Malaysia: Malaysia
+      Maldives: Maldives
+      Mali: Mali
+      Malta: Malta
+      Martinique: Martinique
+      Mauritania: Mauritania
+      Mauritius: Mauritius
+      Mexico: Mexico
+      Moldova: Moldova
+      Monaco: Monaco
+      Montenegro: Montenegro
+      Montserrat: Montserrat
+      Morocco: Morocco
+      Mozambique: Mozambique
+      Myanmar: Myanmar
+      Namibia: Namibia
+      Netherlands: Netherlands
+      New Zealand: New Zealand
+      Nicaragua: Nicaragua
+      Niger: Niger
+      Nigeria: Nigeria
+      North Macedonia: North Macedonia
+      Norway: Norway
+      Oman: Oman
+      Pakistan: Pakistan
+      Palestinian Territories: Palestinian Territories
+      Panama: Panama
+      Paraguay: Paraguay
+      Peru: Peru
+      Philippines: Philippines
+      Poland: Poland
+      Portugal: Portugal
+      Puerto Rico: Puerto Rico
+      Qatar: Qatar
+      Republic of Korea: Republic of Korea
+      Republic of Rwanda: Republic of Rwanda
+      Réunion: Réunion
+      Romania: Romania
+      Russia: Russia
+      Saba: Saba
+      San Marino: San Marino
+      Sao Tome and Principe: Sao Tome and Principe
+      Saudi Arabia: Saudi Arabia
+      Senegal: Senegal
+      Serbia: Serbia
+      Seychelles: Seychelles
+      Sierra Leone: Sierra Leone
+      Singapore: Singapore
+      Sint Maarten: Sint Maarten
+      Slovak Republic: Slovak Republic
+      Slovenia: Slovenia
+      Somalia: Somalia
+      South Africa: South Africa
+      South Sudan: South Sudan
+      Spain: Spain
+      Sri Lanka: Sri Lanka
+      St. Kitts & Nevis: St. Kitts & Nevis
+      St. Lucia: St. Lucia
+      St. Marteen: St. Marteen
+      St. Vincent: St. Vincent
+      St. Vincent and the Grenedines: St. Vincent and the Grenadines
+      Sudan: Sudan
+      Suriname: Suriname
+      Sweden: Sweden
+      Switzerland: Switzerland
+      Syria: Syria
+      Taiwan: Taiwan
+      Tajikistan: Tajikistan
+      Tanzania: Tanzania
+      Thailand: Thailand
+      The Bahamas: The Bahamas
+      Togo: Togo
+      Trinidad and Tobago: Trinidad and Tobago
+      Tunisia: Tunisia
+      Turkey: Turkey
+      Turkmenistan: Turkmenistan
+      Turks & Caicos: Turks & Caicos
+      Turks and Caicos Islands: Turks and Caicos Islands
+      Uganda: Uganda
+      Ukraine: Ukraine
+      United Arab Emirates: United Arab Emirates
+      United Kingdom: United Kingdom
+      United States: United States
+      Uruguay: Uruguay
+      Uzbekistan: Uzbekistan
+      Venezuela: Venezuela
+      Vietnam: Vietnam
+      Western Sahara: Western Sahara
+      Yemen: Yemen
+      Zambia: Zambia
+      Zimbabwe: Zimbabwe
     '#required': true
-    '#wrapper_type': form_element
-    '#address__access': false
-    '#address_2__access': false
-    '#city__access': false
-    '#state_province__access': false
-    '#postal_code__access': false
-    '#country__title': 'Country*'
-    '#country__placeholder': '- select -'
-    '#country__title_display': before
-    '#country__required': true
-    '#flexbox': '0'
   textarea:
     '#type': textarea
     '#title': 'About your project*'
@@ -383,8 +574,8 @@ handlers:
       pardot_fields_mapping: |-
         first_name|First Name
         last_name|Last Name
-        phone_intl.phone|Phone
-        address_country.country|Country
+        phone_intl|Phone
+        address_country|Country
         company_business_name|Company
         type_of_business|Company Sector
         textarea|Message
