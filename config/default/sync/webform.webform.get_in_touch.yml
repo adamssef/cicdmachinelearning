@@ -81,7 +81,7 @@ elements: |-
       Andorra: Andorra
       Angola: Angola
       Anguilla: Anguilla
-      'Antigua & Barbuda': 'Antigua & Barbuda'
+      Antigua & Barbuda: Antigua & Barbuda
       Argentina: Argentina
       Armenia: Armenia
       Aruba: Aruba
@@ -101,46 +101,47 @@ elements: |-
       Bosnia: Bosnia
       Botswana: Botswana
       Brazil: Brazil
-      'British Virgin Islands': 'British Virgin Islands'
+      British Virgin Islands: British Virgin Islands
       Brunei: Brunei
       Bulgaria: Bulgaria
-      'Burkina Faso': 'Burkina Faso'
+      Burkina Faso: Burkina Faso
       Burundi: Burundi
       Cambodia: Cambodia
       Cameroon: Cameroon
       Canada: Canada
-      'Cayman Islands': 'Cayman Islands'
-      'Central African Republic': 'Central African Republic'
+      Canary Islands: Canary Islands
+      Cayman Islands: Cayman Islands
+      Central African Republic: Central African Republic
       Chad: Chad
       Chile: Chile
       China: China
       Colombia: Colombia
       Comoros: Comoros
       Congo: Congo
-      'Costa Rica': 'Costa Rica'
-      'Cote d''Ivoire': 'Cote d''Ivoire'
+      Costa Rica: Costa Rica
+      Côte d'Ivoire: Côte d'Ivoire
       Croatia: Croatia
       Curacao: Curacao
       Cyprus: Cyprus
-      'Czech Republic': 'Czech Republic'
-      'Democratic Republic of Congo': 'Democratic Republic of Congo'
+      Czechia: Czechia
+      Democratic Republic of Congo: Democratic Republic of Congo
       Denmark: Denmark
       Djibouti: Djibouti
       Dominica: Dominica
-      'Dominican Republic': 'Dominican Republic'
+      Dominican Republic: Dominican Republic
       Ecuador: Ecuador
       Egypt: Egypt
-      'El Salvador': 'El Salvador'
-      'Equatorial Guinea': 'Equatorial Guinea'
+      El Salvador: El Salvador
+      Equatorial Guinea: Equatorial Guinea
       Eritrea: Eritrea
       Estonia: Estonia
-      'Eswatini (Swaziland)': 'Eswatini (Swaziland)'
+      Eswatini (Swaziland): Eswatini (Swaziland)
       Ethiopia: Ethiopia
-      'Faroe Islands': 'Faroe Islands'
+      Faroe Islands: Faroe Islands
       Finland: Finland
       France: France
-      'French Polynesia': 'French Polynesia'
-      'French West Indies': 'French West Indies'
+      French Polynesia: French Polynesia
+      French West Indies: French West Indies
       Gabon: Gabon
       Gambia: Gambia
       Georgia: Georgia
@@ -149,14 +150,14 @@ elements: |-
       Gibraltar: Gibraltar
       Greece: Greece
       Greneda: Grenada
-      'Greneda & Carriacou': 'Grenada & Carriacou'
+      Greneda & Carriacou: Grenada & Carriacou
       Guatemala: Guatemala
       Guinea: Guinea
       Guinea-Bissau: Guinea-Bissau
       Guyana: Guyana
       Herzegovina: Herzegovina
       Honduras: Honduras
-      'Hong Kong': 'Hong Kong'
+      Hong Kong: Hong Kong
       Hungary: Hungary
       Iceland: Iceland
       India: India
@@ -204,48 +205,50 @@ elements: |-
       Myanmar: Myanmar
       Namibia: Namibia
       Netherlands: Netherlands
-      'New Zealand': 'New Zealand'
+      New Zealand: New Zealand
       Nicaragua: Nicaragua
       Niger: Niger
       Nigeria: Nigeria
-      'North Macedonia': 'North Macedonia'
+      North Macedonia: North Macedonia
       Norway: Norway
       Oman: Oman
       Pakistan: Pakistan
+      Palestinian Territories: Palestinian Territories
       Panama: Panama
       Paraguay: Paraguay
       Peru: Peru
       Philippines: Philippines
       Poland: Poland
       Portugal: Portugal
-      'Puerto Rico': 'Puerto Rico'
+      Puerto Rico: Puerto Rico
       Qatar: Qatar
-      'Republic of Korea': 'Republic of Korea'
-      'Republic of Rwanda': 'Republic of Rwanda'
-      'Reunion Island': 'Reunion Island'
+      Republic of Korea: Republic of Korea
+      Republic of Rwanda: Republic of Rwanda
+      Réunion: Réunion
       Romania: Romania
-      'Russian Federation': 'Russian Federation'
+      Russia: Russia
       Saba: Saba
-      'San Marino': 'San Marino'
-      'Sao Tome and Principe': 'Sao Tome and Principe'
-      'Saudi Arabia': 'Saudi Arabia'
+      San Marino: San Marino
+      Sao Tome and Principe: Sao Tome and Principe
+      Saudi Arabia: Saudi Arabia
       Senegal: Senegal
       Serbia: Serbia
       Seychelles: Seychelles
-      'Sierra Leone': 'Sierra Leone'
+      Sierra Leone: Sierra Leone
       Singapore: Singapore
-      'Slovak Republic': 'Slovak Republic'
+      Sint Maarten: Sint Maarten
+      Slovak Republic: Slovak Republic
       Slovenia: Slovenia
       Somalia: Somalia
-      'South Africa': 'South Africa'
-      'South Sudan': 'South Sudan'
+      South Africa: South Africa
+      South Sudan: South Sudan
       Spain: Spain
-      'Sri Lanka': 'Sri Lanka'
-      'St. Kitts & Nevis': 'St. Kitts & Nevis'
-      'St. Lucia': 'St. Lucia'
-      'St. Marteen': 'St. Marteen'
-      'St. Vincent': 'St. Vincent'
-      'St. Vincent and the Grenedines': 'St. Vincent and the Grenadines'
+      Sri Lanka: Sri Lanka
+      St. Kitts & Nevis: St. Kitts & Nevis
+      St. Lucia: St. Lucia
+      St. Marteen: St. Marteen
+      St. Vincent: St. Vincent
+      St. Vincent and the Grenedines: St. Vincent and the Grenadines
       Sudan: Sudan
       Suriname: Suriname
       Sweden: Sweden
@@ -255,23 +258,24 @@ elements: |-
       Tajikistan: Tajikistan
       Tanzania: Tanzania
       Thailand: Thailand
-      'The Bahamas': 'The Bahamas'
+      The Bahamas: The Bahamas
       Togo: Togo
-      'Trinidad and Tobago': 'Trinidad and Tobago'
+      Trinidad and Tobago: Trinidad and Tobago
       Tunisia: Tunisia
       Turkey: Turkey
       Turkmenistan: Turkmenistan
-      'Turks & Caicos': 'Turks & Caicos'
-      'Turks and Caicos Islands': 'Turks and Caicos Islands'
+      Turks & Caicos: Turks & Caicos
+      Turks and Caicos Islands: Turks and Caicos Islands
       Uganda: Uganda
       Ukraine: Ukraine
-      'United Arab Emirates': 'United Arab Emirates'
-      'United Kingdom': 'United Kingdom'
-      'United States': 'United States'
+      United Arab Emirates: United Arab Emirates
+      United Kingdom: United Kingdom
+      United States: United States
       Uruguay: Uruguay
       Uzbekistan: Uzbekistan
+      Venezuela: Venezuela
       Vietnam: Vietnam
-      'Western Sahara': 'Western Sahara'
+      Western Sahara: Western Sahara
       Yemen: Yemen
       Zambia: Zambia
       Zimbabwe: Zimbabwe
