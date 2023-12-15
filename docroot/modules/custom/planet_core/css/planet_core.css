@@ -1536,7 +1536,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 
 .index-sticky {
   position: sticky;
-  top: 40vh;
+  top: 15%;
   align-self: self-start;
 }
 
