@@ -2,7 +2,7 @@
     Drupal.behaviors.customScript = {
         attach: function (context, settings) {
 
-            let offset = 1;
+            let offset = 0;
             let limit = 9;
             let isTagFiltered = false;
             const lang = $('html')[0].lang;
