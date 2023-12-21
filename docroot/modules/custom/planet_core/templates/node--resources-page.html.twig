@@ -12,7 +12,7 @@
 		<div class="dynamic-index-wrapper mobile-version">
 			<div class="index-sticky">
 				<div class="index-title-wrapper">
-				<div class="index-title" style="display: none">In this article</div><img class="arrow" src="/resources/icons/card-arrow-right.svg"></div>
+				<div class="index-title" style="display: none">{{ 'In this article'|t }}</div><img class="arrow" src="/resources/icons/card-arrow-right.svg"></div>
 				<div class="index-list" style="display: none"></div>
 			</div>
 		</div>
@@ -21,10 +21,10 @@
 				<div class="coh-row-inner">
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
 						<div class="breadcrumbs">
-							<a href="/blog">Blog</a>
+							<a href="{{article.blog_url}}">Blog</a>
 							{% if article.tags %}
 							>
-							<a href="/blog?tag={{article.tags[0].id}}">{{article.tags[0].name}}</a>
+							<a href="{{article.blog_url}}?tag={{article.tags[0].id}}">{{article.tags[0].name}}</a>
 							{% endif %}
 						</div>
 					</div>
@@ -75,7 +75,7 @@
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
 						<div class="dynamic-index-wrapper desktop-version" >
 							<div class="index-sticky" style="display: none">
-								<div class="index-title">IN THIS ARTICLE</div>
+								<div class="index-title" style="text-transform: uppercase">{{ 'In this article'|t }}</div>
 								<div class="index-list"></div>
 							</div>
 						</div>
@@ -94,13 +94,15 @@
 		</div>
 		<div class="article-related-articles">
 		<div class="coh-container-boxed">
+		{% if article.related_articles %}
 			<div class="coh-row">
 			<div class="coh-row-inner">
 				<div class="coh-column">
-					<h3 class="coh-style-heading-3-planet small-heading">You might also be interested in...</h3>
+					<h3 class="coh-style-heading-3-planet small-heading">{{ 'You might also be interested in...'|t }}</h3>
 				</div>
 			</div>
 			</div>
+			{% endif %}
 			<div class="coh-row">
 				<div class="coh-row-inner">
 
@@ -155,7 +157,7 @@
 				</header>
 				<main class="modal__content" id="modal-1-content">
 					<div class="main-banner-text">
-						<span class="coh-heading coh-style-heading-2-planet">Share</span>
+						<span class="coh-heading coh-style-heading-2-planet">{{ 'Share'|t }}</span>
 						<div class="share-social-wrapper">
 							<div class="social share-li">
 								<a href="https://www.linkedin.com/sharing/share-offsite/?url={{article.share_url}}" target="_blank">
@@ -180,7 +182,7 @@
 						<div class="share-url-wrapper">
 							<div class="share-input">
 								<span class="share-url">{{article.share_url}}</div>
-								<span class="copy-btn coh-link coh-style-primary-dark-atom-" data-url="{{article.share_url}}">Copy</div>
+								<span class="copy-btn coh-link coh-style-primary-dark-atom-" data-url="{{article.share_url}}">{{ 'Copy'|t }}</div>
 							</div>
 						</div>
 					</div>
