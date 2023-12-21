@@ -568,7 +568,9 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   margin: 8px 0;
   display: inline-block;
 }
-
+.last-articles {
+  padding: 0 16px;
+}
 .last-articles>h2 {
   text-align: center;
 }
