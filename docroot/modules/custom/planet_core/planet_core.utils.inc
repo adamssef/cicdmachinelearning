@@ -269,8 +269,11 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
     $node = $node->getTranslation($language_code);
 
     $title = $node->get('field_resources_title')->value;
-    $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
-    $url = $language_code != "en" ? "/" . $language_code . $url : $url;
+
+    $url = planet_core_get_aliases_in_other_languages($node->id(), $language_code);
+
+    // $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+    // $url = $language_code != "en" ? "/" . $language_code . $url : $url;
 
     // Get Tags (field_resources_tags).
     $tags_references = $node->get('field_resources_tags')->referencedEntities();
@@ -363,13 +366,15 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
  */
 
 
-function planet_core_get_aliases_in_other_languages($node_id) {
+function planet_core_get_aliases_in_other_languages($node_id, $langcode = false) {
   
   $alias_manager = \Drupal::service('path_alias.manager');
   $language_manager = \Drupal::languageManager();
 
   $path = '/node/' . (int) $node_id;
-  $langcode = $language_manager->getCurrentLanguage()->getId();
+  if(!$langcode) {
+    $langcode = $language_manager->getCurrentLanguage()->getId();
+  }
   $path_alias = $alias_manager->getAliasByPath($path, $langcode);
 
   $lang_prefix = $langcode != "en" ? "/" . $langcode : "";
