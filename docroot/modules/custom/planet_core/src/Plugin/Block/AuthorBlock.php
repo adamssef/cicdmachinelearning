@@ -37,7 +37,7 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
           if ($author instanceof Node && $author->getType() == 'author') {
 
             // Extract author information.
-            $author_name = $author->getTitle();
+            $author_name = $author->getTitle() ? $author->getTitle() : "";
             $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
             $media = Media::load($mid);
             $fid = $media->field_media_image->target_id;
