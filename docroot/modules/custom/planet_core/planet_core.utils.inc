@@ -133,6 +133,20 @@ function planet_core_get_author_articles($authorId, $limit = 3, $offset = 0)
   ];
 }
 
+function planet_core_get_toogle_links() {
+
+  /** These ids are for production only */
+  $blog_url = planet_core_get_aliases_in_other_languages(1576);
+  $case_studies_url = planet_core_get_aliases_in_other_languages(1366);
+  $ebooks_url = planet_core_get_aliases_in_other_languages(2136);
+
+  return array(
+    "case_studies" => $case_studies_url,
+    "ebooks" => $ebooks_url,
+    "blog" => $blog_url
+  );
+}
+
 function planet_core_get_last_published_article() {
   // Get the current page language code.
   $language_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
