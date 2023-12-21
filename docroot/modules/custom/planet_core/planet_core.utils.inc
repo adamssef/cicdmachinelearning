@@ -3,7 +3,6 @@
 use Drupal\node\Entity\Node;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
-use Drupal\path_alias\AliasManagerInterface;
 
 
 function truncateText($text, $maxLength, $suffix = '...') {
@@ -143,6 +142,7 @@ function planet_core_get_last_published_article() {
     ->condition('status', 1) // 1 represents published nodes.
     ->condition('type', 'resources') // Adjust to your content type name.
     ->condition('field_promoted_resource', 1) // Filter by field_promoted_resource being true.
+    ->condition('langcode', $language_code) // Filter by language code.
     ->sort('field_resources_published_time', 'DESC') // Sort by field_resources_published_time in descending order.
     ->range(0, 1); // Limit the result to 1 article.
 
@@ -151,10 +151,7 @@ function planet_core_get_last_published_article() {
   $nodes = Node::loadMultiple($nids);
 
   foreach ($nodes as $node) {
-    // Load the node in the current language.
-    if ($node->hasTranslation($language_code)) {
-      $node = $node->getTranslation($language_code);
-    }
+    $node = $node->getTranslation($language_code);
 
     // Get node fields and prepare data.
     $title = $node->get('field_resources_title')->value;
@@ -249,12 +246,16 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
   $query = \Drupal::entityQuery('node')
     ->condition('type', 'resources')
     ->condition('status', 1)
+    ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
+    ->condition('langcode', $language_code) // Filter by language code.
     ->range($offset, $limit)
     ->sort('created', 'DESC')
     ->execute();
 
   $total_count = \Drupal::entityQuery('node')
     ->condition('type', 'resources')
+    ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
+    ->condition('langcode', $language_code) // Filter by language code.
     ->condition('status', 1)
     ->execute();
   
@@ -265,13 +266,14 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
 
   foreach ($resource_nodes as $node) {
     // Load the node in the current language.
-    if ($node->hasTranslation($language_code)) {
-      $node = $node->getTranslation($language_code);
-    }
+    $node = $node->getTranslation($language_code);
 
     $title = $node->get('field_resources_title')->value;
-    $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
-    $url = $language_code != "en" ? "/" . $language_code . $url : $url;
+
+    $url = planet_core_get_aliases_in_other_languages($node->id(), $language_code);
+
+    // $url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+    // $url = $language_code != "en" ? "/" . $language_code . $url : $url;
 
     // Get Tags (field_resources_tags).
     $tags_references = $node->get('field_resources_tags')->referencedEntities();
@@ -363,39 +365,26 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
  *   An array of aliases in other languages keyed by language code.
  */
 
-function planet_core_get_aliases_in_other_languages($english_alias) {
+
+function planet_core_get_aliases_in_other_languages($node_id, $langcode = false) {
+  
   $alias_manager = \Drupal::service('path_alias.manager');
   $language_manager = \Drupal::languageManager();
-  $languages = $language_manager->getLanguages();
 
-  $aliases_in_other_languages = [];
-
-  foreach ($languages as $language) {
-    // Skip the English language as we already have the English alias.
-    if ($language->getId() == 'en') {
-      continue;
-    }
-
-    // Get the alias for the current language.
-    $alias = $alias_manager->getPathByAlias('/' . $english_alias, $language->getId());
-
-    // If an alias is found, add it to the result array.
-    if ($alias) {
-      $aliases_in_other_languages[$language->getId()] = $alias;
-    }
-    else {
-      // If no alias is found, use the English alias as a fallback.
-      $aliases_in_other_languages[$language->getId()] = '/' . $english_alias;
-    }
+  $path = '/node/' . (int) $node_id;
+  if(!$langcode) {
+    $langcode = $language_manager->getCurrentLanguage()->getId();
   }
+  $path_alias = $alias_manager->getAliasByPath($path, $langcode);
 
-  return $aliases_in_other_languages;
+  $lang_prefix = $langcode != "en" ? "/" . $langcode : "";
+  return $lang_prefix . $path_alias;
 }
-
 
 function planet_core_single_article($node_id) {
   global $base_url;
 
+  $blog_id = 2207;
   // Get the current page language code.
   $language_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
@@ -457,7 +446,7 @@ function planet_core_single_article($node_id) {
   // Get Creation Date
   $custom_timestamp = $node->get('field_resources_published_time')->value;
   $reading_time = $node->get('field_resources_reading_time')->value;
-  $blog_urls = planet_core_get_aliases_in_other_languages("blog");
+  $blog_url = planet_core_get_aliases_in_other_languages($blog_id);
   $domain = $base_url;
 
   $short_url = substr($domain . $url, 0, 48) . "...";
@@ -485,7 +474,7 @@ function planet_core_single_article($node_id) {
       'url' => $author_url,
       'profile_picture' => $author_photo,
     ],
-    'blog_urls' => $blog_urls,
+    'blog_url' => $blog_url,
     'related_articles' => $related_articles,
   );
 
@@ -501,6 +490,7 @@ function planet_core_get_related_articles($tag_id, $exclude_node_id) {
 
   $query = \Drupal::entityQuery('node')
     ->condition('type', 'resources') // Adjust to your content type name.
+    ->condition('langcode', $language_code) // Filter by language code.
     ->condition('field_resources_tags.target_id', $tag_id)
     ->condition('status', 1)
     ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
@@ -513,7 +503,8 @@ function planet_core_get_related_articles($tag_id, $exclude_node_id) {
   // If no related articles are found, query the last 3 articles excluding the specified node ID.
   if (empty($related_article_ids)) {
     $query = \Drupal::entityQuery('node')
-      ->condition('type', 'resources') // Adjust to your content type name.
+    ->condition('type', 'resources') // Adjust to your content type name.
+      ->condition('langcode', $language_code) // Filter by language code.
       ->condition('status', 1)
       ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
       ->sort('created', 'DESC')
@@ -527,9 +518,7 @@ function planet_core_get_related_articles($tag_id, $exclude_node_id) {
     $node = Node::load($related_article_id);
     
     // Load the node in the current language.
-    if ($node->hasTranslation($language_code)) {
-      $node = $node->getTranslation($language_code);
-    }
+    $node = $node->getTranslation($language_code);
 
     if ($node instanceof Node) {
       $related_article_title = $node->get('field_resources_title')->value;
@@ -581,16 +570,23 @@ function planet_core_get_related_articles($tag_id, $exclude_node_id) {
       // Convert the custom timestamp to a formatted date.
       $creation_date = date('F j, Y', $custom_timestamp);
 
+
+      if ($language_code != "en") {
+        $url = "/" . $language_code . $related_article_url;
+      } else {
+          $url = $related_article_url;
+      }
+
       $related_articles[] = [
-        'url' => $related_article_url,
+        'url' => $url,
         'title' => $related_article_title,
         'tags' => $article_tags,
         'background_image' => $background_image_url,
         'creation_date' => $creation_date,
         'author' => [
-          'full_name' => $author_name,
-          'url' => $author_url,
-          'profile_picture' => $author_photo,
+          'full_name' => $author_name ? $author_name : "",
+          'url' => $author_url ? $author_url : "",
+          'profile_picture' => $author_photo ? $author_photo : "",
         ]
       ];
     }
