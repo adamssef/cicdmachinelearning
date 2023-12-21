@@ -384,7 +384,7 @@ function planet_core_get_aliases_in_other_languages($node_id, $langcode = false)
 function planet_core_single_article($node_id) {
   global $base_url;
 
-  $blog_id = 2207;
+  $blog_id = 1576;
   // Get the current page language code.
   $language_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
