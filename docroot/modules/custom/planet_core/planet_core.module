@@ -230,7 +230,7 @@ function planet_core_theme_suggestions_page_alter(array &$suggestions, array $va
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
 
   switch ($alias) {
-    case "/customer-resources-tobe":
+    case "/customer-resources":
       $suggestions[] = 'onboarding_page_template';
       break;
   }
