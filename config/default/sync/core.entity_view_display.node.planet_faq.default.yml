@@ -3,10 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.planet_faq.body
     - field.field.node.planet_faq.field_answer
+    - field.field.node.planet_faq.field_answer_html_
     - node.type.planet_faq
   module:
+    - text
     - user
 id: node.planet_faq.default
 targetEntityType: node
@@ -20,12 +21,18 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_answer_html_:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
-  body: true
   langcode: true
   search_api_excerpt: true
