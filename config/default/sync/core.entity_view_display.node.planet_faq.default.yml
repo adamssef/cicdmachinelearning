@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.planet_faq.field_answer
     - field.field.node.planet_faq.field_answer_html_
     - node.type.planet_faq
   module:
@@ -14,13 +13,6 @@ targetEntityType: node
 bundle: planet_faq
 mode: default
 content:
-  field_answer:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_answer_html_:
     type: text_default
     label: hidden
