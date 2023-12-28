@@ -1,0 +1,25 @@
+uuid: 5e42a8b7-13aa-48ad-a9ec-bea00637cb10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_answer_html_
+    - node.type.planet_faq
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.planet_faq.field_answer_html_
+field_name: field_answer_html_
+entity_type: node
+bundle: planet_faq
+label: 'Answer (html)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
