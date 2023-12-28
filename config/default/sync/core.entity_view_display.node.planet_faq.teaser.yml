@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.planet_faq.field_answer
     - field.field.node.planet_faq.field_answer_html_
     - node.type.planet_faq
   module:
@@ -20,7 +19,6 @@ content:
     weight: 100
     region: content
 hidden:
-  field_answer: true
   field_answer_html_: true
   langcode: true
   search_api_excerpt: true
