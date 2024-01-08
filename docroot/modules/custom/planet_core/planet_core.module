@@ -223,7 +223,7 @@ function planet_core_theme_suggestions_page_alter(array &$suggestions, array $va
 {
   $node = \Drupal::routeMatch()->getParameter('node');
 
-  if (!$node or !($node instanceof \Drupal\node\NodeInterface)) {
+  if (!$node || !($node instanceof \Drupal\node\NodeInterface) || (\Drupal::currentUser()->isAuthenticated())) {
     return;
   }
 
