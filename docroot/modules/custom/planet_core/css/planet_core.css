@@ -239,6 +239,10 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   }
 }
 
+@media (min-width: 992px) and (max-width: 1023px) {
+  .dynamic-index-wrapper {display: none;}
+}
+
 @media (max-width: 991px) {
   .planet-h2 {
     font-weight: 600;
@@ -483,7 +487,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
     padding-right: 16px;
   }
   .author-name span {
-    font-size: 32px !important;
+    font-size: 32px;
     margin-top: 16px !important
   }
 
