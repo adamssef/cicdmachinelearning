@@ -240,7 +240,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 
 @media (min-width: 992px) and (max-width: 1023px) {
-  .dynamic-index-wrapper {display: none;}
+  .dynamic-index-wrapper.desktop-version {display: none;}
 }
 
 @media (max-width: 991px) {
