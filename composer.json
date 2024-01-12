@@ -69,7 +69,7 @@
     "drupal/robotstxt": "^1.4",
     "drupal/salesforce": "^5.0",
     "drupal/search_api_solr": "^4.2",
-    "drupal/sfweb2lead_webform": "^5.2",
+    "drupal/sfweb2lead_webform": "^6.0",
     "drupal/shield": "^1.6",
     "drupal/simple_sitemap": "^4.1",
     "drupal/simplelogin": "^7.0",

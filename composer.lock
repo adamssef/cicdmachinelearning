@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dba7745a026ba6c7f20fe8852f0292b",
+    "content-hash": "739b9cea8751ba5c341cc34bd7fb7d03",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -5749,27 +5749,30 @@
         },
         {
             "name": "drupal/sfweb2lead_webform",
-            "version": "5.2.0",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/sfweb2lead_webform.git",
-                "reference": "8.x-5.2"
+                "reference": "6.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/sfweb2lead_webform-8.x-5.2.zip",
-                "reference": "8.x-5.2",
-                "shasum": "5c94f1c2cd8388f864cccdc6ad86804107a596ba"
+                "url": "https://ftp.drupal.org/files/projects/sfweb2lead_webform-6.0.0.zip",
+                "reference": "6.0.0",
+                "shasum": "7c958328f4fe999a1272b71e416de0ece6ebaa78"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
-                "drupal/webform": "*"
+                "drupal/core": "^9 || ^10",
+                "drupal/webform": "^5.0 || ^6.0 || ^6.2@RC"
+            },
+            "require-dev": {
+                "drupal/coder": "^8.3"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-5.2",
-                    "datestamp": "1607525088",
+                    "version": "6.0.0",
+                    "datestamp": "1699471649",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5777,6 +5780,14 @@
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
+            "scripts": {
+                "phpcs": [
+                    "vendor/bin/phpcs -p ."
+                ],
+                "phpcbf": [
+                    "vendor/bin/phpcbf -p ."
+                ]
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -5810,6 +5821,7 @@
                     "homepage": "https://www.drupal.org/user/513916"
                 }
             ],
+            "description": "Extends the Webform module to easily allow the creation of a webform that feeds to your Salesforce.com Account.",
             "homepage": "https://www.drupal.org/project/sfweb2lead_webform",
             "support": {
                 "source": "https://git.drupalcode.org/project/sfweb2lead_webform"
