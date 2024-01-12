@@ -1,4 +1,0 @@
-lgpd_onetrust_cookie_blocking.settings:
-  route_name: lgpd_onetrust_cookie_blocking.settings
-  title: 'Cookie Blocking'
-  base_route: lgpd_onetrust.settings
