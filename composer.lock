@@ -23,7 +23,7 @@
             "require": {
                 "cweagans/composer-patches": "^1.6",
                 "drupal/entity_reference_revisions": "^1.7",
-                "drupal/imce": "^2.2",
+                "drupal/imce": "^3.0",
                 "drupal/token": "^1.5",
                 "ext-json": "*"
             },
@@ -3864,26 +3864,29 @@
         },
         {
             "name": "drupal/imce",
-            "version": "2.5.0",
+            "version": "3.0.11",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/imce.git",
-                "reference": "8.x-2.5"
+                "reference": "3.0.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/imce-8.x-2.5.zip",
-                "reference": "8.x-2.5",
-                "shasum": "0326482a1d6cb5f52ed00473bc5693e192149fdb"
+                "url": "https://ftp.drupal.org/files/projects/imce-3.0.11.zip",
+                "reference": "3.0.11",
+                "shasum": "8d9fb9df41288baa7851a6700be1f1af47de00b1"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9.3 || ^10"
+            },
+            "require-dev": {
+                "drupal/ckeditor": "^1.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.5",
-                    "datestamp": "1664293755",
+                    "version": "3.0.11",
+                    "datestamp": "1704304923",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3909,7 +3912,7 @@
             "homepage": "https://drupal.org/project/imce",
             "support": {
                 "source": "https://git.drupalcode.org/project/imce",
-                "issues": "https://www.drupal.org/project/issues/imce?version=8.x"
+                "issues": "https://www.drupal.org/project/issues/imce"
             }
         },
         {
