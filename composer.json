@@ -72,7 +72,7 @@
     "drupal/sfweb2lead_webform": "^5.2",
     "drupal/shield": "^1.6",
     "drupal/simple_sitemap": "^4.1",
-    "drupal/simplelogin": "^6.0",
+    "drupal/simplelogin": "^7.0",
     "drupal/site_settings": "^1.20",
     "drupal/site_studio_webform": "^1.1",
     "drupal/smtp": "^1.2",
