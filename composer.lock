@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80352c4161187bbccd362df73f9a5ffc",
+    "content-hash": "24cca87a835cba4b5c4510fd4ecb713e",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -2218,28 +2218,28 @@
         },
         {
             "name": "drupal/config_split_ignore",
-            "version": "1.9.0",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/config_split_ignore.git",
-                "reference": "8.x-1.9"
+                "reference": "8.x-1.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_split_ignore-8.x-1.9.zip",
-                "reference": "8.x-1.9",
-                "shasum": "969caa1e1b22dd89037d18f97bfcc7f10d75a72c"
+                "url": "https://ftp.drupal.org/files/projects/config_split_ignore-8.x-1.10.zip",
+                "reference": "8.x-1.10",
+                "shasum": "c2b6589a975fc2226e74c10adc63c625f31e75ac"
             },
             "require": {
                 "drupal/config_ignore": "*",
                 "drupal/config_split": "*",
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.9",
-                    "datestamp": "1590576514",
+                    "version": "8.x-1.10",
+                    "datestamp": "1703357573",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
