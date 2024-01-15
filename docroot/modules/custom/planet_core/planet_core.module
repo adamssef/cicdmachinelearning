@@ -390,7 +390,7 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void
 
 /**
  * Assign js files and send data
- * 
+ *
  */
 function planet_core_preprocess_node(array &$variables)
 {
@@ -403,7 +403,7 @@ function planet_core_preprocess_node(array &$variables)
     $variables['#attached']['library'][] = 'planet_core/author-page';
   }
 
- 
+
   $config = \Drupal::config('planet_core.settings');
   $is_new_blog_enabled = $config->get('enable_new_blog');
 
@@ -411,7 +411,7 @@ function planet_core_preprocess_node(array &$variables)
     $variables['article'] = planet_core_single_article($node->id());
     $variables['#attached']['library'][] = 'planet_core/single-article-page';
   }
-  
+
   if ($is_new_blog_enabled) {
     if ($alias == "/blog") {
       $variables['featured_article'] = planet_core_get_last_published_article();
