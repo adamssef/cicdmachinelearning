@@ -3,10 +3,9 @@ namespace Drupal\planet_core\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\planet_core\Service\PlanetCoreArticleService;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class AuthorArticles extends PlanetCoreArticleBase {
+class PlanetCoreArticleBase extends ControllerBase {
 
   /**
    * The planet core service.
@@ -34,10 +33,4 @@ class AuthorArticles extends PlanetCoreArticleBase {
     );
   }
 
-
-  public function loadAuthorArticles($author_id, $limit, $offset) {
-    $author_articles = $this->planetCoreService->getAuthorArticles($author_id, $limit, $offset);
-
-    return new JsonResponse($author_articles);
-    }
 }

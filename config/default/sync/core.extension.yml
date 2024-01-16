@@ -42,7 +42,6 @@ module:
   csp_extras: 0
   ctools: 0
   datetime: 0
-  devel_generate: 0
   dropzonejs: 0
   duplicate_role: 0
   dynamic_entity_reference: 0
@@ -145,6 +144,7 @@ module:
   trash: 0
   typed_data: 0
   ultimate_cron: 0
+  upgrade_status: 0
   update: 0
   user: 0
   verf: 0
