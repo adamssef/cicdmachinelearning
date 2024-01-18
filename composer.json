@@ -26,7 +26,7 @@
     "drupal/content_moderation_edit_notify": "^2.0",
     "drupal/context": "^5.0@RC",
     "drupal/core-composer-scaffold": "^10.2",
-    "drupal/core-project-message": "^9.0.0",
+    "drupal/core-project-message": "^10.2",
     "drupal/core-recommended": "^9.0.0",
     "drupal/csp": "^1.16",
     "drupal/ctools": "^3.11",
