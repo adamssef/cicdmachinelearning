@@ -2,15 +2,16 @@
 
 namespace Drupal\planet_core\Plugin\Block;
 
-use Drupal\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\File\FileUrlGeneratorInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\file\FileInterface;
 use Drupal\media\MediaInterface;
 use Drupal\node\Entity\Node;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides an 'Author Block' block.
@@ -22,7 +23,7 @@ use Drupal\media\Entity\Media;
  * )
  */
 
-class AuthorBlock extends BlockBase implements BlockPluginInterface {
+class AuthorBlock extends BlockBase implements BlockPluginInterface, ContainerFactoryPluginInterface {
 
   /**
    * @var \Drupal\Core\File\FileUrlGeneratorInterface
