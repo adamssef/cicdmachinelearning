@@ -91,6 +91,7 @@
     "drush/drush": "^10.0.0",
     "enyo/dropzone": "^4.2",
     "erusev/parsedown": "^1.7",
+    "guzzlehttp/guzzle": "^7.8",
     "highlightjs/highlightjs": "^9.7",
     "mglaman/composer-drupal-lenient": "^1.0",
     "npm-asset/jquery-validation": "^1.17",
