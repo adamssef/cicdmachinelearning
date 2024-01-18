@@ -190,9 +190,7 @@
       },
       "acquia/cohesion": {
         "Media alt and name": "patches/cohesion_690.patch",
-        "Planet font-style": "patches/cohesion_690_2.patch",
-        "php 8.1 fix": "patches/cohesion_690_3.patch",
-        "Editing a clone before saving changes the source node": "patches/cohesion_quick_node_clone.patch"
+        "Planet font-style": "patches/cohesion_690_2.patch"
       },
       "drupal/webform_pardot": {
         "Custom pardot for planet": "patches/webform_pardot.patch"
