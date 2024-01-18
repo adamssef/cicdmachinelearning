@@ -32,6 +32,7 @@
     "drupal/core-recommended": "^9.0.0",
     "drupal/csp": "^1.16",
     "drupal/ctools": "^3.11",
+    "drupal/devel": "^5.1",
     "drupal/duplicate_role": "^1.2",
     "drupal/dynamic_entity_reference": "^3.0",
     "drupal/entity_language_fallback": "^1.4",
@@ -92,6 +93,7 @@
     "enyo/dropzone": "^4.2",
     "erusev/parsedown": "^1.7",
     "highlightjs/highlightjs": "^9.7",
+    "mglaman/composer-drupal-lenient": "^1.0",
     "npm-asset/jquery-validation": "^1.17",
     "oomphinc/composer-installers-extender": "^2.0",
     "phpstan/phpstan": "^1.10.1",
@@ -124,7 +126,8 @@
       "zaporylie/composer-drupal-optimizations": true,
       "drupal/console-extend-plugin": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
-      "oomphinc/composer-installers-extender": true
+      "oomphinc/composer-installers-extender": true,
+      "mglaman/composer-drupal-lenient": true
     }
   },
   "extra": {
@@ -202,6 +205,9 @@
       "drupal/entity_reference_revisions": {
         "https://www.drupal.org/project/entity_reference_revisions/issues/3150084": "https://www.drupal.org/files/issues/2020-06-09/3150084_2.patch"
       }
+    },
+    "drupal-lenient": {
+      "allowed-list": ["drupal/pardot"]
     }
   },
   "repositories": {
