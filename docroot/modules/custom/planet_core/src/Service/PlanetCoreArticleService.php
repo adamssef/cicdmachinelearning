@@ -222,6 +222,7 @@ class PlanetCoreArticleService {
       ->condition('field_promoted_resource', 1) // Filter by field_promoted_resource being true.
       ->condition('langcode', $language_code) // Filter by language code.
       ->sort('field_resources_published_time', 'DESC') // Sort by field_resources_published_time in descending order.
+      ->accessCheck()
       ->range(0, 1); // Limit the result to 1 article.
 
 
@@ -345,7 +346,7 @@ class PlanetCoreArticleService {
       ->condition('langcode', $language_code) // Filter by language code.
       ->range($offset, $limit)
       ->sort('created', 'DESC')
-      ->accessCheck(FALSE)
+      ->accessCheck()
       ->execute();
 
     $total_count = $node_storage_query
@@ -353,7 +354,7 @@ class PlanetCoreArticleService {
       ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
       ->condition('langcode', $language_code) // Filter by language code.
       ->condition('status', 1)
-      ->accessCheck(FALSE)
+      ->accessCheck()
       ->execute();
 
     $total_count = array_values($total_count);
@@ -626,7 +627,7 @@ class PlanetCoreArticleService {
       ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
       ->sort('created', 'DESC')
       ->range(0, 3)
-      ->accessCheck(FALSE)
+      ->accessCheck()
       ->execute();
 
     $related_article_ids = array_values($query);
@@ -640,6 +641,7 @@ class PlanetCoreArticleService {
         ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
         ->sort('created', 'DESC')
         ->range(0, 3)
+        ->accessCheck()
         ->execute();
 
       $related_article_ids = array_values($query);
