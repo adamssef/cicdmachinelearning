@@ -183,7 +183,8 @@
         "Support for export filtering via Drush": "https://www.drupal.org/files/issues/2021-01-04/config_ignore_2857247-61.patch"
       },
       "drupal/pardot": {
-        "Disable pardot js": "patches/path_pardot.patch"
+        "Disable pardot js": "patches/path_pardot.patch",
+        "https://www.drupal.org/files/issues/2024-01-04/3382957-pardot-D10-compatibility.patch": "https://www.drupal.org/files/issues/2024-01-04/3382957-pardot-D10-compatibility.patch"
       },
       "drupal/autologout": {
         "Undefined index destination": "https://www.drupal.org/files/issues/2022-07-28/3300118-undefined-index-destination.patch"
