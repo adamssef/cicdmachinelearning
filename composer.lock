@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa1ef67826a1bd128afab553a9addf5d",
+    "content-hash": "7e21a874b78f00e0cdc74fcff923e587",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -2852,20 +2852,20 @@
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.5.11",
+            "version": "10.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
-                "reference": "08da8e59c6f1bd0b1a58d18f8addc0d937bbacc7"
+                "reference": "97bd91856535a354e9b1b815f0957893e26b6622"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/08da8e59c6f1bd0b1a58d18f8addc0d937bbacc7",
-                "reference": "08da8e59c6f1bd0b1a58d18f8addc0d937bbacc7",
+                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/97bd91856535a354e9b1b815f0957893e26b6622",
+                "reference": "97bd91856535a354e9b1b815f0957893e26b6622",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1 || ^2",
+                "composer-plugin-api": "^2",
                 "php": ">=7.3.0"
             },
             "conflict": {
@@ -2896,9 +2896,9 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.5.11"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/10.2.2"
             },
-            "time": "2023-04-30T16:17:33+00:00"
+            "time": "2023-11-15T23:23:28+00:00"
         },
         {
             "name": "drupal/core-project-message",

@@ -25,7 +25,7 @@
     "drupal/content_lock": "^2.3",
     "drupal/content_moderation_edit_notify": "^2.0",
     "drupal/context": "^5.0@RC",
-    "drupal/core-composer-scaffold": "^9.0.0",
+    "drupal/core-composer-scaffold": "^10.2",
     "drupal/core-project-message": "^9.0.0",
     "drupal/core-recommended": "^9.0.0",
     "drupal/csp": "^1.16",
