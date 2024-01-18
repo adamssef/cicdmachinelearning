@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dba2107d14dc4d4f06127148bb2d4ff5",
+    "content-hash": "73567c23eb397aba88bad48d51e7c04f",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -2198,57 +2198,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/clientside_validation",
                 "issues": "https://drupal.org/project/issues/clientside_validation"
-            }
-        },
-        {
-            "name": "drupal/color",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/color.git",
-                "reference": "1.0.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/color-1.0.3.zip",
-                "reference": "1.0.3",
-                "shasum": "b88ab527bed65b67eec555ee4b17e633c19f3194"
-            },
-            "require": {
-                "drupal/core": "^9.4 || ^10"
-            },
-            "require-dev": {
-                "drupal/bartik": "^1.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.3",
-                    "datestamp": "1663234622",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "andypost",
-                    "homepage": "https://www.drupal.org/user/118908"
-                },
-                {
-                    "name": "kostyashupenko",
-                    "homepage": "https://www.drupal.org/user/3281537"
-                }
-            ],
-            "description": "Allows users to change the color scheme of compatible themes",
-            "homepage": "https://www.drupal.org/project/color",
-            "support": {
-                "source": "https://git.drupalcode.org/project/color"
             }
         },
         {
@@ -5383,7 +5332,7 @@
                 "shasum": "a6645cd951e03d613d8d9e2a87e00627ce21a465"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^8 || ^9 || ^10 || ^11",
                 "drupal/key": "^1.14",
                 "drupal/salesforce": "^5.0",
                 "drupal/salesforce_jwt": "*",
