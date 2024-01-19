@@ -182,9 +182,6 @@
         "https://www.drupal.org/project/drupal/issues/3006897": "https://www.drupal.org/files/issues/2022-11-15/3006897-17.patch",
         "Fix invalid alias": "patches/translations_invalid_path.patch"
       },
-      "drupal/config_ignore": {
-        "Support for export filtering via Drush": "https://www.drupal.org/files/issues/2021-01-04/config_ignore_2857247-61.patch"
-      },
       "drupal/pardot": {
         "Disable pardot js": "patches/path_pardot.patch",
         "https://www.drupal.org/files/issues/2024-01-04/3382957-pardot-D10-compatibility.patch": "https://www.drupal.org/files/issues/2024-01-04/3382957-pardot-D10-compatibility.patch"
@@ -201,6 +198,9 @@
       },
       "drupal/redirect": {
         "Remove trailing slash": "patches/redirect_domain.patch"
+      },
+      "drupal/entity_language_fallback": {
+        "Deprecated function: Creation of dynamic property": "https://www.drupal.org/files/issues/2023-12-11/issue-3407832-srcfallbackcontroller.php-error-on-fixes.patch"
       }
     },
     "drupal-lenient": {

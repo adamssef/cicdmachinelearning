@@ -1,11 +1,11 @@
 name: planet
 
 # Start with the default drupal recipe
-recipe: drupal9
+recipe: drupal10
 
 # Configure the drupal recipe
 config:
-  php: '8.1'
+  php: '8.2'
   composer_version: '2.2.9'
   via: apache
   webroot: docroot
