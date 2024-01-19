@@ -183,7 +183,8 @@
       },
       "drupal/pardot": {
         "Disable pardot js": "patches/path_pardot.patch",
-        "https://www.drupal.org/files/issues/2024-01-04/3382957-pardot-D10-compatibility.patch": "https://www.drupal.org/files/issues/2024-01-04/3382957-pardot-D10-compatibility.patch"
+        "https://www.drupal.org/files/issues/2024-01-04/3382957-pardot-D10-compatibility.patch": "https://www.drupal.org/files/issues/2024-01-04/3382957-pardot-D10-compatibility.patch",
+        "Fix dynamic creation of a property": "patches/pardot.patch"
       },
       "drupal/autologout": {
         "Undefined index destination": "https://www.drupal.org/files/issues/2022-07-28/3300118-undefined-index-destination.patch"
