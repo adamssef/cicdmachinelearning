@@ -8,14 +8,15 @@ id: local
 label: Local
 description: ''
 weight: 0
+stackable: false
+no_patching: false
+storage: folder
 folder: ../config/default/environment/local
 module:
   dblog: 0
   devel: 0
 theme: {  }
-blacklist: {  }
-graylist:
+complete_list: {  }
+partial_list:
   - environment_indicator.indicator
   - search_api.server.acquia_search_server
-graylist_dependents: true
-graylist_skip_equal: true

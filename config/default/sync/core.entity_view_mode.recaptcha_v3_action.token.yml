@@ -6,5 +6,6 @@ dependencies:
     - recaptcha_v3
 id: recaptcha_v3_action.token
 label: Token
+description: ''
 targetEntityType: recaptcha_v3_action
 cache: true

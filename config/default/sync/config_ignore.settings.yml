@@ -1,9 +1,10 @@
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
+mode: simple
 ignored_config_entities:
   - 'cohesion_*'
-  - system.site
   - planet_config.pardot
-  - 'webform.webform.generic_form*'
+  - system.site
   - 'webform.webform.ebook_my_title_here*'
+  - 'webform.webform.generic_form*'
 enable_export_filtering: true

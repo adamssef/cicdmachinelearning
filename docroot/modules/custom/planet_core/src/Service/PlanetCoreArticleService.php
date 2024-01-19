@@ -62,7 +62,6 @@ class PlanetCoreArticleService {
     $this->fileUrlGenerator = $file_url_generator;
     $this->pathAliasManager = $path_alias_manager;
     $this->languageManager = $language_manager;
-    \Drupal::logger('PlanetCoreArticleService')->notice('In constructur.');
   }
 
   /**
@@ -79,7 +78,6 @@ class PlanetCoreArticleService {
    *   The truncated string.
    */
   public function truncateText($text, $maxLength, $suffix = '...') {
-    \Drupal::logger('PlanetCoreArticleService')->notice('In truncateText.');
     if (mb_strlen($text) <= $maxLength) {
       return $text;
     } else {
@@ -96,7 +94,6 @@ class PlanetCoreArticleService {
    * Custom hooks functions for the planet_core module.
    */
   public function getAuthorArticles($authorId, $limit = 3, $offset = 0) {
-    \Drupal::logger('PlanetCoreArticleService')->notice('In getlAuthorArticles.');
     $author_node = $this->entityTypeManager->getStorage('node')->load($authorId);
     $author_name = $author_node->getTitle();
     $author_name_words = explode(' ', $author_name);
@@ -211,7 +208,6 @@ class PlanetCoreArticleService {
   }
 
   public function getLastPublishedArticle() {
-    \Drupal::logger('PlanetCoreArticleService')->notice('In getLastPublishedArticle.');
     // Get the current page language code.
     $language_code = $this->languageManager->getCurrentLanguage()->getId();
 
@@ -329,7 +325,6 @@ class PlanetCoreArticleService {
    *   An array of blog articles.
    */
   public function getBlogArticles($limit = 3, $offset = 0, $lang = "en") {
-    \Drupal::logger('PlanetCoreArticleService')->notice('In getBlogArticles.');
     // Get the current page language code.
     $language_code = $lang;
 
@@ -473,7 +468,6 @@ class PlanetCoreArticleService {
    *   A string consisting of language prefix and path alias.
    */
   public function getAliasesInOtherLanguages($node_id, $langcode = false) {
-    \Drupal::logger('PlanetCoreArticleService')->notice('In getAliasesInOtherLanguages.');
     $path = '/node/' . (int)$node_id;
 
     if (!$langcode) {
@@ -497,7 +491,6 @@ class PlanetCoreArticleService {
    *   An array of article data.
    */
   function getSingleArticleData($node_id) {
-    \Drupal::logger('PlanetCoreArticleService')->notice('In getSingleArticleData.');
     global $base_url;
 
     $blog_id = 2207;

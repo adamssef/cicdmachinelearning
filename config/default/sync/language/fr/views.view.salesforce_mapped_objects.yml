@@ -23,4 +23,4 @@ display:
         changed:
           label: 'Dernière mise à jour'
         operations:
-          label: 'Liens d''actions'
+          label: "Liens d'actions"

@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.resourses
 label: Resourses
+description: ''
 targetEntityType: node
 cache: true

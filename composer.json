@@ -201,7 +201,11 @@
       },
       "drupal/entity_language_fallback": {
         "Deprecated function: Creation of dynamic property": "https://www.drupal.org/files/issues/2023-12-11/issue-3407832-srcfallbackcontroller.php-error-on-fixes.patch"
+      },
+      "drupal/config_split_ignore": {
+        "IgnoreFilter class not found": "https://www.drupal.org/files/issues/2024-01-10/ignore-filter-not-found-3413717-3.patch"
       }
+
     },
     "drupal-lenient": {
       "allowed-list": ["drupal/pardot"]

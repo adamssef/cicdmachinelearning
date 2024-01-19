@@ -42,6 +42,7 @@ module:
   csp_extras: 0
   ctools: 0
   datetime: 0
+  devel_generate: 0
   dropzonejs: 0
   duplicate_role: 0
   dynamic_entity_reference: 0
@@ -94,12 +95,14 @@ module:
   password_policy_length: 0
   path: 0
   path_alias: 0
+  phpass: 0
   planet_config: 0
   planet_core: 0
   planet_language_switcher: 0
   planet_offices: 0
   planet_sitestudio_custom_elements: 0
   quick_node_clone: 0
+  rdf: 0
   recaptcha: 0
   redirect: 0
   redirect_domain: 0

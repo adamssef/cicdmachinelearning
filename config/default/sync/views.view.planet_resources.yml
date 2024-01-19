@@ -1387,7 +1387,7 @@ display:
         - 'config:field.storage.node.field_sub_heading'
   block_2:
     id: block_2
-    display_title: 'Product''s resources Block'
+    display_title: "Product's resources Block"
     display_plugin: block
     position: 1
     display_options:

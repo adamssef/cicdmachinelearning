@@ -1695,7 +1695,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ ''More case studies''|t }}'
+            text: "{{ 'More case studies'|t }}"
             make_link: true
             path: /case-studies
             absolute: false

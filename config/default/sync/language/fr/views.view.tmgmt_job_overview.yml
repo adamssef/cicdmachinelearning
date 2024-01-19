@@ -43,7 +43,7 @@ display:
             label: État
         source_language:
           expose:
-            label: 'Langue d''origine'
+            label: "Langue d'origine"
         translator:
           expose:
             label: Fournisseur
