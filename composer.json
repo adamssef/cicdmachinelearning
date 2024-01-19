@@ -27,7 +27,7 @@
     "drupal/core-composer-scaffold": "^10.2",
     "drupal/core-project-message": "^10.2",
     "drupal/core-recommended": "dev-default",
-    "drupal/csp": "^1.24",
+    "drupal/csp": "^1.30",
     "drupal/ctools": "^4.0",
     "drupal/devel": "^5.1",
     "drupal/duplicate_role": "^1.3",
