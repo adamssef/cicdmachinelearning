@@ -203,8 +203,13 @@
       },
       "drupal/config_split_ignore": {
         "IgnoreFilter class not found": "https://www.drupal.org/files/issues/2024-01-10/ignore-filter-not-found-3413717-3.patch"
+      },
+      "drupal/salesforce": {
+        "Creation of dynamic property time": "https://www.drupal.org/files/issues/2023-10-27/3397134-2.patch"
+      },
+      "drupal/ultimate_cron": {
+        "Creation of dynamic property": "https://www.drupal.org/files/issues/2023-04-03/3351276-4.patch"
       }
-
     },
     "drupal-lenient": {
       "allowed-list": ["drupal/pardot"]
