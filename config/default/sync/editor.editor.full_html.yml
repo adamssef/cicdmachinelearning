@@ -1,12 +1,14 @@
-uuid: d250c666-6e91-4603-a91b-bcc5bd942e78
+uuid: b52831cd-321f-4420-8732-6ee3d4b30003
 langcode: en
-status: true
+status: false
 dependencies:
   config:
-    - filter.format.webform_default
+    - filter.format.full_html
   module:
     - ckeditor
-format: webform_default
+_core:
+  default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
+format: full_html
 editor: ckeditor
 settings:
   toolbar:
@@ -15,16 +17,13 @@ settings:
         -
           name: Formatting
           items:
-            - Format
             - Bold
             - Italic
+            - Strike
             - Superscript
             - Subscript
-        -
-          name: Media
-          items:
-            - SpecialChar
-            - ImceImage
+            - '-'
+            - RemoveFormat
         -
           name: Linking
           items:
@@ -33,21 +32,30 @@ settings:
         -
           name: Lists
           items:
-            - NumberedList
             - BulletedList
+            - NumberedList
         -
-          name: Indentation
+          name: Media
           items:
-            - Outdent
-            - Indent
+            - Blockquote
+            - DrupalImage
+            - Table
+            - HorizontalRule
         -
           name: 'Block Formatting'
           items:
-            - Blockquote
+            - Format
         -
           name: Tools
           items:
+            - ShowBlocks
             - Source
-            - Maximize
   plugins: {  }
-image_upload: {  }
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: 0
+    height: 0
