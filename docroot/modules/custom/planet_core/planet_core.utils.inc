@@ -53,6 +53,7 @@ function planet_core_get_author_articles($authorId, $limit = 3, $offset = 0)
 
   $query = \Drupal::entityQuery('node')
     ->condition('type', 'resources') // Adjust to your content type name.
+    ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
     ->condition('field_author.target_id', $authorId)
     ->condition('status', 1) // 1 represents published nodes.
     ->range($offset, $limit) // Apply offset and limit.
@@ -155,6 +156,7 @@ function planet_core_get_last_published_article() {
   $query = \Drupal::entityQuery('node')
     ->condition('status', 1) // 1 represents published nodes.
     ->condition('type', 'resources') // Adjust to your content type name.
+    ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
     ->condition('field_promoted_resource', 1) // Filter by field_promoted_resource being true.
     ->condition('langcode', $language_code) // Filter by language code.
     ->sort('field_resources_published_time', 'DESC') // Sort by field_resources_published_time in descending order.
@@ -261,6 +263,7 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
     ->condition('type', 'resources')
     ->condition('status', 1)
     ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
+    ->condition('field_hide_from_components', NULL, 'IS NULL') // Include only nodes where field_hide_from_components is empty    // Exclude nodes where hide is true
     ->condition('langcode', $language_code) // Filter by language code.
     ->range($offset, $limit)
     ->sort('created', 'DESC')
@@ -268,6 +271,7 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
 
   $total_count = \Drupal::entityQuery('node')
     ->condition('type', 'resources')
+    ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
     ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
     ->condition('langcode', $language_code) // Filter by language code.
     ->condition('status', 1)
@@ -504,6 +508,7 @@ function planet_core_get_related_articles($tag_id, $exclude_node_id) {
 
   $query = \Drupal::entityQuery('node')
     ->condition('type', 'resources') // Adjust to your content type name.
+    ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
     ->condition('langcode', $language_code) // Filter by language code.
     ->condition('field_resources_tags.target_id', $tag_id)
     ->condition('status', 1)
@@ -520,6 +525,7 @@ function planet_core_get_related_articles($tag_id, $exclude_node_id) {
     ->condition('type', 'resources') // Adjust to your content type name.
       ->condition('langcode', $language_code) // Filter by language code.
       ->condition('status', 1)
+      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
       ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
       ->sort('created', 'DESC')
       ->range(0, 3)
