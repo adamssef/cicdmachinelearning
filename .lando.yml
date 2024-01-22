@@ -56,7 +56,7 @@ services:
       - apt-get update && apt-get install -y imagemagick
       - docker-php-ext-install sysvsem && docker-php-ext-enable sysvsem
       # Installs nodejs for running Jest unit tests
-      - curl -sL https://deb.nodesource.com/setup_16.x | bash -
+      - curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
       - apt-get install -y nodejs
     build:
       - "composer install"
