@@ -18,21 +18,21 @@ image_browser:
     type: medialib_imagebrowser
     dx8_imce_stream_wrapper: public
     cohesion_media_lib_types:
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '0'
   content:
     type: medialib_imagebrowser
     dx8_imce_stream_wrapper: public
     cohesion_media_lib_types:
       - image
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '0'

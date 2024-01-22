@@ -6,6 +6,9 @@ id: stg
 label: stg
 description: ''
 weight: 0
+stackable: false
+no_patching: false
+storage: folder
 folder: ../config/default/environment/stg
 module:
   acquia_connector: 0
@@ -13,8 +16,6 @@ module:
   shield: 0
   syslog: 0
 theme: {  }
-blacklist: {  }
-graylist:
+complete_list: {  }
+partial_list:
   - environment_indicator.indicator
-graylist_dependents: true
-graylist_skip_equal: true

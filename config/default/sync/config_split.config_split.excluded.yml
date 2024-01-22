@@ -6,13 +6,14 @@ id: excluded
 label: Excluded
 description: ''
 weight: 0
+stackable: false
+no_patching: false
+storage: folder
 folder: ../config/default/excluded
 module: {  }
 theme: {  }
-blacklist:
+complete_list:
   - content_moderation_notifications.content_moderation_notification.content_was_unpublished
   - content_moderation_notifications.content_moderation_notification.published
   - content_moderation_notifications.content_moderation_notification.rejected
-graylist: {  }
-graylist_dependents: true
-graylist_skip_equal: true
+partial_list: {  }

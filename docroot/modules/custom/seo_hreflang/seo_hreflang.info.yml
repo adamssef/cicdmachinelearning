@@ -1,7 +1,7 @@
 name: 'SEO hreflang'
 description: 'seo hreflang module to add the hreflang attribute for each page.'
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 type: module
 package: Multilingual
 configure: seo_hreflang.hreflang

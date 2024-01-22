@@ -3,6 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - cohesion_elements.cohesion_component_category.cpt_cat_general_components
+    - cohesion_elements.cohesion_component_category.cpt_cat_layout_components
+    - cohesion_elements.cohesion_component_category.cpt_cat_planet_components
+    - cohesion_elements.cohesion_helper_category.hlp_cat_uncategorized
     - filter.format.cohesion
     - media.type.document
     - media.type.image
@@ -17,7 +21,9 @@ dependencies:
     - comment
     - content_translation
     - contextual
+    - file
     - filter
+    - help
     - media
     - media_bulk_upload
     - menu_link_content
@@ -52,6 +58,7 @@ permissions:
   - 'access form fields fields group'
   - 'access form help fields group'
   - 'access form layout fields group'
+  - 'access help pages'
   - 'access helpers'
   - 'access hide no data'
   - 'access hlp_cat_uncategorized cohesion_helper_category group'
@@ -84,6 +91,7 @@ permissions:
   - 'create video media'
   - 'delete content translations'
   - 'delete own document media'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own locations_contacts content'
   - 'delete own page content'

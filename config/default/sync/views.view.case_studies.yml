@@ -412,7 +412,6 @@ display:
           default_argument_options:
             index: 0
             use_alias: true
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -1165,7 +1164,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -1695,7 +1693,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ ''More case studies''|t }}'
+            text: "{{ 'More case studies'|t }}"
             make_link: true
             path: /case-studies
             absolute: false

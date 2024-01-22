@@ -2,4 +2,4 @@ name: Planet Config
 description: "Provides configuration for Planet."
 type: module
 package: planet
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10

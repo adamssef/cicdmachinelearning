@@ -41,7 +41,7 @@ display:
             label: État
         source_language:
           expose:
-            label: 'Langue d''origine'
+            label: "Langue d'origine"
         job_type:
           group_info:
             label: 'Type de processus'

@@ -60,4 +60,4 @@ display:
       title: Rediriger
       empty:
         area_text_custom:
-          content: 'Il n''y a pas encore de redirection.'
+          content: "Il n'y a pas encore de redirection."

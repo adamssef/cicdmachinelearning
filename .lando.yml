@@ -1,11 +1,11 @@
 name: planet
 
 # Start with the default drupal recipe
-recipe: drupal9
+recipe: drupal10
 
 # Configure the drupal recipe
 config:
-  php: '8.1'
+  php: '8.2'
   composer_version: '2.2.9'
   via: apache
   webroot: docroot
@@ -35,6 +35,7 @@ services:
       # Creates the databases as root since the app user does not have those privileges
       - mysql -uroot -e "CREATE DATABASE IF NOT EXISTS drupal; GRANT ALL PRIVILEGES ON drupal.* TO 'drupal'@'%' IDENTIFIED by 'drupal';"
   appserver:
+    xdebug: 'debug'
     scanner: false
     overrides:
       environment:
@@ -46,7 +47,7 @@ services:
         # XDEBUG_MODE: "coverage,debug,develop,profile"
         XDEBUG_MODE: "debug"
         SIMPLESAMLPHP_CONFIG_DIR: "/app/simplesamlphp/config"
-        XDEBUG_CONFIG: discover_client_host=0
+        XDEBUG_CONFIG: discover_client_host=1
         SIMPLETEST_DB: mysql://drupal:drupal@database/drupal#test
     build_as_root:
       # add a2enmod headers to enable mod_headers

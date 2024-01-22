@@ -4,9 +4,14 @@ namespace Drupal\planet_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\BlockPluginInterface;
+use Drupal\Core\File\FileUrlGeneratorInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\file\FileInterface;
+use Drupal\media\MediaInterface;
 use Drupal\node\Entity\Node;
-use Drupal\file\Entity\File; 
+use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides an 'Author Block' block.
@@ -18,7 +23,43 @@ use Drupal\media\Entity\Media;
  * )
  */
 
-class AuthorBlock extends BlockBase implements BlockPluginInterface {
+class AuthorBlock extends BlockBase implements BlockPluginInterface, ContainerFactoryPluginInterface {
+
+  /**
+   * @var \Drupal\Core\File\FileUrlGeneratorInterface
+   */
+  protected $fileUrlGenerator;
+
+  /**
+   * Creates a HelpBlock instance.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\File\FileUrlGeneratorInterface $file_generator
+   *   File generator.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, FileUrlGeneratorInterface $file_generator) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->fileUrlGenerator = $file_generator;
+  }
+
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('file_url_generator'),
+    );
+  }
+
 
     /**
      * {@inheritdoc}
@@ -42,7 +83,7 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
             $media = Media::load($mid);
             $fid = $media->field_media_image->target_id;
             $file = File::load($fid);
-            $url = file_create_url($file->getFileUri());
+            $url = $this->fileUrlGenerator->generateAbsoluteString($file->getFileUri());
 
             // Build the block content for the existing author.
             $build = [
@@ -63,20 +104,20 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
           }
         } else {
           // If author_id does not exist, use legacy author information.
-       
+
 
           $legacy_author_name = $node->get('field_resources_author')->value;
 
           $profile_photo_media = $node->get('field_resources_author_photo')->entity;
 
-          if ($profile_photo_media instanceof \Drupal\media\MediaInterface) {
+          if ($profile_photo_media instanceof MediaInterface) {
             $profile_photo_file = $profile_photo_media->get('field_media_image')->entity;
-            
-            if ($profile_photo_file instanceof \Drupal\file\FileInterface) {
-              $profile_photo_url = file_create_url($profile_photo_file->getFileUri());
+
+            if ($profile_photo_file instanceof FileInterface) {
+              $profile_photo_url = $this->fileUrlGenerator->generateAbsoluteString($profile_photo_file->getFileUri());
             }
           }
-        
+
           $build = [
             '#markup' => $this->t('<div class="author-@author_class linked-author-page"><div>
                 <img src="@photo_url" alt="@author_name">
@@ -91,10 +132,10 @@ class AuthorBlock extends BlockBase implements BlockPluginInterface {
           ];
 
           return $build;
-       
+
         }
       }
-  
+
       // If the block doesn't apply to the current node, return empty content.
       return [
         '#markup' => ''
