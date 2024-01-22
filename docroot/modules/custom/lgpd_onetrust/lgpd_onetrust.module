@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * @file
+ * LGPD onetrust module.
+ */
+
+/**
+ * Defining constants for REGEX and Onetrust Domain.
+ */
+const LGPD_ONETRUST_UUID_REGEX = '/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(-test){0,1}$/i';
+const LGPD_ONETRUST_LIVE_DOMAIN = '//cdn.cookielaw.org/consent/';
+const LGPD_ONETRUST_STAGE_DOMAIN = 'https://optanon.blob.core.windows.net/consent/';
+const LGPD_ONETRUST_DOMAIN_V2 = 'https://cdn.cookielaw.org/consent/';
+const LGPD_ONETRUST_DOMAIN_V22 = 'https://cdn.cookielaw.org/';
+
+/**
+ * Hook__preprocess_page to load the library.
+ */
+function lgpd_onetrust_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'lgpd_onetrust/lgpd-onetrust-api';
+}
+
+/**
+ * Hook__page_attachments to load inline JS.
+ */
+function lgpd_onetrust_page_attachments(array &$attachments) {
+  $languages = \Drupal::languageManager()->getLanguages();
+  $lgpd_config = \Drupal::config('lgpd_onetrust.settings');
+  $current_language_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  if (count($languages) == 1 && !is_null($lgpd_config->get('lgpd_onetrust_compliance_uuid'))) {
+    $api_key = $lgpd_config->get('lgpd_onetrust_compliance_uuid');
+  }
+  else {
+    $api_key = $lgpd_config->get('lgpd_onetrust_compliance_uuid_' . $current_language_id);
+  }
+  $lgpd_onetrust_version = $lgpd_config->get('lgpd_onetrust_version');
+  $lgpd_autoblock_js = $lgpd_config->get('lgpd_autoblock_js');
+  if (!empty($api_key)) {
+
+    $ret = preg_match(LGPD_ONETRUST_UUID_REGEX, $api_key, $matches);
+    $domain = (isset($matches[1]) && $matches[1] == '-test') ? LGPD_ONETRUST_STAGE_DOMAIN : LGPD_ONETRUST_LIVE_DOMAIN;
+    if ($lgpd_onetrust_version == 2) {
+      $lgpd_api_url_v2 = LGPD_ONETRUST_DOMAIN_V2 . $api_key . '/OtAutoBlock.js';
+      $lgpd_api_url_v22 = LGPD_ONETRUST_DOMAIN_V22 . 'scripttemplates/otSDKStub.js';
+      if ($lgpd_autoblock_js == 1) {
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#type' => 'html_tag',
+            '#tag' => 'script',
+            '#value' => '',
+            '#attributes' => ['type' => 'text/javascript', 'charset' => 'UTF-8', 'src' => $lgpd_api_url_v2],
+          ],
+          'lgpd_onetrust_autoblock_inline_cdn',
+        ];
+      }
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#type' => 'html_tag',
+          '#tag' => 'script',
+          '#value' => '',
+          '#attributes' => ['type' => 'text/javascript', 'charset' => 'UTF-8', 'src' => $lgpd_api_url_v22, 'data-document-language' => 'true', 'data-domain-script' => $api_key],
+        ],
+        'lgpd_onetrust_inline_cdn',
+      ];
+    }
+    else {
+      $cdn_url = $domain . $api_key . '.js';
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#type' => 'html_tag',
+          '#tag' => 'script',
+          '#value' => '',
+          '#attributes' => ['src' => $cdn_url],
+        ],
+        'lgpd_onetrust_inline_cdn',
+      ];
+    }  
+  }
+}

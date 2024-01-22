@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the lgpd_onetrust_cookie_blocking module.
+ */
+
+/**
+ * Move old configuration settings into the new configuration name.
+ * The old file was not compliant with Drupal naming conventions.
+ */
+function lgpd_onetrust_cokkie_blocking_update_8102() {
+  $old_config = \Drupal::configFactory()->getEditable('cookieblocking.settings');
+  $new_config = \Drupal::configFactory()->getEditable('lgpd_onetrust_cookie_blocking.settings');
+
+  $old_config_data = $old_config->get();
+  if (!empty($old_config_data)) {
+    // Save old config into the new configuration file.
+    $new_config->setData($old_config_data);
+    $new_config->save();
+  }
+
+  // Delete old config file.
+  $old_config->delete();
+
+}
