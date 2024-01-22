@@ -1,0 +1,27 @@
+uuid: addfe009-581d-4896-9448-e626712ca9ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.site_studio_ck5
+  module:
+    - ckeditor5
+format: site_studio_ck5
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    media_media:
+      allow_view_mode_override: false
+image_upload: {  }

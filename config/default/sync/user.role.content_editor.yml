@@ -7,7 +7,7 @@ dependencies:
     - cohesion_elements.cohesion_component_category.cpt_cat_layout_components
     - cohesion_elements.cohesion_component_category.cpt_cat_planet_components
     - cohesion_elements.cohesion_helper_category.hlp_cat_uncategorized
-    - filter.format.cohesion
+    - filter.format.site_studio_ck5
     - media.type.document
     - media.type.image
     - media.type.pdf
@@ -121,7 +121,7 @@ permissions:
   - 'translate resources node'
   - 'update content translations'
   - 'use custom component builder'
-  - 'use text format cohesion'
+  - 'use text format site_studio_ck5'
   - 'view all revisions'
   - 'view locations_contacts revisions'
   - 'view own unpublished content'
