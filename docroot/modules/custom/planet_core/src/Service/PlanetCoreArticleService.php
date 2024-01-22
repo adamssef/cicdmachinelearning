@@ -118,6 +118,7 @@ class PlanetCoreArticleService {
 
     $total_nodes = $node_storage->getQuery()
       ->condition('type', 'resources') // Adjust to your content type name.
+      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
       ->condition('field_author.target_id', $authorId)
       ->accessCheck(FALSE)
       ->condition('status', 1);
@@ -127,6 +128,7 @@ class PlanetCoreArticleService {
 
     $query = $node_storage->getQuery()
       ->condition('type', 'resources') // Adjust to your content type name.
+      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
       ->condition('field_author.target_id', $authorId)
       ->condition('status', 1) // 1 represents published nodes.
       ->range($offset, $limit) // Apply offset and limit.
@@ -336,8 +338,10 @@ class PlanetCoreArticleService {
 
     $query = $node_storage_query
       ->condition('type', 'resources')
+      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
       ->condition('status', 1)
       ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
+      ->condition('field_hide_from_components', NULL, 'IS NULL') // Include only nodes where field_hide_from_components is empty    // Exclude nodes where hide is true
       ->condition('langcode', $language_code) // Filter by language code.
       ->range($offset, $limit)
       ->sort('created', 'DESC')
@@ -614,6 +618,7 @@ class PlanetCoreArticleService {
 
     $query = $node_storage_query
       ->condition('type', 'resources') // Adjust to your content type name.
+      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
       ->condition('langcode', $language_code) // Filter by language code.
       ->condition('field_resources_tags.target_id', $tag_id)
       ->condition('status', 1)
@@ -631,6 +636,7 @@ class PlanetCoreArticleService {
         ->condition('type', 'resources') // Adjust to your content type name.
         ->condition('langcode', $language_code) // Filter by language code.
         ->condition('status', 1)
+        ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
         ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
         ->sort('created', 'DESC')
         ->range(0, 3)
