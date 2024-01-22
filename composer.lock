@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5eb8a7fa6b49ab0c00792441030fd54",
+    "content-hash": "44a85c45a2da998bbcd6ec6bf36b4d9d",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -7918,16 +7918,6 @@
                 "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.16.0"
             },
             "time": "2023-03-20T10:51:12+00:00"
-        },
-        {
-            "name": "enyo/dropzone",
-            "version": "4.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/enyo/dropzone",
-                "reference": "origin/master"
-            },
-            "type": "drupal-library"
         },
         {
             "name": "erusev/parsedown",
