@@ -41,7 +41,6 @@ module:
   datetime: 0
   dblog: 0
   devel_generate: 0
-  dropzonejs: 0
   duplicate_role: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
@@ -68,7 +67,6 @@ module:
   login_security: 0
   media: 0
   media_bulk_upload: 0
-  media_bulk_upload_dropzonejs: 0
   media_entity_file_replace: 0
   media_entity_lottie: 0
   media_library: 0
