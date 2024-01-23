@@ -7,4 +7,5 @@ label: 'Content: Planet FAQ'
 tags:
   robots: 'noindex, nofollow'
   schema_qa_page_id: '[node:url]'
+  schema_qa_page_main_entity: 'a:6:{s:5:"@type";s:8:"Question";s:4:"name";s:8:"Why not?";s:4:"text";s:146:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque suscipit quis lorem in volutpat. Integer accumsan metus vitae ultrices tincidunt.";s:11:"dateCreated";s:14:"[node:created]";s:14:"acceptedAnswer";a:3:{s:5:"@type";s:6:"Answer";s:4:"text";s:22:"Because its worth it!?";s:3:"url";s:10:"[node:url]";}s:15:"suggestedAnswer";a:3:{s:5:"@type";s:6:"Answer";s:3:"url";s:11:"[node:body]";s:6:"author";a:2:{s:5:"@type";s:16:"FinancialService";s:4:"name";s:13:"[node:author]";}}}'
   schema_qa_page_type: FAQPage
