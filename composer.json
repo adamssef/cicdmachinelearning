@@ -17,7 +17,6 @@
     "drupal/asset_injector": "^2.19",
     "drupal/autologout": "^1.4",
     "drupal/chatgpt_plugin": "^2.1",
-    "drupal/ckeditor": "^1.0",
     "drupal/clientside_validation": "^4.0",
     "drupal/config_ignore": "^3.2",
     "drupal/config_split": "^2.0",
