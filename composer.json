@@ -64,6 +64,7 @@
     "drupal/redirect": "^1.9",
     "drupal/robotstxt": "^1.5",
     "drupal/salesforce": "^5.0",
+    "drupal/schema_metatag": "^3.0",
     "drupal/search_api_solr": "^4.3",
     "drupal/sfweb2lead_webform": "^6.0",
     "drupal/shield": "^1.7",
