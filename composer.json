@@ -182,7 +182,8 @@
         "Deprecated function: mb_strtolower(): Passing null to parameter #1 ($string)": "patches/core_condition.patch",
         "Invalid translation language (it) specified": "patches/core_contentedit.patch",
         "https://www.drupal.org/project/drupal/issues/3006897": "https://www.drupal.org/files/issues/2022-11-15/3006897-17.patch",
-        "Fix invalid alias": "patches/translations_invalid_path.patch"
+        "Fix invalid alias": "patches/translations_invalid_path.patch",
+        "'Output is empty' when running drush cohesion:rebuild": "https://www.drupal.org/files/issues/2023-09-13/3386915-6.patch"
       },
       "drupal/config_ignore": {
         "Support for export filtering via Drush": "https://www.drupal.org/files/issues/2021-01-04/config_ignore_2857247-61.patch"
