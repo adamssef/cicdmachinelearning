@@ -41,4 +41,4 @@ jobs:
       - name: add, commit and push
         run: cd planetpayment && git add config docroot vendor patches composer.json composer.lock hooks site_studio_components && git commit -m "dev deploy" && GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push
       - name: drush cr, drush cim, drush cr
-        run: vendor/drush/drush/drush cr && vendor/drush/drush/drush cim && vendor/drush/drush/drush cr
+        run: cd planetpayment && vendor/drush/drush/drush cr && vendor/drush/drush/drush cim && vendor/drush/drush/drush cr
