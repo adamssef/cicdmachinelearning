@@ -23,6 +23,7 @@ settings:
   webform_id: sign_up
   default_data: ''
   redirect: false
+  lazy: false
 visibility:
   cohesion_master_template:
     id: cohesion_master_template

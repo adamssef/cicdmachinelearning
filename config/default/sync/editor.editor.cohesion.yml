@@ -1,62 +1,50 @@
-uuid: 6bc48066-5be8-495a-b664-1cfbfdd302c8
+uuid: 09541207-06a3-4520-83cf-bce9ad1400ac
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.cohesion
   module:
-    - ckeditor
-_core:
-  default_config_hash: j5UoqyZc3VqPSDJ1-FrOoQa7nkOM9F3bV-4CMQY-l3U
+    - ckeditor5
 format: cohesion
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Underline
-            - RemoveFormat
-        -
-          name: Layout
-          items:
-            - JustifyLeft
-            - JustifyCenter
-            - JustifyRight
-            - JustifyBlock
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
-          name: Media
-          items:
-            - DrupalMediaLibrary
-            - Blockquote
-        -
-          name: Tools
-          items:
-            - Source
-            - Maximize
-        -
-          name: Styles
-          items:
-            - DX8InlineStyles
-        -
-          name: Table
-          items:
-            - Table
-  plugins: {  }
+    items:
+      - bold
+      - italic
+      - underline
+      - removeFormat
+      - '|'
+      - alignment
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - drupalMedia
+      - blockQuote
+      - '|'
+      - sourceEditing
+      - '|'
+      - insertTable
+  plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_list:
+      properties:
+        reversed: true
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public

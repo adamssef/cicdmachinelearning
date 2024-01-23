@@ -18,7 +18,6 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - cohesion_elements
-    - content_moderation
     - media_library
     - metatag
     - path
@@ -125,12 +124,6 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
-  moderation_state:
-    type: moderation_state_default
-    weight: 19
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   path:
     type: path
     weight: 17
@@ -191,4 +184,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  moderation_state: true

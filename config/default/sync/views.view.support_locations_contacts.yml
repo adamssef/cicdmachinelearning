@@ -89,8 +89,8 @@ display:
           wrapper: div
           legend: ''
           classes: coh-view-content-item
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         title:
           id: title
           table: node_field_data
@@ -274,8 +274,8 @@ display:
           wrapper: div
           legend: ''
           classes: coh-item-contacts
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_phone:
           id: field_phone
           table: node__field_phone
@@ -596,7 +596,6 @@ display:
             query_param: tid
             fallback: all
             multiple: and
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -824,8 +823,8 @@ display:
           wrapper: div
           legend: ''
           classes: coh-view-content
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         title:
           id: title
           table: node_field_data

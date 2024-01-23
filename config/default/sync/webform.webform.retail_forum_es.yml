@@ -13,7 +13,7 @@ archive: false
 id: retail_forum_es
 title: Retail-forum-es
 description: ''
-category: ''
+categories: {  }
 elements: |-
   layout:
     '#type': webform_flexbox
