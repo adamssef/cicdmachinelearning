@@ -134,6 +134,20 @@ function planet_core_get_author_articles($authorId, $limit = 3, $offset = 0)
   ];
 }
 
+function planet_core_get_toogle_links() {
+
+  /** These ids are for production only */
+  $blog_url = planet_core_get_aliases_in_other_languages(1576);
+  $case_studies_url = planet_core_get_aliases_in_other_languages(1366);
+  $ebooks_url = planet_core_get_aliases_in_other_languages(2136);
+
+  return array(
+    "case_studies" => $case_studies_url,
+    "ebooks" => $ebooks_url,
+    "blog" => $blog_url
+  );
+}
+
 function planet_core_get_last_published_article() {
   // Get the current page language code.
   $language_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -262,7 +276,7 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
     ->condition('langcode', $language_code) // Filter by language code.
     ->condition('status', 1)
     ->execute();
-  
+
   $total_count = array_values($total_count);
 
   $resource_nids = array_values($query);
@@ -371,7 +385,7 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
 
 
 function planet_core_get_aliases_in_other_languages($node_id, $langcode = false) {
-  
+
   $alias_manager = \Drupal::service('path_alias.manager');
   $language_manager = \Drupal::languageManager();
 
@@ -388,7 +402,7 @@ function planet_core_get_aliases_in_other_languages($node_id, $langcode = false)
 function planet_core_single_article($node_id) {
   global $base_url;
 
-  $blog_id = 2207;
+  $blog_id = 1576;
   // Get the current page language code.
   $language_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
@@ -462,7 +476,7 @@ function planet_core_single_article($node_id) {
   $related_tag = $article_tags ? $article_tags[0]['id'] : false;
 
   $related_articles = planet_core_get_related_articles($related_tag, $node->id());
-    
+
   $article = array(
     "title" => $title,
     'url' => $url,
@@ -522,7 +536,7 @@ function planet_core_get_related_articles($tag_id, $exclude_node_id) {
 
   foreach ($related_article_ids as $related_article_id) {
     $node = Node::load($related_article_id);
-    
+
     // Load the node in the current language.
     $node = $node->getTranslation($language_code);
 

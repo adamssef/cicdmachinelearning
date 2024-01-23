@@ -3,12 +3,12 @@ display:
     display_title: Predefinito
     display_options:
       fields:
-        filename:
-          label: Nome
-        filesize:
-          label: Dimensione
-        status:
-          label: Stato
+        type:
+          label: Tipo
+        name:
+          label: Utente
+        link:
+          label: Operazioni
       pager:
         options:
           expose:
@@ -22,17 +22,8 @@ display:
           exposed_sorts_label: 'Ordina per'
           sort_desc_label: Disc
       filters:
-        status:
+        type:
           expose:
-            label: Stato
-  page_2:
-    display_options:
-      fields:
-        entity_label:
-          label: Entità
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Voci per pagina'
-            items_per_page_options_all_label: '- Tutto -'
-            offset_label: Scostamento
+            label: Tipo
+  page:
+    display_title: Pagina

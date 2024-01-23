@@ -140,8 +140,7 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
  *
  * Creates region/country dependent filter.
  */
-function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void
-{
+function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
   if ($form['#id'] === 'views-exposed-form-companies-registered-companies') {
     unset($form['region']['#options']['All']);
 
@@ -166,8 +165,7 @@ function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void
 /**
  * Gets countries associated with the region.
  */
-function _planet_core_get_associative_countries_with_region(string $regionId): array
-{
+function _planet_core_get_associative_countries_with_region(string $regionId): array {
   $countries = [];
   $countries['All'] = 'All';
   $vid = 'countries';
@@ -190,8 +188,7 @@ function _planet_core_get_associative_countries_with_region(string $regionId): a
 /**
  * Implements hook_node_access().
  */
-function planet_core_node_access(NodeInterface $node, $op, AccountInterface $account)
-{
+function planet_core_node_access(NodeInterface $node, $op, AccountInterface $account) {
   if ($account->isAnonymous() && $node->gettype() == 'webform') {
     return AccessResult::forbidden()->cachePerPermissions();
   }
@@ -264,8 +261,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
 /**
  * Implements hook_theme().
  */
-function planet_core_theme(): array
-{
+function planet_core_theme(): array {
   return [
     'views_view_fields__case_studies__featured_slider' => [
       'template' => 'views-view-fields--case-studies--featured-slider',
@@ -303,16 +299,14 @@ function planet_core_theme(): array
 /**
  * Implements hook_entity_insert().
  */
-function planet_core_entity_insert(EntityInterface $entity): void
-{
+function planet_core_entity_insert(EntityInterface $entity): void {
   _planet_core_update_untranslated_path($entity, 'insert');
 }
 
 /**
  * Implements hook_entity_update().
  */
-function planet_core_entity_update(EntityInterface $entity): void
-{
+function planet_core_entity_update(EntityInterface $entity): void {
   _planet_core_update_untranslated_path($entity, 'update');
 }
 
@@ -324,8 +318,7 @@ function planet_core_entity_update(EntityInterface $entity): void
  * @param string $action
  *   The action performed in the entity.
  */
-function _planet_core_update_untranslated_path(EntityInterface $entity, string $action): void
-{
+function _planet_core_update_untranslated_path(EntityInterface $entity, string $action): void {
   $pathautoGenerator = \Drupal::service('pathauto.generator');
 
   // Check if entity has pathauto enabled and is translatable.
@@ -347,8 +340,7 @@ function _planet_core_update_untranslated_path(EntityInterface $entity, string $
  * Fix "Non-translatable fields can only be changed when updating the original
  * language." issue.
  */
-function planet_core_entity_type_alter(array &$entity_types)
-{
+function planet_core_entity_type_alter(array &$entity_types) {
   foreach ($entity_types as $entity_type) {
     $constraints = $entity_type->getConstraints();
     unset($constraints['EntityUntranslatableFields']);
@@ -359,8 +351,7 @@ function planet_core_entity_type_alter(array &$entity_types)
 /**
  * Implements hook_cloned_node_alter().
  */
-function planet_core_cloned_node_alter(NodeInterface &$node): void
-{
+function planet_core_cloned_node_alter(NodeInterface &$node): void {
   $configName = 'exclude.node.' . $node->getType();
   $excludeFields = \Drupal::config('quick_node_clone.settings')->get($configName);
   $excludeFields = $excludeFields ?: [];
@@ -390,7 +381,7 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void
 
 /**
  * Assign js files and send data
- * 
+ *
  */
 function planet_core_preprocess_node(array &$variables)
 {
@@ -403,7 +394,7 @@ function planet_core_preprocess_node(array &$variables)
     $variables['#attached']['library'][] = 'planet_core/author-page';
   }
 
- 
+
   $config = \Drupal::config('planet_core.settings');
   $is_new_blog_enabled = $config->get('enable_new_blog');
 
@@ -411,10 +402,11 @@ function planet_core_preprocess_node(array &$variables)
     $variables['article'] = planet_core_single_article($node->id());
     $variables['#attached']['library'][] = 'planet_core/single-article-page';
   }
-  
+
   if ($is_new_blog_enabled) {
     if ($alias == "/blog") {
       $variables['featured_article'] = planet_core_get_last_published_article();
+      $variables['useful_links'] = planet_core_get_toogle_links();
       $variables['#attached']['library'][] = 'planet_core/blog-page';
     }
   }

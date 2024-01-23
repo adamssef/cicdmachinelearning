@@ -14,8 +14,6 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
       fields:
-        id:
-          label: ID
         drupal_entity__target_id:
           label: Entidad
         salesforce_mapping:

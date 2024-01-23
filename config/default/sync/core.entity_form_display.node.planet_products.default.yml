@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.planet_products.field_select_resources
     - node.type.planet_products
   module:
+    - content_moderation
     - path
     - text
 id: node.planet_products.default
@@ -71,12 +72,10 @@ content:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
-    type: string_textfield
-    weight: 26
+    type: moderation_state_default
+    weight: 9
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -117,11 +116,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  translation:
-    weight: 10
-    region: content
-    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
