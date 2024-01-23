@@ -37,7 +37,6 @@ module:
   context_ui: 0
   contextual: 0
   csp: 0
-  csp_extras: 0
   ctools: 0
   datetime: 0
   dblog: 0
@@ -120,6 +119,7 @@ module:
   site_settings: 0
   site_settings_type_permissions: 0
   site_studio_webform: 0
+  sitestudio_claro: 0
   sitestudio_page_builder: 0
   smtp: 0
   svg_image_field: 0

@@ -1,0 +1,8 @@
+# In lgpd_onetrust.routing.yml file.
+lgpd_onetrust.settings:
+  path: '/admin/config/system/lgpd-onetrust'
+  defaults:
+    _title: 'LGPD compliance'
+    _form: '\Drupal\lgpd_onetrust\Form\LGPDOneTrustForm'
+  requirements:
+    _permission: 'One Trust Access'

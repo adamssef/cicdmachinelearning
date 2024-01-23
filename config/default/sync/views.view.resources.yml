@@ -847,8 +847,8 @@ display:
           wrapper: div
           legend: ''
           classes: coh-author-information
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_resources_author_photo:
           id: field_resources_author_photo
           table: node__field_resources_author_photo
@@ -967,8 +967,8 @@ display:
           wrapper: div
           legend: ''
           classes: coh-author-name-date
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_resources_author:
           id: field_resources_author
           table: node__field_resources_author
@@ -1257,8 +1257,8 @@ display:
           wrapper: div
           legend: ''
           classes: 'resources__card--top  case-studies__card--top'
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_resources_background_image:
           id: field_resources_background_image
           table: node__field_resources_background_image
@@ -1384,8 +1384,8 @@ display:
           wrapper: div
           legend: ''
           classes: 'resources__card--bottom  case-studies__card--bottom'
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_pre_heading_3:
           id: field_pre_heading_3
           table: node__field_pre_heading_3
@@ -2006,8 +2006,8 @@ display:
           wrapper: div
           legend: ''
           classes: publications__card--top
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_resources_background_image:
           id: field_resources_background_image
           table: node__field_resources_background_image
@@ -2128,8 +2128,8 @@ display:
           wrapper: div
           legend: ''
           classes: publications__card--bottom
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_resources_title:
           id: field_resources_title
           table: node__field_resources_title

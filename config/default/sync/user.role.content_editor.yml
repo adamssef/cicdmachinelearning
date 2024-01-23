@@ -25,7 +25,6 @@ dependencies:
     - filter
     - help
     - media
-    - media_bulk_upload
     - menu_link_content
     - node
     - path
@@ -122,7 +121,6 @@ permissions:
   - 'translate resources node'
   - 'update content translations'
   - 'use custom component builder'
-  - 'use pdf bulk upload form'
   - 'use text format cohesion'
   - 'view all revisions'
   - 'view locations_contacts revisions'
