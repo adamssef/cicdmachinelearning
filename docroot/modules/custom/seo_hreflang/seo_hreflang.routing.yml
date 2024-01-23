@@ -1,7 +1,0 @@
-seo_hreflang.hreflang:
-  path: '/admin/config/regional/seo-hreflang'
-  defaults:
-    _title: 'SEO HrefLang Settings'
-    _form: '\Drupal\seo_hreflang\Form\SeoHrefLangConfigForm'
-  requirements:
-    _permission: 'administer site configuration'
