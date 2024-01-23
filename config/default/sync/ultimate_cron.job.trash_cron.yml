@@ -1,14 +1,14 @@
-uuid: 43afb55d-acb0-4150-b792-113fa92cd36d
+uuid: 8e30c218-0344-44f5-b4cf-5cc7606cbf09
 langcode: en
 status: true
 dependencies:
   module:
-    - simple_sitemap
+    - trash
 title: 'Default cron handler'
-id: simple_sitemap_cron
+id: trash_cron
 weight: 0
-module: simple_sitemap
-callback: simple_sitemap_cron
+module: trash
+callback: trash_cron
 scheduler:
   id: simple
 launcher:
