@@ -1,0 +1,8 @@
+# In lgpd_onetrust_cookie_blocking.routing.yml file.
+lgpd_onetrust_cookie_blocking.settings:
+  path: '/admin/config/system/lgpd-onetrust/cookie-blocking'
+  defaults:
+    _title: 'Cookie Blocking'
+    _form: '\Drupal\lgpd_onetrust_cookie_blocking\Form\LGPDOneTrustCookieBlocking'
+  requirements:
+    _permission: 'One Trust Access'

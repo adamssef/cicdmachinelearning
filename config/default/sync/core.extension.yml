@@ -14,6 +14,7 @@ module:
   block_content: 0
   breakpoint: 0
   captcha: 0
+  ckeditor5: 0
   clientside_validation: 0
   clientside_validation_jquery: 0
   cohesion: 0
@@ -110,7 +111,6 @@ module:
   salesforce_webform: 0
   search_api: 0
   search_api_solr: 0
-  seo_hreflang: 0
   serialization: 0
   sfweb2lead_webform: 0
   shield: 0

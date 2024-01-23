@@ -653,8 +653,8 @@ display:
           wrapper: div
           legend: ''
           classes: case-studies__card--top
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_main_image_media:
           id: field_main_image_media
           table: node__field_main_image_media
@@ -839,8 +839,8 @@ display:
           wrapper: div
           legend: ''
           classes: case-studies__card--bottom
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_pre_heading:
           id: field_pre_heading
           table: node__field_pre_heading
@@ -1626,8 +1626,8 @@ display:
           wrapper: div
           legend: ''
           classes: coh-button-items
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         view_node:
           id: view_node
           table: node
@@ -2482,8 +2482,8 @@ display:
           wrapper: div
           legend: ''
           classes: case-studies__card--top
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_main_image_media:
           id: field_main_image_media
           table: node__field_main_image_media
@@ -2668,8 +2668,8 @@ display:
           wrapper: div
           legend: ''
           classes: case-studies__card--bottom
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_pre_heading:
           id: field_pre_heading
           table: node__field_pre_heading

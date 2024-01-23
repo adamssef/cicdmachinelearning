@@ -1,0 +1,5 @@
+# In lgpd_onetrust.permissions.yml file.
+One Trust Access:
+  title: 'LGPD Onetrust'
+  description: 'A custom permission for LGPD Onetrust'
+  restrict access: TRUE
