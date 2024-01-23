@@ -118,7 +118,7 @@ class PlanetCoreArticleService {
 
     $total_nodes = $node_storage->getQuery()
       ->condition('type', 'resources') // Adjust to your content type name.
-      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
+      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true.
       ->condition('field_author.target_id', $authorId)
       ->accessCheck(FALSE)
       ->condition('status', 1);
