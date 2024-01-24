@@ -18,7 +18,6 @@
     "drupal/autologout": "^1.4",
     "drupal/chatgpt_plugin": "^2.1",
     "drupal/clientside_validation": "^4.0",
-    "drupal/config_filter": "^2.6",
     "drupal/config_ignore": "^3.2",
     "drupal/config_split": "^2.0",
     "drupal/content_lock": "^2.3",
@@ -177,7 +176,8 @@
         "Deprecated function: mb_strtolower(): Passing null to parameter #1 ($string)": "patches/core_condition.patch",
         "Invalid translation language (it) specified": "patches/core_contentedit.patch",
         "https://www.drupal.org/project/drupal/issues/3006897": "https://www.drupal.org/files/issues/2022-11-15/3006897-17.patch",
-        "Fix invalid alias": "patches/translations_invalid_path.patch"
+        "Fix invalid alias": "patches/translations_invalid_path.patch",
+        "Remove unexisting permissions": "https://www.drupal.org/files/issues/2023-09-14/3358586-11.patch"
       },
       "drupal/pardot": {
         "Disable pardot js": "patches/path_pardot.patch",

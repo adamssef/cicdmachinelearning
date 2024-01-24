@@ -43,3 +43,4 @@ display:
     display_options:
       menu:
         title: 'Librería de bloques personalizada'
+        description: 'Create and edit block content.'
