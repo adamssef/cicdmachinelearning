@@ -15,7 +15,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: '8.2'
       - name: Test composer
         run: composer --no-ansi validate --no-check-lock
       - name: Run composer
@@ -40,3 +40,5 @@ jobs:
         run: cd planetpayment && git config --global user.email "noreply@planetpayment.com" && git config --global user.name "CI Deploy"
       - name: add, commit and push
         run: cd planetpayment && git add config docroot vendor patches composer.json composer.lock hooks site_studio_components && git commit -m "dev deploy" && GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push
+      - name: drush cr, drush cim, drush cr
+        run: vendor/drush/drush/drush cr && vendor/drush/drush/drush cim && vendor/drush/drush/drush cr
