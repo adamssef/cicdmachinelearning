@@ -1,22 +1,14 @@
-label: Média
-description: 'Trouver et gérer des media.'
 display:
   default:
     display_title: 'Par défaut'
     display_options:
-      title: Média
       fields:
-        thumbnail__target_id:
-          label: Vignette
+        title:
+          label: Titre
+        type:
+          label: 'Type de contenu'
         name:
-          label: 'Nom du média'
-        uid:
           label: Auteur
-        status:
-          label: État
-          settings:
-            format_custom_false: 'Non publié'
-            format_custom_true: Publié
         changed:
           label: 'Mis à jour'
         operations:
@@ -37,28 +29,13 @@ display:
           submit_button: Filtrer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-      empty:
-        area_text_custom:
-          content: 'Aucun média disponible.'
       filters:
-        name:
+        title:
           expose:
-            label: 'Nom du média'
-        status:
+            label: Titre
+        type:
           expose:
-            label: Vrai
-          group_info:
-            label: 'Statut de publication'
-            group_items:
-              1:
-                title: Publié
-              2:
-                title: 'Non publié'
+            label: 'Type de contenu'
         langcode:
           expose:
             label: Langue
-  media_page_list:
-    display_title: Média
-    display_options:
-      menu:
-        title: Média

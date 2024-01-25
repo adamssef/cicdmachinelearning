@@ -3,12 +3,16 @@ display:
     display_title: Predefinito
     display_options:
       fields:
-        filename:
-          label: Nome
-        filesize:
-          label: Dimensione
-        status:
-          label: Stato
+        title:
+          label: Titolo
+        type:
+          label: 'Tipo di contenuto'
+        name:
+          label: Autore
+        changed:
+          label: Aggiornato
+        operations:
+          label: Operazioni
       pager:
         options:
           expose:
@@ -22,17 +26,12 @@ display:
           exposed_sorts_label: 'Ordina per'
           sort_desc_label: Disc
       filters:
-        status:
+        title:
           expose:
-            label: Stato
-  page_2:
-    display_options:
-      fields:
-        entity_label:
-          label: Entità
-      pager:
-        options:
+            label: Titolo
+        type:
           expose:
-            items_per_page_label: 'Voci per pagina'
-            items_per_page_options_all_label: '- Tutto -'
-            offset_label: Scostamento
+            label: 'Tipo di contenuto'
+        langcode:
+          expose:
+            label: Lingua

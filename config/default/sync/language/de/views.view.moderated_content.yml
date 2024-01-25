@@ -1,9 +1,7 @@
-label: Inhalt
 display:
   default:
     display_title: Standard
     display_options:
-      title: Inhalt
       fields:
         title:
           label: Titel
@@ -11,10 +9,6 @@ display:
           label: Inhaltstyp
         name:
           label: Autor
-        status:
-          settings:
-            format_custom_false: 'Nicht veröffentlicht'
-            format_custom_true: Veröffentlicht
         changed:
           label: Aktualisiert
         operations:
@@ -26,6 +20,10 @@ display:
             previous: '‹ Vorherige Seite'
             first: '« Anfang'
             last: 'Ende »'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Versatz
       exposed_form:
         options:
           reset_button_label: Zurücksetzen
@@ -39,21 +37,6 @@ display:
         type:
           expose:
             label: Inhaltstyp
-        status:
-          group_info:
-            label: Veröffentlichungsstatus
-            group_items:
-              1:
-                title: Veröffentlicht
-              2:
-                title: 'Nicht veröffentlicht'
         langcode:
           expose:
             label: Sprache
-  page_1:
-    display_title: Seite
-    display_options:
-      menu:
-        title: Inhalt
-      tab_options:
-        title: Inhalt

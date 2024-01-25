@@ -2,6 +2,8 @@ _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   webform_clientside_validation: -1
+  lgpd_onetrust: -49
+  lgpd_onetrust_cookie_blocking: -50
   acquia_connector: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
@@ -35,6 +37,7 @@ module:
   config_split_ignore: 0
   config_translation: 0
   contact: 0
+  content_moderation: 0
   context: 0
   context_ui: 0
   contextual: 0
@@ -42,8 +45,6 @@ module:
   csp_extras: 0
   ctools: 0
   datetime: 0
-  devel_generate: 0
-  dropzonejs: 0
   duplicate_role: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
@@ -70,7 +71,6 @@ module:
   login_security: 0
   media: 0
   media_bulk_upload: 0
-  media_bulk_upload_dropzonejs: 0
   media_entity_file_replace: 0
   media_entity_lottie: 0
   media_library: 0

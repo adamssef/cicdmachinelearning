@@ -13,21 +13,20 @@
 			<div class="coh-row">
 				<div class="coh-row-inner">
 					<div class="planSwitch planSwitch-black planSwitch-3options planSwitch-blog">
-					<a href="/case-studies">
-						<label data-box="1" for="option_1">Case studies</label>
+					<a href="{{useful_links.case_studies}}">
+						<label data-box="1" for="option_1">{{"Case studies"|t}}</label>
 					</a>
-					<a href="/blog">
-						<label class="planSwitch-selected" data-box="2" for="option_2">Blog</label>
+					<a href="{{useful_links.blog}}">
+						<label class="planSwitch-selected" data-box="2" for="option_2">{{"Blog"|t}}</label>
 					</a>
-					<a href="/ebooks">
-						<label data-box="3" for="option_3">E-books</label>
+					<a href="{{useful_links.ebooks}}">
+						<label data-box="3" for="option_3">{{"E-books"|t}}</label>
 					</a>
 					</div>
 				</div>
 
 			</div>
 		</div>
-
 		{% if featured_article is not empty %}
 			<div class="coh-container coh-container-boxed max-width-1216">
 				<div class="coh-row">
@@ -88,7 +87,7 @@
 			<div class="coh-row-inner">
 				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
 					<div class="last-articles">
-						<div>	
+						<div>
 							<div class="tags-pills pink-pills main-pills" style="display: none">
 										<span class="selected main-pill all-pill visible" data-tagid="all">All</span>
 										<div class="external-main-tags"></div>
