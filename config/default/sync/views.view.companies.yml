@@ -153,8 +153,8 @@ display:
           wrapper: div
           legend: ''
           classes: coh-view-content-item
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         title:
           id: title
           table: node_field_data
@@ -275,8 +275,8 @@ display:
           wrapper: div
           legend: ''
           classes: coh-view-content-info
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_address:
           id: field_address
           table: node__field_address

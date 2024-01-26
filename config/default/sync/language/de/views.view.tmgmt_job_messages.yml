@@ -22,6 +22,8 @@ display:
       fields:
         created:
           label: Erstellt
+        name:
+          label: Name
       arguments:
         tjid:
           exception:

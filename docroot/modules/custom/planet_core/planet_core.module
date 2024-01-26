@@ -13,32 +13,21 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\TranslatableInterface;
 use Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList;
 
-include_once(drupal_get_path('module', 'planet_core') . '/planet_core.utils.inc');
-
-/** Debug function */
-// function printtf($content) {
-//   $myfile = fopen("./debug.txt", "a") or die("Unable to open file!");
-//   $txt = var_export($content, true);
-//   fwrite($myfile, "\n". $txt);
-//   fclose($myfile);
-// }
-
 /**
  * Sanitize cookie.
  */
-function _planet_core_sanitize_cookie($value)
-{
+function _planet_core_sanitize_cookie($value) {
   return htmlspecialchars($value);
 }
-
 
 /**
  * Implements hook_preprocess_html().
  *
  * Changes the title of the user page.
+ *
+ * Implements hook_preprocess_html().
  */
-function planet_core_preprocess_html(&$variables): void
-{
+function planet_core_preprocess_html(&$variables): void {
   $routeName = \Drupal::routeMatch()->getRouteName();
   if ($routeName === 'entity.user.canonical') {
     $variables['head_title']['title'] = '';
@@ -48,9 +37,7 @@ function planet_core_preprocess_html(&$variables): void
 /**
  * Implements hook_ENTITY_TYPE_presave().
  */
-function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void
-{
-
+function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void {
   $webform = $webform_submission->getWebform();
   $webform_id = $webform->id();
 
@@ -60,13 +47,11 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
   $cookie_utm_campaign = isset($_COOKIE['Drupal_visitor_utm_campaign']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_campaign']) : '';
   $cookie_utm_term = isset($_COOKIE['Drupal_visitor_utm_term']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_term']) : '';
   $cookie_utm_content = isset($_COOKIE['Drupal_visitor_utm_content']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_content']) : '';
-
   $cookie_orig_utm_source = isset($_COOKIE['Drupal_visitor_orig_utm_source']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_source']) : '';
   $cookie_orig_utm_medium = isset($_COOKIE['Drupal_visitor_orig_utm_medium']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_medium']) : '';
   $cookie_orig_utm_campaign = isset($_COOKIE['Drupal_visitor_orig_utm_campaign']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_campaign']) : '';
   $cookie_orig_utm_term = isset($_COOKIE['Drupal_visitor_orig_utm_term']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_term']) : '';
   $cookie_orig_utm_content = isset($_COOKIE['Drupal_visitor_orig_utm_content']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_content']) : '';
-
   $cookie_gclid = isset($_COOKIE['Drupal_visitor_gclid']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_gclid']) : '';
   $cookie_referrer = isset($_COOKIE['Drupal_visitor_referrer']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_referrer']) : '';
   $cookie_orig_lp = isset($_COOKIE['Drupal_visitor_orig_lp']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_lp']) : '';
@@ -123,7 +108,6 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
   if ($cookie_orig_lp) {
     $webform_submission->setElementData('orig_lp', $cookie_orig_lp);
   }
-
 
   /** SUPPORT FORM - temporary */
   if ($webform_id === 'support') {
@@ -199,15 +183,16 @@ function planet_core_node_access(NodeInterface $node, $op, AccountInterface $acc
 /**
  * Implements hook_preprocess_HOOK() for node templates.
  */
-function planet_core_preprocess_node__author(&$variables)
-{
+function planet_core_preprocess_node__author(&$variables) {
   // Get the last 5 article titles.
   $node = $variables['node'];
 
   // Get the NID (node ID) of the Author node.
   $node_id = $node->id();
 
-  $author_data = planet_core_get_author_articles($node_id);
+  $planet_core_service = \Drupal::service('planet_core.article_helper');
+
+  $author_data = $planet_core_service->getAuthorArticles($node_id);
 
   // Pass the titles to the template.
   $variables['author_data'] = $author_data;
@@ -216,8 +201,7 @@ function planet_core_preprocess_node__author(&$variables)
  /**
  * Implements hook_theme_suggestions_HOOK_alter() to suggest a custom template for a specific node.
  */
-function planet_core_theme_suggestions_page_alter(array &$suggestions, array $variables)
-{
+function planet_core_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if (!$node || !($node instanceof \Drupal\node\NodeInterface) || (\Drupal::currentUser()->isAuthenticated())) {
@@ -233,12 +217,16 @@ function planet_core_theme_suggestions_page_alter(array &$suggestions, array $va
   }
 }
 
-function planet_core_theme_suggestions_node_alter(array &$suggestions, array $variables)
-{
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function planet_core_theme_suggestions_node_alter(array &$suggestions, array $variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
+
   if (!$node or !($node instanceof \Drupal\node\NodeInterface)) {
     return;
   }
+
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
 
   $config = \Drupal::config('planet_core.settings');
@@ -251,6 +239,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
         break;
     }
   }
+
   if ($node->getType() === 'resources' && $node->hasField('field_enable_new_layout') && $node->get('field_enable_new_layout')->value == TRUE) {
     // Add custom template suggestion for 'resources' content type.
     $suggestions[] = 'node__resources-page';
@@ -339,6 +328,8 @@ function _planet_core_update_untranslated_path(EntityInterface $entity, string $
 /**
  * Fix "Non-translatable fields can only be changed when updating the original
  * language." issue.
+ *
+ * Implements hook_entity_type_alter().
  */
 function planet_core_entity_type_alter(array &$entity_types) {
   foreach ($entity_types as $entity_type) {
@@ -380,13 +371,15 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void {
 
 
 /**
- * Assign js files and send data
+ * Assign js files and send data.
+ *
+ * Implements hook_preprocess_HOOK().
  *
  */
-function planet_core_preprocess_node(array &$variables)
-{
+function planet_core_preprocess_node(array &$variables) {
   $node = $variables['node'];
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+  $planet_core_article_helper = \Drupal::service('planet_core.article_helper');
 
   $variables['#attached']['library'][] = 'planet_core/language-popup';
 
@@ -394,26 +387,25 @@ function planet_core_preprocess_node(array &$variables)
     $variables['#attached']['library'][] = 'planet_core/author-page';
   }
 
-
   $config = \Drupal::config('planet_core.settings');
   $is_new_blog_enabled = $config->get('enable_new_blog');
 
   if ($node->getType() == 'resources') {
-    $variables['article'] = planet_core_single_article($node->id());
+    $variables['article'] = $planet_core_article_helper->getSingleArticleData($node->id());
     $variables['#attached']['library'][] = 'planet_core/single-article-page';
   }
 
   if ($is_new_blog_enabled) {
     if ($alias == "/blog") {
-      $variables['featured_article'] = planet_core_get_last_published_article();
-      $variables['useful_links'] = planet_core_get_toogle_links();
+      $variables['featured_article'] = $planet_core_article_helper->getLastPublishedArticle();
       $variables['#attached']['library'][] = 'planet_core/blog-page';
     }
   }
 }
 
-
-function planet_core_preprocess_page(array &$variables)
-{
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function planet_core_preprocess_page(array &$variables) {
   $variables['#attached']['library'][] = 'planet_core/language-popup';
 }

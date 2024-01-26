@@ -6,14 +6,15 @@ id: prod
 label: Prod
 description: ''
 weight: 0
+stackable: false
+no_patching: false
+storage: folder
 folder: ../config/default/environment/prod
 module:
   lgpd_onetrust: -49
   lgpd_onetrust_cookie_blocking: -50
   acquia_connector: 0
 theme: {  }
-blacklist: {  }
-graylist:
+complete_list: {  }
+partial_list:
   - environment_indicator.indicator
-graylist_dependents: true
-graylist_skip_equal: true

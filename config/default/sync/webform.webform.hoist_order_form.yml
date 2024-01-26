@@ -11,7 +11,7 @@ archive: false
 id: hoist_order_form
 title: 'Hoist Order Form'
 description: ''
-category: ''
+categories: {  }
 elements: |-
   layout:
     '#type': webform_flexbox

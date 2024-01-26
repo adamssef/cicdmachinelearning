@@ -412,7 +412,6 @@ display:
           default_argument_options:
             index: 0
             use_alias: true
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -654,8 +653,8 @@ display:
           wrapper: div
           legend: ''
           classes: case-studies__card--top
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_main_image_media:
           id: field_main_image_media
           table: node__field_main_image_media
@@ -840,8 +839,8 @@ display:
           wrapper: div
           legend: ''
           classes: case-studies__card--bottom
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_pre_heading:
           id: field_pre_heading
           table: node__field_pre_heading
@@ -1165,7 +1164,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -1628,8 +1626,8 @@ display:
           wrapper: div
           legend: ''
           classes: coh-button-items
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         view_node:
           id: view_node
           table: node
@@ -1695,7 +1693,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ ''More case studies''|t }}'
+            text: "{{ 'More case studies'|t }}"
             make_link: true
             path: /case-studies
             absolute: false
@@ -2484,8 +2482,8 @@ display:
           wrapper: div
           legend: ''
           classes: case-studies__card--top
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_main_image_media:
           id: field_main_image_media
           table: node__field_main_image_media
@@ -2670,8 +2668,8 @@ display:
           wrapper: div
           legend: ''
           classes: case-studies__card--bottom
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_pre_heading:
           id: field_pre_heading
           table: node__field_pre_heading

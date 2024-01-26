@@ -30,6 +30,8 @@ display:
       fields:
         entity_label:
           label: Entità
+        type:
+          label: 'Tipo di entità'
       pager:
         options:
           expose:

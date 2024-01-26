@@ -13,7 +13,7 @@ archive: false
 id: get_in_touch
 title: 'Get in touch'
 description: ''
-category: ''
+categories: {  }
 elements: |-
   layout:
     '#type': webform_flexbox

@@ -123,6 +123,15 @@ content:
       date_format: planet_date
       custom_date_format: d-F-Y
       timezone: ''
+      tooltip:
+        date_format: ''
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
     third_party_settings: {  }
     weight: 7
     region: content
