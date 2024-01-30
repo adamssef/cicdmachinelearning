@@ -1,0 +1,8 @@
+<?php
+
+/**
+* Implements hook_page_attachments().
+*/
+function planet_sitewide_fonts_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] =  'planet_sitewide_fonts/planet-sitewide-fonts';
+}
