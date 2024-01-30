@@ -2,6 +2,7 @@ name: planet
 
 # Start with the default drupal recipe
 recipe: drupal10
+xdebug: true
 
 # Configure the drupal recipe
 config:
@@ -13,9 +14,9 @@ config:
   drupal: true
   ssl: true
   database: mariadb:10.5
-  xdebug: true
   config:
     php: config/php.ini
+    xdebug: 'develop,debug'
 services:
   # PHPmyAdmin
   pma:

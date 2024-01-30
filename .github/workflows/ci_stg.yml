@@ -46,20 +46,7 @@ jobs:
         run: cd planetpayment && git config --global user.email "noreply@planetpayment.com" && git config --global user.name "CI Deploy"
       - name: add, commit and push
         run: cd planetpayment && git add config docroot vendor patches composer.json composer.lock hooks && git commit -m "stage deploy" && GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push
-
-      - name: Deploy Site Studio Package
-        run: echo waiting for site studio package deploy
-      - name: Wait for site studio package deploy
-        uses: trstringer/manual-approval@v1
-        with:
-          secret: ${{ github.TOKEN }}
-          approvers: rzanetticiandt
-          issue-title: "Deploying to Stage"
-          issue-body: "Please approve once you finished the site studio package deploy (yes / no)."
-          minimum-approvals: 1
       - name: Remove docroot old files
         run: cd planetpayment && rm -rf docroot
       - name: copy docroot files
         run: cp -R docroot ./planetpayment/
-      - name: push new docroot files to acquia
-        run: cd planetpayment && git add docroot && git commit -m "stage deploy" && GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push

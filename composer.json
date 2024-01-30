@@ -11,13 +11,17 @@
     "composer/installers": "^2.2",
     "cweagans/composer-patches": "^1.7",
     "d3/d3": "^3.5",
+    "drupal/acquia_analytics_redirects": "^1.0",
     "drupal/acquia_connector": "^4.0",
     "drupal/admin_toolbar": "^3.4",
     "drupal/animated_gif": "^2.0",
     "drupal/asset_injector": "^2.19",
     "drupal/autologout": "^1.4",
     "drupal/chatgpt_plugin": "^2.1",
+    "drupal/ckeditor": "^1.0",
     "drupal/clientside_validation": "^4.0",
+    "drupal/color": "^1.0",
+    "drupal/config_filter": "^2.6",
     "drupal/config_ignore": "^3.2",
     "drupal/config_split": "^2.0",
     "drupal/content_lock": "^2.3",
@@ -33,7 +37,7 @@
     "drupal/dynamic_entity_reference": "^3.1",
     "drupal/entity_language_fallback": "^1.5",
     "drupal/environment_indicator": "^4.0",
-    "drupal/facets": "^2.0",
+    "drupal/facets": "^3.0@beta",
     "drupal/field_group": "^3.4",
     "drupal/flood_control": "^2.3",
     "drupal/google_analytics": "^4.0",
@@ -59,6 +63,7 @@
     "drupal/password_policy": "^4.0",
     "drupal/pathauto": "^1.12",
     "drupal/quick_node_clone": "^1.17",
+    "drupal/rdf": "^2.1",
     "drupal/recaptcha": "^3.2",
     "drupal/recaptcha_v3": "^2.0",
     "drupal/redirect": "^1.9",
@@ -102,7 +107,6 @@
   "require-dev": {
     "dg/bypass-finals": "^1.3",
     "drupal/core-dev": "^10",
-    "drupal/upgrade_status": "^4.0",
     "kint-php/kint": "^3.3",
     "mglaman/phpstan-drupal": "^1.2",
     "phpspec/prophecy-phpunit": "^2"
@@ -178,7 +182,8 @@
         "Invalid translation language (it) specified": "patches/core_contentedit.patch",
         "https://www.drupal.org/project/drupal/issues/3006897": "https://www.drupal.org/files/issues/2022-11-15/3006897-17.patch",
         "Fix invalid alias": "patches/translations_invalid_path.patch",
-        "Remove unexisting permissions": "https://www.drupal.org/files/issues/2023-09-14/3358586-11.patch"
+        "Remove unexisting permissions": "https://www.drupal.org/files/issues/2023-09-14/3358586-11.patch",
+        "'Output is empty' when running drush cohesion:rebuild": "https://www.drupal.org/files/issues/2023-09-13/3386915-6.patch"
       },
       "drupal/pardot": {
         "Disable pardot js": "patches/path_pardot.patch",
