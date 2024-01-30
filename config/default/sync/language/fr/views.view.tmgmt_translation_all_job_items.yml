@@ -23,8 +23,6 @@ display:
           label: État
         label:
           label: Libellé
-        type:
-          label: Type
         source_language:
           label: 'A partir de'
         target_language:
