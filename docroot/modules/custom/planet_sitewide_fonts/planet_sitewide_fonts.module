@@ -4,5 +4,9 @@
 * Implements hook_page_attachments().
 */
 function planet_sitewide_fonts_page_attachments(array &$attachments) {
-  $attachments['#attached']['library'][] =  'planet_sitewide_fonts/planet-sitewide-fonts';
+  $current_path = \Drupal::service('path.current')->getPath();
+
+  if (!str_starts_with($current_path, '/admin')) {
+    $attachments['#attached']['library'][] =  'planet_sitewide_fonts/planet-sitewide-fonts-homepage';
+  }
 }
