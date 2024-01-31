@@ -254,18 +254,20 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
         break;
     }
   } 
-
-  switch($alias) {
-    case "/de/pms-transformation":
-      $suggestions[] = 'pms_transformation_de_template';
-      break;
-    case "/fr/pms-transformation":
-      $suggestions[] = 'pms_transformation_fr_template';
-      break;
-    case "/pms-transformation":
-      $suggestions[] = 'pms_transformation_template';
-      break;
+  if ($alias == "/pms-transformation") {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    switch ($language) {
+      case "fr":
+        $suggestions[] = 'pms_transformation_fr_template';
+        break;
+      case "de":
+        $suggestions[] = 'pms_transformation_de_template';
+        break;
+      default:
+        $suggestions[] = 'pms_transformation_template';
+    }
   }
+  
 
   if ($node->getType() === 'resources' && $node->hasField('field_enable_new_layout') && $node->get('field_enable_new_layout')->value == TRUE) {
     // Add custom template suggestion for 'resources' content type.
