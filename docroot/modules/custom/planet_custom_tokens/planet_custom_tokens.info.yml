@@ -1,0 +1,5 @@
+name: 'planet_custom_tokens'
+type: module
+description: 'Provides additional tokens that fuels other functionalities used on a page.'
+package: planet
+core_version_requirement: ^9 | ^10

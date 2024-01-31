@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for planet_custom_tokens module.
+ */
+
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
+
+function planet_custom_tokens_tokens_alter (array &$replacements, array $context, \Drupal\Core\Render\BubbleableMetadata $bubbleable_metadata) {
+  $node_type = \Drupal::routeMatch()->getParameter('node')->getType();
+
+  if ($node_type === 'resources') {
+    if (isset($replacements['[node:field_resources_background_image:0:entity:url]'])) {
+      $node = \Drupal::routeMatch()->getParameter('node');
+      $mid = $node->get('field_resources_background_image')->getValue()[0]['target_id'];
+      $media = Media::load($mid);
+      $fid = $media->getSource()->getSourceFieldValue($media);
+      $file = File::load($fid);
+      $file_url = $file->getFileUri();
+      $scheme_and_http_host = \Drupal::request()->getSchemeAndHttpHost();
+      $file_url = str_replace('public://', $scheme_and_http_host . '/sites/default/files/', $file_url);
+      $replacements['[node:field_resources_background_image:0:entity:url]'] = $file_url;
+
+      return $replacements;
+    }
+  }
+}

@@ -4,11 +4,4 @@ status: true
 dependencies: {  }
 id: node__planet_resources
 label: 'Content: Planet Resources'
-tags:
-  robots: 'noindex, nofollow'
-  schema_article_date_modified: '[node:changed]'
-  schema_article_date_published: '[node:field_resources_published_time]'
-  schema_article_headline: '[node:body]'
-  schema_article_id: '[current-page:url]'
-  schema_article_name: '[current-page:title]'
-  schema_article_type: Article
+tags: {  }
