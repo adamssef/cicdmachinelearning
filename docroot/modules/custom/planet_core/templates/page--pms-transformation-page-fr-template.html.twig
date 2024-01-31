@@ -1,0 +1,95 @@
+{#
+  Custom Twig template for the "Author" content type.
+  Template variables available:
+    - content: An array of content elements.
+    - node: The node entity representing the "Author" content.
+    - label: The node label.
+    - url: The node URL.
+    - attributes: HTML attributes for the node wrapper.
+#}
+<div>
+	<div class="plnt-pms-transformation-page">
+		<div class="lavender-bg">
+			<div class="coh-container coh-container-boxed lavender-bg">
+				<div class="coh-row">
+					<div class="coh-row-inner">
+						<div class="pms-transformation-lang-selector coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+							<div class="pms-transformation-lang-selector-inner">
+								<a href="/pms-transformation">EN</a>
+								<a href="/fr/pms-transformation">FR</a>
+								<a href="/de/pms-transformation">DE</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="coh-row">
+					<div class="coh-row-inner">
+						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+							<div class="lavender-bg-wrapper">
+								<span class="pre-heading">HOSPITALITY PMS TRANSFORMATION 2024 FRENCH</span>
+								<h2 class="coh-heading coh-style-heading-2-planet">The next step in your partnership with Planet</h2>
+								<p>
+									At Planet, we're simplifying how you do business with us. We've invested in our PMS platforms focusing our priorities on the areas that deliver most value to you, including stability and performance.
+									<br>
+									<br>
+									In 2024, we're transitioning to a per room, per month subscription model to streamline our pricing. This allows us to enhance our PMS platforms further and invest in cloud development, ensuring we have a top-notch Cloud PMS that meets your requirements.
+								</p>
+								<a class="coh-link coh-style-primary-dark-atom-" href="#form-50-50">Get in touch</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% if content.field_layout_canvas %}
+			<div class="layout-canvas">
+				{{ content.field_layout_canvas }}
+			</div>
+		{% endif %}
+	</div>
+
+	</div>
+	
+<style>
+.lavender-bg {
+	background: #e1e7fd;
+	padding-top: 32px;
+	padding-bottom: 32px;
+	text-align: center
+}
+.pre-heading {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
+	display: block;
+	margin-bottom: 8px
+}
+.lavender-bg .coh-style-primary-dark-atom- {
+	padding-right: 48px;
+	padding-left: 48px;
+}
+.lavender-bg p {
+	color: #202020;
+	font-weight: 300;
+	text-align: center;
+	line-height: 140%;
+	font-size: 20px;
+	margin-top: 16px;
+	margin-bottom: 32px
+}
+.lavender-bg-wrapper {
+	max-width: 816px;
+	margin: 0 auto
+}
+.pms-transformation-lang-selector-inner {
+	margin-bottom: 48px;
+	font-size: 20px;
+	color: #545454;
+	font-weight: 300;
+}
+.lavender-bg .coh-heading {
+	line-height: 60px;
+	font-size: 54px;
+}
+</style>
