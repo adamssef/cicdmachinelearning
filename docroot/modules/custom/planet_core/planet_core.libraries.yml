@@ -2,6 +2,12 @@ language-popup:
   css:
     theme:
       css/planet_core.css: {}
+pms-transformation:
+  css:
+    theme:
+      css/planet_pms_transformation.css: {}
+  js:
+    js/PmsTransformationPage.js: { }
 author-page:
   js:
     js/AuthorPage.js: {}
