@@ -1,0 +1,5 @@
+planet-sitewide-fonts:
+  version: 1.0
+  css:
+    theme:
+      css/load_fonts.css: { }

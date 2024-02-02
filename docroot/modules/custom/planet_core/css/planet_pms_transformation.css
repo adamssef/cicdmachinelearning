@@ -1,0 +1,387 @@
+.cloud-vision-wrapper {
+  justify-content: center;
+  display: flex;
+  max-width: 916px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.coh-style-mega-menu .menu-level-1-ul .coh-menu-list-item.menu-level-1-li a {
+  z-index: 10;
+  color: #202020;
+}
+
+.pms-transformation .coh-ce-cpt_planet_header-f1b8e951 {
+  color: #202020;
+}
+
+.pms-transformation .menu-container.coh-style-menu-container .coh-separator {
+  background-color: #202020;
+  width: 1px;
+  opacity: 0.85;
+}
+
+.pms-transformation .mobile-menu-button {
+  color: #202020;
+}
+
+.pms-transformation-lang-selector-inner a {
+  color: #545454;
+  text-align: center;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.pms-transformation-lang-selector-inner .active {
+  color: #202020;
+  font-weight: 600;
+  text-decoration-line: underline;
+}
+
+
+
+.cloud-vision-wrapper .subheading {
+  margin-bottom: 24px;
+}
+
+.cloud-vision-text-content-body {
+  margin-top: 8px;
+}
+
+.cloud-vision-text-content-title {
+  margin-bottom: 8px;
+}
+
+.full-service-wrapper .heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.full-service-wrapper-benefit-cards {
+  display: flex;
+}
+
+.full-service-benefit-card {
+  border: 1px solid #D1D1D1;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.full-service-text {
+  color: #202020;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  word-wrap: break-word
+}
+
+.full-service-title {
+  color: #202020;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  word-wrap: break-word
+}
+
+.full-service-card-icon {
+  margin-bottom: 24px;
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  border-radius: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.simple-predictable-costs {
+  background-color: #F7F7F8;
+}
+
+.full-service-wrapper .heading {
+  margin-bottom: 48px;
+}
+
+#benefit-card-icon {
+  padding: 5px;
+}
+
+#cpu-icon, #circular-arrows-icon {
+  background-color: #E000831A;
+  opacity: 1;
+}
+
+#network-icon, #key-icon {
+  background-color: #9AAEF933;
+}
+
+#bulb-icon, #dollar-icon  {
+  background-color: #8FD6E533;
+}
+
+.coh-row-bleed-xl > .coh-row-inner > .coh-column:not(:first-child) {
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Small screens (mobile devices) */
+@media only screen and (max-width: 768px) {
+  .cloud-vision-text-content:not(:first-child) {
+    margin-top: 16px;
+  }
+
+  .cloud-vision-text-content-title {
+    margin-top: 8px;
+  }
+
+  .pms-transformation-lang-selector-inner a {
+    font-size: 16px;
+  }
+
+  .cloud-vision-wrapper {
+    flex-direction: column;
+    margin-top: 32px;
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+
+  .heading {
+    color: #202020;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    word-wrap: break-word;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+
+  .cloud-vision-wrapper .subheading {
+    color: #202020;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+    word-wrap: break-word
+  }
+
+  .cloud-vision-text-content-title {
+    color: #202020;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    word-wrap: break-word
+  }
+
+  .cloud-vision-text-content-body {
+    color: #202020;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    word-wrap: break-word
+  }
+
+  #cloud-vision-image {
+    max-width: 100%;
+    width: 90%;
+  }
+
+  .cloud-vision-wrapper-image {
+    margin-top: 32px;
+  }
+
+  .pms-rounded-lavender-box {
+    height: 50px;
+    background: #e1e7fd;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+/* Larger than small screens (includes middle and large screens) */
+@media only screen and (min-width: 769px) {
+  .pms-rounded-lavender-box {
+    height: 100px;
+    background: #e1e7fd;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .cloud-vision-wrapper {
+    flex-direction: row;
+  }
+
+  .heading {
+    color: #202020;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+    word-wrap: break-word
+  }
+
+  .cloud-vision-wrapper .subheading {
+    color: #202020;
+    font-size: 24px;
+    font-weight: 300;
+    word-wrap: break-word
+  }
+
+  .cloud-vision-text-content-wrapper {
+    display: flex;
+  }
+
+  .cloud-vision-text-content-title {
+    color: #202020;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    word-wrap: break-word
+  }
+
+  .cloud-vision-text-content-body {
+    color: #202020;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    word-wrap: break-word
+  }
+
+  .pms-transformation-lang-selector-inner a {
+    font-size: 20px;
+  }
+}
+
+/* Smaller than large screens (includes small and middle screens) */
+@media only screen and (max-width: 1024px) {
+  .coh-ce-cpt_planet_header-75650685 {
+    -webkit-filter: invert(1);
+  }
+
+  .ssa-component-instance-ba97f862-105a-4f6c-a74f-0df509a57560 {
+    padding-top: 48px;
+  }
+
+  .pms-transformation-lang-selector-inner {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 32px;
+  }
+
+  .coh-ce-cpt_form_half_width-24ac139a {
+    padding-top: 24px;
+  }
+  .coh-ce-cpt_form_half_width-b4aee4c0 {
+    margin-bottom: 32px;
+  }
+
+  .full-service-wrapper {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+
+  .full-service-wrapper-benefit-cards {
+    flex-direction: column;
+    margin-right: 32px;
+    margin-left: 32px;
+  }
+
+  .full-service-benefit-card {
+    margin-bottom: 16px;
+  }
+
+  .coh-ce-cpt_form_half_width-24ac139a {
+    margin-bottom: 0;
+  }
+}
+
+/* Middle screens (tablets, smaller desktops/laptops) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .cloud-vision-wrapper {
+    margin-top: 95px;
+    flex-direction: column;
+  }
+
+  .cloud-vision-wrapper-text {
+    margin-right: 24px;
+  }
+
+  .cloud-vision-wrapper-image {
+    flex: 1;
+    margin: 0 auto;
+  }
+
+  .cloud-vision-wrapper-text {
+    flex: 1;
+    margin-bottom: 80px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cloud-vision-text-content {
+    flex: 1;
+  }
+
+  #cloud-vision-text-content-hotels {
+    margin-right: 24px;
+  }
+}
+
+/* Large screens (larger desktops) */
+@media only screen and (min-width: 1025px) {
+  .ssa-component-instance-ba97f862-105a-4f6c-a74f-0df509a57560 {
+    padding-top: 80px;
+  }
+
+  .cloud-vision-text-content {
+    flex: 1;
+  }
+
+  .pms-transformation .coh-planet-logo {
+    -webkit-filter: invert(1);
+  }
+
+  .pms-transformation-lang-selector-inner {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+  }
+
+  .cloud-vision-wrapper-text {
+    flex: 6;
+    margin-right: 80px;
+  }
+
+  .cloud-vision-wrapper-image {
+    flex: 4;
+  }
+
+  #cloud-vision-text-content-hotels {
+    margin-right: 24px;
+  }
+
+  .full-service-wrapper {
+    margin-top: 80px;
+    max-width: 916px;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .full-service-wrapper-benefit-cards {
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .full-service-benefit-card {
+    width: 30%;
+    margin: 12px;
+  }
+
+  #full-service-title-autoupdate-software {
+    font-size: 23px;
+  }
+}
