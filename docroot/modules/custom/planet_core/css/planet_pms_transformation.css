@@ -1,3 +1,7 @@
+#edit-markup > p {
+  display: none;
+}
+
 .cloud-vision-wrapper {
   justify-content: center;
   display: flex;
