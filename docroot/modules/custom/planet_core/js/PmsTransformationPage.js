@@ -1,6 +1,14 @@
 (function ($, Drupal) {
   Drupal.behaviors.customScript = {
     attach: function (context, settings) {
+      function scrollToElement() {
+        document.getElementById("form-50-50").scrollIntoView({ behavior: 'smooth' });
+      }
+
+      let getInTouchButton = $('#get-in-touch-button');
+      getInTouchButton.addEventListener('click', scrollToElement);
+      getInTouchButton.addEventListener('touchstart', scrollToElement);
+
       let formLabelsRequired = $('.js-form-required');
 
       formLabelsRequired.each(function () {
