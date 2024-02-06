@@ -7,6 +7,13 @@
   flex-direction: column;
   align-items: center;
 }
+.lavender-bg-wrapper {
+  max-width: 816px;
+  margin: 0 auto
+}
+.lavender-bg-wrapper {
+  padding-bottom: 80px;
+}
 
 .lavender-bg-wrapper > .coh-link {
   width: fit-content;
@@ -48,14 +55,15 @@
   margin-bottom:0 !important;
 }
 
-.plnt-pms-transformation-page {
-  background-image: url("../../../../resources/images/Background.svg");
-  background-size: cover; /* Rozciąga tło na całą szerokość */
+.plnt-pms-transformation-page
+{
+  background-size: cover;
   background-repeat: no-repeat;
   z-index: 2;
-  height: 100%; /* Set the height to match the SVG */
+  height: 100%;
   overflow: visible;
   background-position: bottom center;
+  background-color: #e1e7fd;
 }
 
 .coh-ce-cpt_form_half_width-b4aee4c0 span {
@@ -206,6 +214,7 @@
 }
 
 .full-service-title {
+  margin-bottom: 8px;
   color: #202020;
   font-size: 24px;
   font-weight: 600;
@@ -253,6 +262,18 @@
   background-color: white;
   border-radius: 10px;
 }
+
+.pms-rounded-white
+{
+  background-color: #e1e7fd;
+  width: 100%;
+  height: 115px;
+  background-image: url('/resources/images/1920.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
 
 /* Larger than small screens (includes middle and large screens) */
 @media only screen and (min-width: 769px) {
@@ -386,9 +407,6 @@
     text-align: center;
   }
 
-  .plnt-pms-transformation-page {
-    padding-bottom: 24vh;
-  }
 
   #edit-layout {
     flex-direction: column;
@@ -467,6 +485,7 @@
     width: 100%;
   }
 
+
   .full-service-wrapper-benefit-cards {
     margin-left: 16px;
     margin-right: 16px;
@@ -531,9 +550,7 @@
     flex-direction: column;
   }
 
-  .plnt-pms-transformation-page {
-    padding-bottom: 17vh;
-  }
+ 
 
   .cloud-vision-wrapper-text {
     margin-right: 24px;
@@ -650,33 +667,9 @@
     width: auto;
   }
 
-  .plnt-pms-transformation-page {
-    padding-bottom: 18vh;
-  }
 
   .cloud-vision-wrapper {
     margin-top: 80px;
     max-width: 990px;
-  }
-}
-
-/* Very large screens (very wide desktops) */
-@media only screen and (min-width: 1750px) {
-  .plnt-pms-transformation-page {
-    padding-bottom: 22vh;
-  }
-}
-
-/* Ultra large screens (ultra large desktops) */
-@media only screen and (min-width: 2400px) {
-  .plnt-pms-transformation-page {
-    padding-bottom: 26vh;
-  }
-}
-
-/* Ultra small screens (ultra small mobiles) */
-@media only screen and (max-width: 376px) {
-  .plnt-pms-transformation-page {
-    padding-bottom: 32vh;
   }
 }
