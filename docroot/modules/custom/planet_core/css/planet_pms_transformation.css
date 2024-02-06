@@ -49,7 +49,7 @@
 }
 
 .plnt-pms-transformation-page {
-  background-image: url("../../../../sites/default/files/2024-02/Background.svg");
+  background-image: url("../../../../resources/images/Background.svg");
   background-size: cover; /* Rozciąga tło na całą szerokość */
   background-repeat: no-repeat;
   z-index: 2;
