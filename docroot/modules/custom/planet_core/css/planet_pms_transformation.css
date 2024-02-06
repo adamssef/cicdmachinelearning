@@ -301,7 +301,7 @@
 
   .cloud-vision-text-content-body {
     color: #202020;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 18px;
     word-wrap: break-word
@@ -313,11 +313,18 @@
 
   .lavender-bg .coh-heading {
     font-size: 48px;
+    color: #202020;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px;
   }
 
   .coh-style-heading-2-planet {
     text-align: center;
   }
+
+
 }
 
 /* Smaller than large screens (includes small and middle screens) */
@@ -380,7 +387,7 @@
   }
 
   .plnt-pms-transformation-page {
-    padding-bottom: 21vh;
+    padding-bottom: 24vh;
   }
 
   #edit-layout {
@@ -525,7 +532,7 @@
   }
 
   .plnt-pms-transformation-page {
-    padding-bottom: 15vh;
+    padding-bottom: 17vh;
   }
 
   .cloud-vision-wrapper-text {
@@ -668,8 +675,8 @@
 }
 
 /* Ultra small screens (ultra small mobiles) */
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 376px) {
   .plnt-pms-transformation-page {
-    padding-bottom: 30vh;
+    padding-bottom: 32vh;
   }
 }
