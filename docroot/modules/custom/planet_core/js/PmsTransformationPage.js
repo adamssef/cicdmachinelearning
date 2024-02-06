@@ -1,7 +1,5 @@
 (function ($, Drupal) {
   Drupal.behaviors.customScript = {
-
-
     attach: function (context, settings) {
       let formLabelsRequired = $('.js-form-required');
 
