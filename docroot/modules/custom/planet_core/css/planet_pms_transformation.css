@@ -153,7 +153,13 @@
   width: 1px;
   opacity: 0.85;
 }
-
+.plnt-css-pms-transformation .coh-style-mega-menu .coh-link {
+  color: #202020;
+}
+.plnt-css-pms-transformation .site-studio-webform-element .webform-button--submit {
+  padding: 16px;
+  width: 100%
+}
 .pms-transformation .mobile-menu-button {
   color: #202020;
 }
