@@ -37,12 +37,21 @@ function _planet_core_sanitize_cookie($value)
  *
  * Changes the title of the user page.
  */
-function planet_core_preprocess_html(&$variables): void
-{
+function planet_core_preprocess_html(&$variables): void {
   $routeName = \Drupal::routeMatch()->getRouteName();
   if ($routeName === 'entity.user.canonical') {
     $variables['head_title']['title'] = '';
   }
+
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+  if ($current_path_alias === '/pms-transformation') {
+    $variables['attributes']['class'][] = 'planet-header-transparent';
+  }
+
+  // Adds to a body css class that identifies the current page.
+  $variables['attributes']['class'][] = 'plnt-css-' . ltrim($current_path_alias, '/') ?? ltrim($current_path, '/');
 }
 
 /**
@@ -236,9 +245,9 @@ function planet_core_theme_suggestions_page_alter(array &$suggestions, array $va
   }
 }
 
-function planet_core_theme_suggestions_node_alter(array &$suggestions, array $variables)
-{
+function planet_core_theme_suggestions_node_alter(array &$suggestions, array $variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
+
   if (!$node or !($node instanceof \Drupal\node\NodeInterface)) {
     return;
   }
@@ -254,6 +263,21 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
         break;
     }
   }
+  if ($alias == "/pms-transformation") {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    switch ($language) {
+      case "fr":
+        $suggestions[] = 'pms_transformation_fr_template';
+        break;
+      case "de":
+        $suggestions[] = 'pms_transformation_de_template';
+        break;
+      default:
+        $suggestions[] = 'pms_transformation_template';
+    }
+  }
+
+
   if ($node->getType() === 'resources' && $node->hasField('field_enable_new_layout') && $node->get('field_enable_new_layout')->value == TRUE) {
     // Add custom template suggestion for 'resources' content type.
     $suggestions[] = 'node__resources-page';
@@ -288,6 +312,18 @@ function planet_core_theme(): array
     'onboarding_page_template' => [
       'template' => 'page--onboarding-page-template',
       'base hook' => 'page',
+    ],
+    'pms_transformation_de_template' => [
+      'template' => 'page--pms-transformation-page-de-template',
+      'base hook' => 'node',
+    ],
+    'pms_transformation_fr_template' => [
+      'template' => 'page--pms-transformation-page-fr-template',
+      'base hook' => 'node',
+    ],
+    'pms_transformation_template' => [
+      'template' => 'page--pms-transformation-page-template',
+      'base hook' => 'node',
     ],
     'node__blog-single-page' => [
       'template' => 'node--blog-single-page',
@@ -390,7 +426,7 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void
 
 /**
  * Assign js files and send data
- * 
+ *
  */
 function planet_core_preprocess_node(array &$variables)
 {
@@ -403,7 +439,7 @@ function planet_core_preprocess_node(array &$variables)
     $variables['#attached']['library'][] = 'planet_core/author-page';
   }
 
- 
+
   $config = \Drupal::config('planet_core.settings');
   $is_new_blog_enabled = $config->get('enable_new_blog');
 
@@ -411,7 +447,7 @@ function planet_core_preprocess_node(array &$variables)
     $variables['article'] = planet_core_single_article($node->id());
     $variables['#attached']['library'][] = 'planet_core/single-article-page';
   }
-  
+
   if ($is_new_blog_enabled) {
     if ($alias == "/blog") {
       $variables['featured_article'] = planet_core_get_last_published_article();
@@ -422,7 +458,13 @@ function planet_core_preprocess_node(array &$variables)
 }
 
 
-function planet_core_preprocess_page(array &$variables)
-{
+function planet_core_preprocess_page(array &$variables) {
   $variables['#attached']['library'][] = 'planet_core/language-popup';
+
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+  if ($current_path_alias === '/pms-transformation') {
+    $variables['#attached']['library'][] = 'planet_core/pms-transformation';
+  }
 }
