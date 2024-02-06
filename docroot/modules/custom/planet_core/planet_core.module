@@ -51,7 +51,7 @@ function planet_core_preprocess_html(&$variables): void {
   }
 
   // Adds to a body css class that identifies the current page.
-  $variables['attributes']['class'][] = ltrim($current_path_alias, '/') ?? ltrim($current_path, '/');
+  $variables['attributes']['class'][] = 'plnt-css' . ltrim($current_path_alias, '/') ?? ltrim($current_path, '/');
 }
 
 /**
