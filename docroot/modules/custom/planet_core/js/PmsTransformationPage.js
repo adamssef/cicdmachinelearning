@@ -22,9 +22,9 @@
       var windowWidth = $(window).width();
 
       if (windowWidth < 768) {
-        $('#cloud-vision-image').attr('src', '/sites/default/files/2024-02/Cloudvision_Mobile.svg');
+        $('#cloud-vision-image').attr('src', '/resources/images/Cloudvision_Mobile.svg');
       } else {
-        $('#cloud-vision-image').attr('src', '/sites/default/files/2024-02/Cloudvision_DesktopTablet.svg');
+        $('#cloud-vision-image').attr('src', '/resource/images/Cloudvision_DesktopTablet.svg');
       }
 
 
@@ -32,9 +32,9 @@
         windowWidth = $(window).width();
 
         if (windowWidth < 768) {
-          $('#cloud-vision-image').attr('src', '/sites/default/files/2024-02/Cloudvision_Mobile.svg');
+          $('#cloud-vision-image').attr('src', '/resources/images/Cloudvision_Mobile.svg');
         } else {
-          $('#cloud-vision-image').attr('src', '/sites/default/files/2024-02/Cloudvision_DesktopTablet.svg');
+          $('#cloud-vision-image').attr('src', '/resources/images/Cloudvision_DesktopTablet.svg');
         }
       });
     }
