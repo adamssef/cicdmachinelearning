@@ -1,3 +1,8 @@
+.plnt-css-pms-transformation .site-studio-webform-element .webform-button--submit {
+  padding: 16px;
+  width: 100%;
+}
+
 .coh-component-instance-b09fb456-f58e-4f08-b4c2-3a96a6a28094:not(#form-50-50) {
   padding-top: 0 !important;
 }
@@ -550,7 +555,7 @@
     flex-direction: column;
   }
 
- 
+
 
   .cloud-vision-wrapper-text {
     margin-right: 24px;
