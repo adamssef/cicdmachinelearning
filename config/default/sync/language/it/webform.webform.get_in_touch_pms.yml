@@ -1,0 +1,33 @@
+title: 'Get in touch (ita)'
+elements: |
+  first_name:
+    '#title': 'Nome*'
+  last_name:
+    '#title': 'Cognome*'
+  phone_intl:
+    '#title': 'Telefono*'
+    '#phone__title': Telefono
+  company_business_name:
+    '#title': 'Azienda*'
+  type_of_business:
+    '#title': 'Settore*'
+    '#options':
+      Other: Altro
+  address_country:
+    '#title': 'Paese*'
+    '#country__title': 'Paese*'
+    '#address__title': Indirizzo
+    '#address_2__title': 'Indirizzo 2'
+    '#city__title': Città
+    '#state_province__title': Provincia
+    '#postal_code__title': 'Codice Postale'
+  single_opt_in:
+    '#title': 'Ricevi aggiornamenti su Planet'
+    '#description': 'Seleziona questa casella per dare il consenso a ricevere aggiornamenti su prodotti, eventi, corsi di formazione, segnalazioni e servizi Planet'
+  textarea:
+    '#title': 'Note*'
+    '#placeholder': 'Dicci di più su ciò di cui hai bisogno'
+  markup:
+    '#markup': '<p><span>Inviando questo modulo, accetti i termini della nostra <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Informativa sulla privacy.</a></span></p>'
+  actions:
+    '#submit__label': Invia
