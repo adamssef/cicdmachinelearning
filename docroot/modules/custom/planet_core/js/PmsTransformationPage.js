@@ -5,10 +5,6 @@
         document.getElementById("form-50-50").scrollIntoView({ behavior: 'smooth' });
       }
 
-      let getInTouchButton = $('#get-in-touch-button');
-      getInTouchButton.addEventListener('click', scrollToElement);
-      getInTouchButton.addEventListener('touchstart', scrollToElement);
-
       let formLabelsRequired = $('.js-form-required');
 
       formLabelsRequired.each(function () {
@@ -22,9 +18,9 @@
       var windowWidth = $(window).width();
 
       if (windowWidth < 768) {
-        $('#cloud-vision-image').attr('src', '/sites/default/files/2024-02/Cloudvision_Mobile.svg');
+        $('#cloud-vision-image').attr('src', '/resources/images/Cloudvision_Mobile.svg');
       } else {
-        $('#cloud-vision-image').attr('src', '/sites/default/files/2024-02/Cloudvision_DesktopTablet.svg');
+        $('#cloud-vision-image').attr('src', '/resource/images/Cloudvision_DesktopTablet.svg');
       }
 
 
@@ -32,9 +28,9 @@
         windowWidth = $(window).width();
 
         if (windowWidth < 768) {
-          $('#cloud-vision-image').attr('src', '/sites/default/files/2024-02/Cloudvision_Mobile.svg');
+          $('#cloud-vision-image').attr('src', '/resources/images/Cloudvision_Mobile.svg');
         } else {
-          $('#cloud-vision-image').attr('src', '/sites/default/files/2024-02/Cloudvision_DesktopTablet.svg');
+          $('#cloud-vision-image').attr('src', '/resources/images/Cloudvision_DesktopTablet.svg');
         }
       });
     }
