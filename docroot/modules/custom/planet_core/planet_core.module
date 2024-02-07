@@ -39,7 +39,7 @@ function planet_core_preprocess_html(&$variables): void {
   }
 
   // Adds to a body css class that identifies the current page.
-  $variables['attributes']['class'][] = ltrim($current_path_alias, '/') ?? ltrim($current_path, '/');
+  $variables['attributes']['class'][] = 'plnt-css-' . ltrim($current_path_alias, '/') ?? ltrim($current_path, '/');
 }
 
 /**
@@ -412,7 +412,8 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void {
  * Assign js files and send data
  *
  */
-function planet_core_preprocess_node(array &$variables) {
+function planet_core_preprocess_node(array &$variables)
+{
   $node = $variables['node'];
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
   $planet_core_article_helper = \Drupal::service('planet_core.article_helper');
