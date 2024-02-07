@@ -148,7 +148,8 @@
   color: #202020;
 }
 
-.pms-transformation .coh-ce-cpt_planet_header-f1b8e951 {
+
+.pms-transformation .coh-link.coh-a-link.js-coh-menu-item-link {
   color: #202020;
 }
 
@@ -157,7 +158,13 @@
   width: 1px;
   opacity: 0.85;
 }
-
+.plnt-css-pms-transformation .coh-style-mega-menu .coh-link {
+  color: #202020;
+}
+.plnt-css-pms-transformation .site-studio-webform-element .webform-button--submit {
+  padding: 16px;
+  width: 100%
+}
 .pms-transformation .mobile-menu-button {
   color: #202020;
 }
@@ -217,7 +224,10 @@
   line-height: 22px;
   word-wrap: break-word
 }
-
+.plnt-pms-transformation-page .webform-submission-form .coh-style-primary-dark-atom- {
+  width: 100%;
+  padding: 16px
+}
 .full-service-title {
   margin-bottom: 8px;
   color: #202020;
