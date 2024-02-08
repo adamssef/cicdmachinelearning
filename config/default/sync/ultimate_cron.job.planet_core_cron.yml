@@ -1,0 +1,29 @@
+uuid: 76c8c87b-5f73-4e20-9173-fe45aa61d218
+langcode: en
+status: true
+dependencies:
+  module:
+    - planet_core
+title: 'Default cron handler'
+id: planet_core_cron
+weight: 0
+module: planet_core
+callback: planet_core_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ 0 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000
