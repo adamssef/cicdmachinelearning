@@ -40,7 +40,17 @@ function planet_core_preprocess_html(&$variables): void {
   }
 
   // Adds to a body css class that identifies the current page.
-  $variables['attributes']['class'][] = 'plnt-css-' . ltrim($current_path_alias, '/') ?? ltrim($current_path, '/');
+  $value_to_be_used = $current_path_alias ?? $current_path;
+  $value_to_be_used = ltrim($value_to_be_used, '/');
+  $value_to_be_used = str_replace('/', '-', $value_to_be_used);
+  $value_to_be_used = str_replace('_', '-', $value_to_be_used);
+
+  $variables['attributes']['class'][] = 'plnt-css-' . $value_to_be_used;
+
+  // For admin pages we need to add a class to the body tag.
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $variables['attributes']['class'][] = 'plnt-css-admin-page';
+  }
 }
 
 /**
