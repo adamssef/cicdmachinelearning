@@ -101,12 +101,10 @@
 /*  !* You may not need a negative margin if the background-size is cover *!*/
 /*}*/
 
-
 .lavender-bg .coh-style-primary-dark-atom- {
   padding-right: 48px;
   padding-left: 48px;
 }
-
 
 #edit-markup > p {
   display: none;
@@ -311,6 +309,10 @@
 
 /* Larger than small screens (includes middle and large screens) */
 @media only screen and (min-width: 769px) {
+  .hide-on-desktop-and-tablet {
+    display: none;
+  }
+
   .coh-ce-cpt_form_half_width-b4aee4c0 span {
     font-size: 20px !important;
     line-height: 28px !important;
@@ -424,6 +426,10 @@
 
 /* Small screens (mobile devices) */
 @media only screen and (max-width: 768px) {
+  .hide-on-small-screens {
+    display: none;
+  }
+
   #edit-single-opt-in--description {
     margin-left: 40px;
     margin-top: 10px;
