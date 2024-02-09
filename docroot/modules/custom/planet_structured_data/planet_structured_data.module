@@ -5,18 +5,21 @@
  * Contains schema_article.module.
  */
 
+/**
+ * @param array $attachments
+ *
+ * @return void
+ */
 function planet_structured_data_page_attachments_alter(array &$attachments) {
-  $node = \Drupal::routeMatch()->getParameter('node');
-
   $current_path = \Drupal::service('path.current')->getPath();
   $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
 
-  if (!str_starts_with($current_path_alias, '/blog')) {
-    foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+  foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+    // We want Article schema only for blog posts.
+    if (!str_starts_with($current_path_alias, '/blog')) {
       if (str_starts_with($attachment[1],'schema_article')) {
         unset($attachments['#attached']['html_head'][$key]);
       }
     }
   }
-
 }
