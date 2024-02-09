@@ -9,7 +9,6 @@ label: 'Front page'
 tags:
   canonical_url: '[site:url]'
   schema_organization_additional_type: Corporation
-  schema_organization_address: 'a:6:{s:5:"@type";s:13:"PostalAddress";s:13:"streetAddress";s:37:"Martin House IDA Business Park Dangan";s:15:"addressLocality";s:6:"Galway";s:13:"addressRegion";s:8:"Connacht";s:10:"postalCode";s:15:"Galway H91 AO6C";s:14:"addressCountry";s:7:"Ireland";}'
   schema_organization_description: 'Integrated payment solutions, hospitality and retail software and global VAT refunds: we make travel and shopping a breeze.'
   schema_organization_id: '[site:url]'
   schema_organization_image: 'a:3:{s:5:"@type";s:11:"ImageObject";s:20:"representativeOfPage";s:4:"True";s:3:"url";s:97:"https://www.weareplanet.com/sites/default/files/styles/webp/public/2022-11/Planet%20Logo.png.webp";}'
