@@ -41,11 +41,6 @@ elements: |-
         '#maxlength': 50
         '#autocomplete': 'off'
         '#required': true
-  email:
-    '#type': email
-    '#title': 'Email*'
-    '#autocomplete': 'off'
-    '#required': true
   phone_intl:
     '#type': textfield
     '#title': 'Phone*'
@@ -53,6 +48,11 @@ elements: |-
     '#required_error': 'Phone number is required.'
     '#pattern': '^\+\d{1,4}(\s?\d){1,15}$'
     '#pattern_error': 'The phone number is invalid, please use the prefix of your country (eg. +44 2071234567)'
+  email:
+    '#type': email
+    '#title': 'Email*'
+    '#autocomplete': 'off'
+    '#required': true
   company_business_name:
     '#type': textfield
     '#title': 'Company name*'

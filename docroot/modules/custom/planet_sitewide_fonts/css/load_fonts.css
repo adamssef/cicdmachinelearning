@@ -19,3 +19,10 @@
   src: url('../fonts/TTCommonsClassic-Regular.eot') format('embedded-opentype'), url('../fonts/TTCommonsClassic-Regular.woff') format('woff'), url('../fonts/TTCommonsClassic-Regular.woff2') format('woff2'), url('../fonts/TTCommonsClassic-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'TT Commons';
+  font-weight: 500;
+  font-style: normal;
+  src: url('../fonts/TTCommonsClassic-Medium.eot') format('embedded-opentype'), url('../fonts/TTCommonsClassic-Medium.woff') format('woff'), url('../fonts/TTCommonsClassic-Medium.woff2') format('woff2'), url('../fonts/TTCommonsClassic-Medium.ttf') format('truetype');
+}
+

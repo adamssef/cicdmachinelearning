@@ -5,6 +5,7 @@
  * Custom hooks functions for Planet Core.
  */
 
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\webform\WebformSubmissionInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -24,13 +25,31 @@ function _planet_core_sanitize_cookie($value) {
  * Implements hook_preprocess_html().
  *
  * Changes the title of the user page.
- *
- * Implements hook_preprocess_html().
  */
 function planet_core_preprocess_html(&$variables): void {
   $routeName = \Drupal::routeMatch()->getRouteName();
   if ($routeName === 'entity.user.canonical') {
     $variables['head_title']['title'] = '';
+  }
+
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+  if ($current_path_alias === '/pms-transformation') {
+    $variables['attributes']['class'][] = 'planet-header-transparent';
+  }
+
+  // Adds to a body css class that identifies the current page.
+  $value_to_be_used = $current_path_alias ?? $current_path;
+  $value_to_be_used = ltrim($value_to_be_used, '/');
+  $value_to_be_used = str_replace('/', '-', $value_to_be_used);
+  $value_to_be_used = str_replace('_', '-', $value_to_be_used);
+
+  $variables['attributes']['class'][] = 'plnt-css-' . $value_to_be_used;
+
+  // For admin pages we need to add a class to the body tag.
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $variables['attributes']['class'][] = 'plnt-css-admin-page';
   }
 }
 
@@ -218,6 +237,42 @@ function planet_core_theme_suggestions_page_alter(array &$suggestions, array $va
 }
 
 /**
+ * Implements hook_cron().
+ */
+function planet_core_cron() {
+  // Calculate the timestamp for 30 days ago.
+  $thirtyDaysAgo = new DrupalDateTime('-30 days');
+  $thirtyDaysAgoTimestamp = $thirtyDaysAgo->getTimestamp();
+
+  // Load entity storage for pardot_submission.
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $storage = $entityTypeManager->getStorage('pardot_submission');
+
+  // Query for pardot_submission entities older than 30 days.
+  $query = $storage->getQuery()
+    ->condition('changed', $thirtyDaysAgoTimestamp, '<')
+    ->accessCheck();
+  $entity_ids = $query->execute();
+
+  if (empty($entity_ids)) {
+    \Drupal::logger('planet_core')->notice('No Pardot Submission to clean.');
+    \Drupal::messenger()->addMessage('No Pardot Submission to clean.');
+    return;
+  }
+
+  // Load and delete each entity.
+  foreach ($entity_ids as $entity_id) {
+    $entity = $storage->load($entity_id);
+    if ($entity) {
+      $entity->delete();
+    }
+  }
+
+  \Drupal::logger('planet_core')->notice('Pardot Submission cleanup cron has been executed.');
+  \Drupal::messenger()->addMessage('Pardot Submission cleanup cron has been executed.');
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function planet_core_theme_suggestions_node_alter(array &$suggestions, array $variables) {
@@ -240,12 +295,25 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     }
   }
 
+  if ($alias == "/pms-transformation") {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    switch ($language) {
+      case "fr":
+        $suggestions[] = 'pms_transformation_fr_template';
+        break;
+      case "de":
+        $suggestions[] = 'pms_transformation_de_template';
+        break;
+      default:
+        $suggestions[] = 'pms_transformation_template';
+    }
+  }
+
   if ($node->getType() === 'resources' && $node->hasField('field_enable_new_layout') && $node->get('field_enable_new_layout')->value == TRUE) {
     // Add custom template suggestion for 'resources' content type.
     $suggestions[] = 'node__resources-page';
   }
 }
-
 
 /**
  * Implements hook_theme().
@@ -273,6 +341,18 @@ function planet_core_theme(): array {
     'onboarding_page_template' => [
       'template' => 'page--onboarding-page-template',
       'base hook' => 'page',
+    ],
+    'pms_transformation_de_template' => [
+      'template' => 'page--pms-transformation-page-de-template',
+      'base hook' => 'node',
+    ],
+    'pms_transformation_fr_template' => [
+      'template' => 'page--pms-transformation-page-fr-template',
+      'base hook' => 'node',
+    ],
+    'pms_transformation_template' => [
+      'template' => 'page--pms-transformation-page-template',
+      'base hook' => 'node',
     ],
     'node__blog-single-page' => [
       'template' => 'node--blog-single-page',
@@ -375,8 +455,11 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void {
  *
  * Implements hook_preprocess_HOOK().
  *
+ * Assign js files and send data
+ *
  */
-function planet_core_preprocess_node(array &$variables) {
+function planet_core_preprocess_node(array &$variables)
+{
   $node = $variables['node'];
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
   $planet_core_article_helper = \Drupal::service('planet_core.article_helper');
@@ -386,6 +469,7 @@ function planet_core_preprocess_node(array &$variables) {
   if ($node->getType() == 'author') {
     $variables['#attached']['library'][] = 'planet_core/author-page';
   }
+
 
   $config = \Drupal::config('planet_core.settings');
   $is_new_blog_enabled = $config->get('enable_new_blog');
@@ -408,4 +492,11 @@ function planet_core_preprocess_node(array &$variables) {
  */
 function planet_core_preprocess_page(array &$variables) {
   $variables['#attached']['library'][] = 'planet_core/language-popup';
+
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+  if ($current_path_alias === '/pms-transformation') {
+    $variables['#attached']['library'][] = 'planet_core/pms-transformation';
+  }
 }

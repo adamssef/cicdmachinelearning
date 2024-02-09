@@ -1,0 +1,174 @@
+{#
+Custom Twig template for the "PMS Transformation" page.
+Template variables available:
+  - content: An array of content elements.
+  - node: The node entity representing the "Author" content.
+  - label: The node label.
+  - url: The node URL.
+  - attributes: HTML attributes for the node wrapper.
+#}
+<div>
+  <div class="plnt-pms-transformation-page">
+    <div class="lavender-bg">
+      <div class="coh-container coh-container-boxed lavender-bg">
+        <div class="coh-row">
+          <div class="coh-row-inner">
+            <div
+              class="pms-transformation-lang-selector coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+              <div class="pms-transformation-lang-selector-inner">
+                <a href="/pms-transformation">EN</a>
+                <a class="active" href="/fr/pms-transformation">FR</a>
+                <a href="/de/pms-transformation">DE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="coh-row">
+          <div class="coh-row-inner">
+            <div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+              <div class="lavender-bg-wrapper">
+                <span class="pre-heading">Hospitality PMS transformation 2024</span>
+                <h2 class="coh-heading coh-style-heading-2-planet">La prochaine étape de votre partenariat avec Planet</h2>
+                <p>
+                  Chez Planet, nous simplifions la façon dont vous travaillez avec nous. Nous avons investi dans nos plateformes PMS en concentrant nos priorités sur les domaines qui vous apportent le plus de valeur, notamment la stabilité et la performance.
+                  <br>
+                  <br>
+                  En 2024, nous passerons à un modèle d'abonnement par chambre et par mois afin de rationaliser notre tarification. Cela nous permettra d'améliorer encore nos plateformes PMS et d'investir dans le développement du cloud, en veillant à vous proposer un PMS cloud de premier ordre qui réponde à vos exigences.
+                  <br>
+                  <br>
+                  Si vous avez des questions sur l'impact que cela peut avoir sur vous et votre hôtel, contactez notre équipe dès aujourd'hui.
+                </p>
+                <a class="coh-link coh-style-primary-dark-atom-" href="#form-50-50" id="get-in-touch-button">Prendre contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pms-rounded-white"></div>
+  </div>
+  <div class="cloud-vision-wrapper">
+    <div class="cloud-vision-wrapper-text">
+      <div class="cloud-vision-wrapper-text-headings">
+        <div class="heading">Vision Cloud</div>
+        <div class="subheading">Optimisez votre quotidien, économisez de l'argent et du temps grâce à notre technologie "cloud native".</div>
+      </div>
+      <div class="cloud-vision-text-content-wrapper">
+        <div class="cloud-vision-text-content" id="cloud-vision-text-content-hotels">
+          <div class="cloud-vision-text-content-icon"><img src="/resources/icons/Icon=Hotel%20copy-01,%20Background=Light.svg"></div>
+          <div class="cloud-vision-text-content-title">Plus de 2 000 hôtels utilisent aujourd'hui notre solution PMS cloud</div>
+          <div class="cloud-vision-text-content-body">
+            Au cours des deux prochaines années, nous continuerons d'investir et d'innover dans notre plateforme cloud afin de nous assurer qu'elle réponde à toutes les exigences d'un PMS de premier plan.          </div>
+        </div>
+        <div class="cloud-vision-text-content">
+          <div class="cloud-vision-text-content-icon"><img src="/resources/icons/Icon=Cloud-01,%20Background=Light.svg"></div>
+          <div class="cloud-vision-text-content-title">Cloud migration</div>
+          <div class="cloud-vision-text-content-body">
+            Nous pensons que la migration de nos clients on-premise vers une solution cloud avec un logiciel évolutif, sûr et automatiquement à jour, leur permettra ainsi de se consacrer sur ce qui compte peur eux, offrir de meilleures expériences à leurs clients.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cloud-vision-wrapper-image hide-on-desktop-and-tablet">
+      <img id="cloud-vision-image" src="/resources/images/Cloudvision_Mobile.svg"
+           alt="People approaching reception desk">
+    </div>
+    <div class="cloud-vision-wrapper-image hide-on-small-screens">
+      <img id="cloud-vision-image" src="/resources/images/Cloudvision_DesktopTablet.svg"
+           alt="People approaching reception desk">
+    </div>
+  </div>
+  <div class="full-service-wrapper">
+    <div class="heading">La solution complète de Planet comprend</div>
+    <div class="full-service-wrapper-benefit-cards">
+      <!-- Card 1 -->
+      <div class="full-service-benefit-card">
+        <div class="full-service-card-icon" id="cpu-icon"><img src="/resources/icons/Icon=Embedded,%20Background=Light.svg" alt="A CPU icon"></div>
+        <h5 class="full-service-title">Paiements intégrés</h5>
+        <p class="full-service-text">
+          Dans un avenir en cloud, vous aurez des paiements intégrés, de sorte
+          que les clients paient comme ils le souhaitent pendant que vous renforcez la fidélité et
+          l'engagement.
+        </p>
+      </div>
+      <!-- Card 2 -->
+      <div class="full-service-benefit-card">
+        <div class="full-service-card-icon" id="network-icon"><img src="/resources/icons/Icon=Connect,%20Background=Light.svg" alt="Networks nodes connected"></div>
+        <h5 class="full-service-title">Commerce connecté</h5>
+        <p class="full-service-text">
+          Un seul partenaire technologique pour le PMS et les paiements
+          élimine le coût de solutions séparées et aide votre personnel à gagner du temps et à
+          travailler plus efficacement.
+        </p>
+      </div>
+      <!-- Card 3 -->
+      <div class="full-service-benefit-card">
+        <div class="full-service-card-icon" id="dollar-icon"><img src="/resources/icons/Icon=Dollar-01,%20Background=Light.svg" alt="A dollar sign icon"></div>
+        <h5 class="full-service-title">Génération de revenus</h5>
+        <p class="full-service-text">
+          De nouvelles sources de revenus grâce à la conversion dynamique
+          des devises (DCC) et à la tarification multidevises (MCP).
+        </p>
+      </div>
+      <!-- Card 4 -->
+      <div class="full-service-benefit-card">
+        <div class="full-service-card-icon" id="bulb-icon"><img src="/resources/icons/Icon=Tips-01,%20Background=Light.svg" alt="An icon depicting a bulb"></div>
+        <h5 class="full-service-title">Perspectives basées sur les données</h5>
+        <p class="full-service-text">
+          Des données pour vous aider à optimiser l’expérience
+          client et ainsi bénéficier des perspectives nécessaires pour évaluer et augmenter vos
+          revenus.
+        </p>
+      </div>
+      <!-- Card 5 -->
+      <div class="full-service-benefit-card">
+        <div class="full-service-card-icon" id="circular-arrows-icon"><img src="/resources/icons/Icon=Sync-01,%20Background=Light.svg" alt="Circular arrows icon"></div>
+        <h5 class="full-service-title" id="full-service-title-autoupdate-software">Mise à jour automatique du logiciel</h5>
+        <p class="full-service-text">
+          Pour une maintenance technique sans effort et une
+          réduction des risques. Vous serez à la pointe des développements technologiques de Planet
+          et bénéficierez des dernières fonctionnalités leaders sur le marché.
+        </p>
+      </div>
+      <!-- Card 6 -->
+      <div class="full-service-benefit-card">
+        <div class="full-service-card-icon" id="key-icon"><img src="/resources/icons/Icon=Access,%20Background=Light.svg" alt="An icon showing a key"></div>
+        <h5 class="full-service-title">Accès à plus de 1000 partenaires</h5>
+        <p class="full-service-text">
+          Un accès aux meilleures applications et intégrations que
+          l’industrie hôtelière propose, afin d’améliorer vos opérations et augmenter vos revenus.
+        </p>
+      </div>
+    </div>
+  </div>
+  {% if content.field_layout_canvas %}
+    <div class="simple-predictable-costs">
+      <div class="layout-canvas">
+        {{ content.field_layout_canvas }}
+      </div>
+    </div>
+  {% endif %}
+</div>
+</div>
+
+<style>
+  .pre-heading {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px
+  }
+  .lavender-bg p {
+    color: #202020;
+    font-weight: 300;
+    text-align: center;
+    line-height: 140%;
+    font-size: 20px;
+    margin-top: 16px;
+    margin-bottom: 32px
+  }
+
+
+</style>

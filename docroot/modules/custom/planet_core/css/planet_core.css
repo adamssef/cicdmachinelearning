@@ -1,3 +1,11 @@
+/** [PLANET ADMIN PAGES*/
+.plnt-css-admin-page .ck-editor__editable {
+  resize: vertical;
+  max-height: 60vh;
+  height: 500px;
+}
+/** END */
+
 /** [PLANET OFFICES] */
 .offices-list .coh-view-content-item {
   padding-top: 2.5rem;
