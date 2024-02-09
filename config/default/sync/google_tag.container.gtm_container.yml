@@ -10,12 +10,37 @@ dependencies:
 id: gtm_container
 label: GTM-Container
 weight: 0
-tag_container_ids: {  }
-advanced_settings: {  }
-dimensions_metrics: {  }
+container_id: GTM-WFDQV8N
+data_layer: dataLayer
+include_classes: false
+whitelist_classes: |-
+  google
+  nonGooglePixels
+  nonGoogleScripts
+  nonGoogleIframes
+blacklist_classes: |-
+  customScripts
+  customPixels
+include_environment: false
+environment_id: ''
+environment_token: ''
+path_toggle: 'exclude listed'
+path_list: |-
+  /admin*
+  /batch*
+  /node/add*
+  /node/*/edit
+  /node/*/delete
+  /user/*/edit*
+  /user/*/cancel*
+role_toggle: 'exclude listed'
+role_list: {  }
+status_toggle: 'exclude listed'
+status_list: |-
+  403
+  404
 conditions:
   cohesion_master_template:
     id: cohesion_master_template
     using_master_template: 0
     negate: 0
-events: {  }

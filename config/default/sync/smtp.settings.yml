@@ -10,7 +10,7 @@ smtp_timeout: 30
 smtp_username: cebb5aaae7fc214c12c66a98e2283457
 smtp_password: 11f5f468a8613fdc3fd36751c89273cd
 smtp_from: noreply@weareplanet.com
-smtp_fromname: 'Weareplanet (stage)'
+smtp_fromname: Weareplanet
 smtp_client_hostname: ''
 smtp_client_helo: ''
 smtp_allowhtml: '0'

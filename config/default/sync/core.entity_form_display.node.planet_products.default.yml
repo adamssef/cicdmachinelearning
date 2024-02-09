@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.planet_products.field_select_resources
     - node.type.planet_products
   module:
-    - content_moderation
     - path
     - text
 id: node.planet_products.default
@@ -116,6 +115,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
