@@ -4,7 +4,7 @@ debug: false
 cron_interval: 30
 cron_interval_override: 0
 hide_signup_messages: 0
-subscription_name: ''
+subscription_name: 'Planet Payment'
 spi:
   server: 'https://nspi.acquia.com'
   ssl_override: false
