@@ -5,6 +5,9 @@
  * Contains schema_article.module.
  */
 
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
+
 /**
  * @param array $attachments
  *
@@ -14,8 +17,47 @@ function planet_structured_data_page_attachments_alter(array &$attachments) {
   $current_path = \Drupal::service('path.current')->getPath();
   $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
 
+  // Collect tags added by Schema Metatag into structured data array.
+  $schema_metatag_manager = \Drupal::service('schema_metatag.schema_metatag_manager');
+  $items = $schema_metatag_manager->parseJsonld($attachments['#attached']['html_head']);
+
+  foreach ($items['@graph'] as $key => $item) {
+    if ($item['@type'] == 'Article') {
+      $article_image_url = $item['image']['url'];
+      $article_image_url = $article_image_url ?? NULL;
+      break;
+    }
+  }
+
+  if (str_ends_with($article_image_url, '/edit') && $article_image_url != NULL) {
+    $mid = explode('/', $article_image_url)[2];
+  }
+
+  // We need to generate absolute file url base on media ID.
+  $media = Media::load($mid);
+  $fid = $media->field_media_image->target_id;
+  $file_uri = File::load($fid)->getFileUri();
+  $file_location_link = \Drupal::service('file_url_generator')->generateAbsoluteString($file_uri);
+
+  // Then update the image URL in the structured data.
+  $items['@graph'][$key]['image']['url'] = $file_location_link;
+  $jsonld = $schema_metatag_manager->encodeJsonld($items);
+
+  // Attach the updated structured data to the page head.
+  if (!empty($jsonld)) {
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#type' => 'html_tag',
+        '#tag' => 'script',
+        '#value' => $jsonld,
+        '#attributes' => ['type' => 'application/ld+json'],
+      ],
+      'schema_metatag',
+    ];
+  }
+
+  // We want Article schema only for blog posts.
   foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
-    // We want Article schema only for blog posts.
     if (!str_starts_with($current_path_alias, '/blog')) {
       if (str_starts_with($attachment[1],'schema_article')) {
         unset($attachments['#attached']['html_head'][$key]);
