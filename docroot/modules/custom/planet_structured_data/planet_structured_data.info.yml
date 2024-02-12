@@ -1,0 +1,5 @@
+name: 'planet_structured_data'
+type: module
+description: 'The module that customizes default settings of schema_metatag module'
+package: Planet
+core_version_requirement: ^9 || ^10

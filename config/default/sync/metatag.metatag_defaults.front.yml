@@ -8,4 +8,12 @@ id: front
 label: 'Front page'
 tags:
   canonical_url: '[site:url]'
+  schema_organization_additional_type: Corporation
+  schema_organization_description: 'Integrated payment solutions, hospitality and retail software and global VAT refunds: we make travel and shopping a breeze.'
+  schema_organization_id: '[site:url]'
+  schema_organization_image: 'a:3:{s:5:"@type";s:11:"ImageObject";s:20:"representativeOfPage";s:4:"True";s:3:"url";s:97:"https://www.weareplanet.com/sites/default/files/styles/webp/public/2022-11/Planet%20Logo.png.webp";}'
+  schema_organization_name: '[site:name]'
+  schema_organization_same_as: 'https://www.linkedin.com/company/planet/?originalSubdomain=pl, '
+  schema_organization_type: Organization
+  schema_organization_url: '[site:url]'
   shortlink: '[site:url]'
