@@ -38,22 +38,26 @@ function planet_structured_data_page_attachments_alter(array &$attachments) {
       // Then update the image URL in the structured data.
       $items['@graph'][$key]['image']['url'] = $file_location_link;
       $jsonld = $schema_metatag_manager->encodeJsonld($items);
-      break;
     }
   }
 
+  if ($jsonld === NULL) {
+    $jsonld = $schema_metatag_manager->encodeJsonld($items);
+  }
 
   // Attach the updated structured data to the page head.
-  if (!empty($jsonld)) {
-    $attachments['#attached']['html_head'][] = [
-      [
-        '#type' => 'html_tag',
-        '#tag' => 'script',
-        '#value' => $jsonld,
-        '#attributes' => ['type' => 'application/ld+json'],
-      ],
-      'schema_metatag',
-    ];
+  if (count($items) > 0) {
+    if (!empty($jsonld)) {
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#type' => 'html_tag',
+          '#tag' => 'script',
+          '#value' => $jsonld,
+          '#attributes' => ['type' => 'application/ld+json'],
+        ],
+        'schema_metatag',
+      ];
+    }
   }
 
   // We want Article schema only for blog posts.
