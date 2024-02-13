@@ -184,7 +184,7 @@
         "Remove unexisting permissions": "https://www.drupal.org/files/issues/2023-09-14/3358586-11.patch",
         "'Output is empty' when running drush cohesion:rebuild": "https://www.drupal.org/files/issues/2023-09-13/3386915-6.patch",
         "An empty views pager offset field can cause a PHP type error to be triggered": "https://www.drupal.org/files/issues/2023-05-30/3361177-8.patch"
-
+        
       },
       "drupal/pardot": {
         "Disable pardot js": "patches/path_pardot.patch",
@@ -215,6 +215,9 @@
       },
       "drupal/ultimate_cron": {
         "Creation of dynamic property": "https://www.drupal.org/files/issues/2023-04-03/3351276-4.patch"
+      },
+      "drupal/site_settings": {
+        "Site Settings Menu does not work in 10.2.1": "https://www.drupal.org/files/issues/2024-01-17/3357022_canonical_removed_from_type.patch"
       }
     },
     "drupal-lenient": {
@@ -229,42 +232,42 @@
     "d3": {
       "type": "package",
       "package": {
-          "name": "d3/d3",
-          "version": "v3.5.17",
-          "type": "drupal-library",
-          "source": {
-              "url": "https://github.com/d3/d3.git",
-              "type": "git",
-              "reference": "tags/v3.5.17"
-          }
+        "name": "d3/d3",
+        "version": "v3.5.17",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/d3/d3.git",
+          "type": "git",
+          "reference": "tags/v3.5.17"
+        }
       }
     },
     "highlighjs": {
       "type": "package",
       "package": {
-          "name": "highlightjs/highlightjs",
-          "version": "9.7.0",
-          "type": "drupal-library",
-          "source": {
-              "url": "https://github.com/highlightjs/highlight.js.git",
-              "type": "git",
-              "reference": "tags/9.7.0"
-          }
+        "name": "highlightjs/highlightjs",
+        "version": "9.7.0",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/highlightjs/highlight.js.git",
+          "type": "git",
+          "reference": "tags/9.7.0"
+        }
       }
     },
     "dropzone": {
       "type": "package",
       "package": {
-          "name": "enyo/dropzone",
-          "version": "4.2.0",
-          "type": "drupal-library",
-          "source": {
-              "url": "https://github.com/enyo/dropzone",
-              "type": "git",
-              "reference": "origin/master"
-          }
+        "name": "enyo/dropzone",
+        "version": "4.2.0",
+        "type": "drupal-library",
+        "source": {
+          "url": "https://github.com/enyo/dropzone",
+          "type": "git",
+          "reference": "origin/master"
+        }
       }
-  },
+    },
     "npm-assets": {
       "type": "composer",
       "url": "https://asset-packagist.org"
