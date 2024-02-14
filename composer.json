@@ -119,15 +119,18 @@
       "discard-changes": true,
       "sort-packages": true,
       "allow-plugins": {
-        "cweagans/composer-patches": true,
-        "composer/installers": true,
-        "drupal/core-composer-scaffold": true,
-        "drupal/core-project-message": true,
-        "zaporylie/composer-drupal-optimizations": true,
-        "drupal/console-extend-plugin": true,
-        "dealerdirect/phpcodesniffer-composer-installer": true,
-        "oomphinc/composer-installers-extender": true
-      }
+            "cweagans/composer-patches": true,
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "zaporylie/composer-drupal-optimizations": true,
+            "drupal/console-extend-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "oomphinc/composer-installers-extender": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true,
+            "mglaman/composer-drupal-lenient": true
+        }
     },
     "extra": {
       "drupal-scaffold": {
