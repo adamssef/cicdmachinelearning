@@ -71,6 +71,7 @@
       "drupal/redirect": "^1.8",
       "drupal/robotstxt": "^1.4",
       "drupal/salesforce": "^5.0",
+      "drupal/schema_metatag": "*",
       "drupal/search_api_solr": "^4.2",
       "drupal/sfweb2lead_webform": "^5.2",
       "drupal/shield": "^1.6",
@@ -253,4 +254,3 @@
     "minimum-stability": "dev",
     "prefer-stable": true
   }
-  
