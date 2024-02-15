@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8340ec812c7bdd18ec3d3dc73f7cb351",
+    "content-hash": "cb9b4545e3fcac8ba8bb3509accc6b82",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -6347,6 +6347,70 @@
             }
         },
         {
+            "name": "drupal/schema_metatag",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/schema_metatag.git",
+                "reference": "8.x-2.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/schema_metatag-8.x-2.5.zip",
+                "reference": "8.x-2.5",
+                "shasum": "543b9d624711379e29dde58c22e2cc0a66822c87"
+            },
+            "require": {
+                "drupal/core": "^9.0 || ^10",
+                "drupal/metatag": "^1.0"
+            },
+            "require-dev": {
+                "drupal/coder": "^8.3",
+                "drupal/metatag_views": "*",
+                "drupal/schema_article": "*",
+                "drupal/schema_organization": "*",
+                "phpcompatibility/php-compatibility": "^9.3"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.5",
+                    "datestamp": "1687460392",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DamienMcKenna",
+                    "homepage": "https://www.drupal.org/user/108450"
+                },
+                {
+                    "name": "KarenS",
+                    "homepage": "https://www.drupal.org/user/45874"
+                },
+                {
+                    "name": "wells",
+                    "homepage": "https://www.drupal.org/user/2452278"
+                }
+            ],
+            "description": "Metatag implementation of Schema.org structured data (JSON-LD)",
+            "homepage": "https://www.drupal.org/project/schema_metatag",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/schema_metatag",
+                "issues": "https://www.drupal.org/project/issues/schema_metatag"
+            }
+        },
+        {
             "name": "drupal/search_api",
             "version": "1.29.0",
             "source": {
@@ -8320,16 +8384,6 @@
                 "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.16.0"
             },
             "time": "2023-03-20T10:51:12+00:00"
-        },
-        {
-            "name": "enyo/dropzone",
-            "version": "4.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/enyo/dropzone",
-                "reference": "origin/master"
-            },
-            "type": "drupal-library"
         },
         {
             "name": "erusev/parsedown",
@@ -18994,5 +19048,5 @@
         "ext-json": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.2.0"
 }
