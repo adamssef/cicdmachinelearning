@@ -30,6 +30,7 @@ module:
   config: 0
   config_ignore: 0
   config_split: 0
+  config_split_ignore: 0
   config_translation: 0
   contact: 0
   content_moderation: 0
@@ -66,6 +67,7 @@ module:
   locale: 0
   login_security: 0
   media: 0
+  media_bulk_upload: 0
   media_entity_file_replace: 0
   media_entity_lottie: 0
   media_library: 0
@@ -117,6 +119,7 @@ module:
   schema_metatag: 0
   schema_organization: 0
   schema_qa_page: 0
+  seo_hreflang: 0
   search_api: 0
   search_api_solr: 0
   serialization: 0
