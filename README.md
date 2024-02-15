@@ -1,6 +1,6 @@
 
 # Intro
-This project provides a platform base installation for Planet!!
+This project provides a platform base installation for Planet!!!
 
 # Installing a new website
 ## LOCAL SETUP
