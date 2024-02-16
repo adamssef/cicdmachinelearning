@@ -11,7 +11,6 @@ display:
         name:
           label: Benutzername
         status:
-          label: Status
           settings:
             format_custom_false: Gesperrt
             format_custom_true: Aktiv
@@ -52,7 +51,6 @@ display:
             label: 'Name oder E-Mail-Adresse enthält'
         status:
           group_info:
-            label: Status
             group_items:
               1:
                 title: Aktiv

@@ -4,9 +4,6 @@ display:
     display_title: 'Par défaut'
     display_options:
       title: Média
-      fields:
-        media_bulk_form:
-          action_title: Action
       pager:
         options:
           expose:
@@ -24,7 +21,7 @@ display:
       sorts:
         created:
           expose:
-            label: 'Les plus récents d''abord'
+            label: "Les plus récents d'abord"
         name:
           expose:
             label: 'Nom (A-Z)'
@@ -56,8 +53,6 @@ display:
   page:
     display_options:
       fields:
-        media_bulk_form:
-          action_title: Action
         edit_media:
           alter:
             text: 'Modifier {{ name }}'

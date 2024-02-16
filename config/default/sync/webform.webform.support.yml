@@ -13,7 +13,7 @@ archive: false
 id: support
 title: Support
 description: ''
-category: ''
+categories: {  }
 elements: |-
   layout:
     '#type': webform_flexbox

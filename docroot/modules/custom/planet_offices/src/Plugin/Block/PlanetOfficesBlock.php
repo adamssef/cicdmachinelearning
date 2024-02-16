@@ -17,6 +17,13 @@ use Drupal\taxonomy\Entity\Term;
  */
 
 class PlanetOfficesBlock extends BlockBase {
+
+  /**
+   * Gets the array of data related to published regions.
+   *
+   * @return array
+   *  The array of regions.
+   */
   public function getTranslatedRegions(): array {
     $vid = 'planet_offices_regions';
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
@@ -30,30 +37,44 @@ class PlanetOfficesBlock extends BlockBase {
     }
 
     return $regions;
-}
+  }
 
-public function getTranslatedCountries(): array {
-    $vid = 'planet_offices_countries';
-    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+  /**
+   * Gets the array of data related to published countries.
+   *
+   * @return array
+   *  The array of countries.
+   */
+  public function getTranslatedCountries(): array {
+      $vid = 'planet_offices_countries';
+      $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
 
-    $countries = [];
-    foreach ($terms as $term) {
-        $term_entity = Term::load($term->tid);
-        $region_id = $term_entity->get('field_office_region')->target_id;
-        $countries[] = [
-            'id' => $term->tid,
-            'name' => $term->name,
-            'region_id' => $region_id,
-        ];
-    }
+      $countries = [];
+      foreach ($terms as $term) {
+          $term_entity = Term::load($term->tid);
+          $region_id = $term_entity->get('field_office_region')->target_id;
+          $countries[] = [
+              'id' => $term->tid,
+              'name' => $term->name,
+              'region_id' => $region_id,
+          ];
+      }
 
-    return $countries;
-}
-  function getOffices()
-    {
+      return $countries;
+  }
+
+
+  /**
+   * Gets the array of data related to published offices.
+   *
+   * @return array
+   *  The array of offices.
+   */
+  public function getOffices() {
         $query = \Drupal::entityQuery('node')
             ->condition('type', 'planet_offices')
-            ->condition('status', 1); // Optional: Include only published nodes
+            ->condition('status', 1) // Optional: Include only published nodes
+            ->accessCheck(FALSE);
 
         $entity_ids = $query->execute();
         $nodes = Node::loadMultiple($entity_ids);

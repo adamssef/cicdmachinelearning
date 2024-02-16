@@ -14,7 +14,7 @@ module:
   block_content: 0
   breakpoint: 0
   captcha: 0
-  ckeditor: 0
+  ckeditor5: 0
   clientside_validation: 0
   clientside_validation_jquery: 0
   cohesion: 0
@@ -26,10 +26,8 @@ module:
   cohesion_sync: 0
   cohesion_templates: 0
   cohesion_website_settings: 0
-  color: 0
   comment: 0
   config: 0
-  config_filter: 0
   config_ignore: 0
   config_split: 0
   config_split_ignore: 0
@@ -40,7 +38,6 @@ module:
   context_ui: 0
   contextual: 0
   csp: 0
-  csp_extras: 0
   ctools: 0
   datetime: 0
   duplicate_role: 0
@@ -64,6 +61,8 @@ module:
   imce: 0
   key: 0
   language: 0
+  lgpd_onetrust: 0
+  lgpd_onetrust_cookie_blocking: 0
   link: 0
   locale: 0
   login_security: 0
@@ -94,14 +93,15 @@ module:
   password_policy_length: 0
   path: 0
   path_alias: 0
+  phpass: 0
   planet_config: 0
   planet_core: 0
   planet_language_switcher: 0
   planet_offices: 0
   planet_sitestudio_custom_elements: 0
+  planet_sitewide_fonts: 0
   planet_structured_data: 0
   quick_node_clone: 0
-  rdf: 0
   recaptcha: 0
   redirect: 0
   redirect_domain: 0
@@ -119,9 +119,9 @@ module:
   schema_metatag: 0
   schema_organization: 0
   schema_qa_page: 0
+  seo_hreflang: 0
   search_api: 0
   search_api_solr: 0
-  seo_hreflang: 0
   serialization: 0
   sfweb2lead_webform: 0
   shield: 0
@@ -131,6 +131,7 @@ module:
   site_settings: 0
   site_settings_type_permissions: 0
   site_studio_webform: 0
+  sitestudio_claro: 0
   sitestudio_page_builder: 0
   smtp: 0
   svg_image_field: 0

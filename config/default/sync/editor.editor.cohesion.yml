@@ -1,62 +1,165 @@
-uuid: 6bc48066-5be8-495a-b664-1cfbfdd302c8
+uuid: 09541207-06a3-4520-83cf-bce9ad1400ac
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.cohesion
   module:
-    - ckeditor
-_core:
-  default_config_hash: j5UoqyZc3VqPSDJ1-FrOoQa7nkOM9F3bV-4CMQY-l3U
+    - ckeditor5
 format: cohesion
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
+    items:
+      - bold
+      - italic
+      - underline
+      - removeFormat
+      - '|'
+      - alignment
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - drupalMedia
+      - blockQuote
+      - '|'
+      - sourceEditing
+      - '|'
+      - insertTable
+      - style
+      - '|'
+  plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_list:
+      properties:
+        reversed: true
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_style:
+      styles:
         -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Underline
-            - RemoveFormat
+          label: 'B200 [inline]'
+          element: '<span class="coh-style-b200">'
         -
-          name: Layout
-          items:
-            - JustifyLeft
-            - JustifyCenter
-            - JustifyRight
-            - JustifyBlock
+          label: 'Body Large - TT Commons [inline]'
+          element: '<span class="coh-style-body-large---tt-commons-planet">'
         -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
+          label: 'Body Oversized - TT Commons [inline]'
+          element: '<span class="coh-style-body-oversized---tt-commons-planet">'
         -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
+          label: 'Body Regular - TT Commons [inline]'
+          element: '<span class="coh-style--body-regular---tt-commons-planet">'
         -
-          name: Media
-          items:
-            - DrupalMediaLibrary
-            - Blockquote
+          label: 'Body Small - TT Commons [inline]'
+          element: '<span class="coh-style-body-small---tt-commons-planet">'
         -
-          name: Tools
-          items:
-            - Source
-            - Maximize
+          label: 'Body XL - TT Commons Planet [inline]'
+          element: '<span class="coh-style--body-xl---tt-commons-planet">'
         -
-          name: Styles
-          items:
-            - DX8InlineStyles
+          label: 'Caption - TT Commons [inline]'
+          element: '<span class="coh-style-caption---tt-commons-planet">'
         -
-          name: Table
-          items:
-            - Table
-  plugins: {  }
+          label: 'H1 - TT Commons [h6] [inline]'
+          element: '<span class="coh-style-heading-1-planet">'
+        -
+          label: 'H2 - TT Commons [h6] [inline]'
+          element: '<span class="coh-style-heading-2-planet">'
+        -
+          label: 'H3 - TT Commons [h6] [inline]'
+          element: '<span class="coh-style-heading-3-planet">'
+        -
+          label: 'H4 - TT Commons [h6] [inline]'
+          element: '<span class="coh-style-heading-4-planet">'
+        -
+          label: 'H5 - TT Commons [h6] [inline]'
+          element: '<span class="coh-style-heading-5-planet">'
+        -
+          label: 'H500 [h6] [inline]'
+          element: '<span class="coh-style-h500">'
+        -
+          label: 'H700 [h6] [inline]'
+          element: '<span class="coh-style-h700">'
+        -
+          label: 'Highlight (dull red) [inline]'
+          element: '<span class="coh-style-highlight-dull-red-">'
+        -
+          label: 'Highlight (white) [inline]'
+          element: '<span class="coh-style-highlight-white">'
+        -
+          label: 'L100 [inline]'
+          element: '<span class="coh-style-l100">'
+        -
+          label: 'Line Break [inline]'
+          element: '<span class="coh-style-line-break">'
+        -
+          label: 'Link [inline]'
+          element: '<span class="coh-style-link">'
+        -
+          label: 'Primary Dark Button Icon [inline]'
+          element: '<span class="coh-style-primary-dark-button-icon">'
+        -
+          label: 'Primary Dark Button [inline]'
+          element: '<span class="coh-style-primary-dark-button">'
+        -
+          label: 'Primary Light Button Icon [inline]'
+          element: '<span class="coh-style-primary-light-button-icon">'
+        -
+          label: 'Primary Light Button [inline]'
+          element: '<span class="coh-style-primary-light-button">'
+        -
+          label: 'Secondary Dark Button Icon [inline]'
+          element: '<span class="coh-style-secondary-dark-button-icon">'
+        -
+          label: 'Secondary Dark Button [inline]'
+          element: '<span class="coh-style-secondary-dark-button">'
+        -
+          label: 'Secondary Light Button Icon [inline]'
+          element: '<span class="coh-style-secondary-light-button-icon">'
+        -
+          label: 'Secondary Light Button [inline]'
+          element: '<span class="coh-style-secondary-light-button">'
+        -
+          label: 'Subtitle - TT Commons Planet [h6] [inline]'
+          element: '<span class="coh-style-subtitle-5-planet">'
+        -
+          label: 'Terms - TT Commons [inline]'
+          element: '<span class="coh-style-terms---tt-commons-planet">'
+        -
+          label: 'Tip box (bright blue) [inline]'
+          element: '<span class="coh-style-tip-box-bright-blue">'
+        -
+          label: 'Tip box (dull blue) [inline]'
+          element: '<span class="coh-style-tip-box-dull-blue-">'
+        -
+          label: 'Tip box (dull red) [inline]'
+          element: '<span class="coh-style-tip-box-dull-red-">'
+        -
+          label: 'Tip box (transparent) [inline]'
+          element: '<span class="coh-style-tip-box-transparent-">'
+        -
+          label: 'Tip box icon (bright blue) [inline]'
+          element: '<span class="coh-style-tip-box-icon-bright-blue-">'
+        -
+          label: 'Tip box icon (dull blue) [inline]'
+          element: '<span class="coh-style-tip-box-icon-dull-blue-">'
+        -
+          label: 'Tip box icon (dull red) [inline]'
+          element: '<span class="coh-style-tip-box-icon-dull-red-">'
+        -
+          label: 'Tip box icon (transparent) [inline]'
+          element: '<span class="coh-style-tip-box-icon-transparent-">'
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public

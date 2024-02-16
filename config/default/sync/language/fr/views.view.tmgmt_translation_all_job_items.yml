@@ -23,8 +23,6 @@ display:
           label: État
         label:
           label: Libellé
-        type:
-          label: Type
         source_language:
           label: 'A partir de'
         target_language:
@@ -41,7 +39,7 @@ display:
             label: État
         source_language:
           expose:
-            label: 'Langue d''origine'
+            label: "Langue d'origine"
         job_type:
           group_info:
             label: 'Type de processus'
