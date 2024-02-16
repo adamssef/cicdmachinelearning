@@ -16,6 +16,7 @@ jobs:
         run: pwd
       - name: Show files from root folder (ls -al)
         run: ls -al
+
       - name: Deploy
         run: echo deploying
       - name: Setup PHP
