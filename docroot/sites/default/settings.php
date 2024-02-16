@@ -791,13 +791,7 @@ $settings['config_sync_directory'] = '../config/default/sync';
 $config_envs = ['local', 'dev', 'stg', 'prod'];
 
 // Get Actual Environment.
-
-if($_ENV['DRUPAL_ENVIRONMENT']) {
-  $env = $_ENV['DRUPAL_ENVIRONMENT'];
-} else {
-  $env = isset($_ENV['AH_SITE_ENVIRONMENT']) ? $_ENV['AH_SITE_ENVIRONMENT'] : 'local';
-}
-
+$env = isset($_ENV['AH_SITE_ENVIRONMENT']) ? $_ENV['AH_SITE_ENVIRONMENT'] : 'local';
 
 // Enable only the correct configuration.
 foreach ($config_envs as $config_env) {
