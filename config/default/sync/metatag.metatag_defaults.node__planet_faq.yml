@@ -6,5 +6,5 @@ id: node__planet_faq
 label: 'Content: Planet FAQ'
 tags:
   schema_qa_page_id: '[node:url]'
-  schema_qa_page_main_entity: 'a:6:{s:5:"@type";s:8:"Question";s:4:"name";s:12:"[node:title]";s:4:"text";s:25:"[node:field_answer_html_]";s:11:"answerCount";s:1:"1";s:11:"dateCreated";s:14:"[node:created]";s:14:"acceptedAnswer";a:4:{s:5:"@type";s:6:"Answer";s:4:"text";s:25:"[node:field_answer_html_]";s:3:"url";s:10:"[node:url]";s:11:"dateCreated";s:14:"[node:created]";}}'
+  schema_qa_page_main_entity: 'a:6:{s:5:"@type";s:8:"Question";s:4:"name";s:12:"[node:title]";s:4:"text";s:25:"[node:field_answer_html_]";s:11:"answerCount";s:1:"1";s:11:"dateCreated";s:14:"[node:created]";s:14:"acceptedAnswer";a:3:{s:5:"@type";s:6:"Answer";s:4:"text";s:25:"[node:field_answer_html_]";s:11:"dateCreated";s:14:"[node:created]";}}'
   schema_qa_page_type: FAQPage
