@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains schema_article.module.
+ * Contains planet_structured_data.module.
  */
 
 use Drupal\file\Entity\File;
