@@ -17,35 +17,12 @@ jobs:
       - name: Show files from root folder (ls -al)
         run: ls -al
 
-      - name: Execute before tests (robot)
-        uses: joonvena/robotframework-docker-action@v1.0
-        env:
-          BROWSER: chrome
-          ROBOT_TESTS_DIR: ${{ github.workspace }}/robot_tests
-          ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
-      - name: Upload before test results (artifacts)
-        uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: before
-          path: ${{ github.workspace }}/reports
-      - name: Show files from reports folder (ls2)
-        run: ls -al ${{ github.workspace }}/reports
-      - name: Show files from root folder github workspace (ls3)
-        run: ls -al ${{ github.workspace }}
-      - name: Show files from root folder (ls4)
-        run: ls -al
-      - name: Copy before images to image-diff (cp before images)
-        run: cp ${{ github.workspace }}/reports/*.png ${{ github.workspace }}/docroot/image-diff/images/before/
-      - name: Show files from before folder (ls5)
-        run: cd ${{ github.workspace }}/docroot/image-diff/images/before/ && ls -al
-
       - name: Deploy
         run: echo deploying
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: '8.2'
       - name: Test composer
         run: composer --no-ansi validate --no-check-lock
       - name: Run composer

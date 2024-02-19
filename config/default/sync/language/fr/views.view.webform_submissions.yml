@@ -33,7 +33,7 @@ display:
           content: 'Affichage de @start à @end sur @total'
       empty:
         area_text_custom:
-          content: 'Aucune soumission n''est disponible.'
+          content: "Aucune soumission n'est disponible."
       arguments:
         in_draft:
           exception:
@@ -48,8 +48,6 @@ display:
     display_options:
       display_description: 'Administrer les soumissions.'
       fields:
-        webform_submission_bulk_form:
-          action_title: Action
         in_draft:
           label: Brouillon
         sticky:
@@ -79,8 +77,6 @@ display:
     display_options:
       display_description: 'Gérer les soumissions.'
       fields:
-        webform_submission_bulk_form:
-          action_title: Action
         in_draft:
           label: Brouillon
         sticky:

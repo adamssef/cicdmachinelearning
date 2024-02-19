@@ -13,7 +13,7 @@ archive: false
 id: get_in_touch_no_project_field
 title: 'Get in touch - no project field'
 description: ''
-category: ''
+categories: {  }
 elements: |-
   layout:
     '#type': webform_flexbox

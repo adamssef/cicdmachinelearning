@@ -45,3 +45,4 @@ display:
     display_options:
       menu:
         title: 'Bibliothek benutzerdefinierter Blöcke'
+        description: 'Create and edit block content.'

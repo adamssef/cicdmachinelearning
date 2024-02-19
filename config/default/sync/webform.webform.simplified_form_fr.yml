@@ -13,7 +13,7 @@ archive: false
 id: simplified_form_fr
 title: 'Simplified form - fr'
 description: ''
-category: ''
+categories: {  }
 elements: |-
   layout:
     '#type': webform_flexbox

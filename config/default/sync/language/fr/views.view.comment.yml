@@ -6,8 +6,6 @@ display:
     display_options:
       title: Commentaires
       fields:
-        comment_bulk_form:
-          action_title: Action
         subject:
           label: Objet
         name:
@@ -43,7 +41,7 @@ display:
             label: Objet
         combine:
           expose:
-            label: 'Nom de l''auteur'
+            label: "Nom de l'auteur"
         langcode:
           expose:
             label: Langue
@@ -59,8 +57,6 @@ display:
     display_title: 'Commentaires non approuvés'
     display_options:
       fields:
-        comment_bulk_form:
-          action_title: Action
         subject:
           label: Objet
         name:
@@ -77,7 +73,7 @@ display:
             label: Objet
         combine:
           expose:
-            label: 'Nom de l''auteur'
+            label: "Nom de l'auteur"
         langcode:
           expose:
             label: Langue

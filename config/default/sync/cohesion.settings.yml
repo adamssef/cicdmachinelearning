@@ -1,7 +1,7 @@
 _core:
   default_config_hash: gpIMmHdWGMtTf2ZJoO-QHF9bk9ZVESnX-4LD-r3YtTw
 api_build_status: NO_CONTENT
-api_url: 'https://api.cohesiondx.com'
+api_url: 'https://eu-api.sitestudio.acquia.com'
 api_key: reddishibex-76671
 organization_key: internal-acquia-6240593d
 site_id: f066f74c-ded8-4f55-934b-953e9cbcb232
@@ -18,21 +18,21 @@ image_browser:
     type: medialib_imagebrowser
     dx8_imce_stream_wrapper: public
     cohesion_media_lib_types:
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '0'
   content:
     type: medialib_imagebrowser
     dx8_imce_stream_wrapper: public
     cohesion_media_lib_types:
       - image
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '0'
+      - '0'

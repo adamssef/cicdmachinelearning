@@ -1,45 +1,48 @@
-
 /**
  * @file
  * Planet offices JS.
  */
-
-(function ($) {
+(function (Drupal, once) {
   'use strict';
 
   function showCountries(regionID) {
-    $(".region-id").hide();
-    $(".region-id-" + regionID + "").show();
+    document.querySelectorAll(".region-id").forEach(el => el.style.display = 'none');
+    document.querySelectorAll(".region-id-" + regionID).forEach(el => el.style.display = 'block');
   }
 
   function showCountryOffices(countryId) {
-    $(".country-id").hide();
-    $(".country-id-" + countryId + "").show();
+    document.querySelectorAll(".country-id").forEach(el => el.style.display = 'none');
+    document.querySelectorAll(".country-id-" + countryId).forEach(el => el.style.display = 'block');
   }
 
   Drupal.behaviors.planetOffices = {
     attach: function (context, settings) {
-      $('.region', context).once('planetOffices').click(function (e) {
-        e.preventDefault();
-        $(".region").removeClass("active");
-        $(this).addClass("active");
-        let regionID = $(this).attr("data-id");
-        showCountries(regionID);
+      once('planetOffices', '.region', context).forEach(element => {
+        element.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelectorAll(".region").forEach(el => el.classList.remove("active"));
+          this.classList.add("active");
+          let regionID = this.getAttribute("data-id");
+          showCountries(regionID);
+        });
       });
-      $('.country', context).once('planetOffices').click(function (e) {
-        e.preventDefault();
-        $(".country").removeClass("active");
-        $(this).addClass("active");
-        let countryId = $(this).attr("data-id");
-        showCountryOffices(countryId);
-      });
-      
-
-       // Trigger initial click on the first region element
-       $(document).ready(function () {
-        $('.region:eq(3)', context).click();
+      once('planetOffices', '.country', context).forEach(element => {
+        element.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelectorAll(".country").forEach(el => el.classList.remove("active"));
+          this.classList.add("active");
+          let countryId = this.getAttribute("data-id");
+          showCountryOffices(countryId);
+        });
       });
 
+      // Trigger initial click on the first region element
+      document.addEventListener('DOMContentLoaded', function () {
+        let firstRegion = context.querySelector('.region:eq(3)');
+        if (firstRegion) {
+          firstRegion.click();
+        }
+      });
     }
   };
-})(jQuery);
+}(Drupal, once));

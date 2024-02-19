@@ -23,6 +23,7 @@ settings:
   webform_id: get_in_touch
   default_data: ''
   redirect: false
+  lazy: false
 visibility:
   cohesion_master_template:
     id: cohesion_master_template

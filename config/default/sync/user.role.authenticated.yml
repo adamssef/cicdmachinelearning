@@ -2,9 +2,13 @@ uuid: 97a8cdb9-381a-4f0a-8dde-e9527af69bdb
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.webform_default
   module:
     - comment
     - contact
+    - file
+    - filter
     - google_analytics
     - media
     - shortcut
@@ -21,8 +25,10 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'delete own files'
   - 'opt-in or out of google analytics tracking'
   - 'post comments'
   - 'skip comment approval'
+  - 'use text format webform_default'
   - 'view media'
   - 'view published menu site setting entities'

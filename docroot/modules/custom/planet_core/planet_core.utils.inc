@@ -276,7 +276,7 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
     ->condition('langcode', $language_code) // Filter by language code.
     ->condition('status', 1)
     ->execute();
-  
+
   $total_count = array_values($total_count);
 
   $resource_nids = array_values($query);
@@ -385,7 +385,7 @@ function planet_core_get_blog_articles($limit = 3, $offset = 0, $lang = "en") {
 
 
 function planet_core_get_aliases_in_other_languages($node_id, $langcode = false) {
-  
+
   $alias_manager = \Drupal::service('path_alias.manager');
   $language_manager = \Drupal::languageManager();
 
@@ -476,7 +476,7 @@ function planet_core_single_article($node_id) {
   $related_tag = $article_tags ? $article_tags[0]['id'] : false;
 
   $related_articles = planet_core_get_related_articles($related_tag, $node->id());
-    
+
   $article = array(
     "title" => $title,
     'url' => $url,
@@ -536,7 +536,7 @@ function planet_core_get_related_articles($tag_id, $exclude_node_id) {
 
   foreach ($related_article_ids as $related_article_id) {
     $node = Node::load($related_article_id);
-    
+
     // Load the node in the current language.
     $node = $node->getTranslation($language_code);
 

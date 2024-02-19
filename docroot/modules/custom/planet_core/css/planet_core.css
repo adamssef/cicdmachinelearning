@@ -1,3 +1,11 @@
+/** [PLANET ADMIN PAGES*/
+.plnt-css-admin-page .ck-editor__editable {
+  resize: vertical;
+  max-height: 60vh;
+  height: 500px;
+}
+/** END */
+
 /** [PLANET OFFICES] */
 .offices-list .coh-view-content-item {
   padding-top: 2.5rem;
@@ -571,9 +579,6 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   font-weight: 600;
   margin: 8px 0;
   display: inline-block;
-}
-.last-articles {
-  padding: 0 16px;
 }
 .last-articles>h2 {
   text-align: center;
