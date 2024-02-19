@@ -41,6 +41,7 @@ module:
   csp: 0
   ctools: 0
   datetime: 0
+  dblog: 0
   duplicate_role: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
