@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "559b91feaa44da5324b51adbdfec8c8c",
+    "content-hash": "94be8b55145887c4d63ce44e78d72c81",
     "packages": [
         {
             "name": "acquia/cohesion",
@@ -2322,101 +2322,6 @@
             }
         },
         {
-            "name": "drupal/ckeditor",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor.git",
-                "reference": "1.0.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor-1.0.2.zip",
-                "reference": "1.0.2",
-                "shasum": "fec2ca9ad852a00c7b9584cb6040dc860364c481"
-            },
-            "require": {
-                "drupal/core": "^9.4 || ^10"
-            },
-            "require-dev": {
-                "drupal/classy": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.2",
-                    "datestamp": "1695740655",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "dczepierga",
-                    "homepage": "https://www.drupal.org/user/911466"
-                },
-                {
-                    "name": "hass",
-                    "homepage": "https://www.drupal.org/user/85918"
-                },
-                {
-                    "name": "jcisio",
-                    "homepage": "https://www.drupal.org/user/210762"
-                },
-                {
-                    "name": "Jorrit",
-                    "homepage": "https://www.drupal.org/user/161217"
-                },
-                {
-                    "name": "lauriii",
-                    "homepage": "https://www.drupal.org/user/1078742"
-                },
-                {
-                    "name": "Magnus",
-                    "homepage": "https://www.drupal.org/user/73919"
-                },
-                {
-                    "name": "mkesicki",
-                    "homepage": "https://www.drupal.org/user/922884"
-                },
-                {
-                    "name": "nod_",
-                    "homepage": "https://www.drupal.org/user/598310"
-                },
-                {
-                    "name": "p.wiaderny",
-                    "homepage": "https://www.drupal.org/user/2956619"
-                },
-                {
-                    "name": "vokiel",
-                    "homepage": "https://www.drupal.org/user/2793801"
-                },
-                {
-                    "name": "Wim Leers",
-                    "homepage": "https://www.drupal.org/user/99777"
-                },
-                {
-                    "name": "wwalc",
-                    "homepage": "https://www.drupal.org/user/184556"
-                },
-                {
-                    "name": "xjm",
-                    "homepage": "https://www.drupal.org/user/65776"
-                }
-            ],
-            "description": "WYSIWYG editing for rich text fields using CKEditor.",
-            "homepage": "https://www.drupal.org/project/ckeditor",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ckeditor"
-            }
-        },
-        {
             "name": "drupal/clientside_validation",
             "version": "4.0.2",
             "source": {
@@ -2734,52 +2639,6 @@
                 "source": "https://git.drupalcode.org/project/config_split",
                 "issues": "https://www.drupal.org/project/issues/config_split",
                 "slack": "https://drupal.slack.com/archives/C45342CDD"
-            }
-        },
-        {
-            "name": "drupal/config_split_ignore",
-            "version": "1.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/config_split_ignore.git",
-                "reference": "8.x-1.10"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_split_ignore-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "c2b6589a975fc2226e74c10adc63c625f31e75ac"
-            },
-            "require": {
-                "drupal/config_ignore": "*",
-                "drupal/config_split": "*",
-                "drupal/core": "^8 || ^9 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.10",
-                    "datestamp": "1703357573",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "maximpodorov",
-                    "homepage": "https://www.drupal.org/user/515310"
-                }
-            ],
-            "description": "Configuration Split Ignore",
-            "homepage": "https://www.drupal.org/project/config_split_ignore",
-            "support": {
-                "source": "https://git.drupalcode.org/project/config_split_ignore"
             }
         },
         {
@@ -3513,99 +3372,6 @@
                 "source": "https://gitlab.com/drupalspoons/devel",
                 "issues": "https://gitlab.com/drupalspoons/devel/-/issues",
                 "slack": "https://drupal.slack.com/archives/C012WAW1MH6"
-            }
-        },
-        {
-            "name": "drupal/dropzonejs",
-            "version": "2.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/dropzonejs.git",
-                "reference": "8.x-2.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/dropzonejs-8.x-2.8.zip",
-                "reference": "8.x-2.8",
-                "shasum": "d330143503eef258e0b87a384d2d9ad8dcf03380"
-            },
-            "require": {
-                "drupal/core": "^9.3 || ^10"
-            },
-            "require-dev": {
-                "drupal/entity_browser": "^2.5"
-            },
-            "suggest": {
-                "enyo/dropzone": "Required to use drupal/dropzonejs. DropzoneJS is an open source library that provides drag’n’drop file uploads with image previews."
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-2.8",
-                    "datestamp": "1676965468",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Janez Urevc",
-                    "homepage": "https://drupal.org/u/slashrsm",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Christian Fritsch",
-                    "homepage": "https://drupal.org/u/chrfritsch",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Primoz Hmeljak",
-                    "homepage": "https://drupal.org/u/Primsi",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Qiangjun Ran",
-                    "homepage": "https://drupal.org/u/jungle",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "See other contributors",
-                    "homepage": "https://www.drupal.org/node/1998478/committers",
-                    "role": "contributor"
-                },
-                {
-                    "name": "Primsi",
-                    "homepage": "https://www.drupal.org/user/282629"
-                },
-                {
-                    "name": "slashrsm",
-                    "homepage": "https://www.drupal.org/user/744628"
-                },
-                {
-                    "name": "wouters_f",
-                    "homepage": "https://www.drupal.org/user/721548"
-                },
-                {
-                    "name": "zkday",
-                    "homepage": "https://www.drupal.org/user/888644"
-                }
-            ],
-            "description": "Drupal integration for DropzoneJS - An open source library that provides drag’n’drop file uploads with image previews.",
-            "homepage": "https://www.drupal.org/project/dropzonejs",
-            "keywords": [
-                "DropzoneJS",
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://www.drupal.org/project/dropzonejs",
-                "issues": "https://www.drupal.org/project/issues/dropzonejs",
-                "#media": "http://drupal.slack.com"
             }
         },
         {
@@ -4748,75 +4514,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/login_security",
                 "issues": "https://drupal.org/project/issues/login_security"
-            }
-        },
-        {
-            "name": "drupal/media_bulk_upload",
-            "version": "3.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/media_bulk_upload.git",
-                "reference": "3.0.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/media_bulk_upload-3.0.2.zip",
-                "reference": "3.0.2",
-                "shasum": "bd88de268519f66db0ef1a850c89a47805bfd2d4"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9 || ^10",
-                "drupal/dropzonejs": "^2.0"
-            },
-            "require-dev": {
-                "drupal/dropzonejs": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "3.0.2",
-                    "datestamp": "1681285220",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "jefuri",
-                    "homepage": "https://www.drupal.org/user/2733365"
-                },
-                {
-                    "name": "Kristen Pol",
-                    "homepage": "https://www.drupal.org/user/8389"
-                },
-                {
-                    "name": "Mirnaxvb",
-                    "homepage": "https://www.drupal.org/user/3157031"
-                },
-                {
-                    "name": "mycw1991",
-                    "homepage": "https://www.drupal.org/user/3523472"
-                },
-                {
-                    "name": "Nitebreed",
-                    "homepage": "https://www.drupal.org/user/419423"
-                },
-                {
-                    "name": "Steven Buteneers",
-                    "homepage": "https://www.drupal.org/user/3301055"
-                }
-            ],
-            "description": "Allows uploading files in bulk and converting them to media entities.",
-            "homepage": "https://www.drupal.org/project/media_bulk_upload",
-            "support": {
-                "source": "git://git.drupal.org/project/media_bulk_upload.git",
-                "issues": "https://www.drupal.org/project/issues/media_bulk_upload"
             }
         },
         {
