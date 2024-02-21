@@ -138,22 +138,7 @@ class OfficesForm extends FormBase
           $country->save();
           $country = $country->id();
         }
-        // log_to_file(
-        //   var_export(
-        //     array(
-        //       $region,
-        //       $company[1],
-        //       $country,
-        //       $company[2],
-        //       $company[3],
-        //       $company[4],
-        //       $company[5],
-        //       $company[6],
-        //       $company[7]
-        //     ),
-        //     true
-        //   )
-        // );
+     
         self::save_company(
           $company[1],
           $country,

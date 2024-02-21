@@ -116,9 +116,7 @@ class PlanetOfficesBlock extends BlockBase {
             ];
             $offices[] = $office;
         }
-          // $f = fopen('my_log.txt', 'a');
-          //   fwrite($f, date('Ymd H:i:s - ') . var_export($offices, true) . "\n");
-          //   fclose($f);
+       
         return $offices;
     }
 

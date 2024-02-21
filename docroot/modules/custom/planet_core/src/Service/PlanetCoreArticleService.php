@@ -9,7 +9,7 @@ use Drupal\node\Entity\Node;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\path_alias\AliasManagerInterface;
-
+use Drupal\Core\Path\PathMatcherInterface;
 
 /**
  * Class PlanetCoreService - a helper class for article-related functionalities.
@@ -42,6 +42,7 @@ class PlanetCoreArticleService {
    */
   protected $languageManager;
 
+ 
   /**
    * Constructs a new PlantCoreService object.
    *
@@ -56,7 +57,7 @@ class PlanetCoreArticleService {
     EntityTypeManagerInterface $entity_type_manager,
     FileUrlGeneratorInterface $file_url_generator,
     AliasManagerInterface $path_alias_manager,
-    LanguageManagerInterface $language_manager
+    LanguageManagerInterface $language_manager,
   ) {
     $this->entityTypeManager = $entity_type_manager;
     $this->fileUrlGenerator = $file_url_generator;
@@ -208,6 +209,21 @@ class PlanetCoreArticleService {
       )
     ];
   }
+
+
+  public function getToggleLinks() {
+      /** These ids are for production only */
+      $blog_url = $this->getAliasesInOtherLanguages(1576);
+      $case_studies_url = $this->getAliasesInOtherLanguages(1366);
+      $ebooks_url = $this->getAliasesInOtherLanguages(2136);
+
+      return array(
+        "case_studies" => $case_studies_url,
+        "ebooks" => $ebooks_url,
+        "blog" => $blog_url
+      );
+  }
+
 
   public function getLastPublishedArticle() {
     // Get the current page language code.
@@ -476,10 +492,9 @@ class PlanetCoreArticleService {
     if (!$langcode) {
       $langcode = $this->languageManager->getCurrentLanguage()->getId();
     }
-
     $path_alias = $this->pathAliasManager->getAliasByPath($path, $langcode);
+   
     $lang_prefix = $langcode != "en" ? "/" . $langcode : "";
-
     return $lang_prefix . $path_alias;
   }
 
@@ -496,7 +511,7 @@ class PlanetCoreArticleService {
   function getSingleArticleData($node_id) {
     global $base_url;
 
-    $blog_id = 2207;
+    $blog_id = 1576;
     // Get the current page language code.
     $language_code = $this->languageManager->getCurrentLanguage()->getId();
 
