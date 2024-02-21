@@ -42,12 +42,7 @@ class PlanetCoreArticleService {
    */
   protected $languageManager;
 
-   /**
-   * The path matcher manager.
-   *
-   * @var \Drupal\Core\Path\PathMatcherInterface
-   */
-  protected $pathMatcher;
+ 
   /**
    * Constructs a new PlantCoreService object.
    *
@@ -63,13 +58,11 @@ class PlanetCoreArticleService {
     FileUrlGeneratorInterface $file_url_generator,
     AliasManagerInterface $path_alias_manager,
     LanguageManagerInterface $language_manager,
-    PathMatcherInterface $path_matcher_interface
   ) {
     $this->entityTypeManager = $entity_type_manager;
     $this->fileUrlGenerator = $file_url_generator;
     $this->pathAliasManager = $path_alias_manager;
     $this->languageManager = $language_manager;
-    $this->pathMatcher = $path_matcher_interface;
   }
 
   /**
