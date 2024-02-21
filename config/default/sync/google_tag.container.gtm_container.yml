@@ -10,7 +10,7 @@ dependencies:
 id: gtm_container
 label: GTM-Container
 weight: 0
-container_id: GTM-WFDQV8N
+container_id: GTM-TTNX4Q2
 data_layer: dataLayer
 include_classes: false
 whitelist_classes: |-
