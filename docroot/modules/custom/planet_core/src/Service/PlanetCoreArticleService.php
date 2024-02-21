@@ -334,29 +334,28 @@ class PlanetCoreArticleService {
     $articles = [];
     $unique_tags = [];
 
-    $node_storage_query = $this->entityTypeManager->getStorage('node')->getQuery();
 
-    $query = $node_storage_query
+    $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'resources')
-      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
       ->condition('status', 1)
-      ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
       ->condition('field_hide_from_components', NULL, 'IS NULL') // Include only nodes where field_hide_from_components is empty    // Exclude nodes where hide is true
+      ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
       ->condition('langcode', $language_code) // Filter by language code.
       ->range($offset, $limit)
       ->sort('created', 'DESC')
       ->accessCheck()
       ->execute();
 
-    $total_count = $node_storage_query
+    $total_count = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'resources')
+      ->condition('status', 1)
+      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
       ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
       ->condition('langcode', $language_code) // Filter by language code.
-      ->condition('status', 1)
       ->accessCheck()
       ->execute();
 
-    $total_count = array_values($total_count);
+    $total_count = count($total_count);
 
     $resource_nids = array_values($query);
     $resource_nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($resource_nids);
@@ -445,8 +444,8 @@ class PlanetCoreArticleService {
     return [
       'tags' => $unique_tags,
       'articles' => $articles,
-      'articles_count' => count($total_count),
-      'articles_finished' => count($articles) >= (count($total_count) - 1),
+      'articles_count' => $total_count,
+      'articles_finished' => count($articles) >= ($total_count - 1),
     ];
   }
 
