@@ -1,4 +1,4 @@
 services:
   planet_core.article_helper:
     class: Drupal\planet_core\Service\PlanetCoreArticleService
-    arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager']
+    arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager', '@path.matcher']

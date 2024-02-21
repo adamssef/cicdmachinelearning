@@ -482,6 +482,7 @@ function planet_core_preprocess_node(array &$variables)
   if ($is_new_blog_enabled) {
     if ($alias == "/blog") {
       $variables['featured_article'] = $planet_core_article_helper->getLastPublishedArticle();
+      $variables['useful_links'] = $planet_core_article_helper->getToggleLinks();
       $variables['#attached']['library'][] = 'planet_core/blog-page';
     }
   }
