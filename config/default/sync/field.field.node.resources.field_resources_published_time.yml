@@ -5,6 +5,11 @@ dependencies:
   config:
     - field.storage.node.field_resources_published_time
     - node.type.resources
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.resources.field_resources_published_time
 field_name: field_resources_published_time
 entity_type: node
@@ -12,10 +17,8 @@ bundle: resources
 label: 'Published Date'
 description: ''
 required: false
-translatable: true
-default_value:
-  -
-    value: 1663702618
+translatable: false
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: timestamp
