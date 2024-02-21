@@ -468,15 +468,22 @@ class PlanetCoreArticleService {
     ];
   }
 
-  /**
-   * Gets aliases in other languages for the given English alias.
-   *
-   * @param string $englishAlias
-   *   The English alias.
-   *
-   * @return array
-   *   An array of aliases in other languages keyed by language code.
-   */
+
+
+  public function getAllBlogArticleTags() {
+    // Get the current page language code.
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'tags']);
+    $result = [];
+    foreach ($terms as $term) {
+        $result[] = [
+            'id' => $term->id(),
+            'name' => $term->getName(),
+        ];
+    }
+    return $result;
+  }
+
+
 
 
   /**
