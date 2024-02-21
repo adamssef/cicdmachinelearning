@@ -9,7 +9,6 @@ use Drupal\node\Entity\Node;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\path_alias\AliasManagerInterface;
-use Drupal\Core\Path\PathMatcherInterface;
 
 /**
  * Class PlanetCoreService - a helper class for article-related functionalities.
@@ -350,15 +349,15 @@ class PlanetCoreArticleService {
     $articles = [];
     $unique_tags = [];
 
-
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'resources')
       ->condition('status', 1)
       ->condition('field_hide_from_components', NULL, 'IS NULL') // Include only nodes where field_hide_from_components is empty    // Exclude nodes where hide is true
       ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
+      ->condition('field_resources_published_time', NULL, 'IS NOT NULL') // Include only nodes where field_resources_published_time is not empty
       ->condition('langcode', $language_code) // Filter by language code.
       ->range($offset, $limit)
-      ->sort('created', 'DESC')
+      ->sort('field_resources_published_time', 'DESC')
       ->accessCheck()
       ->execute();
 
@@ -366,11 +365,11 @@ class PlanetCoreArticleService {
       ->condition('type', 'resources')
       ->condition('status', 1)
       ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
+      ->condition('field_resources_published_time', NULL, 'IS NOT NULL') // Include only nodes where field_resources_published_time is not empty
       ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
       ->condition('langcode', $language_code) // Filter by language code.
       ->accessCheck()
       ->execute();
-
     $total_count = count($total_count);
 
     $resource_nids = array_values($query);
@@ -381,6 +380,7 @@ class PlanetCoreArticleService {
       $node = $node->getTranslation($language_code);
       $title = $node->get('field_resources_title')->value;
       $url = $this->getAliasesInOtherLanguages($node->id(), $language_code);
+      $published_date = $node->get('field_resources_published_time')->value;
 
       // Get Tags (field_resources_tags).
       $tags_references = $node->get('field_resources_tags')->referencedEntities();
@@ -447,6 +447,7 @@ class PlanetCoreArticleService {
         'title' => $title,
         'tags' => $article_tags,
         'background_image' => $background_image_url,
+        'published_date' => $published_date,
         'creation_date' => $creation_date,
         'author' => [
           'full_name' => $author_name,
@@ -456,6 +457,8 @@ class PlanetCoreArticleService {
       ];
     }
 
+    
+
     // Return the result.
     return [
       'tags' => $unique_tags,
@@ -464,7 +467,6 @@ class PlanetCoreArticleService {
       'articles_finished' => count($articles) >= ($total_count - 1),
     ];
   }
-
 
   /**
    * Gets aliases in other languages for the given English alias.
