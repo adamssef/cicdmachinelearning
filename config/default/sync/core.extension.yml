@@ -61,7 +61,6 @@ module:
   imce: 0
   key: 0
   language: 0
-  lgpd_onetrust: 0
   lgpd_onetrust_cookie_blocking: 0
   link: 0
   locale: 0
@@ -96,6 +95,7 @@ module:
   planet_config: 0
   planet_core: 0
   planet_language_switcher: 0
+  planet_lgpd_onetrust: 0
   planet_offices: 0
   planet_sitestudio_custom_elements: 0
   planet_sitewide_fonts: 0

@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for planet_lgpd_onetrust module.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function planet_lgpd_onetrust_page_attachments(array &$attachments) {
+  $lgpd_config = \Drupal::config('planet_lgpd_onetrust.settings');
+  $api_key = $lgpd_config->get('lgpd_onetrust_compliance_uuid');
+
+  if ($api_key) {
+    // Adding OtAutoBlock.js
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#attributes' => [
+          'type' => 'text/javascript',
+          'src' => 'https://cdn.cookielaw.org/consent/' . $api_key . '/OtAutoBlock.js',
+        ],
+      ],
+      'ot_auto_block',
+    ];
+
+    // Adding otSDKStub.js
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#attributes' => [
+          'type' => 'text/javascript',
+          'charset' => 'UTF-8',
+          'src' => 'https://cdn.cookielaw.org/scripttemplates/otSDKStub.js',
+          'data-domain-script' => $api_key,
+        ],
+      ],
+      'ot_sdk_stub',
+    ];
+
+    // Adding OptanonWrapper function
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#value' => 'function OptanonWrapper() { }',
+        '#attributes' => [
+          'type' => 'text/javascript',
+        ],
+      ],
+      'optanon_wrapper',
+    ];
+  }
+}

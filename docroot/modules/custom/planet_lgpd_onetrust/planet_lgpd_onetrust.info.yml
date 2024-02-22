@@ -1,0 +1,7 @@
+name: 'planet_lgpd_onetrust'
+type: module
+description: 'This is a simple lgpd onetrust implementation to We Are Planet page.'
+package: Planet
+core_version_requirement: ^10
+
+configure: planet_lgpd_onetrust.settings
