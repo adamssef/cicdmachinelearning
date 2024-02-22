@@ -12,6 +12,7 @@ storage: folder
 folder: ../config/default/environment/prod
 module:
   acquia_connector: 0
+  google_tag: 0
 theme: {  }
 complete_list: {  }
 partial_list:

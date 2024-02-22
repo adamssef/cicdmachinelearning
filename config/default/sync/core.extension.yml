@@ -162,8 +162,6 @@ module:
   webform_submission_log: 0
   webform_ui: 0
   workflows: 0
-  google_analytics: 1
-  google_tag: 1
   pathauto: 1
   recaptcha_v3: 1
   content_translation: 10
