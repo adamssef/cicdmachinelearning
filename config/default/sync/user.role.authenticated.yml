@@ -9,7 +9,6 @@ dependencies:
     - contact
     - file
     - filter
-    - google_analytics
     - media
     - shortcut
     - site_settings_type_permissions
