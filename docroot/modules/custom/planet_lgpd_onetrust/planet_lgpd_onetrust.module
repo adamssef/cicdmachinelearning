@@ -14,6 +14,7 @@ function planet_lgpd_onetrust_page_attachments(array &$attachments) {
 
   if ($api_key) {
     // Adding OtAutoBlock.js
+/*
     $attachments['#attached']['html_head'][] = [
       [
         '#tag' => 'script',
@@ -24,6 +25,7 @@ function planet_lgpd_onetrust_page_attachments(array &$attachments) {
       ],
       'ot_auto_block',
     ];
+*/
 
     // Adding otSDKStub.js
     $attachments['#attached']['html_head'][] = [
