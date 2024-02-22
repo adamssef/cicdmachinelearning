@@ -63,6 +63,10 @@ function lgpd_onetrust_page_attachments(array &$attachments) {
         ],
         'lgpd_onetrust_inline_cdn',
       ];
+
+      $src = $attachments['#attached']['html_head'][0][0]['#attributes']['src'];
+      $src = str_replace('-test', '', $src);
+      $attachments['#attached']['html_head'][0][0]['#attributes']['src'] = $src;
     }
     else {
       $cdn_url = $domain . $api_key . '.js';
@@ -75,6 +79,10 @@ function lgpd_onetrust_page_attachments(array &$attachments) {
         ],
         'lgpd_onetrust_inline_cdn',
       ];
+
+      $src = $attachments['#attached']['html_head'][0][0]['#attributes']['src'];
+      $src = str_replace('-test', '', $src);
+      $attachments['#attached']['html_head'][0][0]['#attributes']['src'] = $src;
     }  
   }
 }
