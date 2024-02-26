@@ -357,7 +357,7 @@ class PlanetCoreArticleService {
       ->condition('field_resources_published_time', NULL, 'IS NOT NULL') // Include only nodes where field_resources_published_time is not empty
       ->condition('langcode', $language_code) // Filter by language code.
       ->range($offset, $limit)
-      ->sort('field_resources_published_time', 'DESC')
+      ->sort('field_resources_published_time', 'DESC', $language_code)
       ->accessCheck()
       ->execute();
 
