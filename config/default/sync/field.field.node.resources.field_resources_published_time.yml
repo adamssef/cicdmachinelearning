@@ -9,7 +9,7 @@ dependencies:
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
-    excluded: false
+    excluded: true
 id: node.resources.field_resources_published_time
 field_name: field_resources_published_time
 entity_type: node
@@ -17,7 +17,7 @@ bundle: resources
 label: 'Published Date'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
