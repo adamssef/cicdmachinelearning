@@ -174,7 +174,9 @@ function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id
     $form['description']['#access'] = FALSE;
     $form['recursive']['node.page.field_layout_canvas']['#access'] = FALSE;
     $form['recursive']['node.page.field_layout_canvas']['#description_should_be_shown'] = FALSE;
-    $form['recursive']['node.page.field_layout_canvas']['references'][array_key_first($form['recursive']['node.page.field_layout_canvas']['references'])]['clone']['#default_value'] = TRUE;
+
+    $key = array_key_first($form['recursive']['node.page.field_layout_canvas']['references']);
+    $form['recursive']['node.page.field_layout_canvas']['references'][$key]['clone']['#default_value'] = TRUE;
   }
 }
 
