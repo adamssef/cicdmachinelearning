@@ -1,0 +1,16 @@
+uuid: 5edc7c09-36c9-4929-abab-930aa7f8d447
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.newsroomtags
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.newsroomtags
+target_entity_type_id: taxonomy_term
+target_bundle: newsroomtags
+default_langcode: site_default
+language_alterable: false

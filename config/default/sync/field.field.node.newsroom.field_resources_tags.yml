@@ -5,7 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_resources_tags
     - node.type.newsroom
-    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.newsroomtags
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.newsroom.field_resources_tags
 field_name: field_resources_tags
 entity_type: node
@@ -20,7 +25,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags
+      newsroomtags: newsroomtags
     sort:
       field: name
       direction: asc

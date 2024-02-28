@@ -6,13 +6,18 @@ dependencies:
     - field.storage.node.field_resources_background_image
     - media.type.image
     - node.type.newsroom
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.newsroom.field_resources_background_image
 field_name: field_resources_background_image
 entity_type: node
 bundle: newsroom
 label: 'Background Image'
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

@@ -3,15 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.newsroom.field_e
+    - field.field.node.newsroom.field_external_source
     - field.field.node.newsroom.field_field_resources_metatag
-    - field.field.node.newsroom.field_hide_from_components
+    - field.field.node.newsroom.field_is_it_an_external_article
     - field.field.node.newsroom.field_layout_canvas
     - field.field.node.newsroom.field_promoted_resource
     - field.field.node.newsroom.field_resources_background_image
     - field.field.node.newsroom.field_resources_published_time
     - field.field.node.newsroom.field_resources_subtitle
     - field.field.node.newsroom.field_resources_tags
-    - field.field.node.newsroom.field_resources_title
     - node.type.newsroom
   module:
     - cohesion_elements
@@ -22,12 +23,38 @@ targetEntityType: node
 bundle: newsroom
 mode: default
 content:
+  field_e:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_external_source:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
   field_field_resources_metatag:
     type: metatag_empty_formatter
     label: above
     settings: {  }
     third_party_settings: {  }
     weight: 9
+    region: content
+  field_is_it_an_external_article:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_layout_canvas:
     type: cohesion_entity_reference_revisions_entity_view
@@ -91,14 +118,6 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
-  field_resources_title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -106,6 +125,5 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  field_hide_from_components: true
   langcode: true
   search_api_excerpt: true
