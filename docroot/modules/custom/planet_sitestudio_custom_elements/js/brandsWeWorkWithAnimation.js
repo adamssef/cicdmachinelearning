@@ -5,11 +5,11 @@
 
 
 (function ($, Drupal) {
-    Drupal.behaviors.planet_sitestudio_brandsWeWorkWithAnimation = {
-        attach: function () {
-            $(document).ready(function () {
-                let alreadyRun = 0;
+    let alreadyRun = 0;
 
+    Drupal.behaviors.planet_sitestudio_brandsWeWorkWithAnimation = {
+        attach: function (context, settings) {
+            $(document).ready(function () {
                 var slides = document.querySelectorAll(".slide-track");
                 var slider_direction, slide_endpoint, timing;
 
@@ -18,7 +18,6 @@
 
                 if (alreadyRun === 0) {
                     slides.forEach(slide => {
-
                         // Check if it is set to work in mobile, and/or in desktop.
                         if (!(slide.dataset.desktop == "1" || slide.dataset.mobile == "1")) {
                             return;
@@ -40,14 +39,14 @@
                             slide.classList.add("animated");
 
                             /**
-                             * Multiplicate the content, makes the animation smother,
-                             * and helps in case of feel content (you can't loop only 3 cards).
+                             * Multiplicate the content, makes the animation
+                             * smother, and helps in case of feel content (you
+                             * can't loop only 3 cards).
                              */
                             slide.innerHTML = slide.innerHTML + slide.innerHTML + slide.innerHTML + slide.innerHTML;
 
                             // Set's the point where the animation will end.
                             slide_endpoint = (62 + slide.offsetWidth / 2) + "px";
-
                             // Getting the speed of the animation.
                             if (slide.dataset.speed == "slow") {
                                 timing = {
