@@ -1,0 +1,21 @@
+uuid: 2b2a59ec-c173-4cbd-a451-b53bd143940d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_field_resources_metatag
+    - node.type.newsroom
+  module:
+    - metatag
+id: node.newsroom.field_field_resources_metatag
+field_name: field_field_resources_metatag
+entity_type: node
+bundle: newsroom
+label: Metatag
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

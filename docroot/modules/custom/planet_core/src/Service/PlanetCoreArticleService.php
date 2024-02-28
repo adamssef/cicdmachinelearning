@@ -618,6 +618,79 @@ class PlanetCoreArticleService {
     return $article;
   }
 
+  function getSingleNewsData($node_id) {
+    global $base_url;
+
+    $blog_id = 1576;
+    // Get the current page language code.
+    $language_code = $this->languageManager->getCurrentLanguage()->getId();
+
+    // Load the node in the current language.
+    $node = Node::load($node_id);
+
+    if ($node->hasTranslation($language_code)) {
+      $node = $node->getTranslation($language_code);
+    }
+
+    $article_tags = [];
+
+    $title = $node->get('field_resources_title')->value;
+
+    $url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
+    $url = $language_code != "en" ? "/" . $language_code . $url : $url;
+
+    // Get Tags (field_resources_tags)
+    $tags_references = $node->get('field_resources_tags')->referencedEntities();
+
+    foreach ($tags_references as $tag) {
+      $tag_name = $tag->getName();
+      $tag_id = $tag->id(); // Get the tag ID.
+
+      // Add the tag to the article_tags array.
+      $article_tags[] = [
+        'name' => $tag_name,
+        'id' => $tag_id,
+      ];
+    }
+
+    // Get Background Image (field_resources_background_image)
+    $background_image_media = $node->get('field_resources_background_image')->entity;
+
+    if ($background_image_media instanceof \Drupal\media\Entity\Media) {
+      $background_image_file = $background_image_media->get('field_media_image')->entity;
+
+      if ($background_image_file instanceof \Drupal\file\Entity\File) {
+        $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
+      }
+    }
+
+    // Get Creation Date
+    $custom_timestamp = $node->get('field_resources_published_time')->value;
+    $blog_url = $this->getAliasesInOtherLanguages($blog_id);
+    $domain = $base_url;
+    $short_url = substr($domain . $url, 0, 48) . "...";
+    $share_url = $domain . $url;
+
+    // Convert the custom timestamp to a formatted date.
+    $creation_date = date('F j, Y', $custom_timestamp);
+    $related_tag = $article_tags ? $article_tags[0]['id'] : false;
+    $related_articles = $this->getRelatedArticles($related_tag, $node->id());
+
+    $article = array(
+      "title" => $title,
+      'url' => $url,
+      'domain' => $domain,
+      'share_url' => $share_url,
+      'short_share_url' => $short_url,
+      'tags' => $article_tags,
+      'background_image' => $background_image_url,
+      'creation_date' => $creation_date,
+      'blog_url' => $blog_url,
+      'related_articles' => $related_articles,
+    );
+
+    return $article;
+  }
 
   /**
    * Gets the related articles for the given tag ID.

@@ -1,0 +1,111 @@
+{#
+  Custom Twig template for the Blog homepage.
+  Template variables available:
+    - content: An array of content elements.
+    - node: The node entity representing the "blog" content.
+    - label: The node label.
+    - url: The node URL.
+    - attributes: HTML attributes for the node wrapper.
+#}
+<div>
+	<div class="plnt-blog-single-page">
+		<div class="coh-container coh-container-boxed planSwitch-container">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="planSwitch planSwitch-black planSwitch-3options planSwitch-blog">
+					<a href="{{useful_links.case_studies}}">
+						<label data-box="1" for="option_1">{{"Case studies"|t}}</label>
+					</a>
+					<a href="{{useful_links.blog}}">
+						<label class="planSwitch-selected" data-box="2" for="option_2">{{"Blog"|t}}</label>
+					</a>
+					<a href="{{useful_links.ebooks}}">
+						<label data-box="3" for="option_3">{{"E-books"|t}}</label>
+					</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		{% if featured_article is not empty %}
+			<div class="coh-container coh-container-boxed max-width-1216">
+				<div class="coh-row">
+					<div class="coh-row-inner">
+						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+							<div class="featured-article-wrapper">
+
+								<div class="coh-container coh-container-boxed">
+									<div class="coh-row">
+										<div class="coh-row-inner">
+											<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
+												<div class="featured-article-info-wrapper">
+													<div class="featured-article-info">
+														{% if featured_article.tags is not empty %}
+															<div class="article-tags tags-pills cursor-default">
+																{% for tag in featured_article.tags %}
+																	<span>{{ tag.name }}</span>
+																{% endfor %}
+															</div>
+														{% endif %}
+														<a href="{{featured_article.url}}">
+															<h1 class="planet-h2 black">{{featured_article.title}}</h1>
+														</a>
+														<div class="article-author-and-date">
+															<div class="article-author">
+																<div class="author-photo" style="background-image:url({{ featured_article.author.profile_picture }})"></div>
+																<div class="author-name">
+																	<span>{{ featured_article.author.full_name }}</span>
+																</div>
+															</div>
+															<div class="vertical-divider">|</div>
+															<div class="article-date">{{ featured_article.creation_date }}</div>
+														</div>
+														<p class="article-summary">{{featured_article.body}}</p>
+														<div class="card-button-wrapper">
+															<a class="card-button" href="{{featured_article.url}}">Read more <img src="/resources/icons/blue-right-arrow.svg"></a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
+												<div class="featured-article-image" style="background-image: url({{featured_article.background_image}})"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+	<div class="coh-container coh-container-boxed blog-articles-wrapper max-width-1216">
+		<div class="coh-row">
+			<div class="coh-row-inner">
+				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+					<div class="last-articles">
+						<div>
+							<div class="tags-pills pink-pills main-pills" style="display: none">
+										<span class="selected main-pill all-pill visible" data-tagid="all">All</span>
+										<div class="external-main-tags"></div>
+									</div>
+								<div class="article-cards-wrapper">
+									<div class="coh-row">
+										<div class="coh-row-inner article-js-wrapper"></div>
+									</div>
+								</div>
+								<div class="load-more-wrapper">
+									<div id="load-more-button" class="coh-link coh-style-primary-dark-atom-" style="display: none">Load more
+										<img src="/resources/icons/down-white-arrow.svg"></div>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

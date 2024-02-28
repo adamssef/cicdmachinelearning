@@ -1,0 +1,24 @@
+uuid: ee7b691d-9e2a-44f0-8802-05539f42b851
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resources_published_time
+    - node.type.newsroom
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: true
+id: node.newsroom.field_resources_published_time
+field_name: field_resources_published_time
+entity_type: node
+bundle: newsroom
+label: 'Published Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

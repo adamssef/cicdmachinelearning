@@ -1,0 +1,23 @@
+uuid: c253bd22-6203-4c27-97b0-81ac9f46e36e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promoted_resource
+    - node.type.newsroom
+id: node.newsroom.field_promoted_resource
+field_name: field_promoted_resource
+entity_type: node
+bundle: newsroom
+label: 'Promoted to Featured Slider'
+description: 'Promote the resource to be displayed as a highlight.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

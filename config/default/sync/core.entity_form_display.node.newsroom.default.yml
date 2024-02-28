@@ -1,0 +1,175 @@
+uuid: 07f6cb60-03a0-4e75-bd54-13d47243cab5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.newsroom.field_field_resources_metatag
+    - field.field.node.newsroom.field_hide_from_components
+    - field.field.node.newsroom.field_layout_canvas
+    - field.field.node.newsroom.field_promoted_resource
+    - field.field.node.newsroom.field_resources_background_image
+    - field.field.node.newsroom.field_resources_published_time
+    - field.field.node.newsroom.field_resources_subtitle
+    - field.field.node.newsroom.field_resources_tags
+    - field.field.node.newsroom.field_resources_title
+    - node.type.newsroom
+  module:
+    - cohesion_elements
+    - content_moderation
+    - media_library
+    - metatag
+    - path
+id: node.newsroom.default
+targetEntityType: node
+bundle: newsroom
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_field_resources_metatag:
+    type: metatag_firehose
+    weight: 22
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
+  field_hide_from_components:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_layout_canvas:
+    type: cohesion_layout_builder_widget
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_promoted_resource:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_resources_background_image:
+    type: media_library_widget
+    weight: 6
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_resources_background_media:
+    type: image_image
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: webp
+    third_party_settings:
+      imce:
+        enabled: false
+  field_resources_published_time:
+    type: datetime_timestamp
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_resources_subtitle:
+    type: string_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_resources_tags:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_resources_title:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 17
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 18
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  uid: true

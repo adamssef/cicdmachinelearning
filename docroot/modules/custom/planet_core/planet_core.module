@@ -314,15 +314,18 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     case "/blog":
       $is_new_blog_enabled = $config->get('enable_new_blog');
 
-      if ($is_new_blog_enabled) {
-        $suggestions[] = 'node__blog-single-page';
-      }
-
+  switch ($alias) {
+    case "/blog":
+      $suggestions[] = 'node__blog-single-page';
+      break;
+    case "/press-pages":
+    case "/newsroom":
+      $suggestions[] = 'node__press-single-page';
       break;
     case "/sitemap":
       $suggestions[] = 'node__sitemap';
       break;
-    }
+  }
 
   if ($alias == "/pms-transformation") {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -338,7 +341,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     }
   }
 
-  if ($node->getType() === 'resources' && $node->hasField('field_enable_new_layout') && $node->get('field_enable_new_layout')->value == TRUE) {
+  if ($node->getType() === 'resources' || $node->getType() === 'newsroom') {
     // Add custom template suggestion for 'resources' content type.
     $suggestions[] = 'node__resources-page';
   }
@@ -389,6 +392,10 @@ function planet_core_theme(): array {
     ],
     'node__blog-single-page' => [
       'template' => 'node--blog-single-page',
+      'base hook' => 'node',
+    ],
+    'node__press-single-page' => [
+      'template' => 'node--press-single-page',
       'base hook' => 'node',
     ],
     'node__resources-page' => [
@@ -507,23 +514,26 @@ function planet_core_preprocess_node(array &$variables) {
     $variables['#attached']['library'][] = 'planet_core/author-page';
   }
 
-  $config = \Drupal::config('planet_core.settings');
-  $is_new_blog_enabled = $config->get('enable_new_blog');
 
-  if ($node->getType() == 'resources') {
-    $variables['article'] = $planet_core_article_helper->getSingleArticleData($node->id());
+  if (in_array($node->getType(), ["resources", "newsroom"])) {
     $variables['#attached']['library'][] = 'planet_core/single-article-page';
   }
 
-  if ($is_new_blog_enabled) {
-    if ($alias == "/blog") {
+  if ($node->getType() == 'resources') {
+    $variables['article'] = $planet_core_article_helper->getSingleArticleData($node->id());
+  }
+
+  if ($node->getType() == 'newsroom') {
+    $variables['article'] = $planet_core_article_helper->getSingleNewsData($node->id());
+  }
+
+    if (in_array($alias, ["/blog", "/newsroom", "/press-pages"])) {
       $variables['featured_article'] = $planet_core_article_helper->getLastPublishedArticle();
       $variables['useful_links'] = $planet_core_article_helper->getToggleLinks();
       $variables['tags'] = $planet_core_article_helper->getAllBlogArticleTags();
       $variables['#attached']['library'][] = 'planet_core/blog-page';
     }
   }
-}
 
 /**
  * Implements hook_preprocess_HOOK().

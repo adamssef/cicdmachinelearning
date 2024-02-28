@@ -1,0 +1,19 @@
+uuid: 8840b898-db38-4e7d-9f20-d0539dfb7f1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_from_components
+    - node.type.newsroom
+id: node.newsroom.field_hide_from_components
+field_name: field_hide_from_components
+entity_type: node
+bundle: newsroom
+label: 'Hide from components'
+description: 'Type "hide" to hide this article from components (Resources Library, etc)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

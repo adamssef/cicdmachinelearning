@@ -1,0 +1,46 @@
+uuid: a79e8a21-beb0-4c99-9ef2-05dbe48d3003
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.newsroom.field_field_resources_metatag
+    - field.field.node.newsroom.field_hide_from_components
+    - field.field.node.newsroom.field_layout_canvas
+    - field.field.node.newsroom.field_promoted_resource
+    - field.field.node.newsroom.field_resources_background_image
+    - field.field.node.newsroom.field_resources_published_time
+    - field.field.node.newsroom.field_resources_subtitle
+    - field.field.node.newsroom.field_resources_tags
+    - field.field.node.newsroom.field_resources_title
+    - node.type.newsroom
+  module:
+    - user
+id: node.newsroom.teaser
+targetEntityType: node
+bundle: newsroom
+mode: teaser
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_field_resources_metatag: true
+  field_hide_from_components: true
+  field_layout_canvas: true
+  field_promoted_resource: true
+  field_resources_background_image: true
+  field_resources_background_media: true
+  field_resources_published_time: true
+  field_resources_subtitle: true
+  field_resources_tags: true
+  field_resources_title: true
+  langcode: true
+  search_api_excerpt: true
