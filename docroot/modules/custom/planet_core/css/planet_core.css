@@ -162,6 +162,11 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
     font-size: 2rem;
     line-height: 125%;
   }
+  .planet-h1 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 125%;
+  }
 .card-button:hover {
   text-decoration: underline;
 }
@@ -264,6 +269,11 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   .planet-h2 {
     font-weight: 600;
     font-size: 24px;
+    line-height: 125%;
+  }
+  .planet-h1 {
+    font-weight: 600;
+    font-size: 32px;
     line-height: 125%;
   }
   .planSwitch-container {
@@ -1750,4 +1760,27 @@ a.button-with-icon-transition {
 }
 label.js-form-required.form-required > span {
   color: #e00083
+}
+.news-title {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin-bottom: 48px;
+}
+.external-url-card .card-button {
+  color: #0071de;
+}
+.news-main-title {
+  padding-top: 48px
+}
+.news-card .tags-pills span {
+  border: 0;
+  border-left: 4px solid #e00083;
+  border-radius: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.news-card .tags-pills {
+  padding-bottom: 8px;
 }

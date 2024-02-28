@@ -470,9 +470,208 @@ class PlanetCoreArticleService {
 
 
 
+  public function getLastPublishedNews() {
+    // Get the current page language code.
+    $language_code = $this->languageManager->getCurrentLanguage()->getId();
+
+    // Query for the last published article.
+    $query = $this->entityTypeManager->getStorage('node')->getQuery()
+      ->condition('status', 1) // 1 represents published nodes.
+      ->condition('type', 'newsroom') // Adjust to your content type name.
+      ->condition('field_promoted_resource', 1) // Filter by field_promoted_resource being true.
+      ->condition('field_is_it_an_external_article', false) // Include only nodes where field_resources_published_time is not empty
+      ->condition('langcode', $language_code) // Filter by language code.
+      ->sort('field_resources_published_time', 'DESC') // Sort by field_resources_published_time in descending order.
+      ->accessCheck()
+      ->range(0, 1); // Limit the result to 1 article.
+
+
+    $nids = $query->execute();
+
+    $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
+
+    foreach ($nodes as $node) {
+      $node = $node->getTranslation($language_code);
+
+      // Get node fields and prepare data.
+      $title = $node->get('title')->value;
+      $url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
+      $url = $language_code != "en" ? "/" . $language_code . $url : $url;
+      $article_tags = [];
+      $background_image_url = "";
+
+      // Get Tags (field_resources_tags).
+      $tags_references = $node->get('field_resources_tags')->referencedEntities();
+
+      foreach ($tags_references as $tag) {
+        $tag_name = $tag->getName();
+        $tag_id = $tag->id();
+        $article_tags[] = [
+          'name' => $tag_name,
+          'id' => $tag_id,
+        ];
+      }
+
+      // Get Background Image (field_resources_background_image).
+      $background_image_media = $node->get('field_resources_background_image')->entity;
+
+      if ($background_image_media instanceof Media) {
+        $background_image_file = $background_image_media->get('field_media_image')->entity;
+
+        if ($background_image_file instanceof File) {
+          $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
+        }
+      }
+
+      // Get Creation Date.
+      $custom_timestamp = $node->get('field_resources_published_time')->value;
+      $creation_date = date('F j, Y', $custom_timestamp);
+
+      // Get the summary/excerpt of the body field.
+      $body_summary = $node->get('field_resources_subtitle')->value;
+      $body_summary = $body_summary ? $this->truncateText($body_summary, 250) : "";
+
+      $title = $this->truncateText($title, 90);
+
+      // Return a single article.
+      return [
+        'url' => $url,
+        'title' => $title,
+        'background_image' => $background_image_url,
+        'creation_date' => $creation_date,
+        'tags' => $article_tags,
+        'body' => $body_summary,
+      ];
+    }
+
+    // Return null if no articles are found.
+    return null;
+  }
+
+
+
+  public function getPublishedNews($limit = 3, $external = false, $lang = "en") {
+
+    // Get the current page language code.
+    $language_code = $lang;
+    $is_external = $external == true ? 'IS NOT NULL' : 'IS NULL';
+
+    // Initialize arrays to store data.
+    $articles = [];
+    $unique_tags = [];
+
+    $query = $this->entityTypeManager->getStorage('node')->getQuery()
+      ->condition('type', 'newsroom')
+      ->condition('status', 1)
+      ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
+      ->condition('field_is_it_an_external_article', null, $is_external) // Include only nodes where field_resources_published_time is not empty
+      ->condition('langcode', $language_code) // Filter by language code.
+      ->range(0, $limit)
+      ->sort('field_resources_published_time', 'DESC', $language_code)
+      ->accessCheck()
+      ->execute();
+
+    $total_count = $this->entityTypeManager->getStorage('node')->getQuery()
+      ->condition('type', 'newsroom')
+      ->condition('status', 1)
+      ->condition('field_is_it_an_external_article', null, 'IS NULL') // Include only nodes where field_resources_published_time is not empty
+      ->condition('field_resources_published_time', NULL, $is_external) // Include only nodes where field_resources_published_time is not empty
+      ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
+      ->condition('langcode', $language_code) // Filter by language code.
+      ->accessCheck()
+      ->execute();
+    $total_count = count($total_count);
+
+    $resource_nids = array_values($query);
+    $resource_nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($resource_nids);
+
+    foreach ($resource_nodes as $node) {
+      // Load the node in the current language.
+      $node = $node->getTranslation($language_code);
+      $title = $node->get('title')->value;
+      $url = $this->getAliasesInOtherLanguages($node->id(), $language_code);
+      $published_date = $node->get('field_resources_published_time')->value;
+
+      // Get Tags (field_resources_tags).
+      $tags_references = $node->get('field_resources_tags')->referencedEntities();
+      $article_tags = [];
+
+      foreach ($tags_references as $tag) {
+        $tag_name = $tag->getName();
+        $tag_id = $tag->id();
+
+        // Add the tag to the unique_tags array if it doesn't exist.
+        if (!in_array($tag_id, array_column($unique_tags, 'id'))) {
+          $unique_tags[] = [
+            'name' => $tag_name,
+            'id' => $tag_id,
+          ];
+        }
+
+        // Add the tag to the article_tags array.
+        $article_tags[] = [
+          'name' => $tag_name,
+          'id' => $tag_id,
+        ];
+      }
+
+      // Get Background Image (field_resources_background_image).
+      $background_image_media = $node->get('field_resources_background_image')->entity;
+      $background_image_url = '';
+
+      if ($background_image_media instanceof Media) {
+        $background_image_file = $background_image_media->get('field_media_image')->entity;
+
+        if ($background_image_file instanceof File) {
+          $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
+        }
+      }
+
+      // Get Creation Date.
+      $custom_timestamp = $node->get('field_resources_published_time')->value;
+      $external_url = $node->get('field_e')->value;
+      $external_source = $node->get('field_external_source')->value;
+      $is_external_value = $node->get('field_is_it_an_external_article')->value;
+      $creation_date = date('F j, Y', $custom_timestamp);
+
+      $articles[] = [
+        'url' => $url,
+        'title' => $title,
+        'tags' => $article_tags,
+        'external_url' => $external_url,
+        'external_source' => $external_source,
+        'is_external_value' => $is_external_value,
+        'background_image' => $background_image_url,
+        'published_date' => $published_date,
+        'creation_date' => $creation_date,
+      ];
+    }
+
+    return [
+      'tags' => $unique_tags,
+      'articles' => $articles,
+      'articles_count' => $total_count,
+      'articles_finished' => count($articles) >= ($total_count - 1),
+    ];
+  }
+
+
+
   public function getAllBlogArticleTags() {
     // Get the current page language code.
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'tags']);
+    $result = [];
+    foreach ($terms as $term) {
+        $result[] = [
+            'id' => $term->id(),
+            'name' => $term->getName(),
+        ];
+    }
+    return $result;
+  }
+  public function getAllNewsArticleTags() {
+    // Get the current page language code.
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'newsroomtags']);
     $result = [];
     foreach ($terms as $term) {
         $result[] = [
@@ -634,7 +833,7 @@ class PlanetCoreArticleService {
 
     $article_tags = [];
 
-    $title = $node->get('field_resources_title')->value;
+    $title = $node->get('title')->value;
 
     $url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
     $url = $language_code != "en" ? "/" . $language_code . $url : $url;
