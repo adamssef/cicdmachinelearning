@@ -789,8 +789,25 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   display: block;
 }
 
+.planet-h3 {
+  font-size: 24px;
+  color: #202020;
+  font-weight: 600;
+  line-height: 30px;
+  display: block;
+}
+.planet-box-icon {
+  margin-bottom: 24px;
+  max-width: 48px;
+  height: auto;
+}
 
-
+.useful-link-box .article-card-content {
+  padding: 24px;
+}
+.useful-link-box p a {
+  text-decoration: underline;
+}
 .author-social img {
   width: 24px;
   height: auto;
@@ -1237,7 +1254,9 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 .planet-h2.black {
   color: #202020
 }
-
+.useful-news-links-box-wrapper {
+  padding-bottom: 80px
+}
 .featured-article-info .article-author-and-date {
   margin-top: 16px;
 }
@@ -1769,6 +1788,32 @@ label.js-form-required.form-required > span {
 }
 .external-url-card .card-button {
   color: #0071de;
+  transition: none;
+}
+.external-url-card .card-button:hover > img {
+  margin-left: 16px;
+}
+a.button-with-icon-transition {
+  color: #0071de;
+}
+.button-with-icon-transition img {
+  margin-left: 16px;
+  color: #0071de;
+  transition: all 0.2s ease;
+}
+.button-with-icon-transition:hover > img {
+  margin-left: 24px;
+}
+.external-news-wrapper {
+  padding-top: 0;
+}
+.useful-link-box .news-card {
+  background: #f5f5f5;
+  border: 0;
+  transition: none;
+}
+.useful-link-box .news-card:hover {
+  box-shadow: none;
 }
 .news-main-title {
   padding-top: 48px
