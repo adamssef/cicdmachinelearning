@@ -52,6 +52,17 @@ function planet_core_preprocess_html(&$variables): void {
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     $variables['attributes']['class'][] = 'plnt-css-admin-page';
   }
+
+  $variables['page']['#attached']['html_head'][] = [
+    [
+      '#tag' => 'meta',
+      '#attributes' => [
+        'name' => 'google-site-verification',
+        'content' => 'r8VVBHUCFz8Acou041Px2-0hDgfiLHlgVlRTk3N0n6A',
+      ],
+    ],
+    'google_site_verification',
+  ];
 }
 
 /**
