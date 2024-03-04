@@ -8,7 +8,7 @@
     - attributes: HTML attributes for the node wrapper.
 #}
 <div>
-	<div class="plnt-blog-single-page">
+	<div class="plnt-blog-news-page">
 		<div class="coh-container coh-container-boxed news-main-title">
 			<div class="coh-row">
 				<div class="coh-row-inner">
@@ -67,7 +67,6 @@
 				</div>
 			</div>
 		{% endif %}
-	</div>
 	<div class="coh-container coh-container-boxed blog-articles-wrapper max-width-1216">
 		<div class="coh-row">
 			<div class="coh-row-inner">
@@ -114,7 +113,7 @@
 							</div>
 							{% if articles|length > 3 %}
 								<div class="load-more-wrapper">
-									<div id="load-more-button" class="coh-link coh-style-primary-dark-atom-">See all news</div>
+									<a id="load-more-button" href="/news" class="coh-link coh-style-primary-dark-atom-">See all news</a>
 								</div>
 							{% endif %}
 						</div>
@@ -216,4 +215,5 @@
 			</div>
 		</div>
 	</div>
-</div></div></div>
+</div>
+</div>

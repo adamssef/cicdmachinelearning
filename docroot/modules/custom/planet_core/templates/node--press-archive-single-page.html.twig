@@ -1,0 +1,118 @@
+{#
+  Custom Twig template for the Blog homepage.
+  Template variables available:
+    - content: An array of content elements.
+    - node: The node entity representing the "blog" content.
+    - label: The node label.
+    - url: The node URL.
+    - attributes: HTML attributes for the node wrapper.
+#}
+<div>
+	<div class="plnt-blog-archive-news-page">
+		<div class="coh-container coh-container-boxed news-main-title">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
+						<div class="breadcrumbs">
+							<a href="/newsroom">Newsroom</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="coh-container coh-container-boxed max-width-1216">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+						<div class="last-articles">
+							<div class="news-title no-margin">
+								<h1 class="planet-h1">All news</h1>
+							</div>
+							{% if tags %}
+								<div class="coh-row">
+									<div class="coh-row-inner">
+										<div class="planet-select-wrapper">
+											<select name="category" class="planet-select">
+												<option value="all">All news</option>
+												{% for tag in tags %}
+													<option value="{{tag.name}}">{{tag.name}}</option>
+												{% endfor %}
+											</select>
+											<select name="years" class="planet-select">
+												{% for year in years %}
+													<option value="{{year}}" {% if loop.first %} selected {% endif %}>{{year}}</option>
+												{% endfor %}
+											</select>
+
+										</div>
+
+									</div>
+								</div>
+							{% endif %}
+
+
+							<div>
+								<div class="article-cards-wrapper">
+									<div class="coh-row">
+										<div class="coh-row-inner article-js-wrapper"></div>
+									</div>
+								</div>
+								{% if articles|length > 3 %}
+									<div class="load-more-wrapper">
+										<a id="load-more-button" href="/news" class="coh-link coh-style-primary-dark-atom-">See all news</a>
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="coh-container coh-container-boxed external-news-wrapper useful-news-links-box-wrapper max-width-1216">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+						<div class="last-articles">
+							<div>
+								<div class="article-cards-wrapper">
+									<div class="coh-row">
+										<div class="coh-row-inner">
+											<div class="useful-link-box news-box-wrapper article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
+												<div class="article-card news-card">
+													<div class="article-card-content">
+														<div>
+															<img class="planet-box-icon" src="/resources/icons/mail.svg">
+															<span class="article-title planet-h3">Contact our PR team</span>
+															<p>For any press-related inquiries, contact
+																<a href="mailto:media@weareplanet.com">media@weareplanet.com</a>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="useful-link-box news-box-wrapper article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
+												<div class="article-card news-card">
+													<div class="article-card-content">
+														<div>
+															<img class="planet-box-icon" src="/resources/icons/support.svg">
+															<span class="article-title planet-h3">For non-media inquiries</span>
+															<p>For non-media inquiries, contact our Planet support team.</p>
+														</a>
+													</p>
+												</div>
+												<div class="card-button-wrapper">
+													<a class="card-button button-with-icon-transition" href="/contact">Contact us
+														<img src="/resources/icons/blue-right-arrow.svg"></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>

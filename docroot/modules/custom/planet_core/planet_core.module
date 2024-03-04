@@ -310,9 +310,6 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
 
   $config = \Drupal::config('planet_core.settings');
 
-  switch ($alias) {
-    case "/blog":
-      $is_new_blog_enabled = $config->get('enable_new_blog');
 
   switch ($alias) {
     case "/blog":
@@ -324,6 +321,9 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
       break;
     case "/sitemap":
       $suggestions[] = 'node__sitemap';
+      break;
+    case "/news":
+      $suggestions[] = 'node__press-archive-single-page';
       break;
   }
 
@@ -396,6 +396,10 @@ function planet_core_theme(): array {
     ],
     'node__press-single-page' => [
       'template' => 'node--press-single-page',
+      'base hook' => 'node',
+    ],
+    'node__press-archive-single-page' => [
+      'template' => 'node--press-archive-single-page',
       'base hook' => 'node',
     ],
     'node__resources-page' => [
@@ -501,7 +505,9 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void {
 function planet_core_preprocess_node(array &$variables) {
   $node = $variables['node'];
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+
   $planet_core_article_helper = \Drupal::service('planet_core.article_helper');
+
   $variables['#attached']['library'][] = 'planet_core/language-popup';
 
   if ($alias === '/sitemap') {
@@ -535,11 +541,16 @@ function planet_core_preprocess_node(array &$variables) {
     }
 
     if (in_array($alias, ["/newsroom", "/press-pages"])) {
-      $variables['featured_article'] = $planet_core_article_helper->getLastPublishedNews();
-      $variables['useful_links'] = $planet_core_article_helper->getToggleLinks();
-      $variables['tags'] = $planet_core_article_helper->getAllNewsArticleTags();
-      $variables['articles'] = $planet_core_article_helper->getPublishedNews(3);
-      $variables['external_articles'] = $planet_core_article_helper->getPublishedNews(6, true);
+      $variables['featured_article'] = $planet_core_news_helper->getLastPublishedNews();
+      $variables['useful_links'] = $planet_core_news_helper->getToggleLinks();
+      $variables['tags'] = $planet_core_news_helper->getAllNewsArticleTags();
+      $variables['articles'] = $planet_core_news_helper->getPublishedNews(3);
+      $variables['external_articles'] = $planet_core_news_helper->getPublishedNews(3, true);
+    }
+    if (in_array($alias, ["/news", ])) {
+      $variables['tags'] = $planet_core_news_helper->getAllNewsArticleTags();
+      $variables['years'] = $planet_core_news_helper->getLast10Years();
+      $variables['#attached']['library'][] = 'planet_core/news-page';
     }
   }
 
