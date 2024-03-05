@@ -287,10 +287,11 @@ class PlanetCoreNewsService {
     $category = \Drupal::request()->get('category');
     $year = \Drupal::request()->get('year');
 
-    if(!$year) {
+    if(!$year && !$external) {
       $current_year = $this->getLastPublishedYear();
       $year = $current_year['id'];
     }
+
 
    
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
@@ -312,12 +313,12 @@ class PlanetCoreNewsService {
       ->accessCheck();
 
      // Add the 'field_year' condition only if $year is not null
-     if ($year !== null) {
+     if ($year !== null && !$external) {
       $query->condition('field_year', $year);
       $total_count->condition('field_year', $year);
     }
 
-    if(($category !== null) && ($category != "all")) {
+    if(($category !== null) && ($category != "all") && (!$external)) {
       $query->condition('field_resources_tags', $category);
       $total_count->condition('field_resources_tags', $category);
     }
@@ -327,7 +328,6 @@ class PlanetCoreNewsService {
     $total_count = $total_count->execute();
 
     $total_count = count($total_count);
-
     $resource_nids = array_values($query);
     $resource_nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($resource_nids);
 
