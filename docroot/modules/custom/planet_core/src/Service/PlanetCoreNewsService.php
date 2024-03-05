@@ -594,7 +594,7 @@ public function getAllNewsArticleTags() {
   function getSingleNewsData($node_id) {
     global $base_url;
 
-    $blog_id = 1576;
+    $news_id = 4471;
     // Get the current page language code.
     $language_code = $this->languageManager->getCurrentLanguage()->getId();
 
@@ -642,7 +642,7 @@ public function getAllNewsArticleTags() {
 
     // Get Creation Date
     $custom_timestamp = $node->get('field_resources_published_time')->value;
-    $blog_url = $this->getAliasesInOtherLanguages($blog_id);
+    $blog_url = $this->getAliasesInOtherLanguages($news_id);
     $domain = $base_url;
     $short_url = substr($domain . $url, 0, 48) . "...";
     $share_url = $domain . $url;

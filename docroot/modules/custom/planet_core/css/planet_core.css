@@ -1866,6 +1866,10 @@ a.button-with-icon-transition {
   padding: 12px 32px 12px 16px;
   margin: 0 8px;
   border-radius: 4px;
+  font-family: 'TT Commons', sans-serif;
+}
+.planet-select option:hover {
+  box-shadow: 0 0 10px 100px #1882A8 inset;
 }
 .planet-select-wrapper {
   margin: 48px auto 32px auto;
