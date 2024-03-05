@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.newsroom.field_resources_published_time
     - field.field.node.newsroom.field_resources_subtitle
     - field.field.node.newsroom.field_resources_tags
+    - field.field.node.newsroom.field_year
     - node.type.newsroom
   module:
     - cohesion_elements
@@ -117,6 +118,14 @@ content:
       link: false
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_year:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 15
     region: content
   links:
     settings: {  }

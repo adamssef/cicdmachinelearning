@@ -90,141 +90,6 @@ class PlanetCoreNewsService {
   }
 
 
-  /**
-   * @file
-   * Custom hooks functions for the planet_core module.
-   */
-  public function getAuthorArticles($authorId, $limit = 3, $offset = 0) {
-    $author_node = $this->entityTypeManager->getStorage('node')->load($authorId);
-    $author_name = $author_node->getTitle();
-    $author_name_words = explode(' ', $author_name);
-
-    // Extract the first word only if the author's name has at least two words.
-    $first_word = (count($author_name_words) >= 2) ? reset($author_name_words) : $author_name;
-
-    $profile_picture_url = '';
-    // Check if the author node and profile picture field exist.
-    if ($author_node && $author_node->hasField('field_profile_picture')) {
-      $profile_picture_media = $author_node->get('field_profile_picture')->entity;
-
-      if ($profile_picture_media instanceof Media) {
-        $profile_picture_file = $profile_picture_media->get('field_media_image')->entity;
-        if ($profile_picture_file instanceof File) {
-          $profile_picture_url = $this->fileUrlGenerator->generateAbsoluteString($profile_picture_file->getFileUri());
-        }
-      }
-    }
-
-    $node_storage = $this->entityTypeManager->getStorage('node');
-
-    $total_nodes = $node_storage->getQuery()
-      ->condition('type', 'resources') // Adjust to your content type name.
-      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true.
-      ->condition('field_author.target_id', $authorId)
-      ->accessCheck(FALSE)
-      ->condition('status', 1);
-
-    $total_nodes_nids = $total_nodes->execute();
-    $total_articles = count($total_nodes_nids);
-
-    $query = $node_storage->getQuery()
-      ->condition('type', 'resources') // Adjust to your content type name.
-      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
-      ->condition('field_author.target_id', $authorId)
-      ->condition('status', 1) // 1 represents published nodes.
-      ->range($offset, $limit) // Apply offset and limit.
-      ->accessCheck(FALSE)
-      ->sort('created', 'DESC'); // Sort by creation date in descending order.
-
-    $resource_nids= $query->execute();
-    $resource_nodes = $node_storage->loadMultiple($resource_nids);
-
-    // Empty arrays initialization.
-    $articles = [];
-    $unique_tags = [];
-
-    foreach ($resource_nodes as $node) {
-      $title = $node->get('field_resources_title')->value;
-
-      $url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
-
-      // Get Tags (field_resources_tags).
-      $tags_references = $node->get('field_resources_tags')->referencedEntities();
-      $article_tags = [];
-
-      foreach ($tags_references as $tag) {
-        $tag_name = $tag->getName();
-        $tag_id = $tag->id(); // Get the tag ID.
-
-        // Add the tag to the unique_tags array if it doesn't exist.
-        if (!in_array($tag_id, array_column($unique_tags, 'id'))) {
-          $unique_tags[] = [
-            'name' => $tag_name,
-            'id' => $tag_id,
-          ];
-        }
-
-        // Add the tag to the article_tags array.
-        $article_tags[] = [
-          'name' => $tag_name,
-          'id' => $tag_id,
-        ];
-      }
-
-      // Get Background Image (field_resources_background_image)
-      $background_image_media = $node->get('field_resources_background_image')->entity;
-
-      if ($background_image_media instanceof \Drupal\media\Entity\Media) {
-        $background_image_file = $background_image_media->get('field_media_image')->entity;
-
-        if ($background_image_file instanceof \Drupal\file\Entity\File) {
-          $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
-        }
-      }
-
-      // Get Creation Date
-      $custom_timestamp = $node->get('field_resources_published_time')->value;
-
-      // Convert the custom timestamp to a formatted date.
-      $creation_date = date('F j, Y', $custom_timestamp);
-
-      $articles[] = [
-        'url' => $url,
-        'title' => $title,
-        'tags' => $article_tags, // Store the tags for the current article.
-        'background_image' => $background_image_url,
-        'creation_date' => $creation_date,
-      ];
-    }
-
-    return [
-      'tags' => $unique_tags,
-      'articles' => $articles,
-      'articles_count' => $total_articles,
-      'articles_finished' => $total_articles == count($articles),
-      'author' => array(
-        'profile_picture' => $profile_picture_url,
-        'first_name' => $first_word,
-        'full_name' => $author_name
-      )
-    ];
-  }
-
-
-  public function getToggleLinks() {
-      /** These ids are for production only */
-      $blog_url = $this->getAliasesInOtherLanguages(1576);
-      $case_studies_url = $this->getAliasesInOtherLanguages(1366);
-      $ebooks_url = $this->getAliasesInOtherLanguages(2136);
-
-      return array(
-        "case_studies" => $case_studies_url,
-        "ebooks" => $ebooks_url,
-        "blog" => $blog_url
-      );
-  }
-
-
   public function getLastPublishedArticle() {
     // Get the current page language code.
     $language_code = $this->languageManager->getCurrentLanguage()->getId();
@@ -420,7 +285,14 @@ class PlanetCoreNewsService {
     $unique_tags = [];
 
     $category = \Drupal::request()->get('category');
+    $year = \Drupal::request()->get('year');
 
+    if(!$year) {
+      $current_year = $this->getLastPublishedYear();
+      $year = $current_year['id'];
+    }
+
+   
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'newsroom')
       ->condition('status', 1)
@@ -429,8 +301,7 @@ class PlanetCoreNewsService {
       ->condition('langcode', $language_code) // Filter by language code.
       ->range(0, $limit)
       ->sort('field_resources_published_time', 'DESC', $language_code)
-      ->accessCheck()
-      ->execute();
+      ->accessCheck();
 
     $total_count = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'newsroom')
@@ -438,8 +309,23 @@ class PlanetCoreNewsService {
       ->condition('field_is_it_an_external_article', 1, $is_external) // Include only nodes where field_resources_published_time is not empty
       ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
       ->condition('langcode', $language_code) // Filter by language code.
-      ->accessCheck()
-      ->execute();
+      ->accessCheck();
+
+     // Add the 'field_year' condition only if $year is not null
+     if ($year !== null) {
+      $query->condition('field_year', $year);
+      $total_count->condition('field_year', $year);
+    }
+
+    if(($category !== null) && ($category != "all")) {
+      $query->condition('field_resources_tags', $category);
+      $total_count->condition('field_resources_tags', $category);
+    }
+
+    // Executing queries
+    $query = $query->execute();
+    $total_count = $total_count->execute();
+
     $total_count = count($total_count);
 
     $resource_nids = array_values($query);
@@ -512,32 +398,52 @@ class PlanetCoreNewsService {
       'tags' => $unique_tags,
       'articles' => $articles,
       'articles_count' => $total_count,
-      'articles_finished' => count($articles) >= ($total_count - 1),
+      'articles_finished' => (count($articles) >= $total_count),
     ];
   }
 
-  public function getLast10Years() {
-    $result = array();
-    for ($y = date("Y"); $y >= date("Y") - 5; $y--) {
-        array_push($result, $y);
-    }
-    return $result;
-}
-
-
-  public function getAllBlogArticleTags() {
-    // Get the current page language code.
-    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'tags']);
+  public function getYears() {
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'newsroomyears']);
     $result = [];
+
     foreach ($terms as $term) {
         $result[] = [
             'id' => $term->id(),
             'name' => $term->getName(),
+            'year' => (int) $term->getName(), // Convert the name to an integer for sorting
         ];
     }
+
+    // Sort the result array by the 'year' key in descending order
+    usort($result, function ($a, $b) {
+        return $b['year'] - $a['year'];
+    });
+
     return $result;
+}
+
+
+public function getLastPublishedYear() {
+  $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'newsroomyears']);
+  $result = [];
+
+  foreach ($terms as $term) {
+      $result[] = [
+          'id' => $term->id(),
+          'name' => $term->getName(),
+          'year' => (int) $term->getName(), // Convert the name to an integer for sorting
+      ];
   }
-  public function getAllNewsArticleTags() {
+
+  // Sort the result array by the 'year' key in descending order
+  usort($result, function ($a, $b) {
+      return $b['year'] - $a['year'];
+  });
+
+  return $result[0];
+}
+
+public function getAllNewsArticleTags() {
     // Get the current page language code.
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'newsroomtags']);
     $result = [];
@@ -720,16 +626,19 @@ class PlanetCoreNewsService {
       ];
     }
 
-    // Get Background Image (field_resources_background_image)
-    $background_image_media = $node->get('field_resources_background_image')->entity;
+    if($node->get('field_resources_background_image')) {
+      // Get Background Image (field_resources_background_image)
+      $background_image_media = $node->get('field_resources_background_image')->entity;
 
-    if ($background_image_media instanceof \Drupal\media\Entity\Media) {
-      $background_image_file = $background_image_media->get('field_media_image')->entity;
+      if ($background_image_media instanceof \Drupal\media\Entity\Media) {
+        $background_image_file = $background_image_media->get('field_media_image')->entity;
 
-      if ($background_image_file instanceof \Drupal\file\Entity\File) {
-        $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
+        if ($background_image_file instanceof \Drupal\file\Entity\File) {
+          $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
+        }
       }
     }
+
 
     // Get Creation Date
     $custom_timestamp = $node->get('field_resources_published_time')->value;

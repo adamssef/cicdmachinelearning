@@ -73,6 +73,12 @@ ul.language-switcher__dropdown-menu {
 .plnt-blog-archive-news-page {
   padding: 0 16px 48px 0;
 }
+.no-articles {
+  padding: 48px 0;
+}
+.news-container {
+  padding-bottom: 48px
+}
 .language-switcher__link {
   text-decoration: none;
   color: white;
@@ -786,14 +792,31 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   transition: all .2s ease;
 }
 
-.article-title a {
+.article-title a, .article-title > span {
   font-size: 24px;
   color: #202020;
   font-weight: 600;
   line-height: 30px;
   display: block;
 }
+.loader > img {
+  max-width: 50px;
+  margin: 0 auto;
+}
+.planet-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url('/resources/icons/arrow-down.svg');
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .9em auto, 100%;
+}
 
+/* For IE (thanks to @SaiManoj) */
+.planet-select::-ms-expand {
+  display: none;
+}
 .planet-h3 {
   font-size: 24px;
   color: #202020;
@@ -1260,7 +1283,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   color: #202020
 }
 .useful-news-links-box-wrapper {
-  padding-bottom: 80px
+  padding-bottom: 40px
 }
 .featured-article-info .article-author-and-date {
   margin-top: 16px;
@@ -1838,9 +1861,9 @@ a.button-with-icon-transition {
   padding-bottom: 8px;
 }
 .planet-select {
-  background: white;
+  background-color: white;
   border: 1px solid #d1d1d1;
-  padding: 12px 16px;
+  padding: 12px 32px 12px 16px;
   margin: 0 8px;
   border-radius: 4px;
 }

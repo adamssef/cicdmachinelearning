@@ -20,7 +20,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="coh-container coh-container-boxed max-width-1216">
+		<div class="coh-container coh-container-boxed max-width-1216 news-container">
 			<div class="coh-row">
 				<div class="coh-row-inner">
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
@@ -32,15 +32,15 @@
 								<div class="coh-row">
 									<div class="coh-row-inner">
 										<div class="planet-select-wrapper">
-											<select name="category" class="planet-select">
+											<select name="category" class="planet-select planet-news-select-category">
 												<option value="all">All news</option>
 												{% for tag in tags %}
-													<option value="{{tag.name}}">{{tag.name}}</option>
+													<option value="{{tag.id}}">{{tag.name}}</option>
 												{% endfor %}
 											</select>
-											<select name="years" class="planet-select">
+											<select name="years" class="planet-select planet-news-select-years">
 												{% for year in years %}
-													<option value="{{year}}" {% if loop.first %} selected {% endif %}>{{year}}</option>
+													<option value="{{year.id}}" {% if loop.first %} selected {% endif %}>{{year.name}}</option>
 												{% endfor %}
 											</select>
 
@@ -54,14 +54,16 @@
 							<div>
 								<div class="article-cards-wrapper">
 									<div class="coh-row">
+										<p class="no-articles" style="display: none">No news found.</p>
+										<div class="loader">
+											<img src="/resources/icons/temporary-loader.gif">
+										</div>
 										<div class="coh-row-inner article-js-wrapper"></div>
 									</div>
 								</div>
-								{% if articles|length > 3 %}
-									<div class="load-more-wrapper">
-										<a id="load-more-button" href="/news" class="coh-link coh-style-primary-dark-atom-">See all news</a>
-									</div>
-								{% endif %}
+								<div class="load-more-wrapper">
+									<a style="display: none" id="load-more-button" href="/news" class="coh-link coh-style-primary-dark-atom-">See all news</a>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -542,14 +542,13 @@ function planet_core_preprocess_node(array &$variables) {
 
     if (in_array($alias, ["/newsroom", "/press-pages"])) {
       $variables['featured_article'] = $planet_core_news_helper->getLastPublishedNews();
-      $variables['useful_links'] = $planet_core_news_helper->getToggleLinks();
       $variables['tags'] = $planet_core_news_helper->getAllNewsArticleTags();
       $variables['articles'] = $planet_core_news_helper->getPublishedNews(3);
       $variables['external_articles'] = $planet_core_news_helper->getPublishedNews(3, true);
     }
     if (in_array($alias, ["/news", ])) {
       $variables['tags'] = $planet_core_news_helper->getAllNewsArticleTags();
-      $variables['years'] = $planet_core_news_helper->getLast10Years();
+      $variables['years'] = $planet_core_news_helper->getYears();
       $variables['#attached']['library'][] = 'planet_core/news-page';
     }
   }

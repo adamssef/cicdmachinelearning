@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.newsroom.field_resources_published_time
     - field.field.node.newsroom.field_resources_subtitle
     - field.field.node.newsroom.field_resources_tags
+    - field.field.node.newsroom.field_year
     - node.type.newsroom
   module:
     - user
@@ -44,5 +45,6 @@ hidden:
   field_resources_published_time: true
   field_resources_subtitle: true
   field_resources_tags: true
+  field_year: true
   langcode: true
   search_api_excerpt: true

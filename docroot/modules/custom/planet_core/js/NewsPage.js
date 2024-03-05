@@ -7,11 +7,21 @@
             let isTagFiltered = false;
             const lang = $('html')[0].lang;
 
-            async function fetch_articles(limit = 9, offset = 0, lang = "en") {
-
-
+            async function fetch_articles(limit = 9, offset = 0, lang = "en", category = false, year = false) {
+                $(".article-js-wrapper").empty();
+                $(".loader").show();
                 try {
-                    const response = await fetch('/planet_core/news_articles/' + limit + "/" + offset + "/" + lang);
+                    const url = new URL(`/planet_core/news_articles/${limit}/${offset}/${lang}`, window.location.origin);
+                    // Add optional query parameters if provided
+                    if (category) {
+                        url.searchParams.append('category', category);
+                    }
+                    if (year) {
+                        url.searchParams.append('year', year);
+                    }
+                    // Fetch data using the built URL
+                    const response = await fetch(url);
+                    
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
@@ -23,8 +33,19 @@
                 }
             }
 
+            $('.planet-news-select-years').on('change', async function() {
+                const category = $('.planet-news-select-category').find(":selected").val();
+                let data = await fetch_articles(limit, offset, lang, category, this.value);
+                render_articles(data);
+            });
+            $('.planet-news-select-category').on('change', async function() {
+                const year = $('.planet-news-select-years').find(":selected").val();
+                let data = await fetch_articles(limit, offset, lang, this.value, year);
+                render_articles(data);
+            });
+
             $(document).ready(async function () {
-                
+                $(".planet-news-select-category").val('all');
                 try {
                     let data = await fetch_articles(limit, offset, lang);
                     render_articles(data);
@@ -43,7 +64,6 @@
                     isTagFiltered = true;
                 }
             });
-
 
             $('#load-more-button').click(async function () {
                 try {
@@ -76,48 +96,34 @@
                 }
             }
 
-            $(document).on("click", ".main-pill[data-tagid]", function () {
-                filterByTagId($(this).data('tagid'))
-            });
-
-            $(document).on("click", ".article-tags span[data-tagid]", function () {
-                var tagId = $(this).data('tagid');
-                filterByTagId(tagId);
-            });
-
             function render_no_articles() {
+                $(".loader").hide();
+                $(".article-js-wrapper").empty();
                 $(".no-articles").show();
-            }
-
-            function render_tags(tags) {
-                if (tags) {
-                    $(".external-main-tags").empty();
-                    tags.forEach(function (tag) {
-                        $(".external-main-tags").append("<span class='main-pill visible' data-tagid='" + tag.id + "'>" + tag.name + "</span>");
-                    });
-                    $(".main-pills, .tags-pills").show();
-                }
             }
 
             function render_articles(data) {
 
                 let articles = data.articles;
-                let tags = data.tags;
-
-                if (!articles) {
+                if (!articles.length) {
                     render_no_articles();
                     return;
                 }
 
+                $(".no-articles").hide();
                 $(".article-js-wrapper").empty();
+
+                // if (data.articles_count > 9) {
+                //     $("#load-more-button").show();
+
+                // }
+
                 if (data.articles_finished == false) {
                     $("#load-more-button").show();
                 } else {
                     $("#load-more-button").hide();
                 }
-
-                render_tags(tags);
-
+                $(".loader").hide();
                 articles.forEach(function (article) {
                     render_article_card(article);
                 });

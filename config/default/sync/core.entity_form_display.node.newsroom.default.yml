@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.newsroom.field_resources_published_time
     - field.field.node.newsroom.field_resources_subtitle
     - field.field.node.newsroom.field_resources_tags
+    - field.field.node.newsroom.field_year
     - node.type.newsroom
   module:
     - cohesion_elements
@@ -109,6 +110,16 @@ content:
   field_resources_tags:
     type: entity_reference_autocomplete
     weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_year:
+    type: entity_reference_autocomplete
+    weight: 26
     region: content
     settings:
       match_operator: CONTAINS
