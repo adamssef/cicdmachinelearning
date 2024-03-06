@@ -7,11 +7,16 @@
             let isTagFiltered = false;
             const lang = $('html')[0].lang;
 
-            async function fetch_articles(limit = 9, offset = 0, lang = "en") {
+            async function fetch_articles(limit = 9, offset = 0, lang = "en", category = false) {
 
+                is_loading(true)
 
                 try {
-                    const response = await fetch('/planet_core/blog_articles/' + limit + "/" + offset + "/" + lang);
+                    const url = new URL(`/planet_core/blog_articles/${limit}/${offset}/${lang}`, window.location.origin);
+                    if (category) {
+                        url.searchParams.append('category', category);
+                    }
+                    const response = await fetch(url);
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
@@ -24,11 +29,11 @@
             }
 
             $(document).ready(async function () {
-                
+
+                const status = fetch_articles_status();
                 try {
-                    let data = await fetch_articles(limit, offset, lang);
+                    let data = await fetch_articles(status[0], status[1], lang);
                     render_articles(data);
-                    limit = limit + 3;
                 } catch (error) {
                     // Handle errors here, if necessary.
                     console.error('Error:', error);
@@ -47,8 +52,8 @@
 
             $('#load-more-button').click(async function () {
                 try {
-                    limit = limit + 9;
-                    let data = await fetch_articles(limit, offset, lang);
+                    const status = fetch_articles_status();
+                    let data = await fetch_articles(status[0], status[1], lang, status[2]);
                     render_articles(data);
                 } catch (error) {
                     // Handle errors here, if necessary.
@@ -57,70 +62,113 @@
             });
 
 
-            function filterByTagId(tagid) {
+            async function filterByTagId(tagid) {
+                if(tagid == $(".article-js-wrapper").attr("data-category")) {
+                    return; //prevent clicking on same tag
+                }
                 $(".main-pill").removeClass('selected');
                 $(".main-pill[data-tagid=" + tagid + "]").addClass('selected');
-            
-                $('.article-wrapper').hide();
-            
-                if (tagid == "all") {
-                    $('.article-wrapper').show();
-                } else {
-                    $('.article-wrapper').each(function () {
-                        var columnTags = $(this).data('tagid'); // Get the data-tagid array
-
-                        if (columnTags.includes(parseInt(tagid))) {
-                            $(this).show();
-                        }
-                    });
-                }
+                $(".article-js-wrapper").empty();
+                is_loading(true);
+                reset_article_limit();
+                reset_article_offset();
+                reset_article_count();
+                switch_article_category(tagid);
+                const status = fetch_articles_status();
+                let data = await fetch_articles(status[0], status[1], lang, status[2]);
+                is_loading(false);
+                render_articles(data);
             }
 
-            $(document).on("click", ".main-pill[data-tagid]", function () {
-                filterByTagId($(this).data('tagid'))
+            $(document).on("click", ".main-pill[data-tagid]", async function () {
+                await filterByTagId($(this).data('tagid'));
             });
 
-            $(document).on("click", ".article-tags span[data-tagid]", function () {
-                var tagId = $(this).data('tagid');
-                filterByTagId(tagId);
-            });
+            function fetch_articles_status() {
+                const limit = $(".article-js-wrapper").attr("data-limit");
+                const offset = $(".article-js-wrapper").attr("data-offset");
+                const category = $(".article-js-wrapper").attr("data-category");
+                return [limit, offset, category];
+            }
+
+            function reset_article_limit() {
+                $(".article-js-wrapper").attr("data-limit", "9");
+            }
+            function reset_article_offset() {
+                $(".article-js-wrapper").attr("data-offset", "0");
+            }
+            function reset_article_count() {
+                $(".article-js-wrapper").attr("data-total", "0");
+            }
+          
+
+            function increase_article_limit() {
+                $(".article-js-wrapper").attr("data-limit", "9");
+            }
+
+            function increase_article_offset() {
+                const offset = $(".article-js-wrapper").attr("data-offset");
+                const newValue = parseInt(offset) + 9
+                $(".article-js-wrapper").attr('data-offset', newValue.toString());
+            }
+             function increase_article_count(amount) {
+                let count = $(".article-js-wrapper").attr("data-total");
+                let newValue = parseInt(count) + parseInt(amount);
+                $(".article-js-wrapper").attr('data-total', newValue.toString());
+
+            }
+
+            function switch_article_category(category) {
+                $(".article-js-wrapper").attr('data-category', category);
+            }
+
 
             function render_no_articles() {
+                is_loading(false);
                 $(".no-articles").show();
             }
 
-            function render_tags(tags) {
-                if (tags) {
-                    $(".external-main-tags").empty();
-                    tags.forEach(function (tag) {
-                        $(".external-main-tags").append("<span class='main-pill visible' data-tagid='" + tag.id + "'>" + tag.name + "</span>");
-                    });
-                    $(".main-pills, .tags-pills").show();
+            function handle_load_more(articles_count) {
+                let shown_count = $(".article-js-wrapper").attr("data-total");
+                console.log(articles_count > parseInt(shown_count));
+                if(articles_count > parseInt(shown_count)) {
+                    $(".load-more-wrapper").show();
+                } else {
+                    $(".load-more-wrapper").hide();
                 }
+            }
+
+            function is_loading(status = true) {
+                if(!status) {
+                    $(".loader").hide();
+                } else {
+                    $(".loader").show();
+                }
+                $(".load-more-wrapper").hide();
+                $(".no-articles").hide();
+                return;
             }
 
             function render_articles(data) {
 
                 let articles = data.articles;
-                let tags = data.tags;
 
-                if (!articles) {
+                if (!articles.length) {
                     render_no_articles();
                     return;
                 }
 
-                $(".article-js-wrapper").empty();
-                if (data.articles_finished == false) {
-                    $("#load-more-button").show();
-                } else {
-                    $("#load-more-button").hide();
-                }
+                is_loading(false)
 
-                render_tags(tags);
-
+                increase_article_limit()
+                increase_article_offset()
+                increase_article_count(articles.length)
+                
                 articles.forEach(function (article) {
                     render_article_card(article);
                 });
+
+                handle_load_more(data.articles_count)
             }
 
             function render_article_card(article) {

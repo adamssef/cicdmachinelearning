@@ -345,6 +345,8 @@ class PlanetCoreArticleService {
     // Get the current page language code.
     $language_code = $lang;
 
+    $category = \Drupal::request()->get('category');
+
     // Initialize arrays to store data.
     $articles = [];
     $unique_tags = [];
@@ -358,8 +360,7 @@ class PlanetCoreArticleService {
       ->condition('langcode', $language_code) // Filter by language code.
       ->range($offset, $limit)
       ->sort('field_resources_published_time', 'DESC', $language_code)
-      ->accessCheck()
-      ->execute();
+      ->accessCheck();
 
     $total_count = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'resources')
@@ -368,10 +369,18 @@ class PlanetCoreArticleService {
       ->condition('field_resources_published_time', NULL, 'IS NOT NULL') // Include only nodes where field_resources_published_time is not empty
       ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
       ->condition('langcode', $language_code) // Filter by language code.
-      ->accessCheck()
-      ->execute();
-    $total_count = count($total_count);
+      ->accessCheck();
 
+    if(($category !== null) && ($category != "all")) {
+      $query->condition('field_resources_tags', $category);
+      $total_count->condition('field_resources_tags', $category);
+    }
+
+    // Executing queries
+    $query = $query->execute();
+    $total_count = $total_count->execute();
+
+    $total_count = count($total_count);
     $resource_nids = array_values($query);
     $resource_nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($resource_nids);
 
@@ -475,14 +484,22 @@ class PlanetCoreArticleService {
     // Get the current page language code.
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'tags']);
     $result = [];
+
     foreach ($terms as $term) {
         $result[] = [
             'id' => $term->id(),
             'name' => $term->getName(),
         ];
     }
+
+    // Sort the result array alphabetically based on the 'name' key.
+    usort($result, function ($a, $b) {
+        return strcmp($a['name'], $b['name']);
+    });
+
     return $result;
-  }
+}
+
   public function getAllNewsArticleTags() {
     // Get the current page language code.
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'newsroomtags']);

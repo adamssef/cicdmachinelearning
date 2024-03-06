@@ -803,8 +803,11 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   display: block;
 }
 .loader > img {
-  max-width: 50px;
+  max-width: 80px;
   margin: 0 auto;
+}
+.all-article-tags {
+  display: inline-block;
 }
 .planet-select {
   -moz-appearance: none;
