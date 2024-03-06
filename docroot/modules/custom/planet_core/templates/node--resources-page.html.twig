@@ -21,10 +21,13 @@
 				<div class="coh-row-inner">
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
 						<div class="breadcrumbs">
-							<a href="{{article.blog_url}}">Blog</a>
+							{% if node.type.entity.label == "Newsroom" %}
+								<a href="{{ article.blog_url }}">Newsroom</a>
+							{% else %}
+								<a href="{{ article.blog_url }}">Blog</a>
+							{% endif %}
 							{% if article.tags %}
-							>
-							<a href="{{article.blog_url}}?tag={{article.tags[0].id}}">{{article.tags[0].name}}</a>
+							<a href="{{article.blog_url}}?tag={{article.tags[0].id}}">> {{article.tags[0].name}}</a>
 							{% endif %}
 						</div>
 					</div>
