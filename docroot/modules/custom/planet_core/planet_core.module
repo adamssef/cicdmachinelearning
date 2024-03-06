@@ -530,7 +530,7 @@ function planet_core_preprocess_node(array &$variables) {
   }
 
   if ($node->getType() == 'newsroom') {
-    $variables['article'] = $planet_core_article_helper->getSingleNewsData($node->id());
+    $variables['article'] = $planet_core_news_helper->getSingleNewsData($node->id());
   }
 
     if (in_array($alias, ["/blog"])) {
