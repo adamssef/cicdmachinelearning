@@ -21,11 +21,7 @@
 				<div class="coh-row-inner">
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
 						<div class="breadcrumbs">
-							{% if node.getType == "newsroom" %}
-								<a href="{{ article.blog_url }}">Newsroom</a>
-							{% else %}
-								<a href="{{ article.blog_url }}">Blog</a>
-							{% endif %}
+							<a href="{{ article.blog_url }}">Newsroom</a>
 							{% if article.tags %}
 								<a href="{{article.blog_url}}?tag={{article.tags[0].id}}">>
 									{{article.tags[0].name}}</a>
@@ -37,25 +33,6 @@
 							<h1 class="blog-h1">{{article.title}}</h1>
 							<div class="article-author-and-date">
 								<div class="author-and-date">
-									{% if article.author.full_name is not empty %}
-										<div class="article-author">
-											<div class="author-photo" style="background-image:url({{ article.author.profile_picture }})"></div>
-											<div class="author-name">
-												<a href="{{article.author.url}}">
-													<span>{{ article.author.full_name }}</span>
-												</a>
-												<div class="article-date mobile">
-													{{ article.creation_date }}
-													{% if article.reading_time %}
-														·
-														{{article.reading_time}}
-														min read
-													{% endif %}
-												</div>
-											</div>
-										</div>
-										<div class="vertical-divider">|</div>
-									{% endif %}
 									<div class="article-date desktop">
 										{{ article.creation_date }}
 										{% if article.reading_time %}
@@ -113,30 +90,21 @@
 
 						{% for article in article.related_articles %}
 							<div data-tagid="{{ article.tags|map(tag => tag.id)|join(', ') }}" class="article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
-								<div class="article-card">
+								<div class="article-card news-card">
 									<div class="article-bg-image-wrapper">
 										<div class="article-bg-image" style="background-image:url({{ article.background_image }})"></div>
 									</div>
 									<div class="article-card-content">
+										<div class="article-tags tags-pills">
+											{% for tag in article.tags %}
+												<span data-tagid="{{ tag.id }}">{{ tag.name }}</span>
+											{% endfor %}
+										</div>
 										<div class="article-title">
 											<a href="{{ article.url }}">{{ article.title }}</a>
 										</div>
 										<div class="tags-and-author">
-											<div class="article-tags tags-pills">
-												{% for tag in article.tags %}
-													<span data-tagid="{{ tag.id }}">{{ tag.name }}</span>
-												{% endfor %}
-											</div>
 											<div class="article-author-and-date">
-												{% if node.getType != "newsroom" %}
-													<div class="article-author">
-														<div class="author-photo" style="background-image:url({{ article.author.profile_picture }})"></div>
-														<div class="author-name">
-															<span>{{ article.author.full_name }}</span>
-														</div>
-													</div>
-													<div class="vertical-divider">|</div>
-												{% endif %}
 												<div class="article-date">{{ article.creation_date }}</div>
 											</div>
 										</div>

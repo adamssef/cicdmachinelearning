@@ -113,7 +113,7 @@ class PlanetCoreNewsService {
       $node = $node->getTranslation($language_code);
 
       // Get node fields and prepare data.
-      $title = $node->get('field_resources_title')->value;
+      $title = $node->get('title')->value;
       $url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
       $url = $language_code != "en" ? "/" . $language_code . $url : $url;
       $article_tags = [];
@@ -480,117 +480,6 @@ public function getAllNewsArticleTags() {
     return $lang_prefix . $path_alias;
   }
 
-
-  /**
-   * Gets the article data for the given node ID.
-   *
-   * @param int $node_id
-   *   The node ID.
-   *
-   * @return array
-   *   An array of article data.
-   */
-  function getSingleArticleData($node_id) {
-    global $base_url;
-
-    $blog_id = 1576;
-    // Get the current page language code.
-    $language_code = $this->languageManager->getCurrentLanguage()->getId();
-
-    // Load the node in the current language.
-    $node = Node::load($node_id);
-
-    if ($node->hasTranslation($language_code)) {
-      $node = $node->getTranslation($language_code);
-    }
-
-    $article_tags = [];
-    $author_name = "";
-    $author_url = "";
-    $author_photo = "";
-
-    $title = $node->get('field_resources_title')->value;
-
-    $url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
-    $url = $language_code != "en" ? "/" . $language_code . $url : $url;
-
-    // Get Tags (field_resources_tags)
-    $tags_references = $node->get('field_resources_tags')->referencedEntities();
-
-    $author_id = $node->get('field_author')->target_id;
-
-    if ($author_id) {
-      // Load the author node.
-      $author = Node::load($author_id);
-
-      if ($author instanceof Node && $author->getType() == 'author') {
-        $author_name = $author->getTitle();
-        $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
-        $media = Media::load($mid);
-        $fid = $media->field_media_image->target_id;
-        $file = File::load($fid);
-        $author_photo = $this->fileUrlGenerator->generateAbsoluteString($file->getFileUri());
-        $author_url = $author->toUrl()->toString();
-      }
-    }
-
-    foreach ($tags_references as $tag) {
-      $tag_name = $tag->getName();
-      $tag_id = $tag->id(); // Get the tag ID.
-
-      // Add the tag to the article_tags array.
-      $article_tags[] = [
-        'name' => $tag_name,
-        'id' => $tag_id,
-      ];
-    }
-
-    // Get Background Image (field_resources_background_image)
-    $background_image_media = $node->get('field_resources_background_image')->entity;
-
-    if ($background_image_media instanceof \Drupal\media\Entity\Media) {
-      $background_image_file = $background_image_media->get('field_media_image')->entity;
-
-      if ($background_image_file instanceof \Drupal\file\Entity\File) {
-        $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
-      }
-    }
-
-    // Get Creation Date
-    $custom_timestamp = $node->get('field_resources_published_time')->value;
-    $reading_time = $node->get('field_resources_reading_time')->value;
-    $blog_url = $this->getAliasesInOtherLanguages($blog_id);
-    $domain = $base_url;
-    $short_url = substr($domain . $url, 0, 48) . "...";
-    $share_url = $domain . $url;
-
-    // Convert the custom timestamp to a formatted date.
-    $creation_date = date('F j, Y', $custom_timestamp);
-    $related_tag = $article_tags ? $article_tags[0]['id'] : false;
-    $related_articles = $this->getRelatedArticles($related_tag, $node->id());
-
-    $article = array(
-      "title" => $title,
-      'url' => $url,
-      'domain' => $domain,
-      'share_url' => $share_url,
-      'short_share_url' => $short_url,
-      'tags' => $article_tags,
-      'background_image' => $background_image_url,
-      'creation_date' => $creation_date,
-      'reading_time' => $reading_time,
-      'author' => [
-        'full_name' => $author_name,
-        'url' => $author_url,
-        'profile_picture' => $author_photo,
-      ],
-      'blog_url' => $blog_url,
-      'related_articles' => $related_articles,
-    );
-
-    return $article;
-  }
-
   function getSingleNewsData($node_id) {
     global $base_url;
 
@@ -650,7 +539,7 @@ public function getAllNewsArticleTags() {
     // Convert the custom timestamp to a formatted date.
     $creation_date = date('F j, Y', $custom_timestamp);
     $related_tag = $article_tags ? $article_tags[0]['id'] : false;
-    $related_articles = $this->getRelatedArticles($related_tag, $node->id());
+    $related_articles = $this->getRelatedNews($related_tag, $node->id());
 
     $article = array(
       "title" => $title,
@@ -679,8 +568,8 @@ public function getAllNewsArticleTags() {
    * @return array
    *   An array of related articles.
    */
-  public function getRelatedArticles($tag_id, $exclude_node_id) {
-    \Drupal::logger('PlanetCoreArticleService')->notice('In getRelatedArticles.');
+  public function getRelatedNews($tag_id, $exclude_node_id) {
+    \Drupal::logger('PlanetCoreArticleService')->notice('In getRelatedNews.');
     $related_articles = [];
 
     // Get the current page language code.
@@ -689,8 +578,7 @@ public function getAllNewsArticleTags() {
     $node_storage_query = $this->entityTypeManager->getStorage('node')->getQuery();
 
     $query = $node_storage_query
-      ->condition('type', 'resources') // Adjust to your content type name.
-      ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
+      ->condition('type', 'newsroom') // Adjust to your content type name.
       ->condition('langcode', $language_code) // Filter by language code.
       ->condition('field_resources_tags.target_id', $tag_id)
       ->condition('status', 1)
@@ -705,10 +593,9 @@ public function getAllNewsArticleTags() {
     // If no related articles are found, query the last 3 articles excluding the specified node ID.
     if (empty($related_article_ids)) {
       $query = $node_storage_query
-        ->condition('type', 'resources') // Adjust to your content type name.
+        ->condition('type', 'newsroom') // Adjust to your content type name.
         ->condition('langcode', $language_code) // Filter by language code.
         ->condition('status', 1)
-        ->condition('field_hide_from_components', NULL, 'IS NULL') // Exclude nodes where hide is true
         ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
         ->sort('created', 'DESC')
         ->range(0, 3)
@@ -725,27 +612,12 @@ public function getAllNewsArticleTags() {
       $node = $node->getTranslation($language_code);
 
       if ($node instanceof Node) {
-        $related_article_title = $node->get('field_resources_title')->value;
+        $related_article_title = $node->get('title')->value;
         $related_article_url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
 
         $tags_references = $node->get('field_resources_tags')->referencedEntities();
         $tags_references = array_slice($tags_references, 0, 3);
         $article_tags = [];
-
-        $author_id = $node->get('field_author')->target_id;
-        if ($author_id) {
-          // Load the author node.
-          $author = Node::load($author_id);
-          if ($author instanceof Node && $author->getType() == 'author') {
-            $author_name = $author->getTitle() ? $author->getTitle() : "";
-            $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
-            $media = Media::load($mid);
-            $fid = $media->field_media_image->target_id;
-            $file = File::load($fid);
-            $author_photo = $this->fileUrlGenerator->generateAbsoluteString($file->getFileUri());
-            $author_url = $author->toUrl()->toString();
-          }
-        }
 
         foreach ($tags_references as $tag) {
           $tag_name = $tag->getName();
@@ -757,7 +629,6 @@ public function getAllNewsArticleTags() {
             'id' => $tag_id,
           ];
         }
-
 
         // Get Background Image (field_resources_background_image)
         $background_image_media = $node->get('field_resources_background_image')->entity;
@@ -789,11 +660,6 @@ public function getAllNewsArticleTags() {
           'tags' => $article_tags,
           'background_image' => $background_image_url,
           'creation_date' => $creation_date,
-          'author' => [
-            'full_name' => $author_name ?? "",
-            'url' => $author_url ?? "",
-            'profile_picture' => $author_photo ?? "",
-          ]
         ];
       }
     }

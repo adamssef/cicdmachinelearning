@@ -341,9 +341,13 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     }
   }
 
-  if ($node->getType() === 'resources' || $node->getType() === 'newsroom') {
+  if ($node->getType() === 'resources') {
     // Add custom template suggestion for 'resources' content type.
     $suggestions[] = 'node__resources-page';
+  }
+  if ($node->getType() === 'newsroom') {
+    // Add custom template suggestion for 'resources' content type.
+    $suggestions[] = 'node__news-page';
   }
 }
 
@@ -404,6 +408,10 @@ function planet_core_theme(): array {
     ],
     'node__resources-page' => [
       'template' => 'node--resources-page',
+      'base hook' => 'node',
+    ],
+    'node__news-page' => [
+      'template' => 'node--news-page',
       'base hook' => 'node',
     ]
   ];
