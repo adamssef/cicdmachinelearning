@@ -71,7 +71,10 @@ ul.language-switcher__dropdown-menu {
   padding: 0 16px;
 }
 .plnt-blog-archive-news-page {
-  padding: 0 16px 48px 0;
+  padding: 0 16px 48px 16px;
+}
+.useful-link-box .article-card-content p {
+  line-height: 22px;
 }
 .no-articles {
   padding: 48px 0;
@@ -1075,6 +1078,14 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 
 @media (max-width: 991px) {
+  .planet-select {
+    width: 100%;
+    margin: 0 auto 16px auto;
+  }
+  .planet-select-wrapper {
+    margin: 16px;
+    width: 100%;
+  }
   .article-content-wrapper .coh-wysiwyg .coh-style-b200 {
     font-size: 15px;
     line-height: 186%;
@@ -1873,4 +1884,10 @@ a.button-with-icon-transition {
 }
 .planet-select-wrapper {
   margin: 48px auto 32px auto;
+}
+@media (max-width: 991px) {
+  .last-articles .news-title {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 }
