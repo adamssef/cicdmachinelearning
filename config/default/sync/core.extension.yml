@@ -38,7 +38,6 @@ module:
   csp: 0
   ctools: 0
   datetime: 0
-  dblog: 0
   duplicate_role: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
@@ -128,9 +127,9 @@ module:
   sitestudio_claro: 0
   sitestudio_page_builder: 0
   smtp: 0
-  syslog: 0
   svg_image_field: 0
   svg_image_field_media_bundle: 0
+  syslog: 0
   system: 0
   taxonomy: 0
   text: 0

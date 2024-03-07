@@ -12,8 +12,8 @@ storage: folder
 folder: ../config/default/environment/stg
 module:
   acquia_connector: 0
-  syslog: 0
   planet_lgpd_onetrust: 0
+  google_tag: 0
   shield: 0
 theme: {  }
 complete_list:
