@@ -1,0 +1,17 @@
+uuid: 21bb5fe1-18d0-499a-baba-9c29ff016853
+langcode: en
+status: false
+dependencies: {  }
+id: local
+label: local
+description: ''
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/default/environment/local
+module:
+  dblog: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }
