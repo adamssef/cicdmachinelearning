@@ -313,7 +313,7 @@ class PlanetCoreNewsService {
       ->accessCheck();
 
      // Add the 'field_year' condition only if $year is not null
-     if ($year !== null && !$external) {
+     if ($year !== null && $year !== "all" && !$external) {
       $query->condition('field_year', $year);
       $total_count->condition('field_year', $year);
     }

@@ -30,23 +30,27 @@
 							</div>
 							{% if tags %}
 								<div class="coh-row">
-									<div class="coh-row-inner">
 										<div class="planet-select-wrapper">
-											<select name="category" class="planet-select planet-news-select-category">
-												<option value="all">All news</option>
-												{% for tag in tags %}
-													<option value="{{tag.id}}">{{tag.name}}</option>
-												{% endfor %}
-											</select>
-											<select name="years" class="planet-select planet-news-select-years">
-												{% for year in years %}
-													<option value="{{year.id}}" {% if loop.first %} selected {% endif %}>{{year.name}}</option>
-												{% endfor %}
-											</select>
 
+											<div class="custom-select planet-news-select-category">
+												<div data-value="all" class="select-selected">All news</div>
+												<div class="select-items select-hide">
+													<div data-value="all">All news</div>
+													{% for tag in tags %}
+														<div data-value="{{tag.id}}">{{tag.name}}</div>
+													{% endfor %}
+												</div>
+											</div>
+											<div class="custom-select planet-news-select-years">
+												<div data-value="all" class="select-selected">All years</div>
+												<div class="select-items select-hide">
+													<div data-value="all">All years</div>
+													{% for year in years %}
+														<div data-value="{{year.id}}">{{year.name}}</div>
+													{% endfor %}
+												</div>
+											</div>
 										</div>
-
-									</div>
 								</div>
 							{% endif %}
 

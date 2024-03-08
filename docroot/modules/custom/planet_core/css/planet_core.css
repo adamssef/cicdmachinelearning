@@ -809,20 +809,8 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 .all-article-tags {
   display: inline-block;
 }
-.planet-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-image: url('/resources/icons/arrow-down.svg');
-    background-repeat: no-repeat, repeat;
-    background-position: right .7em top 50%, 0 0;
-    background-size: .9em auto, 100%;
-}
 
-/* For IE (thanks to @SaiManoj) */
-.planet-select::-ms-expand {
-  display: none;
-}
+
 .planet-h3 {
   font-size: 24px;
   color: #202020;
@@ -1080,10 +1068,101 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   white-space: nowrap;
 }
 
+.article-content-wrapper span, .article-content-wrapper p {
+  line-height: 166% !important;
+}
+
+/** Custom select */
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: 'TT Commons', sans-serif;
+  display: inline-block;
+  margin: 0 12px;
+  min-width: 220px;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: white;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected::after {
+  position: absolute;
+  content: "";
+  right: 10px;
+  width: 18px;
+  height: 100%;
+  background-image:url('/resources/icons/arrow-down.svg');
+  background-repeat: no-repeat;
+  top: 0;
+  background-position: center;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active::after {
+  transform: rotate(180deg);
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div, .select-selected {
+  color: #202020;
+  padding: 15px 16px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+}
+.select-items div {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.select-items div:last-child {
+  border-bottom: 0;
+}
+/*
+.select-selected.select-arrow-active {
+  border: 1px solid #e00083;
+}*/
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 1px solid #f5f5f5;
+  box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.05); 
+}
+.select-selected:hover {
+  background: #f5f5f5;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: #f5f5f5;
+}
+
+/* --- */
+
 @media (max-width: 991px) {
-  .planet-select {
+  .custom-select {
     width: 100%;
-    margin: 0 auto 16px auto;
+    margin: 8px 0;
   }
   .planet-select-wrapper {
     margin: 16px;
@@ -1874,19 +1953,13 @@ a.button-with-icon-transition {
 .news-card .tags-pills {
   padding-bottom: 8px;
 }
-.planet-select {
-  background-color: white;
-  border: 1px solid #d1d1d1;
-  padding: 12px 32px 12px 16px;
-  margin: 0 8px;
-  border-radius: 4px;
-  font-family: 'TT Commons', sans-serif;
-}
+
 .planet-select option:hover {
   box-shadow: 0 0 10px 100px #1882A8 inset;
 }
 .planet-select-wrapper {
   margin: 48px auto 32px auto;
+  text-align: center;
 }
 @media (max-width: 991px) {
   .last-articles .news-title {

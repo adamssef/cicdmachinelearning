@@ -33,19 +33,20 @@
                 }
             }
 
-            $('.planet-news-select-years').on('change', async function() {
-                const category = $('.planet-news-select-category').find(":selected").val();
-                let data = await fetch_articles(limit, offset, lang, category, this.value);
+            $('.planet-news-select-years > .select-items > div').on('click', async function() {
+                const val = $(this).attr("data-value");
+                const category = $('.planet-news-select-category > .select-items > div.selected').attr("data-value");
+                let data = await fetch_articles(limit, offset, lang, category, val);
                 render_articles(data);
             });
-            $('.planet-news-select-category').on('change', async function() {
-                const year = $('.planet-news-select-years').find(":selected").val();
-                let data = await fetch_articles(limit, offset, lang, this.value, year);
+            $('.planet-news-select-category > .select-items > div').on('click', async function() {
+                const val = $(this).attr("data-value");
+                const year = $('.planet-news-select-years > .select-items > div.selected').attr("data-value");
+                let data = await fetch_articles(limit, offset, lang, val, year);
                 render_articles(data);
             });
 
             $(document).ready(async function () {
-                $(".planet-news-select-category").val('all');
                 try {
                     let data = await fetch_articles(limit, offset, lang);
                     render_articles(data);
@@ -156,6 +157,22 @@
                 `;
             $(".article-js-wrapper").append(articleCardTemplate);
             }
+
+
+            $(".custom-select").on("click", function() {
+                $(this).children(".select-items").toggleClass("select-hide");
+            });
+            $(".custom-select .select-items > div").on("click", function() {
+                let val = $(this).attr("data-value");
+                let txt = $(this).text();
+                $(this).parent().parent().children(".select-selected").text(txt);
+                $(this).parent().children("div").removeClass("selected");
+                $(this).addClass("selected");
+            })
+
+
+
+
         }
     };
 })(jQuery, Drupal);
