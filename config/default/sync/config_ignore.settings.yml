@@ -4,6 +4,7 @@ mode: simple
 ignored_config_entities:
   - 'cohesion_*'
   - planet_config.pardot
+  - planet_lgpd_onetrust.settings.yml
   - system.site
   - 'webform.webform.ebook_my_title_here*'
   - 'webform.webform.generic_form*'

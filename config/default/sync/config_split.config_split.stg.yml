@@ -12,10 +12,11 @@ storage: folder
 folder: ../config/default/environment/stg
 module:
   acquia_connector: 0
-  dblog: 0
+  planet_lgpd_onetrust: 0
+  google_tag: 0
   shield: 0
-  syslog: 0
 theme: {  }
-complete_list: {  }
+complete_list:
+  - environment_indicator.indicator
 partial_list:
   - environment_indicator.indicator
