@@ -3,6 +3,8 @@ name: planet
 # Start with the default drupal recipe
 recipe: drupal10
 xdebug: true
+env_file:
+  - defaults.env
 
 # Configure the drupal recipe
 config:
