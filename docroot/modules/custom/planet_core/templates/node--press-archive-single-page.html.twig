@@ -34,7 +34,7 @@
 											{% if tags %}
 											<div class="custom-select planet-news-select-category">
 												<div data-value="all" class="select-selected">All news</div>
-												<div class="select-items select-hide">
+												<div class="select-items">
 													<div data-value="all">All news</div>
 													{% for tag in tags %}
 														<div data-value="{{tag.id}}">{{tag.name}}</div>
@@ -45,7 +45,7 @@
 											{% if years %}
 											<div class="custom-select planet-news-select-years">
 												<div data-value="{{years[0].id}}" class="select-selected">{{years[0].name}}</div>
-												<div class="select-items select-hide">
+												<div class="select-items">
 													{% for year in years %}
 														<div data-value="{{year.id}}">{{year.name}}</div>
 													{% endfor %}

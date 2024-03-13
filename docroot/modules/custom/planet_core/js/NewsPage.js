@@ -158,9 +158,14 @@
             $(".article-js-wrapper").append(articleCardTemplate);
             }
 
-
+          
             $(".custom-select").on("click", function() {
-                $(this).children(".select-items").toggleClass("select-hide");
+                if($(this).hasClass("selected")) {
+                    $(".custom-select").removeClass("selected");
+                } else {
+                    $(".custom-select").removeClass("selected");
+                    $(this).addClass("selected");
+                }
             });
             $(".custom-select .select-items > div").on("click", function() {
                 let val = $(this).attr("data-value");
@@ -169,10 +174,6 @@
                 $(this).parent().children("div").removeClass("selected");
                 $(this).addClass("selected");
             })
-
-
-
-
         }
     };
 })(jQuery, Drupal);
