@@ -1,4 +1,13 @@
-/** [PLANET ADMIN PAGES*/
+/** [PLANET 2FA]*/
+.plnt-okta-verify-tfa-setup {
+  color: #0a6eb4;
+}
+
+form.tfa-setup ul {
+  display: none;
+}
+
+/** [PLANET ADMIN PAGES]*/
 .plnt-css-admin-page .ck-editor__editable {
   resize: vertical;
   max-height: 60vh;
