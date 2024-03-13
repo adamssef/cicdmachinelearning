@@ -1,0 +1,8 @@
+name: 'Planet Two-Factor Authentication'
+type: module
+description: 'A module that supports implementation of 2FA on WAP'
+package: Planet
+core_version_requirement: ^10
+
+dependencies:
+  - drupal:tfa

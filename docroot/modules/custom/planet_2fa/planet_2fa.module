@@ -1,0 +1,67 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+
+/**
+ * @file
+ * Primary module hooks for Planet Two-Factor Authentication module.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function planet_2fa_preprocess_page(array &$variables) {
+
+  $curent_user = \Drupal::currentUser();
+
+  $user = User::load($curent_user->id());
+
+  $tfa_service = \Drupal::service('planet_2fa.service');
+
+  $logger = \Drupal::logger('planet_2fa');
+
+  $is_tfa_setup = $tfa_service->isTfaSetUp($user);
+  $can_login_without_tfa = $tfa_service->canLoginWithoutTfa($logger);
+
+  if (!$can_login_without_tfa && !$is_tfa_setup) {
+    // Increase the emphasis on error messages for non-TFA authenticated users.
+    $variables['#attached']['library'][] = 'planet_2fa/planet_2fa_error';
+  }
+
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_path_elements = explode('/', $current_path);
+  $status_code = \Drupal::requestStack()->getCurrentRequest()->attributes->get('exception');
+  $status_code = $status_code?->getStatusCode();
+
+  foreach ($current_path_elements as $key => $element) {
+    if ($element === '') {
+       unset($current_path_elements[$key]);
+    }
+  }
+
+  if (
+    count($current_path_elements) === 3 &&
+    strtolower($current_path_elements[1]) === 'tfa' &&
+    is_numeric($current_path_elements[2]) &&
+    ($status_code[0] == 2 || $status_code === NULL)
+  ) {
+    $variables['#attached']['library'][] = 'planet_2fa/planet_2fa';
+  }
+}
+
+/**
+ * Implements hook_tfa_setup_info_alter().
+ */
+function planet_2fa_tfa_setup_info_alter(array &$definitions) {
+  $definitions['tfa_totp_setup']['class'] = 'Drupal\planet_2fa\Plugin\TfaSetup\PlanetTfaToptSetup';
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function planet_2fa_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'tfa_entry_form') {
+    $form['code']['#title'] = t('Authentication Code');
+  }
+}

@@ -1,0 +1,7 @@
+.messages-list {
+ font-size: 200%;
+}
+
+.messages-list summary {
+  line-height: 2;
+}

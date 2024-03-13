@@ -1,0 +1,10 @@
+planet_2fa:
+  version: 1.0
+  css:
+    theme:
+      css/planet_2fa.css: { }
+planet_2fa_error:
+  version: 1.0
+  css:
+    theme:
+      css/planet_2fa_error.css: { }
