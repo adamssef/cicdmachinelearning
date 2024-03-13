@@ -168,7 +168,26 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   border: 0;
   font-size: 1rem;
 }
-
+@media (max-width: 767px) {
+  .planet-h1 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 125%;
+  }
+  .news-title {
+    margin-bottom: 24px
+  }
+}
+@media (min-width: 768px) {
+  .planet-h1 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 125%;
+  }
+  .news-title {
+    margin-bottom: 48px
+  }
+}
 /** Menu */
 @media (min-width: 992px) {
   .planet-h2 {
@@ -176,11 +195,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
     font-size: 2rem;
     line-height: 125%;
   }
-  .planet-h1 {
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 125%;
-  }
+ 
 .card-button:hover {
   text-decoration: underline;
 }
@@ -285,11 +300,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
     font-size: 24px;
     line-height: 125%;
   }
-  .planet-h1 {
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 125%;
-  }
+ 
   .planSwitch-container {
     margin-top: 24px;
     margin-bottom: 8px
@@ -706,18 +717,6 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   height: 100%;
 }
 
-.article-card:hover {
-  box-shadow: 0 6px 20px 0 rgba(34, 34, 34, 0.16);
-}
-
-.article-card:hover .article-bg-image-wrapper {
-  padding: 0;
-}
-
-.article-card:hover .article-bg-image {
-  border-radius: 8px 8px 0 0;
-  height: 213px
-}
 
 .last-articles-cards {
   min-height: 600px
@@ -787,7 +786,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 
 .article-bg-image {
   height: 208px;
-  background-color: #ddd;
+  background-color: #f1f1f1;
   border-radius: 8px;
   background-size: cover;
   background-position: center;
@@ -894,7 +893,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   border-radius: 300rem;
   color: white;
   font-weight: 600;
-  padding: 20px 24px;
+  padding: 18px 24px;
   font-size: 16px;
   transition: all .2s ease;
   margin-top: 16px
@@ -1160,6 +1159,8 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 /* --- */
 
 @media (max-width: 991px) {
+
+
   .custom-select {
     width: 100%;
     margin: 8px 0;
@@ -1208,6 +1209,18 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 
 @media (min-width: 992px) {
+  .article-card:hover {
+    box-shadow: 0 6px 20px 0 rgba(34, 34, 34, 0.16);
+  }
+  
+  .article-card:hover .article-bg-image-wrapper {
+    padding: 0;
+  }
+  
+  .article-card:hover .article-bg-image {
+    border-radius: 8px 8px 0 0;
+    height: 213px
+  }
   .article-card-content {
     padding: 16px 24px 24px 24px;
     display: flex;
@@ -1342,7 +1355,8 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 
 .featured-article-image {
-  padding: 16px
+  padding: 16px;
+  background-color: #f1f1f1
 }
 
 .featured-article-image img {
@@ -1635,9 +1649,8 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   }
 
   .featured-article-image {
-    margin-bottom: 16px;
+    margin: 16px;
     min-height: 174px;
-    margin-top: 16px
   }
 
   .blog-articles-wrapper {
@@ -1905,17 +1918,21 @@ label.js-form-required.form-required > span {
   text-align: center;
   display: block;
   width: 100%;
-  margin-bottom: 48px;
 }
+
 .no-margin {
   margin: 0 auto;
 }
+
 .external-url-card .card-button {
   color: #0071de;
   transition: none;
 }
 .external-url-card .card-button:hover > img {
   margin-left: 16px;
+}
+.external-url-card .card-button:hover > img {
+  margin-left: 24px;
 }
 a.button-with-icon-transition {
   color: #0071de;

@@ -28,10 +28,10 @@
 							<div class="news-title no-margin">
 								<h1 class="planet-h1">All news</h1>
 							</div>
-							{% if tags %}
 								<div class="coh-row">
 										<div class="planet-select-wrapper">
 
+											{% if tags %}
 											<div class="custom-select planet-news-select-category">
 												<div data-value="all" class="select-selected">All news</div>
 												<div class="select-items select-hide">
@@ -41,18 +41,19 @@
 													{% endfor %}
 												</div>
 											</div>
+											{% endif %}
+											{% if years %}
 											<div class="custom-select planet-news-select-years">
-												<div data-value="all" class="select-selected">All years</div>
+												<div data-value="{{years[0].id}}" class="select-selected">{{years[0].name}}</div>
 												<div class="select-items select-hide">
-													<div data-value="all">All years</div>
 													{% for year in years %}
 														<div data-value="{{year.id}}">{{year.name}}</div>
 													{% endfor %}
 												</div>
 											</div>
+											{% endif %}
 										</div>
 								</div>
-							{% endif %}
 
 
 							<div>
