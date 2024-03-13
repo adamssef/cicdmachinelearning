@@ -173,7 +173,7 @@
 
             function render_article_card(article) {
                 const articleCardTemplate = `
-                    <div data-tagid="[${article.tags.map(tag => tag.id).join(', ')}]" class="article-wrapper coh-column coh-visible-sm coh-col-sm-6 coh-col-xs-12 coh-visible-xl coh-col-xl-4 coh-col-lg-4 coh-col-md-6">
+                    <div data-tagid="[${article.tags.map(tag => tag.id).join(', ')}]" class="article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-col-xs-12 coh-visible-xl coh-col-xl-4 coh-col-lg-4 coh-col-md-4">
                     <div class="article-card">
                         <div class="article-bg-image-wrapper">
                         <div class="article-bg-image" style="background-image:url(${article.background_image})"></div>
