@@ -17,16 +17,16 @@ categories: {  }
 elements: |-
   layout:
     '#type': webform_flexbox
-  last_name:
+  first_name:
     '#type': textfield
-    '#title': 'Last name*'
+    '#title': 'First name*'
     '#minlength': 2
     '#maxlength': 50
     '#autocomplete': 'off'
     '#required': true
-  first_name:
+  last_name:
     '#type': textfield
-    '#title': 'First name*'
+    '#title': 'Last name*'
     '#minlength': 2
     '#maxlength': 50
     '#autocomplete': 'off'

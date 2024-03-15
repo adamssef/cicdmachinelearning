@@ -1653,4 +1653,89 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   max-width: 1216px;
   margin-left: auto;
   margin-right: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.news-title {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.no-margin {
+  margin: 0 auto;
+}
+
+.external-url-card .card-button {
+  color: #0071de;
+}
+
+.external-url-card .card-button>img {
+  margin-left: 16px;
+}
+
+.external-url-card .card-button:hover>img {
+  margin-left: 24px;
+}
+
+a.button-with-icon-transition {
+  color: #0071de;
+}
+
+.button-with-icon-transition img {
+  margin-left: 16px;
+  color: #0071de;
+  transition: all 0.2s ease;
+}
+
+.button-with-icon-transition:hover>img {
+  margin-left: 24px;
+}
+
+.external-news-wrapper {
+  padding-top: 0;
+}
+
+.useful-link-box .news-card {
+  background: #f5f5f5;
+  border: 0;
+  transition: none;
+}
+
+.useful-link-box .news-card:hover {
+  box-shadow: none;
+}
+
+.news-card .tags-pills span {
+  border: 0;
+  border-left: 4px solid #e00083;
+  border-radius: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.news-card .tags-pills {
+  padding-bottom: 8px;
+}
+
+.planet-select option:hover {
+  box-shadow: 0 0 10px 100px #1882A8 inset;
+}
+
+.planet-select-wrapper {
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .last-articles .news-title {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+.js-form-item select option {
+  font-family: 'TT Commons', sans-serif;
+  font-size: 15px;
 }
