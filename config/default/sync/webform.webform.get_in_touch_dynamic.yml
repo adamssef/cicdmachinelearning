@@ -295,23 +295,33 @@ elements: |-
     '#type': select
     '#title': "I'm looking for*"
     '#options':
-      'Hospitality solutions and products': Hospitality
-      'Retail solutions and products': Retail
-      'Information about partnering': Partners
+      Hospitality: 'Hospitality solutions and products'
+      Retail: 'Retail solutions and products'
+      Partners: 'Information about partnering'
     '#required': true
     '#required_error': 'This field is required'
+    '#attributes':
+      class:
+        - company-sector-field
   what_would_you_like_help_with:
     '#type': select
     '#title': 'What would you like help with?'
     '#options':
-      'I want to effortlessly manage my hotel operations': 'Property Management Solutions'
-      'My hotel needs networking solutions': 'Networking solutions'
-      'I want to accept payments': 'Accept Payments'
-      "I'd like to provide Tax Free shopping": 'Tax Free Solutions'
-      'Efficiently manage any online order': 'Order Management System'
-      'Tokenise sensitive card data': 'PCI Proxy'
+      'Property Management Solutions': 'I want to effortlessly manage my hotel operations'
+      'Networking solutions': 'My hotel needs networking solutions'
+      'Accept Payments': 'I want to accept payments'
+      'Tax Free Solutions': "I'd like to provide Tax Free shopping"
+      'Order Management System': 'Efficiently manage any online order'
+      'PCI Proxy': 'Tokenise sensitive card data'
     '#required': true
     '#required_error': 'This field is required'
+    '#states':
+      invisible:
+        ':input[name="company_sector"]':
+          value: Partners
+    '#attributes':
+      class:
+        - company-sector-deep-field
   payments_product_of_interest:
     '#type': select
     '#title': 'Choose a payments solution*'
@@ -440,7 +450,7 @@ elements: |-
     '#title': orig_lp
     '#access': false
 css: ''
-javascript: ''
+javascript: "/** This code hides/displays different options of the \"What would you like help with?\" field based on the I'm looking for\" field value. */\r\n\r\ndocument.querySelector('.company-sector-field').addEventListener('change', function () {\r\n    const val = this.value;\r\n    const possibleValues = [\"Hospitality\", \"Retail\", \"Partners\"];\r\n    const hospitalityValues = [\"Property Management Solutions\", \"Networking solutions\", \"Accept Payments\"];\r\n    const retailValues = [\"Tax Free Solutions\", \"Order Management System\", \"Accept Payments\"];\r\n\r\n    if (possibleValues.includes(val)) {\r\n        const companySectorDeep = document.querySelector(\".company-sector-deep-field\");\r\n        const options = companySectorDeep.querySelectorAll('option');\r\n\r\n        options.forEach(option => {\r\n            option.style.display = \"none\";\r\n        });\r\n\r\n        switch (val) {\r\n            case 'Hospitality':\r\n                hospitalityValues.forEach(option => {\r\n                    const targetOption = companySectorDeep.querySelector('option[value=\"' + option + '\"]');\r\n                    if (targetOption) {\r\n                        targetOption.style.display = \"block\";\r\n                    }\r\n                });\r\n                break;\r\n            case 'Retail':\r\n                retailValues.forEach(option => {\r\n                    const targetOption = companySectorDeep.querySelector('option[value=\"' + option + '\"]');\r\n                    if (targetOption) {\r\n                        targetOption.style.display = \"block\";\r\n                    }\r\n                });\r\n                break;\r\n            default:\r\n                // no action!\r\n        }\r\n    }\r\n});"
 settings:
   ajax: false
   ajax_scroll_top: form
