@@ -14,7 +14,7 @@ module:
   acquia_connector: 0
   planet_2fa: 0
   planet_lgpd_onetrust: 0
-  google_tag: 1
+  google_tag: 0
 theme: {  }
 complete_list:
   - key.key.tfa_key
