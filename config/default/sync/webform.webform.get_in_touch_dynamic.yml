@@ -336,7 +336,7 @@ elements: |-
     '#states':
       visible:
         ':input[name="what_would_you_like_help_with"]':
-          value: 'I want to accept payments'
+          value: 'Accept Payments'
   number_of_employees:
     '#type': select
     '#title': 'How many employees are at your company*'
