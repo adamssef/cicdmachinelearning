@@ -17,20 +17,26 @@ categories: {  }
 elements: |-
   layout:
     '#type': webform_flexbox
-  first_name:
-    '#type': textfield
-    '#title': 'First name*'
-    '#minlength': 2
-    '#maxlength': 50
-    '#autocomplete': 'off'
-    '#required': true
-  last_name:
-    '#type': textfield
-    '#title': 'Last name*'
-    '#minlength': 2
-    '#maxlength': 50
-    '#autocomplete': 'off'
-    '#required': true
+    flexbox:
+      '#type': container
+      '#flex': 6
+      first_name:
+        '#type': textfield
+        '#title': 'First name*'
+        '#minlength': 2
+        '#maxlength': 50
+        '#autocomplete': 'off'
+        '#required': true
+    container:
+      '#type': container
+      '#flex': 6
+      last_name:
+        '#type': textfield
+        '#title': 'Last name*'
+        '#minlength': 2
+        '#maxlength': 50
+        '#autocomplete': 'off'
+        '#required': true
   email:
     '#type': email
     '#title': 'Business e-mail*'
@@ -450,7 +456,45 @@ elements: |-
     '#title': orig_lp
     '#access': false
 css: ''
-javascript: "/** This code hides/displays different options of the \"What would you like help with?\" field based on the I'm looking for\" field value. */\r\n\r\ndocument.querySelector('.company-sector-field').addEventListener('change', function () {\r\n    const val = this.value;\r\n    const possibleValues = [\"Hospitality\", \"Retail\", \"Partners\"];\r\n    const hospitalityValues = [\"Property Management Solutions\", \"Networking solutions\", \"Accept Payments\"];\r\n    const retailValues = [\"Tax Free Solutions\", \"Order Management System\", \"Accept Payments\"];\r\n\r\n    if (possibleValues.includes(val)) {\r\n        const companySectorDeep = document.querySelector(\".company-sector-deep-field\");\r\n        const options = companySectorDeep.querySelectorAll('option');\r\n\r\n        options.forEach(option => {\r\n            option.style.display = \"none\";\r\n        });\r\n\r\n        switch (val) {\r\n            case 'Hospitality':\r\n                hospitalityValues.forEach(option => {\r\n                    const targetOption = companySectorDeep.querySelector('option[value=\"' + option + '\"]');\r\n                    if (targetOption) {\r\n                        targetOption.style.display = \"block\";\r\n                    }\r\n                });\r\n                break;\r\n            case 'Retail':\r\n                retailValues.forEach(option => {\r\n                    const targetOption = companySectorDeep.querySelector('option[value=\"' + option + '\"]');\r\n                    if (targetOption) {\r\n                        targetOption.style.display = \"block\";\r\n                    }\r\n                });\r\n                break;\r\n            default:\r\n                // no action!\r\n        }\r\n    }\r\n});"
+javascript: |-
+  /** This code hides/displays different options of the "What would you like help with?" field based on the I'm looking for" field value. */
+
+  document.querySelector('.company-sector-field').addEventListener('change', function () {
+      const val = this.value;
+      const possibleValues = ["Hospitality", "Retail", "Partners"];
+      const hospitalityValues = ["Property Management Solutions", "Networking solutions", "Accept Payments"];
+      const retailValues = ["Tax Free Solutions", "Order Management System", "Accept Payments"];
+
+      if (possibleValues.includes(val)) {
+          const companySectorDeep = document.querySelector(".company-sector-deep-field");
+          const options = companySectorDeep.querySelectorAll('option');
+
+          options.forEach(option => {
+              option.style.display = "none";
+          });
+
+          switch (val) {
+              case 'Hospitality':
+                  hospitalityValues.forEach(option => {
+                      const targetOption = companySectorDeep.querySelector('option[value="' + option + '"]');
+                      if (targetOption) {
+                          targetOption.style.display = "block";
+                      }
+                  });
+                  break;
+              case 'Retail':
+                  retailValues.forEach(option => {
+                      const targetOption = companySectorDeep.querySelector('option[value="' + option + '"]');
+                      if (targetOption) {
+                          targetOption.style.display = "block";
+                      }
+                  });
+                  break;
+              default:
+                  // no action!
+          }
+      }
+  });
 settings:
   ajax: false
   ajax_scroll_top: form
@@ -643,5 +687,35 @@ handlers:
     weight: 0
     settings:
       pardot_url: 'https://info.weareplanet.com/l/975513/2024-03-38/5dlqb'
-      pardot_fields_mapping: "first_name|First Name\r\nlast_name|Last Name\r\nemail|email\r\nphone_intl|Phone\r\naddress_country|Country\r\ncompany_business_name|Company\r\ncompany_sector|Company Sector\r\nseniority|Seniority\r\nwhat_would_you_like_help_with|Use_case\r\nnumber_of_employees|Employee_Range\r\npayments_product_of_interest|Product_of_Interest\r\nrole|Lead Role\r\ntextarea|Message\r\nsingle_opt_in|Opt in\r\nlead_source|Lead Source\r\nwebsite_language|Website language\r\nwebsite_origin_page|Website origin page\r\nutm_source|utm_source\r\nutm_medium|utm_medium\r\nutm_campaign|utm_campaign\r\nutm_content|utm_content\r\nutm_term|utm_term\r\ngclid|gclid\r\nreferrer|referrer\r\norig_lp|orig_lp\r\norig_utm_campaign|orig_utm_campaign\r\norig_utm_medium|orig_utm_medium\r\norig_utm_source|orig_utm_source\r\norig_utm_content|orig_utm_content\r\norig_utm_term|orig_utm_term"
+      pardot_fields_mapping: |-
+        first_name|First Name
+        last_name|Last Name
+        email|email
+        phone_intl|Phone
+        address_country|Country
+        company_business_name|Company
+        company_sector|Company Sector
+        seniority|Seniority
+        what_would_you_like_help_with|Use_case
+        number_of_employees|Employee_Range
+        payments_product_of_interest|Product_of_Interest
+        role|Lead Role
+        textarea|Message
+        single_opt_in|Opt in
+        lead_source|Lead Source
+        website_language|Website language
+        website_origin_page|Website origin page
+        utm_source|utm_source
+        utm_medium|utm_medium
+        utm_campaign|utm_campaign
+        utm_content|utm_content
+        utm_term|utm_term
+        gclid|gclid
+        referrer|referrer
+        orig_lp|orig_lp
+        orig_utm_campaign|orig_utm_campaign
+        orig_utm_medium|orig_utm_medium
+        orig_utm_source|orig_utm_source
+        orig_utm_content|orig_utm_content
+        orig_utm_term|orig_utm_term
 variants: {  }
