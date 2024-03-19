@@ -87,6 +87,7 @@
 													</div>
 													<div class="article-card-content">
 														<div>
+														<div>
 															<div class="article-tags tags-pills">
 																{% for tag in article.tags %}
 																	<span data-tagid="{{ tag.id }}">{{ tag.name }}</span>
@@ -100,6 +101,7 @@
 															<div class="article-author-and-date">
 																<div class="article-date">{{ article.creation_date }}</div>
 															</div>
+														</div>
 														</div>
 													</div>
 
@@ -141,6 +143,7 @@
 												<div class="article-card news-card external-url-card">
 													<div class="article-card-content">
 														<div>
+														<div>
 															<div class="article-tags tags-pills">
 																<span>{{ article.external_source }}</span>
 															</div>
@@ -151,6 +154,7 @@
 														<div class="card-button-wrapper">
 															<a class="card-button" rel="noopener noreferrer" target="_blank" href="{{article.external_url}}">Read article
 																<img src="/resources/icons/external.svg"></a>
+														</div>
 														</div>
 													</div>
 
