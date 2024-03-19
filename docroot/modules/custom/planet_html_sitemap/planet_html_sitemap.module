@@ -11,6 +11,7 @@
 function planet_html_sitemap_theme() {
   $current_url = \Drupal::service('path.current')->getPath();
   $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
+
   \Drupal::logger('planet_html_sitemap')->notice('path_alias: ' . $path_alias);
 
   if ($path_alias === '/sitemap') {
@@ -32,9 +33,9 @@ function planet_html_sitemap_theme() {
  * Implements hook_preprocess_HOOK() for node.
  */
 function planet_html_sitemap_preprocess(&$variables) {
-  \Drupal::logger('planet_html_sitemap')->notice('1');
+//  \Drupal::logger('planet_html_sitemap')->notice('1');
   if (isset($variables['theme_hook_original'])) {
-    \Drupal::logger('planet_html_sitemap')->notice('2');
+    \Drupal::logger('planet_html_sitemap')->notice('2 with ' . $variables['theme_hook_original']);
 
     if ($variables['theme_hook_original'] === 'node') {
       \Drupal::logger('planet_html_sitemap')->notice('3');
