@@ -42,6 +42,7 @@ module:
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
   editor: 0
+  encrypt: 0
   entity_clone: 0
   entity_language_fallback: 0
   entity_reference_revisions: 0
@@ -102,6 +103,7 @@ module:
   redirect_domain: 0
   responsive_image: 0
   rest: 0
+  real_aes: 0
   robotstxt: 0
   salesforce: 0
   salesforce_jwt: 0
@@ -133,6 +135,7 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  tfa: 0
   tmgmt: 0
   tmgmt_config: 0
   tmgmt_content: 0

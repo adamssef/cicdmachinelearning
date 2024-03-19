@@ -1,0 +1,4 @@
+services:
+  planet_2fa.service:
+    class: Drupal\planet_2fa\Planet2faService
+    arguments: ['@user.data', '@config.factory', '@plugin.manager.tfa.validation', '@current_user', '@messenger']
