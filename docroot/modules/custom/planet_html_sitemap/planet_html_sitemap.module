@@ -12,8 +12,6 @@ function planet_html_sitemap_theme() {
   $current_url = \Drupal::service('path.current')->getPath();
   $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
 
-  \Drupal::logger('planet_html_sitemap')->notice('path_alias: ' . $path_alias);
-
   if ($path_alias === '/sitemap') {
     \Drupal::logger('planet_html_sitemap')->notice('path_alias: condition met');
     return [
@@ -53,10 +51,8 @@ function planet_html_sitemap_preprocess(&$variables) {
 function planet_html_sitemap_theme_suggestions_node_alter(&$suggestions, &$variables) {
   $url = \Drupal::service('path.current')->getPath();
   $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($url);
-  \Drupal::logger('planet_html_sitemap')->notice('path_alias suggestions: ' . $path_alias);
 
   if ($path_alias === '/sitemap') {
-    \Drupal::logger('planet_html_sitemap')->notice('path_alias suggestions: condition met');
     $suggestions[] = 'sitemap_html';
   }
 }
