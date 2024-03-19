@@ -33,9 +33,9 @@
 
 											{% if tags %}
 											<div class="custom-select planet-news-select-category">
-												<div data-value="all" class="select-selected">All news</div>
+												<div data-value="all" class="select-selected">All categories</div>
 												<div class="select-items">
-													<div data-value="all">All news</div>
+													<div data-value="all">All categories</div>
 													{% for tag in tags %}
 														<div data-value="{{tag.id}}">{{tag.name}}</div>
 													{% endfor %}

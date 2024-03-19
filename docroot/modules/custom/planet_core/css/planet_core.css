@@ -194,6 +194,12 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 
 /** Menu */
 @media (min-width: 992px) {
+  .button-with-icon-transition:hover>img {
+    margin-left: 24px;
+  }
+  .external-url-card .card-button:hover>img {
+    margin-left: 24px;
+  }
   .news-main-title {
     padding-top: 48px
   }
@@ -206,6 +212,9 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 
   .card-button:hover {
     text-decoration: underline;
+  }
+  .card-button img {
+    transition: all 0.2s ease;
   }
 
   .card-button img {
@@ -310,6 +319,10 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 
 @media (max-width: 991px) {
+  #load-more-button:hover {
+    background-color: #202020;
+    border-color: #202020;
+  }
   .news-main-title {
     padding-top: 24px
   }
@@ -1914,9 +1927,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   margin-left: 16px;
 }
 
-.external-url-card .card-button:hover>img {
-  margin-left: 24px;
-}
+
 
 a.button-with-icon-transition {
   color: #0071de;
@@ -1928,9 +1939,7 @@ a.button-with-icon-transition {
   transition: all 0.2s ease;
 }
 
-.button-with-icon-transition:hover>img {
-  margin-left: 24px;
-}
+
 
 .external-news-wrapper {
   padding-top: 0;
@@ -1966,7 +1975,12 @@ a.button-with-icon-transition {
 .planet-select-wrapper {
   text-align: center;
 }
-
+.news-box-wrapper .article-card-content > div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
 @media (max-width: 991px) {
   .last-articles .news-title {
     margin-top: 24px;

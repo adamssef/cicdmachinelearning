@@ -139,11 +139,13 @@
                         </div>
                         <div class="article-card-content">
                         <div>
+                        <div>
                         <div class="article-tags tags-pills">
                         ${article.tags.map(tag => `<span data-tagid="${tag.id}">${tag.name}</span>`).join('')}
                         </div>
                         <div class="article-title">
                             <a href="${article.url}">${article.title}</a>
+                        </div>
                         </div>
                         <div class="tags-and-author">
                             <div class="article-author-and-date">

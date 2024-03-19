@@ -23,9 +23,9 @@
 						<div class="breadcrumbs">
 							<a href="{{ article.blog_url }}">Newsroom</a>
 							{# {% if article.tags %}
-								<a href="{{article.blog_url}}?tag={{article.tags[0].id}}">>
-									{{article.tags[0].name}}</a>
-							{% endif %} #}
+															<a href="{{article.blog_url}}?tag={{article.tags[0].id}}">>
+																{{article.tags[0].name}}</a>
+														{% endif %} #}
 						</div>
 					</div>
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-7">
@@ -95,13 +95,15 @@
 										<div class="article-bg-image" style="background-image:url({{ article.background_image }})"></div>
 									</div>
 									<div class="article-card-content">
-										<div class="article-tags tags-pills">
-											{% for tag in article.tags %}
-												<span data-tagid="{{ tag.id }}">{{ tag.name }}</span>
-											{% endfor %}
-										</div>
-										<div class="article-title">
-											<a href="{{ article.url }}">{{ article.title }}</a>
+										<div>
+											<div class="article-tags tags-pills">
+												{% for tag in article.tags %}
+													<span data-tagid="{{ tag.id }}">{{ tag.name }}</span>
+												{% endfor %}
+											</div>
+											<div class="article-title">
+												<a href="{{ article.url }}">{{ article.title }}</a>
+											</div>
 										</div>
 										<div class="tags-and-author">
 											<div class="article-author-and-date">
