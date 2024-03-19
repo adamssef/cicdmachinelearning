@@ -316,6 +316,9 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
       case "/blog":
         $suggestions[] = 'node__blog-single-page';
         break;
+      case "/sitemap":
+        $suggestions[] = 'node__sitemap';
+        break;
     }
   }
 
@@ -361,6 +364,10 @@ function planet_core_theme(): array {
     'node__author' => [
       'template' => 'node--author',
       'base hook' => 'node'
+    ],
+    'node__sitemap' => [
+      'template' => 'node--sitemap',
+      'base hook' => 'node',
     ],
     'onboarding_page_template' => [
       'template' => 'page--onboarding-page-template',
@@ -482,18 +489,21 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void {
  * Assign js files and send data
  *
  */
-function planet_core_preprocess_node(array &$variables)
-{
+function planet_core_preprocess_node(array &$variables) {
   $node = $variables['node'];
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
   $planet_core_article_helper = \Drupal::service('planet_core.article_helper');
-
   $variables['#attached']['library'][] = 'planet_core/language-popup';
+
+  if ($alias === '/sitemap') {
+      $variables['term_tree'] = \Drupal::service('planet_html_sitemap.helper')
+        ->buildTree();
+      $variables['#attached']['library'][] = 'planet_html_sitemap/planet_html_sitemap';
+  }
 
   if ($node->getType() == 'author') {
     $variables['#attached']['library'][] = 'planet_core/author-page';
   }
-
 
   $config = \Drupal::config('planet_core.settings');
   $is_new_blog_enabled = $config->get('enable_new_blog');
