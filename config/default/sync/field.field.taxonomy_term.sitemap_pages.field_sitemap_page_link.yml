@@ -1,0 +1,27 @@
+uuid: 0a533c9d-3797-44de-b036-cc84a6304e10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_sitemap_page_link
+    - taxonomy.vocabulary.sitemap_pages
+  module:
+    - link
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: taxonomy_term.sitemap_pages.field_sitemap_page_link
+field_name: field_sitemap_page_link
+entity_type: taxonomy_term
+bundle: sitemap_pages
+label: 'Sitemap page link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 1
+field_type: link
