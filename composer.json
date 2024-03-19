@@ -80,6 +80,7 @@
     "drupal/site_settings": "^1.20",
     "drupal/site_studio_webform": "^1.1",
     "drupal/smtp": "^1.2",
+    "drupal/structure_sync": "^2.0",
     "drupal/svg_image_field": "^2.3",
     "drupal/tfa": "^1.5",
     "drupal/tmgmt": "^1.15",

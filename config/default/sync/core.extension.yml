@@ -93,6 +93,7 @@ module:
   phpass: 0
   planet_config: 0
   planet_core: 0
+  planet_html_sitemap: 0
   planet_language_switcher: 0
   planet_offices: 0
   planet_sitestudio_custom_elements: 0
@@ -129,6 +130,7 @@ module:
   sitestudio_claro: 0
   sitestudio_page_builder: 0
   smtp: 0
+  structure_sync: 0
   svg_image_field: 0
   svg_image_field_media_bundle: 0
   syslog: 0

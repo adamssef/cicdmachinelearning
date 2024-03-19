@@ -1,0 +1,48 @@
+uuid: 44d54f66-4a99-4221-8c3d-5a6e1a3667fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.sitemap_pages.field_is_label
+    - field.field.taxonomy_term.sitemap_pages.field_sitemap_page_link
+    - taxonomy.vocabulary.sitemap_pages
+  module:
+    - link
+    - text
+id: taxonomy_term.sitemap_pages.default
+targetEntityType: taxonomy_term
+bundle: sitemap_pages
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_is_label:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_sitemap_page_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

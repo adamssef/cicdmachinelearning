@@ -1,0 +1,18 @@
+uuid: f9427095-dd44-47bb-aad9-a69091b79e92
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_is_label
+field_name: field_is_label
+entity_type: taxonomy_term
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

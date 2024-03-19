@@ -1,0 +1,8 @@
+uuid: 82f77d42-9e33-4562-b281-286f9f0d60ae
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sitemap Pages'
+vid: sitemap_pages
+description: ''
+weight: 0

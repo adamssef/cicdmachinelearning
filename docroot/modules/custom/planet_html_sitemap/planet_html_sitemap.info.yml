@@ -1,0 +1,5 @@
+name: 'Planet HTML Sitemap'
+type: module
+description: 'Implements HTML Sitemap used by google crawler to index pages more efficiently.'
+package: Planet
+core_version_requirement: ^10

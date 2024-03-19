@@ -1,0 +1,26 @@
+uuid: f9124dd7-ff3e-411f-9009-1dc5309a1d87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_is_label
+    - taxonomy.vocabulary.sitemap_pages
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: taxonomy_term.sitemap_pages.field_is_label
+field_name: field_is_label
+entity_type: taxonomy_term
+bundle: sitemap_pages
+label: 'Is Label'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
