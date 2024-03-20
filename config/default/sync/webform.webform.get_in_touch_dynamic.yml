@@ -686,7 +686,7 @@ handlers:
     conditions: {  }
     weight: 0
     settings:
-      pardot_url: 'https://info.weareplanet.com/l/975513/2024-03-38/5dlqb'
+      pardot_url: 'https://info.weareplanet.com/l/975513/2024-02-28/5dlqb'
       pardot_fields_mapping: |-
         first_name|First Name
         last_name|Last Name
