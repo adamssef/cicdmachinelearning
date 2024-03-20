@@ -309,18 +309,20 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
 
   $config = \Drupal::config('planet_core.settings');
-  $is_new_blog_enabled = $config->get('enable_new_blog');
 
-  if ($is_new_blog_enabled) {
-    switch ($alias) {
-      case "/blog":
+  switch ($alias) {
+    case "/blog":
+      $is_new_blog_enabled = $config->get('enable_new_blog');
+
+      if ($is_new_blog_enabled) {
         $suggestions[] = 'node__blog-single-page';
-        break;
-      case "/sitemap":
-        $suggestions[] = 'node__sitemap';
-        break;
+      }
+
+      break;
+    case "/sitemap":
+      $suggestions[] = 'node__sitemap';
+      break;
     }
-  }
 
   if ($alias == "/pms-transformation") {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
