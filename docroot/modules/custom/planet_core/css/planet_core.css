@@ -1748,3 +1748,6 @@ a.button-with-icon-transition {
   font-family: 'TT Commons', sans-serif;
   font-size: 15px;
 }
+label.js-form-required.form-required > span {
+  color: #e00083
+}

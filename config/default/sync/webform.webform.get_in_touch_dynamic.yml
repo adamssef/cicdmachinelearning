@@ -22,7 +22,7 @@ elements: |-
       '#flex': 6
       first_name:
         '#type': textfield
-        '#title': 'First name*'
+        '#title': 'First name<span>*</span>'
         '#minlength': 2
         '#maxlength': 50
         '#autocomplete': 'off'
@@ -32,33 +32,33 @@ elements: |-
       '#flex': 6
       last_name:
         '#type': textfield
-        '#title': 'Last name*'
+        '#title': 'Last name<span>*</span>'
         '#minlength': 2
         '#maxlength': 50
         '#autocomplete': 'off'
         '#required': true
   email:
     '#type': email
-    '#title': 'Business e-mail*'
+    '#title': 'Business e-mail<span>*</span>'
     '#autocomplete': 'off'
     '#required': true
   phone_intl:
     '#type': textfield
-    '#title': 'Phone*'
+    '#title': 'Phone<span>*</span>'
     '#required': true
     '#required_error': 'Phone number is required.'
     '#pattern': '^\+\d{1,4}(\s?\d){1,15}$'
     '#pattern_error': 'The phone number is invalid, please use the prefix of your country (eg. +44 2071234567)'
   company_business_name:
     '#type': textfield
-    '#title': 'Company*'
+    '#title': 'Company<span>*</span>'
     '#minlength': 2
     '#maxlength': 50
     '#autocomplete': 'off'
     '#required': true
   seniority:
     '#type': select
-    '#title': 'Seniority*'
+    '#title': 'Seniority<span>*</span>'
     '#options':
       Owner: Owner
       C-Level: C-Level
@@ -72,7 +72,7 @@ elements: |-
     '#required_error': 'This field is required'
   role:
     '#type': select
-    '#title': 'Role*'
+    '#title': 'Role<span>*</span>'
     '#options':
       Accounting: Accounting
       'Customer Success': 'Customer Success'
@@ -89,7 +89,7 @@ elements: |-
     '#required_error': 'This field is required'
   address_country:
     '#type': select
-    '#title': 'Country*'
+    '#title': 'Country<span>*</span>'
     '#options':
       Afghanistan: Afghanistan
       Aguilla: Aguilla
@@ -299,7 +299,7 @@ elements: |-
     '#required': true
   company_sector:
     '#type': select
-    '#title': "I'm looking for*"
+    '#title': "I'm looking for<span>*</span>"
     '#options':
       Hospitality: 'Hospitality solutions and products'
       Retail: 'Retail solutions and products'
@@ -311,7 +311,7 @@ elements: |-
         - company-sector-field
   what_would_you_like_help_with:
     '#type': select
-    '#title': 'What would you like help with?'
+    '#title': 'What would you like help with?<span>*</span>'
     '#options':
       'Property Management Solutions': 'I want to effortlessly manage my hotel operations'
       'Networking solutions': 'My hotel needs networking solutions'
@@ -330,7 +330,7 @@ elements: |-
         - company-sector-deep-field
   payments_product_of_interest:
     '#type': select
-    '#title': 'Choose a payments solution*'
+    '#title': 'Choose a payments solution<span>*</span>'
     '#options':
       'Online payments': 'Online payments'
       'In-person payments': 'In-person payments'
@@ -345,7 +345,7 @@ elements: |-
           value: 'Accept Payments'
   number_of_employees:
     '#type': select
-    '#title': 'How many employees are at your company*'
+    '#title': 'How many employees are at your company<span>*</span>'
     '#options':
       'Self Employed': 'Self Employed'
       1-10: 1-10
@@ -360,7 +360,7 @@ elements: |-
     '#required_error': 'This field is required'
   textarea:
     '#type': textarea
-    '#title': 'About your project*'
+    '#title': 'About your project<span>*</span>'
     '#maxlength': 250
     '#placeholder': 'Tell us more about your project'
     '#autocomplete': 'off'
