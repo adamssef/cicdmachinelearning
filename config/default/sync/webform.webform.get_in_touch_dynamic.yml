@@ -311,7 +311,7 @@ elements: |-
         - company-sector-field
   what_would_you_like_help_with:
     '#type': select
-    '#title': 'What would you like help with?'
+    '#title': 'What would you like help with?<span>*</span>'
     '#options':
       'Property Management Solutions': 'I want to effortlessly manage my hotel operations'
       'Networking solutions': 'My hotel needs networking solutions'
