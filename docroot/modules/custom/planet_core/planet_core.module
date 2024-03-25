@@ -315,15 +315,14 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     case "/blog":
       $suggestions[] = 'node__blog-single-page';
       break;
-    case "/press-pages":
-    case "/newsroom":
+    case "/news-archive":
+      $suggestions[] = 'node__press-archive-single-page';
+      break;
+    case "/news":
       $suggestions[] = 'node__press-single-page';
       break;
     case "/sitemap":
       $suggestions[] = 'node__sitemap';
-      break;
-    case "/news":
-      $suggestions[] = 'node__press-archive-single-page';
       break;
   }
 
