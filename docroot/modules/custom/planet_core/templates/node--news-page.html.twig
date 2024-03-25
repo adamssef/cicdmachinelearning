@@ -63,6 +63,11 @@
 					</div>
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-7">
 						<div class="article-content-wrapper" style="padding-top: 0">
+						{% if article.summary %}
+						<div class="summary-intro">
+							{{article.summary}}
+						</div>
+						{% endif %}
 							<div class="single-layout-canvas">
 								{{content.field_layout_canvas}}
 							</div>

@@ -531,6 +531,7 @@ public function getAllNewsArticleTags() {
 
     // Get Creation Date
     $custom_timestamp = $node->get('field_resources_published_time')->value;
+    $summary = $node->get('field_resources_subtitle')->value;
     $blog_url = $this->getAliasesInOtherLanguages($news_id);
     $domain = $base_url;
     $short_url = substr($domain . $url, 0, 48) . "...";
@@ -538,13 +539,13 @@ public function getAllNewsArticleTags() {
 
     // Convert the custom timestamp to a formatted date.
     $creation_date = date('F j, Y', $custom_timestamp);
-    $related_tag = $article_tags ? $article_tags[0]['id'] : false;
-    $related_articles = $this->getRelatedNews($related_tag, $node->id());
+    $related_articles = $this->getRelatedNews($node->id());
 
     $article = array(
       "title" => $title,
       'url' => $url,
       'domain' => $domain,
+      'summary' => $summary,
       'share_url' => $share_url,
       'short_share_url' => $short_url,
       'tags' => $article_tags,
@@ -568,8 +569,7 @@ public function getAllNewsArticleTags() {
    * @return array
    *   An array of related articles.
    */
-  public function getRelatedNews($tag_id, $exclude_node_id) {
-    \Drupal::logger('PlanetCoreArticleService')->notice('In getRelatedNews.');
+  public function getRelatedNews($exclude_node_id) {
     $related_articles = [];
 
     // Get the current page language code.
@@ -580,7 +580,6 @@ public function getAllNewsArticleTags() {
     $query = $node_storage_query
       ->condition('type', 'newsroom') // Adjust to your content type name.
       ->condition('langcode', $language_code) // Filter by language code.
-      ->condition('field_resources_tags.target_id', $tag_id)
       ->condition('status', 1)
       ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
       ->sort('created', 'DESC')
@@ -589,21 +588,6 @@ public function getAllNewsArticleTags() {
       ->execute();
 
     $related_article_ids = array_values($query);
-
-    // If no related articles are found, query the last 3 articles excluding the specified node ID.
-    if (empty($related_article_ids)) {
-      $query = $node_storage_query
-        ->condition('type', 'newsroom') // Adjust to your content type name.
-        ->condition('langcode', $language_code) // Filter by language code.
-        ->condition('status', 1)
-        ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
-        ->sort('created', 'DESC')
-        ->range(0, 3)
-        ->accessCheck()
-        ->execute();
-
-      $related_article_ids = array_values($query);
-    }
 
     foreach ($related_article_ids as $related_article_id) {
       $node = Node::load($related_article_id);
