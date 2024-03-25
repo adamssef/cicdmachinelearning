@@ -1589,6 +1589,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 
 .article-main-image {
+  background-color: #fafafa;
   height: 338px;
   width: 100%;
   border-radius: 8px;
@@ -2071,4 +2072,16 @@ a.button-with-icon-transition {
     margin-top: 24px;
     margin-bottom: 24px;
   }
+}
+.plnt-blog-single-page .article-content-wrapper .coh-wysiwyg * {
+font-size: 18px;
+line-height: 36px;
+}
+.summary-intro {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+  padding: 16px;
+  border-left: 3px solid #202020;
+  margin: 16px 0;
 }

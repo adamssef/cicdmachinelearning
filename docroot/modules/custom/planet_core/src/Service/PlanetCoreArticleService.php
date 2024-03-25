@@ -500,21 +500,6 @@ class PlanetCoreArticleService {
     return $result;
 }
 
-  public function getAllNewsArticleTags() {
-    // Get the current page language code.
-    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'newsroomtags']);
-    $result = [];
-    foreach ($terms as $term) {
-        $result[] = [
-            'id' => $term->id(),
-            'name' => $term->getName(),
-        ];
-    }
-    return $result;
-  }
-
-
-
 
   /**
    * Gets aliases in other languages for the given English alias.
