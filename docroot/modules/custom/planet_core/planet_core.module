@@ -515,6 +515,7 @@ function planet_core_preprocess_node(array &$variables) {
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
 
   $planet_core_article_helper = \Drupal::service('planet_core.article_helper');
+  $planet_core_news_helper = \Drupal::service('planet_core.news_helper');
 
   $variables['#attached']['library'][] = 'planet_core/language-popup';
 
