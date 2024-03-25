@@ -1,0 +1,24 @@
+uuid: 2a9d22c3-521b-4983-8ebb-ca8aa39ad0a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_source
+    - node.type.newsroom
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.newsroom.field_external_source
+field_name: field_external_source
+entity_type: node
+bundle: newsroom
+label: 'External source'
+description: 'Example: Reuters / BBC'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

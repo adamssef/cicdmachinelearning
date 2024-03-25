@@ -1,0 +1,28 @@
+uuid: 0d29fa1c-4ff7-48db-b064-9dd10c077a28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_it_an_external_article
+    - node.type.newsroom
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.newsroom.field_is_it_an_external_article
+field_name: field_is_it_an_external_article
+entity_type: node
+bundle: newsroom
+label: 'Is it an external article?'
+description: 'If the articles is external to the website select this option.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

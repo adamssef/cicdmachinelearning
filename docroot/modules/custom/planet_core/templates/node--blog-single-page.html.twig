@@ -13,15 +13,15 @@
 			<div class="coh-row">
 				<div class="coh-row-inner">
 					<div class="planSwitch planSwitch-black planSwitch-3options planSwitch-blog">
-					<a href="{{useful_links.case_studies}}">
-						<label data-box="1" for="option_1">{{"Case studies"|t}}</label>
-					</a>
-					<a href="{{useful_links.blog}}">
-						<label class="planSwitch-selected" data-box="2" for="option_2">{{"Blog"|t}}</label>
-					</a>
-					<a href="{{useful_links.ebooks}}">
-						<label data-box="3" for="option_3">{{"E-books"|t}}</label>
-					</a>
+						<a href="{{useful_links.case_studies}}">
+							<label data-box="1" for="option_1">{{"Case studies"|t}}</label>
+						</a>
+						<a href="{{useful_links.blog}}">
+							<label class="planSwitch-selected" data-box="2" for="option_2">{{"Blog"|t}}</label>
+						</a>
+						<a href="{{useful_links.ebooks}}">
+							<label data-box="3" for="option_3">{{"E-books"|t}}</label>
+						</a>
 					</div>
 				</div>
 
@@ -62,7 +62,8 @@
 														</div>
 														<p class="article-summary">{{featured_article.body}}</p>
 														<div class="card-button-wrapper">
-															<a class="card-button" href="{{featured_article.url}}">Read more <img src="/resources/icons/blue-right-arrow.svg"></a>
+															<a class="card-button" href="{{featured_article.url}}">Read more
+																<img src="/resources/icons/blue-right-arrow.svg"></a>
 														</div>
 													</div>
 												</div>
@@ -82,25 +83,35 @@
 			</div>
 		{% endif %}
 	</div>
+
+
 	<div class="coh-container coh-container-boxed blog-articles-wrapper max-width-1216">
 		<div class="coh-row">
 			<div class="coh-row-inner">
 				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
 					<div class="last-articles">
 						<div>
-							<div class="tags-pills pink-pills main-pills" style="display: none">
-										<span class="selected main-pill all-pill visible" data-tagid="all">All</span>
-										<div class="external-main-tags"></div>
-									</div>
-								<div class="article-cards-wrapper">
-									<div class="coh-row">
-										<div class="coh-row-inner article-js-wrapper"></div>
+							<div class="tags-pills pink-pills main-pills">
+								<span class="selected main-pill all-pill visible" data-tagid="all">All</span>
+								<div class="all-article-tags">
+									{% for tag in tags %}
+										<span class="main-pill visible" data-tagid="{{tag.id}}">{{tag.name}}</span>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="article-cards-wrapper">
+								<div class="coh-row">
+									<p class="no-articles" style="display: none">No articles found.</p>
+									<div class="coh-row-inner article-js-wrapper" data-category="all" data-total="0" data-limit="9" data-offset="0"></div>
+									<div class="loader">
+										<img src="/resources/icons/loader.svg">
 									</div>
 								</div>
-								<div class="load-more-wrapper">
-									<div id="load-more-button" class="coh-link coh-style-primary-dark-atom-" style="display: none">Load more
-										<img src="/resources/icons/down-white-arrow.svg"></div>
-								</div>
+							</div>
+							<div class="load-more-wrapper" style="display: none">
+								<div id="load-more-button" class="coh-link coh-style-primary-dark-atom-">Load more
+									<img src="/resources/icons/down-white-arrow.svg"></div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -108,4 +119,3 @@
 		</div>
 	</div>
 </div>
-

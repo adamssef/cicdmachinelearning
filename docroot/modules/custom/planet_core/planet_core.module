@@ -310,19 +310,22 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
 
   $config = \Drupal::config('planet_core.settings');
 
+
   switch ($alias) {
     case "/blog":
-      $is_new_blog_enabled = $config->get('enable_new_blog');
-
-      if ($is_new_blog_enabled) {
-        $suggestions[] = 'node__blog-single-page';
-      }
-
+      $suggestions[] = 'node__blog-single-page';
+      break;
+    case "/press-pages":
+    case "/newsroom":
+      $suggestions[] = 'node__press-single-page';
       break;
     case "/sitemap":
       $suggestions[] = 'node__sitemap';
       break;
-    }
+    case "/news":
+      $suggestions[] = 'node__press-archive-single-page';
+      break;
+  }
 
   if ($alias == "/pms-transformation") {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -338,9 +341,13 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     }
   }
 
-  if ($node->getType() === 'resources' && $node->hasField('field_enable_new_layout') && $node->get('field_enable_new_layout')->value == TRUE) {
+  if ($node->getType() === 'resources') {
     // Add custom template suggestion for 'resources' content type.
     $suggestions[] = 'node__resources-page';
+  }
+  if ($node->getType() === 'newsroom') {
+    // Add custom template suggestion for 'resources' content type.
+    $suggestions[] = 'node__news-page';
   }
 }
 
@@ -391,8 +398,20 @@ function planet_core_theme(): array {
       'template' => 'node--blog-single-page',
       'base hook' => 'node',
     ],
+    'node__press-single-page' => [
+      'template' => 'node--press-single-page',
+      'base hook' => 'node',
+    ],
+    'node__press-archive-single-page' => [
+      'template' => 'node--press-archive-single-page',
+      'base hook' => 'node',
+    ],
     'node__resources-page' => [
       'template' => 'node--resources-page',
+      'base hook' => 'node',
+    ],
+    'node__news-page' => [
+      'template' => 'node--news-page',
       'base hook' => 'node',
     ]
   ];
@@ -494,7 +513,9 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void {
 function planet_core_preprocess_node(array &$variables) {
   $node = $variables['node'];
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+
   $planet_core_article_helper = \Drupal::service('planet_core.article_helper');
+
   $variables['#attached']['library'][] = 'planet_core/language-popup';
 
   if ($alias === '/sitemap') {
@@ -507,23 +528,38 @@ function planet_core_preprocess_node(array &$variables) {
     $variables['#attached']['library'][] = 'planet_core/author-page';
   }
 
-  $config = \Drupal::config('planet_core.settings');
-  $is_new_blog_enabled = $config->get('enable_new_blog');
 
-  if ($node->getType() == 'resources') {
-    $variables['article'] = $planet_core_article_helper->getSingleArticleData($node->id());
+  if (in_array($node->getType(), ["resources", "newsroom"])) {
     $variables['#attached']['library'][] = 'planet_core/single-article-page';
   }
 
-  if ($is_new_blog_enabled) {
-    if ($alias == "/blog") {
+  if ($node->getType() == 'resources') {
+    $variables['article'] = $planet_core_article_helper->getSingleArticleData($node->id());
+  }
+
+  if ($node->getType() == 'newsroom') {
+    $variables['article'] = $planet_core_news_helper->getSingleNewsData($node->id());
+  }
+
+    if (in_array($alias, ["/blog"])) {
       $variables['featured_article'] = $planet_core_article_helper->getLastPublishedArticle();
       $variables['useful_links'] = $planet_core_article_helper->getToggleLinks();
       $variables['tags'] = $planet_core_article_helper->getAllBlogArticleTags();
       $variables['#attached']['library'][] = 'planet_core/blog-page';
     }
+
+    if (in_array($alias, ["/newsroom", "/press-pages"])) {
+      $variables['featured_article'] = $planet_core_news_helper->getLastPublishedNews();
+      $variables['tags'] = $planet_core_news_helper->getAllNewsArticleTags();
+      $variables['articles'] = $planet_core_news_helper->getPublishedNews(3);
+      $variables['external_articles'] = $planet_core_news_helper->getPublishedNews(3, true);
+    }
+    if (in_array($alias, ["/news", ])) {
+      $variables['tags'] = $planet_core_news_helper->getAllNewsArticleTags();
+      $variables['years'] = $planet_core_news_helper->getYears();
+      $variables['#attached']['library'][] = 'planet_core/news-page';
+    }
   }
-}
 
 /**
  * Implements hook_preprocess_HOOK().

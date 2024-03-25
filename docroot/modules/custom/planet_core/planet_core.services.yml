@@ -2,3 +2,6 @@ services:
   planet_core.article_helper:
     class: Drupal\planet_core\Service\PlanetCoreArticleService
     arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager']
+  planet_core.news_helper:
+    class: Drupal\planet_core\Service\PlanetCoreNewsService
+    arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager']
