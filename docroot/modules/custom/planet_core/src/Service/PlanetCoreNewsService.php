@@ -483,7 +483,7 @@ public function getAllNewsArticleTags() {
   function getSingleNewsData($node_id) {
     global $base_url;
 
-    $news_id = 4471;
+    $news_id = 4751;
     // Get the current page language code.
     $language_code = $this->languageManager->getCurrentLanguage()->getId();
 
