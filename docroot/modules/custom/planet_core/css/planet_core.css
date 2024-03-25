@@ -2073,9 +2073,9 @@ a.button-with-icon-transition {
     margin-bottom: 24px;
   }
 }
-.plnt-blog-single-page .article-content-wrapper .coh-wysiwyg * {
-font-size: 18px;
-line-height: 36px;
+.plnt-news-single-page .article-content-wrapper .coh-wysiwyg p, .plnt-news-single-page .article-content-wrapper .coh-wysiwyg span {
+  font-size: 18px;
+  line-height: 36px;
 }
 .summary-intro {
   font-size: 18px;
