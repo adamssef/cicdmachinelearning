@@ -44,8 +44,9 @@
 											{% endif %}
 											{% if years %}
 											<div class="custom-select planet-news-select-years">
-												<div data-value="{{years[0].id}}" class="select-selected">{{years[0].name}}</div>
+												<div data-value="all" class="select-selected">All years</div>
 												<div class="select-items">
+													<div data-value="all">All years</div>
 													{% for year in years %}
 														<div data-value="{{year.id}}">{{year.name}}</div>
 													{% endfor %}
@@ -67,7 +68,7 @@
 									</div>
 								</div>
 								<div class="load-more-wrapper">
-									<a style="display: none" id="load-more-button" href="/news" class="coh-link coh-style-primary-dark-atom-">See all news</a>
+									<a style="display: none" id="load-more-button" href="/news-archive" class="coh-link coh-style-primary-dark-atom-">Load more</a>
 								</div>
 							</div>
 						</div>

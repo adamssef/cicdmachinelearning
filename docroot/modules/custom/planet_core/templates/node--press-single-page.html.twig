@@ -34,9 +34,14 @@
 													<div class="featured-article-info news-card">
 														{% if featured_article.tags is not empty %}
 															<div class="article-tags tags-pills cursor-default">
-																{% for tag in featured_article.tags %}
-																	<span>{{ tag.name }}</span>
-																{% endfor %}
+																<span>
+																	{% for tag in featured_article.tags %}
+																		{{ tag.name }}
+																		{% if not loop.last %}
+																			·
+																		{% endif %}
+																	{% endfor %}
+																</span>
 															</div>
 														{% endif %}
 														<a href="{{featured_article.url}}">
@@ -67,148 +72,154 @@
 				</div>
 			</div>
 		{% endif %}
-	<div class="coh-container coh-container-boxed blog-articles-wrapper max-width-1216">
-		<div class="coh-row">
-			<div class="coh-row-inner">
-				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
-					<div class="last-articles">
-						<div class="news-title">
-							<h3 class="planet-h2">Latest news</h3>
+		<div class="coh-container coh-container-boxed blog-articles-wrapper max-width-1216">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+						<div class="last-articles">
+							<div class="news-title">
+								<h3 class="planet-h2">Latest news</h3>
+							</div>
+							<div>
+								<div class="article-cards-wrapper">
+									<div class="coh-row">
+										<div class="coh-row-inner article-js-wrapper">
+											{% for article in articles.articles %}
+												<div data-tagid="{{ article.tags|map(tag => tag.id)|join(', ') }}" class="news-box-wrapper article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
+													<div class="article-card news-card">
+														<div class="article-bg-image-wrapper">
+															<div class="article-bg-image" style="background-image:url({{ article.background_image }})"></div>
+														</div>
+														<div class="article-card-content">
+															<div>
+																<div>
+																	<div class="article-tags tags-pills">
+																		<span>
+																			{% for tag in article.tags %}
+																				{{ tag.name }}
+																				{% if not loop.last %}
+																					·
+																				{% endif %}
+																			{% endfor %}
+																		</span>
+																	</div>
+																	<div class="article-title">
+																		<a href="{{ article.url }}">{{ article.title }}</a>
+																	</div>
+																</div>
+																<div class="tags-and-author">
+																	<div class="article-author-and-date">
+																		<div class="article-date">{{ article.creation_date }}</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+													</div>
+												</div>
+											{% endfor %}
+
+										</div>
+									</div>
+								</div>
+								{% if articles.articles|length >= 3 %}
+									<div class="load-more-wrapper">
+										<a id="load-more-button" href="/news-archive" class="coh-link coh-style-primary-dark-atom-">See all news</a>
+									</div>
+								{% endif %}
+							</div>
 						</div>
-						<div>
-							<div class="article-cards-wrapper">
-								<div class="coh-row">
-									<div class="coh-row-inner article-js-wrapper">
-										{% for article in articles.articles %}
-											<div data-tagid="{{ article.tags|map(tag => tag.id)|join(', ') }}" class="news-box-wrapper article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		{% if external_articles.articles|length > 0%}
+			<div class="coh-container coh-container-boxed blog-articles-wrapper external-news-wrapper max-width-1216">
+				<div class="coh-row">
+					<div class="coh-row-inner">
+						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+							<div class="last-articles">
+								<div class="news-title">
+									<h3 class="planet-h2">Articles featuring Planet</h3>
+								</div>
+								<div>
+									<div class="article-cards-wrapper">
+										<div class="coh-row">
+											<div class="coh-row-inner article-js-wrapper">
+												{% for article in external_articles.articles %}
+													<div class="news-box-wrapper article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
+														<div class="article-card news-card external-url-card">
+															<div class="article-card-content">
+																<div>
+																	<div>
+																		<div class="article-tags tags-pills">
+																			<span>{{ article.external_source }}</span>
+																		</div>
+																		<div class="article-title">
+																			<span>{{ article.title }}</span>
+																		</div>
+																	</div>
+																	<div class="card-button-wrapper">
+																		<a class="card-button" rel="noopener noreferrer" target="_blank" href="{{article.external_url}}">Read article
+																			<img src="/resources/icons/external.svg"></a>
+																	</div>
+																</div>
+															</div>
+
+														</div>
+													</div>
+												{% endfor %}
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+
+		<div class="coh-container coh-container-boxed external-news-wrapper useful-news-links-box-wrapper max-width-1216">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+						<div class="last-articles">
+							<div>
+								<div class="article-cards-wrapper">
+									<div class="coh-row">
+										<div class="coh-row-inner article-js-wrapper">
+											<div class="useful-link-box news-box-wrapper article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
 												<div class="article-card news-card">
-													<div class="article-bg-image-wrapper">
-														<div class="article-bg-image" style="background-image:url({{ article.background_image }})"></div>
-													</div>
 													<div class="article-card-content">
 														<div>
-														<div>
-															<div class="article-tags tags-pills">
-																{% for tag in article.tags %}
-																	<span data-tagid="{{ tag.id }}">{{ tag.name }}</span>
-																{% endfor %}
-															</div>
-															<div class="article-title">
-																<a href="{{ article.url }}">{{ article.title }}</a>
-															</div>
-														</div>
-														<div class="tags-and-author">
-															<div class="article-author-and-date">
-																<div class="article-date">{{ article.creation_date }}</div>
-															</div>
-														</div>
+															<img class="planet-box-icon" src="/resources/icons/mail.svg">
+															<span class="article-title planet-h3">Contact our PR team</span>
+															<p>For any press-related inquiries, contact
+																<a href="mailto:media@weareplanet.com">media@weareplanet.com</a>
+															</p>
 														</div>
 													</div>
-
 												</div>
 											</div>
-										{% endfor %}
-
-									</div>
-								</div>
-							</div>
-							{% if articles.articles|length >= 3 %}
-								<div class="load-more-wrapper">
-									<a id="load-more-button" href="/news" class="coh-link coh-style-primary-dark-atom-">See all news</a>
-								</div>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-{% if external_articles.articles|length > 0%}
-	<div class="coh-container coh-container-boxed blog-articles-wrapper external-news-wrapper max-width-1216">
-		<div class="coh-row">
-			<div class="coh-row-inner">
-				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
-					<div class="last-articles">
-						<div class="news-title">
-							<h3 class="planet-h2">Articles featuring Planet</h3>
-						</div>
-						<div>
-							<div class="article-cards-wrapper">
-								<div class="coh-row">
-									<div class="coh-row-inner article-js-wrapper">
-										{% for article in external_articles.articles %}
-											<div class="news-box-wrapper article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
-												<div class="article-card news-card external-url-card">
+											<div class="useful-link-box news-box-wrapper article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
+												<div class="article-card news-card">
 													<div class="article-card-content">
 														<div>
-														<div>
-															<div class="article-tags tags-pills">
-																<span>{{ article.external_source }}</span>
-															</div>
-															<div class="article-title">
-																<span>{{ article.title }}</span>
-															</div>
-														</div>
-														<div class="card-button-wrapper">
-															<a class="card-button" rel="noopener noreferrer" target="_blank" href="{{article.external_url}}">Read article
-																<img src="/resources/icons/external.svg"></a>
-														</div>
-														</div>
-													</div>
-
+															<img class="planet-box-icon" src="/resources/icons/support.svg">
+															<span class="article-title planet-h3">For non-media inquiries</span>
+															<p>For non-media inquiries, contact our Planet support team.</p>
+														</a>
+													</p>
 												</div>
-											</div>
-										{% endfor %}
-
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	{% endif %}
-
-	<div class="coh-container coh-container-boxed external-news-wrapper useful-news-links-box-wrapper max-width-1216">
-		<div class="coh-row">
-			<div class="coh-row-inner">
-				<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
-					<div class="last-articles">
-						<div>
-							<div class="article-cards-wrapper">
-								<div class="coh-row">
-									<div class="coh-row-inner article-js-wrapper">
-										<div class="useful-link-box news-box-wrapper article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
-											<div class="article-card news-card">
-												<div class="article-card-content">
-													<div>
-														<img class="planet-box-icon" src="/resources/icons/mail.svg">
-														<span class="article-title planet-h3">Contact our PR team</span>
-														<p>For any press-related inquiries, contact
-															<a href="mailto:media@weareplanet.com">media@weareplanet.com</a>
-														</p>
-													</div>
+												<div class="card-button-wrapper">
+													<a class="card-button button-with-icon-transition" href="/contact">Contact us
+														<img src="/resources/icons/blue-right-arrow.svg"></a>
 												</div>
-											</div>
-										</div>
-										<div class="useful-link-box news-box-wrapper article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
-											<div class="article-card news-card">
-												<div class="article-card-content">
-													<div>
-														<img class="planet-box-icon" src="/resources/icons/support.svg">
-														<span class="article-title planet-h3">For non-media inquiries</span>
-														<p>For non-media inquiries, contact our Planet support team.</p>
-													</a>
-												</p>
-											</div>
-											<div class="card-button-wrapper">
-												<a class="card-button button-with-icon-transition" href="/contact">Contact us
-													<img src="/resources/icons/blue-right-arrow.svg"></a>
 											</div>
 										</div>
 									</div>
@@ -220,5 +231,4 @@
 			</div>
 		</div>
 	</div>
-</div>
 </div>
