@@ -21,7 +21,7 @@
                     }
                     // Fetch data using the built URL
                     const response = await fetch(url);
-                    
+
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
@@ -33,22 +33,28 @@
                 }
             }
 
-            $('.planet-news-select-years > .select-items > div').on('click', async function() {
+            $('.planet-news-select-years > .select-items > div').on('click', async function () {
                 const val = $(this).attr("data-value");
-                const category = $('.planet-news-select-category > .select-items > div.selected').attr("data-value");
+                let category = $('.planet-news-select-category > .select-items > div.selected').attr("data-value");
+                if(!category) {
+                    category = "all";
+                }
                 let data = await fetch_articles(limit, offset, lang, category, val);
                 render_articles(data);
             });
-            $('.planet-news-select-category > .select-items > div').on('click', async function() {
+            $('.planet-news-select-category > .select-items > div').on('click', async function () {
                 const val = $(this).attr("data-value");
-                const year = $('.planet-news-select-years > .select-items > div.selected').attr("data-value");
+                let year = $('.planet-news-select-years > .select-items > div.selected').attr("data-value") || "all";
+                if(!year) {
+                    year = "all";
+                }
                 let data = await fetch_articles(limit, offset, lang, val, year);
                 render_articles(data);
             });
 
             $(document).ready(async function () {
                 try {
-                    let data = await fetch_articles(limit, offset, lang);
+                    let data = await fetch_articles(limit, offset, lang, "all", "all");
                     render_articles(data);
                     limit = limit + 3;
                 } catch (error) {
@@ -58,7 +64,7 @@
 
                 const urlParams = new URLSearchParams(window.location.search);
                 const tagParam = urlParams.get('tag');
-        
+
                 if (tagParam && !isTagFiltered) {
                     // Find the tag with the matching data-tagid value
                     filterByTagId(tagParam);
@@ -81,9 +87,9 @@
             function filterByTagId(tagid) {
                 $(".main-pill").removeClass('selected');
                 $(".main-pill[data-tagid=" + tagid + "]").addClass('selected');
-            
+
                 $('.article-wrapper').hide();
-            
+
                 if (tagid == "all") {
                     $('.article-wrapper').show();
                 } else {
@@ -106,6 +112,7 @@
             function render_articles(data) {
 
                 let articles = data.articles;
+
                 if (!articles.length) {
                     render_no_articles();
                     return;
@@ -114,10 +121,9 @@
                 $(".no-articles").hide();
                 $(".article-js-wrapper").empty();
 
-                // if (data.articles_count > 9) {
-                //     $("#load-more-button").show();
-
-                // }
+                if (data.articles_count > 9) {
+                    $("#load-more-button").show();
+                }
 
                 if (data.articles_finished == false) {
                     $("#load-more-button").show();
@@ -140,9 +146,11 @@
                         <div class="article-card-content">
                         <div>
                         <div>
-                        <div class="article-tags tags-pills">
-                        ${article.tags.map(tag => `<span data-tagid="${tag.id}">${tag.name}</span>`).join('')}
-                        </div>
+                        ${article.tags.length > 0 ? `
+                            <div class="article-tags tags-pills">
+                                <span>${article.tags.map(tag => tag.name).join(' · ')}</span>
+                            </div>
+                        ` : ''}
                         <div class="article-title">
                             <a href="${article.url}">${article.title}</a>
                         </div>
@@ -157,19 +165,19 @@
                     </div>
                     </div>
                 `;
-            $(".article-js-wrapper").append(articleCardTemplate);
+                $(".article-js-wrapper").append(articleCardTemplate);
             }
 
-          
-            $(".custom-select").on("click", function() {
-                if($(this).hasClass("selected")) {
+
+            $(".custom-select").on("click", function () {
+                if ($(this).hasClass("selected")) {
                     $(".custom-select").removeClass("selected");
                 } else {
                     $(".custom-select").removeClass("selected");
                     $(this).addClass("selected");
                 }
             });
-            $(".custom-select .select-items > div").on("click", function() {
+            $(".custom-select .select-items > div").on("click", function () {
                 let val = $(this).attr("data-value");
                 let txt = $(this).text();
                 $(this).parent().parent().children(".select-selected").text(txt);

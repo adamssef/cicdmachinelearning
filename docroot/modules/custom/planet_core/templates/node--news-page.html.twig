@@ -23,9 +23,9 @@
 						<div class="breadcrumbs">
 							<a href="{{ article.blog_url }}">Newsroom</a>
 							{# {% if article.tags %}
-															<a href="{{article.blog_url}}?tag={{article.tags[0].id}}">>
-																{{article.tags[0].name}}</a>
-														{% endif %} #}
+																						<a href="{{article.blog_url}}?tag={{article.tags[0].id}}">>
+																							{{article.tags[0].name}}</a>
+																					{% endif %} #}
 						</div>
 					</div>
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-7">
@@ -63,11 +63,11 @@
 					</div>
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-7">
 						<div class="article-content-wrapper" style="padding-top: 0">
-						{% if article.summary %}
-						<div class="summary-intro">
-							{{article.summary}}
-						</div>
-						{% endif %}
+							{% if article.summary %}
+								<div class="summary-intro">
+									{{article.summary}}
+								</div>
+							{% endif %}
 							<div class="single-layout-canvas">
 								{{content.field_layout_canvas}}
 							</div>
@@ -102,9 +102,15 @@
 									<div class="article-card-content">
 										<div>
 											<div class="article-tags tags-pills">
-												{% for tag in article.tags %}
-													<span data-tagid="{{ tag.id }}">{{ tag.name }}</span>
-												{% endfor %}
+												<span>
+													{% for tag in article.tags %}
+														{{ tag.name }}
+														{% if not loop.last %}
+															+
+														{% endif %}
+													{% endfor %}
+												</span>
+
 											</div>
 											<div class="article-title">
 												<a href="{{ article.url }}">{{ article.title }}</a>

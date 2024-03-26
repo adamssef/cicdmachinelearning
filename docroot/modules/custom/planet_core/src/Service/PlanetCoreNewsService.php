@@ -291,8 +291,6 @@ class PlanetCoreNewsService {
       $current_year = $this->getLastPublishedYear();
       $year = $current_year['id'];
     }
-
-
    
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'newsroom')
@@ -313,12 +311,12 @@ class PlanetCoreNewsService {
       ->accessCheck();
 
      // Add the 'field_year' condition only if $year is not null
-     if ($year !== null && $year !== "all" && !$external) {
+     if ($year != null && ($year != "all") && (!$external)) {
       $query->condition('field_year', $year);
       $total_count->condition('field_year', $year);
     }
 
-    if(($category !== null) && ($category != "all") && (!$external)) {
+    if(($category != null) && ($category != "all") && (!$external)) {
       $query->condition('field_resources_tags', $category);
       $total_count->condition('field_resources_tags', $category);
     }
