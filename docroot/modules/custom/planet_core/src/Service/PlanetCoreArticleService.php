@@ -214,12 +214,17 @@ class PlanetCoreArticleService {
       /** These ids are for production only */
       $blog_url = $this->getAliasesInOtherLanguages(1576);
       $case_studies_url = $this->getAliasesInOtherLanguages(1366);
+      $news_url = $this->getAliasesInOtherLanguages(4751);
       $ebooks_url = $this->getAliasesInOtherLanguages(2136);
+
+      $current_lang = $this->languageManager->getCurrentLanguage()->getId();
 
       return array(
         "case_studies" => $case_studies_url,
         "ebooks" => $ebooks_url,
-        "blog" => $blog_url
+        "news" => $news_url,
+        "blog" => $blog_url,
+        'current_lang' => $current_lang
       );
   }
 
