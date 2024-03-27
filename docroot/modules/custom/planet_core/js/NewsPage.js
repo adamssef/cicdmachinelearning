@@ -4,21 +4,25 @@
 
             let offset = 0;
             let limit = 9;
-            let isTagFiltered = false;
             const lang = $('html')[0].lang;
 
             async function fetch_articles(limit = 9, offset = 0, lang = "en", category = false, year = false) {
-                $(".article-js-wrapper").empty();
-                $(".loader").show();
+                
+                is_loading(true);
+                
                 try {
                     const url = new URL(`/planet_core/news_articles/${limit}/${offset}/${lang}`, window.location.origin);
-                    // Add optional query parameters if provided
                     if (category) {
                         url.searchParams.append('category', category);
                     }
                     if (year) {
                         url.searchParams.append('year', year);
                     }
+                    if(year || category) {
+                        url.searchParams.append('filtered', true);
+                    }
+                    url.searchParams.append('include_featured', true);
+
                     // Fetch data using the built URL
                     const response = await fetch(url);
 
@@ -34,79 +38,123 @@
             }
 
             $('.planet-news-select-years > .select-items > div').on('click', async function () {
-                const val = $(this).attr("data-value");
+                const year = $(this).attr("data-value");
                 let category = $('.planet-news-select-category > .select-items > div.selected').attr("data-value");
                 if(!category) {
                     category = "all";
                 }
-                let data = await fetch_articles(limit, offset, lang, category, val);
-                render_articles(data);
+                await refresh_articles(category, year);
             });
             $('.planet-news-select-category > .select-items > div').on('click', async function () {
-                const val = $(this).attr("data-value");
+                const category = $(this).attr("data-value");
                 let year = $('.planet-news-select-years > .select-items > div.selected').attr("data-value") || "all";
                 if(!year) {
                     year = "all";
                 }
-                let data = await fetch_articles(limit, offset, lang, val, year);
-                render_articles(data);
+                await refresh_articles(category, year);
             });
 
             $(document).ready(async function () {
+                const status = fetch_articles_status();
                 try {
-                    let data = await fetch_articles(limit, offset, lang, "all", "all");
+                    let data = await fetch_articles(status[0], status[1], lang, status[2], status[3]);
                     render_articles(data);
-                    limit = limit + 3;
                 } catch (error) {
-                    // Handle errors here, if necessary.
                     console.error('Error:', error);
-                }
-
-                const urlParams = new URLSearchParams(window.location.search);
-                const tagParam = urlParams.get('tag');
-
-                if (tagParam && !isTagFiltered) {
-                    // Find the tag with the matching data-tagid value
-                    filterByTagId(tagParam);
-                    isTagFiltered = true;
                 }
             });
 
             $('#load-more-button').click(async function () {
                 try {
-                    limit = limit + 9;
-                    let data = await fetch_articles(limit, offset, lang);
+                    const status = fetch_articles_status();
+                    let data = await fetch_articles(status[0], status[1], lang, status[2], status[3]);
                     render_articles(data);
                 } catch (error) {
                     // Handle errors here, if necessary.
                     console.error('Error:', error);
                 }
             });
+            async function refresh_articles(category, year) {
+                $(".article-js-wrapper").empty();
+                is_loading(true);
+                reset_article_limit();
+                reset_article_offset();
+                reset_article_count();
+                switch_article_category(category);
+                switch_article_year(year);
+                const status = fetch_articles_status();
+                let data = await fetch_articles(status[0], status[1], lang, status[2], status[3]);
+                is_loading(false);
+                render_articles(data);
+            }
 
 
-            function filterByTagId(tagid) {
-                $(".main-pill").removeClass('selected');
-                $(".main-pill[data-tagid=" + tagid + "]").addClass('selected');
+            function fetch_articles_status() {
+                const limit = $(".article-js-wrapper").attr("data-limit");
+                const offset = $(".article-js-wrapper").attr("data-offset");
+                const category = $(".article-js-wrapper").attr("data-category");
+                const year = $(".article-js-wrapper").attr("data-year");
+                return [limit, offset, category, year];
+            }
 
-                $('.article-wrapper').hide();
+            function reset_article_limit() {
+                $(".article-js-wrapper").attr("data-limit", "9");
+            }
+            function reset_article_offset() {
+                $(".article-js-wrapper").attr("data-offset", "0");
+            }
+            function reset_article_count() {
+                $(".article-js-wrapper").attr("data-total", "0");
+            }
+          
 
-                if (tagid == "all") {
-                    $('.article-wrapper').show();
+            function increase_article_limit() {
+                $(".article-js-wrapper").attr("data-limit", "9");
+            }
+
+            function increase_article_offset() {
+                const offset = $(".article-js-wrapper").attr("data-offset");
+                const newValue = parseInt(offset) + 9
+                $(".article-js-wrapper").attr('data-offset', newValue.toString());
+            }
+             function increase_article_count(amount) {
+                let count = $(".article-js-wrapper").attr("data-total");
+                let newValue = parseInt(count) + parseInt(amount);
+                $(".article-js-wrapper").attr('data-total', newValue.toString());
+
+            }
+
+            function switch_article_category(category) {
+                $(".article-js-wrapper").attr('data-category', category);
+            }
+            function switch_article_year(year) {
+                $(".article-js-wrapper").attr('data-year', year);
+            }
+
+
+            function render_no_articles() {
+                is_loading(false);
+                $(".no-articles").show();
+            }
+
+            function handle_load_more(articles_count) {
+                let shown_count = $(".article-js-wrapper").attr("data-total");
+                if(articles_count > parseInt(shown_count)) {
+                    $(".load-more-wrapper").show();
                 } else {
-                    $('.article-wrapper').each(function () {
-                        var columnTags = $(this).data('tagid'); // Get the data-tagid array
-
-                        if (columnTags.includes(parseInt(tagid))) {
-                            $(this).show();
-                        }
-                    });
+                    $(".load-more-wrapper").hide();
                 }
             }
 
-            function render_no_articles() {
-                $(".loader").hide();
-                $(".article-js-wrapper").empty();
-                $(".no-articles").show();
+            function is_loading(status = true) {
+                if(!status) {
+                    $(".loader").hide();
+                } else {
+                    $(".loader").show();
+                }
+                $(".load-more-wrapper").hide();
+                $(".no-articles").hide();
+                return;
             }
 
             function render_articles(data) {
@@ -118,22 +166,17 @@
                     return;
                 }
 
-                $(".no-articles").hide();
-                $(".article-js-wrapper").empty();
+                is_loading(false)
 
-                if (data.articles_count > 9) {
-                    $("#load-more-button").show();
-                }
-
-                if (data.articles_finished == false) {
-                    $("#load-more-button").show();
-                } else {
-                    $("#load-more-button").hide();
-                }
-                $(".loader").hide();
+                increase_article_limit()
+                increase_article_offset()
+                increase_article_count(articles.length)
+                
                 articles.forEach(function (article) {
                     render_article_card(article);
                 });
+
+                handle_load_more(data.articles_count)
             }
 
             function render_article_card(article) {

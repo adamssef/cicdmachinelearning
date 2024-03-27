@@ -555,8 +555,8 @@ function planet_core_preprocess_node(array &$variables) {
     if (in_array($alias, ["/news"])) {
       $variables['featured_article'] = $planet_core_news_helper->getLastPublishedNews();
       $variables['tags'] = $planet_core_news_helper->getAllNewsArticleTags();
-      $variables['articles'] = $planet_core_news_helper->getPublishedNews(3);
-      $variables['external_articles'] = $planet_core_news_helper->getPublishedNews(3, true);
+      $variables['articles'] = $planet_core_news_helper->getPublishedNews(3, 0, "en", false, false, false);
+      $variables['external_articles'] = $planet_core_news_helper->getPublishedNews(3, 0, "en", true, false);
     }
    
   }

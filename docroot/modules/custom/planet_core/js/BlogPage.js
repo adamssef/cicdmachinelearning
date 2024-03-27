@@ -130,7 +130,6 @@
 
             function handle_load_more(articles_count) {
                 let shown_count = $(".article-js-wrapper").attr("data-total");
-                console.log(articles_count > parseInt(shown_count));
                 if(articles_count > parseInt(shown_count)) {
                     $(".load-more-wrapper").show();
                 } else {
