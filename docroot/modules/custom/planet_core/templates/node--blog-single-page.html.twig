@@ -12,10 +12,12 @@
 		<div class="coh-container coh-container-boxed planSwitch-container">
 			<div class="coh-row">
 				<div class="coh-row-inner">
-					<div class="planSwitch planSwitch-black planSwitch-3options planSwitch-blog">
-						<a href="{{useful_links.case_studies}}">
-							<label data-box="1" for="option_1">{{"Case studies"|t}}</label>
+					<div class="planSwitch planSwitch-black planSwitch-3options planSwitch-blog {{ (useful_links.current_lang == "en") ? 'three-options-toggle' : 'two-options-toggle' }}">
+						{% if useful_links.current_lang == "en" %}
+						<a href="{{useful_links.news}}">
+							<label data-box="1" for="option_1">{{"News"|t}}</label>
 						</a>
+						{% endif %}
 						<a href="{{useful_links.blog}}">
 							<label class="planSwitch-selected" data-box="2" for="option_2">{{"Blog"|t}}</label>
 						</a>

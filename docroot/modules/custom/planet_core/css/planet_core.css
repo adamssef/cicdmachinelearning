@@ -485,7 +485,12 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   font-weight: 600;
   line-height: 2.7rem;
 }
-
+.planSwitch.planSwitch-black.two-options-toggle {
+  max-width: 20rem;
+}
+.planSwitch.two-options-toggle a label {
+  width: 50%;
+}
 .planSwitch input:checked+label {
   color: #000
 }
