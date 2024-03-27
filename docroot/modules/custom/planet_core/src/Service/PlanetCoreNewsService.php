@@ -273,8 +273,7 @@ class PlanetCoreNewsService {
   }
 
 
-
-  public function getPublishedNews($limit = 3, $external = false, $lang = "en") {
+  public function getPublishedNews($limit = 3, $offset = 0, $lang = "en", $external = false, $filtered = true, $include_featured = true) {
 
     // Get the current page language code.
     $language_code = $lang;
@@ -286,21 +285,15 @@ class PlanetCoreNewsService {
 
     $category = \Drupal::request()->get('category');
     $year = \Drupal::request()->get('year');
+    $query_filtered = \Drupal::request()->get('filtered');
+    if($query_filtered) {
+      $filtered = true;
+    }
 
-    if(!$year && !$external) {
+    if(!$year && !$external && $filtered) {
       $current_year = $this->getLastPublishedYear();
       $year = $current_year['id'];
     }
-   
-    $query = $this->entityTypeManager->getStorage('node')->getQuery()
-      ->condition('type', 'newsroom')
-      ->condition('status', 1)
-      ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
-      ->condition('field_is_it_an_external_article', 1, $is_external) // Include only nodes where field_resources_published_time is not empty
-      ->condition('langcode', $language_code) // Filter by language code.
-      ->range(0, $limit)
-      ->sort('field_resources_published_time', 'DESC', $language_code)
-      ->accessCheck();
 
     $total_count = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'newsroom')
@@ -310,17 +303,25 @@ class PlanetCoreNewsService {
       ->condition('langcode', $language_code) // Filter by language code.
       ->accessCheck();
 
-     // Add the 'field_year' condition only if $year is not null
-     if ($year != null && ($year != "all") && (!$external)) {
+    $query = $this->entityTypeManager->getStorage('node')->getQuery()
+      ->condition('type', 'newsroom')
+      ->condition('status', 1)
+      ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
+      ->condition('field_is_it_an_external_article', 1, $is_external) // Include only nodes where field_resources_published_time is not empty
+      ->condition('langcode', $language_code) // Filter by language code.
+      ->range($offset, $limit) // Apply offset and limit.
+      ->sort('field_resources_published_time', 'DESC', $language_code)
+      ->accessCheck();
+
+     if ($year != null && $year != "all" && !$external && $filtered) {
       $query->condition('field_year', $year);
       $total_count->condition('field_year', $year);
     }
 
-    if(($category != null) && ($category != "all") && (!$external)) {
+    if ($category != null && $category != "all" && !$external && $filtered) {
       $query->condition('field_resources_tags', $category);
       $total_count->condition('field_resources_tags', $category);
     }
-
     // Executing queries
     $query = $query->execute();
     $total_count = $total_count->execute();
@@ -371,14 +372,15 @@ class PlanetCoreNewsService {
         }
       }
 
-      // Get Creation Date.
       $custom_timestamp = $node->get('field_resources_published_time')->value;
       $external_url = $node->get('field_e')->value;
       $external_source = $node->get('field_external_source')->value;
       $is_external_value = $node->get('field_is_it_an_external_article')->value;
       $creation_date = date('F j, Y', $custom_timestamp);
+      $node_id = $node->id();
 
       $articles[] = [
+        'id' => $node_id,
         'url' => $url,
         'title' => $title,
         'tags' => $article_tags,
@@ -392,7 +394,12 @@ class PlanetCoreNewsService {
     }
 
     return [
-      'category' => $category,
+      'debug' => array(
+        "limit" => $limit,
+        "offset" => $offset,
+        "external" => $external,
+        "filtered" => $filtered,
+      ),
       'tags' => $unique_tags,
       'articles' => $articles,
       'articles_count' => $total_count,

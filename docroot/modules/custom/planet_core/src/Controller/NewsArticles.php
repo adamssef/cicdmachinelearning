@@ -5,9 +5,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class NewsArticles extends PlanetCoreNewsBase {
 
-  public function loadNewsArticles($limit, $offset, $lang) {
-    $blog_articles = $this->planetCoreService->getPublishedNews($limit, $offset, $lang);
-
-    return new JsonResponse($blog_articles);
+  public function loadNewsArticles($limit = 9, $offset = 0, $lang = "en", $is_external = false, $filtered = false, $include_featured = true) {
+    $news_articles = $this->planetCoreService->getPublishedNews($limit, $offset, $lang, $is_external, $filtered, $include_featured);
+    return new JsonResponse($news_articles);
   }
 }

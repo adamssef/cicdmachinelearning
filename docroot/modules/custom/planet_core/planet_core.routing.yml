@@ -33,6 +33,10 @@ planet_core.news_articles:
         type: 'integer'
       year:
         type: 'integer'
+      filtered:
+        type: 'boolean'
+      include_featured:
+        type: 'boolean'
 
 # ADMIN AREAS
 
