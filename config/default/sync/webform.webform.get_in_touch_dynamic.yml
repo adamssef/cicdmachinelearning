@@ -58,7 +58,7 @@ elements: |-
     '#required': true
   seniority:
     '#type': select
-    '#title': 'Seniority<span>*</span>'
+    '#title': Seniority
     '#options':
       Owner: Owner
       C-Level: C-Level
@@ -68,11 +68,9 @@ elements: |-
       Manager: Manager
       Assistant: Assistant
       Other: Other
-    '#required': true
-    '#required_error': 'This field is required'
   role:
     '#type': select
-    '#title': 'Role<span>*</span>'
+    '#title': Role
     '#options':
       Accounting: Accounting
       'Customer Success': 'Customer Success'
@@ -85,8 +83,6 @@ elements: |-
       'Product Development': 'Product Development'
       'Project Management': 'Project Management'
       Sales: Sales
-    '#required': true
-    '#required_error': 'This field is required'
   address_country:
     '#type': select
     '#title': 'Country<span>*</span>'
@@ -345,10 +341,10 @@ elements: |-
           value: 'Accept Payments'
   number_of_employees:
     '#type': select
-    '#title': 'How many employees are at your company<span>*</span>'
+    '#title': 'How many employees are at your company'
     '#options':
       'Self Employed': 'Self Employed'
-      '1-10': 1-10
+      1-10: 1-10
       '11 - 50': 11-50
       '50 - 200': 50-200
       '200 - 500': 200-500
@@ -356,8 +352,6 @@ elements: |-
       '1000 - 5000': 1000-5000
       '5001 - 10,000': '5001-10,000'
       '10,000 +': '10,000+'
-    '#required': true
-    '#required_error': 'This field is required'
   textarea:
     '#type': textarea
     '#title': 'About your project<span>*</span>'
