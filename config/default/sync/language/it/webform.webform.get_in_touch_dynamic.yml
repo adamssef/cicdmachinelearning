@@ -57,7 +57,6 @@ elements: |
       'In-person payments': 'Pagamenti di persona'
       'Online and In-Person payments': 'Pagamenti online e di persona'
       'Currency Conversion': 'Conversione di Valuta'
-      'PCI Proxy': 'PCI Proxy'
     '#required_error': 'Questo campo è obbligatorio'
   number_of_employees:
     '#title': 'Quanti dipendenti ci sono nella vostra azienda?'
