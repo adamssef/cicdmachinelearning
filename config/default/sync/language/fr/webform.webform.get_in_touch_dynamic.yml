@@ -1,5 +1,75 @@
 elements: |
+  first_name:
+    '#title': 'Prénom<span>*</span>'
+  last_name:
+    '#title': 'Nom de famille<span>*</span>'
+  email:
+    '#title': 'E-mail professionnel<span>*</span>'
+  phone_intl:
+    '#title': 'Téléphone<span>*</span>'
+    '#required_error': 'Le numéro de téléphone est requis.'
+    '#pattern_error': 'Le numéro de téléphone est invalide, veuillez utiliser le préfixe de votre pays (par exemple, +33 2071234567).'
+  company_business_name:
+    '#title': 'Entreprise<span>*</span>'
+  seniority:
+    '#title': Ancienneté
+    '#options':
+      Owner: Propriétaire
+      C-Level: 'Cadre dirigeant'
+      Executive: Cadre
+      'Vice President': Vice-président
+      Director: Directeur
+      Manager: Gérant
+      Other: Autre
+  role:
+    '#title': Rôle
+    '#options':
+      Accounting: Comptabilité
+      'Customer Success': 'Succès Client'
+      'Information Technology': "Technologies de l'Information"
+      Legal: Juridique
+      Operations: Opérations
+      Payments: Paiements
+      'Product Development': 'Développement de Produits'
+      'Project Management': 'Gestion de Projet'
+      Sales: Ventes
+  address_country:
+    '#title': 'Pays<span>*</span>'
+  company_sector:
+    '#title': 'Je recherche<span>*</span>'
+    '#options':
+      Hospitality: "Solutions et produits d'hospitalité"
+      Retail: 'Solutions et produits de vente au détail'
+      Partners: 'Informations sur le partenariat'
+    '#required_error': 'Ce champ est obligatoire'
+  what_would_you_like_help_with:
+    '#title': "De quoi avez-vous besoin d'aide?<span>*</span>"
+    '#options':
+      'Property Management Solutions': 'Je veux gérer facilement les opérations de mon hôtel'
+      'Networking solutions': 'Mon hôtel a besoin de solutions réseau'
+      'Accept Payments': 'Je veux accepter les paiements'
+      'Tax Free Solutions': 'Je voudrais proposer le shopping hors taxes'
+      'Order Management Systems': 'Je veux gérer efficacement toute commande en ligne'
+      'PCI Proxy': 'Tokeniser les données sensibles des cartes'
+    '#required_error': 'Ce champ est obligatoire'
+  payments_product_of_interest:
+    '#title': 'Choisir une solution de paiement<span>*</span>'
+    '#options':
+      'Online payments': 'Paiements en ligne'
+      'In-person payments': 'Paiements en personne'
+      'Online and In-Person payments': 'Paiements en ligne et en personne'
+      'Currency Conversion': 'Conversion de devises'
+    '#required_error': 'Ce champ est obligatoire'
+  number_of_employees:
+    '#title': "Combien d'employés compte votre entreprise"
+    '#options':
+      'Self Employed': 'Travailleur indépendant'
+  textarea:
+    '#title': 'A propos de votre projet*<span>*</span>'
+    '#placeholder': 'Parlez-nous de votre projet'
   single_opt_in:
-    '#description': '<p>Check this box to give consent to receiving updates about Planet’s products, events, trainings, reports and services</p>'
+    '#description': '<p>Cochez cette case pour donner votre consentement à recevoir des informations sur les produits, événements, formations, rapports et services de Planet</p>'
   markup:
-    '#markup': '<p>By submitting this form, you accept the terms in our&nbsp;<a href="https://www.weareplanet.com/privacy-policy" data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" rel="noopener noreferrer" tabindex="-1" target="_blank">Privacy Policy</a>.</p>'
+    '#markup': '<p>En soumettant ce formulaire, vous acceptez les termes de notre <a href="https://www.weareplanet.com/privacy-policy" data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" rel="noopener noreferrer" tabindex="-1" target="_blank">politique de confidentialité</a>.</p>'
+  actions:
+    '#submit__label': Valider
