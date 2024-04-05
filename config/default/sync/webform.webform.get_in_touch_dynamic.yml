@@ -313,7 +313,7 @@ elements: |-
       'Networking solutions': 'My hotel needs networking solutions'
       'Accept Payments': 'I want to accept payments'
       'Tax Free Solutions': "I'd like to provide Tax Free shopping"
-      'Order Management System': 'Efficiently manage any online order'
+      'Order Management Systems': 'Efficiently manage any online order'
       'PCI Proxy': 'Tokenise sensitive card data'
     '#required': true
     '#required_error': 'This field is required'
@@ -457,7 +457,7 @@ javascript: |-
       const val = this.value;
       const possibleValues = ["Hospitality", "Retail", "Partners"];
       const hospitalityValues = ["Property Management Solutions", "Networking solutions", "Accept Payments"];
-      const retailValues = ["Tax Free Solutions", "Order Management System", "Accept Payments"];
+      const retailValues = ["Tax Free Solutions", "Order Management Systems", "Accept Payments"];
 
       if (possibleValues.includes(val)) {
           const companySectorDeep = document.querySelector(".company-sector-deep-field");
