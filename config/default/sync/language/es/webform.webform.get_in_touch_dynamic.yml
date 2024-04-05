@@ -58,12 +58,12 @@ elements: |
       'In-person payments': 'Pagos en persona'
       'Online and In-Person payments': 'Pagos en línea y en persona'
       'Currency Conversion': 'Conversión de divisas'
+      'PCI Proxy': 'PCI Proxy'
     '#required_error': 'Campo obligatorio'
   number_of_employees:
     '#title': '¿Cuántos empleados tiene tu empresa?'
     '#options':
-      'Self Employed': Autónomo
-      '10,000 +': Autónomo
+      'Self Employed': 'Autónomo'
   textarea:
     '#title': 'Su consulta*<span>*</span>'
     '#placeholder': '¿De qué trata su consulta?'

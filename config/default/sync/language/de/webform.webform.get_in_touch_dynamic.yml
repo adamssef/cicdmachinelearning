@@ -58,12 +58,12 @@ elements: |
       'In-person payments': 'Persönliche Zahlungen'
       'Online and In-Person payments': 'Online- und persönliche Zahlungen'
       'Currency Conversion': Währungsumrechnung
+      'PCI Proxy': 'PCI Proxy'
     '#required_error': 'Erforderliches Feld'
   number_of_employees:
     '#title': 'Wie viele Mitarbeiter hat Ihr Unternehmen?'
     '#options':
       'Self Employed': Selbstständig
-      '10,000 +': Selbstständig
   textarea:
     '#title': 'Über Ihr Projekt<span>*</span>'
     '#placeholder': 'Erzählen Sie uns mehr über Ihr Projekt'
