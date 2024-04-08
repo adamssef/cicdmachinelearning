@@ -30,7 +30,6 @@ elements: |
       Legal: Legale
       Payments: Pagamenti
       'Product Development': 'Sviluppo del prodotto'
-      Sales: 'Sviluppo del prodotto'
   address_country:
     '#title': 'Paese<span>*</span>'
   company_sector:
@@ -57,11 +56,13 @@ elements: |
       'In-person payments': 'Pagamenti di persona'
       'Online and In-Person payments': 'Pagamenti online e di persona'
       'Currency Conversion': 'Conversione di Valuta'
+      'PCI Proxy': 'PCI Proxy '
     '#required_error': 'Questo campo è obbligatorio'
   number_of_employees:
     '#title': 'Quanti dipendenti ci sono nella vostra azienda?'
     '#options':
       'Self Employed': 'Lavoratori autonomi'
+      '10,000 +': '10,000 + '
   textarea:
     '#title': 'Note<span>*</span>'
     '#placeholder': 'Dicci di più su ciò di cui hai bisogno'
