@@ -332,7 +332,7 @@ elements: |-
       'In-person payments': 'In-person payments'
       'Online and In-Person payments': 'Online and In-Person payments'
       'Currency Conversion': 'Currency Conversion'
-      'PCI Proxy': 'PCI Proxy'
+      'PCI Proxy': 'PCI Proxy '
     '#required': true
     '#required_error': 'This field is required'
     '#states':
