@@ -47,18 +47,26 @@ class FilterTag extends CustomElementPluginBase {
     // print_r($element_settings['case_study_tag']);
     // exit;
    $entity_uuid = $element_settings['case_study_tag']['entity']['#entityId'];
-   $entity = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['uuid' => $entity_uuid]);
+
+   if (is_null($entity_uuid)) {
+     $default_term_name = 'Product';
+     $entity = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+       ->loadByProperties(['name' => $default_term_name]);
+   }
+    else {
+      $entity = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadMultiple()
+        ->loadByProperties(['uuid' => $entity_uuid]);;
+    }
    $entity = reset($entity);
    $entity_id;
    if($entity){
    $entity_id = $entity->id();
-  //  $arg = $view->setArguments([$entity_id]);
   }
   $arg = $view->setArguments([$entity_id]);
     $view->preExecute();
     
     // Render the element.
-    return [     
+    return [
        // update "filterable_block" to your module machine name
       '#theme' => 'case_studies_more_reads_view_block',
       '#elementSettings' => $element_settings,
