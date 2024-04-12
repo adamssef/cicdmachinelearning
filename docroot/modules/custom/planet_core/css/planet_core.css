@@ -2090,3 +2090,15 @@ a.button-with-icon-transition {
   border-left: 3px solid #202020;
   margin: 16px 0;
 }
+.site-studio-webform-element form .coh-style-primary-dark-atom-.form-actions {
+  padding: 0
+}
+.site-studio-webform-element form .webform-button--submit {
+  padding: 17px 37px;
+  display: block;
+  min-width: 128px;
+  font-weight: 700;
+  font-size: 16px;
+  font-style: normal;
+  font-family: 'TT Commons', sans-serif;
+}
