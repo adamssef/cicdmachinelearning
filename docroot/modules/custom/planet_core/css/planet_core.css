@@ -2102,3 +2102,32 @@ a.button-with-icon-transition {
   font-style: normal;
   font-family: 'TT Commons', sans-serif;
 }
+
+header:not(.white-bg) .header-secondary-cta {
+  color: white;
+}
+header:hover:not(.white-bg) .header-secondary-cta:hover {
+  color: white;
+}
+header:hover:not(.white-bg) .header-secondary-cta {
+  color: black;
+}
+.header-secondary-cta {
+  white-space: nowrap;
+}
+header .coh-planet-logo {
+  min-width: 80px;
+  height: auto;
+}
+@media (min-width: 1023px) and (max-width: 1120px) {
+  header .coh-inline-element.coh-separator {
+    margin-right: 8px !important;
+    margin-left: 8px !important;
+  }
+  header .coh-menu-list-container.coh-unordered-list {
+    grid-gap: 12px !important
+  }
+  header .coh-container.menu-container.coh-style-menu-container {
+    margin-left: 8px;
+  }
+}
