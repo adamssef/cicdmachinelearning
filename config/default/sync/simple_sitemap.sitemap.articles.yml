@@ -1,0 +1,11 @@
+uuid: 44245f16-439a-4595-94c0-4f6742ff9290
+langcode: en
+status: true
+dependencies:
+  config:
+    - simple_sitemap.type.default_hreflang
+id: articles
+label: Articles
+description: ''
+type: default_hreflang
+weight: 0
