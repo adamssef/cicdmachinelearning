@@ -142,19 +142,16 @@ class PlanetSitemapPagesVocabularyService {
     $children_terms_data = [];
 
     foreach ($terms as $term) {
-      $link_value = isset($term->get('field_sitemap_page_link')
-          ->getValue()[0]) ? str_replace('internal:', '', $term->get('field_sitemap_page_link')
-        ->getValue()[0]['uri']) : NULL;
+      $link_value =
+        isset($term->get('field_sitemap_page_link')->getValue()[0])
+          ? str_replace('internal:', '', $term->get('field_sitemap_page_link')->getValue()[0]['uri'])
+          : NULL;
+
       $node = $this->loadNodeByAlias($link_value);
-      $translation_status = TRUE;
 
-      $current_language = $this->language_manager->getCurrentLanguage()
+      $current_language = $this->language_manager
+        ->getCurrentLanguage()
         ->getId();
-
-      if (!is_null($node)) {
-        $translation_status = $node->getTranslation($current_language)
-          ->isPublished();
-      }
 
       $taxonomy_term_trans = $this->getTranslatedTerm($term);
 
@@ -257,6 +254,11 @@ class PlanetSitemapPagesVocabularyService {
     if (preg_match('/node\/(\d+)/', $path, $matches)) {
       $nid = $matches[1];
       $node = $this->entityTypeManager->getStorage('node')->load($nid);
+
+      if ($node === NULL) {
+        return NULL;
+      }
+
       if ($node->hasTranslation($language)) {
         return $node->getTranslation($language);
       }
