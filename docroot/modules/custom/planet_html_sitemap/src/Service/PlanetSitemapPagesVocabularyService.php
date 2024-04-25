@@ -170,7 +170,7 @@ class PlanetSitemapPagesVocabularyService {
           'id' => $taxonomy_term_trans->id(),
           'name' => $taxonomy_term_trans->get('name')[0]->value,
           'weight' => $taxonomy_term_trans->get('weight')->value,
-          'link' => '/' . $current_language . $this->getAliasesForNode($node)[$current_language] ?? $node->toUrl()
+          'link' => $this->getAliasesForNode($node)[$current_language] ?? $node->toUrl()
               ->toString(),
           'is_label' => $taxonomy_term_trans->get('field_is_label')->value,
           'parent_id' => $parent_id
@@ -178,12 +178,21 @@ class PlanetSitemapPagesVocabularyService {
       }
       else {
         if ($show_missing_items_in_english || $node->hasTranslation($current_language)) {
+
+          $is_current_language_en = $current_language === 'en';
+
+          if ($is_current_language_en) {
+           $link = $this->getAliasesForNode($node)[$current_language] ?? $node->toUrl()->toString();
+          }
+          else {
+            $link = '/' . $current_language . $this->getAliasesForNode($node)[$current_language] ?? $node->toUrl()->toString();
+          }
+
           $children_terms_data[] = [
             'id' => $taxonomy_term_trans->id(),
             'name' => $node->getTranslation($current_language)->getTitle(),
             'weight' => $taxonomy_term_trans->get('weight')->value,
-            'link' => '/' . $current_language . $this->getAliasesForNode($node)[$current_language] ?? $node->toUrl()
-                ->toString(),
+            'link' => $link,
             'is_label' => $taxonomy_term_trans->get('field_is_label')->value,
             'parent_id' => $parent_id
           ];
