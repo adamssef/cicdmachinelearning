@@ -1,4 +1,4 @@
 services:
   planet_html_sitemap.helper:
     class: Drupal\planet_html_sitemap\Service\PlanetSitemapPagesVocabularyService
-    arguments: ['@entity_type.manager', '@path_alias.manager']
+    arguments: ['@entity_type.manager', '@path_alias.manager', '@language_manager', '@entity.repository']

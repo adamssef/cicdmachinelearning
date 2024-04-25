@@ -1,9 +1,14 @@
-uuid: 18bffb6f-4737-4267-bd6b-9d4987b2437a
+uuid: 4df292f8-cc97-4a3a-9a48-8d31e961868f
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.sitemap_pages
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
 id: taxonomy_term.sitemap_pages
 target_entity_type_id: taxonomy_term
 target_bundle: sitemap_pages
