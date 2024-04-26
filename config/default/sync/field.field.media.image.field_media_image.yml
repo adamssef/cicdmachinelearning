@@ -8,6 +8,7 @@ dependencies:
   module:
     - content_translation
     - image
+    - tmgmt_content
   enforced:
     module:
       - media
@@ -17,6 +18,8 @@ third_party_settings:
       alt: alt
       title: title
       file: '0'
+  tmgmt_content:
+    excluded: false
 _core:
   default_config_hash: HGRX21ciyn7K-q8KMxsKHQvIB4SHT-A3bqzmNDnGKyc
 id: media.image.field_media_image
@@ -34,9 +37,9 @@ settings:
   handler_settings: {  }
   file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg svg'
-  max_filesize: ''
-  max_resolution: ''
-  min_resolution: ''
+  max_filesize: 2MB
+  max_resolution: 2048x2048
+  min_resolution: 8x8
   alt_field: true
   alt_field_required: true
   title_field: false
