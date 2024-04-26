@@ -1,0 +1,7 @@
+planet_html_sitemap.admin_config:
+  path: '/admin/planet/sitemap_settings'
+  defaults:
+    _form: '\Drupal\planet_html_sitemap\Form\PlanetHtmlSitemapSettingsForm'
+    _title: 'HTML Sitemap settings'
+  requirements:
+    _permission: 'administer site configuration'

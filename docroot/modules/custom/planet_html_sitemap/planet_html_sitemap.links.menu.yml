@@ -1,0 +1,7 @@
+planet_html_sitemap.settings_form:
+  title: 'HTML sitemap settings'
+  description: 'Configure settings for the custom taxonomy.'
+  parent: system.admin_config
+  route_name: planet_html_sitemap.admin_config
+  weight: 20
+  menu_name: admin
