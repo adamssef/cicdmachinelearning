@@ -182,7 +182,7 @@ class PlanetSitemapPagesVocabularyService {
           $is_current_language_en = $current_language === 'en';
 
           if ($is_current_language_en) {
-           $link = $this->getAliasesForNode($node)[$current_language] ?? $node->toUrl()->toString();
+            $link = $this->getAliasesForNode($node)[$current_language] ?? $node->toUrl()->toString();
           }
           else {
             $link = '/' . $current_language . $this->getAliasesForNode($node)[$current_language] ?? $node->toUrl()->toString();
@@ -252,7 +252,7 @@ class PlanetSitemapPagesVocabularyService {
    *   The node or NULL if not found.
    */
   public function loadNodeByAlias($alias) {
-    $path = $this->aliasManager->getPathByAlias($alias);
+    $path = $this->aliasManager->getPathByAlias($alias, 'en');
 
     if ($path === $alias) {
       $path = $this->aliasManager->getPathByAlias($alias, 'en');
