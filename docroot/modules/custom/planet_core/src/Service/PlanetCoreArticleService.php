@@ -615,6 +615,16 @@ class PlanetCoreArticleService {
     $creation_date = date('F j, Y', $custom_timestamp);
     $related_tag = $article_tags ? $article_tags[0]['id'] : false;
     $related_articles = $this->getRelatedArticles($related_tag, $node->id());
+    $last_update_on = $node->get('changed')->value;
+    $language_code = $this->languageManager->getCurrentLanguage()->getId();
+
+    if($language_code != "en") {
+      $last_update_on = strtotime($last_update_on);
+    }
+    else {
+      $last_update_on = date('F j, Y', $last_update_on);
+    }
+
 
     $article = array(
       "title" => $title,
@@ -625,6 +635,7 @@ class PlanetCoreArticleService {
       'tags' => $article_tags,
       'background_image' => $background_image_url,
       'creation_date' => $creation_date,
+      'last_updated_on_date' => $last_update_on,
       'reading_time' => $reading_time,
       'author' => [
         'full_name' => $author_name,

@@ -7,6 +7,7 @@
 
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
 use Drupal\webform\WebformSubmissionInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -45,6 +46,17 @@ function planet_core_preprocess_html(&$variables): void {
   $value_to_be_used = ltrim($value_to_be_used, '/');
   $value_to_be_used = str_replace('/', '-', $value_to_be_used);
   $value_to_be_used = str_replace('_', '-', $value_to_be_used);
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof Node) {
+    $url_alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+
+    if (str_starts_with($url_alias, '/blog/')) {
+      $blog_value_to_be_used = 'blog-page';
+      $variables['attributes']['class'][] = 'plnt-css-' . $blog_value_to_be_used;
+    }
+  }
 
   $variables['attributes']['class'][] = 'plnt-css-' . $value_to_be_used;
 
