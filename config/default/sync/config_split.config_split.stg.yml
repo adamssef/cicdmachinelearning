@@ -15,7 +15,6 @@ module:
   planet_2fa: 0
   planet_lgpd_onetrust: 0
   shield: 0
-  google_tag: 0
 theme: {  }
 complete_list:
   - environment_indicator.indicator

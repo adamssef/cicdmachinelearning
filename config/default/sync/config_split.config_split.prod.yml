@@ -11,10 +11,10 @@ no_patching: false
 storage: folder
 folder: ../config/default/environment/prod
 module:
+  gtm: 0
   acquia_connector: 0
   planet_2fa: 0
   planet_lgpd_onetrust: 0
-  google_tag: 0
 theme: {  }
 complete_list:
   - key.key.tfa_key

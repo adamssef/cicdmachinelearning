@@ -43,6 +43,7 @@
     "drupal/flood_control": "^2.3",
     "drupal/google_analytics": "^4.0",
     "drupal/google_tag": "^2.0",
+    "drupal/gtm": "^1.8",
     "drupal/hal-hal": "^1.0",
     "drupal/hidden_language": "^2.0@beta",
     "drupal/honeypot": "^2.1",
