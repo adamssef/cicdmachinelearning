@@ -226,7 +226,10 @@
         "Site Settings Menu does not work in 10.2.1": "https://www.drupal.org/files/issues/2024-01-17/3357022_canonical_removed_from_type.patch"
       },
       "drupal/dynamic_entity_reference": {
-        "Entity with dynamic entity referenced field can't be cloned using entity_clone": "https://www.drupal.org/files/issues/2023-10-24/3396393-2.patch"
+        "Test": "https://www.drupal.org/files/issues/2023-10-24/3396393-2.patch"
+      },
+      "drupal/simple_sitemap": {
+        "edit table": "patches/simple_sitemap.patch"
       }
     },
     "drupal-lenient": {
