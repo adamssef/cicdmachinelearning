@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+
 /**
  * @file
  * Primary module hooks for Planet HTML Sitemap module.
@@ -56,9 +58,23 @@ function planet_html_sitemap_theme_suggestions_node_alter(&$suggestions, &$varia
 
 
 function planet_html_sitemap_simple_sitemap_links_alter(&$links, $sitemap) {
+
+  $entityTypeManager = \Drupal::service('entity_type.manager');
+  $metatagManager = \Drupal::service('metatag.manager');
+
   foreach ($links as $key => $link) {
-    unset($links[$key]['changefreq']);
-    $priority = false;
-    $links[$key]['priority'] = $priority;
+    $node_id = $link['meta']['entity_info']['id'];
+    $node = $entityTypeManager->getStorage('node')->load($node_id);
+
+    if ($node && $node->isPublished()) {
+      $meta_tags = $metatagManager->tagsFromEntityWithDefaults($node);
+      $meta_tags_values = $metatagManager->generateTokenValues($meta_tags, $node);
+      $robots = $meta_tags_values['robots'] ?? false;
+      $is_noindex = $robots == "noindex";
+
+      if ($is_noindex) {
+        unset($links[$key]);
+      }
+    }
   }
 }
