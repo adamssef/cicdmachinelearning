@@ -13,5 +13,11 @@ folder: ../config/default/environment/local
 module:
   dblog: 0
 theme: {  }
-complete_list: {  }
+complete_list:
+  - acquia_connector.settings
+  - key.key.tfa_key
+  - ultimate_cron.job.acquia_connector_cron
+  - planet_lgpd_onetrust.settings
+  - environment_indicator.indicator
+  - dblog.settings.yml
 partial_list: {  }
