@@ -83,8 +83,8 @@ display:
           wrapper: div
           legend: ''
           classes: publications__card--top
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_main_image_media:
           id: field_main_image_media
           table: node__field_main_image_media
@@ -206,8 +206,8 @@ display:
           wrapper: div
           legend: ''
           classes: publications__card--bottom
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_pre_heading:
           id: field_pre_heading
           table: node__field_pre_heading
@@ -1137,6 +1137,23 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       style:
         type: cohesion_layout
         options:
@@ -1154,6 +1171,7 @@ display:
         style: false
         row: false
         fields: false
+        sorts: false
         header: false
         footer: false
       display_description: ''
@@ -1170,7 +1188,10 @@ display:
           empty: false
           content: '{{ field_main_image_media }}'
           tokenize: true
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -1245,8 +1266,8 @@ display:
           wrapper: div
           legend: ''
           classes: publications__card--top
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_main_image_media:
           id: field_main_image_media
           table: node__field_main_image_media
@@ -1368,8 +1389,8 @@ display:
           wrapper: div
           legend: ''
           classes: publications__card--bottom
-          collapsible: 0
-          collapsed: 0
+          collapsible: false
+          collapsed: false
         field_pre_heading:
           id: field_pre_heading
           table: node__field_pre_heading
@@ -1697,6 +1718,23 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       style:
         type: cohesion_layout
         options:
@@ -1715,8 +1753,12 @@ display:
         style: false
         row: false
         fields: false
+        sorts: false
       display_description: ''
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
