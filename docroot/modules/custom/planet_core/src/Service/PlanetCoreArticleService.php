@@ -40,7 +40,6 @@ class PlanetCoreArticleService {
    * @var \Drupal\Core\Language\LanguageManagerInterface
    */
   protected $languageManager;
-
  
   /**
    * Constructs a new PlantCoreService object.
@@ -87,7 +86,6 @@ class PlanetCoreArticleService {
       return rtrim($truncatedText);
     }
   }
-
 
   /**
    * @file
@@ -185,7 +183,7 @@ class PlanetCoreArticleService {
       $custom_timestamp = $node->get('field_resources_published_time')->value;
 
       // Convert the custom timestamp to a formatted date.
-      $creation_date = date('F j, Y', $custom_timestamp);
+      $creation_date = $this->getTheByLanguageFormattedDate($custom_timestamp);
 
       $articles[] = [
         'url' => $url,
@@ -209,7 +207,6 @@ class PlanetCoreArticleService {
     ];
   }
 
-
   public function getToggleLinks() {
       /** These ids are for production only */
       $blog_url = $this->getAliasesInOtherLanguages(1576);
@@ -227,7 +224,6 @@ class PlanetCoreArticleService {
         'current_lang' => $current_lang
       );
   }
-
 
   public function getLastPublishedArticle() {
     // Get the current page language code.
@@ -304,7 +300,7 @@ class PlanetCoreArticleService {
 
       // Get Creation Date.
       $custom_timestamp = $node->get('field_resources_published_time')->value;
-      $creation_date = date('F j, Y', $custom_timestamp);
+      $creation_date = $this->getTheByLanguageFormattedDate($custom_timestamp);
 
       // Get the summary/excerpt of the body field.
       $body_summary = $node->get('field_resources_subtitle')->value;
@@ -331,7 +327,6 @@ class PlanetCoreArticleService {
     // Return null if no articles are found.
     return null;
   }
-
 
   /**
    * Gets the last published articles.
@@ -454,7 +449,7 @@ class PlanetCoreArticleService {
 
       // Get Creation Date.
       $custom_timestamp = $node->get('field_resources_published_time')->value;
-      $creation_date = date('F j, Y', $custom_timestamp);
+      $creation_date = $this->getTheByLanguageFormattedDate($custom_timestamp);
 
       $articles[] = [
         'url' => $url,
@@ -471,8 +466,6 @@ class PlanetCoreArticleService {
       ];
     }
 
-    
-
     // Return the result.
     return [
       'tags' => $unique_tags,
@@ -481,9 +474,6 @@ class PlanetCoreArticleService {
       'articles_finished' => count($articles) >= ($total_count - 1),
     ];
   }
-
-
-
 
   public function getAllBlogArticleTags() {
     // Get the current page language code.
@@ -503,8 +493,7 @@ class PlanetCoreArticleService {
     });
 
     return $result;
-}
-
+  }
 
   /**
    * Gets aliases in other languages for the given English alias.
@@ -526,7 +515,6 @@ class PlanetCoreArticleService {
     $lang_prefix = $langcode != "en" ? "/" . $langcode : "";
     return $lang_prefix . $path_alias;
   }
-
 
   /**
    * Gets the article data for the given node ID.
@@ -615,15 +603,8 @@ class PlanetCoreArticleService {
     $creation_date = date('F j, Y', $custom_timestamp);
     $related_tag = $article_tags ? $article_tags[0]['id'] : false;
     $related_articles = $this->getRelatedArticles($related_tag, $node->id());
-    $last_update_on = $node->get('changed')->value;
-    $language_code = $this->languageManager->getCurrentLanguage()->getId();
-
-    if ($language_code == "en") {
-      $last_update_on = date('F j, Y', $last_update_on);
-    } else {
-      $last_update_on = date('j/m/y', $last_update_on);
-    }
-
+    $last_updated_on = $node->get('changed')->value;
+    $last_updated_on = $this->getTheByLanguageFormattedDate($last_updated_on);
 
     $article = array(
       "title" => $title,
@@ -634,7 +615,7 @@ class PlanetCoreArticleService {
       'tags' => $article_tags,
       'background_image' => $background_image_url,
       'creation_date' => $creation_date,
-      'last_updated_on_date' => $last_update_on,
+      'last_updated_on_date' => $last_updated_on,
       'reading_time' => $reading_time,
       'author' => [
         'full_name' => $author_name,
@@ -738,7 +719,6 @@ class PlanetCoreArticleService {
           ];
         }
 
-
         // Get Background Image (field_resources_background_image)
         $background_image_media = $node->get('field_resources_background_image')->entity;
 
@@ -754,8 +734,7 @@ class PlanetCoreArticleService {
         $custom_timestamp = $node->get('field_resources_published_time')->value;
 
         // Convert the custom timestamp to a formatted date.
-        $creation_date = date('F j, Y', $custom_timestamp);
-
+        $creation_date = $this->getTheByLanguageFormattedDate($custom_timestamp);
 
         if ($language_code != "en") {
           $url = "/" . $language_code . $related_article_url;
@@ -779,6 +758,29 @@ class PlanetCoreArticleService {
     }
 
     return $related_articles;
+  }
+
+  /**
+   * Converts a timestamp to a date formatted in the current language
+   *
+   * @param $timestamp
+   *  The timestamp to convert.
+   *
+   * @return string
+   *   The formatted date.
+   */
+  public function getTheByLanguageFormattedDate(?string $timestamp):?string {
+    if (!$timestamp) {
+      return null;
+    }
+
+    $language_code = $this->languageManager->getCurrentLanguage()->getId();
+
+    if ($language_code == "en") {
+      return date('F j, Y', $timestamp);
+    } else {
+      return date('j/m/y', $timestamp);
+    }
   }
 
 }
