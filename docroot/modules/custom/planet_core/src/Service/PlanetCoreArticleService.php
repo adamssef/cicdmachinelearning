@@ -618,11 +618,10 @@ class PlanetCoreArticleService {
     $last_update_on = $node->get('changed')->value;
     $language_code = $this->languageManager->getCurrentLanguage()->getId();
 
-    if($language_code != "en") {
-      $last_update_on = strtotime($last_update_on);
-    }
-    else {
+    if ($language_code == "en") {
       $last_update_on = date('F j, Y', $last_update_on);
+    } else {
+      $last_update_on = date('j/m/y', $last_update_on);
     }
 
 
