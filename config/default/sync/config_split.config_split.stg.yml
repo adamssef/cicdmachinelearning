@@ -12,7 +12,6 @@ storage: folder
 folder: ../config/default/environment/stg
 module:
   planet_2fa: 0
-  planet_lgpd_onetrust: 0
   shield: 0
   real_aes: 0
   tfa: 0
