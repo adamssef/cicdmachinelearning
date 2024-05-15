@@ -21,5 +21,6 @@ complete_list:
   - planet_lgpd_onetrust.settings
   - environment_indicator.indicator
   - dblog.settings.yml
+  - gtm.settings
 partial_list:
   - environment_indicator.indicator

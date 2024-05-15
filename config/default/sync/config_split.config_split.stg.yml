@@ -25,5 +25,6 @@ complete_list:
   - ultimate_cron.job.acquia_connector_cron
   - planet_lgpd_onetrust.settings
   - dblog.settings.yml
+  - gtm.settings
 partial_list:
   - environment_indicator.indicator
