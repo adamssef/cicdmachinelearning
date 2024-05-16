@@ -1,7 +1,7 @@
-diff --git docroot/modules/contrib/simple_sitemap/xsl/simple_sitemap.xsl docroot/modules/contrib/simple_sitemap/xsl/simple_sitemap_new.xsl
+diff --git docroot/modules/contrib/simple_sitemap/xsl/simple_sitemap.xsl docroot/modules/contrib/simple_sitemap/xsl/simple_sitemap.xsl
 index c87d41cc..fb65858b 100644
 --- docroot/modules/contrib/simple_sitemap/xsl/simple_sitemap.xsl
-+++ docroot/modules/contrib/simple_sitemap/xsl/simple_sitemap_new.xsl
++++ docroot/modules/contrib/simple_sitemap/xsl/simple_sitemap.xsl
 @@ -70,8 +70,6 @@
          <tr>
            <th>[url-location]</th>
