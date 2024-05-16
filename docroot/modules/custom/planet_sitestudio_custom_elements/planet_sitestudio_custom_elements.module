@@ -188,3 +188,14 @@ function planet_sitestudio_custom_elements_tokens_alter(array &$replacements, ar
     $replacements[$replacements_index] = strip_tags($replacements[$replacements_index]);
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function planet_sitestudio_custom_elements_preprocess_page(array &$variables) {
+  $current_languge = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['#attached']['drupalSettings']['language'] = $current_languge;
+  }
+}
