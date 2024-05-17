@@ -1,0 +1,80 @@
+<?php
+
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+
+/**
+ * @file
+ * Primary module hooks for Planet HTML Sitemap module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function planet_html_sitemap_theme() {
+  $current_url = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
+
+  if ($path_alias === '/sitemap') {
+    return [
+      'sitemap_html' => [
+        'template' => 'sitemap-html',
+        'base hook' => 'node',
+        'variables' => [
+          'term_tree' => [],
+        ],
+      ],
+    ];
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.
+ */
+function planet_html_sitemap_preprocess(&$variables) {
+  if (isset($variables['theme_hook_original'])) {
+    if ($variables['theme_hook_original'] === 'node') {
+      $current_url = \Drupal::service('path.current')->getPath();
+
+      $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
+
+      if ($path_alias === '/sitemap') {
+        $variables['term_tree'] = \Drupal::service('planet_html_sitemap.helper')->buildTree();
+        $variables['#attached']['library'][] = 'planet_html_sitemap/planet_html_sitemap';
+      }
+    }
+  }
+}
+
+//Suggestions preprocess
+function planet_html_sitemap_theme_suggestions_node_alter(&$suggestions, &$variables) {
+  $url = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($url);
+
+  if ($path_alias === '/sitemap') {
+    $suggestions[] = 'sitemap_html';
+  }
+}
+
+
+function planet_html_sitemap_simple_sitemap_links_alter(&$links, $sitemap) {
+
+  $entityTypeManager = \Drupal::service('entity_type.manager');
+  $metatagManager = \Drupal::service('metatag.manager');
+
+  foreach ($links as $key => $link) {
+    $node_id = $link['meta']['entity_info']['id'];
+    $node = $entityTypeManager->getStorage('node')->load($node_id);
+
+    if ($node && $node->isPublished()) {
+      $meta_tags = $metatagManager->tagsFromEntityWithDefaults($node);
+      $meta_tags_values = $metatagManager->generateTokenValues($meta_tags, $node);
+      $robots = $meta_tags_values['robots'] ?? false;
+      $is_noindex = $robots == "noindex";
+
+      if ($is_noindex) {
+        unset($links[$key]);
+      }
+    }
+  }
+}

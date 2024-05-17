@@ -1,0 +1,32 @@
+diff --git docroot/modules/contrib/simple_sitemap/xsl/simple_sitemap.xsl docroot/modules/contrib/simple_sitemap/xsl/simple_sitemap.xsl
+index c87d41cc..fb65858b 100644
+--- docroot/modules/contrib/simple_sitemap/xsl/simple_sitemap.xsl
++++ docroot/modules/contrib/simple_sitemap/xsl/simple_sitemap.xsl
+@@ -70,8 +70,6 @@
+         <tr>
+           <th>[url-location]</th>
+           <th>[lastmod]</th>
+-          <th>[changefreq]</th>
+-          <th>[priority]</th>
+           <!-- Show this header only if xhtml:link elements are present -->
+           <xsl:if test="sitemap:urlset/sitemap:url/xhtml:link">
+             <th>[translation-set]</th>
+@@ -119,18 +117,6 @@
+       <td>
+         <xsl:value-of select="sitemap:lastmod"/>
+       </td>
+-      <td>
+-        <xsl:value-of select="sitemap:changefreq"/>
+-      </td>
+-      <td>
+-        <xsl:choose>
+-          <!-- If priority is not defined, show the default value of 0.5 -->
+-          <xsl:when test="sitemap:priority">
+-            <xsl:value-of select="sitemap:priority"/>
+-          </xsl:when>
+-          <xsl:otherwise>0.5</xsl:otherwise>
+-        </xsl:choose>
+-      </td>
+       <!-- Show this column only if xhtml:link elements are present -->
+       <xsl:if test="/sitemap:urlset/sitemap:url/xhtml:link">
+         <td>
