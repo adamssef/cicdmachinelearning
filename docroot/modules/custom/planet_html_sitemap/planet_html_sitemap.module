@@ -70,7 +70,7 @@ function planet_html_sitemap_simple_sitemap_links_alter(&$links, $sitemap) {
       $meta_tags = $metatagManager->tagsFromEntityWithDefaults($node);
       $meta_tags_values = $metatagManager->generateTokenValues($meta_tags, $node);
       $robots = $meta_tags_values['robots'] ?? false;
-      $is_noindex = $robots == "noindex";
+      $is_noindex = str_contains($robots, 'noindex');
 
       if ($is_noindex) {
         unset($links[$key]);
