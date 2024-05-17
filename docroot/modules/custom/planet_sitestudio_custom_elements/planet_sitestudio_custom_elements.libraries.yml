@@ -7,6 +7,8 @@ helperJs:
 accordionDesktop:
   js:
     js/accordionDesktop.js: {}
+  dependencies:
+    - core/drupalSettings
 # Planet - Header
 header:
   js:

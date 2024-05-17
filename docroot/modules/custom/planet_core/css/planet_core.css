@@ -115,6 +115,46 @@ ul.language-switcher__dropdown-menu {
   padding-bottom: 10px
 }
 
+.whychooseplanetbutton.opened-en:before {
+  content: "Close";
+}
+
+.whychooseplanetbutton.opened-it:before {
+  content: "Chiudi";
+}
+
+.whychooseplanetbutton.opened-fr:before {
+  content: "Fermer";
+}
+
+.whychooseplanetbutton.opened-es:before {
+  content: "Cerrar";
+}
+
+.whychooseplanetbutton.opened-de:before {
+  content: "Schließen";
+}
+
+.whychooseplanetbutton.closed-en:before {
+  content: "Find out more";
+}
+
+.whychooseplanetbutton.closed-it:before {
+  content: "Scopri di più";
+}
+
+.whychooseplanetbutton.closed-fr:before {
+  content: "En savoir plus";
+}
+
+.whychooseplanetbutton.closed-es:before {
+  content: "Descubre más";
+}
+
+.whychooseplanetbutton.closed-de:before {
+  content: "Erfahren Sie mehr";
+}
+
 .language-switcher__item {
   display: flex;
   align-items: center;
