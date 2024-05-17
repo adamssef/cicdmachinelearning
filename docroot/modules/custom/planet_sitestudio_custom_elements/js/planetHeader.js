@@ -198,8 +198,8 @@
 
         // Search for utm parameters in url.
         const urlParams = new URLSearchParams(window.location.search);
-        const shortUTMTime = 1
-        const longUTMTime = 360
+        const shortUTMTime = 1 // one hour
+        const longUTMTime = 8760; // one year in hours
         const planetUrls = [
           "weareplanet.com",
           "preprod.weareplanet.com",
@@ -226,22 +226,22 @@
              * Save recent UTMs as cookies.
              * We want to set the cookies only if they don't exist already
              */
-            if (utmSource && !cookieExists('Drupal.visitor.utm_source')) {
+            if (utmSource) {
               createCookie('Drupal.visitor.utm_source', utmSource, shortUTMTime);
             }
-            if (utmMedium && !cookieExists('Drupal.visitor.utm_medium')) {
+            if (utmMedium) {
               createCookie('Drupal.visitor.utm_medium', utmMedium, shortUTMTime);
             }
-            if (utmCampaign && !cookieExists('Drupal.visitor.utm_campaign')) {
+            if (utmCampaign) {
               createCookie('Drupal.visitor.utm_campaign', utmCampaign, shortUTMTime);
             }
-            if (utmContent && !cookieExists('Drupal.visitor.utm_content')) {
+            if (utmContent) {
               createCookie('Drupal.visitor.utm_content', utmContent, shortUTMTime);
             }
-            if (utmTerm && !cookieExists('Drupal.visitor.utm_term')) {
+            if (utmTerm) {
               createCookie('Drupal.visitor.utm_term', utmTerm, shortUTMTime);
             }
-            if (gclid && !cookieExists('Drupal.visitor.gclid')) {
+            if (gclid) {
               createCookie('Drupal.visitor.gclid', gclid, shortUTMTime);
             }
 
@@ -331,16 +331,17 @@
     });
   }
 
-  function createCookie(name, value, days) {
-    if (days) {
-      var date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      var expires = "; expires=" + date.toGMTString();
+  function createCookie(name, value, hours) {
+    if (hours) {
+        var date = new Date();
+        date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+    } else {
+        var expires = "";
     }
-    else var expires = "";
-
+    
     document.cookie = name + "=" + value + expires + "; path=/";
-  }
+}
 
   function cookieExists(name) {
     return !(document.cookie.indexOf(name) === -1)
