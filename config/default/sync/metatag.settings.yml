@@ -25,9 +25,11 @@ entity_type_groups:
       basic: basic
       advanced: advanced
       open_graph: open_graph
+      schema_article: schema_article
     support_locations_contacts:
       basic: basic
       advanced: advanced
+separator: ','
 tag_trim_method: beforeValue
 use_maxlength: true
 tag_trim_maxlength:
