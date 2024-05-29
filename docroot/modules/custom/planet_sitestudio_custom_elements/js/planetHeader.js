@@ -198,7 +198,7 @@
 
         // Search for utm parameters in url.
         const urlParams = new URLSearchParams(window.location.search);
-        const shortUTMTime = 1 // one hour
+        const shortUTMTime = 8760 // one year in hours
         const longUTMTime = 8760; // one year in hours
         const planetUrls = [
           "weareplanet.com",
