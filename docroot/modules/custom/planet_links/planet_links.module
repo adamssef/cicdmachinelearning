@@ -59,7 +59,7 @@ function planet_links_add_target_blank_callback($matches) {
   if (!preg_match('/\btarget=["\']_blank["\']\b/', $attributes)) {
     // Add target="_blank"
     $attributes .= ' target="_blank"';
-    // Replace the original tag with the modified attributes.
+    // Replace the original tag with modified attributes.
     $modifiedTag = '<a ' . $attributes . '>';
 
     return $modifiedTag;
