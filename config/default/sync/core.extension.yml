@@ -94,6 +94,7 @@ module:
   planet_core: 0
   planet_html_sitemap: 0
   planet_language_switcher: 0
+  planet_links: 0
   planet_offices: 0
   planet_sitestudio_custom_elements: 0
   planet_sitewide_fonts: 0
