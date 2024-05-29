@@ -12,7 +12,7 @@ function planet_links_preprocess_field(&$variables) {
   // Check if a page is for node type of resources.
   $node = \Drupal::routeMatch()->getParameter('node');
 
-  if ($node->getType() == "resources") {
+  if ($node && $node->getType() == "resources") {
     if (isset($variables['items'][0]['content']['#template'])) {
       $variables['items'][0]['content']['#template'] = _planet_links_add_target_blank($variables['items'][0]['content']['#template']);
     }
