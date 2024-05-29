@@ -13,7 +13,9 @@ function planet_links_preprocess_field(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if ($node->getType() == "resources") {
-    $variables['items'][0]['content']['#template'] = _planet_links_add_target_blank($variables['items'][0]['content']['#template']);
+    if (isset($variables['items'][0]['content']['#template'])) {
+      $variables['items'][0]['content']['#template'] = _planet_links_add_target_blank($variables['items'][0]['content']['#template']);
+    }
   }
 
 }
@@ -27,7 +29,7 @@ function planet_links_preprocess_field(&$variables) {
  * @return string
  *   The modified HTML content.
  */
-function _planet_links_add_target_blank(string $content) {
+function _planet_links_add_target_blank($content) {
   // Use regex to find <a> tags with href starting with http:// or https://.
   $pattern = '/<a\s+([^>]*href=["\']https?:\/\/[^"\']*["\'][^>]*)>/i';
 
