@@ -9,7 +9,6 @@ label: Content
 tags:
   canonical_url: '[node:url]'
   description: '[node:summary]'
-  robots: noindex
   schema_article_author: 'a:4:{s:5:"@type";s:12:"Organization";s:3:"@id";s:10:"[site:url]";s:4:"name";s:24:"[node:field_author:name]";s:4:"logo";a:2:{s:5:"@type";s:11:"ImageObject";s:3:"url";s:111:"https://www.weareplanet.com/sites/default/files/styles/webp/public/2022-11/Planet%20Logo.png.webp?itok=VWXtEVb7";}}'
   schema_article_date_published: '[node:field_resources_published_time]'
   schema_article_description: '[node:summary]'
