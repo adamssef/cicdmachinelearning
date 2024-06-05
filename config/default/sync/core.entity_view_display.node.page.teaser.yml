@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_basic_page_metatag
     - field.field.node.page.field_layout_canvas
+    - field.field.node.page.field_resources_tags
     - node.type.page
   module:
     - text
@@ -37,5 +38,6 @@ content:
 hidden:
   field_basic_page_metatag: true
   field_layout_canvas: true
+  field_resources_tags: true
   langcode: true
   search_api_excerpt: true
