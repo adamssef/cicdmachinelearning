@@ -17,62 +17,75 @@ categories: {  }
 elements: |-
   layout:
     '#type': webform_flexbox
-    first_column:
+    flexbox:
       '#type': container
-      '#attributes':
-        class:
-          - column-flex
+      '#flex': 6
       first_name:
         '#type': textfield
-        '#title': 'First name*'
+        '#title': 'First name<span>*</span>'
         '#minlength': 2
         '#maxlength': 50
         '#autocomplete': 'off'
         '#required': true
-    second_column:
+    container:
       '#type': container
-      '#attributes':
-        class:
-          - column-flex
+      '#flex': 6
       last_name:
         '#type': textfield
-        '#title': 'Last name*'
+        '#title': 'Last name<span>*</span>'
         '#minlength': 2
         '#maxlength': 50
         '#autocomplete': 'off'
         '#required': true
   email:
     '#type': email
-    '#title': 'Email*'
+    '#title': 'Business e-mail<span>*</span>'
     '#autocomplete': 'off'
     '#required': true
   phone_intl:
     '#type': textfield
-    '#title': 'Phone*'
+    '#title': 'Phone<span>*</span>'
     '#required': true
     '#required_error': 'Phone number is required.'
     '#pattern': '^\+\d{1,4}(\s?\d){1,15}$'
     '#pattern_error': 'The phone number is invalid, please use the prefix of your country (eg. +44 2071234567)'
   company_business_name:
     '#type': textfield
-    '#title': 'Company name*'
+    '#title': 'Company<span>*</span>'
     '#minlength': 2
     '#maxlength': 50
     '#autocomplete': 'off'
     '#required': true
-  type_of_business:
+  seniority:
     '#type': select
-    '#title': 'Company sector*'
+    '#title': Seniority
     '#options':
-      Retail: Retail
-      Hospitality: Hospitality
-      Partners: Partners
+      Owner: Owner
+      C-Level: C-Level
+      Executive: Executive
+      'Vice President': 'Vice President'
+      Director: Director
+      Manager: Manager
+      Assistant: Assistant
       Other: Other
-    '#empty_option': '- select -'
-    '#required': true
+  role:
+    '#type': select
+    '#title': Role
+    '#options':
+      Accounting: Accounting
+      'Customer Success': 'Customer Success'
+      Finance: Finance
+      'Information Technology': 'Information Technology'
+      Legal: Legal
+      Marketing: Marketing
+      Operations: Operations
+      Payments: Payments
+      'Product Development': 'Product Development'
+      'Project Management': 'Project Management'
+      Sales: Sales
   address_country:
     '#type': select
-    '#title': 'Country*'
+    '#title': 'Country<span>*</span>'
     '#options':
       Afghanistan: Afghanistan
       Aguilla: Aguilla
@@ -81,7 +94,7 @@ elements: |-
       Andorra: Andorra
       Angola: Angola
       Anguilla: Anguilla
-      Antigua & Barbuda: Antigua & Barbuda
+      'Antigua & Barbuda': 'Antigua & Barbuda'
       Argentina: Argentina
       Armenia: Armenia
       Aruba: Aruba
@@ -101,47 +114,47 @@ elements: |-
       Bosnia: Bosnia
       Botswana: Botswana
       Brazil: Brazil
-      British Virgin Islands: British Virgin Islands
+      'British Virgin Islands': 'British Virgin Islands'
       Brunei: Brunei
       Bulgaria: Bulgaria
-      Burkina Faso: Burkina Faso
+      'Burkina Faso': 'Burkina Faso'
       Burundi: Burundi
       Cambodia: Cambodia
       Cameroon: Cameroon
       Canada: Canada
-      Canary Islands: Canary Islands
-      Cayman Islands: Cayman Islands
-      Central African Republic: Central African Republic
+      'Canary Islands': 'Canary Islands'
+      'Cayman Islands': 'Cayman Islands'
+      'Central African Republic': 'Central African Republic'
       Chad: Chad
       Chile: Chile
       China: China
       Colombia: Colombia
       Comoros: Comoros
       Congo: Congo
-      Costa Rica: Costa Rica
-      Côte d'Ivoire: Côte d'Ivoire
+      'Costa Rica': 'Costa Rica'
+      "Côte d'Ivoire": "Côte d'Ivoire"
       Croatia: Croatia
       Curacao: Curacao
       Cyprus: Cyprus
       Czechia: Czechia
-      Democratic Republic of Congo: Democratic Republic of Congo
+      'Democratic Republic of Congo': 'Democratic Republic of Congo'
       Denmark: Denmark
       Djibouti: Djibouti
       Dominica: Dominica
-      Dominican Republic: Dominican Republic
+      'Dominican Republic': 'Dominican Republic'
       Ecuador: Ecuador
       Egypt: Egypt
-      El Salvador: El Salvador
-      Equatorial Guinea: Equatorial Guinea
+      'El Salvador': 'El Salvador'
+      'Equatorial Guinea': 'Equatorial Guinea'
       Eritrea: Eritrea
       Estonia: Estonia
-      Eswatini (Swaziland): Eswatini (Swaziland)
+      'Eswatini (Swaziland)': 'Eswatini (Swaziland)'
       Ethiopia: Ethiopia
-      Faroe Islands: Faroe Islands
+      'Faroe Islands': 'Faroe Islands'
       Finland: Finland
       France: France
-      French Polynesia: French Polynesia
-      French West Indies: French West Indies
+      'French Polynesia': 'French Polynesia'
+      'French West Indies': 'French West Indies'
       Gabon: Gabon
       Gambia: Gambia
       Georgia: Georgia
@@ -150,14 +163,14 @@ elements: |-
       Gibraltar: Gibraltar
       Greece: Greece
       Greneda: Grenada
-      Greneda & Carriacou: Grenada & Carriacou
+      'Greneda & Carriacou': 'Grenada & Carriacou'
       Guatemala: Guatemala
       Guinea: Guinea
       Guinea-Bissau: Guinea-Bissau
       Guyana: Guyana
       Herzegovina: Herzegovina
       Honduras: Honduras
-      Hong Kong: Hong Kong
+      'Hong Kong': 'Hong Kong'
       Hungary: Hungary
       Iceland: Iceland
       India: India
@@ -205,50 +218,50 @@ elements: |-
       Myanmar: Myanmar
       Namibia: Namibia
       Netherlands: Netherlands
-      New Zealand: New Zealand
+      'New Zealand': 'New Zealand'
       Nicaragua: Nicaragua
       Niger: Niger
       Nigeria: Nigeria
-      North Macedonia: North Macedonia
+      'North Macedonia': 'North Macedonia'
       Norway: Norway
       Oman: Oman
       Pakistan: Pakistan
-      Palestinian Territories: Palestinian Territories
+      'Palestinian Territories': 'Palestinian Territories'
       Panama: Panama
       Paraguay: Paraguay
       Peru: Peru
       Philippines: Philippines
       Poland: Poland
       Portugal: Portugal
-      Puerto Rico: Puerto Rico
+      'Puerto Rico': 'Puerto Rico'
       Qatar: Qatar
-      Republic of Korea: Republic of Korea
-      Republic of Rwanda: Republic of Rwanda
+      'Republic of Korea': 'Republic of Korea'
+      'Republic of Rwanda': 'Republic of Rwanda'
       Réunion: Réunion
       Romania: Romania
       Russia: Russia
       Saba: Saba
-      San Marino: San Marino
-      Sao Tome and Principe: Sao Tome and Principe
-      Saudi Arabia: Saudi Arabia
+      'San Marino': 'San Marino'
+      'Sao Tome and Principe': 'Sao Tome and Principe'
+      'Saudi Arabia': 'Saudi Arabia'
       Senegal: Senegal
       Serbia: Serbia
       Seychelles: Seychelles
-      Sierra Leone: Sierra Leone
+      'Sierra Leone': 'Sierra Leone'
       Singapore: Singapore
-      Sint Maarten: Sint Maarten
-      Slovak Republic: Slovak Republic
+      'Sint Maarten': 'Sint Maarten'
+      'Slovak Republic': 'Slovak Republic'
       Slovenia: Slovenia
       Somalia: Somalia
-      South Africa: South Africa
-      South Sudan: South Sudan
+      'South Africa': 'South Africa'
+      'South Sudan': 'South Sudan'
       Spain: Spain
-      Sri Lanka: Sri Lanka
-      St. Kitts & Nevis: St. Kitts & Nevis
-      St. Lucia: St. Lucia
-      St. Marteen: St. Marteen
-      St. Vincent: St. Vincent
-      St. Vincent and the Grenedines: St. Vincent and the Grenadines
+      'Sri Lanka': 'Sri Lanka'
+      'St. Kitts & Nevis': 'St. Kitts & Nevis'
+      'St. Lucia': 'St. Lucia'
+      'St. Marteen': 'St. Marteen'
+      'St. Vincent': 'St. Vincent'
+      'St. Vincent and the Grenedines': 'St. Vincent and the Grenadines'
       Sudan: Sudan
       Suriname: Suriname
       Sweden: Sweden
@@ -258,31 +271,90 @@ elements: |-
       Tajikistan: Tajikistan
       Tanzania: Tanzania
       Thailand: Thailand
-      The Bahamas: The Bahamas
+      'The Bahamas': 'The Bahamas'
       Togo: Togo
-      Trinidad and Tobago: Trinidad and Tobago
+      'Trinidad and Tobago': 'Trinidad and Tobago'
       Tunisia: Tunisia
       Turkey: Turkey
       Turkmenistan: Turkmenistan
-      Turks & Caicos: Turks & Caicos
-      Turks and Caicos Islands: Turks and Caicos Islands
+      'Turks & Caicos': 'Turks & Caicos'
+      'Turks and Caicos Islands': 'Turks and Caicos Islands'
       Uganda: Uganda
       Ukraine: Ukraine
-      United Arab Emirates: United Arab Emirates
-      United Kingdom: United Kingdom
-      United States: United States
+      'United Arab Emirates': 'United Arab Emirates'
+      'United Kingdom': 'United Kingdom'
+      'United States': 'United States'
       Uruguay: Uruguay
       Uzbekistan: Uzbekistan
       Venezuela: Venezuela
       Vietnam: Vietnam
-      Western Sahara: Western Sahara
+      'Western Sahara': 'Western Sahara'
       Yemen: Yemen
       Zambia: Zambia
       Zimbabwe: Zimbabwe
     '#required': true
+  company_sector:
+    '#type': select
+    '#title': "I'm looking for<span>*</span>"
+    '#options':
+      Hospitality: 'Hospitality solutions and products'
+      Retail: 'Retail solutions and products'
+      Partners: 'Information about partnering'
+    '#required': true
+    '#required_error': 'This field is required'
+    '#attributes':
+      class:
+        - company-sector-field
+  what_would_you_like_help_with:
+    '#type': select
+    '#title': 'What would you like help with?<span>*</span>'
+    '#options':
+      'Property Management Solutions': 'I want to effortlessly manage my hotel operations'
+      'Networking solutions': 'My hotel needs networking solutions'
+      'Accept Payments': 'I want to accept payments'
+      'Tax Free Solutions': "I'd like to provide Tax Free shopping"
+      'Order Management Systems': 'Efficiently manage any online order'
+      'PCI Proxy': 'Tokenise sensitive card data'
+    '#required': true
+    '#required_error': 'This field is required'
+    '#states':
+      invisible:
+        ':input[name="company_sector"]':
+          value: Partners
+    '#attributes':
+      class:
+        - company-sector-deep-field
+  payments_product_of_interest:
+    '#type': select
+    '#title': 'Choose a payments solution<span>*</span>'
+    '#options':
+      'Online payments': 'Online payments'
+      'In-person payments': 'In-person payments'
+      'Online and In-Person payments': 'Online and In-Person payments'
+      'Currency Conversion': 'Currency Conversion'
+      'PCI Proxy': 'PCI Proxy '
+    '#required': true
+    '#required_error': 'This field is required'
+    '#states':
+      visible:
+        ':input[name="what_would_you_like_help_with"]':
+          value: 'Accept Payments'
+  number_of_employees:
+    '#type': select
+    '#title': 'How many employees are at your company'
+    '#options':
+      'Self Employed': 'Self Employed'
+      1-10: 1-10
+      '11 - 50': 11-50
+      '50 - 200': 50-200
+      '200 - 500': 200-500
+      '500 - 1000': 500-1000
+      '1000 - 5000': 1000-5000
+      '5001 - 10,000': '5001-10,000'
+      '10,000 +': '10,000+'
   textarea:
     '#type': textarea
-    '#title': 'About your project*'
+    '#title': 'About your project<span>*</span>'
     '#maxlength': 250
     '#placeholder': 'Tell us more about your project'
     '#autocomplete': 'off'
@@ -378,7 +450,45 @@ elements: |-
     '#title': orig_lp
     '#access': false
 css: ''
-javascript: ''
+javascript: |-
+  /** This code hides/displays different options of the "What would you like help with?" field based on the I'm looking for" field value. */
+
+  document.querySelector('.company-sector-field').addEventListener('change', function () {
+      const val = this.value;
+      const possibleValues = ["Hospitality", "Retail", "Partners"];
+      const hospitalityValues = ["Property Management Solutions", "Networking solutions", "Accept Payments"];
+      const retailValues = ["Tax Free Solutions", "Order Management Systems", "Accept Payments"];
+
+      if (possibleValues.includes(val)) {
+          const companySectorDeep = document.querySelector(".company-sector-deep-field");
+          const options = companySectorDeep.querySelectorAll('option');
+
+          options.forEach(option => {
+              option.style.display = "none";
+          });
+
+          switch (val) {
+              case 'Hospitality':
+                  hospitalityValues.forEach(option => {
+                      const targetOption = companySectorDeep.querySelector('option[value="' + option + '"]');
+                      if (targetOption) {
+                          targetOption.style.display = "block";
+                      }
+                  });
+                  break;
+              case 'Retail':
+                  retailValues.forEach(option => {
+                      const targetOption = companySectorDeep.querySelector('option[value="' + option + '"]');
+                      if (targetOption) {
+                          targetOption.style.display = "block";
+                      }
+                  });
+                  break;
+              default:
+                  // no action!
+          }
+      }
+  });
 settings:
   ajax: false
   ajax_scroll_top: form
@@ -570,20 +680,25 @@ handlers:
     conditions: {  }
     weight: 0
     settings:
-      pardot_url: 'https://info.weareplanet.com/l/975513/2022-09-07/26d2t'
+      pardot_url: 'https://info.weareplanet.com/l/975513/2024-02-28/5dlqb'
       pardot_fields_mapping: |-
         first_name|First Name
         last_name|Last Name
+        email|email
         phone_intl|Phone
         address_country|Country
         company_business_name|Company
-        type_of_business|Company Sector
+        company_sector|Company Sector
+        seniority|Seniority
+        what_would_you_like_help_with|Use_case
+        number_of_employees|Employee_Range
+        payments_product_of_interest|Product_of_Interest
+        role|Lead Role
         textarea|Message
         single_opt_in|Opt in
         lead_source|Lead Source
         website_language|Website language
         website_origin_page|Website origin page
-        email|email
         utm_source|utm_source
         utm_medium|utm_medium
         utm_campaign|utm_campaign
@@ -598,3 +713,4 @@ handlers:
         orig_utm_content|orig_utm_content
         orig_utm_term|orig_utm_term
 variants: {  }
+

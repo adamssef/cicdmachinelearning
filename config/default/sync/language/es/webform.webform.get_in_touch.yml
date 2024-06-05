@@ -1,33 +1,77 @@
 title: 'Get in touch (es)'
 elements: |
   first_name:
-    '#title': 'Nombre*'
+    '#title': 'Nombre<span>*</span>'
   last_name:
-    '#title': 'Apellido*'
+    '#title': 'Apellidos<span>*</span>'
+  email:
+    '#title': 'E-mail de trabajo<span>*</span>'
   phone_intl:
-    '#title': 'Teléfono*'
-    '#phone__title': Teléfono
+    '#title': 'Teléfono<span>*</span>'
+    '#required_error': 'El número de teléfono es obligatorio.'
+    '#pattern_error': 'El número de teléfono no es válido, por favor utiliza el prefijo de tu país (ej. +34 612 345 678)'
   company_business_name:
-    '#title': 'Empresa*'
-  type_of_business:
-    '#title': 'Sector*'
+    '#title': 'Empresa<span>*</span>'
+  seniority:
+    '#title': Nivel
     '#options':
-      Other: Otro
+      Owner: Propietario
+      Executive: Ejecutivo
+      'Vice President': Vicepresidente
+      Manager: Gerente
+      Assistant: Asistente
+      Other: Otros
+  role:
+    '#title': Puesto
+    '#options':
+      Accounting: Contabilidad
+      'Customer Success': Clientes
+      Finance: Finanzas
+      'Information Technology': IT
+      Operations: Operaciones
+      Payments: Pagos
+      'Product Development': 'Desarrollo de producto'
+      'Project Management': 'Gestión de proyectos'
+      Sales: Ventas
   address_country:
-    '#title': 'País*'
-    '#country__title': 'País*'
-    '#address__title': Dirección
-    '#address_2__title': 'Dirección 2'
-    '#city__title': Ciudad
-    '#state_province__title': Provincia
-    '#postal_code__title': 'Código Postal'
-  single_opt_in:
-    '#title': 'Recibir comunicaciones de Planet'
-    '#description': 'Marque esta casilla para dar su consentimiento para recibir comunicaciones sobre los productos, eventos, formaciones, informes y servicios de Planet'
+    '#title': 'País<span>*</span>'
+  company_sector:
+    '#title': 'Estoy buscando<span>*</span>'
+    '#options':
+      Hospitality: 'Soluciones y productos para hostelería'
+      Retail: 'Soluciones y productos para minoristas'
+      Partners: 'Información sobre partners'
+    '#required_error': 'Campo obligatorio'
+  what_would_you_like_help_with:
+    '#title': '¿En qué necesitas ayuda?<span>*</span>'
+    '#options':
+      'Property Management Solutions': 'Quiero gestionar sin esfuerzo las operaciones de mi hotel'
+      'Networking solutions': 'Mi hotel necesita soluciones de red'
+      'Accept Payments': 'Quiero aceptar pagos'
+      'Tax Free Solutions': 'Quiero ofrecer compras libres de impuestos'
+      'Order Management Systems': 'Gestionar eficientemente cualquier pedido online'
+      'PCI Proxy': 'Tokenizar los datos sensibles de las tarjetas'
+    '#required_error': 'Campo obligatorio'
+  payments_product_of_interest:
+    '#title': 'Elige una solución de pago<span>*</span>'
+    '#options':
+      'Online payments': 'Pagos en línea'
+      'In-person payments': 'Pagos en persona'
+      'Online and In-Person payments': 'Pagos en línea y en persona'
+      'Currency Conversion': 'Conversión de divisas'
+      'PCI Proxy': 'PCI Proxy '
+    '#required_error': 'Campo obligatorio'
+  number_of_employees:
+    '#title': '¿Cuántos empleados tiene tu empresa?'
+    '#options':
+      'Self Employed': Autónomo
+      '10,000 +': '10,000 + '
   textarea:
-    '#title': 'Su consulta*'
+    '#title': 'Su consulta*<span>*</span>'
     '#placeholder': '¿De qué trata su consulta?'
+  single_opt_in:
+    '#description': '<p>Marque esta casilla para dar su consentimiento para recibir comunicaciones sobre los productos, eventos, formaciones, informes y servicios de Planet</p>'
   markup:
-    '#markup': '<p>Al enviar este formulario, acepta los t&eacute;rminos de nuestra <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Pol&iacute;tica de privacidad</a>.</p>'
+    '#markup': '<p>Al enviar este formulario, acepta los términos de nuestra <a href="https://www.weareplanet.com/privacy-policy" data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" rel="noopener noreferrer" tabindex="-1" target="_blank">Política de privacidad</a> .</p>'
   actions:
     '#submit__label': Enviar
