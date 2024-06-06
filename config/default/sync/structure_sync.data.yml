@@ -1,884 +1,134 @@
 taxonomies:
-  sitemap_pages:
+  case_studies_industry:
     -
-      vid: sitemap_pages
-      tid: '2605'
+      vid: case_studies_industry
+      tid: '2900'
       langcode: en
-      name: About
-      description__value: null
-      description__format: null
-      weight: '3'
-      parent: '2597'
-      uuid: ce21f8ef-5fd7-4aa6-a30f-8c2f5389c8ce
-      field_is_label: {  }
-      field_sitemap_page_link: {  }
-    -
-      vid: sitemap_pages
-      tid: '2602'
-      langcode: en
-      name: Blog
-      description__value: null
-      description__format: null
-      weight: '1'
-      parent: '2596'
-      uuid: 532925d7-510a-479e-8208-25840f71d76a
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/blog'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2631'
-      langcode: en
-      name: 'Card Machines and Terminals'
-      description__value: null
-      description__format: null
-      weight: '8'
-      parent: '2610'
-      uuid: 4c9bd4e3-d7e3-44b3-b89e-9cd3767e9ab5
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/card-machines-terminals'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2604'
-      langcode: en
-      name: Careers
-      description__value: null
-      description__format: null
-      weight: '2'
-      parent: '2597'
-      uuid: 80daf6c8-d5c3-453d-ad88-c549810653b5
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/about'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2600'
-      langcode: en
-      name: 'Case Studies'
-      description__value: null
-      description__format: null
-      weight: '2'
-      parent: '2596'
-      uuid: ec9198cf-792d-4739-9e34-a1d97b2735d5
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/case-studies'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2627'
-      langcode: en
-      name: 'Click and Collect'
-      description__value: null
-      description__format: null
-      weight: '2'
-      parent: '2609'
-      uuid: eaa937f1-c8e3-4ff5-8252-c8e11f432b6d
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/click-and-collect'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2606'
-      langcode: en
-      name: Contact
-      description__value: null
-      description__format: null
-      weight: '5'
-      parent: '2597'
-      uuid: 8c124238-4382-4884-aa42-61f12556fffb
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/contact'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2644'
-      langcode: en
-      name: 'Contact Sales'
-      description__value: null
-      description__format: null
-      weight: '4'
-      parent: '2597'
-      uuid: 9b33d31b-f4f6-4f2c-8136-478e5fa79847
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/contact/sales'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2647'
-      langcode: en
-      name: 'Cookie Policy'
-      description__value: null
-      description__format: null
-      weight: '8'
-      parent: '2597'
-      uuid: 9d2ca1dd-74ea-4775-af9a-a868fbd6ef38
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/cookie-policy'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2632'
-      langcode: en
-      name: 'Countertop Payment Terminals'
-      description__value: null
-      description__format: null
-      weight: '9'
-      parent: '2610'
-      uuid: bd121937-dc32-4006-ba60-b57327ea18b1
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/terminals-countertop'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2616'
-      langcode: en
-      name: Dashboard
-      description__value: null
-      description__format: null
-      weight: '7'
-      parent: '2608'
-      uuid: 988f3e5b-6377-4872-b735-c4f0d3eafb55
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/dashboard'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2621'
-      langcode: en
-      name: DCC
-      description__value: null
-      description__format: null
-      weight: '5'
-      parent: '2610'
-      uuid: c2c4bdab-0fb4-413e-82e6-7b9b9992cd47
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/dcc'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2641'
-      langcode: en
-      name: 'Digital Signage'
-      description__value: null
-      description__format: null
-      weight: '8'
-      parent: '2608'
-      uuid: 580d90de-45a2-4443-8d5e-afba6c7abca7
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/digital-signage'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2643'
-      langcode: en
-      name: 'Event Connectivity Manager'
-      description__value: null
-      description__format: null
-      weight: '9'
-      parent: '2608'
-      uuid: f931b50a-041a-4b0f-b538-aa32a737fe9f
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/event-connectivity-manager'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2615'
-      langcode: en
-      name: 'Gift Cards'
-      description__value: null
-      description__format: null
-      weight: '6'
-      parent: '2608'
-      uuid: 0ed6b07e-1c2d-4219-9582-d34633ce6a5b
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/gift-cards'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2599'
-      langcode: en
-      name: 'Guides & Reports'
+      name: E-commerce
       description__value: null
       description__format: null
       weight: '0'
-      parent: '2596'
-      uuid: 6b282049-619b-4af7-9b0e-64f45ffd1396
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/ebooks'
-          title: ''
-          options: {  }
+      parent: '0'
+      uuid: 89a0d843-73a2-4c7f-ac2c-ade0f626ad04
     -
-      vid: sitemap_pages
-      tid: '2608'
+      vid: case_studies_industry
+      tid: '2901'
       langcode: en
       name: Hospitality
       description__value: null
       description__format: null
-      weight: '1'
-      parent: '2598'
-      uuid: fdd40a1a-610f-4220-963b-ebdfa26327bb
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/hospitality'
-          title: ''
-          options: {  }
+      weight: '0'
+      parent: '0'
+      uuid: 4f543bd4-2353-4d1e-80b7-52b6c94a770f
     -
-      vid: sitemap_pages
-      tid: '2614'
+      vid: case_studies_industry
+      tid: '2902'
       langcode: en
-      name: 'Hotel Booking Engine'
-      description__value: null
-      description__format: null
-      weight: '3'
-      parent: '2608'
-      uuid: b7a7c57f-1837-410b-a0de-803c4d611f63
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/hotel-booking-engine'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2613'
-      langcode: en
-      name: 'Hotel Networking'
-      description__value: null
-      description__format: null
-      weight: '2'
-      parent: '2608'
-      uuid: 467f3abe-d8e1-4123-8066-385379ff7695
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/hotel-networking'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2635'
-      langcode: en
-      name: 'Hotel Parking Payments'
-      description__value: null
-      description__format: null
-      weight: '12'
-      parent: '2610'
-      uuid: 872e8ef0-a81d-4e97-bc5c-71da2abddeb1
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/lp/hotel-parking-payments'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2612'
-      langcode: en
-      name: 'Hotel PMS'
+      name: Retail
       description__value: null
       description__format: null
       weight: '0'
-      parent: '2608'
-      uuid: f02ad013-0573-44e3-ad7a-7e3862a25c3b
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/hotel-pms'
-          title: ''
-          options: {  }
+      parent: '0'
+      uuid: 978aa8a7-12a8-4e5a-9c5c-9bbd056d0eb3
     -
-      vid: sitemap_pages
-      tid: '2620'
+      vid: case_studies_industry
+      tid: '2903'
       langcode: en
-      name: 'In-person Payments'
+      name: 'Tax free'
       description__value: null
       description__format: null
-      weight: '3'
-      parent: '2610'
-      uuid: e2d6320a-e4e5-4b91-afc5-5ca5de930a03
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/in-person-payments'
-          title: ''
-          options: {  }
+      weight: '0'
+      parent: '0'
+      uuid: bcea8581-ab38-4f7b-87c1-864e1d482cfd
+  case_studies_products:
     -
-      vid: sitemap_pages
-      tid: '2642'
+      vid: case_studies_products
+      tid: '2904'
       langcode: en
-      name: 'Integrated EV Charging Payment Solution'
+      name: 'Currency conversion'
       description__value: null
       description__format: null
-      weight: '1'
-      parent: '2608'
-      uuid: d0c85e15-4b6d-4bff-a912-6a8c6b138a2a
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/integrated-ev-charging-payment-solution'
-          title: ''
-          options: {  }
+      weight: '0'
+      parent: '0'
+      uuid: a5ae2b97-bcc3-4cfd-86a2-4d7f90b1331d
     -
-      vid: sitemap_pages
-      tid: '2601'
+      vid: case_studies_products
+      tid: '2905'
       langcode: en
-      name: 'Intelligence Report'
+      name: E-commerce
       description__value: null
       description__format: null
-      weight: '3'
-      parent: '2596'
-      uuid: eb7995fb-c38d-4487-9c66-1c93445b8c71
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/planet-intelligence-report'
-          title: ''
-          options: {  }
+      weight: '0'
+      parent: '0'
+      uuid: 261657ab-feda-4f90-b347-1672e1630f52
     -
-      vid: sitemap_pages
-      tid: '2639'
+      vid: case_studies_products
+      tid: '2906'
       langcode: en
-      name: 'Interactive TV'
+      name: 'Hotel management system'
       description__value: null
       description__format: null
-      weight: '4'
-      parent: '2608'
-      uuid: 42f83e54-c083-4039-a35f-767ac86237bd
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/interactive-tv-hotels'
-          title: ''
-          options: {  }
+      weight: '0'
+      parent: '0'
+      uuid: 2bac28cb-6667-4824-b226-6d11d0e0c7cb
     -
-      vid: sitemap_pages
-      tid: '2640'
-      langcode: en
-      name: 'Internet Services'
-      description__value: null
-      description__format: null
-      weight: '5'
-      parent: '2608'
-      uuid: 4d940c4d-aedf-4089-86b3-96f1f8a8dcbd
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/internet-services'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2648'
-      langcode: en
-      name: 'Marketing Privacy Notice - B2B'
-      description__value: null
-      description__format: null
-      weight: '9'
-      parent: '2597'
-      uuid: 43b900de-cdd1-4902-9927-d8d49b7e0909
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/marketing-privacy-notice-b2b'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2629'
-      langcode: en
-      name: 'Merchant Acquiring'
-      description__value: null
-      description__format: null
-      weight: '1'
-      parent: '2610'
-      uuid: bd981e29-6072-48de-9cbf-bdfb53ad3948
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/merchant-acquiring'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2633'
-      langcode: en
-      name: 'Mobile Payment Terminals'
-      description__value: null
-      description__format: null
-      weight: '10'
-      parent: '2610'
-      uuid: 51897db0-1fea-475c-bffc-4cdecf1b3299
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/mobile-payment-terminals'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2645'
-      langcode: en
-      name: 'Office Locations'
-      description__value: null
-      description__format: null
-      weight: '6'
-      parent: '2597'
-      uuid: f09921ae-233f-423e-8af5-3f57802cdf8b
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/office-locations'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2619'
-      langcode: en
-      name: 'Online Payments'
-      description__value: null
-      description__format: null
-      weight: '2'
-      parent: '2610'
-      uuid: 456bc37d-0183-4d2f-b816-61a5ef13ff48
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/online-payments'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2626'
-      langcode: en
-      name: 'Order Management System'
-      description__value: null
-      description__format: null
-      weight: '1'
-      parent: '2609'
-      uuid: 031427e4-fdde-4f20-862c-60c211f9bb98
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/order-management-system'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2603'
-      langcode: en
-      name: Partnerships
-      description__value: null
-      description__format: null
-      weight: '1'
-      parent: '2597'
-      uuid: 707badc0-dd52-4fc0-9e9d-b8411cf9cc1d
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/partners'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2637'
-      langcode: en
-      name: 'Pay by Link'
-      description__value: null
-      description__format: null
-      weight: '14'
-      parent: '2610'
-      uuid: fb73d567-473c-42ac-9b57-d56f6fbb56a4
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/pay-by-link'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2610'
+      vid: case_studies_products
+      tid: '2907'
       langcode: en
       name: Payments
       description__value: null
       description__format: null
       weight: '0'
-      parent: '2598'
-      uuid: 590e33ed-2f5d-4d58-94be-925e143aa262
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/payments'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2622'
-      langcode: en
-      name: 'PCI Proxy'
-      description__value: null
-      description__format: null
-      weight: '4'
-      parent: '2610'
-      uuid: 0c155e76-7ad9-4857-b71d-3755cd36706b
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/pci-proxy'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2646'
-      langcode: en
-      name: 'Privacy Policy'
-      description__value: null
-      description__format: null
-      weight: '7'
-      parent: '2597'
-      uuid: 286815ea-934f-4c14-a92d-50c2e0c5da80
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/privacy-policy'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2598'
-      langcode: en
-      name: 'Products and Services'
-      description__value: null
-      description__format: null
-      weight: '16'
       parent: '0'
-      uuid: 341983d2-ddd4-4d4b-a1e6-fc51f39c487c
-      field_is_label:
-        -
-          value: '1'
-      field_sitemap_page_link: {  }
+      uuid: 8c697ec6-f706-48bc-8d92-cac464c298ab
     -
-      vid: sitemap_pages
-      tid: '2649'
-      langcode: en
-      name: 'Protel Imprint'
-      description__value: null
-      description__format: null
-      weight: '10'
-      parent: '2597'
-      uuid: 90a71031-6494-47ca-9d98-70134e815cd4
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/protel-imprint'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2636'
-      langcode: en
-      name: 'Reconciliation Service'
-      description__value: null
-      description__format: null
-      weight: '13'
-      parent: '2610'
-      uuid: cafbdd99-aee2-4319-8000-ab5374a2a4e4
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/reconciliation'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2596'
-      langcode: en
-      name: Resources
-      description__value: null
-      description__format: null
-      weight: '29'
-      parent: '0'
-      uuid: fe141312-9ee0-47f2-8933-3a5ded5f7a09
-      field_is_label:
-        -
-          value: '1'
-      field_sitemap_page_link: {  }
-    -
-      vid: sitemap_pages
-      tid: '2609'
+      vid: case_studies_products
+      tid: '2908'
       langcode: en
       name: Retail
       description__value: null
       description__format: null
-      weight: '2'
-      parent: '2598'
-      uuid: c8710442-316c-4088-8cdc-8db63203397d
-      field_is_label:
-        -
-          value: '1'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/retail'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2623'
-      langcode: en
-      name: 'Security Compliance Fraud'
-      description__value: null
-      description__format: null
-      weight: '7'
-      parent: '2610'
-      uuid: 309b9dfc-5e7f-4c6f-9ab0-7abda82ee997
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/security-compliance-fraud'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2628'
-      langcode: en
-      name: 'Single Payment Platform'
-      description__value: null
-      description__format: null
       weight: '0'
-      parent: '2610'
-      uuid: 5f49fddd-fcc0-4f73-b826-e2fcc670fdf6
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/single-payment-platform'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2607'
-      langcode: en
-      name: Support
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '2597'
-      uuid: 16b7ceb2-855a-4a8d-b142-a7052fee4312
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/support'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2638'
-      langcode: en
-      name: Tokenisation
-      description__value: null
-      description__format: null
-      weight: '15'
-      parent: '2610'
-      uuid: 4a9d0c9d-7780-412a-a821-af2b55b32612
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/tokenisation'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2634'
-      langcode: en
-      name: 'Unattended Terminals'
-      description__value: null
-      description__format: null
-      weight: '11'
-      parent: '2610'
-      uuid: 1fce29da-03ad-46dc-8c57-cee0096bfc5b
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/unattended-terminals'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2625'
-      langcode: en
-      name: 'Unified Commerce'
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '2609'
-      uuid: 77723077-1508-49ff-8043-ca15c206783b
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/unified-commerce'
-          title: ''
-          options: {  }
-    -
-      vid: sitemap_pages
-      tid: '2597'
-      langcode: en
-      name: 'Useful Links'
-      description__value: null
-      description__format: null
-      weight: '35'
       parent: '0'
-      uuid: 32caca16-e34e-4ae0-a7c7-ac41764d8777
-      field_is_label:
-        -
-          value: '1'
-      field_sitemap_page_link: {  }
+      uuid: cd94864a-6210-4e31-9f6e-95bf23f5c3a2
+  company_size:
     -
-      vid: sitemap_pages
-      tid: '2630'
+      vid: company_size
+      tid: '2896'
       langcode: en
-      name: 'VAT Refund'
+      name: 'Global organizations'
       description__value: null
       description__format: null
-      weight: '6'
-      parent: '2610'
-      uuid: 81ea74a4-e9d4-4097-b11b-0d976bc3da33
-      field_is_label:
-        -
-          value: '0'
-      field_sitemap_page_link:
-        -
-          uri: 'internal:/vat-refund'
-          title: ''
-          options: {  }
+      weight: '0'
+      parent: '0'
+      uuid: e2f25ba6-6090-4232-9955-e067f0d836c8
+    -
+      vid: company_size
+      tid: '2897'
+      langcode: en
+      name: 'Large enterprises'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b09ab86a-1e28-4669-baaf-1e8ad76aa453
+    -
+      vid: company_size
+      tid: '2898'
+      langcode: en
+      name: 'Small and medium enterprises'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d1232d06-a5eb-4433-933e-4f2bf6b0dc5c
+    -
+      vid: company_size
+      tid: '2899'
+      langcode: en
+      name: Startups
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3a565efe-156a-43c8-a350-1f55fc02eb92
