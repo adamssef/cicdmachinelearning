@@ -1,0 +1,24 @@
+uuid: d14fa394-e7e4-41b9-8db8-4b13ed734aa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recommendation_text
+    - paragraphs.paragraphs_type.customer_recommendation_quote
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.customer_recommendation_quote.field_recommendation_text
+field_name: field_recommendation_text
+entity_type: paragraph
+bundle: customer_recommendation_quote
+label: "Recommendation's text"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

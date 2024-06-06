@@ -1,0 +1,27 @@
+uuid: 6eefb6bc-a893-401d-b9f2-00cc74430a48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color_of_the_component
+    - paragraphs.paragraphs_type.grow_business_with_planet
+  module:
+    - options
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.grow_business_with_planet.field_color_of_the_component
+field_name: field_color_of_the_component
+entity_type: paragraph
+bundle: grow_business_with_planet
+label: 'Color of the component'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: black
+default_value_callback: ''
+settings: {  }
+field_type: list_string

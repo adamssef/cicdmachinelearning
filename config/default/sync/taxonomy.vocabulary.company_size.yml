@@ -1,0 +1,8 @@
+uuid: 9455aab4-30d8-4136-b0dd-53a8effca67b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Company size'
+vid: company_size
+description: ''
+weight: 0

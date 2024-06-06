@@ -1,0 +1,30 @@
+uuid: 84b55ffd-d325-4d0c-8cef-f6e20f70bc4c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_quote_version_list
+field_name: field_quote_version_list
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: small_picture_and_quote
+      label: 'Small picture and quote'
+    -
+      value: large_picture_and_quote
+      label: 'Large picture and quote'
+    -
+      value: quote_without_picture
+      label: 'Quote without picture'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

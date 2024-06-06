@@ -3,38 +3,73 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.case_studies.field_at_a_glance
     - field.field.node.case_studies.field_basic_page_metatag
+    - field.field.node.case_studies.field_case_study_result
     - field.field.node.case_studies.field_challenge_solution_text
     - field.field.node.case_studies.field_challenge_solution_title
     - field.field.node.case_studies.field_challenge_text
     - field.field.node.case_studies.field_challenge_title
     - field.field.node.case_studies.field_challenge_video
+    - field.field.node.case_studies.field_company_link
+    - field.field.node.case_studies.field_company_name
     - field.field.node.case_studies.field_company_sector
+    - field.field.node.case_studies.field_company_size
+    - field.field.node.case_studies.field_company_size_in_numbers
+    - field.field.node.case_studies.field_grow_business_with_planet
+    - field.field.node.case_studies.field_headquarter_city
+    - field.field.node.case_studies.field_headquarter_country
+    - field.field.node.case_studies.field_industry_type
     - field.field.node.case_studies.field_layout_canvas
+    - field.field.node.case_studies.field_layout_canvas_2
+    - field.field.node.case_studies.field_layout_canvas_3
     - field.field.node.case_studies.field_logo_media
     - field.field.node.case_studies.field_main_image_media
+    - field.field.node.case_studies.field_metrics
     - field.field.node.case_studies.field_pre_heading
+    - field.field.node.case_studies.field_product_type
     - field.field.node.case_studies.field_promoted_case_study
+    - field.field.node.case_studies.field_recommendation
+    - field.field.node.case_studies.field_solution_text_image
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
+    - field.field.node.case_studies.field_video_media
     - field.field.node.case_studies.field_video_subtext
     - field.field.node.case_studies.field_video_thumb
     - node.type.case_studies
   module:
     - cohesion_elements
+    - entity_reference_revisions
+    - link
     - metatag
+    - options
+    - text
     - user
 id: node.case_studies.default
 targetEntityType: node
 bundle: case_studies
 mode: default
 content:
+  field_at_a_glance:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 20
+    region: content
   field_basic_page_metatag:
     type: metatag_empty_formatter
     label: above
     settings: {  }
     third_party_settings: {  }
     weight: 19
+    region: content
+  field_case_study_result:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 30
     region: content
   field_challenge_solution_text:
     type: basic_string
@@ -73,6 +108,26 @@ content:
     third_party_settings: {  }
     weight: 14
     region: content
+  field_company_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_company_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 22
+    region: content
   field_company_sector:
     type: entity_reference_label
     label: above
@@ -80,6 +135,54 @@ content:
       link: true
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_company_size:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_company_size_in_numbers:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_grow_business_with_planet:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 25
+    region: content
+  field_headquarter_city:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 35
+    region: content
+  field_headquarter_country:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 36
+    region: content
+  field_industry_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 34
     region: content
   field_layout_canvas:
     type: cohesion_entity_reference_revisions_entity_view
@@ -89,6 +192,24 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_layout_canvas_2:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 27
+    region: content
+  field_layout_canvas_3:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 28
     region: content
   field_logo_media:
     type: entity_reference_entity_view
@@ -108,6 +229,15 @@ content:
     third_party_settings: {  }
     weight: 16
     region: content
+  field_metrics:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 31
+    region: content
   field_pre_heading:
     type: string
     label: above
@@ -115,6 +245,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_product_type:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 33
     region: content
   field_promoted_case_study:
     type: boolean
@@ -125,6 +264,24 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_recommendation:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 32
+    region: content
+  field_solution_text_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 26
     region: content
   field_summary:
     type: basic_string
@@ -140,6 +297,15 @@ content:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_video_media:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 29
     region: content
   field_video_subtext:
     type: string

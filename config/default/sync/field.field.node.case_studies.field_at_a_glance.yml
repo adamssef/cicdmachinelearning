@@ -1,0 +1,28 @@
+uuid: 25b933c8-32b8-480a-8ce1-76dc455b8631
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_at_a_glance
+    - filter.format.cohesion
+    - node.type.case_studies
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.case_studies.field_at_a_glance
+field_name: field_at_a_glance
+entity_type: node
+bundle: case_studies
+label: 'At a glance (bullet points ideally)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - cohesion
+field_type: text_long

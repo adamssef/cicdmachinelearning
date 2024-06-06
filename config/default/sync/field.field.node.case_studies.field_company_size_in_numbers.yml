@@ -1,0 +1,25 @@
+uuid: 56d1669b-aba3-4aa9-92c0-500293876f31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_size_in_numbers
+    - node.type.case_studies
+  module:
+    - options
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.case_studies.field_company_size_in_numbers
+field_name: field_company_size_in_numbers
+entity_type: node
+bundle: case_studies
+label: 'Company Size In Numbers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

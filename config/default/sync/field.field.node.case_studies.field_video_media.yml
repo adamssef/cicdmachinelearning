@@ -1,0 +1,34 @@
+uuid: 92409a7c-400a-4f0c-b83a-023faaf5dbe0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_media
+    - media.type.remote_video
+    - node.type.case_studies
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.case_studies.field_video_media
+field_name: field_video_media
+entity_type: node
+bundle: case_studies
+label: 'YouTube video'
+description: "Please note that currently  youtube videos are supported.\r\n\r\nPlease enter regular youtube link like:\r\n\r\nhttps://www.youtube.com/watch?v=4-a5AEkJqTc\r\n\r\nThe most important part is \"4-a5AEkJqTc\"\r\n\r\nOn the backend we change the output to youtube-embed-friendly URL like: https://www.youtube.com/embed/4-a5AEkJqTc. Only links of that structure are ok for youtube to be displayed on non-Youtube pages."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_video: remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

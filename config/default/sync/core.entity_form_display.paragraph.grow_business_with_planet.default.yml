@@ -1,0 +1,28 @@
+uuid: e91c5e8c-f89d-4403-abeb-1a9b36c43ce9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.grow_business_with_planet.field_color_of_the_component
+    - field.field.paragraph.grow_business_with_planet.field_size_of_the_component
+    - paragraphs.paragraphs_type.grow_business_with_planet
+id: paragraph.grow_business_with_planet.default
+targetEntityType: paragraph
+bundle: grow_business_with_planet
+mode: default
+content:
+  field_color_of_the_component:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_size_of_the_component:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

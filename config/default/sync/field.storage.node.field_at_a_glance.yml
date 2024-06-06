@@ -1,0 +1,19 @@
+uuid: a86d2319-1c78-4703-830b-2291df955e38
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_at_a_glance
+field_name: field_at_a_glance
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,28 @@
+uuid: 4a804d55-6bfe-4093-be32-54edc38c6975
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_dark_mode
+    - paragraphs.paragraphs_type.customer_recommendation_quote
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.customer_recommendation_quote.field_dark_mode
+field_name: field_dark_mode
+entity_type: paragraph
+bundle: customer_recommendation_quote
+label: 'Dark mode'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

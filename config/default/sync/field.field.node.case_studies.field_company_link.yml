@@ -1,0 +1,27 @@
+uuid: 4b33b531-8a94-4915-b637-c9c4c17f48a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_link
+    - node.type.case_studies
+  module:
+    - link
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.case_studies.field_company_link
+field_name: field_company_link
+entity_type: node
+bundle: case_studies
+label: 'Company link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

@@ -1,0 +1,44 @@
+uuid: 21442301-0595-44e2-8fd2-77fbbb3c6fa4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recommendation
+    - node.type.case_studies
+    - paragraphs.paragraphs_type.customer_recommendation_quote
+  module:
+    - entity_reference_revisions
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.case_studies.field_recommendation
+field_name: field_recommendation
+entity_type: node
+bundle: case_studies
+label: Recommendation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      customer_recommendation_quote: customer_recommendation_quote
+    negate: 0
+    target_bundles_drag_drop:
+      customer_recommendation_quote:
+        weight: 5
+        enabled: true
+      grow_business_with_planet:
+        weight: 6
+        enabled: false
+      paragraph_case_study_metrics:
+        weight: 7
+        enabled: false
+      right_side_mega_menu:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions
