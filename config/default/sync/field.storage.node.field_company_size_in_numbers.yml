@@ -1,0 +1,33 @@
+uuid: 04a9e689-625b-4794-af02-837cdfc33986
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_company_size_in_numbers
+field_name: field_company_size_in_numbers
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: below_250
+      label: 'Below 1000'
+    -
+      value: '250_500'
+      label: '1001 - 5000'
+    -
+      value: '5001_10000'
+      label: '501_5000'
+    -
+      value: '10000'
+      label: 10000+
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,24 @@
+uuid: 2a502b7f-281d-41ef-9853-91002a63d065
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_headquarter_country
+    - node.type.case_studies
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.case_studies.field_headquarter_country
+field_name: field_headquarter_country
+entity_type: node
+bundle: case_studies
+label: 'Headquarter Country'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

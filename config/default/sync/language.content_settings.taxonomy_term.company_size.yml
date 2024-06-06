@@ -1,0 +1,11 @@
+uuid: 71ff5cc7-60e5-4b4d-908c-893c97e4183d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.company_size
+id: taxonomy_term.company_size
+target_entity_type_id: taxonomy_term
+target_bundle: company_size
+default_langcode: site_default
+language_alterable: false

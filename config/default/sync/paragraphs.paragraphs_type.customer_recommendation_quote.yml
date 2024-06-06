@@ -1,0 +1,10 @@
+uuid: 42873af1-0b83-4dbc-919e-c53acfbe844e
+langcode: en
+status: true
+dependencies: {  }
+id: customer_recommendation_quote
+label: 'Customer recommendation quote'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

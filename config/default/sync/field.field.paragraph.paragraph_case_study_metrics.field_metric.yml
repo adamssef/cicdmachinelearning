@@ -1,0 +1,24 @@
+uuid: 81b3bf9f-209d-4c96-a48c-2d994171b708
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_metric
+    - paragraphs.paragraphs_type.paragraph_case_study_metrics
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.paragraph_case_study_metrics.field_metric
+field_name: field_metric
+entity_type: paragraph
+bundle: paragraph_case_study_metrics
+label: Metric
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

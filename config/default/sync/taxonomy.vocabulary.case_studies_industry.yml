@@ -1,0 +1,8 @@
+uuid: 8a743c16-0123-4ecf-8852-ce6cc5ccc677
+langcode: en
+status: true
+dependencies: {  }
+name: 'Case studies - industry'
+vid: case_studies_industry
+description: 'Provides an industry category filter for case studies.'
+weight: 0

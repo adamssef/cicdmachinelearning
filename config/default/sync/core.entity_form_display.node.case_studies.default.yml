@@ -3,20 +3,37 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.case_studies.field_at_a_glance
     - field.field.node.case_studies.field_basic_page_metatag
+    - field.field.node.case_studies.field_case_study_result
     - field.field.node.case_studies.field_challenge_solution_text
     - field.field.node.case_studies.field_challenge_solution_title
     - field.field.node.case_studies.field_challenge_text
     - field.field.node.case_studies.field_challenge_title
     - field.field.node.case_studies.field_challenge_video
+    - field.field.node.case_studies.field_company_link
+    - field.field.node.case_studies.field_company_name
     - field.field.node.case_studies.field_company_sector
+    - field.field.node.case_studies.field_company_size
+    - field.field.node.case_studies.field_company_size_in_numbers
+    - field.field.node.case_studies.field_grow_business_with_planet
+    - field.field.node.case_studies.field_headquarter_city
+    - field.field.node.case_studies.field_headquarter_country
+    - field.field.node.case_studies.field_industry_type
     - field.field.node.case_studies.field_layout_canvas
+    - field.field.node.case_studies.field_layout_canvas_2
+    - field.field.node.case_studies.field_layout_canvas_3
     - field.field.node.case_studies.field_logo_media
     - field.field.node.case_studies.field_main_image_media
+    - field.field.node.case_studies.field_metrics
     - field.field.node.case_studies.field_pre_heading
+    - field.field.node.case_studies.field_product_type
     - field.field.node.case_studies.field_promoted_case_study
+    - field.field.node.case_studies.field_recommendation
+    - field.field.node.case_studies.field_solution_text_image
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
+    - field.field.node.case_studies.field_video_media
     - field.field.node.case_studies.field_video_subtext
     - field.field.node.case_studies.field_video_thumb
     - node.type.case_studies
@@ -25,9 +42,12 @@ dependencies:
     - cohesion_elements
     - content_moderation
     - field_group
+    - link
     - media_library
     - metatag
+    - paragraphs
     - path
+    - text
 third_party_settings:
   field_group:
     group_challenge_solution:
@@ -58,21 +78,37 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 14
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_at_a_glance:
+    type: text_textarea
+    weight: 22
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_basic_page_metatag:
     type: metatag_firehose
-    weight: 26
+    weight: 19
     region: content
     settings:
       sidebar: true
       use_details: true
     third_party_settings: {  }
+  field_case_study_result:
+    type: string_textarea
+    weight: 32
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_challenge_solution_text:
     type: string_textarea
-    weight: 15
+    weight: 14
     region: content
     settings:
       rows: 5
@@ -80,7 +116,7 @@ content:
     third_party_settings: {  }
   field_challenge_solution_title:
     type: string_textfield
-    weight: 14
+    weight: 13
     region: content
     settings:
       size: 60
@@ -88,7 +124,7 @@ content:
     third_party_settings: {  }
   field_challenge_text:
     type: string_textarea
-    weight: 13
+    weight: 12
     region: content
     settings:
       rows: 5
@@ -96,7 +132,7 @@ content:
     third_party_settings: {  }
   field_challenge_title:
     type: string_textfield
-    weight: 12
+    weight: 11
     region: content
     settings:
       size: 60
@@ -104,10 +140,26 @@ content:
     third_party_settings: {  }
   field_challenge_video:
     type: string_textarea
-    weight: 16
+    weight: 15
     region: content
     settings:
       rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_company_link:
+    type: link_default
+    weight: 23
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_company_name:
+    type: string_textfield
+    weight: 24
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_company_sector:
@@ -120,9 +172,73 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_company_size:
+    type: options_select
+    weight: 25
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_company_size_in_numbers:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_grow_business_with_planet:
+    type: paragraphs
+    weight: 27
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_headquarter_city:
+    type: string_textfield
+    weight: 37
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_headquarter_country:
+    type: string_textfield
+    weight: 38
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_industry_type:
+    type: options_select
+    weight: 36
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_layout_canvas:
     type: cohesion_layout_builder_widget
-    weight: 11
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_layout_canvas_2:
+    type: cohesion_layout_builder_widget
+    weight: 29
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_layout_canvas_3:
+    type: cohesion_layout_builder_widget
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -140,6 +256,24 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+  field_metrics:
+    type: paragraphs
+    weight: 33
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
   field_pre_heading:
     type: string_textfield
     weight: 2
@@ -148,12 +282,43 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_product_type:
+    type: options_select
+    weight: 35
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_promoted_case_study:
     type: boolean_checkbox
     weight: 1
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  field_recommendation:
+    type: paragraphs
+    weight: 34
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_solution_text_image:
+    type: media_library_widget
+    weight: 28
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_summary:
     type: string_textarea
@@ -173,9 +338,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_video_media:
+    type: media_library_widget
+    weight: 31
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_video_subtext:
     type: string_textfield
-    weight: 18
+    weight: 17
     region: content
     settings:
       size: 60
@@ -183,52 +355,52 @@ content:
     third_party_settings: {  }
   field_video_thumb:
     type: media_library_widget
-    weight: 17
+    weight: 16
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 12
+    weight: 11
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 21
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 18
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
     type: boolean_checkbox
     weight: 16
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
-  simple_sitemap:
-    weight: 15
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 19
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 17
+    weight: 21
     region: content
     settings:
       display_label: true
@@ -248,7 +420,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 13
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS
@@ -257,7 +429,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 20
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }

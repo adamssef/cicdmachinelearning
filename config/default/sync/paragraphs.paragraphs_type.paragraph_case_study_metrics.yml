@@ -1,0 +1,10 @@
+uuid: c31d4a28-0fde-4e15-93f1-2bc46ace417f
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph_case_study_metrics
+label: 'Case study metrics'
+icon_uuid: null
+icon_default: null
+description: 'It is intended to store up to 4 metrics that are stored in this paragraph field. Single "Case study metrics" paragraph has just to items: one is a metric itself (for example +5%) and its corresponding label (Number of reservations per month).'
+behavior_plugins: {  }

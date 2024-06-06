@@ -1,0 +1,27 @@
+uuid: 71199f8f-3e5d-4123-9993-180d79bce7f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_size_of_the_component
+    - paragraphs.paragraphs_type.grow_business_with_planet
+  module:
+    - options
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.grow_business_with_planet.field_size_of_the_component
+field_name: field_size_of_the_component
+entity_type: paragraph
+bundle: grow_business_with_planet
+label: 'Size of the component'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: medium
+default_value_callback: ''
+settings: {  }
+field_type: list_string

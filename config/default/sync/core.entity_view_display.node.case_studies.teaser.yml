@@ -4,20 +4,37 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.case_studies.field_at_a_glance
     - field.field.node.case_studies.field_basic_page_metatag
+    - field.field.node.case_studies.field_case_study_result
     - field.field.node.case_studies.field_challenge_solution_text
     - field.field.node.case_studies.field_challenge_solution_title
     - field.field.node.case_studies.field_challenge_text
     - field.field.node.case_studies.field_challenge_title
     - field.field.node.case_studies.field_challenge_video
+    - field.field.node.case_studies.field_company_link
+    - field.field.node.case_studies.field_company_name
     - field.field.node.case_studies.field_company_sector
+    - field.field.node.case_studies.field_company_size
+    - field.field.node.case_studies.field_company_size_in_numbers
+    - field.field.node.case_studies.field_grow_business_with_planet
+    - field.field.node.case_studies.field_headquarter_city
+    - field.field.node.case_studies.field_headquarter_country
+    - field.field.node.case_studies.field_industry_type
     - field.field.node.case_studies.field_layout_canvas
+    - field.field.node.case_studies.field_layout_canvas_2
+    - field.field.node.case_studies.field_layout_canvas_3
     - field.field.node.case_studies.field_logo_media
     - field.field.node.case_studies.field_main_image_media
+    - field.field.node.case_studies.field_metrics
     - field.field.node.case_studies.field_pre_heading
+    - field.field.node.case_studies.field_product_type
     - field.field.node.case_studies.field_promoted_case_study
+    - field.field.node.case_studies.field_recommendation
+    - field.field.node.case_studies.field_solution_text_image
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
+    - field.field.node.case_studies.field_video_media
     - field.field.node.case_studies.field_video_subtext
     - field.field.node.case_studies.field_video_thumb
     - node.type.case_studies
@@ -39,20 +56,37 @@ content:
     weight: 100
     region: content
 hidden:
+  field_at_a_glance: true
   field_basic_page_metatag: true
+  field_case_study_result: true
   field_challenge_solution_text: true
   field_challenge_solution_title: true
   field_challenge_text: true
   field_challenge_title: true
   field_challenge_video: true
+  field_company_link: true
+  field_company_name: true
   field_company_sector: true
+  field_company_size: true
+  field_company_size_in_numbers: true
+  field_grow_business_with_planet: true
+  field_headquarter_city: true
+  field_headquarter_country: true
+  field_industry_type: true
   field_layout_canvas: true
+  field_layout_canvas_2: true
+  field_layout_canvas_3: true
   field_logo_media: true
   field_main_image_media: true
+  field_metrics: true
   field_pre_heading: true
+  field_product_type: true
   field_promoted_case_study: true
+  field_recommendation: true
+  field_solution_text_image: true
   field_summary: true
   field_tags: true
+  field_video_media: true
   field_video_subtext: true
   field_video_thumb: true
   langcode: true

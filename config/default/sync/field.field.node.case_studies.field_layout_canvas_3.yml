@@ -1,9 +1,9 @@
-uuid: 2ec6f8d6-8be8-419c-b7e1-20d18317e7e0
+uuid: 647f3abb-09eb-4fd2-814e-9cc44d6af8fe
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_layout_canvas
+    - field.storage.node.field_layout_canvas_3
     - node.type.case_studies
   module:
     - cohesion_elements
@@ -11,11 +11,11 @@ dependencies:
 third_party_settings:
   tmgmt_content:
     excluded: false
-id: node.case_studies.field_layout_canvas
-field_name: field_layout_canvas
+id: node.case_studies.field_layout_canvas_3
+field_name: field_layout_canvas_3
 entity_type: node
 bundle: case_studies
-label: 'Layout canvas (future label: "Link Box")'
+label: 'Tip Box with Comment (3 favourite features)'
 description: ''
 required: false
 translatable: false

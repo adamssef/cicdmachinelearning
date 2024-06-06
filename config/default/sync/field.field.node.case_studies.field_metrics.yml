@@ -1,0 +1,41 @@
+uuid: f5295839-68ed-45a6-9058-f8edc593a79e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metrics
+    - node.type.case_studies
+    - paragraphs.paragraphs_type.paragraph_case_study_metrics
+  module:
+    - entity_reference_revisions
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.case_studies.field_metrics
+field_name: field_metrics
+entity_type: node
+bundle: case_studies
+label: "Metrics (don't add more than 3)"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      paragraph_case_study_metrics: paragraph_case_study_metrics
+    negate: 0
+    target_bundles_drag_drop:
+      grow_business_with_planet:
+        weight: 4
+        enabled: false
+      paragraph_case_study_metrics:
+        weight: 5
+        enabled: true
+      right_side_mega_menu:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

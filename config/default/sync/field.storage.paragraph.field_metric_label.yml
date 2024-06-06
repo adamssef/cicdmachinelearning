@@ -1,0 +1,21 @@
+uuid: 052d212d-8c54-41ba-8b6d-5d15d888065b
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_metric_label
+field_name: field_metric_label
+entity_type: paragraph
+type: string
+settings:
+  max_length: 20
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

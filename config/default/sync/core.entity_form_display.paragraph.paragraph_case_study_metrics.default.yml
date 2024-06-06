@@ -1,0 +1,32 @@
+uuid: 7b9190f5-2540-42a5-a702-067b43e507b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_case_study_metrics.field_metric
+    - field.field.paragraph.paragraph_case_study_metrics.field_metric_label
+    - paragraphs.paragraphs_type.paragraph_case_study_metrics
+id: paragraph.paragraph_case_study_metrics.default
+targetEntityType: paragraph
+bundle: paragraph_case_study_metrics
+mode: default
+content:
+  field_metric:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_metric_label:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

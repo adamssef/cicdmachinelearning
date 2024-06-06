@@ -1,0 +1,31 @@
+uuid: 04440e05-d602-46fc-a041-7167084a65f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_case_study_metrics.field_metric
+    - field.field.paragraph.paragraph_case_study_metrics.field_metric_label
+    - paragraphs.paragraphs_type.paragraph_case_study_metrics
+id: paragraph.paragraph_case_study_metrics.default
+targetEntityType: paragraph
+bundle: paragraph_case_study_metrics
+mode: default
+content:
+  field_metric:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_metric_label:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

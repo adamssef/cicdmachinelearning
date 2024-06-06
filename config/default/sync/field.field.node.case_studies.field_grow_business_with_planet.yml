@@ -1,0 +1,38 @@
+uuid: e7847afc-c831-4eac-9439-97c8f25363cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grow_business_with_planet
+    - node.type.case_studies
+    - paragraphs.paragraphs_type.grow_business_with_planet
+  module:
+    - entity_reference_revisions
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.case_studies.field_grow_business_with_planet
+field_name: field_grow_business_with_planet
+entity_type: node
+bundle: case_studies
+label: 'Grow your business with Planet'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      grow_business_with_planet: grow_business_with_planet
+    negate: 0
+    target_bundles_drag_drop:
+      grow_business_with_planet:
+        weight: 3
+        enabled: true
+      right_side_mega_menu:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

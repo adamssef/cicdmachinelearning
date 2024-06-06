@@ -1,0 +1,21 @@
+uuid: a7be59d3-835e-4d1e-8ba8-9c67989b2d5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_customer_role
+field_name: field_customer_role
+entity_type: paragraph
+type: string
+settings:
+  max_length: 32
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

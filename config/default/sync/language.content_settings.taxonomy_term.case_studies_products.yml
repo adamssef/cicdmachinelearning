@@ -1,0 +1,11 @@
+uuid: d2f2bdc4-cc4f-4623-86f8-2a121af42b78
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.case_studies_products
+id: taxonomy_term.case_studies_products
+target_entity_type_id: taxonomy_term
+target_bundle: case_studies_products
+default_langcode: site_default
+language_alterable: false

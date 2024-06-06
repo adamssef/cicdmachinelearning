@@ -1,0 +1,27 @@
+uuid: ecf0b6db-86ff-4746-b278-8551f3774620
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_quote_version_list
+    - paragraphs.paragraphs_type.customer_recommendation_quote
+  module:
+    - options
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.customer_recommendation_quote.field_quote_version_list
+field_name: field_quote_version_list
+entity_type: paragraph
+bundle: customer_recommendation_quote
+label: "Quote's visual version"
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: small_picture_and_quote
+default_value_callback: ''
+settings: {  }
+field_type: list_string
