@@ -1,34 +1,77 @@
 title: 'Get in touch (de)'
 elements: |
   first_name:
-    '#title': 'Vorname*'
+    '#title': 'Vorname<span>*</span>'
   last_name:
-    '#title': 'Nachname*'
+    '#title': 'Nachname<span>*</span>'
+  email:
+    '#title': 'Geschäftliche E-Mail<span>*</span>'
   phone_intl:
-    '#title': 'Tel.*'
-    '#phone__title': Tel.
+    '#title': 'Tel.<span>*</span>'
+    '#required_error': 'Ihre Telefonnummer ist erforderlich.'
+    '#pattern_error': 'Die Telefonnummer ist ungültig. Bitte verwenden Sie die Vorwahl Ihres Landes (z. B. +49 2071234567).'
   company_business_name:
-    '#title': 'Unternehmen*'
-  type_of_business:
-    '#title': 'Branche*'
+    '#title': 'Unternehmen<span>*</span>'
+  seniority:
+    '#title': Seniorität
     '#options':
-      Partners: Partner
+      Owner: Inhaber
+      Executive: Führungskraft
+      'Vice President': Vice-President
+      Director: Direktor
+      Assistant: Assistent
       Other: Andere
+  role:
+    '#title': Funktion
+    '#options':
+      Accounting: Buchhaltung
+      'Customer Success': Kundenservice
+      Finance: Finanzen
+      'Information Technology': IT
+      Legal: Rechtsabteilung
+      Payments: Zahlungen
+      'Product Development': Produktentwicklung
+      'Project Management': Projektmanagement
+      Sales: Vertrieb
   address_country:
-    '#title': 'Land*'
-    '#country__title': 'Land*'
-    '#address__title': Addresse
-    '#address_2__title': 'Addresse 2'
-    '#city__title': Stadt
-    '#state_province__title': Staat/Bundesland
-    '#postal_code__title': Postleitzahl
-  single_opt_in:
-    '#title': 'Erhalten Sie Updates über Planet'
-    '#description': 'Aktivieren Sie dieses K&auml;stchen, um den Erhalt von Updates zu Produkten, Veranstaltungen, Schulungen, Berichten und Dienstleistungen von Planet zuzustimmen'
+    '#title': 'Land<span>*</span>'
+  company_sector:
+    '#title': 'Ich bin auf der Suche nach<span>*</span>'
+    '#options':
+      Hospitality: 'Lösungen für die Hotellerie'
+      Retail: 'Lösungen für den Einzelhandel'
+      Partners: Partnerschaften
+    '#required_error': 'Erforderliches Feld'
+  what_would_you_like_help_with:
+    '#title': 'Womit möchten Sie Hilfe erhalten?<span>*</span>'
+    '#options':
+      'Property Management Solutions': 'Ich möchte meinen Hotelbetrieb mühelos verwalten'
+      'Networking solutions': 'Mein Hotel benötigt Netzwerklösungen'
+      'Accept Payments': 'Ich möchte Zahlungen akzeptieren'
+      'Tax Free Solutions': 'Ich möchte Tax-free-Shopping anbieten'
+      'Order Management Systems': 'Online-Bestellungen effizient verwalten'
+      'PCI Proxy': 'Kreditkartendaten tokenisieren'
+    '#required_error': 'Erforderliches Feld'
+  payments_product_of_interest:
+    '#title': 'Wählen Sie eine Zahlungslösung<span>*</span>'
+    '#options':
+      'Online payments': Online-Zahlungen
+      'In-person payments': 'Persönliche Zahlungen'
+      'Online and In-Person payments': 'Online- und persönliche Zahlungen'
+      'Currency Conversion': Währungsumrechnung
+      'PCI Proxy': 'PCI Proxy '
+    '#required_error': 'Erforderliches Feld'
+  number_of_employees:
+    '#title': 'Wie viele Mitarbeiter hat Ihr Unternehmen?'
+    '#options':
+      'Self Employed': Selbstständig
+      '10,000 +': '10,000 + '
   textarea:
-    '#title': 'Über Ihr Projekt*'
+    '#title': 'Über Ihr Projekt<span>*</span>'
     '#placeholder': 'Erzählen Sie uns mehr über Ihr Projekt'
+  single_opt_in:
+    '#description': '<p>Aktivieren Sie dieses Kästchen, um den Erhalt von Updates zu Produkten, Veranstaltungen, Schulungen, Berichten und Dienstleistungen von Planet zuzustimmen</p>'
   markup:
-    '#markup': '<p>Mit dem Absenden dieses Formulars akzeptieren Sie die Bedingungen unserer <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Datenschutzrichtlinie.</a></p>'
+    '#markup': '<p>Mit dem Absenden dieses Formulars akzeptieren Sie die Bedingungen unserer <a href="https://www.weareplanet.com/privacy-policy" data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" rel="noopener noreferrer" tabindex="-1" target="_blank">Datenschutzrichtlinie</a>.</p>'
   actions:
     '#submit__label': Senden
