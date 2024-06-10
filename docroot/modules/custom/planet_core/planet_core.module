@@ -180,7 +180,6 @@ function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
   }
 }
 
-
 /**
  * Implements hook_views_query_alter().
  */
@@ -197,6 +196,18 @@ function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
 
     if (!empty($collected_tags)) {
       $query->addWhere(0, 'node__field_resources_tags.field_resources_tags_target_id', $collected_tags, 'IN');
+    }
+
+    else {
+      foreach ($query->where as $key => $conditionGroup) {
+        if ($conditionGroup['type'] === 'AND') {
+          foreach ($conditionGroup['conditions'] as $condition_group_key => $condition) {
+            if ($condition['field'] === 'node__field_resources_tags.field_resources_tags_target_id IN(:node__field_resources_tags_field_resources_tags_target_id[])') {
+              unset($query->where[$key]['conditions'][$condition_group_key]);
+            }
+          }
+        }
+      }
     }
   }
 }
