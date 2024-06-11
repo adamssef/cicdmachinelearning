@@ -56,9 +56,9 @@ third_party_settings:
         - field_challenge_text
         - field_challenge_solution_title
         - field_challenge_solution_text
+        - field_solution_text_image
         - field_layout_canvas
         - field_layout_canvas_2
-        - field_solution_text_image
         - field_case_study_result
         - field_layout_canvas_3
         - field_grow_business_with_planet
@@ -303,13 +303,13 @@ content:
     third_party_settings: {  }
   field_layout_canvas:
     type: cohesion_layout_builder_widget
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
   field_layout_canvas_2:
     type: cohesion_layout_builder_widget
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -392,7 +392,7 @@ content:
     third_party_settings: {  }
   field_solution_text_image:
     type: media_library_widget
-    weight: 20
+    weight: 18
     region: content
     settings:
       media_types: {  }
