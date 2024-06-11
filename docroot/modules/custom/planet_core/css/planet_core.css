@@ -14,6 +14,29 @@ form.tfa-setup ul {
   height: 500px;
 }
 
+.plnt-css-admin-page .rainbow {
+  background-color: rgba(217, 220, 222, 0.7);
+  border-radius: 16px;
+}
+
+.plnt-css-admin-page #edit-group-new-case-study-fields.rainbow > legend > .fieldset__label {
+  background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 120%;
+  text-align: center;
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
 /** END */
 
 /** [PLANET OFFICES] */
