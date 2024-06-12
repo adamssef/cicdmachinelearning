@@ -187,7 +187,7 @@ function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
   $node = \Drupal::routeMatch()->getParameter('node');
   $collected_tags = [];
 
-  if($node !== null && $node->getType() === 'page' && $view->current_display === 'case_studies_more_reads') {
+  if($node !== null && $node->getType() === 'page' && $view->current_display === '!case_studies_more_reads') {
     \Drupal::logger('planet_core')->notice('outside blog_more_reads' . ' and the user is' . \Drupal::currentUser()->id() . ' and the user is' . \Drupal::currentUser()->isAuthenticated() . ' and the current display is' . $view->current_display . ' and the has_field for field_resources_tags returns: ' . $node->hasField('field_resources_tags'));
   }
 
