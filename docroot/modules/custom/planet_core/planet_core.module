@@ -196,9 +196,10 @@ function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
 
     if (!empty($collected_tags)) {
       $query->addWhere(0, 'node__field_resources_tags.field_resources_tags_target_id', $collected_tags, 'IN');
+      \Drupal::logger('planet_core')->notice("in if");
     }
-
     else {
+      \Drupal::logger('planet_core')->notice("in else");
       foreach ($query->where as $key => $conditionGroup) {
         if ($conditionGroup['type'] === 'AND') {
           foreach ($conditionGroup['conditions'] as $condition_group_key => $condition) {
