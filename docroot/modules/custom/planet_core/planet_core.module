@@ -8,6 +8,8 @@
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
 use Drupal\webform\WebformSubmissionInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -175,6 +177,38 @@ function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
     $form['country']['#options'] = $countries;
 
     $form['#attached']['library'][] = 'planet_sitestudio_custom_elements/registeredCompanies';
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $collected_tags = [];
+
+  if ($view->current_display === 'blog_more_reads') {
+    if ($node !== NULL && $node->hasField('field_resources_tags')) {
+      foreach ($node->get('field_resources_tags')->getValue() as $tag) {
+        $collected_tags[] = $tag['target_id'];
+      }
+    }
+
+    if (!empty($collected_tags)) {
+      $query->addWhere(0, 'node__field_resources_tags.field_resources_tags_target_id', $collected_tags, 'IN');
+    }
+
+    else {
+      foreach ($query->where as $key => $conditionGroup) {
+        if ($conditionGroup['type'] === 'AND') {
+          foreach ($conditionGroup['conditions'] as $condition_group_key => $condition) {
+            if ($condition['field'] === 'node__field_resources_tags.field_resources_tags_target_id IN(:node__field_resources_tags_field_resources_tags_target_id[])') {
+              unset($query->where[$key]['conditions'][$condition_group_key]);
+            }
+          }
+        }
+      }
+    }
   }
 }
 
