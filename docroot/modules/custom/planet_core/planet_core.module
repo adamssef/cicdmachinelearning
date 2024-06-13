@@ -184,6 +184,19 @@ function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
  * Implements hook_views_query_alter().
  */
 function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+
+
+  $user = \Drupal::currentUser();
+  $user_roles = $user->getRoles();
+  $roles_permissions = user_role_permissions($user_roles);
+
+  // log the user roles and permissions
+  foreach ($roles_permissions as $role) {
+    foreach($role as $key => $value) {
+      \Drupal::logger('planet_core')->notice('User role: ' . $key . ' and permission: ' . $value);
+    }
+  }
+
   $node = \Drupal::routeMatch()->getParameter('node');
   $collected_tags = [];
 
