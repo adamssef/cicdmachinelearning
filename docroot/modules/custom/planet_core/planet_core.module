@@ -201,9 +201,14 @@ function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
   if ($view->current_display === 'blog_more_reads') {
     \Drupal::logger('planet_core')->notice('in blog_more_reads');
     if ($node !== NULL && $node->hasField('field_resources_tags')) {
-      foreach ($node->get('field_resources_tags')->getValue() as $tag) {
-        $collected_tags[] = $tag['target_id'];
-      }
+      $node_id = $node->id();
+      $temp_query = \Drupal::database()->select('node__field_resources_tags', 'nrt')
+        ->fields('nrt', ['field_resources_tags_target_id'])
+        ->condition('nrt.entity_id', $node_id, '=')
+        ->execute();
+
+      $res = $temp_query->fetchAll();
+      $collected_tags = array_column($res, 'field_resources_tags_target_id');
     }
 
     if (!empty($collected_tags)) {
