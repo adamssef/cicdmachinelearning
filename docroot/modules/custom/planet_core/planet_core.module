@@ -192,16 +192,10 @@ function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
     \Drupal::logger('current display' .  $view->current_display);
   }
 
-  if($node !== null && $node->getType() === 'page' && $view->current_display === 'blog_more_reads') {
-    \Drupal::logger('planet_core')->notice('this is blog_more_reads' . ' and the user is' . \Drupal::currentUser()->id() . ' and the user is' . \Drupal::currentUser()->isAuthenticated() . ' and the current display is' . $view->current_display . ' and the has_field for field_resources_tags returns: ' . $node->hasField('field_resources_tags'));
-  }
-
-
-
   if ($view->current_display === 'blog_more_reads') {
-    \Drupal::logger('planet_core')->notice('in blog_more_reads');
     if ($node !== NULL && $node->hasField('field_resources_tags')) {
       $node_id = $node->id();
+
       $temp_query = \Drupal::database()->select('node__field_resources_tags', 'nrt')
         ->fields('nrt', ['field_resources_tags_target_id'])
         ->condition('nrt.entity_id', $node_id, '=')
@@ -213,10 +207,8 @@ function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
 
     if (!empty($collected_tags)) {
       $query->addWhere(0, 'node__field_resources_tags.field_resources_tags_target_id', $collected_tags, 'IN');
-      \Drupal::logger('planet_core')->notice("in if");
     }
     else {
-      \Drupal::logger('planet_core')->notice("in else");
       foreach ($query->where as $key => $conditionGroup) {
         if ($conditionGroup['type'] === 'AND') {
           foreach ($conditionGroup['conditions'] as $condition_group_key => $condition) {
