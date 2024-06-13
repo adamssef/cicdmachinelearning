@@ -218,6 +218,8 @@ function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
       $collected_tags = array_column($res, 'field_resources_tags_target_id');
     }
 
+    \Drupal::logger('planet_core')->notice('collected tags: ' . print_r($collected_tags, true));
+
     if (!empty($collected_tags)) {
       $query->addWhere(0, 'node__field_resources_tags.field_resources_tags_target_id', $collected_tags, 'IN');
     }

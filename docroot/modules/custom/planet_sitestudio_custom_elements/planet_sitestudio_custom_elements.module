@@ -113,7 +113,7 @@ function planet_sitestudio_custom_elements_theme($existing, $type, $theme, $path
 /**
  * Implements hook_preprocess_HOOK() for node templates.
  */
-function planet_sitestudio_custom_elements_views_query_alter(&$view, &$query) {
+function planet_sitestudio_custom_elements_views_query_alter($view, $query) {
   if ($view->id() == 'case_studies') {
     $where_conditions = $query->where;
 
