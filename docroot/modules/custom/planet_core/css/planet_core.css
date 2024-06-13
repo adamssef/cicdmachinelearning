@@ -219,6 +219,11 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   font-size: 1.2rem;
 }
 
+/** FIELD_RESOURCES_TAGS FOR PAGE CONTENT TYPE */
+.tags-hidden-for-page-node {
+  display: none;
+}
+
 .webform-confirmation-modal {
   border-left: 0.45rem solid #ff0096 !important;
   border-radius: 0 !important;
