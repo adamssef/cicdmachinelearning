@@ -16,7 +16,7 @@ id: node.case_studies.field_recommendation
 field_name: field_recommendation
 entity_type: node
 bundle: case_studies
-label: Recommendation
+label: Quote
 description: ''
 required: false
 translatable: false
