@@ -36,7 +36,6 @@ form.tfa-setup ul {
     background-position: 100%;
   }
 }
-
 /** END */
 
 /** [PLANET OFFICES] */
@@ -176,6 +175,10 @@ ul.language-switcher__dropdown-menu {
 
 .whychooseplanetbutton.closed-de:before {
   content: "Erfahren Sie mehr";
+}
+
+.page-node-type-case-studies .coh-hero-full-width  .coh-container-boxed > div {
+  max-width: 80%;
 }
 
 .language-switcher__item {
@@ -624,8 +627,6 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 }
 
 @media(min-width: 1024px) {
-
-
   .plnt-author-page {
     margin-bottom: 32px auto;
   }
