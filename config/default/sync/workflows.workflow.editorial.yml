@@ -65,6 +65,12 @@ type_settings:
         - published
       to: draft
       weight: -3
+    draft_to_archived:
+      label: 'Draft to Archived'
+      from:
+        - draft
+      to: archived
+      weight: 3
     publish:
       label: Publish
       from:
