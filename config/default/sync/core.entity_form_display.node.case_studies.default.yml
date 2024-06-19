@@ -65,7 +65,7 @@ third_party_settings:
       label: 'Challenge & Solution'
       region: content
       parent_name: group_new_case_study_fields
-      weight: 12
+      weight: 11
       format_type: details
       format_settings:
         classes: ''
@@ -82,7 +82,6 @@ third_party_settings:
         - field_recommendation
         - group_video
         - field_logo_media
-        - field_main_image_media
         - group_company_information
         - group_challenge_solution
       label: 'FIELDS FOR NEW CASE STUDIES'
@@ -103,7 +102,7 @@ third_party_settings:
       label: Video
       region: content
       parent_name: group_new_case_study_fields
-      weight: 7
+      weight: 8
       format_type: fieldset
       format_settings:
         classes: ''
@@ -135,8 +134,11 @@ third_party_settings:
         required_fields: true
     group_this_filed_we_won_t_need_l:
       children:
+        - field_pre_heading
+        - field_summary
         - field_challenge_video
         - field_video_thumb
+        - field_main_image_media
       label: "This fields we won't need later but are not removed yet"
       region: content
       parent_name: ''
@@ -177,7 +179,7 @@ content:
     third_party_settings: {  }
   field_case_study_result:
     type: string_textarea
-    weight: 21
+    weight: 22
     region: content
     settings:
       rows: 5
@@ -217,7 +219,7 @@ content:
     third_party_settings: {  }
   field_challenge_video:
     type: string_textarea
-    weight: 8
+    weight: 20
     region: content
     settings:
       rows: 5
@@ -225,7 +227,7 @@ content:
     third_party_settings: {  }
   field_company_link:
     type: link_default
-    weight: 21
+    weight: 22
     region: content
     settings:
       placeholder_url: ''
@@ -240,30 +242,26 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_company_sector:
-    type: entity_reference_autocomplete
-    weight: 16
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_company_size:
     type: options_select
-    weight: 19
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_company_size_in_numbers:
+  field_company_size:
     type: options_select
     weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_company_size_in_numbers:
+    type: options_select
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_grow_business_with_planet:
     type: paragraphs
-    weight: 23
+    weight: 24
     region: content
     settings:
       title: Paragraph
@@ -281,7 +279,7 @@ content:
     third_party_settings: {  }
   field_headquarter_city:
     type: string_textfield
-    weight: 23
+    weight: 24
     region: content
     settings:
       size: 60
@@ -289,7 +287,7 @@ content:
     third_party_settings: {  }
   field_headquarter_country:
     type: string_textfield
-    weight: 22
+    weight: 23
     region: content
     settings:
       size: 60
@@ -303,32 +301,32 @@ content:
     third_party_settings: {  }
   field_layout_canvas:
     type: cohesion_layout_builder_widget
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   field_layout_canvas_2:
     type: cohesion_layout_builder_widget
-    weight: 20
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   field_layout_canvas_3:
     type: cohesion_layout_builder_widget
-    weight: 22
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
   field_logo_media:
     type: media_library_widget
-    weight: 8
+    weight: 9
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_main_image_media:
     type: media_library_widget
-    weight: 9
+    weight: 22
     region: content
     settings:
       media_types: {  }
@@ -353,7 +351,7 @@ content:
     third_party_settings: {  }
   field_pre_heading:
     type: string_textfield
-    weight: 1
+    weight: 18
     region: content
     settings:
       size: 60
@@ -392,14 +390,14 @@ content:
     third_party_settings: {  }
   field_solution_text_image:
     type: media_library_widget
-    weight: 18
+    weight: 19
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_summary:
     type: string_textarea
-    weight: 2
+    weight: 19
     region: content
     settings:
       rows: 5
@@ -432,7 +430,7 @@ content:
     third_party_settings: {  }
   field_video_thumb:
     type: media_library_widget
-    weight: 9
+    weight: 21
     region: content
     settings:
       media_types: {  }
