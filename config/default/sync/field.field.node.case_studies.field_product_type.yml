@@ -1,4 +1,4 @@
-uuid: bf39ad65-9383-40c1-bbb5-b40477a72fcc
+uuid: c809f8e3-e1bc-4285-bb6a-f81f2146d4f8
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,6 @@ dependencies:
     - node.type.case_studies
     - taxonomy.vocabulary.case_studies_products
   module:
-    - entity_reference_revisions
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
@@ -18,7 +17,7 @@ entity_type: node
 bundle: case_studies
 label: 'Product type'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -32,4 +31,4 @@ settings:
       direction: asc
     auto_create: false
     auto_create_bundle: ''
-field_type: entity_reference_revisions
+field_type: entity_reference

@@ -1,8 +1,8 @@
-uuid: 8cd2a9a5-61ec-44a4-b6b4-823064a08d39
+uuid: 5315fc9f-3261-4497-af8a-4da37e7a4ce8
 langcode: en
 status: true
 dependencies: {  }
-name: 'Case Studies - Products'
+name: 'Case studies products'
 vid: case_studies_products
 description: ''
 weight: 0
