@@ -247,13 +247,12 @@ content:
     weight: 6
     region: content
   field_product_type:
-    type: entity_reference_revisions_entity_view
+    type: entity_reference_label
     label: above
     settings:
-      view_mode: default
-      link: ''
+      link: true
     third_party_settings: {  }
-    weight: 33
+    weight: 37
     region: content
   field_promoted_case_study:
     type: boolean

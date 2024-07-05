@@ -1,18 +1,17 @@
-uuid: a86481b0-d617-46da-a3cc-c9e79890252c
+uuid: 67c16cd4-e2c4-4e36-bf95-bdcc71d32ef0
 langcode: en
 status: true
 dependencies:
   module:
-    - entity_reference_revisions
     - node
     - taxonomy
 id: node.field_product_type
 field_name: field_product_type
 entity_type: node
-type: entity_reference_revisions
+type: entity_reference
 settings:
   target_type: taxonomy_term
-module: entity_reference_revisions
+module: core
 locked: false
 cardinality: -1
 translatable: true
