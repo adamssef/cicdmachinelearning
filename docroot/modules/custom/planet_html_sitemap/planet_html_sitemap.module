@@ -74,12 +74,19 @@ function planet_html_sitemap_preprocess_input__checkbox(&$variables) {
  */
 function planet_html_sitemap_simple_sitemap_links_alter(&$links, $sitemap) {
 
+  \Drupal::logger('planet_html_sitemap')->notice('Custom Sitemap generation started');
+
   $entityTypeManager = \Drupal::service('entity_type.manager');
   $metatagManager = \Drupal::service('metatag.manager');
   $pathAliasManager = \Drupal::service('path_alias.manager');
 
   foreach ($links as $key => $link) {
     $node_id = $link['meta']['entity_info']['id'];
+
+    // $f = fopen('my_log.txt', 'a');
+    // fwrite($f, date('Ymd H:i:s - ') . var_export($node_id, true) . "\n");
+    // fclose($f);
+
     $node = $entityTypeManager->getStorage('node')->load($node_id);
 
     if ($node && $node->isPublished()) {
@@ -94,17 +101,12 @@ function planet_html_sitemap_simple_sitemap_links_alter(&$links, $sitemap) {
       $node_path = '/node/' . $node_id;
       $alias = $pathAliasManager->getAliasByPath($node_path, $node_language);
 
-      // Log the node ID, language, alias, and robots meta tag value
-      // $log_entry = [
-      //   'node_id' => $node_id,
-      //   'language' => $node_language,
-      //   'alias' => $alias,
-      //   'robots' => $robots,
-      // ];
-
-      // $f = fopen('my_log.txt', 'a');
-      //   fwrite($f, date('Ymd H:i:s - ') . var_export($log_entry, true) . "\n");
-      //   fclose($f);
+      $log_entry = [
+        'node_id' => $node_id,
+        'language' => $node_language,
+        'alias' => $alias,
+        'robots' => $robots,
+      ];
 
       $is_noindex = str_contains($robots, 'noindex');
       $is_lp = str_contains($alias, '/lp/');
