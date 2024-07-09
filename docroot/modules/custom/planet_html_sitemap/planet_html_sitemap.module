@@ -76,6 +76,7 @@ function planet_html_sitemap_simple_sitemap_links_alter(&$links, $sitemap) {
 
   $entityTypeManager = \Drupal::service('entity_type.manager');
   $metatagManager = \Drupal::service('metatag.manager');
+  $pathAliasManager = \Drupal::service('path_alias.manager');
 
   foreach ($links as $key => $link) {
     $node_id = $link['meta']['entity_info']['id'];
@@ -85,9 +86,30 @@ function planet_html_sitemap_simple_sitemap_links_alter(&$links, $sitemap) {
       $meta_tags = $metatagManager->tagsFromEntityWithDefaults($node);
       $meta_tags_values = $metatagManager->generateTokenValues($meta_tags, $node);
       $robots = $meta_tags_values['robots'] ?? false;
-      $is_noindex = str_contains($robots, 'noindex');
 
-      if ($is_noindex) {
+       // Get the node language
+       $node_language = $node->language()->getId();
+
+       // Get the alias of the node
+      $node_path = '/node/' . $node_id;
+      $alias = $pathAliasManager->getAliasByPath($node_path, $node_language);
+
+      // Log the node ID, language, alias, and robots meta tag value
+      $log_entry = [
+        'node_id' => $node_id,
+        'language' => $node_language,
+        'alias' => $alias,
+        'robots' => $robots,
+      ];
+
+      $f = fopen('my_log.txt', 'a');
+        fwrite($f, date('Ymd H:i:s - ') . var_export($log_entry, true) . "\n");
+        fclose($f);
+
+      $is_noindex = str_contains($robots, 'noindex');
+      $is_lp = str_contains($alias, '/lp/');
+
+      if ($is_noindex || $is_lp) {
         unset($links[$key]);
       }
     }
