@@ -83,9 +83,9 @@ function planet_html_sitemap_simple_sitemap_links_alter(&$links, $sitemap) {
   foreach ($links as $key => $link) {
     $node_id = $link['meta']['entity_info']['id'];
 
-    $f = fopen('my_log.txt', 'a');
-    fwrite($f, date('Ymd H:i:s - ') . var_export($node_id, true) . "\n");
-    fclose($f);
+    // $f = fopen('my_log.txt', 'a');
+    // fwrite($f, date('Ymd H:i:s - ') . var_export($node_id, true) . "\n");
+    // fclose($f);
 
     $node = $entityTypeManager->getStorage('node')->load($node_id);
 
