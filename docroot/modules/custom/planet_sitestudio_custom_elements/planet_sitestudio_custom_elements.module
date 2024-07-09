@@ -109,37 +109,41 @@ function planet_sitestudio_custom_elements_theme($existing, $type, $theme, $path
   ];
 }
 
-
-/**
- * Implements hook_preprocess_HOOK() for node templates.
- */
 function planet_sitestudio_custom_elements_views_query_alter($view, $query) {
   if ($view->id() == 'case_studies') {
-    $where_conditions = $query->where;
+    // Ensure $query->where is an array
+    if (is_array($query->where)) {
+      $where_conditions = $query->where;
 
-    $first = NULL;
+      $first = NULL;
+      $res_count = NULL;
 
-    foreach($where_conditions as $first_key => $condition) {
-      foreach ($condition as $second_key => $item) {
-        foreach ($item as $third_key => $micro_item) {
-          if (str_starts_with($micro_item['field'], 'node__field_tags.field_tags')) {
-            $tag_id = $micro_item['value'][':node__field_tags_field_tags_target_id'];
+      foreach($where_conditions as $first_key => $condition) {
+        if (is_array($condition)) {
+          foreach ($condition as $second_key => $item) {
+            if (is_array($item)) {
+              foreach ($item as $third_key => $micro_item) {
+                if (isset($micro_item['field']) && str_starts_with($micro_item['field'], 'node__field_tags.field_tags')) {
+                  $tag_id = $micro_item['value'][':node__field_tags_field_tags_target_id'];
 
-            $res_count = \Drupal::entityQuery('node')
-              ->condition('type', 'case_study')
-              ->condition('field_tags', $tag_id)
-              ->count()
-              ->accessCheck(FALSE)
-              ->execute();
+                  $res_count = \Drupal::entityQuery('node')
+                    ->condition('type', 'case_study')
+                    ->condition('field_tags', $tag_id)
+                    ->count()
+                    ->accessCheck(FALSE)
+                    ->execute();
 
-            $first = $first_key;
+                  $first = $first_key;
+                }
+              }
+            }
           }
         }
       }
-    }
 
-    if ($res_count === 0 && $first !== NULL) {
-      unset($query->where[$first]);
+      if ($res_count !== NULL && $res_count === 0 && $first !== NULL) {
+        unset($query->where[$first]);
+      }
     }
   }
 }
