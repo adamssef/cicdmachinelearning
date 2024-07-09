@@ -109,7 +109,7 @@ function planet_html_sitemap_simple_sitemap_links_alter(&$links, $sitemap) {
       $is_noindex = str_contains($robots, 'noindex');
       $is_lp = str_contains($alias, '/lp/');
 
-      if ($is_noindex || $is_lp) {
+      if ($is_noindex || $is_lp || !$alias) {
         unset($links[$key]);
       }
     }
