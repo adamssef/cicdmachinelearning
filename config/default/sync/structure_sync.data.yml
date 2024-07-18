@@ -1,57 +1,45 @@
-menus:
-  -
-    menu_name: legal-menu
-    title: 'Privacy Policy'
-    parent: null
-    uri: 'internal:/privacy-policy'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -50
-    langcode: en
-    uuid: dd2a45ad-4102-4f95-b8a7-4ee363de0b59
-    options: {  }
-  -
-    menu_name: legal-menu
-    title: 'Cookie Policy'
-    parent: null
-    uri: 'internal:/cookie-policy'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -49
-    langcode: en
-    uuid: e047f848-b6bd-4765-9848-72140ebad572
-    options: {  }
-  -
-    menu_name: legal-menu
-    title: 'Marketing Privacy Notice'
-    parent: null
-    uri: 'internal:/marketing-privacy-notice-b2b'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -48
-    langcode: en
-    uuid: 93e85efb-044f-4425-ac73-2e4cc2a26ba4
-    options: {  }
-  -
-    menu_name: legal-menu
-    title: Imprint
-    parent: null
-    uri: 'internal:/protel-imprint'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -47
-    langcode: en
-    uuid: 89c22cdd-a954-4779-a528-f2542fb46c3d
-    options: {  }
 taxonomies:
+  tags:
+    -
+      vid: tags
+      tid: '3206'
+      langcode: en
+      name: Hospitality
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 11e617f4-051e-4016-9c84-f7742857d38f
+    -
+      vid: tags
+      tid: '3208'
+      langcode: en
+      name: Payments
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5afd5fdb-9a54-4a0d-8607-f7cb25987d6a
+    -
+      vid: tags
+      tid: '3207'
+      langcode: en
+      name: Retail
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b45a3133-736b-4f20-8326-c6e644bd732c
+    -
+      vid: tags
+      tid: '3209'
+      langcode: en
+      name: Tax-free
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f7557f0c-5a33-4cc1-8dd1-02a26ba5a980
   case_studies_industry:
     -
       vid: case_studies_industry
@@ -185,3 +173,380 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: 3a565efe-156a-43c8-a350-1f55fc02eb92
+menus:
+  -
+    menu_name: legal-menu
+    title: 'Privacy Policy'
+    parent: null
+    uri: 'internal:/privacy-policy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: dd2a45ad-4102-4f95-b8a7-4ee363de0b59
+    options: {  }
+  -
+    menu_name: legal-menu
+    title: 'Cookie Policy'
+    parent: null
+    uri: 'internal:/cookie-policy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: e047f848-b6bd-4765-9848-72140ebad572
+    options: {  }
+  -
+    menu_name: legal-menu
+    title: 'Marketing Privacy Notice'
+    parent: null
+    uri: 'internal:/marketing-privacy-notice-b2b'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: 93e85efb-044f-4425-ac73-2e4cc2a26ba4
+    options: {  }
+  -
+    menu_name: legal-menu
+    title: Imprint
+    parent: null
+    uri: 'internal:/protel-imprint'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: 89c22cdd-a954-4779-a528-f2542fb46c3d
+    options: {  }
+  - menu_name: footer
+    title: Payments
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 9243980b-5c5c-408b-8b35-d32093a230b2
+    options: { }
+  - menu_name: footer
+    title: Online
+    parent: 'menu_link_content:9243980b-5c5c-408b-8b35-d32093a230b2'
+    uri: 'internal:/online-payments'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: d5511e5b-a480-414f-807c-1c54cba676ec
+    options: { }
+  - menu_name: footer
+    title: In-person
+    parent: 'menu_link_content:9243980b-5c5c-408b-8b35-d32093a230b2'
+    uri: 'internal:/in-person-payments'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 03de1322-235e-4e9a-a1f0-91f2ad9c2c39
+    options: { }
+  - menu_name: footer
+    title: 'Token Vault'
+    parent: 'menu_link_content:9243980b-5c5c-408b-8b35-d32093a230b2'
+    uri: 'internal:/pci-proxy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: f961da04-0bb6-47f7-8dcc-2dafe16195bf
+    options: { }
+  - menu_name: footer
+    title: 'Dynamic Currency Conversion'
+    parent: 'menu_link_content:9243980b-5c5c-408b-8b35-d32093a230b2'
+    uri: 'internal:/dcc'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: facde0b3-44ca-4855-9e1e-23cbbbcf14e5
+    options: { }
+  - menu_name: footer
+    title: Software
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: 10920dfc-d6c4-45ca-aaf7-cccafdb9c8c4
+    options: { }
+  - menu_name: footer
+    title: 'Property Management Software'
+    parent: 'menu_link_content:10920dfc-d6c4-45ca-aaf7-cccafdb9c8c4'
+    uri: 'internal:/hotel-pms'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: ede2d8ed-68a9-4449-a656-aebb8980a39f
+    options: { }
+  - menu_name: footer
+    title: 'Booking Engine'
+    parent: 'menu_link_content:10920dfc-d6c4-45ca-aaf7-cccafdb9c8c4'
+    uri: 'internal:/hotel-booking-engine'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 086395c2-9b31-4a3a-8db9-6b6138637a3b
+    options: { }
+  - menu_name: footer
+    title: 'Order Management System'
+    parent: 'menu_link_content:10920dfc-d6c4-45ca-aaf7-cccafdb9c8c4'
+    uri: 'internal:/order-management-system'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 30
+    langcode: en
+    uuid: 8e06c342-30ad-40da-97f9-a6cf08db26b2
+    options: { }
+  - menu_name: footer
+    title: Solutions
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 30
+    langcode: en
+    uuid: 635fa385-07b0-4604-b2cd-5ad8570bb730
+    options: { }
+  - menu_name: footer
+    title: Retail
+    parent: 'menu_link_content:635fa385-07b0-4604-b2cd-5ad8570bb730'
+    uri: 'internal:/retail'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: 2a183bb0-04a0-43fd-a173-3324f1f87ad8
+    options: { }
+  - menu_name: footer
+    title: Hospitality
+    parent: 'menu_link_content:635fa385-07b0-4604-b2cd-5ad8570bb730'
+    uri: 'internal:/hospitality'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 20
+    langcode: en
+    uuid: d64200e5-0178-44f9-8099-93ec393733f3
+    options: { }
+  - menu_name: footer
+    title: Travel
+    parent: 'menu_link_content:635fa385-07b0-4604-b2cd-5ad8570bb730'
+    uri: 'internal:/travel'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 30
+    langcode: en
+    uuid: b135c99b-1490-4b59-add2-18823b3acd2c
+    options: { }
+  - menu_name: footer
+    title: 'Tax Free'
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 40
+    langcode: en
+    uuid: 8af7a8b3-c915-4a75-b8b7-cca4efc7d14c
+    options: { }
+  - menu_name: footer
+    title: Issuing
+    parent: 'menu_link_content:8af7a8b3-c915-4a75-b8b7-cca4efc7d14c'
+    uri: 'internal:/vat-refund'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 10
+    langcode: en
+    uuid: 01f30a14-027e-4961-b7a0-629971289b6e
+    options: { }
+  - menu_name: footer
+    title: 'Track my refund'
+    parent: 'menu_link_content:8af7a8b3-c915-4a75-b8b7-cca4efc7d14c'
+    uri: 'https://planetpayment/track-my-refund'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 20
+    langcode: en
+    uuid: c82286ca-1078-4e57-a593-55dac56e6457
+    options: { }
+  - menu_name: footer
+    title: Resources
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 50
+    langcode: en
+    uuid: 7506065e-8381-4e9b-876f-35bdc4e230c9
+    options: { }
+  - menu_name: footer
+    title: Blogs
+    parent: 'menu_link_content:7506065e-8381-4e9b-876f-35bdc4e230c9'
+    uri: 'internal:/blog'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 10
+    langcode: en
+    uuid: 885e1cf9-f748-461a-bc53-160fcf925de0
+    options: { }
+  - menu_name: footer
+    title: Customers
+    parent: 'menu_link_content:7506065e-8381-4e9b-876f-35bdc4e230c9'
+    uri: 'internal:/case-studies'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 20
+    langcode: en
+    uuid: 14edbc5b-d0bb-4eb9-88b1-06e7c2afe841
+    options: { }
+  - menu_name: footer
+    title: 'Customer resources'
+    parent: 'menu_link_content:7506065e-8381-4e9b-876f-35bdc4e230c9'
+    uri: 'internal:/customer-resources'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 30
+    langcode: en
+    uuid: 3000cc8c-03e1-4c01-8b87-7be5f239c38f
+    options: { }
+  - menu_name: footer
+    title: Partners
+    parent: 'menu_link_content:7506065e-8381-4e9b-876f-35bdc4e230c9'
+    uri: 'internal:/partners'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 40
+    langcode: en
+    uuid: b33ccf7f-c0f3-40a1-a121-1288469da165
+    options: { }
+  - menu_name: footer
+    title: 'E-books and documentation'
+    parent: 'menu_link_content:7506065e-8381-4e9b-876f-35bdc4e230c9'
+    uri: 'internal:/ebooks'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 50
+    langcode: en
+    uuid: f76a5f40-f881-4888-b5b7-c069af3202fe
+    options: { }
+  - menu_name: footer
+    title: Company
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 60
+    langcode: en
+    uuid: c88c77fe-902c-4bc3-9b23-c8bd911d480b
+    options: { }
+  - menu_name: footer
+    title: About
+    parent: 'menu_link_content:c88c77fe-902c-4bc3-9b23-c8bd911d480b'
+    uri: 'internal:/about'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 10
+    langcode: en
+    uuid: ebed6a62-61a2-462c-bfcc-fd73d9aba839
+    options: { }
+  - menu_name: footer
+    title: Newsroom
+    parent: 'menu_link_content:c88c77fe-902c-4bc3-9b23-c8bd911d480b'
+    uri: 'internal:/news'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 20
+    langcode: en
+    uuid: 9110b308-65bb-4556-b032-d188b017cb43
+    options: { }
+  - menu_name: footer
+    title: Careers
+    parent: 'menu_link_content:c88c77fe-902c-4bc3-9b23-c8bd911d480b'
+    uri: 'internal:/careers'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 30
+    langcode: en
+    uuid: 9ab532a2-4149-4793-aae3-0649dd13ebe2
+    options: { }
+  - menu_name: footer
+    title: Support
+    parent: 'menu_link_content:c88c77fe-902c-4bc3-9b23-c8bd911d480b'
+    uri: 'internal:/support'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 40
+    langcode: en
+    uuid: 4ac30a4a-01f5-4a0e-8990-c0c83fdab441
+    options: { }
