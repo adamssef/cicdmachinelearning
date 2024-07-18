@@ -4,7 +4,6 @@
 <div class="legal_menu__container">
 	<div class="legal_menu__subcontainer">
 		{% for link_item in links %}
-{#			{{ dump(link_item) }}#}
 			{% if link_item['url'][current_language_prefix] %}
 				<a href="{{ link_item['url'][current_language_prefix] }}">{{ link_item['title'] }}</a><span class="separator">|</span>
 			{% else %}

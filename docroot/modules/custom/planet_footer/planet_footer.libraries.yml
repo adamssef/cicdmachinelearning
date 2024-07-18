@@ -3,3 +3,5 @@ planet_footer:
   css:
     theme:
       css/planet_footer.css: {}
+  js:
+    js/planet_footer.js: {}

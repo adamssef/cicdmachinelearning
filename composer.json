@@ -89,7 +89,6 @@
     "drupal/tmgmt_transifex": "^2.0",
     "drupal/toolbar_edit_page_button": "^1.0",
     "drupal/trash": "^3.0",
-    "drupal/twig_tweak": "^3.3",
     "drupal/ultimate_cron": "^2.0@alpha",
     "drupal/verf": "^2.0",
     "drupal/views_autosubmit": "^1.6",

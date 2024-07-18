@@ -17,9 +17,7 @@ function planet_header_theme() {
   if (!str_starts_with($current_url, '/user') || !$is_admin_page) {
     return [
       'block__planet_header_block' => [
-        'variables' => [
-          'data' => [],
-        ]
+        'variables' => [],
       ],
     ];
   }

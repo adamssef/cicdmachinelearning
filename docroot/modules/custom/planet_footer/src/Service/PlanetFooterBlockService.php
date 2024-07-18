@@ -4,7 +4,10 @@ namespace Drupal\planet_footer\Service;
 
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
 use Drupal\path_alias\AliasManagerInterface;
 use Drupal\planet_core\Service\PlanetCoreMenuService\PlanetCoreMenuServiceInterface;
 use Drupal\planet_core\Service\PlanetCoreNodeTranslationsService\PlanetCoreNodeTranslationsService;
@@ -52,6 +55,14 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
   public $menuService;
 
   /**
+   * The current route match.
+   *
+   * @var \Drupal\Core\Routing\RouteMatchInterface
+   */
+  protected $routeMatch;
+
+
+  /**
    * PlanetFooterBlockService constructor.
    *
    * @param MenuLinkTreeInterface $menu_tree
@@ -63,13 +74,17 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
    * @param PlanetCoreNodeTranslationsServiceInterface $node_translation_service
    *  The node translation service.
    * @param \Drupal\planet_core\Service\PlanetCoreMenuService\PlanetCoreMenuServiceInterface $menu_service
+   *  The menu service.
+   * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
+   *  The current route match.
    */
-  public function __construct(MenuLinkTreeInterface $menu_tree, AliasManagerInterface $path_alias_manager, LanguageManagerInterface $language_manager, PlanetCoreNodeTranslationsServiceInterface $node_translation_service, PlanetCoreMenuServiceInterface $menu_service) {
+  public function __construct(MenuLinkTreeInterface $menu_tree, AliasManagerInterface $path_alias_manager, LanguageManagerInterface $language_manager, PlanetCoreNodeTranslationsServiceInterface $node_translation_service, PlanetCoreMenuServiceInterface $menu_service, RouteMatchInterface $route_match) {
     $this->menuTree = $menu_tree;
     $this->pathAliasManager = $path_alias_manager;
     $this->languageManager = $language_manager;
     $this->nodeTranslationService = $node_translation_service;
     $this->menuService = $menu_service;
+    $this->routeMatch = $route_match;
   }
 
   /**
@@ -165,6 +180,78 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
     }
 
     return $url;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function prepareDataForLanguageSwitcher():array {
+    $default_language = $this->languageManager->getDefaultLanguage();
+    $languages = $this->languageManager->getLanguages();
+    $current_lang_id = $this->languageManager->getCurrentLanguage()->getId();
+    $lang_url_list = [];
+    $is_frontpage = \Drupal::service('path.matcher')->isFrontPage();
+
+    foreach ($languages as $language) {
+      // Get the current URL in each language.
+      $url = Url::fromRoute('<current>')
+        ->setOption('language', $language)->toString();
+
+      // Check if the URL has a translation.
+      $has_translation = FALSE;
+      if ($node = $this->routeMatch->getParameter('node')) {
+        if ($node instanceof NodeInterface) {
+          $has_translation = $node->hasTranslation($language->getId());
+        }
+      }
+
+      // If the page doesn't have a translation, use the English URL as a fallback.
+      if (!$has_translation && $language->getId() !== $default_language) {
+        $url = Url::fromRoute('<current>')
+          ->setOption('language', $default_language)->toString();
+      }
+
+      $homepage_url = $language->getId() == "en" ? "/" : "/" . $language->getId();
+      $url = $is_frontpage ? $homepage_url : $url;
+      $name = $this->pretty_lang_name($language->getId());
+      $flag = '/resources/icons/language_switcher/' . $language->getId() . '.png';
+
+      $lang_url_list[$language->getId()] = [
+        "url" => $url,
+        "name" => $name,
+        "flag" => $flag,
+        "active" => $has_translation,
+      ];
+    }
+
+    $current_lang = $lang_url_list[$current_lang_id];
+
+    $lang_arr = [
+      '#theme' => 'language_switcher',
+      '#data' => [
+        'links' => $lang_url_list,
+        'current_language' => $current_lang,
+        'current_language_shortname' => $current_lang_id,
+      ],
+      '#attached' => [
+        'library' => ['planet_language_switcher/language-switcher'],
+      ],
+    ];
+
+    return $lang_arr;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function pretty_lang_name($id): string {
+    return match ($id) {
+      'fr' => 'Français',
+      'de' => 'Deutsch',
+      'es' => 'Español',
+      'it' => 'Italiano',
+      default => 'English',
+    };
   }
 
   /**

@@ -96,7 +96,6 @@ module:
   planet_footer: 0
   planet_header: 0
   planet_html_sitemap: 0
-  planet_language_switcher: 0
   planet_links: 0
   planet_offices: 0
   planet_sitestudio_custom_elements: 0
@@ -149,7 +148,6 @@ module:
   toolbar_edit_page_button: 0
   tour: 0
   trash: 0
-  twig_tweak: 0
   typed_data: 0
   ultimate_cron: 0
   update: 0

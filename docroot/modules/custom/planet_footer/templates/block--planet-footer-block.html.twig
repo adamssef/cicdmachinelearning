@@ -2,12 +2,14 @@
 {% set current_language_prefix = elements['content'][0]['current_language_prefix'] %}
 {% set first_row_keys = ['Software', 'Solutions', 'Payments'] %}
 {% set second_row_keys = ['Tax Free', 'Resources', 'Company'] %}
+{% set lang_switcher_data = elements['content'][0]['lang_switcher_data']['#data'] %}
 
 <footer class="footer-meta-container">
 	<div class="footer_meta_container__container container__logos">
 		<div class="links-column">
 			<a class="planet-logo" href="https://weareplanet.com"><img src="/resources/logo/planet_logo.svg"></a>
-			<div class="language-switcher-container">{{ drupal_block('planet_language_switcher_block') }}</div>
+			<!-- [NOTE This is a workaround for what Twig Tweak normally does. -->
+			<div class="language-switcher-container">{% include '/modules/custom/planet_language_switcher/templates/language-switcher.html.twig' with {'data': lang_switcher_data } %}</div>
 			<a href="https://www.linkedin.com/company/planet/" class="linkedin-menu-icon"></a>
 		</div>
 	</div>

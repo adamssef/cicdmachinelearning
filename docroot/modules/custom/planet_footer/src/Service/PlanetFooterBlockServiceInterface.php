@@ -25,4 +25,14 @@ interface PlanetFooterBlockServiceInterface {
    */
   public function prepareLinksForLegal(): array;
 
+  /**
+   * Prepares an array of menu content for the language switcher.
+   *
+   * [Note: This when SiteStudio is removed and Twig Tweak module enabled, this might not be needed any more.]
+   *
+   * @return array
+   *   An array of menu content for the language switcher.
+   */
+  public function prepareDataForLanguageSwitcher():array;
+
 }
