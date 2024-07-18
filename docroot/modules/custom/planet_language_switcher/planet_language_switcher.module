@@ -26,14 +26,6 @@ function planet_language_switcher_theme()
     ];
 }
 
-// function log_to_file($text)
-// {
-//   $f = fopen('my_log.txt', 'a');
-//   fwrite($f, date('Ymd H:i:s - ') . $text . "\n");
-//   fclose($f);
-// }
-
-
 function planet_language_switcher_retrieve_browser_lang()
 {
     return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);

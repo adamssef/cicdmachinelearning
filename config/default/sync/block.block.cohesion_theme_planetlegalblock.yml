@@ -1,0 +1,31 @@
+uuid: 3e2d60bd-5ab5-476f-a4b0-8ee2cb4f5496
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - cohesion
+    - planet_footer
+    - system
+  theme:
+    - cohesion_theme
+id: cohesion_theme_planetlegalblock
+theme: cohesion_theme
+region: content
+weight: 0
+provider: null
+plugin: planet_legal_block
+settings:
+  id: planet_legal_block
+  label: 'Planet Legal Block'
+  label_display: '0'
+  provider: planet_footer
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: 0
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/user/*\r\n/admin/*"

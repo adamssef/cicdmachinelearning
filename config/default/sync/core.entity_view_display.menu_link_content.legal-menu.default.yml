@@ -1,0 +1,28 @@
+uuid: 3c867892-c378-4623-b944-3cc78030b1e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.legal-menu.field_menu_item_node
+    - system.menu.legal-menu
+id: menu_link_content.legal-menu.default
+targetEntityType: menu_link_content
+bundle: legal-menu
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_menu_item_node:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

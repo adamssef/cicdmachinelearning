@@ -1,3 +1,56 @@
+menus:
+  -
+    menu_name: legal-menu
+    title: 'Privacy Policy'
+    parent: null
+    uri: 'internal:/privacy-policy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: dd2a45ad-4102-4f95-b8a7-4ee363de0b59
+    options: {  }
+  -
+    menu_name: legal-menu
+    title: 'Cookie Policy'
+    parent: null
+    uri: 'internal:/cookie-policy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: e047f848-b6bd-4765-9848-72140ebad572
+    options: {  }
+  -
+    menu_name: legal-menu
+    title: 'Marketing Privacy Notice'
+    parent: null
+    uri: 'internal:/marketing-privacy-notice-b2b'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: 93e85efb-044f-4425-ac73-2e4cc2a26ba4
+    options: {  }
+  -
+    menu_name: legal-menu
+    title: Imprint
+    parent: null
+    uri: 'internal:/protel-imprint'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: 89c22cdd-a954-4779-a528-f2542fb46c3d
+    options: {  }
 taxonomies:
   case_studies_industry:
     -

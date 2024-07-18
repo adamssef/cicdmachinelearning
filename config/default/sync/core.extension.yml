@@ -10,6 +10,7 @@ module:
   automated_cron: 0
   ban: 0
   block: 0
+  block_class: 0
   block_content: 0
   breakpoint: 0
   captcha: 0
@@ -92,6 +93,8 @@ module:
   phpass: 0
   planet_config: 0
   planet_core: 0
+  planet_footer: 0
+  planet_header: 0
   planet_html_sitemap: 0
   planet_language_switcher: 0
   planet_links: 0
@@ -146,6 +149,7 @@ module:
   toolbar_edit_page_button: 0
   tour: 0
   trash: 0
+  twig_tweak: 0
   typed_data: 0
   ultimate_cron: 0
   update: 0

@@ -1,0 +1,30 @@
+uuid: 27980760-05a9-4ee2-94bd-59149bebc4d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion
+    - planet_header
+    - system
+  theme:
+    - cohesion_theme
+id: cohesion_theme_planetheaderblock
+theme: cohesion_theme
+region: content
+weight: -24
+provider: null
+plugin: planet_header_block
+settings:
+  id: planet_header_block
+  label: 'Planet Header Block'
+  label_display: '0'
+  provider: planet_header
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: 0
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/user/*\r\n/admin/*"

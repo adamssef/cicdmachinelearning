@@ -1,0 +1,277 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function planet_case_studies_theme(): array {
+  return [
+    'node__case_studies_landing' => [
+      'template' => 'node--case-studies-landing',
+      'base hook' => 'node',
+    ],
+    'node__case_studies' => [
+      'template' => 'node--case-studies',
+      'base hook' => 'node',
+    ],
+    'views_view_fields__case_studies' => [
+      'template' => 'views-view-fields--case-studies',
+      'base hook' => 'views_view_fields',
+    ],
+    'select__case_studies' => [
+      'template' => 'select--case-studies',
+      'base hook' => 'select'
+    ],
+    'block__case_studies_reviews' => [
+      'template' => 'block--case-studies-reviews',
+      'base hook' => 'block',
+    ],
+    'block__grow_business_with_planet' => [
+      'template' => 'block--grow-business-with-planet',
+      'base hook' => 'block',
+    ],
+    'block__grow_business_with_planet_large' => [
+      'template' => 'block--grow-business-with-planet-large',
+      'base hook' => 'block',
+    ],
+    'block__case_studies_more' => [
+      'template' => 'block--case-studies-more',
+      'base hook' => 'block',
+    ],
+    'block__case_studies_request_demo' => [
+      'template' => 'block--case-studies-request-demo',
+      'base hook' => 'block',
+    ],
+    'form__exposed_case_studies' => [
+      'template' => 'form--exposed-case-studies',
+      'base hook' => 'form',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function planet_case_studies_preprocess_node(array &$variables) {$node = $variables['node'];
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+
+  if ($alias === '/case-studies-2-0') {
+    $variables['case_studies'] = \Drupal::service('planet_core.case_studies_helper')->getAllCaseStudies();
+    $variables['brands'] = \Drupal::service('planet_core.case_studies_helper')->getBrandsWeWorkWith();
+  }
+
+  $case_studies_helper = \Drupal::getContainer()->get('planet_core.case_studies_helper');
+
+  if ($node->getType() === 'case_studies') {
+    $variables['case_study_data'] = $case_studies_helper->getSingleCaseStudyData($node);
+    $variables['case_studies'] = $case_studies_helper->getCaseStudiesForMoreBlock(0, 4, $variables['case_study_data']['products'], $variables['case_study_data']['industry'], $variables['case_study_data']['company_size']);
+
+    $media_id = NULL;
+
+    if (isset($node->get('field_video_media')?->getValue()[0])) {
+      $media_id = $node->get('field_video_media')?->getValue()[0]['target_id'];
+    }
+
+    if (!is_null($media_id) && isset($node->get('field_video_media')?->getValue()[0])) {
+      $media = \Drupal::entityTypeManager()->getStorage('media')->load($media_id);
+      if ($media->hasField('field_media_oembed_video')) {
+        if ($media->get('field_media_oembed_video')?->getValue()[0]['value']) {
+          $unprocessed_url = $media->get('field_media_oembed_video')?->getValue()[0]['value'];
+          $queryString = parse_url($unprocessed_url, PHP_URL_QUERY);
+
+          parse_str($queryString, $queryParams);
+          $vValue = $queryParams['v'];
+          $final_url = 'https://www.youtube.com/embed/' . $vValue;
+          $variables['case_study_data']['oembed_url'] = $final_url;
+          $variables['case_study_data']['video_subtext'] = $node->get('field_video_subtext')?->getValue()[0]['value'];
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function planet_case_studies_preprocess_select(array &$variables) {
+  $variables['element']['#attributes']['class'][] = 'form-select';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function planet_case_studies_preprocess_page(array &$variables) {
+  $path = \Drupal::service('path.current')->getPath();
+  $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+
+  if ($current_path_alias === '/case-studies-2-0') {
+    $variables['#attached']['library'][] = 'planet_case_studies/planet_case_studies';
+  }
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof NodeInterface) {
+    if ($node->getType() === 'case_studies') {
+      $variables['#attached']['library'][] = 'planet_case_studies/planet_case_study';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function planet_case_studies_theme_suggestions_node_alter(array &$suggestions, array &$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if (!$node or !($node instanceof NodeInterface)) {
+    return;
+  }
+
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+
+  switch ($alias) {
+    case "/case-studies-2-0":
+      $suggestions[] = 'node__case_studies_landing';
+      break;
+    case $node->getType() === 'case_studies':
+      $suggestions[] = 'node__case_studies';
+      break;
+  }
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function planet_case_studies_theme_suggestions_views_view_fields_alter(&$suggestions, &$variables) {
+  $view_id= $variables['view']->id();
+  $path = \Drupal::service('path.current')->getPath();
+  $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+
+  if ($current_path_alias === '/case-studies-2-0') {
+    if ($view_id === 'planet_case_studies_view_load_more') {
+      $suggestions[] = 'views_view_fields__case_studies';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function planet_case_studies_theme_suggestions_select_alter(&$suggestions, &$variables) {
+  $fields =['edit-field-product-type-target-id', 'edit-field-industry-type-target-id', 'edit-field-company-size-target-id'];
+
+  if (in_array($variables['element']['#id'], $fields)) {
+    $suggestions[] = 'select__case_studies';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function planet_case_studies_theme_suggestions_form_alter(&$suggestions, &$variables) {
+  if (isset($variables['element']['#id'])) {
+    if ($variables['element']['#id'] === 'views-exposed-form-planet-case-studies-view-load-more-block-1') {
+      $suggestions[] = 'form__exposed_case_studies';
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function planet_case_studies_form_alter(&$form, FormStateInterface $form_state) {
+  if ($form['#id'] === 'views-exposed-form-planet-case-studies-view-load-more-block-1') {
+    $form['field_product_type_target_id']['#options']['All'] = t('All products');
+    $form['field_industry_type_target_id']['#options']['All'] = t('All industries');
+    $form['field_company_size_target_id']['#options']['All'] = t('All companies');
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * We need to disable the submit action on the exposed form.
+ */
+function planet_case_studies_form_views_exposed_form_alter(&$form, FormStateInterface $form_state) {
+  $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath(\Drupal::service('path.current')->getPath());
+
+  if ($current_path_alias === '/case-studies-2-0') {
+    $form['actions']['submit']['#attributes']['disabled']  = 'disabled';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function planet_case_studies_preprocess_views_view_fields(&$variables) {
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath(\Drupal::service('path.current')->getPath());
+
+  if ($alias !== '/case-studies-2-0') {
+    return;
+  }
+  $node = $variables['row']->_entity;
+
+  $media_id = $node->get('field_main_image_media')?->getValue()[0]['target_id'];
+  $styled_image_url = \Drupal::getContainer()->get('planet_core.case_studies_helper')->getStyledImageUrl($media_id, 'wide');
+
+  $media_logo_id = $node->get('field_logo_media')?->getValue()[0]['target_id'];
+  $styled_logo_image_url = \Drupal::getContainer()->get('planet_core.case_studies_helper')->getImageUrl($media_logo_id, 'field_media_image');
+  $variables['main_image_url'] = $styled_image_url;
+  $variables['logo_image_url'] = $styled_logo_image_url;
+  $variables['node_url'] = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+  $variables['triplet_img_class'] = $variables['row']->triplet_img_class;
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function planet_case_studies_preprocess_views_view(&$variables) {
+  $rows = $variables['view']->result;
+
+  foreach ($rows as $index => $row) {
+    $triplet_n = floor(($index / 3));
+    $position_in_a_triplet = $index % 3;
+    $rows[$index]->counter = $index + 1;
+
+    if ($triplet_n % 2 == 0) {
+      if ($position_in_a_triplet == 0) {
+        $rows[$index]->triplet_img_class = 'large-left';
+      }
+      else {
+        switch ($position_in_a_triplet) {
+          case 1:
+            $rows[$index]->triplet_img_class = 'small-right-top';
+            break;
+          case 2:
+            $rows[$index]->triplet_img_class = 'small-right-bottom';
+            break;
+        }
+      }
+    }
+    else {
+      if ($position_in_a_triplet == 2) {
+        $rows[$index]->triplet_img_class = 'large-right';
+      }
+      else {
+        switch ($position_in_a_triplet) {
+          case 0:
+            $rows[$index]->triplet_img_class = 'small-left-top';
+            break;
+          case 1:
+            $rows[$index]->triplet_img_class = 'small-left-bottom';
+            break;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_rows_wprapper().
+ */
+function planet_case_studies_preprocess_views_rows_wprapper(&$variables) {
+  $variables['rows'] = $variables['view']->result;
+}

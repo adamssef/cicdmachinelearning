@@ -1,0 +1,5 @@
+name: 'planet_footer'
+type: module
+description: 'A module that implements new footer design.'
+package: Planet
+core_version_requirement: ^10

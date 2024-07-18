@@ -11,7 +11,7 @@
       <div class="language-switcher__button-wrapper">
         <div class="language-switcher__button" id="language-switcher-button" role="option">
           <div class="custom-language__country language-switcher__item">
-            <img class="language-switcher__flag" src="{{ data.current_language.flag }}"><span>{{ data.current_language.name }}</span>
+            <span><span class="ls-item__minicontainer"><img src="{{ data.current_language['flag'] }}"/>{{ data.current_language.name }}</span><img class="language-switcher__arrow" src="/resources/icons/language_switcher/icon-down.svg"/></span>
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@
           <ul class="language-switcher__dropdown-menu" role="listbox">
             {% for key, item in data.links %}
               <li class="language-switcher__item {{ not item.active ? ' disabled' }}" role="option" tabindex="0">
-                <a class="language-switcher__link" href="{{ item.url }}"><img class="language-switcher__flag" src="{{ item.flag }}"><span>{{ item.name }}</span></a>
+                <a class="language-switcher__link" href="{{ item.url }}"><span><img src="{{ item.flag }}">{{ item.name }}</span></a>
               </li>
             {% endfor %}
           </ul>

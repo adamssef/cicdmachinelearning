@@ -1,0 +1,735 @@
+{% set data = elements.content[0]['#data'] %}
+<div class="megamenu-complex-container">
+	<header>
+		<div class="inside-header-container">
+			<a class="go-home" href="/">
+				<img id="planet-logo" src="/resources/logo/planet_logo.svg" alt="Planet Logo" class="planet-logo inverted">
+			</a>
+			<div class="header-menus">
+				<nav class="header-menu main-menu">
+					<span id="products" class="business-li">
+						<a class="business-link" href="javascript:void(0);">{{ "Products"|t }}
+							<img id="products_img" src="/resources/icons/arrow-down.svg" alt="Icon pointing down"/>
+						</a>
+					</span>
+					<span id="solutions" class="business-li">
+						<a class="business-link" href="javascript:void(0);">{{ "Solutions"|t }}
+							<img id=solutions_img src="/resources/icons/arrow-down.svg" alt="Icon pointing down"/>
+						</a>
+					</span>
+					<span id="resources" class="business-li">
+						<a class="business-link" href="javascript:void(0);">{{ "Resources"|t }}
+							<img id="resources_img" src="/resources/icons/arrow-down.svg" alt="Icon pointing down"/>
+						</a>
+					</span>
+					<span id="company" class="business-li">
+						<a class="business-link" href="javascript:void(0);">{{ "Company"|t }}
+							<img id="company_img" src="/resources/icons/arrow-down.svg" alt="Icon pointing down"/>
+						</a>
+					</span>
+				</nav>
+				<nav class="header-menu secondary-planet-menu">
+					<span class="track-my-refund-menu-item protel-login">
+						<a target="_blank" href="https://app.protel.net">{{ "Protel login"|t }}</a>
+					</span>
+					<span class="track-my-refund-menu-item contact-us">
+						{% if data.current_language_prefix == '' %}
+							<a href="/contact">{{ "Contact us"|t }}</a>
+						{% elseif data.current_language_prefix == 'it' %}
+							<a href="/it/contattaci">{{ "Contact us"|t }}</a>
+						{% elseif data.current_language_prefix == 'fr' %}
+							<a href="/fr/contact">{{ "Contact us"|t }}</a>
+						{% elseif data.current_language_prefix == 'de' %}
+							<a href="/de/contact">{{ "Contact us"|t }}</a>
+						{% elseif data.current_language_prefix == 'es' %}
+							<a href="/es/contactar">{{ "Contact us"|t }}</a>
+						{% endif %}
+					</span>
+				</nav>
+			</div>
+		</div>
+		<div class="inside-header-container--mobile-and-tablet">
+			<a class="go-home" href="/">
+				<img id="planet-logo" src="/resources/logo/planet_logo.svg" alt="Planet Logo" class="planet-logo">
+			</a>
+			<span class="go-back-span display-none--desktop display-none">
+				<a class="go-back-to-first-level display-none--desktop" href="#">
+					<img src="/resources/icons/arrow-left.svg" alt="Go back icon" class="arrow-left">
+				</a>
+				{{ "Back"|t }}
+			</span>
+			<img src="/resources/icons/hamburger-menu.svg" alt="Hamburger Menu" class="hamburger-menu">
+			<img src="/resources/icons/closing-x.svg" alt="Close menu icon." class="close-hamburger-menu display-none rotate-right">
+		</div>
+	</header>
+	<div class="megamenu-products__desktop display-none">
+		<div class="megamenu-column megamenu-column--left">
+			<span class="megamenu-column__title">{{ "Accept payments"|t }}</span>
+			<div class="megamenu-column__item">
+				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}online-payments">
+					<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/white-arrow.svg"/>
+					<span class="megamenu-column__mini-header">{{ "Online"|t }}</span>
+					<span class="megamenu-column__mini-text">{{ "Accept payments on your website, mobile app or via a secure link."|t }}</span>
+				</a>
+			</div>
+			<div class="megamenu-column__item">
+				{% if data.current_language_prefix == '' %}
+					<a href="/in-person-payments">
+				{% elseif data.current_language_prefix == 'es' %}
+					<a href="/es/pagos-en-persona">
+				{% elseif data.current_language_prefix == 'fr' %}
+					<a href="/fr/paiements-magasin">
+				{% elseif data.current_language_prefix == 'it' %}
+					<a href="/it/pagamenti-di-persona">
+				{% elseif data.current_language_prefix == 'de' %}
+					<a href="/de/personliche-zahlungen">
+				{% endif %}
+						<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/home.svg"/>
+						<span class="megamenu-column__mini-header">{{ "In-person"|t }}</span>
+						<span class="megamenu-column__mini-text">{{ "Take in-person payments inside, outside or on-the-go."|t }}</span>
+					</a>
+			</div>
+			<div class="megamenu-column__item">
+        {% if data.current_language_prefix == '' %}
+          <a href="/payments">
+        {% elseif data.current_language_prefix == 'es' %}
+          <a href="/es/pagos">
+        {% elseif data.current_language_prefix == 'fr' %}
+          <a href="/fr/paiements">
+        {% elseif data.current_language_prefix == 'it' %}
+          <a href="/it/pagamenti">
+        {% elseif data.current_language_prefix == 'de' %}
+          <a href="/de/zahlungen">
+        {% endif %}
+					<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/accept-payments.svg"/>
+					<span class="megamenu-column__mini-header">{{ "Accept Payments"|t }}</span>
+					<span class="megamenu-column__mini-text">{{ "One partner to accept payments anywhere, anytime."|t }}</span>
+				</a>
+			</div>
+		</div>
+		<div class="megamenu-column megamenu-column--grey megamenu-column--center">
+			<span class="megamenu-column__title">{{ "Software for Hospitality"|t }}</span>
+			<div class="megamenu-column__item">
+				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hotel-pms">
+					<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/bed.svg"/>
+					<span class="megamenu-column__mini-header">{{ "Property Management Software"|t }}</span>
+					<span class="megamenu-column__mini-text">{{ "Manage your day-to-day hotel operations easily and securely."|t }}</span>
+				</a>
+			</div>
+			<div class="megamenu-column__item megamenu-column__item--booking-engine">
+				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hotel-booking-engine">
+					<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/point_finger.svg"/>
+					<span class="megamenu-column__mini-header megamenu-column__mini-header--booking-engine">{{ "Booking Engine"|t }}</span>
+					<span class="megamenu-column__mini-text">{{ "Take direct bookings from your website."|t }}</span>
+				</a>
+			</div>
+			<span class="megamenu-column__title megamenu-column__title--mt32px">{{ "Software for Retail"|t }}</span>
+			<div class="megamenu-column__item">
+				{% if data.current_language_prefix == '' %}
+					<a href="/order-management-system">
+				{% elseif data.current_language_prefix == 'es' %}
+					<a href="/es/sistema-omnicanal-gestion-pedidos">
+				{% elseif data.current_language_prefix == 'de' %}
+					<a href="/de/auftragsverwaltungssystem">
+				{% elseif data.current_language_prefix == 'fr' %}
+					<a href="/fr/systeme-gestion-commandes-omnicanal">
+				{% elseif data.current_language_prefix == 'it' %}
+					<a href="/it/sistema-gestione-ordini-omnicanale">
+				{% endif %}
+						<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/shopping_cart.svg"/>
+						<span class="megamenu-column__mini-header">{{ "Order Management Software"|t }}</span>
+						<span class="megamenu-column__mini-text">{{ "Fulfil online orders from your store efficiently."|t }}</span>
+					</a>
+			</div>
+		</div>
+		<div class="megamenu-column megamenu-column--center">
+			<span class="megamenu-column__title">{{ "Serve any customer"|t }}</span>
+			<div class="megamenu-column__item">
+				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}dcc">
+					<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/dcc.svg"/>
+					<span class="megamenu-column__mini-header">{{ "Dynamic Currency Conversion"|t }}</span>
+					<span class="megamenu-column__mini-text">{{ "Localise the checkout experience for international customers."|t }}</span>
+				</a>
+			</div>
+			<div class="megamenu-column__item">
+				<a href="/payment-methods">
+					<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/network.svg"/>
+					<span class="megamenu-column__mini-header">{{ "Payment Methods"|t }}</span>
+					<span class="megamenu-column__mini-text megamenu-column__mini-text--payment-methods">{{ "Explore payment options for your checkout."|t }}</span>
+				</a>
+			</div>
+		</div>
+		<div class="lavender-metacontainer">
+			<div class="megamenu-column megamenu-column--lavender magamenu-column--right">
+				<span class="megamenu-column__title">{{ "Tax Free for Merchants"|t }}</span>
+				<div class="megamenu-column__item">
+					<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}vat-refund">
+						<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/issuing.svg"/>
+						<span class="megamenu-column__mini-header">{{ "Issuing"|t }}</span>
+						<span class="megamenu-column__mini-text megamenu-column__mini-text--issuing">{{ "Issue Tax Free forms – at scale."|t }}</span>
+					</a>
+				</div>
+				<span class="megamenu-column__title megamenu-column__title--taxfree-for-shoppers">{{ "Tax Free for Shoppers"|t }}</span>
+				<span class="track-my-refund-menu-item megamenu-cta-button"><a
+									href="https://planetpayment.com/track-my-refund" target="_blank">{{ "Track my refund"|t }}</a></span>
+			</div>
+		</div>
+	</div>
+	<div class="megamenu-solutions__desktop display-none">
+		<div class="megamenu-solutions megamenu-solutions-retail">
+			<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}retail">
+				<img class="solutions-column__icon" src="/resources/icons/Retail.svg"/>
+				<div class="megamenu-solutions__middle-layer">
+					<div class="ttl-and-txt">
+						<div class="solutions-column__title">{{ "Retail"|t }}</div>
+						<div class="solutions-column__text">{{ "Bring your payments, Tax Free, and OMS together on Planet."|t }}</div>
+					</div>
+					<div class="megamenu-solutions__image_container">
+						<img src="/resources/icons/arrow_west_north.svg">
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="megamenu-solutions megamenu-solutions-hospitality">
+			{% if data.current_language_prefix != 'fr' %}
+			<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hospitality">
+				{% else %}
+				<a href="/fr/hospitalite">
+					{% endif %}
+					<img class="solutions-column__icon" src="/resources/icons/Hospitality_Changed.svg"/>
+					<div class="megamenu-solutions__middle-layer">
+						<div class="ttl-and-txt">
+							<div class="solutions-column__title">{{ "Hospitality"|t }}</div>
+							<div class="solutions-column__text">{{ "Payments and Software for hotels, bars, restaurants and quick service outlets."|t }}</div>
+						</div>
+						<div class="megamenu-solutions__image_container">
+							<img src="/resources/icons/arrow_west_north.svg">
+						</div>
+					</div>
+				</a>
+		</div>
+		<div class="megamenu-solutions megamenu-solutions-travel">
+			<a href="/travel">
+				<img class="solutions-column__icon" src="/resources/icons/car.svg"/>
+				<div class="megamenu-solutions__middle-layer">
+					<div class="ttl-and-txt">
+						<div class="solutions-column__title">{{ "Travel"|t }}</div>
+						<div class="solutions-column__text">{{ "Create smoother payments journeys."|t }}</div>
+					</div>
+					<div class="megamenu-solutions-travel__container megamenu-solutions__image_container">
+						<img src="/resources/icons/arrow_west_north.svg">
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="megamenu-resources__desktop display-none">
+		<div class="navigation-items navigation-items--first">
+			<div class="navigation-item navigation-item--blogs">
+				{% if data.current_language_prefix == '' %}
+					<a href="/blog">
+						<div class="megamenu-column__mini-header">{{ "Blogs"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Read about the latest insights, trends and topics from Planet"|t }}</div>
+					</a>
+				{% else %}
+					<a href="/{{ data.current_language_prefix }}/blog">
+						<div class="megamenu-column__mini-header">{{ "Blogs"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Read about the latest insights, trends and topics from Planet"|t }}</div>
+					</a>
+				{% endif %}
+			</div>
+			<div class="navigation-item navigation-item--customers">
+				{% if data.current_language_prefix == '' %}
+					<a href="/case-studies">
+						<div class="megamenu-column__mini-header">{{ "Customers"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
+					</a>
+				{% else %}
+					<a href="/{{ data.current_language_prefix }}/case-studies">
+						<div class="megamenu-column__mini-header">{{ "Customers"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
+					</a>
+				{% endif %}
+			</div>
+			<div class="navigation-item navigation-item--customer-resources">
+				<a href="/customer-resources">
+					<div class="megamenu-column__mini-header">{{ "Customer Resources"|t }}</div>
+					<div class="megamenu-column__mini-text">{{ "Committed to exceptional support and resources for a seamless experience"|t }}</div>
+				</a>
+			</div>
+			<div class="navigation-item navigation-item--partners">
+				{% if data.current_language_prefix == '' %}
+					<a href="/partners">
+						<div class="megamenu-column__mini-header">{{ "Partners"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Meet the partners we work with to bring more to the end customer."|t }}</div>
+					</a>
+				{% else %}
+					<a href="/{{ data.current_language_prefix }}/partners">
+						<div class="megamenu-column__mini-header">{{ "Partners"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Meet the partners we work with to bring more to the end customer."|t }}</div>
+					</a>
+				{% endif %}
+			</div>
+		</div>
+		<div class="navigation-items navigation-items--second">
+			<div class="navigation-item navigation-item--ebooks">
+				{% if data.current_language_prefix == '' %}
+					<a href="ebooks">
+						<div class="megamenu-column__mini-header">{{ "E-books and documentation"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides an e-books"|t }}</div>
+					</a>
+				{% else %}
+					<a href="/{{ data.current_language_prefix }}/ebooks">
+						<div class="megamenu-column__mini-header">{{ "E-books and documentation"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides an e-books"|t }}</div>
+					</a>
+				{% endif %}
+			</div>
+			<div class="navigation-item"></div>
+			<div class="navigation-item"></div>
+			<div class="navigation-item"></div>
+		</div>
+		<div class="last-four-case-studies">
+			<div class="megamenu-column__title">{{ "Featured customer stories" }}</div>
+			<div class="iteration-container">
+				{% for case_study in data.case_studies %}
+					<a href="{{ case_study.url }}">
+						<div class="last-four-case-studies__case_study">
+							<div class="four-last-case-studies__item" style="background: url('{{ case_study.image_url }}'); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+							<span class="megamenu-column__mini-header">{{ case_study.title }}</span>
+						</div>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="megamenu-company__desktop display-none">
+		<div class="navigation-items">
+			<div class="navigation-item navigation-item--blogs">
+				{% if data.current_language_prefix == '' %}
+					<a href="/about">
+						<div class="megamenu-column__mini-header">{{ "About us"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Find out more about Planet, our integrated solutions, and who we serve."|t }}</div>
+					</a>
+				{% else %}
+					<a href="/{{ data.current_language_prefix }}/about">
+						<div class="megamenu-column__mini-header">{{ "About us"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Find out more about Planet, our integrated solutions, and who we serve."|t }}</div>
+					</a>
+				{% endif %}
+			</div>
+			<div class="navigation-item navigation-item--ebooks">
+				<a href="/news">
+					<div class="megamenu-column__mini-header">{{ "Newsroom"|t }}</div>
+					<div class="megamenu-column__mini-text">{{ "Find resources and Planet contact details for press and media."|t }}</div>
+				</a>
+			</div>
+			<div class="navigation-item navigation-item--customers">
+				<a href="/careers">
+					<div class="megamenu-column__mini-header">{{ "Careers"|t }}</div>
+					<div class="megamenu-column__mini-text">{{ "Discover our latest opportunities and start your journey with Planet."|t }}</div>
+				</a>
+			</div>
+			<div class="navigation-item navigation-item--partners">
+				<a href="/support">
+					<div class="megamenu-column__mini-header">{{ "Support"|t }}</div>
+					<div class="megamenu-column__mini-text">{{ "Get in touch with us today for local support in your country."|t }}</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Megamenu for mobile and tablet -->
+<div class="megamenu-mobile-and-tablets display-none">
+	<div class="merged-menu-items">
+		<a class="arrow-right-anchor" id="anchor-products" href="javascript:void(0);" alt="An arrow pointing right.">Products <img
+							src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
+		<a class="arrow-right-anchor" id="anchor-solutions" href="javascript:void(0);" alt="An arrow pointing right.">Solutions <img
+							src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
+		<a class="arrow-right-anchor" id="anchor-resources" href="javascript:void(0);" alt="An arrow pointing right.">Resources <img
+							src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
+		<a class="arrow-right-anchor" id="anchor-company" href="javascript:void(0);" alt="An arrow pointing right.">Company <img
+							src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
+		<span class="protel-login">
+			<a target="_blank" href="https://app.protel.net">{{ "Protel login"|t }}</a>
+		</span>
+		<span class="contact-us">
+			{% if data.current_language_prefix == '' %}
+				<a href="/contact">{{ "Contact us"|t }}</a>
+			{% elseif data.current_language_prefix == 'it' %}
+				<a href="/it/contattaci">{{ "Contact us"|t }}</a>
+			{% elseif data.current_language_prefix == 'fr' %}
+				<a href="/fr/contact">{{ "Contact us"|t }}</a>
+			{% elseif data.current_language_prefix == 'de' %}
+				<a href="/de/contact">{{ "Contact us"|t }}</a>
+			{% elseif data.current_language_prefix == 'es' %}
+				<a href="/es/contactar">{{ "Contact us"|t }}</a>
+			{% endif %}
+		</span>
+	</div>
+	<div class="megamenu-mobile-and-tablets__container megamenu-mobile-and-tablets__container--products display-none">
+		<div class="megamenu-column megamenu-column--left">
+			<span class="megamenu-column__title">{{ "Accept payments"|t }}</span>
+			<div class="megamenu-column__item">
+				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}online-payments">
+					<div class="img-and-mini-header-container">
+						<div class="img-and-mini-header-sub-container">
+							<div class="img-wrapper">
+								<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/white-arrow.svg"/>
+							</div>
+							<span class="megamenu-column__mini-header">{{ "Online"|t }}</span>
+						</div>
+						<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+					</div>
+					<span class="megamenu-column__mini-text">{{ "Accept payments on your website, mobile app or via a secure link."|t }}</span>
+				</a>
+			</div>
+			<div class="megamenu-column__item">
+				{% if data.current_language_prefix == '' %}
+					<a href="/in-person-payments">
+				{% elseif data.current_language_prefix == 'es' %}
+					<a href="/es/pagos-en-persona">
+				{% elseif data.current_language_prefix == 'fr' %}
+					<a href="/fr/paiements-magasin">
+				{% elseif data.current_language_prefix == 'it' %}
+					<a href="/it/pagamenti-di-persona">
+				{% elseif data.current_language_prefix == 'de' %}
+					<a href="/de/personliche-zahlungen">
+				{% endif %}
+				<div class="img-and-mini-header-container">
+					<div class="img-and-mini-header-sub-container">
+							<div class="img-wrapper">
+								<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/home.svg"/>
+							</div>
+							<span class="megamenu-column__mini-header">{{ "In-person"|t }}</span>
+					</div>
+					<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+				</div>
+				<span class="megamenu-column__mini-text">{{ "Take in-person payments inside, outside or on-the-go."|t }}</span>
+				</a>
+			</div>
+			<div class="megamenu-column__item">
+				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}payments">
+					<div class="img-and-mini-header-container">
+						<div class="img-and-mini-header-sub-container">
+								<div class="img-wrapper">
+									<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/accept-payments.svg"/>
+								</div>
+								<span class="megamenu-column__mini-header">{{ "Accept Payments"|t }}</span>
+						</div>
+						<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+					</div>
+					<span class="megamenu-column__mini-text">{{ "One partner to accept payments anywhere, anytime."|t }}</span>
+				</a>
+			</div>
+		</div>
+		<div class="megamenu-column megamenu-column--grey megamenu-column--center">
+			<span class="megamenu-column__title">{{ "Software for Hospitality"|t }}</span>
+			<div class="megamenu-column__item">
+				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hotel-pms">
+					<div class="img-and-mini-header-container">
+						<div class="img-and-mini-header-sub-container">
+								<div class="img-wrapper">
+									<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/bed.svg"/>
+								</div>
+								<span class="megamenu-column__mini-header">{{ "Property Management Software"|t }}</span>
+						</div>
+						<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+					</div>
+					<span class="megamenu-column__mini-text">{{ "Manage your day-to-day hotel operations easily and securely."|t }}</span>
+				</a>
+			</div>
+			<div class="megamenu-column__item megamenu-column__item--booking-engine">
+				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hotel-booking-engine">
+					<div class="img-and-mini-header-container">
+						<div class="img-and-mini-header-sub-container">
+								<div class="img-wrapper">
+									<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/point_finger.svg"/>
+								</div>
+								<span class="megamenu-column__mini-header megamenu-column__mini-header--booking-engine">{{ "Booking Engine"|t }}</span>
+						</div>
+						<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+					</div>
+					<span class="megamenu-column__mini-text">{{ "Take direct bookings from your website."|t }}</span>
+				</a>
+			</div>
+			<span class="megamenu-column__title">{{ "Software for Retail"|t }}</span>
+			<div class="megamenu-column__item">
+				{% if data.current_language_prefix == '' %}
+					<a href="/order-management-system">
+				{% elseif data.current_language_prefix == 'es' %}
+					<a href="/es/sistema-omnicanal-gestion-pedidos">
+				{% elseif data.current_language_prefix == 'de' %}
+					<a href="/de/auftragsverwaltungssystem">
+				{% elseif data.current_language_prefix == 'fr' %}
+					<a href="/fr/systeme-gestion-commandes-omnicanal">
+				{% elseif data.current_language_prefix == 'it' %}
+					<a href="/it/sistema-gestione-ordini-omnicanale">
+				{% endif %}
+				<div class="img-and-mini-header-container">
+					<div class="img-and-mini-header-sub-container">
+						<div class="img-wrapper">
+							<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/shopping_cart.svg"/>
+						</div>
+						<span class="megamenu-column__mini-header">{{ "Order Management Software"|t }}</span>
+					</div>
+					<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+				</div>
+				<span class="megamenu-column__mini-text">{{ "Fulfil online orders from your store efficiently."|t }}</span>
+				</a>
+			</div>
+		</div>
+		<div class="megamenu-column megamenu-column--center">
+			<span class="megamenu-column__title">{{ "Serve any customer"|t }}</span>
+			<div class="megamenu-column__item">
+				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}dcc">
+				<div class="img-and-mini-header-container">
+					<div class="img-and-mini-header-sub-container">
+							<div class="img-wrapper">
+								<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/dcc.svg"/>
+							</div>
+							<span class="megamenu-column__mini-header">{{ "Dynamic Currency Conversion"|t }}</span>
+					</div>
+					<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+				</div>
+				<span class="megamenu-column__mini-text">{{ "Localise the checkout experience for international customers."|t }}</span>
+			</a>
+		</div>
+			<div class="megamenu-column__item">
+				<a href="/payment-methods">
+				<div class="img-and-mini-header-container">
+					<div class="img-and-mini-header-sub-container">
+						<div class="img-wrapper">
+							<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/network.svg"/>
+						</div>
+						<span class="megamenu-column__mini-header">{{ "Payment Methods"|t }}</span>
+					</div>
+					<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+
+				</div>
+				<span class="megamenu-column__mini-text megamenu-column__mini-text--payment-methods">{{ "Explore payment options for your checkout."|t }}</span>
+				</a>
+			</div>
+		</div>
+		<div class="lavender-metacontainer">
+			<div class="megamenu-column megamenu-column--lavender magamenu-column--right">
+				<span class="megamenu-column__title">{{ "Tax Free for Merchants"|t }}</span>
+				<div class="megamenu-column__item">
+					<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}vat-refund">
+						<div class="img-and-mini-header-container">
+							<div class="img-and-mini-header-sub-container">
+								<div class="img-wrapper">
+									<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/issuing.svg"/>
+								</div>
+								<span class="megamenu-column__mini-header">{{ "Issuing"|t }}</span>
+							</div>
+							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+						</div>
+						<span class="megamenu-column__mini-text megamenu-column__mini-text--issuing">{{ "Issue Tax Free forms – at scale."|t }}</span>
+					</a>
+				</div>
+				<span class="megamenu-column__title megamenu-column__title--taxfree-for-shoppers">{{ "Tax Free for Shoppers"|t }}</span>
+				<span class="track-my-refund-menu-item megamenu-cta-button">
+					<a target="_blank" href="https://planetpayment.com/track-my-refund">{{ "Track my refund"|t }}</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="megamenu-mobile-and-tablets__container megamenu-mobile-and-tablets__container--solutions display-none">
+		<div class="megamenu-solutions megamenu-solutions-retail">
+			<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}retail">
+				<img class="solutions-column__icon" src="/resources/icons/shopping_bag.svg"/>
+				<div class="megamenu-solutions__middle-layer">
+					<div class="ttl-and-txt">
+						<div class="solutions-column__title">{{ "Retail"|t }}</div>
+						<div class="solutions-column__text">{{ "Bring your payments, Tax Free, and OMS together on Planet."|t }}</div>
+					</div>
+					<div class="megamenu-solutions__image_container">
+						<img src="/resources/icons/arrow_west_north.svg">
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="megamenu-solutions megamenu-solutions-hospitality">
+			{% if data.current_language_prefix != 'fr' %}
+				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hospitality">
+			{% else %}
+				<a href="/fr/hospitalite">
+			{% endif %}
+				<img class="solutions-column__icon" src="/resources/icons/ring.svg"/>
+				<div class="megamenu-solutions__middle-layer">
+					<div class="ttl-and-txt">
+						<div class="solutions-column__title">{{ "Hospitality"|t }}</div>
+						<div class="solutions-column__text">{{ "Payments and Software for hotels, bars, restaurants and quick service outlets."|t }}</div>
+					</div>
+					<div class="megamenu-solutions__image_container">
+						<img src="/resources/icons/arrow_west_north.svg">
+					</div>
+				</div>
+				</a>
+		</div>
+		<div class="megamenu-solutions megamenu-solutions-travel">
+			<img class="solutions-column__icon" src="/resources/icons/car.svg"/>
+			<div class="megamenu-solutions__middle-layer">
+				<div class="ttl-and-txt">
+					<a>
+						<div class="solutions-column__title">{{ "Travel"|t }}</div>
+						<div class="solutions-column__text">{{ "Create smoother payments journeys."|t }}</div>
+					</a>
+				</div>
+				<div class="megamenu-solutions-travel__container megamenu-solutions__image_container">
+					<img src="/resources/icons/arrow_west_north.svg">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="megamenu-mobile-and-tablets__container megamenu-mobile-and-tablets__container--resources display-none">
+		<div class="navigation-items">
+			<div class="navigation-item navigation-item--blogs">
+				{% if data.current_language_prefix == '' %}
+					<a href="/blog">
+						<div class="megamenu-column__mini-header">
+							{{ "Blogs"|t }}
+							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+						</div>
+						<div class="megamenu-column__mini-text">{{ "Read about the latest insights, trends and topics from Planet"|t }}</div>
+					</a>
+				{% else %}
+					<a href="/{{ data.current_language_prefix }}/blog">
+						<div class="megamenu-column__mini-header">
+							{{ "Blogs"|t }}
+							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+						</div>
+						<div class="megamenu-column__mini-text">{{ "Read about the latest insights, trends and topics from Planet"|t }}</div>
+					</a>
+				{% endif %}
+			</div>
+			<div class="navigation-item navigation-item--customers">
+				{% if data.current_language_prefix == '' %}
+					<a href="/case-studies">
+						<div class="megamenu-column__mini-header">
+							{{ "Customers"|t }}
+							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+						</div>
+						<div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
+					</a>
+				{% else %}
+					<a href="/{{ data.current_language_prefix }}/blog">
+						<div class="megamenu-column__mini-header">
+							{{ "Customers"|t }}
+							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+						</div>
+						<div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
+					</a>
+				{% endif %}
+			</div>
+			<div class="navigation-item navigation-item--partners">
+				{% if data.current_language_prefix == '' %}
+					<a href="/partners">
+						<div class="megamenu-column__mini-header">
+							{{ "Partners"|t }}
+							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+						</div>
+						<div class="megamenu-column__mini-text">{{ "Meet the partners we work with to bring more to the end customer."|t }}</div>
+					</a>
+				{% else %}
+					<a href="/{{ data.current_language_prefix }}/partners">
+						<div class="megamenu-column__mini-header">
+							{{ "Partners"|t }}
+							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+							</div>
+						<div class="megamenu-column__mini-text">{{ "Meet the partners we work with to bring more to the end customer."|t }}</div>
+					</a>
+				{% endif %}
+			</div>
+			<div class="navigation-item navigation-item--ebooks">
+				{% if data.current_language_prefix == '' %}
+					<a href="ebooks">
+						<div class="megamenu-column__mini-header">
+							{{ "E-books and documentation"|t }}
+							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+						</div>
+						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides an e-books"|t }}</div>
+					</a>
+				{% else %}
+					<a href="/{{ data.current_language_prefix }}/partners">
+						<div class="megamenu-column__mini-header">
+							{{ "E-books and documentation"|t }}
+							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+						</div>
+						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides an e-books"|t }}</div>
+					</a>
+				{% endif %}
+			</div>
+		</div>
+		<div class="last-four-case-studies">
+			<div class="megamenu-column__title">{{ "Featured customer stories" }}</div>
+			<div class="iteration-container">
+				{% set case_study_count = data.case_studies|length - 1 %}
+				{% for key, case_study in data.case_studies %}
+					<a href="{{ case_study.url }}">
+						<div class="last-four-case-studies__case_study">
+							<div class="four-last-case-studies__item four-last-case-studies__item--last" style="background: url('{{ case_study.image_url }}'); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+							{% if key == case_study_count %}
+								<span class="megamenu-column__mini-header megamenu-column__mini-header--last">{{ case_study.title }}</span>
+							{% else %}
+								<span class="megamenu-column__mini-header">{{ case_study.title }}</span>
+							{% endif %}
+						</div>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="megamenu-mobile-and-tablets__container megamenu-mobile-and-tablets__container--company display-none">
+		<div class="navigation-items">
+			<div class="navigation-item navigation-item--blogs">
+				{% if data.current_language_prefix == '' %}
+					<a href="/about">
+						<div class="megamenu-column__mini-header">
+							{{ "About us"|t }}
+							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+						</div>
+						<div class="megamenu-column__mini-text">{{ "Find out more about Planet, our integrated solutions, and who we serve."|t }}</div>
+					</a>
+				{% else %}
+					<a href="/{{ data.current_language_prefix }}/about">
+						<div class="megamenu-column__mini-header">
+							{{ "About us"|t }}
+							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+						</div>
+						<div class="megamenu-column__mini-text">{{ "Find out more about Planet, our integrated solutions, and who we serve."|t }}</div>
+					</a>
+				{% endif %}
+			</div>
+			<div class="navigation-item navigation-item--ebooks">
+				<a href="/news">
+					<div class="megamenu-column__mini-header">
+						{{ "Newsroom"|t }}
+						<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+					</div>
+					<div class="megamenu-column__mini-text">{{ "Find resources and Planet contact details for press and media."|t }}</div>
+				</a>
+			</div>
+			<div class="navigation-item navigation-item--customers">
+				<a href="/careers">
+					<div class="megamenu-column__mini-header">
+						{{ "Careers"|t }}
+						<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+					</div>
+					<div class="megamenu-column__mini-text">{{ "Discover our latest opportunities and start your journey with Planet."|t }}</div>
+				</a>
+			</div>
+			<div class="navigation-item navigation-item--partners">
+				<a href="/support">
+					<div class="megamenu-column__mini-header">
+						{{ "Support"|t }}
+						<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+					</div>
+					<div class="megamenu-column__mini-text">{{ "Get in touch with us today for local support in your country."|t }}</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

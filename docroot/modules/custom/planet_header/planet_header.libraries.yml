@@ -1,0 +1,11 @@
+planet_header:
+  version: 1.0
+  css:
+    theme:
+      css/planet_header.css: {}
+  js:
+      js/planet_header.js: { }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

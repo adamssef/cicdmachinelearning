@@ -1,0 +1,18 @@
+# ROUTES
+
+planet_case_studies.case_studies:
+  path: '/planet/case_studies/{product_option}/{industry_option}/{company_size_option}/{how_many_already_loaded}/{limit}'
+  defaults:
+    _controller: '\Drupal\planet_case_studies\Controller\CaseStudiesController::loadCaseStudies'
+    _title: 'Load all published case studies'
+  requirements:
+    _permission: 'access content'
+    how_many_already_loaded: '\d+'  # Ensure how_many_already_loaded is a positive integer.
+
+planet_case_studies.case_studies_count:
+  path: '/planet/case_studies/get_total_case_studies_count/{product_option}/{industry_option}/{company_size_option}'
+  defaults:
+    _controller: '\Drupal\planet_case_studies\Controller\CaseStudiesController::getTotalCaseStudiesCount'
+    _title: 'Load all published case studies'
+  requirements:
+    _permission: 'access content'

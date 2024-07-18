@@ -1,0 +1,8 @@
+uuid: e9125f86-c5a6-4cdc-ac95-bd7be5d59e63
+langcode: en
+status: true
+dependencies: {  }
+id: legal-menu
+label: 'Legal menu'
+description: ''
+locked: false

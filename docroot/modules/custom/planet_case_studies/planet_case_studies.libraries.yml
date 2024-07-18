@@ -1,0 +1,20 @@
+planet_case_studies:
+  css:
+    theme:
+      css/planet_case_studies.css: {}
+      css/planet_case_studies_carousel_item.css: {}
+      https://cdn.jsdelivr.net/npm/swiper@8.1.4/swiper-bundle.min.css: { type: external, minified: true }
+  js:
+    js/CaseStudies.js: {}
+    https://cdn.jsdelivr.net/npm/swiper@8.1.4/swiper-bundle.min.js: { type: external, minified: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+planet_case_study:
+  css:
+    theme:
+      css/planet_case_study.css: {}
+      css/planet_case_studies_carousel_item.css: {}
+  js:
+    js/CaseStudy.js: { }
