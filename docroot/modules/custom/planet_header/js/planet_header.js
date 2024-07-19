@@ -1,9 +1,177 @@
 (function ($, Drupal) {
   let currentlyOpenMenuItem = null;
 
+  function createCookie(name, value, hours) {
+    if (hours) {
+      var date = new Date();
+      date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+      var expires = "; expires=" + date.toGMTString();
+    } else {
+      var expires = "";
+    }
+
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Search for utm parameters in url.
+    const urlParams = new URLSearchParams(window.location.search);
+    const shortUTMTime = 8760 // one year in hours
+    const longUTMTime = 8760; // one year in hours
+    const planetUrls = [
+      "weareplanet.com",
+      "preprod.weareplanet.com",
+      "planetpaymentdev.prod.acquia-sites.com",
+      "planet.lndo.site"
+    ]
+    const urlMaxLength = 150
+
+
+    if (urlParams.has('utm_campaign') || urlParams.has('utm_medium') || urlParams.has('utm_source') || urlParams.has('utm_content') || urlParams.has('utm_term') || urlParams.has('gclid')){
+
+      // Get the cookies.
+      let cookies = document.cookie;
+      if (cookies !== undefined) {
+        const utmSource = urlParams.get('utm_source')
+        const utmMedium = urlParams.get('utm_medium')
+        const utmCampaign = urlParams.get('utm_campaign')
+        const utmContent = urlParams.get('utm_content')
+        const utmTerm = urlParams.get('utm_term')
+        const gclid = urlParams.get('gclid')
+
+        /**
+         * Save recent UTMs as cookies.
+         * We want to set the cookies only if they don't exist already
+         */
+        if (utmSource) {
+          createCookie('Drupal.visitor.utm_source', utmSource, shortUTMTime);
+        }
+        if (utmMedium) {
+          createCookie('Drupal.visitor.utm_medium', utmMedium, shortUTMTime);
+        }
+        if (utmCampaign) {
+          createCookie('Drupal.visitor.utm_campaign', utmCampaign, shortUTMTime);
+        }
+        if (utmContent) {
+          createCookie('Drupal.visitor.utm_content', utmContent, shortUTMTime);
+        }
+        if (utmTerm) {
+          createCookie('Drupal.visitor.utm_term', utmTerm, shortUTMTime);
+        }
+        if (gclid) {
+          createCookie('Drupal.visitor.gclid', gclid, shortUTMTime);
+        }
+
+        /**
+         * Save original UTMs as cookies.
+         * We want to set the cookies only if they don't exist already
+         */
+        if (utmSource && !cookieExists('Drupal.visitor.orig_utm_source')) {
+          createCookie('Drupal.visitor.orig_utm_source', utmSource, longUTMTime);
+        }
+        if (utmMedium && !cookieExists('Drupal.visitor.orig_utm_medium')) {
+          createCookie('Drupal.visitor.orig_utm_medium', utmMedium, longUTMTime);
+        }
+        if (utmCampaign && !cookieExists('Drupal.visitor.orig_utm_campaign')) {
+          createCookie('Drupal.visitor.orig_utm_campaign', utmCampaign, longUTMTime);
+        }
+        if (utmContent && !cookieExists('Drupal.visitor.orig_utm_content')) {
+          createCookie('Drupal.visitor.orig_utm_content', utmContent, longUTMTime);
+        }
+        if (utmTerm && !cookieExists('Drupal.visitor.orig_utm_term')) {
+          createCookie('Drupal.visitor.orig_utm_term', utmTerm, longUTMTime);
+        }
+      }
+    }
+
+    let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
+    let hasHero = $("body").find(".coh-hero").length;
+    let hasHeroOnTop = 0;
+    const hasTransparentBg = $("body").hasClass("planet-header-transparent");
+    //if has Hero
+    if(hasTransparentBg) {
+      headerBehaviorOnScroll(header);
+    }
+
+    if (hasHero > 0) {
+
+
+      $(".coh-hero").each(function(){
+        let hero = $(this);
+        // if has Hero on the top of the page
+        // Considering height of header + notificationBar
+        if($(this).position().top < 300){
+          $(this).addClass("coh-hero-top");
+          hasHeroOnTop = 1;
+          // if has Hero 5050
+          if($(this).hasClass("coh-hero-5050")){
+            // On Mobile
+            if ($(window).width() < 1023) {
+              headerBehaviorwithNotificationBar(hero, header);
+              headerBehaviorOnScroll(header);
+              // On desktop
+            } else {
+              let header = document.getElementsByTagName("header")[0];
+              header.classList.add("white-bg");
+            }
+            // if has Hero Full Width
+          } else if ($(this).hasClass("coh-hero-full-width")) {
+            // On mobile
+            if ($(window).width() < 1023) {
+              headerBehaviorwithNotificationBar(hero, header);
+            }
+            headerBehaviorOnScroll(header);
+          }
+        } else {
+          header.classList.add("white-bg");
+          // On mobile
+          if ($(window).width() < 1023) {
+            if(!hasTransparentBg) {
+              $("#block-cohesion-theme-content").css("padding-top","72px");
+            }
+          } else {
+            if (hasHeroOnTop == 0){
+              if(!hasTransparentBg) {
+                if (hasNotificationBar > 0) {
+                  $("#block-cohesion-theme-content").css("padding-top","138px");
+                } else {
+                  $("#block-cohesion-theme-content").css("padding-top","96px");
+                }
+              }
+
+            }
+          }
+        }
+      })
+      // if doesn't have Hero
+      // Pages without Hero or with Hero in the middle of the pag
+    } else {
+      if(!hasTransparentBg) {
+        header.classList.add("white-bg");
+      }
+      // On mobile
+      if ($(window).width() < 1023) {
+        if(!hasTransparentBg) {
+          $("#block-cohesion-theme-content").css("padding-top","72px");
+        }
+      } else {
+        if (hasHeroOnTop == 0){
+          if(!hasTransparentBg) {
+            if (hasNotificationBar > 0) {
+              $("#block-cohesion-theme-content").css("padding-top","138px");
+            } else {
+              $("#block-cohesion-theme-content").css("padding-top","96px");
+            }
+          }
+        }
+      }
+    }
+  });
 
   Drupal.behaviors.megaMenu = {
     attach: function (context, settings) {
+
+
      once('select_menu_items', '.business-li', context).forEach(function (element) {
       let element_id = $(element)[0].id;
 
