@@ -5,3 +5,11 @@ services:
   planet_core.news_helper:
     class: Drupal\planet_core\Service\PlanetCoreNewsService
     arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager']
+  planet_core.case_studies_helper:
+    class: Drupal\planet_core\Service\PlanetCoreCaseStudiesService
+    arguments: [ '@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager' ]
+  planet_core.node_translation_service:
+    class: Drupal\planet_core\Service\PlanetCoreNodeTranslationsService\PlanetCoreNodeTranslationsService
+  planet_core.menu_service:
+    class: Drupal\planet_core\Service\PlanetCoreMenuService\PlanetCoreMenuService
+    arguments: ['@menu.link_tree', '@path_alias.manager', '@language_manager']

@@ -1,0 +1,7 @@
+planet_footer:
+  version: 1.0
+  css:
+    theme:
+      css/planet_footer.css: {}
+  js:
+    js/planet_footer.js: {}

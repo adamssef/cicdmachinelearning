@@ -1,0 +1,7 @@
+planet_footer.admin_config:
+  path: '/admin/planet/language_detection'
+  defaults:
+    _form: '\Drupal\planet_footer\Form\LanguageDetectionSettingsForm'
+    _title: 'Language detection'
+  requirements:
+    _permission: 'administer site configuration'

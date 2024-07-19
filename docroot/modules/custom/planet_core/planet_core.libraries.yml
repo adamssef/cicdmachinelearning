@@ -2,6 +2,8 @@ language-popup:
   css:
     theme:
       css/planet_core.css: {}
+  js:
+    js/micromodal.min.js: {}
 pms-transformation:
   css:
     theme:

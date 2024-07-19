@@ -1,0 +1,7 @@
+planet_footer.settings:
+  type: config_object
+  label: 'Language Detection Settings'
+  mapping:
+    enable_language_detection:
+      type: boolean
+      label: 'Enable Language Detection'

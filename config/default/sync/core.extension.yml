@@ -92,8 +92,9 @@ module:
   phpass: 0
   planet_config: 0
   planet_core: 0
+  planet_footer: 0
+  planet_header: 0
   planet_html_sitemap: 0
-  planet_language_switcher: 0
   planet_links: 0
   planet_offices: 0
   planet_sitestudio_custom_elements: 0

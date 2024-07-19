@@ -1,0 +1,144 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for planet_footer module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function planet_footer_theme() {
+  $current_url = \Drupal::service('path.current')->getPath();
+
+  $is_admin_page = \Drupal::service('router.admin_context')
+    ->isAdminRoute(\Drupal::routeMatch()->getRouteObject());
+
+  // We do not want to display the footer block on user pages or admin pages.
+  if (!str_starts_with($current_url, '/user') && !$is_admin_page) {
+    return [
+      'block__planet_footer_block' => [],
+      'block__planet_legal_block' => [],
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function planet_footer_preprocess_page(&$variables) {
+  $current_url = \Drupal::service('path.current')->getPath();
+
+  $is_admin_page = \Drupal::service('router.admin_context')
+    ->isAdminRoute(\Drupal::routeMatch()->getRouteObject());
+
+  // We do not want to display the footer block on user pages or admin pages.
+  if (!str_starts_with($current_url, '/user') && !$is_admin_page) {
+    $variables['#attached']['library'][] = 'planet_footer/planet_footer';
+  }
+}
+
+function planet_footer_preprocess_html(&$variables) {
+  /** Where to display the transparent header */
+  $allowed_pages = [
+    "author"
+  ];
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node && in_array($node->bundle(), $allowed_pages)) {
+    $variables['attributes']['class'][] = "planet-header-transparent";
+  }
+
+}
+
+function planet_footer_page_bottom(array &$page_bottom) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name === 'entity.node.canonical') {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+
+      $config = \Drupal::config('planet_footer.settings');
+      $is_lang_detection_enabled = $config->get('enable_language_detection');
+
+      if (!$is_lang_detection_enabled) {
+        return;
+      }
+
+      $pretty_languages = array(
+        "en" => "English",
+        "fr" => "French",
+        "it" => "Italian",
+        "de" => "German",
+        "es" => "Spanish",
+      );
+
+      $language_texts = [
+        'es' => 'Cambiar a Español',
+        // Spanish
+        'fr' => 'Passer en Français',
+        // French
+        'it' => 'Passa all\'italiano',
+        // Italian
+        'de' => 'Auf Deutsch wechseln',
+        // German
+        'en' => 'Change to English',
+      ];
+
+      $languageManager = \Drupal::languageManager();
+      $current_lang_id = $languageManager->getCurrentLanguage()->getId();
+
+      $translations = $node->getTranslationLanguages();
+      $is_frontpage = \Drupal::service('path.matcher')->isFrontPage();
+
+      if($current_lang_id != "en") {
+        return;
+      }
+
+      // Filter translations that are available and published.
+      $modal_classes = "";
+      $available_translations = [];
+      foreach ($translations as $lang_code => $language) {
+        // Check if the translation is published.
+
+        if ($node->getTranslation($lang_code)->isPublished() && $lang_code != "en") {
+          $available_translations[] = $lang_code;
+          $modal_classes .= ' lang-' . $lang_code; // Add class for each language
+        }
+      }
+
+      $languageUrls = [];
+
+      foreach ($available_translations as $lang_code) {
+        $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id(), $lang_code);
+        $alias = "/" . $lang_code . $alias;
+        $homepage_url = "/" . $lang_code;
+        $url = $is_frontpage ? $homepage_url : $alias;
+        $languageUrls[$lang_code] = $url;
+      }
+
+      $modal = '<div class="modal language-detection-modal micromodal-slide '. $modal_classes .' ' . $current_lang_id . '" id="modal-language-detection" aria-hidden="true">
+            <div class="modal__overlay" tabindex="-1">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                <header class="modal__header">
+                    <img class="modal__close" aria-label="Close modal 1" data-micromodal-close src="/resources/icons/close.svg">
+                </header>
+                <main class="modal__content" id="modal-1-content">
+                    <div class="main-banner-image language-detection-image" style="background-image:url("/resources/images/language-detection.jpeg")">
+                    </div>
+                    <div class="main-banner-text">
+                        <span class="coh-heading coh-style-heading-3-planet">Choose your preferred language!</span>
+                        <p class="coh-style-body-large---tt-commons-planet">We have detected your location, and we would like to enhance your browsing experience. Select your preferred language.</p>
+                        <div class="buttons-wrapper coh-container">';
+
+      // Iterate over the language URLs and create buttons
+      foreach ($languageUrls as $langCode => $url) {
+        $modal .= '<a class="btn-lang-all btn-lang-'.$langCode.' modal-lang-detection-btn coh-link coh-style-primary-dark-atom-" style="display: none;" href="' . $url . '"><img src="/resources/flag-icons/' . $langCode . '.svg">' . $language_texts[$langCode] . '</a>';
+      }
+
+      // Add the "Stay in current language" button
+      $modal .= '<span data-micromodal-close class="modal-lang-detection-btn coh-link coh-style-secondary-outlined-atom-" aria-label="Close modal 1" data-micromodal-close="1"><img src="/resources/flag-icons/' . $current_lang_id . '.svg"> Stay in ' . $pretty_languages[$current_lang_id] . '</span>';
+
+      $modal .= '</div></div></main></div></div></div>';
+      $page_bottom[] = ['#markup' => $modal];
+    }
+  }
+}

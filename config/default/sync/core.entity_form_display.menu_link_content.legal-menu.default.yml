@@ -1,0 +1,52 @@
+uuid: 535df1cc-aec9-4f29-ab1d-d15b35752364
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.legal-menu.field_menu_item_node
+    - system.menu.legal-menu
+  module:
+    - link
+    - menu_item_extras
+id: menu_link_content.legal-menu.default
+targetEntityType: menu_link_content
+bundle: legal-menu
+mode: default
+content:
+  field_menu_item_node:
+    type: entity_reference_autocomplete
+    weight: 21
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  view_mode:
+    type: menu_item_extras_view_mode_selector_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
