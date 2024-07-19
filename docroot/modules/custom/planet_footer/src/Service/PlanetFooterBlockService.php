@@ -138,7 +138,7 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
         if (str_contains($url, 'track-my-refund')) {
           $final_child_menus[$key][$title] = [
             'title' => $title,
-            'url' => ['en' => 'https://planetpayment/track-my-refund'],
+            'url' => ['en' => 'https://www.planetpayment.com/track-my-refund'],
             'weight' => $weight,
             'node' => NULL,
           ];
@@ -176,7 +176,7 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
     }
 
     if (count($exploded) === 4 && $exploded[3] === 'track-my-refund') {
-      $url = 'https://planetpayment.com/track-my-refund';
+      $url = 'https://www.planetpayment.com/track-my-refund';
     }
 
     return $url;
@@ -278,7 +278,7 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
     if (str_contains($path, 'track-my-refund')) {
       return [
         'title' => $title,
-        'url' => ['en' => 'https://planetpayment/track-my-refund'],
+        'url' => ['en' => 'https://www.planetpayment.com/track-my-refund'],
         'weight' => $weight,
         'node' => NULL,
       ];
