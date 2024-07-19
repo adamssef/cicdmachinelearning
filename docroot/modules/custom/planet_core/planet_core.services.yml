@@ -5,9 +5,6 @@ services:
   planet_core.news_helper:
     class: Drupal\planet_core\Service\PlanetCoreNewsService
     arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager']
-  planet_core.partners_helper:
-    class: Drupal\planet_core\Service\PlanetCorePartnersService
-    arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager']
   planet_core.case_studies_helper:
     class: Drupal\planet_core\Service\PlanetCoreCaseStudiesService
     arguments: [ '@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager' ]
