@@ -1,13 +1,14 @@
-{% set current_language_prefix = elements.content.current_language_prefix %}
+{% set current_language_prefix = elements.content['#current_language_prefix'] %}
 {% set links = elements.content.legal_menu %}
-
 <div class="legal_menu__container">
 	<div class="legal_menu__subcontainer">
 		{% for link_item in links %}
-			{% if link_item['url'][current_language_prefix] %}
-				<a href="{{ link_item['url'][current_language_prefix] }}">{{ link_item['title'] }}</a><span class="separator">|</span>
+			{% if link_item['title'] == 'Imprint' and current_language_prefix == 'de' %}
+				<a href="/de/protel-imprint">{{ link_item['title']|t }}</a><span class="separator">|</span>
+			{% elseif link_item['url'][current_language_prefix] %}
+				<a href="{{ link_item['url'][current_language_prefix] }}">{{ link_item['title']|t }}</a><span class="separator">|</span>
 			{% else %}
-				<a href="{{ link_item['url']['en'] }}">{{ link_item['title'] }}</a><span class="separator">|</span>
+				<a href="{{ link_item['url']['en'] }}">{{ link_item['title']|t }}</a><span class="separator">|</span>
 			{% endif %}
 		{% endfor %}
 	</div>

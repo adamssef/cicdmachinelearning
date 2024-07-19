@@ -26,7 +26,6 @@
 
   Drupal.behaviors.languageSwitcher = {
     attach: function (context, settings) {
-
       once('block-language-switcher', '#block-language-switcher', context).forEach(element => {
         let $el = $(element);
         let $selectMenu = $(".language-switcher__select-menu", $el);

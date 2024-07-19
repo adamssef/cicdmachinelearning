@@ -64,7 +64,7 @@ class PlanetLegalBlock extends BlockBase implements ContainerFactoryPluginInterf
     $block_array = [
       '#theme' => 'block__planet_legal_block',
       'legal_menu' => $this->blockService->prepareLinksForLegal(),
-      'current_language_prefix' => $this->blockService->languageManager->getCurrentLanguage()->getId(),
+      '#current_language_prefix' => $this->blockService->languageManager->getCurrentLanguage()->getId(),
     ];
 
     return $block_array;

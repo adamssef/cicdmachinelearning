@@ -33,15 +33,15 @@
 						<a target="_blank" href="https://app.protel.net">{{ "Protel login"|t }}</a>
 					</span>
 					<span class="track-my-refund-menu-item contact-us">
-						{% if data.current_language_prefix == '' %}
+						{% if data['#current_langugage_prefix'] == '' %}
 							<a href="/contact">{{ "Contact us"|t }}</a>
-						{% elseif data.current_language_prefix == 'it' %}
+						{% elseif data['#current_langugage_prefix'] == 'it' %}
 							<a href="/it/contattaci">{{ "Contact us"|t }}</a>
-						{% elseif data.current_language_prefix == 'fr' %}
+						{% elseif data['#current_langugage_prefix'] == 'fr' %}
 							<a href="/fr/contact">{{ "Contact us"|t }}</a>
-						{% elseif data.current_language_prefix == 'de' %}
+						{% elseif data['#current_langugage_prefix'] == 'de' %}
 							<a href="/de/contact">{{ "Contact us"|t }}</a>
-						{% elseif data.current_language_prefix == 'es' %}
+						{% elseif data['#current_langugage_prefix'] == 'es' %}
 							<a href="/es/contactar">{{ "Contact us"|t }}</a>
 						{% endif %}
 					</span>
@@ -66,22 +66,22 @@
 		<div class="megamenu-column megamenu-column--left">
 			<span class="megamenu-column__title">{{ "Accept payments"|t }}</span>
 			<div class="megamenu-column__item">
-				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}online-payments">
+				<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}online-payments">
 					<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/white-arrow.svg"/>
 					<span class="megamenu-column__mini-header">{{ "Online"|t }}</span>
 					<span class="megamenu-column__mini-text">{{ "Accept payments on your website, mobile app or via a secure link."|t }}</span>
 				</a>
 			</div>
 			<div class="megamenu-column__item">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/in-person-payments">
-				{% elseif data.current_language_prefix == 'es' %}
+				{% elseif data['#current_langugage_prefix'] == 'es' %}
 					<a href="/es/pagos-en-persona">
-				{% elseif data.current_language_prefix == 'fr' %}
+				{% elseif data['#current_langugage_prefix'] == 'fr' %}
 					<a href="/fr/paiements-magasin">
-				{% elseif data.current_language_prefix == 'it' %}
+				{% elseif data['#current_langugage_prefix'] == 'it' %}
 					<a href="/it/pagamenti-di-persona">
-				{% elseif data.current_language_prefix == 'de' %}
+				{% elseif data['#current_langugage_prefix'] == 'de' %}
 					<a href="/de/personliche-zahlungen">
 				{% endif %}
 						<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/home.svg"/>
@@ -90,15 +90,15 @@
 					</a>
 			</div>
 			<div class="megamenu-column__item">
-        {% if data.current_language_prefix == '' %}
+        {% if data['#current_langugage_prefix'] == '' %}
           <a href="/payments">
-        {% elseif data.current_language_prefix == 'es' %}
+        {% elseif data['#current_langugage_prefix'] == 'es' %}
           <a href="/es/pagos">
-        {% elseif data.current_language_prefix == 'fr' %}
+        {% elseif data['#current_langugage_prefix'] == 'fr' %}
           <a href="/fr/paiements">
-        {% elseif data.current_language_prefix == 'it' %}
+        {% elseif data['#current_langugage_prefix'] == 'it' %}
           <a href="/it/pagamenti">
-        {% elseif data.current_language_prefix == 'de' %}
+        {% elseif data['#current_langugage_prefix'] == 'de' %}
           <a href="/de/zahlungen">
         {% endif %}
 					<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/accept-payments.svg"/>
@@ -110,14 +110,14 @@
 		<div class="megamenu-column megamenu-column--grey megamenu-column--center">
 			<span class="megamenu-column__title">{{ "Software for Hospitality"|t }}</span>
 			<div class="megamenu-column__item">
-				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hotel-pms">
+				<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}hotel-pms">
 					<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/bed.svg"/>
 					<span class="megamenu-column__mini-header">{{ "Property Management Software"|t }}</span>
 					<span class="megamenu-column__mini-text">{{ "Manage your day-to-day hotel operations easily and securely."|t }}</span>
 				</a>
 			</div>
 			<div class="megamenu-column__item megamenu-column__item--booking-engine">
-				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hotel-booking-engine">
+				<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}hotel-booking-engine">
 					<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/point_finger.svg"/>
 					<span class="megamenu-column__mini-header megamenu-column__mini-header--booking-engine">{{ "Booking Engine"|t }}</span>
 					<span class="megamenu-column__mini-text">{{ "Take direct bookings from your website."|t }}</span>
@@ -125,15 +125,15 @@
 			</div>
 			<span class="megamenu-column__title megamenu-column__title--mt32px">{{ "Software for Retail"|t }}</span>
 			<div class="megamenu-column__item">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/order-management-system">
-				{% elseif data.current_language_prefix == 'es' %}
+				{% elseif data['#current_langugage_prefix'] == 'es' %}
 					<a href="/es/sistema-omnicanal-gestion-pedidos">
-				{% elseif data.current_language_prefix == 'de' %}
+				{% elseif data['#current_langugage_prefix'] == 'de' %}
 					<a href="/de/auftragsverwaltungssystem">
-				{% elseif data.current_language_prefix == 'fr' %}
+				{% elseif data['#current_langugage_prefix'] == 'fr' %}
 					<a href="/fr/systeme-gestion-commandes-omnicanal">
-				{% elseif data.current_language_prefix == 'it' %}
+				{% elseif data['#current_langugage_prefix'] == 'it' %}
 					<a href="/it/sistema-gestione-ordini-omnicanale">
 				{% endif %}
 						<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/shopping_cart.svg"/>
@@ -145,7 +145,7 @@
 		<div class="megamenu-column megamenu-column--center">
 			<span class="megamenu-column__title">{{ "Serve any customer"|t }}</span>
 			<div class="megamenu-column__item">
-				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}dcc">
+				<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}dcc">
 					<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/dcc.svg"/>
 					<span class="megamenu-column__mini-header">{{ "Dynamic Currency Conversion"|t }}</span>
 					<span class="megamenu-column__mini-text">{{ "Localise the checkout experience for international customers."|t }}</span>
@@ -163,7 +163,7 @@
 			<div class="megamenu-column megamenu-column--lavender magamenu-column--right">
 				<span class="megamenu-column__title">{{ "Tax Free for Merchants"|t }}</span>
 				<div class="megamenu-column__item">
-					<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}vat-refund">
+					<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}vat-refund">
 						<img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/issuing.svg"/>
 						<span class="megamenu-column__mini-header">{{ "Issuing"|t }}</span>
 						<span class="megamenu-column__mini-text megamenu-column__mini-text--issuing">{{ "Issue Tax Free forms – at scale."|t }}</span>
@@ -177,7 +177,7 @@
 	</div>
 	<div class="megamenu-solutions__desktop display-none">
 		<div class="megamenu-solutions megamenu-solutions-retail">
-			<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}retail">
+			<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}retail">
 				<img class="solutions-column__icon" src="/resources/icons/Retail.svg"/>
 				<div class="megamenu-solutions__middle-layer">
 					<div class="ttl-and-txt">
@@ -191,8 +191,8 @@
 			</a>
 		</div>
 		<div class="megamenu-solutions megamenu-solutions-hospitality">
-			{% if data.current_language_prefix != 'fr' %}
-			<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hospitality">
+			{% if data['#current_langugage_prefix'] != 'fr' %}
+			<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}hospitality">
 				{% else %}
 				<a href="/fr/hospitalite">
 					{% endif %}
@@ -226,26 +226,26 @@
 	<div class="megamenu-resources__desktop display-none">
 		<div class="navigation-items navigation-items--first">
 			<div class="navigation-item navigation-item--blogs">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/blog">
 						<div class="megamenu-column__mini-header">{{ "Blogs"|t }}</div>
 						<div class="megamenu-column__mini-text">{{ "Read about the latest insights, trends and topics from Planet"|t }}</div>
 					</a>
 				{% else %}
-					<a href="/{{ data.current_language_prefix }}/blog">
+					<a href="/{{ data['#current_langugage_prefix'] }}/blog">
 						<div class="megamenu-column__mini-header">{{ "Blogs"|t }}</div>
 						<div class="megamenu-column__mini-text">{{ "Read about the latest insights, trends and topics from Planet"|t }}</div>
 					</a>
 				{% endif %}
 			</div>
 			<div class="navigation-item navigation-item--customers">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/case-studies">
 						<div class="megamenu-column__mini-header">{{ "Customers"|t }}</div>
 						<div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
 					</a>
 				{% else %}
-					<a href="/{{ data.current_language_prefix }}/case-studies">
+					<a href="/{{ data['#current_langugage_prefix'] }}/case-studies">
 						<div class="megamenu-column__mini-header">{{ "Customers"|t }}</div>
 						<div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
 					</a>
@@ -258,13 +258,13 @@
 				</a>
 			</div>
 			<div class="navigation-item navigation-item--partners">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/partners">
 						<div class="megamenu-column__mini-header">{{ "Partners"|t }}</div>
 						<div class="megamenu-column__mini-text">{{ "Meet the partners we work with to bring more to the end customer."|t }}</div>
 					</a>
 				{% else %}
-					<a href="/{{ data.current_language_prefix }}/partners">
+					<a href="/{{ data['#current_langugage_prefix'] }}/partners">
 						<div class="megamenu-column__mini-header">{{ "Partners"|t }}</div>
 						<div class="megamenu-column__mini-text">{{ "Meet the partners we work with to bring more to the end customer."|t }}</div>
 					</a>
@@ -273,13 +273,13 @@
 		</div>
 		<div class="navigation-items navigation-items--second">
 			<div class="navigation-item navigation-item--ebooks">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="ebooks">
 						<div class="megamenu-column__mini-header">{{ "E-books and documentation"|t }}</div>
 						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides an e-books"|t }}</div>
 					</a>
 				{% else %}
-					<a href="/{{ data.current_language_prefix }}/ebooks">
+					<a href="/{{ data['#current_langugage_prefix'] }}/ebooks">
 						<div class="megamenu-column__mini-header">{{ "E-books and documentation"|t }}</div>
 						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides an e-books"|t }}</div>
 					</a>
@@ -306,13 +306,13 @@
 	<div class="megamenu-company__desktop display-none">
 		<div class="navigation-items">
 			<div class="navigation-item navigation-item--blogs">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/about">
 						<div class="megamenu-column__mini-header">{{ "About us"|t }}</div>
 						<div class="megamenu-column__mini-text">{{ "Find out more about Planet, our integrated solutions, and who we serve."|t }}</div>
 					</a>
 				{% else %}
-					<a href="/{{ data.current_language_prefix }}/about">
+					<a href="/{{ data['#current_langugage_prefix'] }}/about">
 						<div class="megamenu-column__mini-header">{{ "About us"|t }}</div>
 						<div class="megamenu-column__mini-text">{{ "Find out more about Planet, our integrated solutions, and who we serve."|t }}</div>
 					</a>
@@ -355,15 +355,15 @@
 			<a target="_blank" href="https://app.protel.net">{{ "Protel login"|t }}</a>
 		</span>
 		<span class="contact-us">
-			{% if data.current_language_prefix == '' %}
+			{% if data['#current_langugage_prefix'] == '' %}
 				<a href="/contact">{{ "Contact us"|t }}</a>
-			{% elseif data.current_language_prefix == 'it' %}
+			{% elseif data['#current_langugage_prefix'] == 'it' %}
 				<a href="/it/contattaci">{{ "Contact us"|t }}</a>
-			{% elseif data.current_language_prefix == 'fr' %}
+			{% elseif data['#current_langugage_prefix'] == 'fr' %}
 				<a href="/fr/contact">{{ "Contact us"|t }}</a>
-			{% elseif data.current_language_prefix == 'de' %}
+			{% elseif data['#current_langugage_prefix'] == 'de' %}
 				<a href="/de/contact">{{ "Contact us"|t }}</a>
-			{% elseif data.current_language_prefix == 'es' %}
+			{% elseif data['#current_langugage_prefix'] == 'es' %}
 				<a href="/es/contactar">{{ "Contact us"|t }}</a>
 			{% endif %}
 		</span>
@@ -372,7 +372,7 @@
 		<div class="megamenu-column megamenu-column--left">
 			<span class="megamenu-column__title">{{ "Accept payments"|t }}</span>
 			<div class="megamenu-column__item">
-				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}online-payments">
+				<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}online-payments">
 					<div class="img-and-mini-header-container">
 						<div class="img-and-mini-header-sub-container">
 							<div class="img-wrapper">
@@ -386,15 +386,15 @@
 				</a>
 			</div>
 			<div class="megamenu-column__item">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/in-person-payments">
-				{% elseif data.current_language_prefix == 'es' %}
+				{% elseif data['#current_langugage_prefix'] == 'es' %}
 					<a href="/es/pagos-en-persona">
-				{% elseif data.current_language_prefix == 'fr' %}
+				{% elseif data['#current_langugage_prefix'] == 'fr' %}
 					<a href="/fr/paiements-magasin">
-				{% elseif data.current_language_prefix == 'it' %}
+				{% elseif data['#current_langugage_prefix'] == 'it' %}
 					<a href="/it/pagamenti-di-persona">
-				{% elseif data.current_language_prefix == 'de' %}
+				{% elseif data['#current_langugage_prefix'] == 'de' %}
 					<a href="/de/personliche-zahlungen">
 				{% endif %}
 				<div class="img-and-mini-header-container">
@@ -410,7 +410,7 @@
 				</a>
 			</div>
 			<div class="megamenu-column__item">
-				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}payments">
+				<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}payments">
 					<div class="img-and-mini-header-container">
 						<div class="img-and-mini-header-sub-container">
 								<div class="img-wrapper">
@@ -427,7 +427,7 @@
 		<div class="megamenu-column megamenu-column--grey megamenu-column--center">
 			<span class="megamenu-column__title">{{ "Software for Hospitality"|t }}</span>
 			<div class="megamenu-column__item">
-				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hotel-pms">
+				<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}hotel-pms">
 					<div class="img-and-mini-header-container">
 						<div class="img-and-mini-header-sub-container">
 								<div class="img-wrapper">
@@ -441,7 +441,7 @@
 				</a>
 			</div>
 			<div class="megamenu-column__item megamenu-column__item--booking-engine">
-				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hotel-booking-engine">
+				<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}hotel-booking-engine">
 					<div class="img-and-mini-header-container">
 						<div class="img-and-mini-header-sub-container">
 								<div class="img-wrapper">
@@ -456,15 +456,15 @@
 			</div>
 			<span class="megamenu-column__title">{{ "Software for Retail"|t }}</span>
 			<div class="megamenu-column__item">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/order-management-system">
-				{% elseif data.current_language_prefix == 'es' %}
+				{% elseif data['#current_langugage_prefix'] == 'es' %}
 					<a href="/es/sistema-omnicanal-gestion-pedidos">
-				{% elseif data.current_language_prefix == 'de' %}
+				{% elseif data['#current_langugage_prefix'] == 'de' %}
 					<a href="/de/auftragsverwaltungssystem">
-				{% elseif data.current_language_prefix == 'fr' %}
+				{% elseif data['#current_langugage_prefix'] == 'fr' %}
 					<a href="/fr/systeme-gestion-commandes-omnicanal">
-				{% elseif data.current_language_prefix == 'it' %}
+				{% elseif data['#current_langugage_prefix'] == 'it' %}
 					<a href="/it/sistema-gestione-ordini-omnicanale">
 				{% endif %}
 				<div class="img-and-mini-header-container">
@@ -483,7 +483,7 @@
 		<div class="megamenu-column megamenu-column--center">
 			<span class="megamenu-column__title">{{ "Serve any customer"|t }}</span>
 			<div class="megamenu-column__item">
-				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}dcc">
+				<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}dcc">
 				<div class="img-and-mini-header-container">
 					<div class="img-and-mini-header-sub-container">
 							<div class="img-wrapper">
@@ -516,7 +516,7 @@
 			<div class="megamenu-column megamenu-column--lavender magamenu-column--right">
 				<span class="megamenu-column__title">{{ "Tax Free for Merchants"|t }}</span>
 				<div class="megamenu-column__item">
-					<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}vat-refund">
+					<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}vat-refund">
 						<div class="img-and-mini-header-container">
 							<div class="img-and-mini-header-sub-container">
 								<div class="img-wrapper">
@@ -538,7 +538,7 @@
 	</div>
 	<div class="megamenu-mobile-and-tablets__container megamenu-mobile-and-tablets__container--solutions display-none">
 		<div class="megamenu-solutions megamenu-solutions-retail">
-			<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}retail">
+			<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}retail">
 				<img class="solutions-column__icon" src="/resources/icons/shopping_bag.svg"/>
 				<div class="megamenu-solutions__middle-layer">
 					<div class="ttl-and-txt">
@@ -552,8 +552,8 @@
 			</a>
 		</div>
 		<div class="megamenu-solutions megamenu-solutions-hospitality">
-			{% if data.current_language_prefix != 'fr' %}
-				<a href="/{% if data.current_language_prefix != '' %}{{ data.current_language_prefix }}/{% endif %}hospitality">
+			{% if data['#current_langugage_prefix'] != 'fr' %}
+				<a href="/{% if data['#current_langugage_prefix'] != '' %}{{ data['#current_langugage_prefix'] }}/{% endif %}hospitality">
 			{% else %}
 				<a href="/fr/hospitalite">
 			{% endif %}
@@ -587,7 +587,7 @@
 	<div class="megamenu-mobile-and-tablets__container megamenu-mobile-and-tablets__container--resources display-none">
 		<div class="navigation-items">
 			<div class="navigation-item navigation-item--blogs">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/blog">
 						<div class="megamenu-column__mini-header">
 							{{ "Blogs"|t }}
@@ -596,7 +596,7 @@
 						<div class="megamenu-column__mini-text">{{ "Read about the latest insights, trends and topics from Planet"|t }}</div>
 					</a>
 				{% else %}
-					<a href="/{{ data.current_language_prefix }}/blog">
+					<a href="/{{ data['#current_langugage_prefix'] }}/blog">
 						<div class="megamenu-column__mini-header">
 							{{ "Blogs"|t }}
 							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
@@ -606,7 +606,7 @@
 				{% endif %}
 			</div>
 			<div class="navigation-item navigation-item--customers">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/case-studies">
 						<div class="megamenu-column__mini-header">
 							{{ "Customers"|t }}
@@ -615,7 +615,7 @@
 						<div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
 					</a>
 				{% else %}
-					<a href="/{{ data.current_language_prefix }}/blog">
+					<a href="/{{ data['#current_langugage_prefix'] }}/blog">
 						<div class="megamenu-column__mini-header">
 							{{ "Customers"|t }}
 							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
@@ -625,7 +625,7 @@
 				{% endif %}
 			</div>
 			<div class="navigation-item navigation-item--partners">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/partners">
 						<div class="megamenu-column__mini-header">
 							{{ "Partners"|t }}
@@ -634,7 +634,7 @@
 						<div class="megamenu-column__mini-text">{{ "Meet the partners we work with to bring more to the end customer."|t }}</div>
 					</a>
 				{% else %}
-					<a href="/{{ data.current_language_prefix }}/partners">
+					<a href="/{{ data['#current_langugage_prefix'] }}/partners">
 						<div class="megamenu-column__mini-header">
 							{{ "Partners"|t }}
 							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
@@ -644,7 +644,7 @@
 				{% endif %}
 			</div>
 			<div class="navigation-item navigation-item--ebooks">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="ebooks">
 						<div class="megamenu-column__mini-header">
 							{{ "E-books and documentation"|t }}
@@ -653,7 +653,7 @@
 						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides an e-books"|t }}</div>
 					</a>
 				{% else %}
-					<a href="/{{ data.current_language_prefix }}/partners">
+					<a href="/{{ data['#current_langugage_prefix'] }}/partners">
 						<div class="megamenu-column__mini-header">
 							{{ "E-books and documentation"|t }}
 							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
@@ -685,7 +685,7 @@
 	<div class="megamenu-mobile-and-tablets__container megamenu-mobile-and-tablets__container--company display-none">
 		<div class="navigation-items">
 			<div class="navigation-item navigation-item--blogs">
-				{% if data.current_language_prefix == '' %}
+				{% if data['#current_langugage_prefix'] == '' %}
 					<a href="/about">
 						<div class="megamenu-column__mini-header">
 							{{ "About us"|t }}
@@ -694,7 +694,7 @@
 						<div class="megamenu-column__mini-text">{{ "Find out more about Planet, our integrated solutions, and who we serve."|t }}</div>
 					</a>
 				{% else %}
-					<a href="/{{ data.current_language_prefix }}/about">
+					<a href="/{{ data['#current_langugage_prefix'] }}/about">
 						<div class="megamenu-column__mini-header">
 							{{ "About us"|t }}
 							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">

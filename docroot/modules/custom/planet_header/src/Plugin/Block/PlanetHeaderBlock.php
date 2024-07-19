@@ -82,7 +82,7 @@ class PlanetHeaderBlock extends BlockBase implements ContainerFactoryPluginInter
       '#theme' => 'block__planet_header_block',
       '#data' => [
         'case_studies' => $this->caseStudiesService->getCaseStudies('all', 'all', 'all', 0, 4),
-        'current_language_prefix' => $current_language_prefix ===  'en' ? '' : $current_language_prefix,
+        '#current_language_prefix' => $current_language_prefix ===  'en' ? '' : $current_language_prefix,
       ],
     ];
 
