@@ -13,6 +13,10 @@
     document.cookie = name + "=" + value + expires + "; path=/";
   }
 
+  function cookieExists(name) {
+    return !(document.cookie.indexOf(name) === -1)
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     // Search for utm parameters in url.
     const urlParams = new URLSearchParams(window.location.search);
