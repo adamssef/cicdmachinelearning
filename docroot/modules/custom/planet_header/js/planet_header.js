@@ -17,6 +17,49 @@
     return !(document.cookie.indexOf(name) === -1)
   }
 
+  function headerBehaviorwithNotificationBar(hero, header) {
+    $(document).ready(function(){
+      let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
+      // if has Notification Bar
+      if(hasNotificationBar > 0) {
+        header.classList.add("white-bg");
+        // When click to close Notification Bar
+        $(".notification-bar-button").click(function(){
+          header.classList.remove("white-bg");
+          $("#block-cohesion-theme-content").css("padding-top","0px");
+          if($(hero).hasClass("coh-hero-full-width")) {
+            $(hero).css("top","0px");
+          }
+        })
+      } else {
+        header.classList.remove("white-bg");
+        $("#block-cohesion-theme-content").css("padding-top","0px");
+        hero.addClass("menu-invisible");
+        $(".hero-background").addClass("menu-invisible");
+      }
+    })
+  }
+  function headerBehaviorOnScroll(header) {
+    // On Scroll
+    $(window).on('scroll', function () {
+      let scrollPosition = jQuery(window).scrollTop();
+      let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
+      // if scroll position is on the top 
+      if (scrollPosition === 0) {
+        // if has Notification Bar and is Mobile
+        if(hasNotificationBar > 0 && $(window).width() < 1023) {
+          header.classList.add("white-bg");
+          // if doesn't have Notification Bar and/or is on Desktop
+        } else {
+          header.classList.remove("white-bg");
+        }
+        // if Scroll position isn't on the top
+      } else {
+        header.classList.add("white-bg");
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     // Search for utm parameters in url.
     const urlParams = new URLSearchParams(window.location.search);
@@ -205,7 +248,7 @@
       })
      });
 
-      function htmlCollectionsAreEqual(collection1, collection2) {
+      function areHtmlCollectionsEqual(collection1, collection2) {
         // Convert HTML collections to arrays
         const array1 = Array.from(collection1);
         const array2 = Array.from(collection2);
@@ -544,7 +587,7 @@
         map.set('megamenu-company__desktop', 'company_img');
 
         menus.forEach(function (menu) {
-          if (htmlCollectionsAreEqual(menu, megamenu_element)) {
+          if (areHtmlCollectionsEqual(menu, megamenu_element)) {
             if (menu[0] !== undefined) {
               if(menu[0].classList.contains('display-none')) {
                 menu[0].classList.remove('display-none');
