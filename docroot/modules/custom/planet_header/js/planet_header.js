@@ -61,6 +61,8 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
+    var header = document.getElementsByTagName("header")[0];
+
     // Search for utm parameters in url.
     const urlParams = new URLSearchParams(window.location.search);
     const shortUTMTime = 8760 // one year in hours
@@ -141,8 +143,6 @@
     }
 
     if (hasHero > 0) {
-
-
       $(".coh-hero").each(function(){
         let hero = $(this);
         // if has Hero on the top of the page
@@ -158,7 +158,6 @@
               headerBehaviorOnScroll(header);
               // On desktop
             } else {
-              let header = document.getElementsByTagName("header")[0];
               header.classList.add("white-bg");
             }
             // if has Hero Full Width
