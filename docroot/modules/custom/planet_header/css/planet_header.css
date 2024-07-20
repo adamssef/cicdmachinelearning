@@ -1410,6 +1410,7 @@
     align-items: center;
   }
 
+  .megamenu-mobile-and-tablets__container--solutions,
   .megamenu-mobile-and-tablets__container--solutions {
     height: 100%;
     height: -moz-available;          /* WebKit-based browsers will ignore this. */
