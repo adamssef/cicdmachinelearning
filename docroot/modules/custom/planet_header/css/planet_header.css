@@ -1410,12 +1410,14 @@
     align-items: center;
   }
 
+  .megamenu-mobile-and-tablets__container--solutions,
   .megamenu-mobile-and-tablets__container--solutions {
     height: 100%;
     height: -moz-available;          /* WebKit-based browsers will ignore this. */
     height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
     height: fill-available;
   }
+
 
   .rotate-left {
     animation: rotateLeft 0.3s forwards;
