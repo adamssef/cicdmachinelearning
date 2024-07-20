@@ -1418,7 +1418,6 @@
     height: fill-available;
   }
 
-
   .rotate-left {
     animation: rotateLeft 0.3s forwards;
   }
