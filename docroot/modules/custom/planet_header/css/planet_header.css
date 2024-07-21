@@ -865,7 +865,7 @@
   }
 
   .track-my-refund-menu-item.protel-login:hover {
-    background-color: #e00083;
+    background-color: #e00083
   }
 
   .track-my-refund-menu-item.protel-login:hover a {
@@ -1430,12 +1430,14 @@
   }
 
   .megamenu-mobile-and-tablets__container {
-    padding-bottom: 0;
+    padding-bottom: 72px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .megamenu-column--lavender {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
   }
 
   .rotate-left {
