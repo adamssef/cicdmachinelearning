@@ -1424,8 +1424,7 @@
   .megamenu-mobile-and-tablets__container--products,
   .megamenu-mobile-and-tablets__container--resources {
     height: 100%;
-    height: -moz-available;          /* WebKit-based browsers will ignore this. */
-    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    height: -webkit-fill-available;
     height: fill-available;
     padding-bottom: 24px;
   }
