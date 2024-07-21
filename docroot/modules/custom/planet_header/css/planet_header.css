@@ -798,7 +798,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
   }
 
   span.protel-login:hover {
@@ -832,7 +834,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   span.contact-us:hover {
@@ -1210,7 +1215,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
   }
 
   span.contact-us {
@@ -1234,7 +1241,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   .megamenu-solutions {
@@ -1411,15 +1421,30 @@
   }
 
   .megamenu-mobile-and-tablets__container--solutions,
-  .megamenu-mobile-and-tablets__container--products {
+  .megamenu-mobile-and-tablets__container--products,
+  .megamenu-mobile-and-tablets__container--resources {
     height: 100%;
     height: -moz-available;          /* WebKit-based browsers will ignore this. */
     height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
     height: fill-available;
+    padding-bottom: 24px;
+  }
+
+  .megamenu-mobile-and-tablets__container {
+    padding-bottom: 0;
+  }
+
+  .megamenu-column--lavender {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .rotate-left {
     animation: rotateLeft 0.3s forwards;
+  }
+
+  .megamenu-mobile-and-tablets__container--solutions {
+    margin-bottom: 32px;
   }
 
   .inside-header-container--mobile-and-tablet {
