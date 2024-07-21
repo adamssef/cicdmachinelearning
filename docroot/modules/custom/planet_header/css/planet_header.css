@@ -1411,6 +1411,7 @@
   }
 
   .megamenu-mobile-and-tablets__container--solutions,
+  .megamenu-mobile-and-tablets__container--products,
   .megamenu-mobile-and-tablets__container--products {
     height: 100%;
     height: -moz-available;          /* WebKit-based browsers will ignore this. */
@@ -1418,8 +1419,21 @@
     height: fill-available;
   }
 
+  .megamenu-mobile-and-tablets__container {
+    padding-bottom: 0;
+  }
+
+  .megamenu-column--lavender {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
   .rotate-left {
     animation: rotateLeft 0.3s forwards;
+  }
+
+  .megamenu-mobile-and-tablets__container--solutions {
+    margin-bottom: 32px;
   }
 
   .inside-header-container--mobile-and-tablet {
