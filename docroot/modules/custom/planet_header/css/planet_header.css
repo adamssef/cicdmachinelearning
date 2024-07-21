@@ -798,7 +798,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
   }
 
   span.protel-login:hover {
@@ -832,7 +834,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   span.contact-us:hover {
@@ -858,6 +863,12 @@
     z-index: 1000;
     padding-bottom: 72px;
   }
+
+  /*.megamenu-mobile-and-tablets__container--resources {*/
+  /*   height: -moz-available;*/
+  /*   height: -webkit-fill-available;*/
+  /*   height: fill-available;*/
+  /* }*/
 
   .track-my-refund-menu-item.protel-login:hover {
     background-color: #e00083;
@@ -1210,7 +1221,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
   }
 
   span.contact-us {
@@ -1234,7 +1247,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   .megamenu-solutions {
@@ -1412,11 +1428,12 @@
 
   .megamenu-mobile-and-tablets__container--solutions,
   .megamenu-mobile-and-tablets__container--products,
-  .megamenu-mobile-and-tablets__container--products {
+  .megamenu-mobile-and-tablets__container--resources {
     height: 100%;
     height: -moz-available;          /* WebKit-based browsers will ignore this. */
     height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
     height: fill-available;
+    padding-bottom: 24px;
   }
 
   .megamenu-mobile-and-tablets__container {
