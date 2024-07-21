@@ -864,12 +864,6 @@
     padding-bottom: 72px;
   }
 
-  /*.megamenu-mobile-and-tablets__container--resources {*/
-  /*   height: -moz-available;*/
-  /*   height: -webkit-fill-available;*/
-  /*   height: fill-available;*/
-  /* }*/
-
   .track-my-refund-menu-item.protel-login:hover {
     background-color: #e00083;
   }
