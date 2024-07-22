@@ -302,7 +302,7 @@ menus:
     menu_name: footer
     title: 'Customer resources'
     parent: 'menu_link_content:7506065e-8381-4e9b-876f-35bdc4e230c9'
-    uri: 'internal:/customer-resources'
+    uri: 'internal:/customer-resources-library'
     link_title: ''
     description: null
     enabled: true
