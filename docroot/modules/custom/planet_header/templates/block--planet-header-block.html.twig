@@ -177,7 +177,7 @@
 	</div>
 	<div class="megamenu-solutions__desktop display-none">
 		<div class="megamenu-solutions megamenu-solutions-retail">
-			<a href="/{% if data['#current_language_prefix'] != '' %}{{ data['#current_language_prefix'] }}/{% endif %}retail">
+			<a class="big-box-link" href="/{% if data['#current_language_prefix'] != '' %}{{ data['#current_language_prefix'] }}/{% endif %}retail">
 				<img class="solutions-column__icon" src="/resources/icons/Retail.svg"/>
 				<div class="megamenu-solutions__middle-layer">
 					<div class="ttl-and-txt">
@@ -192,9 +192,9 @@
 		</div>
 		<div class="megamenu-solutions megamenu-solutions-hospitality">
 			{% if data['#current_language_prefix'] != 'fr' %}
-			<a href="/{% if data['#current_language_prefix'] != '' %}{{ data['#current_language_prefix'] }}/{% endif %}hospitality">
+			<a class="big-box-link" href="/{% if data['#current_language_prefix'] != '' %}{{ data['#current_language_prefix'] }}/{% endif %}hospitality">
 				{% else %}
-				<a href="/fr/hospitalite">
+				<a class="big-box-link" href="/fr/hospitalite">
 					{% endif %}
 					<img class="solutions-column__icon" src="/resources/icons/Hospitality_Changed.svg"/>
 					<div class="megamenu-solutions__middle-layer">
@@ -209,7 +209,7 @@
 				</a>
 		</div>
 		<div class="megamenu-solutions megamenu-solutions-travel">
-			<a href="/travel">
+			<a href="/travel" class="big-box-link">
 				<img class="solutions-column__icon" src="/resources/icons/car.svg"/>
 				<div class="megamenu-solutions__middle-layer">
 					<div class="ttl-and-txt">
@@ -290,7 +290,7 @@
 			<div class="navigation-item"></div>
 		</div>
 		<div class="last-four-case-studies">
-			<div class="megamenu-column__title">{{ "Featured customer stories" }}</div>
+			<div class="megamenu-column__title">{{ "Featured customer stories"|t }}</div>
 			<div class="iteration-container">
 				{% for case_study in data.case_studies %}
 					<a href="{{ case_study.url }}">
@@ -343,13 +343,13 @@
 <!-- Megamenu for mobile and tablet -->
 <div class="megamenu-mobile-and-tablets display-none">
 	<div class="merged-menu-items">
-		<a class="arrow-right-anchor" id="anchor-products" href="javascript:void(0);" alt="An arrow pointing right.">Products <img
+		<a class="arrow-right-anchor" id="anchor-products" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Products"|t }} <img
 							src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
-		<a class="arrow-right-anchor" id="anchor-solutions" href="javascript:void(0);" alt="An arrow pointing right.">Solutions <img
+		<a class="arrow-right-anchor" id="anchor-solutions" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Solutions"|t }} <img
 							src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
-		<a class="arrow-right-anchor" id="anchor-resources" href="javascript:void(0);" alt="An arrow pointing right.">Resources <img
+		<a class="arrow-right-anchor" id="anchor-resources" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Resources"|t }} <img
 							src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
-		<a class="arrow-right-anchor" id="anchor-company" href="javascript:void(0);" alt="An arrow pointing right.">Company <img
+		<a class="arrow-right-anchor" id="anchor-company" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Company"|t }} <img
 							src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
 		<span class="protel-login">
 			<a target="_blank" href="https://app.protel.net">{{ "Protel login"|t }}</a>
