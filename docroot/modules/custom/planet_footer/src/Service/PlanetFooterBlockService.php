@@ -131,7 +131,7 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
             'title' => $title,
             'url' => $this->nodeTranslationService->buildTranslationArrayForNode($node),
             'weight' => $weight,
-            'node' => $node,
+            'locale' => $this->nodeTranslationService->getLocalizedMenuItem($node)
           ];
         }
 

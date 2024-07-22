@@ -23,4 +23,22 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
 
     return $node_translations_url;
   }
+
+  public function getLocalizedMenuItem(NodeInterface $node): array {
+    $node_translations_info = [];
+
+    if ($node) {
+      $node_translations = $node->getTranslationLanguages();
+
+      foreach ($node_translations as $langcode => $translation) {
+        $translation_node = $node->getTranslation($langcode);
+        $node_translations_info[$langcode] = [
+          'title' => $translation_node->getTitle(),
+          'url' => $translation_node->toUrl()->toString(),
+        ];
+      }
+    }
+
+    return $node_translations_info;
+  }
 }
