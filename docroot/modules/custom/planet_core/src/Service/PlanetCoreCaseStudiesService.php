@@ -457,7 +457,7 @@ class PlanetCoreCaseStudiesService {
       $case_study_data = [
         'title' => $case_study->getTitle(),
         'image_url' => $this->getStyledImageUrl($media_id, 'wide'),
-        'url' =>  $lng_prfx === 'en' ? $alias : $lng_prfx . $alias,
+        'url' =>  $lng_prfx === 'en' ? $alias : "/" . $lng_prfx . $alias,
         'logo_url' => $logo_url,
         'company_name' => $case_study->get('field_company_name')->value,
       ];
