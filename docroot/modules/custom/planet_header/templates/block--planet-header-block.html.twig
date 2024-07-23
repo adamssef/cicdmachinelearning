@@ -274,14 +274,14 @@
 		<div class="navigation-items navigation-items--second">
 			<div class="navigation-item navigation-item--ebooks">
 				{% if data['#current_language_prefix'] == '' %}
-					<a href="ebooks">
+					<a href="/ebooks">
 						<div class="megamenu-column__mini-header">{{ "E-books and documentation"|t }}</div>
-						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides an e-books"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides and e-books"|t }}</div>
 					</a>
 				{% else %}
 					<a href="/{{ data['#current_language_prefix'] }}/ebooks">
 						<div class="megamenu-column__mini-header">{{ "E-books and documentation"|t }}</div>
-						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides an e-books"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides and e-books"|t }}</div>
 					</a>
 				{% endif %}
 			</div>
@@ -645,12 +645,12 @@
 			</div>
 			<div class="navigation-item navigation-item--ebooks">
 				{% if data['#current_language_prefix'] == '' %}
-					<a href="ebooks">
+					<a href="/ebooks">
 						<div class="megamenu-column__mini-header">
 							{{ "E-books and documentation"|t }}
 							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
 						</div>
-						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides an e-books"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides and e-books"|t }}</div>
 					</a>
 				{% else %}
 					<a href="/{{ data['#current_language_prefix'] }}/partners">
@@ -658,7 +658,7 @@
 							{{ "E-books and documentation"|t }}
 							<img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
 						</div>
-						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides an e-books"|t }}</div>
+						<div class="megamenu-column__mini-text">{{ "Discover valuable industry insights in our latest guides and e-books"|t }}</div>
 					</a>
 				{% endif %}
 			</div>
