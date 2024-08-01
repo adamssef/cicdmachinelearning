@@ -213,6 +213,9 @@ class PlanetCoreArticleService {
       $case_studies_url = $this->getAliasesInOtherLanguages(1366);
       $news_url = $this->getAliasesInOtherLanguages(4751);
       $ebooks_url = $this->getAliasesInOtherLanguages(2136);
+      $newsroom_url = $this->getAliasesInOtherLanguages(4751);
+      $newsroom_archive_url = $this->getAliasesInOtherLanguages(4756);
+      $contact_url = $this->getAliasesInOtherLanguages(41);
 
       $current_lang = $this->languageManager->getCurrentLanguage()->getId();
 
@@ -221,6 +224,9 @@ class PlanetCoreArticleService {
         "ebooks" => $ebooks_url,
         "news" => $news_url,
         "blog" => $blog_url,
+        "newsroom" => $newsroom_url,
+        "newsroom_archive" => $newsroom_archive_url,
+        "contact" => $contact_url,
         'current_lang' => $current_lang
       );
   }
