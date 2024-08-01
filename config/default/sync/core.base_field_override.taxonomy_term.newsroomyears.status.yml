@@ -1,0 +1,22 @@
+uuid: c19e94ba-5bba-4bce-a6e2-39ddb24a8f89
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.newsroomyears
+id: taxonomy_term.newsroomyears.status
+field_name: status
+entity_type: taxonomy_term
+bundle: newsroomyears
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

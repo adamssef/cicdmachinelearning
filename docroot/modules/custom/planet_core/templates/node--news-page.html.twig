@@ -21,11 +21,7 @@
 				<div class="coh-row-inner">
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
 						<div class="breadcrumbs">
-							<a href="{{ article.blog_url }}">Newsroom</a>
-							{# {% if article.tags %}
-																						<a href="{{article.blog_url}}?tag={{article.tags[0].id}}">>
-																							{{article.tags[0].name}}</a>
-																					{% endif %} #}
+							<a href="{{ article.blog_url }}">{{"Newsroom"|t}}</a>
 						</div>
 					</div>
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-7">
@@ -38,12 +34,12 @@
 										{% if article.reading_time %}
 											·
 											{{article.reading_time}}
-											min read
+											{{"min read"|t}}
 										{% endif %}
 									</div>
 								</div>
 								<div class="share-button coh-link coh-style-primary-dark-atom-">
-									Share
+									{{"Share"|t}}
 								</div>
 							</div>
 							<div class="article-main-image" style="background-image:url({{article.background_image}})"></div>

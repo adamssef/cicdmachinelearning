@@ -17,7 +17,7 @@ bundle: newsroom
 label: 'Is it an external article?'
 description: 'If the articles is external to the website select this option.'
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

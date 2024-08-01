@@ -1,0 +1,18 @@
+uuid: cef8324a-ee31-4f29-9122-7c89d8becb61
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.newsroomyears
+id: taxonomy_term.newsroomyears.name
+field_name: name
+entity_type: taxonomy_term
+bundle: newsroomyears
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
