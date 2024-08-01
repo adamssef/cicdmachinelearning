@@ -87,8 +87,6 @@
 				{% endif %}
 				<div class="coh-row">
 					<div class="coh-row-inner">
-
-
 						{% for article in article.related_articles %}
 							<div data-tagid="{{ article.tags|map(tag => tag.id)|join(', ') }}" class="article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
 								<div class="article-card news-card">
