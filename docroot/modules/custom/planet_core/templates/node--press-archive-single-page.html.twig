@@ -14,7 +14,7 @@
 				<div class="coh-row-inner">
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
 						<div class="breadcrumbs">
-							<a href="/newsroom">Newsroom</a>
+							<a href="/newsroom">{{"Newsroom"|t}}</a>
 						</div>
 					</div>
 				</div>
@@ -26,16 +26,15 @@
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
 						<div class="last-articles">
 							<div class="news-title no-margin">
-								<h1 class="planet-h1">All news</h1>
+								<h1 class="planet-h1">{{"All news"|t}}</h1>
 							</div>
 								<div class="coh-row">
 										<div class="planet-select-wrapper">
-
 											{% if tags %}
 											<div class="custom-select planet-news-select-category">
-												<div data-value="all" class="select-selected">All categories</div>
+												<div data-value="all" class="select-selected">{{"All categories"|t}}</div>
 												<div class="select-items">
-													<div data-value="all">All categories</div>
+													<div data-value="all">{{"All categories"|t}}</div>
 													{% for tag in tags %}
 														<div data-value="{{tag.id}}">{{tag.name}}</div>
 													{% endfor %}
@@ -44,9 +43,9 @@
 											{% endif %}
 											{% if years %}
 											<div class="custom-select planet-news-select-years">
-												<div data-value="all" class="select-selected">All years</div>
+												<div data-value="all" class="select-selected">{{"All years"|t}}</div>
 												<div class="select-items">
-													<div data-value="all">All years</div>
+													<div data-value="all">{{"All years"|t}}</div>
 													{% for year in years %}
 														<div data-value="{{year.id}}">{{year.name}}</div>
 													{% endfor %}
@@ -60,7 +59,7 @@
 							<div>
 								<div class="article-cards-wrapper">
 									<div class="coh-row">
-										<p class="no-articles" style="display: none">No news found.</p>
+										<p class="no-articles" style="display: none">{{"No news found."|t}}</p>
 										<div class="loader">
 											<img src="/resources/icons/loader.svg">
 										</div>
@@ -68,7 +67,7 @@
 									</div>
 								</div>
 								<div class="load-more-wrapper" style="display: none">
-								<div id="load-more-button" class="coh-link coh-style-primary-dark-atom-">Load more
+								<div id="load-more-button" class="coh-link coh-style-primary-dark-atom-">{{"Load more"|t}}
 									<img src="/resources/icons/down-white-arrow.svg"></div>
 							</div>
 							</div>
@@ -91,8 +90,8 @@
 													<div class="article-card-content">
 														<div>
 															<img class="planet-box-icon" src="/resources/icons/mail.svg">
-															<span class="article-title planet-h3">Contact our PR team</span>
-															<p>For any press-related inquiries, contact
+															<span class="article-title planet-h3">{{"Contact our PR team"|t}}</span>
+															<p>{{"For any press-related inquiries, contact"|t}}
 																<a href="mailto:media@weareplanet.com">media@weareplanet.com</a>
 															</p>
 														</div>
@@ -104,13 +103,13 @@
 													<div class="article-card-content">
 														<div>
 															<img class="planet-box-icon" src="/resources/icons/support.svg">
-															<span class="article-title planet-h3">For non-media inquiries</span>
-															<p>For non-media inquiries, contact our Planet support team.</p>
+															<span class="article-title planet-h3">{{"For non-media inquiries"|t}}</span>
+															<p>{{"For non-media inquiries, contact our Planet support team."|t}}</p>
 														</a>
 													</p>
 												</div>
 												<div class="card-button-wrapper">
-													<a class="card-button button-with-icon-transition" href="/contact">Contact us
+													<a class="card-button button-with-icon-transition" href="/contact">{{"Contact us"|t}}
 														<img src="/resources/icons/blue-right-arrow.svg"></a>
 												</div>
 											</div>

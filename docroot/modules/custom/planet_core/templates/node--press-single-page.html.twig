@@ -13,10 +13,9 @@
 			<div class="coh-row">
 				<div class="coh-row-inner">
 					<div class="news-title">
-						<h1 class="planet-h1">Planet newsroom</h1>
+						<h1 class="planet-h1">{{"Planet newsroom"|t}}</h1>
 					</div>
 				</div>
-
 			</div>
 		</div>
 		{% if featured_article is not empty %}
@@ -52,7 +51,7 @@
 														</div>
 														<p class="article-summary">{{featured_article.body}}</p>
 														<div class="card-button-wrapper">
-															<a class="card-button" href="{{featured_article.url}}">Read more
+															<a class="card-button" href="{{featured_article.url}}">{{"Read more"|t}}
 																<img src="/resources/icons/blue-right-arrow.svg"></a>
 														</div>
 													</div>
@@ -78,7 +77,7 @@
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
 						<div class="last-articles">
 							<div class="news-title">
-								<h3 class="planet-h2">Latest news</h3>
+								<h3 class="planet-h2">{{"Latest news"|t}}</h3>
 							</div>
 							<div>
 								<div class="article-cards-wrapper">
@@ -124,7 +123,7 @@
 								</div>
 								{% if articles.articles|length >= 3 %}
 									<div class="load-more-wrapper">
-										<a rel="nofollow" id="load-more-button" href="/news-archive" class="coh-link coh-style-primary-dark-atom-">See all news</a>
+										<a rel="nofollow" id="load-more-button" href="/news-archive" class="coh-link coh-style-primary-dark-atom-">{{"See all news"|t}}</a>
 									</div>
 								{% endif %}
 							</div>
@@ -142,7 +141,7 @@
 						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
 							<div class="last-articles">
 								<div class="news-title">
-									<h3 class="planet-h2">Articles featuring Planet</h3>
+									<h3 class="planet-h2">{{"Articles featuring Planet"|t}}</h3>
 								</div>
 								<div>
 									<div class="article-cards-wrapper">
@@ -162,7 +161,7 @@
 																		</div>
 																	</div>
 																	<div class="card-button-wrapper">
-																		<a class="card-button" rel="noopener noreferrer" target="_blank" href="{{article.external_url}}">Read article
+																		<a class="card-button" rel="noopener noreferrer" target="_blank" href="{{article.external_url}}">{{"Read article"|t}}
 																			<img src="/resources/icons/external.svg"></a>
 																	</div>
 																</div>
@@ -198,8 +197,8 @@
 													<div class="article-card-content">
 														<div>
 															<img class="planet-box-icon" src="/resources/icons/mail.svg">
-															<span class="article-title planet-h3">Contact our PR team</span>
-															<p>For any press-related inquiries, contact
+															<span class="article-title planet-h3">{{"Contact our PR team"|t}}</span>
+															<p>{{"For any press-related inquiries, contact"|t}}
 																<a href="mailto:media@weareplanet.com">media@weareplanet.com</a>
 															</p>
 														</div>
@@ -211,13 +210,13 @@
 													<div class="article-card-content">
 														<div>
 															<img class="planet-box-icon" src="/resources/icons/support.svg">
-															<span class="article-title planet-h3">For non-media inquiries</span>
-															<p>For non-media inquiries, contact our Planet support team.</p>
+															<span class="article-title planet-h3">{{"For non-media inquiries"|t}}</span>
+															<p>{{"For non-media inquiries, contact our Planet support team."|t}}</p>
 														</a>
 													</p>
 												</div>
 												<div class="card-button-wrapper">
-													<a class="card-button button-with-icon-transition" href="/contact">Contact us
+													<a class="card-button button-with-icon-transition" href="/contact">{{"Contact us"|t}}
 														<img src="/resources/icons/blue-right-arrow.svg"></a>
 												</div>
 											</div>
