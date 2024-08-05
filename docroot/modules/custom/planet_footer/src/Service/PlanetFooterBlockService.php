@@ -113,9 +113,16 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
 
     $final_child_menus = [];
 
+    $lang = $this->languageManager->getCurrentLanguage()->getId();
+
     foreach ($child_menus as $key => $child_menu) {
       foreach ($child_menu as $child_menu_item) {
-        $title = $child_menu_item->getTitle();
+        if ($child_menu_item->hasTranslation($lang)) {
+          $title = $child_menu_item->getTranslation($lang)->getTitle();
+        } else {
+          $title = $child_menu_item->getTitle();
+        }
+
         $url = self::prepareUrl($child_menu_item->getUrlObject()->toString());
 
         $weight = $child_menu_item->getWeight();
@@ -131,7 +138,6 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
             'title' => $title,
             'url' => $this->nodeTranslationService->buildTranslationArrayForNode($node),
             'weight' => $weight,
-            'locale' => $this->nodeTranslationService->getLocalizedMenuItem($node)
           ];
         }
 
@@ -154,15 +160,21 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
       ->getStorage('menu_link_content')
       ->loadByProperties(['menu_name' => 'legal-menu', 'enabled' => 1]);
 
+    $lang = $this->languageManager->getCurrentLanguage()->getId();
+
     $links_array = [];
 
     foreach ($menu as $menu_item) {
-          $title = $menu_item->getTitle();
-          $url = self::prepareUrl($menu_item->getUrlObject()->toString());
-          $path = $this->pathAliasManager->getPathByAlias($url, 'en');
-          $weight = $menu_item->getWeight();
+      if ($menu_item->hasTranslation($lang)) {
+        $title = $menu_item->getTranslation($lang)->getTitle();
+      } else {
+        $title = $menu_item->getTitle();
+      }
 
-          $links_array[] = $this->prepareItemArray($title, $path, $weight);
+      $url = self::prepareUrl($menu_item->getUrlObject()->toString());
+      $path = $this->pathAliasManager->getPathByAlias($url, 'en');
+      $weight = $menu_item->getWeight();
+      $links_array[] = $this->prepareItemArray($title, $path, $weight);
     }
 
     return $links_array;
