@@ -1,6 +1,6 @@
 {% set data = elements.content[0]['#data'] %}
 <div class="megamenu-complex-container">
-   <header>
+   <header class='megamenu-header'>
       <div class="inside-header-container">
 	   {% if data['#current_language_prefix'] == '' %}
 				<a class="go-home" href="/">
@@ -182,7 +182,7 @@
             {% elseif data['#current_language_prefix'] == 'de' %}
             <a href="/de/auftragsverwaltungssystem">
             {% elseif data['#current_language_prefix'] == 'fr' %}
-            <a href="/fr/systeme-gestion-commandes-omnicanal">
+            <a href="/fr/order-management-system">
             {% elseif data['#current_language_prefix'] == 'it' %}
             <a href="/it/sistema-gestione-ordini-omnicanale">
             {% endif %}
@@ -201,7 +201,7 @@
             <span class="megamenu-column__mini-text">{{ "Localise the checkout experience for international customers."|t }}</span>
             </a>
          </div>
-         {# 
+         {#
          <div class="megamenu-column__item">
             <a href="/payment-methods">
             <img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/network.svg"/>
@@ -349,7 +349,7 @@
                <div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
             </a>
             {% else %} #}
-            {# 
+            {#
             <a href="/{{ data['#current_language_prefix'] }}/case-studies">
                <div class="megamenu-column__mini-header">{{ "Customers"|t }}</div>
                <div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
@@ -646,7 +646,7 @@
                <span class="megamenu-column__mini-text">{{ "Localise the checkout experience for international customers."|t }}</span>
             </a>
          </div>
-         {# 
+         {#
          <div class="megamenu-column__item">
             <a href="/payment-methods">
                <div class="img-and-mini-header-container">
