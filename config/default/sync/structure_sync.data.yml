@@ -403,177 +403,64 @@ menus:
     uuid: 4ac30a4a-01f5-4a0e-8990-c0c83fdab441
     options: {  }
 taxonomies:
-  tags:
-    -
-      vid: tags
-      tid: '3206'
-      langcode: en
-      name: Hospitality
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: 11e617f4-051e-4016-9c84-f7742857d38f
-    -
-      vid: tags
-      tid: '3208'
-      langcode: en
-      name: Payments
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: 5afd5fdb-9a54-4a0d-8607-f7cb25987d6a
-    -
-      vid: tags
-      tid: '3207'
-      langcode: en
-      name: Retail
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: b45a3133-736b-4f20-8326-c6e644bd732c
-    -
-      vid: tags
-      tid: '3209'
-      langcode: en
-      name: Tax-free
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: f7557f0c-5a33-4cc1-8dd1-02a26ba5a980
-  case_studies_industry:
-    -
-      vid: case_studies_industry
-      tid: '2900'
-      langcode: en
-      name: E-commerce
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: 89a0d843-73a2-4c7f-ac2c-ade0f626ad04
-    -
-      vid: case_studies_industry
-      tid: '2901'
-      langcode: en
-      name: Hospitality
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: 4f543bd4-2353-4d1e-80b7-52b6c94a770f
-    -
-      vid: case_studies_industry
-      tid: '2902'
-      langcode: en
-      name: Retail
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: 978aa8a7-12a8-4e5a-9c5c-9bbd056d0eb3
-    -
-      vid: case_studies_industry
-      tid: '2903'
-      langcode: en
-      name: 'Tax free'
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: bcea8581-ab38-4f7b-87c1-864e1d482cfd
   case_studies_products:
     -
       vid: case_studies_products
-      tid: '2904'
+      tid: '2961'
       langcode: en
       name: 'Currency conversion'
       description__value: null
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: a5ae2b97-bcc3-4cfd-86a2-4d7f90b1331d
+      uuid: 4f5a3643-d412-4b6a-90e3-2724407b945e
     -
       vid: case_studies_products
-      tid: '2905'
+      tid: '2966'
       langcode: en
       name: E-commerce
       description__value: null
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 261657ab-feda-4f90-b347-1672e1630f52
+      uuid: 50f3e7b9-1b22-44a7-baa3-a3134264f19e
     -
       vid: case_studies_products
-      tid: '2906'
+      tid: '2971'
       langcode: en
       name: 'Hotel management system'
       description__value: null
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 2bac28cb-6667-4824-b226-6d11d0e0c7cb
+      uuid: ff85e912-b16e-49b4-923e-61d75706bc81
     -
       vid: case_studies_products
-      tid: '2907'
+      tid: '2976'
       langcode: en
       name: Payments
       description__value: null
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 8c697ec6-f706-48bc-8d92-cac464c298ab
+      uuid: 591fec99-1b08-42d6-b156-86d89db5c8a5
     -
       vid: case_studies_products
-      tid: '2908'
+      tid: '2981'
       langcode: en
       name: Retail
       description__value: null
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: cd94864a-6210-4e31-9f6e-95bf23f5c3a2
-  company_size:
+      uuid: d9e615cb-fe81-4d79-ae72-82bf8e444555
     -
-      vid: company_size
-      tid: '2896'
+      vid: case_studies_products
+      tid: '2986'
       langcode: en
-      name: 'Global organizations'
+      name: 'Tax free'
       description__value: null
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: e2f25ba6-6090-4232-9955-e067f0d836c8
-    -
-      vid: company_size
-      tid: '2897'
-      langcode: en
-      name: 'Large enterprises'
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: b09ab86a-1e28-4669-baaf-1e8ad76aa453
-    -
-      vid: company_size
-      tid: '2898'
-      langcode: en
-      name: 'Small and medium enterprises'
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: d1232d06-a5eb-4433-933e-4f2bf6b0dc5c
-    -
-      vid: company_size
-      tid: '2899'
-      langcode: en
-      name: Startups
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: 3a565efe-156a-43c8-a350-1f55fc02eb92
+      uuid: 4bcb6519-42c2-4796-b693-4cae3f4636a5
