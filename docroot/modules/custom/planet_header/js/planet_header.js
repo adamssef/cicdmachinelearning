@@ -65,8 +65,6 @@
           header.classList.add("has-transparent-bg");
         }
 
-        console.log('hasDarkMenuTheme', hasDarkMenuTheme);
-
         if (scrollPosition > 0 && hasDarkMenuTheme > 0) {
           $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
           header.classList.remove("has-transparent-bg");
@@ -83,8 +81,6 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     let isFrontPage = $("body").hasClass("path-frontpage");
-    console.log('isFrontPage', isFrontPage);
-
     let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
     let logo = document.getElementById('planet-logo');
     let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0 || isFrontPage;
@@ -94,9 +90,6 @@
     }
 
     let test = $('body').find('path-frontpage').length;
-    console.log('test', test);
-
-    console.log('hasDarkMenuTheme', hasDarkMenuTheme);
 
     if(hasTransparentBg) {
       let header = document.getElementsByClassName("megamenu-header")[0];
@@ -304,7 +297,6 @@
           if (areHtmlCollectionsEqual(menu, megamenuElement)) {
             if (menu[0] !== undefined) {
               if(menu[0].classList.contains('display-none')) {
-                console.log('przypadek 1')
                 menu[0].classList.remove('display-none');
                 header.classList.add('expanded');
                 header.classList.remove('has-transparent-bg');
@@ -312,7 +304,6 @@
                 document.getElementById(map.get(className)).classList.add('flip');
               }
               else {
-                console.log('przypadek 2')
                 menu[0].classList.add('display-none');
                 header.classList.remove('expanded');
                 let scrollPosition = jQuery(window).scrollTop();
@@ -321,10 +312,7 @@
                   $(logo).attr('src', '/resources/logo/planet_logo.svg');
                 }
 
-
                 let isFrontPage = $("body").hasClass("path-frontpage");
-                console.log('isFrontPage', isFrontPage);
-
                 let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width") || $("body, div").hasClass("coh-hero-5050"));
 
                 if (hasTransparentBg && scrollPosition === 0) {
@@ -506,6 +494,37 @@
         }
       }
 
+      function removeExpandedFromHeader() {
+        const header = document.getElementsByClassName("megamenu-header")[0];
+        header.classList.remove("expanded");
+      }
+
+      function manageHasTransparentBgClass() {
+        const header = document.getElementsByClassName("megamenu-header")[0];
+        let scrollPosition = jQuery(window).scrollTop();
+        let isExpanded = header.classList.contains("expanded");
+        let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0 || $("body").hasClass("path-frontpage");
+        let isFrontPage = $("body").hasClass("path-frontpage");
+        let logo = $(document.getElementById('planet-logo'));
+
+
+        let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
+        if (isExpanded) {
+          header.classList.remove("has-transparent-bg");
+        }
+        else {
+          if (scrollPosition === 0 && hasTransparentBg) {
+            header.classList.add("has-transparent-bg");
+            if (!hasDarkMenuTheme) {
+              logo.attr('src', '/resources/logo/planet_logo.svg');
+            }
+          }
+          if (scrollPosition > 0 && hasTransparentBg) {
+            header.classList.remove("has-transparent-bg");
+          }
+        }
+      }
+
       once('hamburgerMenu_handler', '.hamburger-menu', context).forEach(function (element) {
         element.addEventListener('click', function() {
           if (!isHeaderForDesktopDisplayed()) {
@@ -613,24 +632,32 @@
               case 'products':
                 let containerProducts = document.getElementsByClassName('megamenu-products__desktop')[0];
                 containerProducts.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
                 currentlyOpenMenuItem = null;
                 unflipAllDesktopMenuArrows();
                 break;
               case 'solutions':
                 let containerSolutions = document.getElementsByClassName('megamenu-solutions__desktop')[0];
                 containerSolutions.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
                 currentlyOpenMenuItem = null;
                 unflipAllDesktopMenuArrows();
                 break;
               case 'resources':
                 let containerResources = document.getElementsByClassName('megamenu-resources__desktop')[0];
                 containerResources.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
                 currentlyOpenMenuItem = null;
                 unflipAllDesktopMenuArrows();
                 break;
               case 'company':
                 let containerCompany = document.getElementsByClassName('megamenu-company__desktop')[0];
                 containerCompany.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
                 currentlyOpenMenuItem = null;
                 unflipAllDesktopMenuArrows();
                 break;
