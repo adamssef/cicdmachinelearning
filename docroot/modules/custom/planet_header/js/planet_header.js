@@ -6,7 +6,6 @@
     let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
     hamburgerMenu.classList.remove('display-none');
     $(hamburgerMenu).attr('src', '/resources/icons/hamburger-menu-black.svg');
-    console.log('showHamburgerMenu');
   }
 
   function createCookie(name, value, hours) {
@@ -133,6 +132,23 @@
     }
   }
 
+  function isAnyDesktopMenuExpanded() {
+    let menus = [
+      document.getElementsByClassName('megamenu-products__desktop'),
+      document.getElementsByClassName('megamenu-solutions__desktop'),
+      document.getElementsByClassName('megamenu-resources__desktop'),
+      document.getElementsByClassName('megamenu-company__desktop')
+    ];
+
+    for (let i = 0; i < menus.length; i++) {
+      if (menus[i][0] !== undefined && !menus[i][0].classList.contains('display-none')) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   function headerBehaviorOnResize() {
     let logo = document.getElementById('planet-logo');
     let logoMobileAndTablet = document.getElementById('planet-logo--mobile-and-tablet');
@@ -146,7 +162,10 @@
     let goHomeDesktop = document.getElementsByClassName('go-home')[0];
     let scrollPosition = jQuery(window).scrollTop();
 
+
+
     $(window).on('resize', function () {
+      let isExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
       let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
 
       if ($(window).width() > 1023) {
@@ -154,14 +173,20 @@
 
         if (hasTransparentBg === true) {
           // removeExpandedFromHeader();
-          addTransparentBgClassToHeader();
+          if (!isAnyDesktopMenuExpanded()) {
+            addTransparentBgClassToHeader();
+            removeExpandedFromHeader();
+          }
+
           $(goHomeDesktop).removeClass('display-none');
         }
         else {
           $(goHomeDesktop).removeClass('display-none');
+          $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
         }
       }
       else {
+        let isMobileExpanded = !megamenuMobileAndTablets.classList.contains('display-none');
         let containerProducts = document.getElementsByClassName('megamenu-products__desktop')[0];
         let containerSolutions = document.getElementsByClassName('megamenu-solutions__desktop')[0];
         let containerResources = document.getElementsByClassName('megamenu-resources__desktop')[0];
@@ -172,14 +197,19 @@
         containerResources.classList.add('display-none');
         containerCompany.classList.add('display-none');
 
+        if (!isMobileExpanded) {
+          removeExpandedFromHeader();
+        }
+
         unflipAllDesktopMenuArrows();
 
         if (hasTransparentBg === true) {
           if (scrollPosition === 0) {
-            removeExpandedFromHeader();
+            // removeExpandedFromHeader();
             addTransparentBgClassToHeader();
 
             if (hasDarkMenuTheme === 0) {
+
               $(logo).attr('src', '/resources/logo/planet_logo.svg');
               $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo.svg');
               $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu.svg');
@@ -194,7 +224,15 @@
               $(goBackSpan).addClass('display-none');
               $(goHome).removeClass('display-none');
               $(closingXIcon).addClass('display-none');
-              $(hamburgerMenuIcon).removeClass('display-none');
+              if (isExpanded) {
+                $(closingXIcon).removeClass('display-none');
+                $(hamburgerMenuIcon).addClass('display-none');
+              }
+              else {
+                $(closingXIcon).addClass('display-none');
+                $(hamburgerMenuIcon).removeClass('display-none');
+              }
+              // $(hamburgerMenuIcon).removeClass('display-none');
               removeNoScrollFromBody();
             }
           }
@@ -207,11 +245,7 @@
         }
       }
 
-      let isExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
-
-
       if (isExpanded) {
-        console.log('is expanded evaluated to true');
         removeTransparentBgClassFromHeader();
         $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
       }
@@ -228,7 +262,10 @@
             $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo.svg');
             $(hamburgerMenuIcon).attr('style', 'display: block !important');
             $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu.svg');
-            $(closingXIcon).css('display', 'none')
+            $(closingXIcon).css('display', 'none');
+          }
+          else {
+            $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
           }
         }
 
@@ -273,7 +310,6 @@
     const header = document.getElementsByClassName("megamenu-header")[0];
 
     if (hasTransparentBg) {
-
       if (hasDarkMenuTheme) {
         $(header).addClass("header-dark-theme");
         $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
@@ -285,6 +321,8 @@
     }
     else {
       $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+      $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+      $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu-black.svg');
       headerBehaviorOnResize(header);
     }
 
@@ -486,7 +524,6 @@
             if (menu[0] !== undefined) {
               if(menu[0].classList.contains('display-none')) {
                 menu[0].classList.remove('display-none');
-                console.log('addding expanded in 319');
                 header.classList.add('expanded');
                 removeTransparentBgClassFromHeader();
                 $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
@@ -537,7 +574,6 @@
       }
 
       function hideCloseHamburgerMenu() {
-        console.log('hideCloseHamburgerMenu');
         let closeHamburgerMenu = document.getElementsByClassName('close-hamburger-menu')[0];
         closeHamburgerMenu.classList.add('display-none');
         $(closeHamburgerMenu).attr('src', '/resources/icons/closing-x.svg');
@@ -545,20 +581,11 @@
 
       function showCloseHamburgerMenu() {
         let closeHamburgerMenu = document.getElementsByClassName('close-hamburger-menu')[0];
-        console.log('in showCloseHamburgerMenu');
         closeHamburgerMenu.classList.remove('display-none');
         $(closeHamburgerMenu).css('display', 'block');
         let logo = document.getElementById('planet-logo--mobile-and-tablet');
         $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
       }
-
-      // function showHamburgerMenu() {
-      //   let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
-      //   hamburgerMenu.classList.remove('display-none');
-      //   $(hamburgerMenu).attr('src', '/resources/icons/hamburger-menu-black.svg');
-      //   console.log('showHamburgerMenu');
-      //   hideCloseHamburgerMenu();
-      // }
 
       function hideHamburgerMenu() {
         let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
@@ -730,7 +757,6 @@
        */
       once('hamburgerMenu_handler', '.hamburger-menu', context).forEach(function (element) {
         element.addEventListener('click', function() {
-          console.log(isHeaderForDesktopDisplayed())
 
           if (!isHeaderForDesktopDisplayed()) {
             hideHamburgerMenu();
@@ -745,6 +771,8 @@
        * Manages the behaviour of the mega-menu when close hamburger menu icon is clicked.
        */
       once('closeHamburgerMenu_handler', '.close-hamburger-menu', context).forEach(function (element) {
+        let isMobileAndTabletsExpanded = !document.getElementsByClassName("megamenu-mobile-and-tablets")[0].classList.contains("display-none");
+
         element.addEventListener('click', function() {
           if (!isHeaderForDesktopDisplayed()) {
             let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
@@ -758,7 +786,12 @@
             addDisplayNoneToAllContainers();
             showMergedMenuItems();
             showHamburgerMenu();
-            removeExpandedFromHeader();
+            removeNoScrollFromBody();
+
+            if (!isMobileAndTabletsExpanded) {
+              removeExpandedFromHeader();
+            }
+
             currentlyOpenMenuItem = null;
 
             let scrollPosition = jQuery(window).scrollTop();
