@@ -23,10 +23,6 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
   transition: all .3s ease;
 }
 
-/*.megamenu-complex-container:not(.front-page) {*/
-/*  padding-bottom: 48px;*/
-/*}*/
-
 .megamenu-complex-container header .go-home img {
   width: 122px;
 }
