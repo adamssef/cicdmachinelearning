@@ -2,6 +2,10 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
   color: white !important;
 }
 
+.megamenu-header.expanded.has-transparent-bg {
+  background-color: white !important;
+}
+
 .has-transparent-bg {
   background-color: transparent !important;
 }
@@ -952,10 +956,10 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     transition: all .3s ease-in-out;
   }
 
-  header:not(.front-page) .go-home img {
-    -webkit-filter: invert(1);
-    transition: all .3s ease;
-  }
+  /*header:not(.front-page) .go-home img {*/
+  /*  -webkit-filter: invert(1);*/
+  /*  transition: all .3s ease;*/
+  /*}*/
 
   .megamenu-complex-container header {
     position: fixed;
@@ -972,9 +976,9 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     display: none;
   }
 
-  header:not(.front-page) .hamburger-menu {
-    -webkit-filter: invert(1);
-  }
+  /*header:not(.front-page) .hamburger-menu {*/
+  /*  -webkit-filter: invert(1);*/
+  /*}*/
 
   .coh-hero.coh-hero-full-width.coh-image {
     height: 45vh;
@@ -989,7 +993,7 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     top: 72px;
     z-index: 100;
     box-shadow: 0 12px 24px 0 rgba(15, 25, 43, 0.04);
-    border-radius: 0 0 24px 24px;
+    /*border-radius: 0 0 24px 24px;*/
     padding-bottom: 32px;
   }
 
@@ -1330,10 +1334,10 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     margin-top: 24px;
   }
 
-  header:not(.front-page) .go-home img {
-    -webkit-filter: invert(1);
-    transition: all .3s ease;
-  }
+  /*header:not(.front-page) .go-home img {*/
+  /*  -webkit-filter: invert(1);*/
+  /*  transition: all .3s ease;*/
+  /*}*/
 
   .megamenu-complex-container header {
     position: fixed;
@@ -1350,9 +1354,9 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     display: none;
   }
 
-  header:not(.front-page) .hamburger-menu {
-    -webkit-filter: invert(1);
-  }
+  /*header:not(.front-page) .hamburger-menu {*/
+  /*  -webkit-filter: invert(1);*/
+  /*}*/
 
   .coh-hero.coh-hero-full-width.coh-image {
     height: 45vh;
