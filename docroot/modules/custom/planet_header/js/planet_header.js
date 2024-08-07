@@ -40,6 +40,10 @@
       }
     });
   }
+
+  /**
+   * Manages how the header behaves when the user scrolls the page vertically.
+   */
   function headerBehaviorOnScroll() {
     let logo = document.getElementById('planet-logo');
     let hasDarkMenuTheme = $("body").find(".dark-menu-items").length + $("body").find(".path-frontpage").length;
@@ -79,6 +83,9 @@
     });
   }
 
+  /**
+   * The DOMContentLoaded event handler.
+   */
   document.addEventListener('DOMContentLoaded', function() {
     let isFrontPage = $("body").hasClass("path-frontpage");
     let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
@@ -88,8 +95,6 @@
     if (hasDarkMenuTheme) {
       $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
     }
-
-    let test = $('body').find('path-frontpage').length;
 
     if(hasTransparentBg) {
       let header = document.getElementsByClassName("megamenu-header")[0];
@@ -173,8 +178,7 @@
     let hasHeroOnTop = 0;
     const header = document.getElementsByClassName("megamenu-header")[0];
 
-
-    if(hasTransparentBg) {
+    if (hasTransparentBg) {
       headerBehaviorOnScroll(header);
     }
 
@@ -347,54 +351,6 @@
         }
       }
 
-      once('select_menu_items', '.business-li', context).forEach(function (element) {
-        let elementId = $(element)[0].id;
-
-        $(element).click(()=> {
-          switch(elementId) {
-            case 'products':
-              let megamenuProducts = document.getElementsByClassName('megamenu-products__desktop');
-              process(megamenuProducts, element, 'products', 'megamenu-products__desktop');
-              currentlyOpenMenuItem = 'products';
-              break;
-            case 'solutions':
-              let megamenuSolutions = document.getElementsByClassName('megamenu-solutions__desktop');
-              process(megamenuSolutions, element, 'solutions', 'megamenu-solutions__desktop');
-              currentlyOpenMenuItem = 'solutions';
-              break;
-            case 'resources':
-              let megamenuResources = document.getElementsByClassName('megamenu-resources__desktop');
-              process(megamenuResources, element, 'resources', 'megamenu-resources__desktop');
-              currentlyOpenMenuItem = 'resources';
-              break;
-            case 'company':
-              let megamenuCompany = document.getElementsByClassName('megamenu-company__desktop');
-              process(megamenuCompany, element, 'company', 'megamenu-company__desktop');
-              currentlyOpenMenuItem = 'company';
-              break;
-          }
-        });
-      });
-
-      once('hover_effect', '.megamenu-column__item', context).forEach(function(element) {
-        // Mouse over
-        const imgElement = $(element).children().children()[0];
-        const originalSrc = imgElement.src;
-
-        $(element).on('mouseover', function() {
-          if (originalSrc !== undefined && !imgElement.src.includes('_lavender.svg')) {
-            imgElement.src = originalSrc.replace('.svg', '_lavender.svg');
-          }
-        });
-
-        $(element).on('mouseleave', function() {
-          // Mouse leave
-          if (imgElement.src !== undefined && imgElement.src.includes('_lavender.svg')) {
-            imgElement.src = originalSrc;
-          }
-        });
-      });
-
       function hideCloseHamburgerMenu() {
         let closeHamburgerMenu = document.getElementsByClassName('close-hamburger-menu')[0];
         closeHamburgerMenu.classList.add('display-none');
@@ -525,6 +481,67 @@
         }
       }
 
+      function removeNoScrollFromBody() {
+        document.body.classList.remove('no-scroll');
+      }
+
+      /**
+       * Manages the behaviour of the group of menu elements when user clicks on them.
+       */
+      once('select_menu_items', '.business-li', context).forEach(function (element) {
+        let elementId = $(element)[0].id;
+
+        $(element).click(()=> {
+          switch(elementId) {
+            case 'products':
+              let megamenuProducts = document.getElementsByClassName('megamenu-products__desktop');
+              process(megamenuProducts, element, 'products', 'megamenu-products__desktop');
+              currentlyOpenMenuItem = 'products';
+              break;
+            case 'solutions':
+              let megamenuSolutions = document.getElementsByClassName('megamenu-solutions__desktop');
+              process(megamenuSolutions, element, 'solutions', 'megamenu-solutions__desktop');
+              currentlyOpenMenuItem = 'solutions';
+              break;
+            case 'resources':
+              let megamenuResources = document.getElementsByClassName('megamenu-resources__desktop');
+              process(megamenuResources, element, 'resources', 'megamenu-resources__desktop');
+              currentlyOpenMenuItem = 'resources';
+              break;
+            case 'company':
+              let megamenuCompany = document.getElementsByClassName('megamenu-company__desktop');
+              process(megamenuCompany, element, 'company', 'megamenu-company__desktop');
+              currentlyOpenMenuItem = 'company';
+              break;
+          }
+        });
+      });
+
+      /**
+       * Manages the hover effect on the menu items.
+       */
+      once('hover_effect', '.megamenu-column__item', context).forEach(function(element) {
+        // Mouse over
+        const imgElement = $(element).children().children()[0];
+        const originalSrc = imgElement.src;
+
+        $(element).on('mouseover', function() {
+          if (originalSrc !== undefined && !imgElement.src.includes('_lavender.svg')) {
+            imgElement.src = originalSrc.replace('.svg', '_lavender.svg');
+          }
+        });
+
+        $(element).on('mouseleave', function() {
+          // Mouse leave
+          if (imgElement.src !== undefined && imgElement.src.includes('_lavender.svg')) {
+            imgElement.src = originalSrc;
+          }
+        });
+      });
+
+      /**
+       * Manages the behaviour of the mega-menu when hamburger menu icon is clicked.
+       */
       once('hamburgerMenu_handler', '.hamburger-menu', context).forEach(function (element) {
         element.addEventListener('click', function() {
           if (!isHeaderForDesktopDisplayed()) {
@@ -536,6 +553,9 @@
         });
       });
 
+      /**
+       * Manages the behaviour of the mega-menu when close hamburger menu icon is clicked.
+       */
       once('closeHamburgerMenu_handler', '.close-hamburger-menu', context).forEach(function (element) {
         element.addEventListener('click', function() {
           if (!isHeaderForDesktopDisplayed()) {
@@ -554,6 +574,11 @@
         });
       });
 
+      /**
+       * Manages the behaviour of the mega-menu when the item's right arrow is clicked.
+       *
+       * It concerns only mobile-and-tablet version.
+       */
       once('megamenuMobileAndTablets_handler', '.arrow-right-anchor', context).forEach(function (element) {
         element.addEventListener('click', function() {
           let id = element.id;
@@ -616,7 +641,9 @@
         });
       });
 
-      // Click-away functionality.
+      /**
+       * Handles click-away functionality.
+       */
       $(document).on('click', function (e) {
         const headerElement = document.getElementsByTagName('header')[0];
         const megamenuDesktopElement = document.getElementsByClassName('megamenu-complex-container')[0];
@@ -672,10 +699,9 @@
         }
       });
 
-      function removeNoScrollFromBody() {
-        document.body.classList.remove('no-scroll');
-      }
-
+      /**
+       * Handles the behaviour of the menu when go-back icon is clicked.
+       */
       once('go-back-handler', '.go-back-span', context).forEach(function (element) {
         element.addEventListener('click', function() {
           switch (currentlyOpenMenuItem) {
