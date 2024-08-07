@@ -1,26 +1,27 @@
 (function ($, Drupal) {
+  "use strict";
   let currentlyOpenMenuItem = null;
 
   function createCookie(name, value, hours) {
+    var expires;
     if (hours) {
-      var date = new Date();
+      const date = new Date();
       date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
-      var expires = "; expires=" + date.toGMTString();
+      expires = "; expires=" + date.toGMTString();
     } else {
-      var expires = "";
+      expires = "";
     }
 
     document.cookie = name + "=" + value + expires + "; path=/";
   }
 
   function cookieExists(name) {
-    return !(document.cookie.indexOf(name) === -1)
+    return document.cookie.indexOf(name) !== -1;
   }
 
   function headerBehaviorwithNotificationBar(hero, header) {
     $(document).ready(function(){
       let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
-      // if has Notification Bar
       if(hasNotificationBar > 0) {
         header.classList.add("white-bg");
         // When click to close Notification Bar
@@ -30,63 +31,102 @@
           if($(hero).hasClass("coh-hero-full-width")) {
             $(hero).css("top","0px");
           }
-        })
+        });
       } else {
         header.classList.remove("white-bg");
         $("#block-cohesion-theme-content").css("padding-top","0px");
         hero.addClass("menu-invisible");
         $(".hero-background").addClass("menu-invisible");
       }
-    })
-  }
-  function headerBehaviorOnScroll(header) {
-    // On Scroll
-    $(window).on('scroll', function () {
-      let scrollPosition = jQuery(window).scrollTop();
-      let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
-      // if scroll position is on the top 
-      if (scrollPosition === 0) {
-        // if has Notification Bar and is Mobile
-        if(hasNotificationBar > 0 && $(window).width() < 1023) {
-          header.classList.add("white-bg");
-          // if doesn't have Notification Bar and/or is on Desktop
-        } else {
-          header.classList.remove("white-bg");
-        }
-        // if Scroll position isn't on the top
-      } else {
-        header.classList.add("white-bg");
-      }
     });
   }
 
+  /**
+   * Manages how the header behaves when the user scrolls the page vertically.
+   */
+  function headerBehaviorOnScroll() {
+    let logo = document.getElementById('planet-logo');
+    let hasDarkMenuTheme = $("body").find(".dark-menu-items").length + $("body").find(".path-frontpage").length;
+
+    $(window).on('scroll', function () {
+      let isExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
+      const header = document.getElementsByClassName("megamenu-header")[0];
+
+      let scrollPosition = jQuery(window).scrollTop();
+
+      if (isExpanded) {
+        header.classList.remove("has-transparent-bg");
+        $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+      }
+      else {
+        if (scrollPosition === 0 && hasDarkMenuTheme > 0) {
+          $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          header.classList.add("has-transparent-bg");
+        }
+
+        if (scrollPosition === 0 && hasDarkMenuTheme === 0) {
+          $(logo).attr('src', '/resources/logo/planet_logo.svg');
+          header.classList.add("has-transparent-bg");
+        }
+
+        if (scrollPosition > 0 && hasDarkMenuTheme > 0) {
+          $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          header.classList.remove("has-transparent-bg");
+        }
+
+        if (scrollPosition > 0 && hasDarkMenuTheme === 0) {
+          $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          header.classList.remove("has-transparent-bg");
+        }
+      }
+
+    });
+  }
+
+  /**
+   * The DOMContentLoaded event handler.
+   */
   document.addEventListener('DOMContentLoaded', function() {
-    var header = document.getElementsByTagName("header")[0];
+    let isFrontPage = $("body").hasClass("path-frontpage");
+    let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
+    let logo = document.getElementById('planet-logo');
+    let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0 || isFrontPage;
+
+    if (hasDarkMenuTheme) {
+      $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+    }
+
+    if(hasTransparentBg) {
+      let header = document.getElementsByClassName("megamenu-header")[0];
+
+      if (hasDarkMenuTheme) {
+        $(header).addClass("header-dark-theme");
+        $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+      }
+
+      $(header).addClass("has-transparent-bg");
+      headerBehaviorOnScroll(header);
+    }
+    else {
+      $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+    }
 
     // Search for utm parameters in url.
     const urlParams = new URLSearchParams(window.location.search);
-    const shortUTMTime = 8760 // one year in hours
-    const longUTMTime = 8760; // one year in hours
-    const planetUrls = [
-      "weareplanet.com",
-      "preprod.weareplanet.com",
-      "planetpaymentdev.prod.acquia-sites.com",
-      "planet.lndo.site"
-    ]
-    const urlMaxLength = 150
-
+    const shortUTMTime = 8760;
+    const longUTMTime = 8760;
 
     if (urlParams.has('utm_campaign') || urlParams.has('utm_medium') || urlParams.has('utm_source') || urlParams.has('utm_content') || urlParams.has('utm_term') || urlParams.has('gclid')){
 
       // Get the cookies.
       let cookies = document.cookie;
       if (cookies !== undefined) {
-        const utmSource = urlParams.get('utm_source')
-        const utmMedium = urlParams.get('utm_medium')
-        const utmCampaign = urlParams.get('utm_campaign')
-        const utmContent = urlParams.get('utm_content')
-        const utmTerm = urlParams.get('utm_term')
-        const gclid = urlParams.get('gclid')
+        const utmSource = urlParams.get('utm_source');
+        const utmMedium = urlParams.get('utm_medium');
+        const utmCampaign = urlParams.get('utm_campaign');
+        const utmContent = urlParams.get('utm_content');
+        const utmTerm = urlParams.get('utm_term');
+        const gclid = urlParams.get('gclid');
 
         /**
          * Save recent UTMs as cookies.
@@ -136,9 +176,9 @@
     let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
     let hasHero = $("body").find(".coh-hero").length;
     let hasHeroOnTop = 0;
-    const hasTransparentBg = $("body").hasClass("planet-header-transparent");
-    //if has Hero
-    if(hasTransparentBg) {
+    const header = document.getElementsByClassName("megamenu-header")[0];
+
+    if (hasTransparentBg) {
       headerBehaviorOnScroll(header);
     }
 
@@ -176,21 +216,21 @@
               $("#block-cohesion-theme-content").css("padding-top","72px");
             }
           } else {
-            if (hasHeroOnTop == 0){
+            if (hasHeroOnTop === 0){
               if(!hasTransparentBg) {
                 if (hasNotificationBar > 0) {
                   $("#block-cohesion-theme-content").css("padding-top","138px");
                 } else {
-                  $("#block-cohesion-theme-content").css("padding-top","96px");
+                  $("#block-cohesion-theme-content").css("padding-top","72px");
                 }
               }
 
             }
           }
         }
-      })
-      // if doesn't have Hero
-      // Pages without Hero or with Hero in the middle of the pag
+      });
+
+      // Pages without Hero or with Hero in the middle of the page.
     } else {
       if(!hasTransparentBg) {
         header.classList.add("white-bg");
@@ -201,12 +241,12 @@
           $("#block-cohesion-theme-content").css("padding-top","72px");
         }
       } else {
-        if (hasHeroOnTop == 0){
+        if (hasHeroOnTop === 0){
           if(!hasTransparentBg) {
             if (hasNotificationBar > 0) {
               $("#block-cohesion-theme-content").css("padding-top","138px");
             } else {
-              $("#block-cohesion-theme-content").css("padding-top","96px");
+              $("#block-cohesion-theme-content").css("padding-top","72px");
             }
           }
         }
@@ -215,38 +255,7 @@
   });
 
   Drupal.behaviors.megaMenu = {
-    attach: function (context, settings) {
-
-
-     once('select_menu_items', '.business-li', context).forEach(function (element) {
-      let element_id = $(element)[0].id;
-
-      $(element).click(e=> {
-        switch(element_id) {
-          case 'products':
-            let megamenu_products = document.getElementsByClassName('megamenu-products__desktop');
-            process(megamenu_products, element, 'products', 'megamenu-products__desktop');
-            currentlyOpenMenuItem = 'products';
-            break;
-          case 'solutions':
-            let megamenu_solutions = document.getElementsByClassName('megamenu-solutions__desktop');
-            process(megamenu_solutions, element, 'solutions', 'megamenu-solutions__desktop');
-            currentlyOpenMenuItem = 'solutions';
-            break;
-          case 'resources':
-            let megamenu_resources = document.getElementsByClassName('megamenu-resources__desktop');
-            process(megamenu_resources, element, 'resources', 'megamenu-resources__desktop');
-            currentlyOpenMenuItem = 'resources';
-            break;
-          case 'company':
-            let megamenu_company = document.getElementsByClassName('megamenu-company__desktop');
-            process(megamenu_company, element, 'company', 'megamenu-company__desktop');
-            currentlyOpenMenuItem = 'company';
-            break;
-        }
-      })
-     });
-
+    attach: function (context) {
       function areHtmlCollectionsEqual(collection1, collection2) {
         // Convert HTML collections to arrays
         const array1 = Array.from(collection1);
@@ -267,222 +276,99 @@
         return true;
       }
 
-      once('hover_effect', '.megamenu-column__item', context).forEach(function(element) {
-        // Mouse over
-        var imgElement = $(element).children().children()[0];
-        var originalSrc = imgElement.src;
+      function process(megamenuElement, element, menuName, className) {
+        let isFrontPage = $("body").hasClass("path-frontpage");
+        let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0 || isFrontPage;
+        let img = $(element).children().first().children().first();
+        // Hide all other menus and remove their flip class
+        let menus = [
+          document.getElementsByClassName('megamenu-products__desktop'),
+          document.getElementsByClassName('megamenu-solutions__desktop'),
+          document.getElementsByClassName('megamenu-resources__desktop'),
+          document.getElementsByClassName('megamenu-company__desktop')
+        ];
 
-        $(element).on('mouseover', function() {
-          if (originalSrc !== undefined && !imgElement.src.includes('_lavender.svg')) {
-            imgElement.src = originalSrc.replace('.svg', '_lavender.svg');
-          }
-        });
+        let map = new Map();
+        map.set('megamenu-products__desktop', 'products_img');
+        map.set('megamenu-solutions__desktop', 'solutions_img');
+        map.set('megamenu-resources__desktop', 'resources_img');
+        map.set('megamenu-company__desktop', 'company_img');
 
-        $(element).on('mouseleave', function() {
-          // Mouse leave
-          if (imgElement.src !== undefined && imgElement.src.includes('_lavender.svg')) {
-            imgElement.src = originalSrc;
-          }
-        });
-      });
+        let logo = document.getElementById('planet-logo');
+        const header = document.getElementsByClassName("megamenu-header")[0];
 
-
-      once('hamburger_menu_handler', '.hamburger-menu', context).forEach(function (element) {
-        element.addEventListener('click', function() {
-          if (!isHeaderForDesktopDisplayed()) {
-            hideHamburgerMenu();
-            showCloseHamburgerMenu()
-            let megamenu_mobile_and_tablets = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
-            megamenu_mobile_and_tablets.classList.remove('display-none');
-          }
-        });
-      });
-
-      once('close_hamburger_menu_handler', '.close-hamburger-menu', context).forEach(function (element) {
-        element.addEventListener('click', function() {
-          if (!isHeaderForDesktopDisplayed()) {
-            let hamburger_menu = document.getElementsByClassName('hamburger-menu')[0];
-            hamburger_menu.classList.remove('display-none');
-            hamburger_menu.classList.add('rotate-left')
-            element.classList.add('display-none');
-            let megamenu_mobile_and_tablets = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
-            megamenu_mobile_and_tablets.classList.add('display-none');
-            hideGoBack();
-            showLogo();
-            addDisplayNoneToAllContainers();
-            showMergedMenuItems();
-            currentlyOpenMenuItem = null;
-          }
-        });
-      });
-
-      once('megamenu_mobile_and_tablets_handler', '.arrow-right-anchor', context).forEach(function (element) {
-        element.addEventListener('click', function() {
-          let id = element.id;
-
-          switch (id) {
-            case 'anchor-products':
-              let container_products = document.getElementsByClassName('megamenu-mobile-and-tablets__container--products')[0];
-              addDisplayNoneToAllContainers();
-
-              if (container_products.classList.contains('display-none')) {
-                container_products.classList.remove('display-none');
-                currentlyOpenMenuItem = 'products';
-                hideMergedMenuItems();
-                addNoScrollToBody();
-                hideLogo();
-                showGoBack();
+        menus.forEach(function (menu) {
+          if (areHtmlCollectionsEqual(menu, megamenuElement)) {
+            if (menu[0] !== undefined) {
+              if(menu[0].classList.contains('display-none')) {
+                menu[0].classList.remove('display-none');
+                header.classList.add('expanded');
+                header.classList.remove('has-transparent-bg');
+                $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+                document.getElementById(map.get(className)).classList.add('flip');
               }
-              break;
-            case 'anchor-solutions':
-              let container_solutions = document.getElementsByClassName('megamenu-mobile-and-tablets__container--solutions')[0];
-              addDisplayNoneToAllContainers()
+              else {
+                menu[0].classList.add('display-none');
+                header.classList.remove('expanded');
+                let scrollPosition = jQuery(window).scrollTop();
 
-              if (container_solutions.classList.contains('display-none')) {
-                container_solutions.classList.remove('display-none');
-                currentlyOpenMenuItem = 'solutions';
-                hideMergedMenuItems();
-                addNoScrollToBody();
-                hideLogo();
-                showGoBack();
-              }
-              break;
-            case 'anchor-resources':
-              let container_resources = document.getElementsByClassName('megamenu-mobile-and-tablets__container--resources')[0];
-              addDisplayNoneToAllContainers();
+                if  (scrollPosition === 0 && !hasDarkMenuTheme) {
+                  $(logo).attr('src', '/resources/logo/planet_logo.svg');
+                }
 
-              if (container_resources.classList.contains('display-none')) {
-                container_resources.classList.remove('display-none');
-                currentlyOpenMenuItem = 'resources';
-                hideMergedMenuItems();
-                addNoScrollToBody();
-                hideLogo();
-                showGoBack();
-              }
-              break;
-            case 'anchor-company':
-              let container_company = document.getElementsByClassName('megamenu-mobile-and-tablets__container--company')[0];
-              addDisplayNoneToAllContainers();
+                let isFrontPage = $("body").hasClass("path-frontpage");
+                let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width") || $("body, div").hasClass("coh-hero-5050"));
 
-              if (container_company.classList.contains('display-none')) {
-                container_company.classList.remove('display-none');
-                currentlyOpenMenuItem = 'company';
-                hideMergedMenuItems();
-                addNoScrollToBody();
-                hideLogo();
-                showGoBack();
+                if (hasTransparentBg && scrollPosition === 0) {
+                  header.classList.add('has-transparent-bg');
+                }
+
+                if (!hasTransparentBg) {
+                  $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+                }
+                document.getElementById(map.get(className)).classList.remove('flip');
               }
 
-              break;
-          }
-        });
-      });
-
-      // Click-away functionality.
-      $(document).on('click', function (e) {
-        const headerElement = document.getElementsByTagName('header')[0];
-        const megamenuDesktopElement = document.getElementsByClassName('megamenu-complex-container')[0];
-        const megamenuMobileElement = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
-
-        if (
-            !(headerElement && headerElement.contains(e.target)) &&
-            !(megamenuDesktopElement && megamenuDesktopElement.contains(e.target)) &&
-            !(megamenuMobileElement && megamenuMobileElement.contains(e.target))
-        ) {
-          setTimeout(() => {
-            switch (currentlyOpenMenuItem) {
-              case 'products':
-                let container_products = document.getElementsByClassName('megamenu-products__desktop')[0];
-                container_products.classList.add('display-none');
-                currentlyOpenMenuItem = null;
-                unflipAllDesktopMenuArrows();
-                break;
-              case 'solutions':
-                let container_solutions = document.getElementsByClassName('megamenu-solutions__desktop')[0];
-                container_solutions.classList.add('display-none');
-                currentlyOpenMenuItem = null;
-                unflipAllDesktopMenuArrows();
-                break;
-              case 'resources':
-                let container_resources = document.getElementsByClassName('megamenu-resources__desktop')[0];
-                container_resources.classList.add('display-none');
-                currentlyOpenMenuItem = null;
-                unflipAllDesktopMenuArrows();
-                break;
-              case 'company':
-                let container_company = document.getElementsByClassName('megamenu-company__desktop')[0];
-                container_company.classList.add('display-none');
-                currentlyOpenMenuItem = null;
-                unflipAllDesktopMenuArrows();
-                break;
-              default:
-                megamenuMobileElement.classList.add('display-none');
-                hideCloseHamburgerMenu();
-                showHamburgerMenu();
-                unflipAllDesktopMenuArrows();
-                break;
             }
-          }, 300);
-        }
-      });
-
-      once('go-back-handler', '.go-back-span', context).forEach(function (element) {
-        element.addEventListener('click', function() {
-          switch (currentlyOpenMenuItem) {
-            case 'products':
-              let container_products = document.getElementsByClassName('megamenu-mobile-and-tablets__container--products')[0];
-              container_products.classList.add('display-none');
-              showMergedMenuItems();
-              removeNoScrollFromBody();
-              showLogo();
-              hideGoBack();
-              break;
-            case 'solutions':
-              let container_solutions = document.getElementsByClassName('megamenu-mobile-and-tablets__container--solutions')[0];
-              container_solutions.classList.add('display-none');
-              showMergedMenuItems();
-              removeNoScrollFromBody();
-              showLogo();
-              hideGoBack();
-              break;
-            case 'resources':
-              let container_resources = document.getElementsByClassName('megamenu-mobile-and-tablets__container--resources')[0];
-              container_resources.classList.add('display-none');
-              showMergedMenuItems();
-              removeNoScrollFromBody();
-              showLogo();
-              hideGoBack();
-              break;
-            case 'company':
-              let container_company = document.getElementsByClassName('megamenu-mobile-and-tablets__container--company')[0];
-              container_company.classList.add('display-none');
-              showMergedMenuItems();
-              removeNoScrollFromBody();
-              showLogo();
-              hideGoBack();
-              break;
+          }
+          else {
+            map.forEach((value, key) => {
+              if (className !== key) {
+                if (document.getElementsByClassName(key)[0] !== undefined) {
+                  document.getElementsByClassName(key)[0].classList.add('display-none');
+                  document.getElementById(value).classList.remove('flip');
+                }
+              }
+            });
           }
         });
-      });
+
+        // Manage the flip class.
+        if (!megamenuElement[0].classList.contains('display-none')) {
+          img.addClass('flip');
+        } else {
+          img.removeClass('flip');
+        }
+      }
 
       function hideCloseHamburgerMenu() {
-        let close_hamburger_menu = document.getElementsByClassName('close-hamburger-menu')[0];
-        close_hamburger_menu.classList.add('display-none');
+        let closeHamburgerMenu = document.getElementsByClassName('close-hamburger-menu')[0];
+        closeHamburgerMenu.classList.add('display-none');
       }
 
       function showCloseHamburgerMenu() {
-        let close_hamburger_menu = document.getElementsByClassName('close-hamburger-menu')[0];
-        close_hamburger_menu.classList.remove('display-none');
+        let closeHamburgerMenu = document.getElementsByClassName('close-hamburger-menu')[0];
+        closeHamburgerMenu.classList.remove('display-none');
       }
 
       function showHamburgerMenu() {
-        let hamburger_menu = document.getElementsByClassName('hamburger-menu')[0];
-        hamburger_menu.classList.remove('display-none');
+        let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
+        hamburgerMenu.classList.remove('display-none');
       }
 
       function hideHamburgerMenu() {
-        let hamburger_menu = document.getElementsByClassName('hamburger-menu')[0];
-        hamburger_menu.classList.add('display-none');
+        let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
+        hamburgerMenu.classList.add('display-none');
       }
 
       function unflipAllDesktopMenuArrows() {
@@ -494,14 +380,14 @@
       }
 
       function addDisplayNoneToAllContainers() {
-        let all_containers = [
+        let allContainers = [
           document.getElementsByClassName('megamenu-mobile-and-tablets__container--products')[0],
           document.getElementsByClassName('megamenu-mobile-and-tablets__container--solutions')[0],
           document.getElementsByClassName('megamenu-mobile-and-tablets__container--resources')[0],
           document.getElementsByClassName('megamenu-mobile-and-tablets__container--company')[0]
         ];
 
-        all_containers.forEach(function (container) {
+        allContainers.forEach(function (container) {
           if (!container.classList.contains('display-none')) {
             container.classList.add('display-none');
           }
@@ -509,24 +395,20 @@
       }
 
       function isHeaderForDesktopDisplayed() {
-        let inside_header_container = document.getElementsByClassName('inside-header-container')[0];
-        let inside_header_container_style = window.getComputedStyle(inside_header_container);
-        return inside_header_container_style.display !== 'none';
+        let insideHeaderContainer = document.getElementsByClassName('inside-header-container')[0];
+        let insideHeaderContainerStyle = window.getComputedStyle(insideHeaderContainer);
+        return insideHeaderContainerStyle.display !== 'none';
       }
 
       function hideMergedMenuItems() {
-        let merged_menu_items = document.getElementsByClassName('merged-menu-items');
-        for (let i = 0; i < merged_menu_items.length; i++) {
-          merged_menu_items[i].classList.add('display-none');
+        let mergedMenuItems = document.getElementsByClassName('merged-menu-items');
+        for (let i = 0; i < mergedMenuItems.length; i++) {
+          mergedMenuItems[i].classList.add('display-none');
         }
       }
 
       function addNoScrollToBody() {
         document.body.classList.add('no-scroll');
-      }
-
-      function removeNoScrollFromBody() {
-        document.body.classList.remove('no-scroll');
       }
 
       function hideLogo() {
@@ -546,78 +428,318 @@
       }
 
       function showGoBack() {
-        let go_back = document.getElementsByClassName('go-back-span');
+        let goBack = document.getElementsByClassName('go-back-span');
 
-        for (let i = 0; i < go_back.length; i++) {
-          go_back[i].classList.remove('display-none');
+        for (let i = 0; i < goBack.length; i++) {
+          goBack[i].classList.remove('display-none');
         }
       }
 
       function hideGoBack() {
-        let go_back = document.getElementsByClassName('go-back-span');
+        let goBack = document.getElementsByClassName('go-back-span');
 
-        for (let i = 0; i < go_back.length; i++) {
-          go_back[i].classList.add('display-none');
+        for (let i = 0; i < goBack.length; i++) {
+          goBack[i].classList.add('display-none');
         }
       }
 
       function showMergedMenuItems() {
-        let merged_menu_items = document.getElementsByClassName('merged-menu-items');
-        for (let i = 0; i < merged_menu_items.length; i++) {
-          merged_menu_items[i].classList.remove('display-none');
+        let mergedMenuItems = document.getElementsByClassName('merged-menu-items');
+        for (let i = 0; i < mergedMenuItems.length; i++) {
+          mergedMenuItems[i].classList.remove('display-none');
         }
       }
 
-      function process(megamenu_element, element, menuName, className) {
-        let img = $(element).children().first().children().first();
+      function removeExpandedFromHeader() {
+        const header = document.getElementsByClassName("megamenu-header")[0];
+        header.classList.remove("expanded");
+      }
 
-        // Hide all other menus and remove their flip class
-        let menus = [
-          document.getElementsByClassName('megamenu-products__desktop'),
-          document.getElementsByClassName('megamenu-solutions__desktop'),
-          document.getElementsByClassName('megamenu-resources__desktop'),
-          document.getElementsByClassName('megamenu-company__desktop')
-        ];
+      function manageHasTransparentBgClass() {
+        const header = document.getElementsByClassName("megamenu-header")[0];
+        let scrollPosition = jQuery(window).scrollTop();
+        let isExpanded = header.classList.contains("expanded");
+        let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0 || $("body").hasClass("path-frontpage");
+        let isFrontPage = $("body").hasClass("path-frontpage");
+        let logo = $(document.getElementById('planet-logo'));
 
-        let map = new Map();
-        map.set('megamenu-products__desktop', 'products_img');
-        map.set('megamenu-solutions__desktop', 'solutions_img');
-        map.set('megamenu-resources__desktop', 'resources_img');
-        map.set('megamenu-company__desktop', 'company_img');
 
-        menus.forEach(function (menu) {
-          if (areHtmlCollectionsEqual(menu, megamenu_element)) {
-            if (menu[0] !== undefined) {
-              if(menu[0].classList.contains('display-none')) {
-                menu[0].classList.remove('display-none');
-                document.getElementById(map.get(className)).classList.add('flip')
-              }
-              else {
-                menu[0].classList.add('display-none');
-                document.getElementById(map.get(className)).classList.remove('flip')
-              }
-
+        let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
+        if (isExpanded) {
+          header.classList.remove("has-transparent-bg");
+        }
+        else {
+          if (scrollPosition === 0 && hasTransparentBg) {
+            header.classList.add("has-transparent-bg");
+            if (!hasDarkMenuTheme) {
+              logo.attr('src', '/resources/logo/planet_logo.svg');
             }
           }
-          else {
-            map.forEach((value, key) => {
-              if (className !== key) {
-                if (document.getElementsByClassName(key)[0] !== undefined) {
-                  document.getElementsByClassName(key)[0].classList.add('display-none');
-                  document.getElementById(value).classList.remove('flip');
-                }
-              }
-            });
+          if (scrollPosition > 0 && hasTransparentBg) {
+            header.classList.remove("has-transparent-bg");
+          }
+        }
+      }
+
+      function removeNoScrollFromBody() {
+        document.body.classList.remove('no-scroll');
+      }
+
+      /**
+       * Manages the behaviour of the group of menu elements when user clicks on them.
+       */
+      once('select_menu_items', '.business-li', context).forEach(function (element) {
+        let elementId = $(element)[0].id;
+
+        $(element).click(()=> {
+          switch(elementId) {
+            case 'products':
+              let megamenuProducts = document.getElementsByClassName('megamenu-products__desktop');
+              process(megamenuProducts, element, 'products', 'megamenu-products__desktop');
+              currentlyOpenMenuItem = 'products';
+              break;
+            case 'solutions':
+              let megamenuSolutions = document.getElementsByClassName('megamenu-solutions__desktop');
+              process(megamenuSolutions, element, 'solutions', 'megamenu-solutions__desktop');
+              currentlyOpenMenuItem = 'solutions';
+              break;
+            case 'resources':
+              let megamenuResources = document.getElementsByClassName('megamenu-resources__desktop');
+              process(megamenuResources, element, 'resources', 'megamenu-resources__desktop');
+              currentlyOpenMenuItem = 'resources';
+              break;
+            case 'company':
+              let megamenuCompany = document.getElementsByClassName('megamenu-company__desktop');
+              process(megamenuCompany, element, 'company', 'megamenu-company__desktop');
+              currentlyOpenMenuItem = 'company';
+              break;
+          }
+        });
+      });
+
+      /**
+       * Manages the hover effect on the menu items.
+       */
+      once('hover_effect', '.megamenu-column__item', context).forEach(function(element) {
+        // Mouse over
+        const imgElement = $(element).children().children()[0];
+        const originalSrc = imgElement.src;
+
+        $(element).on('mouseover', function() {
+          if (originalSrc !== undefined && !imgElement.src.includes('_lavender.svg')) {
+            imgElement.src = originalSrc.replace('.svg', '_lavender.svg');
           }
         });
 
-        // Manage the flip class.
-        if (!megamenu_element[0].classList.contains('display-none')) {
-          img.addClass('flip');
-        } else {
-          img.removeClass('flip');
+        $(element).on('mouseleave', function() {
+          // Mouse leave
+          if (imgElement.src !== undefined && imgElement.src.includes('_lavender.svg')) {
+            imgElement.src = originalSrc;
+          }
+        });
+      });
+
+      /**
+       * Manages the behaviour of the mega-menu when hamburger menu icon is clicked.
+       */
+      once('hamburgerMenu_handler', '.hamburger-menu', context).forEach(function (element) {
+        element.addEventListener('click', function() {
+          if (!isHeaderForDesktopDisplayed()) {
+            hideHamburgerMenu();
+            showCloseHamburgerMenu();
+            let megamenuMobileAndTablets = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
+            megamenuMobileAndTablets.classList.remove('display-none');
+          }
+        });
+      });
+
+      /**
+       * Manages the behaviour of the mega-menu when close hamburger menu icon is clicked.
+       */
+      once('closeHamburgerMenu_handler', '.close-hamburger-menu', context).forEach(function (element) {
+        element.addEventListener('click', function() {
+          if (!isHeaderForDesktopDisplayed()) {
+            let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
+            hamburgerMenu.classList.remove('display-none');
+            hamburgerMenu.classList.add('rotate-left');
+            element.classList.add('display-none');
+            let megamenuMobileAndTablets = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
+            megamenuMobileAndTablets.classList.add('display-none');
+            hideGoBack();
+            showLogo();
+            addDisplayNoneToAllContainers();
+            showMergedMenuItems();
+            currentlyOpenMenuItem = null;
+          }
+        });
+      });
+
+      /**
+       * Manages the behaviour of the mega-menu when the item's right arrow is clicked.
+       *
+       * It concerns only mobile-and-tablet version.
+       */
+      once('megamenuMobileAndTablets_handler', '.arrow-right-anchor', context).forEach(function (element) {
+        element.addEventListener('click', function() {
+          let id = element.id;
+
+          switch (id) {
+            case 'anchor-products':
+              let containerProducts = document.getElementsByClassName('megamenu-mobile-and-tablets__container--products')[0];
+              addDisplayNoneToAllContainers();
+
+              if (containerProducts.classList.contains('display-none')) {
+                containerProducts.classList.remove('display-none');
+                currentlyOpenMenuItem = 'products';
+                hideMergedMenuItems();
+                addNoScrollToBody();
+                hideLogo();
+                showGoBack();
+              }
+              break;
+            case 'anchor-solutions':
+              let containerSolutions = document.getElementsByClassName('megamenu-mobile-and-tablets__container--solutions')[0];
+              addDisplayNoneToAllContainers();
+
+              if (containerSolutions.classList.contains('display-none')) {
+                containerSolutions.classList.remove('display-none');
+                currentlyOpenMenuItem = 'solutions';
+                hideMergedMenuItems();
+                addNoScrollToBody();
+                hideLogo();
+                showGoBack();
+              }
+              break;
+            case 'anchor-resources':
+              let containerResources = document.getElementsByClassName('megamenu-mobile-and-tablets__container--resources')[0];
+              addDisplayNoneToAllContainers();
+
+              if (containerResources.classList.contains('display-none')) {
+                containerResources.classList.remove('display-none');
+                currentlyOpenMenuItem = 'resources';
+                hideMergedMenuItems();
+                addNoScrollToBody();
+                hideLogo();
+                showGoBack();
+              }
+              break;
+            case 'anchor-company':
+              let containerCompany = document.getElementsByClassName('megamenu-mobile-and-tablets__container--company')[0];
+              addDisplayNoneToAllContainers();
+
+              if (containerCompany.classList.contains('display-none')) {
+                containerCompany.classList.remove('display-none');
+                currentlyOpenMenuItem = 'company';
+                hideMergedMenuItems();
+                addNoScrollToBody();
+                hideLogo();
+                showGoBack();
+              }
+
+              break;
+          }
+        });
+      });
+
+      /**
+       * Handles click-away functionality.
+       */
+      $(document).on('click', function (e) {
+        const headerElement = document.getElementsByTagName('header')[0];
+        const megamenuDesktopElement = document.getElementsByClassName('megamenu-complex-container')[0];
+        const megamenuMobileElement = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
+
+        if (
+          !(headerElement && headerElement.contains(e.target)) &&
+          !(megamenuDesktopElement && megamenuDesktopElement.contains(e.target)) &&
+          !(megamenuMobileElement && megamenuMobileElement.contains(e.target))
+        ) {
+          setTimeout(() => {
+            switch (currentlyOpenMenuItem) {
+              case 'products':
+                let containerProducts = document.getElementsByClassName('megamenu-products__desktop')[0];
+                containerProducts.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
+                currentlyOpenMenuItem = null;
+                unflipAllDesktopMenuArrows();
+                break;
+              case 'solutions':
+                let containerSolutions = document.getElementsByClassName('megamenu-solutions__desktop')[0];
+                containerSolutions.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
+                currentlyOpenMenuItem = null;
+                unflipAllDesktopMenuArrows();
+                break;
+              case 'resources':
+                let containerResources = document.getElementsByClassName('megamenu-resources__desktop')[0];
+                containerResources.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
+                currentlyOpenMenuItem = null;
+                unflipAllDesktopMenuArrows();
+                break;
+              case 'company':
+                let containerCompany = document.getElementsByClassName('megamenu-company__desktop')[0];
+                containerCompany.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
+                currentlyOpenMenuItem = null;
+                unflipAllDesktopMenuArrows();
+                break;
+              default:
+                megamenuMobileElement.classList.add('display-none');
+                hideCloseHamburgerMenu();
+                showHamburgerMenu();
+                unflipAllDesktopMenuArrows();
+                break;
+            }
+          }, 300);
         }
-      }
+      });
+
+      /**
+       * Handles the behaviour of the menu when go-back icon is clicked.
+       */
+      once('go-back-handler', '.go-back-span', context).forEach(function (element) {
+        element.addEventListener('click', function() {
+          switch (currentlyOpenMenuItem) {
+            case 'products':
+              let containerProducts = document.getElementsByClassName('megamenu-mobile-and-tablets__container--products')[0];
+              containerProducts.classList.add('display-none');
+              showMergedMenuItems();
+              removeNoScrollFromBody();
+              showLogo();
+              hideGoBack();
+              break;
+            case 'solutions':
+              let containerSolutions = document.getElementsByClassName('megamenu-mobile-and-tablets__container--solutions')[0];
+              containerSolutions.classList.add('display-none');
+              showMergedMenuItems();
+              removeNoScrollFromBody();
+              showLogo();
+              hideGoBack();
+              break;
+            case 'resources':
+              let containerResources = document.getElementsByClassName('megamenu-mobile-and-tablets__container--resources')[0];
+              containerResources.classList.add('display-none');
+              showMergedMenuItems();
+              removeNoScrollFromBody();
+              showLogo();
+              hideGoBack();
+              break;
+            case 'company':
+              let containerCompany = document.getElementsByClassName('megamenu-mobile-and-tablets__container--company')[0];
+              containerCompany.classList.add('display-none');
+              showMergedMenuItems();
+              removeNoScrollFromBody();
+              showLogo();
+              hideGoBack();
+              break;
+          }
+        });
+      });
     }
   };
 })(jQuery, Drupal);
