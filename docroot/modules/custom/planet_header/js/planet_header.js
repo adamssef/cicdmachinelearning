@@ -160,8 +160,6 @@
     let goHomeDesktop = document.getElementsByClassName('go-home')[0];
     let scrollPosition = jQuery(window).scrollTop();
 
-
-
     $(window).on('resize', function () {
       let isExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
       let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
@@ -413,7 +411,8 @@
             }
             // if has Hero Full Width
           } else if ($(this).hasClass("coh-hero-full-width")) {
-            // On mobile
+            // On mobile!^%
+
             if ($(window).width() < 1023) {
               headerBehaviorwithNotificationBar(hero, header);
             }
