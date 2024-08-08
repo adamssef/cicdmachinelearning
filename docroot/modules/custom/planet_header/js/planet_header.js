@@ -26,6 +26,7 @@
   }
 
   function headerBehaviorwithNotificationBar(hero, header) {
+    console.log('notification')
     $(document).ready(function(){
       let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
       if(hasNotificationBar > 0) {
@@ -172,7 +173,6 @@
         megamenuMobileAndTablets.classList.add('display-none');
 
         if (hasTransparentBg === true) {
-          // removeExpandedFromHeader();
           if (!isAnyDesktopMenuExpanded()) {
             addTransparentBgClassToHeader();
             removeExpandedFromHeader();
@@ -205,11 +205,9 @@
 
         if (hasTransparentBg === true) {
           if (scrollPosition === 0) {
-            // removeExpandedFromHeader();
             addTransparentBgClassToHeader();
 
             if (hasDarkMenuTheme === 0) {
-
               $(logo).attr('src', '/resources/logo/planet_logo.svg');
               $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo.svg');
               $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu.svg');
@@ -224,6 +222,7 @@
               $(goBackSpan).addClass('display-none');
               $(goHome).removeClass('display-none');
               $(closingXIcon).addClass('display-none');
+
               if (isExpanded) {
                 $(closingXIcon).removeClass('display-none');
                 $(hamburgerMenuIcon).addClass('display-none');
@@ -232,7 +231,6 @@
                 $(closingXIcon).addClass('display-none');
                 $(hamburgerMenuIcon).removeClass('display-none');
               }
-              // $(hamburgerMenuIcon).removeClass('display-none');
               removeNoScrollFromBody();
             }
           }
@@ -491,11 +489,6 @@
         }
 
         return true;
-      }
-
-      function removeExpandedFromHeader() {
-        const header = document.getElementsByClassName("megamenu-header")[0];
-        header.classList.remove("expanded");
       }
 
       function process(megamenuElement, element, menuName, className) {
@@ -877,7 +870,6 @@
                 hideLogo();
                 showGoBack();
               }
-
               break;
           }
         });
