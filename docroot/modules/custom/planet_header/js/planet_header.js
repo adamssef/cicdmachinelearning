@@ -24,7 +24,7 @@
   function cookieExists(name) {
     return document.cookie.indexOf(name) !== -1;
   }
-
+5
   function headerBehaviorwithNotificationBar(hero, header) {
     $(document).ready(function(){
       let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
@@ -69,7 +69,6 @@
 
     $(window).on('scroll', function () {
       let isExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
-      // const header = document.getElementsByClassName("megamenu-header")[0];
       let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
       let hamburgerMenuIcon = document.getElementsByClassName('hamburger-menu')[0];
 
@@ -78,7 +77,6 @@
       if (isExpanded) {
         removeTransparentBgClassFromHeader()
         $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
-        // $(hamburgerMenuIcon).attr('style', 'display: none !important');
       }
       else {
         if (scrollPosition === 0 && hasDarkMenuTheme > 0) {
