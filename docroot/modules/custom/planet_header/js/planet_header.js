@@ -26,7 +26,6 @@
   }
 
   function headerBehaviorwithNotificationBar(hero, header) {
-    console.log('notification')
     $(document).ready(function(){
       let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
       if(hasNotificationBar > 0) {
