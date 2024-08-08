@@ -201,15 +201,6 @@
             <span class="megamenu-column__mini-text">{{ "Localise the checkout experience for international customers."|t }}</span>
             </a>
          </div>
-         {#
-         <div class="megamenu-column__item">
-            <a href="/payment-methods">
-            <img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/network.svg"/>
-            <span class="megamenu-column__mini-header">{{ "Payment Methods"|t }}</span>
-            <span class="megamenu-column__mini-text megamenu-column__mini-text--payment-methods">{{ "Explore payment options for your checkout."|t }}</span>
-            </a>
-         </div>
-         #}
       </div>
       <div class="lavender-metacontainer">
          <div class="megamenu-column megamenu-column--lavender magamenu-column--right">
@@ -339,26 +330,13 @@
             {% elseif data['#current_language_prefix'] == 'de' %}
             <a href="/de/fallstudien">
                {% endif %}
-               <div class="megamenu-column__mini-header">{{ "Customers"|t }}</div>
+               <div class="megamenu-column__mini-header">{{ "Case studies"|t }}</div>
                <div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
             </a>
-            {# @Adam why assuming all URLs different than EN would have the structure /lang_code/case-studies? #}
-            {# {% if data['#current_language_prefix'] == '' %}
-            <a href="/case-studies">
-               <div class="megamenu-column__mini-header">{{ "Customers"|t }}</div>
-               <div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
-            </a>
-            {% else %} #}
-            {#
-            <a href="/{{ data['#current_language_prefix'] }}/case-studies">
-               <div class="megamenu-column__mini-header">{{ "Customers"|t }}</div>
-               <div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
-            </a>
-            {% endif %} #}
          </div>
          <div class="navigation-item navigation-item--customer-resources">
             <a href="/customer-resources-library">
-               <div class="megamenu-column__mini-header">{{ "Customer Resources"|t }}</div>
+               <div class="megamenu-column__mini-header">{{ "Customer resources"|t }}</div>
                <div class="megamenu-column__mini-text">{{ "Committed to exceptional support and resources for a seamless experience"|t }}</div>
             </a>
          </div>
@@ -646,22 +624,6 @@
                <span class="megamenu-column__mini-text">{{ "Localise the checkout experience for international customers."|t }}</span>
             </a>
          </div>
-         {#
-         <div class="megamenu-column__item">
-            <a href="/payment-methods">
-               <div class="img-and-mini-header-container">
-                  <div class="img-and-mini-header-sub-container">
-                     <div class="img-wrapper">
-                        <img class="megamenu-column__icon megamenu-column__icon__arrow" src="/resources/icons/network.svg"/>
-                     </div>
-                     <span class="megamenu-column__mini-header">{{ "Payment Methods"|t }}</span>
-                  </div>
-                  <img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
-               </div>
-               <span class="megamenu-column__mini-text megamenu-column__mini-text--payment-methods">{{ "Explore payment options for your checkout."|t }}</span>
-            </a>
-         </div>
-         #}
       </div>
       <div class="lavender-metacontainer">
          <div class="megamenu-column megamenu-column--lavender magamenu-column--right">
@@ -793,24 +755,33 @@
             {% endif %}
          </div>
          <div class="navigation-item navigation-item--customers">
-            {% if data['#current_language_prefix'] == '' %}
-            <a href="/case-studies">
-            {% elseif data['#current_language_prefix'] == 'es' %}
-            <a href="/es/casos-exito">
-            {% elseif data['#current_language_prefix'] == 'fr' %}
-            <a href="/fr/etudes-de-cas">
-            {% elseif data['#current_language_prefix'] == 'it' %}
-            <a href="/it/storie-successo">
-            {% elseif data['#current_language_prefix'] == 'de' %}
-            <a href="/de/fallstudien">
-               {% endif %}
+            <a href="/customer-resources-library">
                <div class="megamenu-column__mini-header">
-                  {{ "Customers"|t }}
+                  {{ "Customer resources"|t }}
                   <img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
                </div>
-               <div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
+               <div class="megamenu-column__mini-text">{{ "Committed to exceptional support and resources for a seamless experience"|t }}</div>
             </a>
          </div>
+        <div class="navigation-item navigation-item--customers">
+          {% if data['#current_language_prefix'] == '' %}
+          <a href="/case-studies">
+            {% elseif data['#current_language_prefix'] == 'es' %}
+            <a href="/es/casos-exito">
+              {% elseif data['#current_language_prefix'] == 'fr' %}
+              <a href="/fr/etudes-de-cas">
+                {% elseif data['#current_language_prefix'] == 'it' %}
+                <a href="/it/storie-successo">
+                  {% elseif data['#current_language_prefix'] == 'de' %}
+                  <a href="/de/fallstudien">
+                    {% endif %}
+                    <div class="megamenu-column__mini-header">
+                      {{ "Case studies"|t }}
+                      <img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right.">
+                    </div>
+                    <div class="megamenu-column__mini-text">{{ "Discover why businesses around the world choose Planet"|t }}</div>
+                  </a>
+        </div>
          <div class="navigation-item navigation-item--partners">
             {% if data['#current_language_prefix'] == '' %}
             <a href="/partners">
