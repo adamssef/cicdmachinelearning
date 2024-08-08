@@ -307,6 +307,11 @@
         $(header).addClass("header-dark-theme");
         $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
       }
+      else {
+        $(logo).attr('src', '/resources/logo/planet_logo.svg');
+        $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo.svg');
+        $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu.svg');
+      }
 
       addTransparentBgClassToHeader();
       headerBehaviorOnScroll(header);
