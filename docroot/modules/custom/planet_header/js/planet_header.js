@@ -166,6 +166,8 @@
 
       if ($(window).width() > 1023) {
         megamenuMobileAndTablets.classList.add('display-none');
+        let megamenuMobileAndTabletsContainer = document.getElementsByClassName('megamenu-mobile-and-tablets__container')[0];
+        $(megamenuMobileAndTabletsContainer).addClass('display-none');
 
         if (hasTransparentBg === true) {
           if (!isAnyDesktopMenuExpanded()) {
@@ -751,10 +753,14 @@
        */
       once('hamburgerMenu_handler', '.hamburger-menu', context).forEach(function (element) {
         element.addEventListener('click', function() {
+          let logo = document.getElementsByClassName('go-home')[0];
+          let logoMobileAndTablet = document.getElementsByClassName('go-home')[1];
 
           if (!isHeaderForDesktopDisplayed()) {
             hideHamburgerMenu();
             showCloseHamburgerMenu();
+            let mergedMenuItems = document.getElementsByClassName('merged-menu-items')[0];
+            $(mergedMenuItems).removeClass('display-none');
             let megamenuMobileAndTablets = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
             megamenuMobileAndTablets.classList.remove('display-none');
           }
