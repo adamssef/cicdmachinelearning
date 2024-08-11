@@ -1,0 +1,56 @@
+uuid: b89fec6f-0d1a-4796-adf3-f36b21f96647
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.mega-menu.field_megamenu_classes
+    - field.field.menu_link_content.mega-menu.field_megamenu_icon_path
+    - field.field.menu_link_content.mega-menu.field_megamenu_product_category
+    - field.field.menu_link_content.mega-menu.field_page
+    - system.menu.mega-menu
+  module:
+    - options
+id: menu_link_content.mega-menu.default
+targetEntityType: menu_link_content
+bundle: mega-menu
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_megamenu_classes:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_megamenu_icon_path:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_megamenu_product_category:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_page:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,37 @@
+uuid: 5b60b581-1086-4659-ae8c-4adfdd8d892c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.mega-menu-cta.field_megamenu_classes
+    - field.field.menu_link_content.mega-menu-cta.field_page
+    - system.menu.mega-menu-cta
+id: menu_link_content.mega-menu-cta.default
+targetEntityType: menu_link_content
+bundle: mega-menu-cta
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_megamenu_classes:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_page:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

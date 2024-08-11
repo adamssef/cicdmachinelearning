@@ -1,0 +1,77 @@
+uuid: c6e96931-412e-40cf-86d2-b27ea7643766
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.mega-menu.field_megamenu_classes
+    - field.field.menu_link_content.mega-menu.field_megamenu_icon_path
+    - field.field.menu_link_content.mega-menu.field_megamenu_product_category
+    - field.field.menu_link_content.mega-menu.field_page
+    - system.menu.mega-menu
+  module:
+    - link
+    - menu_item_extras
+id: menu_link_content.mega-menu.default
+targetEntityType: menu_link_content
+bundle: mega-menu
+mode: default
+content:
+  field_megamenu_classes:
+    type: string_textfield
+    weight: 22
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_megamenu_icon_path:
+    type: string_textfield
+    weight: 23
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_megamenu_product_category:
+    type: options_select
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_page:
+    type: entity_reference_autocomplete
+    weight: 21
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 100
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  view_mode:
+    type: menu_item_extras_view_mode_selector_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
