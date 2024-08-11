@@ -1,0 +1,39 @@
+uuid: a927f6cc-cd39-4bb1-9c0d-c9889eef0ec1
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+    - options
+id: menu_link_content.field_megamenu_product_category
+field_name: field_megamenu_product_category
+entity_type: menu_link_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: accept_payments
+      label: 'Accept payments'
+    -
+      value: software_for_hospitaility
+      label: 'Software for Hospitaility'
+    -
+      value: software_for_retail
+      label: 'Software for Retail'
+    -
+      value: serve_any_customer
+      label: 'Serve any customer'
+    -
+      value: tax_free_for_merchants
+      label: 'Tax Free for Merchants'
+    -
+      value: tax_free_for_shoppers
+      label: 'Tax Free for Shoppers'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
