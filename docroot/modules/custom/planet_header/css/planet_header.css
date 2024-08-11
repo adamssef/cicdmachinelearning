@@ -957,13 +957,7 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
 
   header:not(.front-page) {
     background-color: white;
-    transition: all .3s ease-in-out;
   }
-
-  /*header:not(.front-page) .go-home img {*/
-  /*  -webkit-filter: invert(1);*/
-  /*  transition: all .3s ease;*/
-  /*}*/
 
   .megamenu-complex-container header {
     position: fixed;
