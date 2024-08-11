@@ -12,4 +12,4 @@ services:
     class: Drupal\planet_core\Service\PlanetCoreNodeTranslationsService\PlanetCoreNodeTranslationsService
   planet_core.menu_service:
     class: Drupal\planet_core\Service\PlanetCoreMenuService\PlanetCoreMenuService
-    arguments: ['@menu.link_tree', '@path_alias.manager', '@language_manager']
+    arguments: ['@menu.link_tree', '@path_alias.manager', '@language_manager', '@planet_core.node_translation_service']

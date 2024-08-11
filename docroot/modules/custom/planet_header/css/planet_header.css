@@ -27,6 +27,10 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
   transition: all .3s ease;
 }
 
+/*.megamenu-complex-container:not(.front-page) {*/
+/*  padding-bottom: 48px;*/
+/*}*/
+
 .megamenu-complex-container header .go-home img {
   width: 122px;
 }
@@ -64,7 +68,7 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
   .display-none {
     visibility: hidden;
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-100%); /* Start hidden above */
     transition: transform .6s ease, opacity .6s ease;
   }
 
@@ -956,6 +960,11 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     transition: all .3s ease-in-out;
   }
 
+  /*header:not(.front-page) .go-home img {*/
+  /*  -webkit-filter: invert(1);*/
+  /*  transition: all .3s ease;*/
+  /*}*/
+
   .megamenu-complex-container header {
     position: fixed;
     z-index: 100;
@@ -971,6 +980,10 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     display: none;
   }
 
+  /*header:not(.front-page) .hamburger-menu {*/
+  /*  -webkit-filter: invert(1);*/
+  /*}*/
+
   .coh-hero.coh-hero-full-width.coh-image {
     height: 45vh;
   }
@@ -984,6 +997,7 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     top: 72px;
     z-index: 100;
     box-shadow: 0 12px 24px 0 rgba(15, 25, 43, 0.04);
+    /*border-radius: 0 0 24px 24px;*/
     padding-bottom: 32px;
   }
 
@@ -1179,6 +1193,10 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     margin-top: 24px;
   }
 
+  /*.megamenu-column--grey .megamenu-column__title:is(:last-of-type) {*/
+  /*  margin-top: 16px;*/
+  /*}*/
+
   span.protel-login {
     background-color: white;
     display: flex;
@@ -1320,6 +1338,11 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     margin-top: 24px;
   }
 
+  /*header:not(.front-page) .go-home img {*/
+  /*  -webkit-filter: invert(1);*/
+  /*  transition: all .3s ease;*/
+  /*}*/
+
   .megamenu-complex-container header {
     position: fixed;
     z-index: 100;
@@ -1334,6 +1357,10 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
   .header-menus {
     display: none;
   }
+
+  /*header:not(.front-page) .hamburger-menu {*/
+  /*  -webkit-filter: invert(1);*/
+  /*}*/
 
   .coh-hero.coh-hero-full-width.coh-image {
     height: 45vh;
@@ -1379,6 +1406,7 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
 
   .close-hamburger-menu {
     cursor: pointer;
+    /* Other styling for your close icon */
   }
 
   .arrow-left {

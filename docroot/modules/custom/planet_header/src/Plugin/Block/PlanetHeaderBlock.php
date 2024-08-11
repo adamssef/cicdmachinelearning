@@ -77,10 +77,13 @@ class PlanetHeaderBlock extends BlockBase implements ContainerFactoryPluginInter
    */
   public function build() {
     $current_language_prefix = $this->menuService->languageManager->getCurrentLanguage()->getId();
-
+    $megaMenu = $this->menuService->getMenuData(menu_machine_name: 'mega-menu', menu_link_titles_to_skip: []);
+    $megaMenuCta = $this->menuService->getMenuData(menu_machine_name: 'mega-menu-cta', menu_link_titles_to_skip: []);
     $block_array[] = [
       '#theme' => 'block__planet_header_block',
       '#data' => [
+        'megamenu' => $megaMenu,
+        'megamenu_cta' => $megaMenuCta,
         'case_studies' => $this->caseStudiesService->getCaseStudies('all', 'all', 'all', 0, 4),
         '#current_language_prefix' => $current_language_prefix ===  'en' ? '' : $current_language_prefix,
       ],
