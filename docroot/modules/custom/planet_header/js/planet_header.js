@@ -287,7 +287,6 @@
             else {
               closingXIcon.classList.add('display-none');
               $(hamburgerMenuIcon).removeClass('display-none');
-
             }
           }
         }
