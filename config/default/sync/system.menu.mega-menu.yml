@@ -1,0 +1,8 @@
+uuid: 07925548-e823-4b9d-bb55-4265af009dfc
+langcode: en
+status: true
+dependencies: {  }
+id: mega-menu
+label: 'Mega menu'
+description: ''
+locked: false

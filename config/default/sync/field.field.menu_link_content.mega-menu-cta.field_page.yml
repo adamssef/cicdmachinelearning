@@ -1,0 +1,31 @@
+uuid: 12910671-60b9-472f-90d6-5e9fcfd2569d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_page
+    - node.type.advanced_product_page
+    - node.type.page
+    - system.menu.mega-menu-cta
+id: menu_link_content.mega-menu-cta.field_page
+field_name: field_page
+entity_type: menu_link_content
+bundle: mega-menu-cta
+label: Page
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      advanced_product_page: advanced_product_page
+      page: page
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: advanced_product_page
+field_type: entity_reference

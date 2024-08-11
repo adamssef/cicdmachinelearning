@@ -1,0 +1,19 @@
+uuid: e50542c3-c4b1-458e-8470-ab10f16d0c3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_megamenu_classes
+    - system.menu.mega-menu-cta
+id: menu_link_content.mega-menu-cta.field_megamenu_classes
+field_name: field_megamenu_classes
+entity_type: menu_link_content
+bundle: mega-menu-cta
+label: 'Megamenu classes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
