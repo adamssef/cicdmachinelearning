@@ -860,7 +860,7 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     left: 0;
     width: 100%;
     height: 100vh;
-    overflow-y: hidden;
+    overflow-y: scroll;
     background-color: white;
     z-index: 1000;
     padding-bottom: 72px;
