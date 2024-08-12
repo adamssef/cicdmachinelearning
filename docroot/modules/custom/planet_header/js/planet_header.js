@@ -195,7 +195,7 @@
         }
         else {
           if (scrollPosition === 0) {
-            addTransparentBgClassToHeader();
+            // addTransparentBgClassToHeader();
           }
           else {
             removeTransparentBgClassFromHeader();
@@ -789,7 +789,6 @@
         let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0 || $("body").hasClass("path-frontpage");
         let isFrontPage = $("body").hasClass("path-frontpage");
         let logo = $(document.getElementById('planet-logo'));
-
 
         let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
         if (isExpanded) {
