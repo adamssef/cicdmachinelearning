@@ -194,6 +194,12 @@
           $(goHomeDesktop).removeClass('display-none');
         }
         else {
+          if (scrollPosition === 0) {
+            addTransparentBgClassToHeader();
+          }
+          else {
+            removeTransparentBgClassFromHeader();
+          }
           $(goHomeDesktop).removeClass('display-none');
           $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
         }
@@ -209,9 +215,11 @@
         containerSolutions.classList.add('display-none');
         containerResources.classList.add('display-none');
         containerCompany.classList.add('display-none');
+        scrollPosition = jQuery(window).scrollTop();
 
         if (!isMobileExpanded) {
           removeExpandedFromHeader();
+          removeNoScrollFromBody();
         }
 
         unflipAllDesktopMenuArrows();
@@ -250,8 +258,24 @@
               $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu-black.svg');
               $(goBackSpan).addClass('display-none');
               $(goHome).removeClass('display-none');
+
+
               $(closingXIcon).addClass('display-none');
               if (isExpanded) {
+                isMergedMenuItemsDisplayed = !document.getElementsByClassName('merged-menu-items')[0].classList.contains('display-none');
+                isAnyContainerDisplayed = isAnyMegamenuMobileAndTabletsContainerDisplayed();
+
+                if (isAnyContainerDisplayed) {
+                  $(goBackSpan).removeClass('display-none');
+                  $(goHome).addClass('display-none');
+                }
+
+                if (isMergedMenuItemsDisplayed) {
+                  $(goBackSpan).addClass('display-none');
+                  $(goHome).removeClass('display-none');
+                }
+
+
                 $(closingXIcon).removeClass('display-none');
                 $(hamburgerMenuIcon).addClass('display-none');
               }
@@ -260,6 +284,31 @@
                 $(hamburgerMenuIcon).removeClass('display-none');
               }
               removeNoScrollFromBody();
+            }
+          } else {
+            removeTransparentBgClassFromHeader();
+            isMergedMenuItemsDisplayed = !document.getElementsByClassName('merged-menu-items')[0].classList.contains('display-none');
+
+            if (!isAnyMegamenuMobileAndTabletsContainerDisplayed() && !isMergedMenuItemsDisplayed) {
+              $(goHome).removeClass('display-none');
+              closingXIcon.classList.add('display-none');
+              hamburgerMenuIcon.classList.remove('display-none');
+              goBackSpan.classList.add('display-none');
+            }
+            else {
+              closingXIcon.classList.remove('display-none');
+              hamburgerMenuIcon.classList.add('display-none');
+
+              if (isMergedMenuItemsDisplayed) {
+                goBackSpan.classList.add('display-none');
+                $(goHome).removeClass('display-none');
+
+              }
+
+              if (isAnyContainerDisplayed) {
+                goBackSpan.classList.remove('display-none');
+                $(goHome).addClass('display-none');
+              }
             }
           }
         }
@@ -346,6 +395,7 @@
     let closingXIcon = document.getElementsByClassName('close-hamburger-menu');
     let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0 || isFrontPage;
     let hamburgerMenuIcon = document.getElementsByClassName('hamburger-menu')[0];
+    let scrollPosition = jQuery(window).scrollTop();
 
     if (hasDarkMenuTheme) {
       $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
@@ -370,11 +420,21 @@
         $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu.svg');
       }
 
-      addTransparentBgClassToHeader();
+      if (scrollPosition === 0) {
+        addTransparentBgClassToHeader();
+      }
+      else {
+        removeTransparentBgClassFromHeader();
+        $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+        $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu-black.svg');
+
+      }
+
       headerBehaviorOnScroll(header);
       headerBehaviorOnResize(header);
     }
     else {
+      removeTransparentBgClassFromHeader();
       $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
       $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
       $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu-black.svg');
@@ -495,7 +555,6 @@
                   $("#block-cohesion-theme-content").css("padding-top","72px");
                 }
               }
-
             }
           }
         }
@@ -604,7 +663,6 @@
                 }
                 document.getElementById(map.get(className)).classList.remove('flip');
               }
-
             }
           }
           else {
@@ -811,9 +869,9 @@
         element.addEventListener('click', function() {
           let logo = document.getElementsByClassName('go-home')[0];
           let logoMobileAndTablet = document.getElementsByClassName('go-home')[1];
+          hideHamburgerMenu();
 
           if (!isHeaderForDesktopDisplayed()) {
-            hideHamburgerMenu();
             showCloseHamburgerMenu();
             let mergedMenuItems = document.getElementsByClassName('merged-menu-items')[0];
             $(mergedMenuItems).removeClass('display-none');
