@@ -176,7 +176,6 @@
     let mergedMenuItems = document.getElementsByClassName('merged-menu-items')[0];
 
     $(window).on('resize', function () {
-      console.log('resize')
       let isExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
       let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
 
