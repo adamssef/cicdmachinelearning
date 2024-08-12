@@ -17,16 +17,6 @@ interface PlanetCoreMenuServiceInterface {
    * @return array
    *   An array of menu content.
    */
-  public function getMenuContentArray($menu_machine_name, $menu_link_titles_to_skip = []): array;
+  public function getMenuData($menu_machine_name, $menu_link_titles_to_skip = []): array;
 
-  /**
-   * Get a node from a given URL.
-   *
-   * @param string $url
-   *   The URL.
-   *
-   * @return \Drupal\node\NodeInterface|null
-   *   The node object or NULL if the node does not exist.
-   */
-  public function getNodeFromUrl(string $url): ?NodeInterface;
-  }
+}

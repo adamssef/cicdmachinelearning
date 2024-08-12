@@ -24,7 +24,7 @@
   function cookieExists(name) {
     return document.cookie.indexOf(name) !== -1;
   }
-5
+
   function headerBehaviorwithNotificationBar(hero, header) {
     $(document).ready(function(){
       let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
@@ -147,6 +147,18 @@
     return false;
   }
 
+  function isAnyMegamenuMobileAndTabletsContainerDisplayed() {
+    let containers = document.getElementsByClassName('megamenu-mobile-and-tablets__container');
+
+    for (let i = 0; i < containers.length; i++) {
+      if (!containers[i].classList.contains('display-none')) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   function headerBehaviorOnResize() {
     let logo = document.getElementById('planet-logo');
     let logoMobileAndTablet = document.getElementById('planet-logo--mobile-and-tablet');
@@ -159,12 +171,16 @@
     let goHome = document.getElementsByClassName('go-home')[1];
     let goHomeDesktop = document.getElementsByClassName('go-home')[0];
     let scrollPosition = jQuery(window).scrollTop();
+    let isAnyContainerDisplayed = isAnyMegamenuMobileAndTabletsContainerDisplayed();
+    let isMergedMenuItemsDisplayed = !document.getElementsByClassName('merged-menu-items')[0].classList.contains('display-none');
+    let mergedMenuItems = document.getElementsByClassName('merged-menu-items')[0];
 
     $(window).on('resize', function () {
       let isExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
       let hasTransparentBg = !isFrontPage && ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
 
       if ($(window).width() > 1023) {
+        mergedMenuItems.classList.add('display-none');
         megamenuMobileAndTablets.classList.add('display-none');
         let megamenuMobileAndTabletsContainer = document.getElementsByClassName('megamenu-mobile-and-tablets__container')[0];
         $(megamenuMobileAndTabletsContainer).addClass('display-none');
@@ -178,6 +194,12 @@
           $(goHomeDesktop).removeClass('display-none');
         }
         else {
+          if (scrollPosition === 0) {
+            addTransparentBgClassToHeader();
+          }
+          else {
+            removeTransparentBgClassFromHeader();
+          }
           $(goHomeDesktop).removeClass('display-none');
           $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
         }
@@ -193,9 +215,11 @@
         containerSolutions.classList.add('display-none');
         containerResources.classList.add('display-none');
         containerCompany.classList.add('display-none');
+        scrollPosition = jQuery(window).scrollTop();
 
         if (!isMobileExpanded) {
           removeExpandedFromHeader();
+          removeNoScrollFromBody();
         }
 
         unflipAllDesktopMenuArrows();
@@ -204,13 +228,29 @@
           if (scrollPosition === 0) {
             addTransparentBgClassToHeader();
 
+            if (!isAnyContainerDisplayed) {
+              goBackSpan.classList.add('display-none');
+            }
+
             if (hasDarkMenuTheme === 0) {
               $(logo).attr('src', '/resources/logo/planet_logo.svg');
-              $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo.svg');
+              $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
               $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu.svg');
-              $(goBackSpan).addClass('display-none');
-              $(goHome).removeClass('display-none');
+              isAnyContainerDisplayed = isAnyMegamenuMobileAndTabletsContainerDisplayed();
+              isMergedMenuItemsDisplayed = !document.getElementsByClassName('merged-menu-items')[0].classList.contains('display-none');
 
+              if (!isAnyContainerDisplayed && !isMergedMenuItemsDisplayed) {
+                $(goHome).removeClass('display-none');
+                closingXIcon.classList.add('display-none');
+              }
+              else {
+                if (isMergedMenuItemsDisplayed) {
+                  goBackSpan.classList.add('display-none');
+                }
+                else {
+                  goBackSpan.classList.remove('display-none');
+                }
+              }
             }
             else {
               $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
@@ -218,9 +258,24 @@
               $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu-black.svg');
               $(goBackSpan).addClass('display-none');
               $(goHome).removeClass('display-none');
-              $(closingXIcon).addClass('display-none');
 
+
+              $(closingXIcon).addClass('display-none');
               if (isExpanded) {
+                isMergedMenuItemsDisplayed = !document.getElementsByClassName('merged-menu-items')[0].classList.contains('display-none');
+                isAnyContainerDisplayed = isAnyMegamenuMobileAndTabletsContainerDisplayed();
+
+                if (isAnyContainerDisplayed) {
+                  $(goBackSpan).removeClass('display-none');
+                  $(goHome).addClass('display-none');
+                }
+
+                if (isMergedMenuItemsDisplayed) {
+                  $(goBackSpan).addClass('display-none');
+                  $(goHome).removeClass('display-none');
+                }
+
+
                 $(closingXIcon).removeClass('display-none');
                 $(hamburgerMenuIcon).addClass('display-none');
               }
@@ -230,13 +285,59 @@
               }
               removeNoScrollFromBody();
             }
+          } else {
+            removeTransparentBgClassFromHeader();
+            isMergedMenuItemsDisplayed = !document.getElementsByClassName('merged-menu-items')[0].classList.contains('display-none');
+
+            if (!isAnyMegamenuMobileAndTabletsContainerDisplayed() && !isMergedMenuItemsDisplayed) {
+              $(goHome).removeClass('display-none');
+              closingXIcon.classList.add('display-none');
+              hamburgerMenuIcon.classList.remove('display-none');
+              goBackSpan.classList.add('display-none');
+            }
+            else {
+              closingXIcon.classList.remove('display-none');
+              hamburgerMenuIcon.classList.add('display-none');
+
+              if (isMergedMenuItemsDisplayed) {
+                goBackSpan.classList.add('display-none');
+                $(goHome).removeClass('display-none');
+
+              }
+
+              if (isAnyContainerDisplayed) {
+                goBackSpan.classList.remove('display-none');
+                $(goHome).addClass('display-none');
+              }
+            }
           }
         }
         else {
-          $(closingXIcon).addClass('display-none');
-          $(hamburgerMenuIcon).removeClass('display-none');
-          $(goBackSpan).addClass('display-none');
-          $(goHome).removeClass('display-none');
+          isAnyContainerDisplayed = isAnyMegamenuMobileAndTabletsContainerDisplayed();
+
+          if (isAnyContainerDisplayed) {
+            if (isMergedMenuItemsDisplayed) {
+              hamburgerMenuIcon.classList.add('display-none');
+              closingXIcon.classList.remove('display-none');
+            } else {
+              closingXIcon.classList.add('display-none');
+              hamburgerMenuIcon.classList.remove('display-none');
+            }
+          }
+          else {
+            $(closingXIcon).addClass('display-none');
+
+            if (isMergedMenuItemsDisplayed) {
+              $(hamburgerMenuIcon).addClass('display-none');
+              closingXIcon.classList.remove('display-none');
+              $(goBackSpan).addClass('display-none');
+              $(goHome).removeClass('display-none');
+            }
+            else {
+              closingXIcon.classList.add('display-none');
+              $(hamburgerMenuIcon).removeClass('display-none');
+            }
+          }
         }
       }
 
@@ -245,6 +346,9 @@
         $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
       }
       else {
+        closingXIcon.classList.add('display-none');
+        hamburgerMenuIcon.classList.remove('display-none');
+
         if (scrollPosition === 0 && hasDarkMenuTheme > 0) {
           $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
           addTransparentBgClassToHeader();
@@ -291,6 +395,7 @@
     let closingXIcon = document.getElementsByClassName('close-hamburger-menu');
     let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0 || isFrontPage;
     let hamburgerMenuIcon = document.getElementsByClassName('hamburger-menu')[0];
+    let scrollPosition = jQuery(window).scrollTop();
 
     if (hasDarkMenuTheme) {
       $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
@@ -315,11 +420,21 @@
         $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu.svg');
       }
 
-      addTransparentBgClassToHeader();
+      if (scrollPosition === 0) {
+        addTransparentBgClassToHeader();
+      }
+      else {
+        removeTransparentBgClassFromHeader();
+        $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+        $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu-black.svg');
+
+      }
+
       headerBehaviorOnScroll(header);
       headerBehaviorOnResize(header);
     }
     else {
+      removeTransparentBgClassFromHeader();
       $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
       $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
       $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu-black.svg');
@@ -400,9 +515,8 @@
     if (hasHero > 0) {
       $(".coh-hero").each(function(){
         let hero = $(this);
-        // if has Hero on the top of the page
-        // Considering height of header + notificationBar
-        if($(this).position().top < 300){
+
+        if ($(this).position().top < 300){
           $(this).addClass("coh-hero-top");
           hasHeroOnTop = 1;
           // if has Hero 5050
@@ -418,8 +532,7 @@
             }
             // if has Hero Full Width
           } else if ($(this).hasClass("coh-hero-full-width")) {
-            // On mobile!^%
-
+            // On mobile
             if ($(window).width() < 1023) {
               headerBehaviorwithNotificationBar(hero, header);
             }
@@ -442,7 +555,6 @@
                   $("#block-cohesion-theme-content").css("padding-top","72px");
                 }
               }
-
             }
           }
         }
@@ -492,6 +604,11 @@
         }
 
         return true;
+      }
+
+      function removeExpandedFromHeader() {
+        const header = document.getElementsByClassName("megamenu-header")[0];
+        header.classList.remove("expanded");
       }
 
       function process(megamenuElement, element, menuName, className) {
@@ -546,7 +663,6 @@
                 }
                 document.getElementById(map.get(className)).classList.remove('flip');
               }
-
             }
           }
           else {
@@ -692,8 +808,6 @@
         }
       }
 
-
-
       /**
        * Manages the behaviour of the group of menu elements when user clicks on them.
        */
@@ -755,9 +869,9 @@
         element.addEventListener('click', function() {
           let logo = document.getElementsByClassName('go-home')[0];
           let logoMobileAndTablet = document.getElementsByClassName('go-home')[1];
+          hideHamburgerMenu();
 
           if (!isHeaderForDesktopDisplayed()) {
-            hideHamburgerMenu();
             showCloseHamburgerMenu();
             let mergedMenuItems = document.getElementsByClassName('merged-menu-items')[0];
             $(mergedMenuItems).removeClass('display-none');
@@ -877,6 +991,7 @@
                 hideLogo();
                 showGoBack();
               }
+
               break;
           }
         });

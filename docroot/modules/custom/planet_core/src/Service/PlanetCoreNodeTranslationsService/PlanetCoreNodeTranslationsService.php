@@ -23,5 +23,4 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
 
     return $node_translations_url;
   }
-
 }
