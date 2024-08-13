@@ -79,7 +79,7 @@
     <div class="megamenu-column megamenu-column--grey megamenu-column--center">
       <span class="megamenu-column__title">{{ "Software for Hospitality"|t }}</span>
       {% for item in data['megamenu']['0']['children']['software_for_hospitaility'] %}
-        <div class="megamenu-column__item">
+        <div class="megamenu-column__item{% if item['title'] == "Booking Engine" %} megamenu-column__item--booking-engine{% endif %}">
           <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <img class="megamenu-column__icon megamenu-column__icon__arrow" src="{{ item['icon_path'] }}"/>
             <span class="megamenu-column__mini-header">{{ item['title']|t }}</span>
