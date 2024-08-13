@@ -1,0 +1,74 @@
+elements: |
+  first_name:
+    '#title': 'Nome<span>*</span>'
+  last_name:
+    '#title': 'Cognome<span>*</span>'
+  email:
+    '#title': 'E-mail aziendale<span>*</span>'
+  phone_intl:
+    '#title': 'Telefono<span>*</span>'
+    '#required_error': 'Il numero di telefono è obbligatorio.'
+    '#pattern_error': 'Il numero di telefono non è valido, inserire il prefisso del paese (es: +39 3123456789)'
+  company_business_name:
+    '#title': 'Azienda<span>*</span>'
+  seniority:
+    '#title': Posizione
+    '#options':
+      Owner: Titolare
+      Executive: Esecutivo
+      'Vice President': 'Vice Presidente'
+      Director: Direttore
+      Assistant: Assistente
+      Other: Altro
+  role:
+    '#title': Ruolo
+    '#options':
+      Accounting: Contabilità
+      'Customer Success': 'Customer Care'
+      Finance: Finanza
+      'Information Technology': IT
+      Legal: Legale
+      Payments: Pagamenti
+      'Product Development': 'Sviluppo del prodotto'
+  address_country:
+    '#title': 'Paese<span>*</span>'
+  company_sector:
+    '#title': 'Ho bisogno di<span>*</span>'
+    '#options':
+      Hospitality: 'Soluzioni e prodotti per Hospitality'
+      Retail: 'Soluzioni e prodotti per Retail'
+      Partners: 'Informazioni su Partners'
+    '#required_error': 'Questo campo è obbligatorio'
+  what_would_you_like_help_with:
+    '#title': 'In cosa ti serve aiuto?<span>*</span>'
+    '#options':
+      'Property Management Solutions': 'Voglio gestire senza problemi le operazioni del mio hotel'
+      'Networking solutions': 'Il mio hotel ha bisogno di soluzioni networking'
+      'Accept Payments': 'Voglio accettare pagamenti'
+      'Tax Free Solutions': 'Vorrei fornire shopping Tax Free'
+      'Order Management Systems': 'Gestire in modo efficiente qualsiasi ordine online'
+      'PCI Proxy': 'Tokenizzare i dati sensibili delle carte'
+    '#required_error': 'Questo campo è obbligatorio'
+  payments_product_of_interest:
+    '#title': 'Scegli una soluzione di pagamento<span>*</span>'
+    '#options':
+      'Online payments': 'Pagamenti online'
+      'In-person payments': 'Pagamenti di persona'
+      'Online and In-Person payments': 'Pagamenti online e di persona'
+      'Currency Conversion': 'Conversione di Valuta'
+      'PCI Proxy': 'PCI Proxy '
+    '#required_error': 'Questo campo è obbligatorio'
+  number_of_employees:
+    '#title': 'Quanti dipendenti ci sono nella vostra azienda?'
+    '#options':
+      'Self Employed': 'Lavoratori autonomi'
+      '10,000 +': '10,000 + '
+  textarea:
+    '#title': 'Note<span>*</span>'
+    '#placeholder': 'Dicci di più su ciò di cui hai bisogno'
+  single_opt_in:
+    '#description': '<p>Seleziona questa casella per dare il consenso a ricevere aggiornamenti su prodotti, eventi, corsi di formazione, segnalazioni e servizi Planet</p>'
+  markup:
+    '#markup': '<p>Inviando questo modulo, accetti i termini della nostra <a href="https://www.weareplanet.com/privacy-policy" data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" rel="noopener noreferrer" tabindex="-1" target="_blank">Informativa sulla privacy</a>.</p>'
+  actions:
+    '#submit__label': Invia
