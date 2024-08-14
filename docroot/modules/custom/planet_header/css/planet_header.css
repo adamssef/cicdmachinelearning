@@ -83,9 +83,11 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     border-bottom: 1px solid transparent;
   }
 
-  header:not(.front-page) {
-    background-color: white;
+  body.path-frontpage .megamenu-header {
+    background-color: #FAFAFA;
   }
+
+  header()
 
   .megamenu-complex-container header .go-home {
     display: flex;
@@ -619,6 +621,14 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
 }
 
 @media screen and (max-width: 1024px) {
+  body.path-frontpage .megamenu-header {
+    background-color: #FAFAFA;
+  }
+
+  body.path-frontpage .megamenu-header.expanded {
+    background-color: #FFFFFF;
+  }
+
   .megamenu-column__title--taxfree-for-shoppers {
     margin-top: 32px;
   }
