@@ -170,7 +170,6 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
 
   header:hover {
     background-color: white;
-    transition: all .3s ease-in-out;
   }
 
   .business-li:hover .business-link img {

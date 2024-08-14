@@ -241,10 +241,10 @@
     });
   }
 
-  function process(megamenuElement, element, menuName, className) {
+  function processDesktopMenuItemInteraction(megamenuElement, element, menuName, className) {
     let isFrontPage = isFrontpage();
 
-    let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0 || isFrontPage;
+    let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
     let img = $(element).children().first().children().first();
     // Hide all other menus and remove their flip class
     let menus = [
@@ -269,6 +269,7 @@
 
         if (menu !== undefined) {
           if(menu.classList.contains('display-none')) {
+            console.log('A')
             menu.classList.remove('display-none');
             header.classList.add('expanded');
             setDownArrowsColorPink();
@@ -281,11 +282,13 @@
             }
           }
           else {
+            console.log('B')
             menu.classList.add('display-none');
             header.classList.remove('expanded');
             let scrollPosition = jQuery(window).scrollTop();
 
             if  (scrollPosition === 0 && !hasDarkMenuTheme) {
+              console.log('MUAHAHAHAHAHA')
               $(logo).attr('src', '/resources/logo/planet_logo.svg');
             }
             let isFrontPage = isFrontpage();
@@ -874,22 +877,22 @@
           switch(elementId) {
             case 'products':
               let megamenuProducts = document.getElementsByClassName('megamenu-products__desktop');
-              process(megamenuProducts, element, 'products', 'megamenu-products__desktop');
+              processDesktopMenuItemInteraction(megamenuProducts, element, 'products', 'megamenu-products__desktop');
               currentlyOpenMenuItem = 'products';
               break;
             case 'solutions':
               let megamenuSolutions = document.getElementsByClassName('megamenu-solutions__desktop');
-              process(megamenuSolutions, element, 'solutions', 'megamenu-solutions__desktop');
+              processDesktopMenuItemInteraction(megamenuSolutions, element, 'solutions', 'megamenu-solutions__desktop');
               currentlyOpenMenuItem = 'solutions';
               break;
             case 'resources':
               let megamenuResources = document.getElementsByClassName('megamenu-resources__desktop');
-              process(megamenuResources, element, 'resources', 'megamenu-resources__desktop');
+              processDesktopMenuItemInteraction(megamenuResources, element, 'resources', 'megamenu-resources__desktop');
               currentlyOpenMenuItem = 'resources';
               break;
             case 'company':
               let megamenuCompany = document.getElementsByClassName('megamenu-company__desktop');
-              process(megamenuCompany, element, 'company', 'megamenu-company__desktop');
+              processDesktopMenuItemInteraction(megamenuCompany, element, 'company', 'megamenu-company__desktop');
               currentlyOpenMenuItem = 'company';
               break;
           }
