@@ -977,7 +977,7 @@
             currentlyOpenMenuItem = null;
 
             let scrollPosition = jQuery(window).scrollTop();
-            let hasTransparentBg = $("body").hasClass("path-frontpage") || ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
+            let hasTransparentBg = isFrontpage() && ($("body").hasClass("path-frontpage") || ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width")));
             let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
             let closingXIcon = document.getElementsByClassName('close-hamburger-menu');
 
