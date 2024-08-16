@@ -9,7 +9,7 @@
 
   function isFrontpage() {
     let currentPath = window.location.pathname;
-    return ($("body").hasClass("path-frontpage") || currentPath === "/homepage-prototype-v1" || currentPath === "/homepage-prototype-v2") && !$("body").hasClass("plnt-css-node-46");
+    return ($("body").hasClass("path-frontpage") && $("body").find("home-hero").length > 0) || currentPath === "/homepage-prototype-v1" || currentPath === "/homepage-prototype-v2";
   }
 
   function addTransparentBgClassToHeader() {
@@ -694,6 +694,9 @@
           if (scrollPosition === 0) {
             if (!isMegamenuHeaderExpanded) {
               setDownArrowsColorWhite();
+              if (isFrontpage()) {
+                switchHamburgerMenuLogoWhite()
+              }
             }
             else {
               setDownArrowsColorPink();
@@ -1003,7 +1006,7 @@
             currentlyOpenMenuItem = null;
 
             let scrollPosition = jQuery(window).scrollTop();
-            let hasTransparentBg = isFrontpage() || ($("body").hasClass("path-frontpage") || ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width")));
+            let hasTransparentBg = isFrontpage() || ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
             let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
             let closingXIcon = document.getElementsByClassName('close-hamburger-menu');
 
@@ -1101,7 +1104,6 @@
         const headerElement = document.getElementsByTagName('header')[0];
         const megamenuDesktopElement = document.getElementsByClassName('megamenu-complex-container')[0];
         const megamenuMobileElement = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
-        let isFrontPage = isFrontpage();
 
         if (
           !(headerElement && headerElement.contains(e.target)) &&
@@ -1146,9 +1148,6 @@
                 megamenuMobileElement.classList.add('display-none');
                 hideCloseHamburgerMenu();
                 showBlackHamburgerMenu();
-                if (!isFrontPage) {
-                  switchHamburgerMenuLogoBlack();
-                }
                 unflipAllDesktopMenuArrows();
                 break;
             }

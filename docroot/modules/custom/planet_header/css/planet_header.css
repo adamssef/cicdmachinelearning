@@ -618,10 +618,6 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
 }
 
 @media screen and (max-width: 1024px) {
-  body.path-frontpage .megamenu-header {
-    background-color: #FAFAFA;
-  }
-
   body.path-frontpage .megamenu-header.expanded {
     background-color: #FFFFFF;
   }
