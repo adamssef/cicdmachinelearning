@@ -454,6 +454,12 @@
           if (!isAnyDesktopMenuExpanded()) {
             addTransparentBgClassToHeader();
             removeExpandedFromHeader();
+            if (scrollPosition === 0) {
+              if (hasDarkMenuTheme === 0) {
+                setDownArrowsColorWhite();
+              }
+            }
+
           }
 
           $(goHomeDesktop).removeClass('display-none');
