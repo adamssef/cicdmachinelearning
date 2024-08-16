@@ -155,7 +155,6 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
   header:not(.front-page) span a {
     text-decoration: none;
     color: black;
-    transition: all .3s ease;
   }
 
   header:not(.front-page) span:is(.track-my-refund-menu-item) a {
@@ -165,7 +164,7 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
   header:hover span a {
     text-decoration: none;
     color: black;
-    transition: all .3s ease;
+    transition: color .3s ease;
   }
 
   header:hover {
