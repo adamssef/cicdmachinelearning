@@ -269,7 +269,6 @@
 
         if (menu !== undefined) {
           if(menu.classList.contains('display-none')) {
-            console.log('A')
             menu.classList.remove('display-none');
             header.classList.add('expanded');
             setDownArrowsColorPink();
@@ -282,13 +281,11 @@
             }
           }
           else {
-            console.log('B')
             menu.classList.add('display-none');
             header.classList.remove('expanded');
             let scrollPosition = jQuery(window).scrollTop();
 
             if  (scrollPosition === 0 && !hasDarkMenuTheme) {
-              console.log('MUAHAHAHAHAHA')
               $(logo).attr('src', '/resources/logo/planet_logo.svg');
             }
             let isFrontPage = isFrontpage();
@@ -370,13 +367,13 @@
 
     $(window).on('scroll', function () {
       let isExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
-
       let scrollPosition = jQuery(window).scrollTop();
 
       if (isExpanded) {
         removeTransparentBgClassFromHeader();
         $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
         setDownArrowsColorPink();
+
       }
       else {
         let megamenuHasTransparentBgClass = $('.megamenu-header').hasClass('has-transparent-bg');
@@ -398,6 +395,9 @@
             $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo.svg');
             switchHamburgerMenuLogoWhite();
           }
+          else {
+            $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          }
         }
 
         if (scrollPosition > 0) {
@@ -405,7 +405,7 @@
             changeHeaderBackgroundColor("#FAFAFA");
           }
           else {
-            changeHeaderBackgroundColor('#FFFFFF')
+            changeHeaderBackgroundColor('#FFFFFF');
           }
         }
 
@@ -622,7 +622,7 @@
           if (pageHasTransparentBackground()) {
             addTransparentBgClassToHeader();
             $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo.svg');
-            $(hamburgerMenuIcon).attr('style', 'display: block !important');
+            $(hamburgerMenuIcon).attr('style', 'display: block');
             $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu.svg');
             $(closingXIcon).css('display', 'none');
           }
@@ -677,9 +677,16 @@
       if (hasDarkMenuTheme) {
         $(header).addClass("header-dark-theme");
         $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+        if (scrollPosition > 0) {
+          if (!isFrontpage()) {
+            $('.megamenu-header').css('background-color', '#FFFFFF');
+          }
+          else {
+            $('.megamenu-header').css('background-color', '#FAFAFA');
+          }
+        }
       }
       else {
-
         if (isMegamenuHeaderExpanded) {
           setDownArrowsColorPink();
         }
@@ -692,9 +699,22 @@
               setDownArrowsColorPink();
             }
           }
+          else {
+            if (!isFrontpage()) {
+              $('.megamenu-header').css('background-color', '#FFFFFF');
+            }
+            else {
+              $('.megamenu-header').css('background-color', '#FAFAFA');
+            }
+
+            $('.megamenu-header').css('background-color', '#FFFFFF');
+            removeTransparentBgClassFromHeader();
+
+            $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          }
         }
 
-        $(logo).attr('src', '/resources/logo/planet_logo.svg');
+        // $(logo).attr('src', '/resources/logo/planet_logo.svg');
         $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo.svg');
         switchHamburgerMenuLogoWhite();
       }
@@ -719,6 +739,8 @@
       $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
       switchHamburgerMenuLogoBlack();
       headerBehaviorOnResize(header);
+      headerBehaviorOnScroll(header);
+      $('.megamenu-header').css('background-color', '#FFFFFF');
     }
 
     // Search for utm parameters in url.
@@ -932,6 +954,7 @@
           let closingIcon = $(document.getElementsByClassName('close-hamburger-menu')[0]);
 
           hamburgerMenu.classList.add('display-none');
+          $(hamburgerMenu).css('display', 'none !important');
           header.addClass("expanded");
           closingIcon.attr('src', '/resources/icons/closing-x.svg');
           logo.attr('src', '/resources/logo/planet_logo_black.svg');
@@ -958,7 +981,6 @@
         let isMobileAndTabletsExpanded = !document.getElementsByClassName("megamenu-mobile-and-tablets")[0].classList.contains("display-none");
 
         element.addEventListener('click', function() {
-          console.log('is header for desktop displayed', isHeaderForDesktopDisplayed());
           if (!isHeaderForDesktopDisplayed()) {
             let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
             hamburgerMenu.classList.remove('display-none');
@@ -986,20 +1008,20 @@
             let closingXIcon = document.getElementsByClassName('close-hamburger-menu');
 
             if (scrollPosition === 0) {
-              console.log('0', hasTransparentBg)
               if (hasTransparentBg) {
                 if (hasDarkMenuTheme) {
-                  console.log('A')
                   $(document.getElementById('planet-logo--mobile-and-tablet')).attr('src', '/resources/logo/planet_logo_black.svg');
                   $(closingXIcon).attr('src', '/resources/icons/closing-x.svg');
                 }
                 else {
-                  console.log('B')
                   addTransparentBgClassToHeader();
                   $(document.getElementById('planet-logo--mobile-and-tablet')).attr('src', '/resources/logo/planet_logo.svg');
                   switchHamburgerMenuLogoWhite();
                 }
               }
+            }
+            else {
+
             }
           }
         });
@@ -1071,11 +1093,6 @@
           }
         });
       });
-
-      function isFrontpage() {
-        let currentPath = window.location.pathname;
-        return ($("body").hasClass("path-frontpage") || currentPath === "/homepage-prototype-v1" || currentPath === "/homepage-prototype-v2") && !$("body").hasClass("plnt-css-node-46");
-      }
 
       /**
        * Handles click-away functionality.
