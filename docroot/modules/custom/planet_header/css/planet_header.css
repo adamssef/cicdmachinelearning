@@ -164,7 +164,6 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
   header:hover span a {
     text-decoration: none;
     color: black;
-    transition: color .3s ease;
   }
 
   header:hover {

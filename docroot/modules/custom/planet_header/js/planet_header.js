@@ -958,6 +958,7 @@
         let isMobileAndTabletsExpanded = !document.getElementsByClassName("megamenu-mobile-and-tablets")[0].classList.contains("display-none");
 
         element.addEventListener('click', function() {
+          console.log('is header for desktop displayed', isHeaderForDesktopDisplayed());
           if (!isHeaderForDesktopDisplayed()) {
             let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
             hamburgerMenu.classList.remove('display-none');
@@ -980,17 +981,20 @@
             currentlyOpenMenuItem = null;
 
             let scrollPosition = jQuery(window).scrollTop();
-            let hasTransparentBg = isFrontpage() && ($("body").hasClass("path-frontpage") || ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width")));
+            let hasTransparentBg = isFrontpage() || ($("body").hasClass("path-frontpage") || ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width")));
             let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
             let closingXIcon = document.getElementsByClassName('close-hamburger-menu');
 
             if (scrollPosition === 0) {
+              console.log('0', hasTransparentBg)
               if (hasTransparentBg) {
                 if (hasDarkMenuTheme) {
+                  console.log('A')
                   $(document.getElementById('planet-logo--mobile-and-tablet')).attr('src', '/resources/logo/planet_logo_black.svg');
                   $(closingXIcon).attr('src', '/resources/icons/closing-x.svg');
                 }
                 else {
+                  console.log('B')
                   addTransparentBgClassToHeader();
                   $(document.getElementById('planet-logo--mobile-and-tablet')).attr('src', '/resources/logo/planet_logo.svg');
                   switchHamburgerMenuLogoWhite();
