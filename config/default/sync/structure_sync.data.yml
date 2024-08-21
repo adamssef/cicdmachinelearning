@@ -350,6 +350,1159 @@ menus:
     langcode: en
     uuid: 2ef64fd7-2a8a-4a07-8d03-db95c01467f4
     options: {  }
+  -
+    menu_name: footer
+    title: Payments
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 9243980b-5c5c-408b-8b35-d32093a230b2
+    options: {  }
+  -
+    menu_name: footer
+    title: Online
+    parent: 'menu_link_content:9243980b-5c5c-408b-8b35-d32093a230b2'
+    uri: 'internal:/online-payments'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: d5511e5b-a480-414f-807c-1c54cba676ec
+    options: {  }
+  -
+    menu_name: footer
+    title: In-person
+    parent: 'menu_link_content:9243980b-5c5c-408b-8b35-d32093a230b2'
+    uri: 'internal:/in-person-payments'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 03de1322-235e-4e9a-a1f0-91f2ad9c2c39
+    options: {  }
+  -
+    menu_name: footer
+    title: 'Token Vault'
+    parent: 'menu_link_content:9243980b-5c5c-408b-8b35-d32093a230b2'
+    uri: 'internal:/pci-proxy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: f961da04-0bb6-47f7-8dcc-2dafe16195bf
+    options: {  }
+  -
+    menu_name: footer
+    title: 'Dynamic Currency Conversion'
+    parent: 'menu_link_content:9243980b-5c5c-408b-8b35-d32093a230b2'
+    uri: 'internal:/dcc'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: facde0b3-44ca-4855-9e1e-23cbbbcf14e5
+    options: {  }
+  -
+    menu_name: footer
+    title: Software
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: 10920dfc-d6c4-45ca-aaf7-cccafdb9c8c4
+    options: {  }
+  -
+    menu_name: footer
+    title: 'Property Management Software'
+    parent: 'menu_link_content:10920dfc-d6c4-45ca-aaf7-cccafdb9c8c4'
+    uri: 'internal:/hotel-pms'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: ede2d8ed-68a9-4449-a656-aebb8980a39f
+    options: {  }
+  -
+    menu_name: footer
+    title: 'Booking Engine'
+    parent: 'menu_link_content:10920dfc-d6c4-45ca-aaf7-cccafdb9c8c4'
+    uri: 'internal:/hotel-booking-engine'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 086395c2-9b31-4a3a-8db9-6b6138637a3b
+    options: {  }
+  -
+    menu_name: footer
+    title: 'Order Management System'
+    parent: 'menu_link_content:10920dfc-d6c4-45ca-aaf7-cccafdb9c8c4'
+    uri: 'internal:/order-management-system'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 30
+    langcode: en
+    uuid: 8e06c342-30ad-40da-97f9-a6cf08db26b2
+    options: {  }
+  -
+    menu_name: footer
+    title: Solutions
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 30
+    langcode: en
+    uuid: 635fa385-07b0-4604-b2cd-5ad8570bb730
+    options: {  }
+  -
+    menu_name: footer
+    title: Retail
+    parent: 'menu_link_content:635fa385-07b0-4604-b2cd-5ad8570bb730'
+    uri: 'internal:/retail'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: 2a183bb0-04a0-43fd-a173-3324f1f87ad8
+    options: {  }
+  -
+    menu_name: footer
+    title: Hospitality
+    parent: 'menu_link_content:635fa385-07b0-4604-b2cd-5ad8570bb730'
+    uri: 'internal:/hospitality'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 20
+    langcode: en
+    uuid: d64200e5-0178-44f9-8099-93ec393733f3
+    options: {  }
+  -
+    menu_name: footer
+    title: Travel
+    parent: 'menu_link_content:635fa385-07b0-4604-b2cd-5ad8570bb730'
+    uri: 'internal:/travel'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 30
+    langcode: en
+    uuid: b135c99b-1490-4b59-add2-18823b3acd2c
+    options: {  }
+  -
+    menu_name: footer
+    title: 'Tax Free'
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 40
+    langcode: en
+    uuid: 8af7a8b3-c915-4a75-b8b7-cca4efc7d14c
+    options: {  }
+  -
+    menu_name: footer
+    title: Issuing
+    parent: 'menu_link_content:8af7a8b3-c915-4a75-b8b7-cca4efc7d14c'
+    uri: 'internal:/vat-refund'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 10
+    langcode: en
+    uuid: 01f30a14-027e-4961-b7a0-629971289b6e
+    options: {  }
+  -
+    menu_name: footer
+    title: 'Track my refund'
+    parent: 'menu_link_content:8af7a8b3-c915-4a75-b8b7-cca4efc7d14c'
+    uri: 'https://planetpayment/track-my-refund'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 20
+    langcode: en
+    uuid: c82286ca-1078-4e57-a593-55dac56e6457
+    options: {  }
+  -
+    menu_name: footer
+    title: Resources
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 50
+    langcode: en
+    uuid: 7506065e-8381-4e9b-876f-35bdc4e230c9
+    options: {  }
+  -
+    menu_name: footer
+    title: Blogs
+    parent: 'menu_link_content:7506065e-8381-4e9b-876f-35bdc4e230c9'
+    uri: 'internal:/blog'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 10
+    langcode: en
+    uuid: 885e1cf9-f748-461a-bc53-160fcf925de0
+    options: {  }
+  -
+    menu_name: footer
+    title: Customers
+    parent: 'menu_link_content:7506065e-8381-4e9b-876f-35bdc4e230c9'
+    uri: 'internal:/case-studies'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 20
+    langcode: en
+    uuid: 14edbc5b-d0bb-4eb9-88b1-06e7c2afe841
+    options: {  }
+  -
+    menu_name: footer
+    title: 'Customer resources'
+    parent: 'menu_link_content:7506065e-8381-4e9b-876f-35bdc4e230c9'
+    uri: 'internal:/customer-resources'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 30
+    langcode: en
+    uuid: 3000cc8c-03e1-4c01-8b87-7be5f239c38f
+    options: {  }
+  -
+    menu_name: footer
+    title: Partners
+    parent: 'menu_link_content:7506065e-8381-4e9b-876f-35bdc4e230c9'
+    uri: 'internal:/partners'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 40
+    langcode: en
+    uuid: b33ccf7f-c0f3-40a1-a121-1288469da165
+    options: {  }
+  -
+    menu_name: footer
+    title: 'E-books and documentation'
+    parent: 'menu_link_content:7506065e-8381-4e9b-876f-35bdc4e230c9'
+    uri: 'internal:/ebooks'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 50
+    langcode: en
+    uuid: f76a5f40-f881-4888-b5b7-c069af3202fe
+    options: {  }
+  -
+    menu_name: footer
+    title: Company
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 60
+    langcode: en
+    uuid: c88c77fe-902c-4bc3-9b23-c8bd911d480b
+    options: {  }
+  -
+    menu_name: footer
+    title: About
+    parent: 'menu_link_content:c88c77fe-902c-4bc3-9b23-c8bd911d480b'
+    uri: 'internal:/about'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 10
+    langcode: en
+    uuid: ebed6a62-61a2-462c-bfcc-fd73d9aba839
+    options: {  }
+  -
+    menu_name: footer
+    title: Newsroom
+    parent: 'menu_link_content:c88c77fe-902c-4bc3-9b23-c8bd911d480b'
+    uri: 'internal:/news'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 20
+    langcode: en
+    uuid: 9110b308-65bb-4556-b032-d188b017cb43
+    options: {  }
+  -
+    menu_name: footer
+    title: Careers
+    parent: 'menu_link_content:c88c77fe-902c-4bc3-9b23-c8bd911d480b'
+    uri: 'internal:/careers'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 30
+    langcode: en
+    uuid: 9ab532a2-4149-4793-aae3-0649dd13ebe2
+    options: {  }
+  -
+    menu_name: footer
+    title: Support
+    parent: 'menu_link_content:c88c77fe-902c-4bc3-9b23-c8bd911d480b'
+    uri: 'internal:/support'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 40
+    langcode: en
+    uuid: 4ac30a4a-01f5-4a0e-8990-c0c83fdab441
+    options: {  }
+  -
+    menu_name: legal-menu
+    title: 'Privacy Policy'
+    parent: null
+    uri: 'internal:/privacy-policy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: dd2a45ad-4102-4f95-b8a7-4ee363de0b59
+    options: {  }
+  -
+    menu_name: legal-menu
+    title: 'Cookie Policy'
+    parent: null
+    uri: 'internal:/cookie-policy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: e047f848-b6bd-4765-9848-72140ebad572
+    options: {  }
+  -
+    menu_name: legal-menu
+    title: 'Marketing Privacy Notice'
+    parent: null
+    uri: 'internal:/marketing-privacy-notice-b2b'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: 93e85efb-044f-4425-ac73-2e4cc2a26ba4
+    options: {  }
+  -
+    menu_name: legal-menu
+    title: Imprint
+    parent: null
+    uri: 'internal:/protel-imprint'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: 89c22cdd-a954-4779-a528-f2542fb46c3d
+    options: {  }
+  -
+    menu_name: account
+    title: 'Cookie Settings'
+    parent: null
+    uri: 'internal:/<front>'
+    link_title: null
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: 761cce49-e192-4627-be42-d923420276d4
+    options: {  }
+  -
+    menu_name: account
+    title: 'Cookie Settings'
+    parent: null
+    uri: 'internal:/<front>'
+    link_title: null
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: 304a453b-c942-4bd6-80b7-7014058fbfa8
+    options: {  }
+  -
+    menu_name: sitemap
+    title: 'Our Products'
+    parent: null
+    uri: 'internal:/'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: -43
+    langcode: en
+    uuid: eec31dc4-4f29-4f14-8a90-d464b42891e7
+    options: {  }
+  -
+    menu_name: sitemap
+    title: 'About Planet'
+    parent: null
+    uri: 'entity:node/66'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: c47b1fb3-e44f-4124-a025-baa6ac4fea13
+    options: {  }
+  -
+    menu_name: sitemap
+    title: Payments
+    parent: null
+    uri: 'entity:node/36'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -46
+    langcode: en
+    uuid: a174a8aa-c56f-4754-b79b-52886eec201b
+    options: {  }
+  -
+    menu_name: sitemap
+    title: Partnerships
+    parent: null
+    uri: 'entity:node/56'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: -42
+    langcode: en
+    uuid: 2ba1457f-767a-4a08-bd02-8d8712a54633
+    options: {  }
+  -
+    menu_name: sitemap
+    title: Resources
+    parent: null
+    uri: 'entity:node/61'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: -41
+    langcode: en
+    uuid: 305cf4b8-f6fb-4a4e-9176-e60776465aeb
+    options: {  }
+  -
+    menu_name: sitemap
+    title: Retail
+    parent: null
+    uri: 'entity:node/31'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -44
+    langcode: en
+    uuid: 9dee1ef4-ed9c-46c2-a1b4-ab4a5f081043
+    options: {  }
+  -
+    menu_name: sitemap
+    title: Hospitality
+    parent: null
+    uri: 'entity:node/26'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: c745ea29-c7b5-4aca-ad22-5f3f96a5980b
+    options: {  }
+  -
+    menu_name: sitemap
+    title: Support
+    parent: null
+    uri: 'https://www.weareplanet.com/support'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -39
+    langcode: en
+    uuid: db713efd-6f73-4c06-a0b4-6deae40982e7
+    options:
+      attributes:
+        target: _blank
+  -
+    menu_name: sitemap
+    title: Careers
+    parent: null
+    uri: 'https://www.weareplanet.com/careers'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -40
+    langcode: en
+    uuid: 2a7e61aa-c7a4-46c1-a313-f7706b5d0e7e
+    options: {  }
+  -
+    menu_name: sitemap
+    title: Blog
+    parent: null
+    uri: 'internal:/blog'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 48ed443d-42b5-49a6-91be-6f0d31437cac
+    options: {  }
+  -
+    menu_name: sitemap
+    title: Customers
+    parent: null
+    uri: 'internal:/case-studies'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: 13ef836e-c4e8-4e18-9cc8-eba0af673585
+    options: {  }
+  -
+    menu_name: sitemap
+    title: Blog
+    parent: null
+    uri: 'entity:node/1576'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -45
+    langcode: en
+    uuid: 8a108ade-c844-4e8d-99f0-519bf2196754
+    options: {  }
+  -
+    menu_name: contact-us
+    title: 'Simple service'
+    parent: null
+    uri: 'internal:/'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: 38cb62b7-adb3-4070-9ac4-f8dbafc1f761
+    options: {  }
+  -
+    menu_name: contact-us
+    title: Support
+    parent: null
+    uri: 'entity:node/41'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: 993ecd5a-078d-4c29-97f4-56f491f12a1d
+    options: {  }
+  -
+    menu_name: contact-us
+    title: 'Billing & accounts'
+    parent: null
+    uri: 'internal:/'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: dcda0289-4918-4d4b-bb23-18a6bff526aa
+    options: {  }
+  -
+    menu_name: contact-us
+    title: 'Office locations'
+    parent: null
+    uri: 'entity:node/2116'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: bb59edeb-5881-46c2-86c1-f47618095675
+    options: {  }
+  -
+    menu_name: contact-us
+    title: 'Tax Free'
+    parent: null
+    uri: 'https://www.planetpayment.com'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: f2409ba8-b3c0-4e44-9781-12065013e2ce
+    options:
+      attributes:
+        target: _blank
+  -
+    menu_name: secondary-planet
+    title: About
+    parent: null
+    uri: 'internal:/about'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: bce1c49b-8895-4b21-af82-a0c7b7a75de1
+    options: {  }
+  -
+    menu_name: secondary-planet
+    title: Careers
+    parent: null
+    uri: 'https://www.weareplanet.com/careers'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: 9e8e8080-cdfe-4fa0-a396-b83711e402ee
+    options:
+      attributes:
+        target: _blank
+  -
+    menu_name: secondary-planet
+    title: Resources
+    parent: null
+    uri: 'entity:node/1576'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: bd6f4ed9-e5af-40e8-8bac-7394e7eb6d7b
+    options: {  }
+  -
+    menu_name: secondary-planet
+    title: Customers
+    parent: null
+    uri: 'entity:node/1366'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: 5583f26e-7cb8-4d25-95e8-cf3c341472f8
+    options: {  }
+  -
+    menu_name: main
+    title: Payments
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 9d0c2525-a5ee-4787-962a-3093568ab965
+    options: {  }
+  -
+    menu_name: main
+    title: Solutions
+    parent: 'menu_link_content:9d0c2525-a5ee-4787-962a-3093568ab965'
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: true
+    weight: -50
+    langcode: en
+    uuid: 53fc4681-b935-4c14-8c6e-17f0cd1133b7
+    options: {  }
+  -
+    menu_name: main
+    title: 'Accept payments'
+    parent: 'menu_link_content:53fc4681-b935-4c14-8c6e-17f0cd1133b7'
+    uri: 'entity:node/36'
+    link_title: ''
+    description: 'One payment solution to handle all your payment needs'
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: a0e4cb4b-0a77-43cd-9b83-700bdd2df019
+    options: {  }
+  -
+    menu_name: main
+    title: 'Online Payments'
+    parent: 'menu_link_content:53fc4681-b935-4c14-8c6e-17f0cd1133b7'
+    uri: 'entity:node/496'
+    link_title: ''
+    description: 'Accept payments online quickly and securely'
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: e9e2759d-069b-4c0f-ac6e-fcb26f1c21e0
+    options: {  }
+  -
+    menu_name: main
+    title: 'Merchant acquiring'
+    parent: 'menu_link_content:53fc4681-b935-4c14-8c6e-17f0cd1133b7'
+    uri: 'entity:node/646'
+    link_title: ''
+    description: "Standalone services from Planet as well as solutions integrated with your existing provider's system."
+    enabled: false
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: 66ace15f-e7ad-41ba-a9dc-83885e49a468
+    options: {  }
+  -
+    menu_name: main
+    title: 'In-Person Payments'
+    parent: 'menu_link_content:53fc4681-b935-4c14-8c6e-17f0cd1133b7'
+    uri: 'entity:node/586'
+    link_title: ''
+    description: 'Accept payments in-person anytime, anywhere'
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: 1683e324-28fc-47cb-b961-b4c4fb4c54a1
+    options: {  }
+  -
+    menu_name: main
+    title: 'Revenue generation'
+    parent: 'menu_link_content:9d0c2525-a5ee-4787-962a-3093568ab965'
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: true
+    weight: -49
+    langcode: en
+    uuid: 5ae8fd53-1970-45c0-99a0-9ed3e8191bba
+    options:
+      attributes:
+        class:
+          - hide
+  -
+    menu_name: main
+    title: 'Payment channels'
+    parent: 'menu_link_content:5ae8fd53-1970-45c0-99a0-9ed3e8191bba'
+    uri: 'internal:/payment-channels'
+    link_title: ''
+    description: 'Accept payments in every way, shape and form'
+    enabled: false
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: fd4b4bad-e1aa-4cfc-9c2d-bb8d7ff1ef3a
+    options: {  }
+  -
+    menu_name: main
+    title: 'Dynamic Currency Conversion'
+    parent: 'menu_link_content:5ae8fd53-1970-45c0-99a0-9ed3e8191bba'
+    uri: 'internal:/dcc'
+    link_title: ''
+    description: 'Earn additional revenue for foreign exchange transactions '
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 9b98cdb6-a102-4fe6-89f2-848c23823a08
+    options: {  }
+  -
+    menu_name: main
+    title: 'Security, Compliance & Fraud'
+    parent: 'menu_link_content:5ae8fd53-1970-45c0-99a0-9ed3e8191bba'
+    uri: 'entity:node/421'
+    link_title: ''
+    description: 'Highly scalable infrastructure, dependable payment processing, and maximum availability'
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: a5fb7738-288b-4e51-a671-2cf820ed6534
+    options: {  }
+  -
+    menu_name: main
+    title: Tokenizzazione
+    parent: 'menu_link_content:5ae8fd53-1970-45c0-99a0-9ed3e8191bba'
+    uri: 'entity:node/431'
+    link_title: ''
+    description: 'Fidelizzare i clienti è facile'
+    enabled: false
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: ed913835-9da8-4f49-bf72-f44d7298c9da
+    options: {  }
+  -
+    menu_name: main
+    title: Reconciliation
+    parent: 'menu_link_content:5ae8fd53-1970-45c0-99a0-9ed3e8191bba'
+    uri: 'entity:node/426'
+    link_title: ''
+    description: 'Der Reconciliation Service gleicht Ihre Online-Zahlungstransaktionen automatisch mit den Gutschriftsanzeigen der Acquirer ab und zeigt Diskrepanzen transparent an.'
+    enabled: false
+    expanded: false
+    weight: -45
+    langcode: en
+    uuid: 44edeab2-3f3d-4d76-afcd-1e9e3b475ea2
+    options: {  }
+  -
+    menu_name: main
+    title: 'VAT Refund'
+    parent: 'menu_link_content:5ae8fd53-1970-45c0-99a0-9ed3e8191bba'
+    uri: 'entity:node/631'
+    link_title: ''
+    description: 'Streamline tax-free processes with automated refunds, and expert support'
+    enabled: false
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: 8a017661-972d-4359-a3a4-a8f2e0fcc65e
+    options: {  }
+  -
+    menu_name: main
+    title: 'Token Vault'
+    parent: 'menu_link_content:5ae8fd53-1970-45c0-99a0-9ed3e8191bba'
+    uri: 'entity:node/481'
+    link_title: ''
+    description: 'Work with payment data, while we secure it'
+    enabled: true
+    expanded: false
+    weight: -46
+    langcode: en
+    uuid: e4961bde-2f9a-4261-bb81-7474d07b0d88
+    options: {  }
+  -
+    menu_name: main
+    title: Retail
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: 9dddb12d-672e-43ec-a82c-fe9a81987c2e
+    options: {  }
+  -
+    menu_name: main
+    title: Solutions
+    parent: 'menu_link_content:9dddb12d-672e-43ec-a82c-fe9a81987c2e'
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: true
+    weight: -50
+    langcode: en
+    uuid: c8ba6451-84e7-448b-aa88-7ee2883b5b95
+    options: {  }
+  -
+    menu_name: main
+    title: '(Tax Free) VAT refund'
+    parent: 'menu_link_content:c8ba6451-84e7-448b-aa88-7ee2883b5b95'
+    uri: 'entity:node/631'
+    link_title: ''
+    description: 'Streamline tax-free processes with automated reimbursements, comprehensive solutions and expert support'
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 5bddd2b5-43ef-4f66-948b-8175335a6104
+    options: {  }
+  -
+    menu_name: main
+    title: 'Payment channels'
+    parent: 'menu_link_content:c8ba6451-84e7-448b-aa88-7ee2883b5b95'
+    uri: 'entity:node/341'
+    link_title: ''
+    description: 'Accept payments in every way, shape and form'
+    enabled: false
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: 09993172-f5dd-4ad2-a038-9cc0fd5b77c6
+    options: {  }
+  -
+    menu_name: main
+    title: 'Accept payments'
+    parent: 'menu_link_content:c8ba6451-84e7-448b-aa88-7ee2883b5b95'
+    uri: 'entity:node/36'
+    link_title: ''
+    description: 'One payment solution to handle all your payment needs'
+    enabled: true
+    expanded: true
+    weight: -50
+    langcode: en
+    uuid: 190fd721-4824-400d-8b4e-bffe320ba6b4
+    options: {  }
+  -
+    menu_name: main
+    title: Platforms
+    parent: 'menu_link_content:9dddb12d-672e-43ec-a82c-fe9a81987c2e'
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: true
+    weight: -49
+    langcode: en
+    uuid: 48654cd0-c56f-4949-8436-cf1ada74e696
+    options: {  }
+  -
+    menu_name: main
+    title: 'Order Management System (OMS)'
+    parent: 'menu_link_content:48654cd0-c56f-4949-8436-cf1ada74e696'
+    uri: 'entity:node/441'
+    link_title: ''
+    description: 'Connect inventory management, both in-store and online'
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: c636e0b8-5e78-4e82-aa56-4ba3f384ae2b
+    options: {  }
+  -
+    menu_name: main
+    title: Hospitality
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: a9e0f623-bbd9-43fb-aabc-ee409b7dfab8
+    options: {  }
+  -
+    menu_name: main
+    title: Solutions
+    parent: 'menu_link_content:a9e0f623-bbd9-43fb-aabc-ee409b7dfab8'
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: true
+    weight: -50
+    langcode: en
+    uuid: c5cc3a6a-8411-4715-a8b1-4d3c58745afa
+    options: {  }
+  -
+    menu_name: main
+    title: 'Protel Cloud PMS'
+    parent: 'menu_link_content:c5cc3a6a-8411-4715-a8b1-4d3c58745afa'
+    uri: 'internal:/hotel-pms'
+    link_title: ''
+    description: 'Easily and securely manage your hotel operations from anywhere'
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 6da34089-1a80-4118-820f-3e20da807600
+    options: {  }
+  -
+    menu_name: main
+    title: 'Hotel Networking'
+    parent: 'menu_link_content:c5cc3a6a-8411-4715-a8b1-4d3c58745afa'
+    uri: 'internal:/hotel-networking'
+    link_title: ''
+    description: 'Connectivity for your hotel guests'
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: 16089c31-36ea-41a0-b5ff-8b3d570b7eb8
+    options: {  }
+  -
+    menu_name: main
+    title: 'Accept payments'
+    parent: 'menu_link_content:c5cc3a6a-8411-4715-a8b1-4d3c58745afa'
+    uri: 'entity:node/36'
+    link_title: ''
+    description: 'One payment solution to handle all your payment needs'
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: b6650a48-03cf-44b0-aade-dcb0bd98497e
+    options: {  }
+  -
+    menu_name: main
+    title: 'Featured products'
+    parent: 'menu_link_content:a9e0f623-bbd9-43fb-aabc-ee409b7dfab8'
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: true
+    weight: -49
+    langcode: en
+    uuid: 19374e87-45e0-47e7-8a3d-e1a3a774fffd
+    options: {  }
+  -
+    menu_name: main
+    title: 'Hotel Booking Engine'
+    parent: 'menu_link_content:19374e87-45e0-47e7-8a3d-e1a3a774fffd'
+    uri: 'entity:node/446'
+    link_title: ''
+    description: 'Easy and efficient booking journey'
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: ab5303d3-aa8d-47dd-91b0-f32f941327b6
+    options: {  }
+  -
+    menu_name: main
+    title: 'Interactive TV'
+    parent: 'menu_link_content:19374e87-45e0-47e7-8a3d-e1a3a774fffd'
+    uri: 'entity:node/466'
+    link_title: ''
+    description: 'Live channels, video on demand, music streams and apps'
+    enabled: false
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: ed75c7cc-b83f-4b8a-bda9-19dca0012d98
+    options: {  }
+  -
+    menu_name: main
+    title: 'Gift Cards'
+    parent: 'menu_link_content:19374e87-45e0-47e7-8a3d-e1a3a774fffd'
+    uri: 'entity:node/826'
+    link_title: ''
+    description: 'Gift card solution for hotels and restaurants'
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: d35f4431-8219-456d-a336-65a049728f3b
+    options: {  }
+  -
+    menu_name: main
+    title: Dashboard
+    parent: 'menu_link_content:19374e87-45e0-47e7-8a3d-e1a3a774fffd'
+    uri: 'entity:node/921'
+    link_title: ''
+    description: 'Visualise your hotel data with Dashboard'
+    enabled: true
+    expanded: false
+    weight: -46
+    langcode: en
+    uuid: 1fe24f30-71cd-4f44-8fdb-8dfa42616927
+    options: {  }
+  -
+    menu_name: main
+    title: 'Internet Services'
+    parent: 'menu_link_content:19374e87-45e0-47e7-8a3d-e1a3a774fffd'
+    uri: 'entity:node/821'
+    link_title: ''
+    description: 'A secure network for a tightly organised hotel'
+    enabled: false
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: d30565d3-0056-4062-ac9b-bcf24957d1e6
+    options: {  }
+  -
+    menu_name: main
+    title: Partners
+    parent: null
+    uri: 'entity:node/56'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -46
+    langcode: en
+    uuid: a00e4ac6-8283-41c8-8ec8-480bf14bb684
+    options: {  }
+  -
+    menu_name: main
+    title: 'Case studies'
+    parent: null
+    uri: 'entity:node/1366'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: 82365b0b-1058-4bc9-9b34-b1036a0b3698
+    options: {  }
 taxonomies:
   tags:
     -
