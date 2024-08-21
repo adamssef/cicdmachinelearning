@@ -82,7 +82,6 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
     foreach ($tree as $item) {
       $menu_link_content = $item->link;
 
-
       if (in_array($menu_link_content->getTitle(), $menu_link_titles_to_skip)) {
         continue;
       }

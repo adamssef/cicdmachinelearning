@@ -414,6 +414,18 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     padding-right: 32px;
   }
 
+  .megamenu-resources__desktop .navigation-items {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+
+  .megamenu-resources__desktop div.megamenu-column__mini-text {
+    min-width: 218px;
+  }
+
+
+
   .navigation-items--first {
     margin-bottom: 56px;
   }
