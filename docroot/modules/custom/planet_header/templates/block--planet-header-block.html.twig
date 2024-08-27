@@ -162,7 +162,7 @@
     <div class="navigation-items navigation-items--second">
       {% for item in data['megamenu']['2']['children'][4:2] %}
         <div class="{{ item['classes'] }}">
-          {% if item.title == "eCampus" %}
+          {% if "ecampus" in item.title or "eCampus" in item.title %}
             {% if data['#current_language_prefix'] == 'fr' %}
                 <a {% if item['_blank'] %}target="_blank" {% endif %}href="https://ecampus.weareplanet.com/local/coursecatalogue/index.php?categoryid=4&lang=fr_wp">
                   <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
