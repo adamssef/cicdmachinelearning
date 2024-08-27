@@ -184,26 +184,8 @@ function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
  * Implements hook_views_query_alter().
  */
 function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-
-
-  $user = \Drupal::currentUser();
-  $user_roles = $user->getRoles();
-  $roles_permissions = user_role_permissions($user_roles);
-
-  // log the user roles and permissions
-  foreach ($roles_permissions as $role) {
-    foreach($role as $key => $value) {
-      \Drupal::logger('planet_core')->notice('User role: ' . $key . ' and permission: ' . $value);
-    }
-  }
-
   $node = \Drupal::routeMatch()->getParameter('node');
   $collected_tags = [];
-
-  if($node !== null && $node->getType() === 'page' && $view->current_display === '!case_studies_more_reads') {
-    \Drupal::logger('planet_core')->notice('this is not case_studies_more_reads' . ' and the user is' . \Drupal::currentUser()->id() . ' and the user is' . \Drupal::currentUser()->isAuthenticated() . ' and the current display is' . $view->current_display . ' and the has_field for field_resources_tags returns: ' . $node->hasField('field_resources_tags'));
-    \Drupal::logger('current display' .  $view->current_display);
-  }
 
   if ($view->current_display === 'blog_more_reads') {
     if ($node !== NULL && $node->hasField('field_resources_tags')) {
@@ -217,8 +199,6 @@ function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
       $res = $temp_query->fetchAll();
       $collected_tags = array_column($res, 'field_resources_tags_target_id');
     }
-
-    \Drupal::logger('planet_core')->notice('collected tags: ' . print_r($collected_tags, true));
 
     if (!empty($collected_tags)) {
       $query->addWhere(0, 'node__field_resources_tags.field_resources_tags_target_id', $collected_tags, 'IN');

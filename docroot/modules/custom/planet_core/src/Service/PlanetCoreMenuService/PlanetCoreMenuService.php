@@ -113,8 +113,6 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
         $menu_link_array['children'] = $children;
       }
 
-      $test = strtolower(str_replace(' ', '-', $entity->getTitle()));
-
       $menu_array[strtolower(str_replace(' ', '-', $entity->getTitle()))] = $menu_link_array;
     }
 
