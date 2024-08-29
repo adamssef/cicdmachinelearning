@@ -1,3 +1,9 @@
+sitewide-libraries:
+  css:
+    theme:
+      css/site_wide_styles.css: {}
+  js:
+    js/SiteWideScripts.js: {}
 language-popup:
   css:
     theme:
