@@ -78,7 +78,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 100
+          items_per_page: 200
       exposed_form:
         type: basic
         options:
@@ -404,7 +404,10 @@ display:
             value: '<div class="links-listing-block parent-term-wrap"><ul><li><a href="#" data="term-target-all" class="active">All</a></li></ul></div>'
             format: cohesion
           tokenize: false
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -1014,7 +1017,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_enter_phone_number'
@@ -1347,7 +1349,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_email'
