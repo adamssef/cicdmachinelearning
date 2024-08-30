@@ -10,6 +10,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
+use Drupal\views\Views;
 use Drupal\webform\WebformSubmissionInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -178,6 +179,21 @@ function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
 
     $form['#attached']['library'][] = 'planet_sitestudio_custom_elements/registeredCompanies';
   }
+}
+
+function planet_core_views_pre_render(ViewExecutable $view) {
+  $initial_count = count($view->result);
+
+  if ($view->id() === "email_contacts_terms" && $view->current_display === "block_3") {
+    $altered_view = Views::getView('email_contacts_terms');
+    $altered_view->setDisplay('block_3');
+    $altered_view->execute();
+
+    if ($initial_count < count($altered_view->result)) {
+      $view->result = $altered_view->result;
+    }
+  }
+
 }
 
 /**
