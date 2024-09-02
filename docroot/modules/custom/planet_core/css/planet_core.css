@@ -1,3 +1,10 @@
+.plnt-css-casos-exito .coh-style-button-variants,
+.plnt-css-storie-successo .coh-style-button-variants,
+.plnt-css-fallstudien .coh-style-button-variants,
+.plnt-css-etudes-de-cas .coh-style-button-variants {
+  padding-right: 8px;
+  padding-left: 8px;
+}
 .plnt-okta-verify-tfa-setup {
   color: #0a6eb4;
 }

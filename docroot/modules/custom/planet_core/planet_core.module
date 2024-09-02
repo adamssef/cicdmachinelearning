@@ -7,6 +7,7 @@
 
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
 use Drupal\node\Entity\Node;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
@@ -436,12 +437,45 @@ function planet_core_theme_suggestions_views_view_field_alter(array &$suggestion
       $suggestions[] = 'views_view_field__ebook_link';
     }
   }
+
 }
 
 /**
  * Implements hook_preprocess_HOOK() for views_view_field templates.
  */
 function planet_core_preprocess_views_view_field(array &$variables) {
+  $this_page_node = \Drupal::routeMatch()->getParameter('node');
+  $node_type = $this_page_node->getType();
+
+  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  $text = strip_tags($variables['output']);
+  $old_output = $variables['output'];
+
+  $dom = new DOMDocument();
+
+
+  if ($node_type && $node_type === 'page') {
+    if ($text === "Read full case study") {
+      switch ($langcode) {
+        case 'de':
+          $variables['output'] = ['#markup'=>str_replace($text, 'Lese die vollständige Fallstudie', $old_output)];
+          break;
+        case 'fr':
+          $variables['output'] = ['#markup'=>str_replace($text, 'Lire l\'étude de cas complète', $old_output)];
+          break;
+        case 'it':
+          $variables['output'] = ['#markup'=>str_replace($text, 'Leggi il caso di studio completo', $old_output)];
+          break;
+        case 'es':
+          $variables['output'] = ['#markup'=> str_replace($text, 'Leer el estudio de caso completo', $old_output)];
+          break;
+      }
+
+    }
+  }
+
+
   if($variables['view']->id() === 'ebook') {
     if ($variables['field']->getPluginId() === 'entity_link') {
       $node_translation = \Drupal::service('entity.repository')->getTranslationFromContext($variables['row']->_entity);
