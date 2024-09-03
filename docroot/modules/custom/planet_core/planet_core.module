@@ -445,31 +445,33 @@ function planet_core_theme_suggestions_views_view_field_alter(array &$suggestion
  */
 function planet_core_preprocess_views_view_field(array &$variables) {
   $this_page_node = \Drupal::routeMatch()->getParameter('node');
-  $node_type = $this_page_node->getType();
-  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-  $text = strip_tags($variables['output']);
-  $old_output = $variables['output'];
 
-  if ($node_type && $node_type === 'page') {
-    if ($text === "Read full case study") {
-      switch ($langcode) {
-        case 'de':
-          $variables['output'] = ['#markup'=>str_replace($text, 'Lese die vollständige Fallstudie', $old_output)];
-          break;
-        case 'fr':
-          $variables['output'] = ['#markup'=>str_replace($text, 'Lire l\'étude de cas complète', $old_output)];
-          break;
-        case 'it':
-          $variables['output'] = ['#markup'=>str_replace($text, 'Leggi il caso di studio completo', $old_output)];
-          break;
-        case 'es':
-          $variables['output'] = ['#markup'=> str_replace($text, 'Leer el estudio de caso completo', $old_output)];
-          break;
+  if ($this_page_node) {
+    $node_type = $this_page_node->getType();
+    $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $text = strip_tags($variables['output']);
+    $old_output = $variables['output'];
+
+    if ($node_type && $node_type === 'page') {
+      if ($text === "Read full case study") {
+        switch ($langcode) {
+          case 'de':
+            $variables['output'] = ['#markup'=>str_replace($text, 'Lese die vollständige Fallstudie', $old_output)];
+            break;
+          case 'fr':
+            $variables['output'] = ['#markup'=>str_replace($text, 'Lire l\'étude de cas complète', $old_output)];
+            break;
+          case 'it':
+            $variables['output'] = ['#markup'=>str_replace($text, 'Leggi il caso di studio completo', $old_output)];
+            break;
+          case 'es':
+            $variables['output'] = ['#markup'=> str_replace($text, 'Leer el estudio de caso completo', $old_output)];
+            break;
+        }
+
       }
-
     }
   }
-
 
   if($variables['view']->id() === 'ebook') {
     if ($variables['field']->getPluginId() === 'entity_link') {
