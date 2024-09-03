@@ -446,9 +446,7 @@ function planet_core_theme_suggestions_views_view_field_alter(array &$suggestion
 function planet_core_preprocess_views_view_field(array &$variables) {
   $this_page_node = \Drupal::routeMatch()->getParameter('node');
   $node_type = $this_page_node->getType();
-
   $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-
   $text = strip_tags($variables['output']);
   $old_output = $variables['output'];
 
