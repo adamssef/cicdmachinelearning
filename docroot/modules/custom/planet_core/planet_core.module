@@ -452,9 +452,6 @@ function planet_core_preprocess_views_view_field(array &$variables) {
   $text = strip_tags($variables['output']);
   $old_output = $variables['output'];
 
-  $dom = new DOMDocument();
-
-
   if ($node_type && $node_type === 'page') {
     if ($text === "Read full case study") {
       switch ($langcode) {
