@@ -2,7 +2,7 @@ FROM php:8.1-apache
 RUN a2enmod rewrite
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/docroot
-
+ENV APP_HOME=/var/www/html
 RUN apt-get update && apt-get install -y \
     redis-tools \
     git \
