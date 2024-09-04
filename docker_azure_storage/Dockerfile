@@ -1,8 +1,8 @@
-FROM php:8.1-apache
+FROM php:8.2-apache
 RUN a2enmod rewrite
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/docroot
-
+ENV APP_HOME=/var/www/html
 RUN apt-get update && apt-get install -y \
     redis-tools \
     git \
@@ -55,7 +55,7 @@ WORKDIR /var/www/html
 # RUN chown -R www-data:www-data ${APACHE_DOCUMENT_ROOT}/sites/default/files
 
 RUN git config --global --add safe.directory '*'
-RUN composer install --no-interaction --no-progress
+RUN composer install --no-interaction --no-progress --ignore-platform-req=ext-soap
 
 RUN chown -R www-data:www-data ${APACHE_DOCUMENT_ROOT}
 RUN mkdir -p ${APACHE_DOCUMENT_ROOT}/sites/default/files-private
