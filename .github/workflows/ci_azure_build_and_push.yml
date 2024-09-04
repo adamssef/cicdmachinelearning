@@ -50,17 +50,11 @@ jobs:
       id-token: write
 
     steps:
-      - name: Azure login
-        uses: azure/login@v1.4.6
-        with:
-          client-id: ${{ vars.AZURE_CLIENT_ID }}
-          tenant-id: ${{ vars.AZURE_TENANT_ID }}
-          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
-
       - name: Deploy WebApp to slot
         uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ vars.AZURE_APP_NAME }}
           slot-name: 'staging'
           images: 'ghcr.io/weareplanet/planet-lead-generation:${{ github.sha }}'
+          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
 
