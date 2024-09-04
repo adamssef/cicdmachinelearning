@@ -456,19 +456,18 @@ function planet_core_preprocess_views_view_field(array &$variables) {
       if ($text === "Read full case study") {
         switch ($langcode) {
           case 'de':
-            $variables['output'] = ['#markup'=>str_replace($text, 'Lese die vollständige Fallstudie', $old_output)];
+            $variables['output'] = ['#markup' => str_replace($text, 'Fallstudie lesen', $old_output)];
             break;
           case 'fr':
-            $variables['output'] = ['#markup'=>str_replace($text, 'Lire l\'étude de cas complète', $old_output)];
+            $variables['output'] = ['#markup' => str_replace($text, 'Lire l\'étude de cas complète', $old_output)];
             break;
           case 'it':
-            $variables['output'] = ['#markup'=>str_replace($text, 'Leggi il caso di studio completo', $old_output)];
+            $variables['output'] = ['#markup' => str_replace($text, 'Leggi il case study completo', $old_output)];
             break;
           case 'es':
-            $variables['output'] = ['#markup'=> str_replace($text, 'Leer el estudio de caso completo', $old_output)];
+            $variables['output'] = ['#markup' => str_replace($text, 'Leer el caso de éxito completo', $old_output)];
             break;
         }
-
       }
     }
   }
