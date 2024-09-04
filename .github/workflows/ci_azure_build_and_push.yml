@@ -51,9 +51,8 @@ jobs:
 
     steps:
       - name: Azure login
-        uses: azure/login@v2.0.0
+        uses: azure/login@v1.4.6
         with:
-          auth-type: IDENTITY
           client-id: ${{ vars.AZURE_CLIENT_ID }}
           tenant-id: ${{ vars.AZURE_TENANT_ID }}
           subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
