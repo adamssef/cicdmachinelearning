@@ -1,0 +1,58 @@
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  ##### MEDIA RELATED RULES #####
+  # Some paths starting from media should be not redirected...
+  RewriteCond %{REQUEST_URI} !^/media/add$
+  RewriteCond %{REQUEST_URI} !^/media/add/(audio|document|pdf|lottie_animation|vector_image|video|image)$
+  RewriteCond %{REQUEST_URI} !^/media/[0-9]+/edit*$
+  RewriteCond %{REQUEST_URI} !^/media/[0-9]+/delete*$
+  # ... but redirection is applied to everyting not matching the above conditions.
+  RewriteRule ^media(/.*)?$ / [R=301,L]
+
+  RewriteCond %{REQUEST_URI} !^en/media/add$
+  RewriteCond %{REQUEST_URI} !^en/media/add/(audio|document|pdf|lottie_animation|vector_image|video|image)$
+  RewriteCond %{REQUEST_URI} !^en/media/[0-9]+/edit*$
+  RewriteCond %{REQUEST_URI} !^en/media/[0-9]+/delete*$
+  RewriteRule ^en/media(/.*)?$  / [R=301,L]
+
+  RewriteCond %{REQUEST_URI} !^fr/media/add$
+  RewriteCond %{REQUEST_URI} !^fr/media/add/(audio|document|pdf|lottie_animation|vector_image|video|image)$
+  RewriteCond %{REQUEST_URI} !^fr/media/[0-9]+/edit*$
+  RewriteCond %{REQUEST_URI} !^fr/media/[0-9]+/delete*$
+  RewriteRule ^fr/media(/.*)?$  / [R=301,L]
+
+  RewriteCond %{REQUEST_URI} !^de/media/add$
+  RewriteCond %{REQUEST_URI} !^de/media/add/(audio|document|pdf|lottie_animation|vector_image|video|image)$
+  RewriteCond %{REQUEST_URI} !^de/media/[0-9]+/edit*$
+  RewriteCond %{REQUEST_URI} !^de/media/[0-9]+/delete*$
+  RewriteRule ^de/media(/.*)?$  / [R=301,L]
+
+  RewriteCond %{REQUEST_URI} !^it/media/add$
+  RewriteCond %{REQUEST_URI} !^it/media/add/(audio|document|pdf|lottie_animation|vector_image|video|image)$
+  RewriteCond %{REQUEST_URI} !^it/media/[0-9]+/edit*$
+  RewriteCond %{REQUEST_URI} !^it/media/[0-9]+/delete*$
+  RewriteRule ^it/media(/.*)?$  / [R=301,L]
+
+  RewriteCond %{REQUEST_URI} !^(de|en|es|fr|it)/media/add$
+  RewriteCond %{REQUEST_URI} !^es/media/add/(audio|document|pdf|lottie_animation|vector_image|video|image)$
+  RewriteCond %{REQUEST_URI} !^es/media/[0-9]+/edit*$
+  RewriteCond %{REQUEST_URI} !^es/media/[0-9]+/delete*$
+  RewriteRule ^es/media(/.*)?$  / [R=301,L]
+
+  # Force HTTPS and WWW, remove /en/ prefix, and remove trailing slash
+  RewriteCond %{HTTP_HOST} ^weareplanet.com [NC,OR]
+  RewriteRule ^(?:en)?(/.*?)/?$ https://www.weareplanet.com$1 [L,R=301]
+
+  RewriteCond %{HTTP_HOST} ^weareplanet.com [NC]
+  RewriteRule ^(.*)$ https://www.weareplanet.com/$1 [L,R=301,NC]
+
+  # Other rewrite rules
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+  RewriteBase /
+  RewriteRule ^index\.php$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.php [L]
+</IfModule>

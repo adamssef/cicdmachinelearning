@@ -56,6 +56,7 @@ WORKDIR /var/www/html
 
 RUN git config --global --add safe.directory '*'
 RUN composer install --no-interaction --no-progress --ignore-platform-req=ext-soap
+COPY azure/.htaccess /var/www/html/docroot
 
 RUN chown -R www-data:www-data ${APACHE_DOCUMENT_ROOT}
 RUN mkdir -p ${APACHE_DOCUMENT_ROOT}/sites/default/files-private
