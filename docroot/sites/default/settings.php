@@ -757,48 +757,77 @@ $settings['entity_update_backup'] = TRUE;
  * retained after a successful entity update process.
  */
 
-// Set default config sync directory
-$settings['config_sync_directory'] = '../config/default/sync';
-
-// Define environment detection logic
-$current_env = getenv('APPSETTING_ENVIRONMENT') ?: 'local';
-
-// Check for specific cloud environments
-if (getenv('LANDO')) {
-    $current_env = 'local';
-} elseif (getenv('DIGITALOCEAN')) {
-    $current_env = 'do';
-} elseif (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
-    $current_env = 'acquia';
-}
-
-// Load the appropriate settings file based on the environment
-$azure_envs = ['azure-uat', 'azure-prod', 'azure-docker'];
-$config_envs = array_merge($azure_envs, ['local', 'dev', 'stg', 'prod']);
-
-if (in_array($current_env, $azure_envs)) {
-    // Azure-specific logic
-    $document_root = getenv('NGINX_DOCUMENT_ROOT') ?: '';
-    $settings_file = $document_root ? $document_root . "/docroot/sites/default/settings.$current_env.php" : "settings.$current_env.php";
-} else {
-    // Non-Azure environments
-    $settings_file = $app_root . '/' . $site_path . "/settings.$current_env.php";
-}
-
-// Load the settings file if it exists
-if (file_exists($settings_file)) {
-    require $settings_file;
-}
-
-// Enable only the correct configuration
-foreach ($config_envs as $config_env) {
-    $config['config_split.config_split.' . $config_env]['status'] = ($config_env === $current_env);
-}
-
-// Enable "excluded" config only on Acquia Environments
-$config['config_split.config_split.excluded']['status'] = ($current_env === 'acquia');
-
-// Enable error reporting for local and dev environments
-if (in_array($current_env, ['local', 'dev'])) {
+ if(getenv('APPSETTING_ENVIRONMENT')) {
+  
+  $current_env = "azure-docker";
+  if(getenv('APPSETTING_ENVIRONMENT')) {
+    $current_env = getenv('APPSETTING_ENVIRONMENT');
+  } else if(getenv('LANDO')) {
+    $current_env = "local";
+  } else if(getenv('DIGITALOCEAN')) {
+      $current_env = "do";
+  }
+  
+  $azure_envs = ["azure-uat", "azure-prod", "azure-docker"];
+  
+  if(in_array($current_env, $azure_envs)) {
+    if(getenv('NGINX_DOCUMENT_ROOT')) {
+      require getenv('NGINX_DOCUMENT_ROOT') . "/docroot/sites/default/settings.". $current_env .".php";
+    } else {
+      require "settings.". $current_env .".php";
+    }
+  } else {
+    if (file_exists($app_root . '/' . $site_path . '/settings.' . $current_env . '.php')) {
+      require $app_root . '/' . $site_path . '/settings.' . $current_env . '.php';
+    }
+  }
+  
+  // Config Environments.
+  $settings['config_sync_directory'] = '../config/default/sync';
+  $config_envs = ['local', 'dev', 'stg', 'prod', 'azure-uat', 'azure-prod', 'azure-docker'];
+  
+  // Enable only the correct configuration.
+  foreach ($config_envs as $config_env) {
+    $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $current_env);
+  }
+  
+  // Enable "excluded" config only on Acquia Environments.
+  $config['config_split.config_split.excluded']['status'] = $current_env;
+  
+  // Turns on error reporting for local and dev environments
+  if (in_array($current_env, ['local', 'dev'])) {
     error_reporting(E_ALL);
-}
+  }
+ 
+ 
+  } else {
+ 
+ 
+ 
+ 
+ 
+ $environment = isset($_ENV['AH_SITE_ENVIRONMENT']) ? 'acquia' : 'local';
+ if (file_exists($app_root . '/' . $site_path . '/settings.' . $environment . '.php')) {
+   require $app_root . '/' . $site_path . '/settings.' . $environment . '.php';
+ }
+ 
+ // Config Environments.
+ $settings['config_sync_directory'] = '../config/default/sync';
+ $config_envs = ['local', 'dev', 'stg', 'prod', 'azure-docker'];
+ 
+ // Get Actual Environment.
+ $env = isset($_ENV['AH_SITE_ENVIRONMENT']) ? $_ENV['AH_SITE_ENVIRONMENT'] : 'local';
+ 
+ // Enable only the correct configuration.
+ foreach ($config_envs as $config_env) {
+   $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $env);
+ }
+ 
+ // Enable "excluded" config only on Acquia Environments.
+ $config['config_split.config_split.excluded']['status'] = isset($_ENV['AH_SITE_ENVIRONMENT']);
+ 
+ // Turns on error reporting for local and dev environments
+ if (in_array($env, ['local', 'dev'])) {
+   error_reporting(E_ALL);
+ }
+  }
