@@ -747,6 +747,7 @@ $settings['file_scan_ignore_directories'] = [
  * larger number of entities to be processed in a single batch run.
  */
 $settings['entity_update_batch_size'] = 50;
+$settings['entity_update_backup'] = TRUE;
 
 /**
  * Entity update backup.
@@ -755,53 +756,49 @@ $settings['entity_update_batch_size'] = 50;
  * well as the original entity type and field storage definitions should be
  * retained after a successful entity update process.
  */
-$settings['entity_update_backup'] = TRUE;
 
-/**
- * Load local development override configuration, if available.
- *
- * Use settings.local.php to override variables on secondary (staging,
- * development, etc) installations of this site. Typically used to disable
- * caching, JavaScript/CSS compression, re-routing of outgoing emails, and
- * other things that should not happen on development and testing sites.
- *
- * Keep this code block at the end of this file to take full effect.
- */
-#
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
-/**
- * Load local development override configuration, if available.
- *
- * Use settings.local.php to override variables on secondary (staging,
- * development, etc) installations of this site. Typically used to disable
- * caching, JavaScript/CSS compression, re-routing of outgoing emails, and
- * other things that should not happen on development and testing sites.
- *
- * Keep this code block at the end of this file to take full effect.
- */
-$environment = isset($_ENV['AH_SITE_ENVIRONMENT']) ? 'acquia' : 'local';
-if (file_exists($app_root . '/' . $site_path . '/settings.' . $environment . '.php')) {
-  require $app_root . '/' . $site_path . '/settings.' . $environment . '.php';
-}
-
-// Config Environments.
+// Set default config sync directory
 $settings['config_sync_directory'] = '../config/default/sync';
-$config_envs = ['local', 'dev', 'stg', 'prod'];
 
-// Get Actual Environment.
-$env = isset($_ENV['AH_SITE_ENVIRONMENT']) ? $_ENV['AH_SITE_ENVIRONMENT'] : 'local';
+// Define environment detection logic
+$current_env = getenv('APPSETTING_ENVIRONMENT') ?: 'local';
 
-// Enable only the correct configuration.
-foreach ($config_envs as $config_env) {
-  $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $env);
+// Check for specific cloud environments
+if (getenv('LANDO')) {
+    $current_env = 'local';
+} elseif (getenv('DIGITALOCEAN')) {
+    $current_env = 'do';
+} elseif (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+    $current_env = 'acquia';
 }
 
-// Enable "excluded" config only on Acquia Environments.
-$config['config_split.config_split.excluded']['status'] = isset($_ENV['AH_SITE_ENVIRONMENT']);
+// Load the appropriate settings file based on the environment
+$azure_envs = ['azure-uat', 'azure-prod', 'azure-docker'];
+$config_envs = array_merge($azure_envs, ['local', 'dev', 'stg', 'prod']);
 
-// Turns on error reporting for local and dev environments
-if (in_array($env, ['local', 'dev'])) {
-  error_reporting(E_ALL);
+if (in_array($current_env, $azure_envs)) {
+    // Azure-specific logic
+    $document_root = getenv('NGINX_DOCUMENT_ROOT') ?: '';
+    $settings_file = $document_root ? $document_root . "/docroot/sites/default/settings.$current_env.php" : "settings.$current_env.php";
+} else {
+    // Non-Azure environments
+    $settings_file = $app_root . '/' . $site_path . "/settings.$current_env.php";
+}
+
+// Load the settings file if it exists
+if (file_exists($settings_file)) {
+    require $settings_file;
+}
+
+// Enable only the correct configuration
+foreach ($config_envs as $config_env) {
+    $config['config_split.config_split.' . $config_env]['status'] = ($config_env === $current_env);
+}
+
+// Enable "excluded" config only on Acquia Environments
+$config['config_split.config_split.excluded']['status'] = ($current_env === 'acquia');
+
+// Enable error reporting for local and dev environments
+if (in_array($current_env, ['local', 'dev'])) {
+    error_reporting(E_ALL);
 }
