@@ -76,7 +76,8 @@ if (extension_loaded('redis') && getenv('APPSETTING_ENABLE_REDIS')) {
   $settings['redis.connection']['port'] = getenv('APPSETTING_REDIS_PORT');
   $settings['redis.connection']['password'] = getenv('APPSETTING_REDIS_PASSWORD'); // If you are using passwords, otherwise, omit
   $settings['redis.connection']['persistent'] = TRUE; // Persistant connection.
-  $settings['cache_prefix'] = getenv('APPSETTING_REDIS_PREFIX');
+  $settings['cache_prefix'] = getenv('APPSETTING_REDIS_PREFIX') ? getenv('APPSETTING_REDIS_PREFIX') : 'drupal_wap_';
+
 
   // Apply changes to the container configuration to better leverage Redis.
   // This includes using Redis for the lock and flood control systems, as well
@@ -122,8 +123,6 @@ if (extension_loaded('redis') && getenv('APPSETTING_ENABLE_REDIS')) {
     ],
   ];
   
-  /** Optional prefix for cache entries */
-  $settings['cache_prefix'] = 'drupal_tf_';
   
   /** @see: https://pantheon.io/docs/redis/ */
   // Always set the fast backend for bootstrap, discover and config, otherwise
