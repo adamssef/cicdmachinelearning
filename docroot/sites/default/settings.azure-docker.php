@@ -76,7 +76,7 @@ if (extension_loaded('redis') && getenv('APPSETTING_ENABLE_REDIS')) {
   $settings['redis.connection']['port'] = getenv('APPSETTING_REDIS_PORT');
   $settings['redis.connection']['password'] = getenv('APPSETTING_REDIS_PASSWORD'); // If you are using passwords, otherwise, omit
   $settings['redis.connection']['persistent'] = TRUE; // Persistant connection.
-  $settings['cache_prefix'] = getenv('APPSETTING_REDIS_PREFIX') ? getenv('APPSETTING_REDIS_PREFIX') : 'drupal_tf_';
+  $settings['cache_prefix'] = getenv('APPSETTING_REDIS_PREFIX') ? getenv('APPSETTING_REDIS_PREFIX') : 'drupal_wap_';
 
 
   // Apply changes to the container configuration to better leverage Redis.
