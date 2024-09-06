@@ -785,7 +785,7 @@ $settings['entity_update_backup'] = TRUE;
   // Config Environments.
   $settings['config_sync_directory'] = '../config/default/sync';
   $config_envs = ['local', 'dev', 'stg', 'prod', 'azure-uat', 'azure-prod', 'azure-docker'];
-  
+  $current_env = "prod";
   // Enable only the correct configuration.
   foreach ($config_envs as $config_env) {
     $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $current_env);
