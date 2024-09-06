@@ -7,23 +7,23 @@
   <header class='megamenu-header'>
     <div class="inside-header-container">
       {% if data['#current_language_prefix'] == '' or data['#current_language_prefix'] == 'en' %}
-      <a class="go-home" href="/">
+      <a class="megamenu-link go-home" href="/">
         {% elseif data['#current_language_prefix'] == 'it' %}
-        <a class="go-home" href="/it">
+        <a class="megamenu-link go-home" href="/it">
           {% elseif data['#current_language_prefix'] == 'fr' %}
-          <a class="go-home" href="/fr">
+          <a class="megamenu-link go-home" href="/fr">
             {% elseif data['#current_language_prefix'] == 'de' %}
-            <a class="go-home" href="/de">
+            <a class="megamenu-link go-home" href="/de">
               {% elseif data['#current_language_prefix'] == 'es' %}
-              <a class="go-home" href="/es">
+              <a class="megamenu-link go-home" href="/es">
                 {% endif %}
                 <img id="planet-logo" src="/resources/logo/planet_logo.svg" alt="Planet Logo" class="planet-logo">
               </a>
               <div class="header-menus">
                 <nav class="header-menu main-menu">
                   {% for item in data['megamenu'] %}
-                    <span id="{{ item['id'] }}" class="business-li">
-                 <a {% if item['_blank'] %}target="_blank" {% endif %}class="business-link" href="javascript:void(0);">{{ item['title']|t }}
+                    <span id="{{ item['id'] }}" class="business-li megamenu-link">
+                 <a {% if item['_blank'] %}target="_blank" {% endif %}class="megamenu-link business-link" href="javascript:void(0);">{{ item['title']|t }}
                   <img id="{{ item['id'] }}_img" src="/resources/icons/arrow-down.svg" alt="Icon pointing down"/>
                  </a>
                </span>
@@ -32,28 +32,28 @@
                 <nav class="header-menu secondary-planet-menu">
                   {% for item in data['megamenu_cta'] %}
                     <span class="{{ item['classes'] }}">
-                <a {% if item['_blank'] %}target="_blank" {% endif %} href="{% if item['url'][data['#current_language_prefix']] %}{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}{% else %}{{ item['url'] }}{% endif %}">{{ item['title']|t }}</a>
-             </span>
+                      <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %} href="{% if item['url'][data['#current_language_prefix']] %}{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}{% else %}{{ item['url'] }}{% endif %}">{{ item['title']|t }}</a>
+                    </span>
                   {% endfor %}
                 </nav>
               </div>
     </div>
     <div class="inside-header-container--mobile-and-tablet">
       {% if data['#current_language_prefix'] == '' or data['#current_language_prefix'] == 'en' %}
-      <a class="go-home" href="/">
+      <a class="megamenu-link go-home" href="/">
         {% elseif data['#current_language_prefix'] == 'it' %}
-        <a class="go-home" href="/it">
+        <a class="megamenu-link go-home" href="/it">
           {% elseif data['#current_language_prefix'] == 'fr' %}
-          <a class="go-home" href="/fr">
+          <a class="megamenu-link go-home" href="/fr">
             {% elseif data['#current_language_prefix'] == 'de' %}
-            <a class="go-home" href="/de">
+            <a class="megamenu-link go-home" href="/de">
               {% elseif data['#current_language_prefix'] == 'es' %}
-              <a class="go-home" href="/es">
+              <a class="megamenu-link go-home" href="/es">
                 {% endif %}
                 <img id="planet-logo--mobile-and-tablet" src="/resources/logo/planet_logo.svg" alt="Planet Logo" class="planet-logo">
               </a>
               <span class="go-back-span display-none--desktop display-none">
-         <a class="go-back-to-first-level display-none--desktop" href="#">
+         <a class="megamenu-link go-back-to-first-level display-none--desktop" href="#">
          <img src="/resources/icons/arrow-left.svg" alt="Go back icon" class="arrow-left">
          </a>
          {{ "Back"|t }}
@@ -67,7 +67,7 @@
       <span class="megamenu-column__title">{{ "Accept payments"|t }}</span>
       {% for item in data['megamenu']['0']['children']['accept_payments'] %}
         <div class="megamenu-column__item">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <img class="megamenu-column__icon megamenu-column__icon__arrow" src="{{ item['icon_path'] }}"/>
             <span class="megamenu-column__mini-header">{{ item['title']|t }}</span>
             <span class="megamenu-column__mini-text">{{ item['description']|t }}</span>
@@ -80,7 +80,7 @@
       <span class="megamenu-column__title">{{ "Software for Hospitality"|t }}</span>
       {% for item in data['megamenu']['0']['children']['software_for_hospitaility'] %}
         <div class="megamenu-column__item{% if item['title'] == "Booking Engine" %} megamenu-column__item--booking-engine{% endif %}">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <img class="megamenu-column__icon megamenu-column__icon__arrow" src="{{ item['icon_path'] }}"/>
             <span class="megamenu-column__mini-header">{{ item['title']|t }}</span>
             <span class="megamenu-column__mini-text">{{ item['description']|t }}</span>
@@ -90,7 +90,7 @@
       <span class="megamenu-column__title megamenu-column__title--mt32px">{{ "Software for Retail"|t }}</span>
       {% for item in data['megamenu']['0']['children']['software_for_retail'] %}
         <div class="megamenu-column__item">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <img class="megamenu-column__icon megamenu-column__icon__arrow" src="{{ item['icon_path'] }}"/>
             <span class="megamenu-column__mini-header">{{ item['title']|t }}</span>
             <span class="megamenu-column__mini-text">{{ item['description']|t }}</span>
@@ -102,7 +102,7 @@
       <span class="megamenu-column__title">{{ "Serve any customer"|t }}</span>
       {% for item in data['megamenu']['0']['children']['serve_any_customer'] %}
         <div class="megamenu-column__item">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <img class="megamenu-column__icon megamenu-column__icon__arrow" src="{{ item['icon_path'] }}"/>
             <span class="megamenu-column__mini-header">{{ item['title']|t }}</span>
             <span class="megamenu-column__mini-text">{{ item['description']|t }}</span>
@@ -115,7 +115,7 @@
         <span class="megamenu-column__title">{{ "Tax Free for Merchants"|t }}</span>
         {% for item in data['megamenu']['0']['children']['tax_free_for_merchants'] %}
           <div class="megamenu-column__item">
-            <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+            <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
               <img class="megamenu-column__icon megamenu-column__icon__arrow" src="{{ item['icon_path'] }}"/>
               <span class="megamenu-column__mini-header">{{ item['title']|t }}</span>
               <span class="megamenu-column__mini-text">{{ item['description']|t }}</span>
@@ -124,7 +124,7 @@
         {% endfor %}
         <span class="megamenu-column__title megamenu-column__title--taxfree-for-shoppers">{{ "Tax Free for Shoppers"|t }}</span>
         <span class="track-my-refund-menu-item megamenu-cta-button">
-            <a href="https://www.planetpayment.com/track-my-refund" target="_blank">{{ "Track my refund"|t }}</a>
+            <a class="megamenu-link" href="https://www.planetpayment.com/track-my-refund" target="_blank">{{ "Track my refund"|t }}</a>
             </span>
       </div>
     </div>
@@ -133,7 +133,7 @@
   <div class="megamenu-solutions__desktop display-none">
     {% for item in  data['megamenu']['1']['children'] %}
       <div class="{{ item['classes'] }}">
-        <a {% if item['_blank'] %}target="_blank" {% endif %}class="big-box-link" href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+        <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}class="big-box-link" href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
           <img class="solutions-column__icon" src="{{ item['icon_path'] }}"/>
           <div class="megamenu-solutions__middle-layer">
             <div class="ttl-and-txt">
@@ -152,7 +152,7 @@
     <div class="navigation-items navigation-items--first">
       {% for item in data['megamenu']['2']['children']|slice(0, 4) %}
         <div class="{{ item['classes'] }}">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
             <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
           </a>
@@ -164,23 +164,23 @@
         <div class="{{ item['classes'] }}">
           {% if "ecampus" in item.title or "eCampus" in item.title %}
             {% if data['#current_language_prefix'] == 'fr' %}
-                <a {% if item['_blank'] %}target="_blank" {% endif %}href="https://ecampus.weareplanet.com/local/coursecatalogue/index.php?categoryid=4&lang=fr_wp">
+                <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="https://ecampus.weareplanet.com/local/coursecatalogue/index.php?categoryid=4&lang=fr_wp">
                   <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
                   <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
                 </a>
             {% elseif data['#current_language_prefix'] == 'de' %}
-              <a {% if item['_blank'] %}target="_blank" {% endif %}href="https://ecampus.weareplanet.com/local/coursecatalogue/index.php?categoryid=4&lang=de_wp">
+              <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="https://ecampus.weareplanet.com/local/coursecatalogue/index.php?categoryid=4&lang=de_wp">
                 <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
                 <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
               </a>
             {% else %}
-              <a {% if item['_blank'] %}target="_blank" {% endif %}href="https://ecampus.weareplanet.com/local/coursecatalogue/index.php?categoryid=4">
+              <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="https://ecampus.weareplanet.com/local/coursecatalogue/index.php?categoryid=4">
                 <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
                 <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
               </a>
             {% endif %}
           {% else %}
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
             <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
           </a>
@@ -195,7 +195,7 @@
       <div class="megamenu-column__title">{{ "Featured customer stories"|t }}</div>
       <div class="iteration-container">
         {% for case_study in data.case_studies %}
-          <a href="{{ case_study.url }}">
+          <a class="megamenu-link" href="{{ case_study.url }}">
             <div class="last-four-case-studies__case_study">
               <div class="four-last-case-studies__item" style="background: url('{{ case_study.image_url }}'); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
               <span class="megamenu-column__mini-header">{{ case_study.title }}</span>
@@ -209,7 +209,7 @@
     <div class="navigation-items">
       {% for item in data['megamenu']['3']['children'] %}
         <div class="{{ item['classes'] }}">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
             <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
           </a>
@@ -221,28 +221,28 @@
 <!-- Megamenu for mobile and tablet -->
 <div class="megamenu-mobile-and-tablets display-none">
   <div class="merged-menu-items">
-    <a class="arrow-right-anchor" id="anchor-products" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Products"|t }}
+    <a class="arrow-right-anchor megamenu-link" id="anchor-products" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Products"|t }}
       <img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
-    <a class="arrow-right-anchor" id="anchor-solutions" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Solutions"|t }}
+    <a class="arrow-right-anchor megamenu-link" id="anchor-solutions" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Solutions"|t }}
       <img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
-    <a class="arrow-right-anchor" id="anchor-resources" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Resources"|t }}
+    <a class="arrow-right-anchor megamenu-link" id="anchor-resources" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Resources"|t }}
       <img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
-    <a class="arrow-right-anchor" id="anchor-company" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Company"|t }}
+    <a class="arrow-right-anchor megamenu-link" id="anchor-company" href="javascript:void(0);" alt="An arrow pointing right.">{{ "Company"|t }}
       <img src="/resources/icons/arrow-right-megamenu.svg" alt="An arrow pointing right."></a>
     <span class="protel-login">
-      <a target="_blank" href="https://app.protel.net">{{ "Protel login"|t }}</a>
+      <a class="megamenu-link" target="_blank" href="https://app.protel.net">{{ "Protel login"|t }}</a>
       </span>
     <span class="contact-us">
       {% if data['#current_language_prefix'] == '' or data['#current_language_prefix'] == 'en' %}
-        <a href="/contact">{{ "Contact us"|t }}</a>
+        <a class="megamenu-link" href="/contact">{{ "Contact us"|t }}</a>
       {% elseif data['#current_language_prefix'] == 'it' %}
-        <a href="/it/contattaci">{{ "Contact us"|t }}</a>
+        <a class="megamenu-link" href="/it/contattaci">{{ "Contact us"|t }}</a>
       {% elseif data['#current_language_prefix'] == 'fr' %}
-        <a href="/fr/contact">{{ "Contact us"|t }}</a>
+        <a class="megamenu-link" href="/fr/contact">{{ "Contact us"|t }}</a>
       {% elseif data['#current_language_prefix'] == 'de' %}
-        <a href="/de/contact">{{ "Contact us"|t }}</a>
+        <a class="megamenu-link" href="/de/contact">{{ "Contact us"|t }}</a>
       {% elseif data['#current_language_prefix'] == 'es' %}
-        <a href="/es/contactar">{{ "Contact us"|t }}</a>
+        <a class="megamenu-link" href="/es/contactar">{{ "Contact us"|t }}</a>
       {% endif %}
       </span>
   </div>
@@ -251,7 +251,7 @@
       <span class="megamenu-column__title">{{ "Accept payments"|t }}</span>
       {% for item in data['megamenu']['0']['children']['accept_payments'] %}
         <div class="megamenu-column__item">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <div class="img-and-mini-header-container">
               <div class="img-and-mini-header-sub-container">
                 <div class="img-wrapper">
@@ -270,7 +270,7 @@
       <span class="megamenu-column__title">{{ "Software for Hospitality"|t }}</span>
       {% for item in data['megamenu']['0']['children']['software_for_hospitaility'] %}
         <div class="megamenu-column__item{% if item['title'] == "Booking Engine" %} megamenu-column__item--booking-engine{% endif %}">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <div class="img-and-mini-header-container">
               <div class="img-and-mini-header-sub-container">
                 <div class="img-wrapper">
@@ -287,7 +287,7 @@
       <span class="megamenu-column__title">{{ "Software for Retail"|t }}</span>
       {% for item in data['megamenu']['0']['children']['software_for_retail'] %}
         <div class="megamenu-column__item">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <div class="img-and-mini-header-container">
               <div class="img-and-mini-header-sub-container">
                 <div class="img-wrapper">
@@ -306,7 +306,7 @@
       <span class="megamenu-column__title">{{ "Serve any customer"|t }}</span>
       {% for item in data['megamenu']['0']['children']['serve_any_customer'] %}
         <div class="megamenu-column__item">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <div class="img-and-mini-header-container">
               <div class="img-and-mini-header-sub-container">
                 <div class="img-wrapper">
@@ -326,7 +326,7 @@
         <span class="megamenu-column__title">{{ "Tax Free for Merchants"|t }}</span>
         {% for item in data['megamenu']['0']['children']['tax_free_for_merchants'] %}
           <div class="megamenu-column__item{% if item['title'] == "Booking Engine" %} megamenu-column__item--booking-engine{% endif %}">
-            <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+            <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
               <div class="img-and-mini-header-container">
                 <div class="img-and-mini-header-sub-container">
                   <div class="img-wrapper">
@@ -342,7 +342,7 @@
         {% endfor %}
         <span class="megamenu-column__title megamenu-column__title--taxfree-for-shoppers">{{ "Tax Free for Shoppers"|t }}</span>
         <span class="track-my-refund-menu-item megamenu-cta-button">
-            <a target="_blank" href="https://www.planetpayment.com/track-my-refund">{{ "Track my refund"|t }}</a>
+            <a class="megamenu-link" target="_blank" href="https://www.planetpayment.com/track-my-refund">{{ "Track my refund"|t }}</a>
             </span>
       </div>
     </div>
@@ -350,7 +350,7 @@
   <div class="megamenu-mobile-and-tablets__container megamenu-mobile-and-tablets__container--solutions display-none">
     {% for item in  data['megamenu']['1']['children'] %}
       <div class="{{ item['classes'] }}">
-        <a {% if item['_blank'] %}target="_blank" {% endif %}class="big-box-link" href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+        <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}class="big-box-link" href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
           <img class="solutions-column__icon" src="{{ item['icon_path'] }}"/>
           <div class="megamenu-solutions__middle-layer">
             <div class="ttl-and-txt">
@@ -369,7 +369,7 @@
     <div class="navigation-items">
       {% for item in data['megamenu']['2']['children'] %}
         <div class="{{ item['classes'] }}">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
             <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
           </a>
@@ -381,7 +381,7 @@
       <div class="iteration-container">
         {% set case_study_count = data.case_studies|length - 1 %}
         {% for key, case_study in data.case_studies %}
-          <a href="{{ case_study.url }}">
+          <a class="megamenu-link" href="{{ case_study.url }}">
             <div class="last-four-case-studies__case_study">
               <div class="four-last-case-studies__item four-last-case-studies__item--last" style="background: url('{{ case_study.image_url }}'); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
               {% if key == case_study_count %}
@@ -399,7 +399,7 @@
     <div class="navigation-items">
       {% for item in data['megamenu']['3']['children'] %}
         <div class="{{ item['classes'] }}">
-          <a {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
             <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
             <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
           </a>
