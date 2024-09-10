@@ -1,0 +1,576 @@
+{% set heroTitle  = 'Connecting <span class="text-[#9aaef9]">payments</span> and<br><span class="text-[#9aaef9]">technology</span>' %}
+{% set heroDescription = 'Avoid juggling multiple providers. Planet combines Tax Free, Payments and Software in one partner for simplicity.' %}
+{% set heroContactButtonText = 'Contact us' %}
+{% set heroContactButtonLink = '/contact-us' %}
+{% set madeForTitle = 'Software and Payments made for' %}
+{% set madeForRetailTitle = 'Retail' %}
+{% set retailLink = '/retail' %}
+{% set hospitalityLink = '/hospitality' %}
+{% set travelLink = '/travel' %}
+{% set paymentsLink = '/payments' %}
+{% set hotelPmsLinks = '/hotel-pms' %}
+{% set pciProxyLink = '/pci-proxy' %}
+{% set taxFreeLink = '/vat-refund' %}
+{% set findOutMoreText = 'Find out more' %}
+{% set learnMoreText = 'Learn more' %}
+{% set madeForRetailDescription = 'Retailers from luxury to household brands partner with Planet to elevate the shopping and Tax Free experience, while streamlining operations through our consolidated tools.' %}
+{% set madeForHospitalityTitle = 'Hospitality' %}
+{% set madeForHospitalityDescription = 'Hotels, restaurants, bars, and entertainment brands seeking a single, global partner for flexible payments and software solutions.' %}
+{% set madeForTravelTitle = 'Travel' %}
+{% set madeForTravelDescription = 'Parking, Airlines, Trainlines and Electric Vehicle Charging brands choose Planet to accept and process payments conveniently and securely, anywhere.' %}
+{% set exploreProductsTitle = 'Explore our products' %}
+{% set exploreProductsDescription = 'Get software and payments, without needing separate providers.' %}
+{% set paymentsTitle = 'Payments' %}
+{% set paymentsDescription = 'Securely manage various payments online, in-person, or on-the-go. Accept multiple currencies via a single, global partner.' %}
+{% set pmsTitle = 'Property Management Software' %}
+{% set pmsDescription = 'Run day-to-day operations on an easy-to-use, secure and scalable property management software. Easily integrate PMS with the hospitality ecosystem.' %}
+{% set tokenVaultTitle = 'Token Vault' %}
+{% set tokenVaultDescription = 'Collect and tokenize sensitive payment data any way you want and securely share tokens across multiple processors.' %}
+{% set taxFreeTitle = 'Tax Free' %}
+{% set taxFreeDescription = 'Make global travel a seamless and rewarding experience and improve the efficiency of Tax Free form issuance for your team.' %}
+{% set whyChooseTitle = 'Why choose Planet' %}
+{% set whyChooseDescription = 'We connect payments, software and technology in a flexible way that works best for your business, all through one strategic and scalable partnership, saving you time and money.' %}
+{% set removeFriction = 'Remove friction' %}
+{% set generateRevenue = 'Generate revenue' %}
+{% set simplify = 'Simplify' %}
+{% set frictionTitle = 'Better serve your customers by removing friction' %}
+{% set frictionDescription = 'Our unique connected approach helps you to create a hassle-free, enjoyable, and consistent experience for all your customers, wherever they are.' %}
+{% set revenueTitle = 'Generate more revenue with added-value services' %}
+{% set revenueDescription = 'As tourist spend increases, optimise your revenue from payments with our currency solutions and VAT Refund (Tax Free) services.' %}
+{% set simplifyTitle = 'Streamline without compromising flexibility' %}
+{% set simplifyDescription = 'Consolidate your tech stack with Planet as your single partner for payments, software, and Tax Free – locally and globally. Or adopt just the solutions you need - the choice is yours.' %}
+{% set ourNumbersTitle = 'Our numbers speak for themselves' %}
+{% set ourNumbersDescription = 'Planet is a leading global provider of integrated technology and payments solutions for retail and hospitality customers. We create great experiences for the millions of people who use our Payments, Software, and Tax Free solutions every minute of every day.' %}
+{% set yearsExperienceDescription = 'Years of experience' %}
+{% set customersCountDescription = 'Customers' %}
+{% set activeMarkets = 'Active markets' %}
+{% set theyChosePlanetTitle = 'They chose Planet' %}
+{% set readAllCustomerStoriesText = 'Read all customer stories' %}
+{% set startWithPlanetTitle = 'Start with Planet today' %}
+{% set getInTouchText = 'Get in touch' %}
+{% set usingPlanetFor = 'Using Planet for' %}
+{% set solutionsMadeFor = 'Payment and technology<br>solutions for' %}
+{% set testimonials = [
+    {
+        'logo': '/resources/logos/Logo_Chopard.svg',
+        'name': 'Chopard',
+        'vertical': 'Payments',
+        'review': '"Planet software has transformed our business operations. The intuitive interface, customizable features, and responsive customer support have been exceptional. With Planet, we\'ve streamlined processes, increased efficiency, and received unparalleled assistance whenever needed. Highly recommended for any business seeking reliable software solutions."',
+        'person': 'Qiao Zhang',
+        'role': 'VIP Sales Manager',
+    },
+    {
+        'logo': '/resources/logos/homepage/el_corte_ingles.png',
+        'name': 'El Corte Ingles',
+        'vertical': 'Tax Free',
+        'review': '"I believe that the evolution of the company together with Planet as a partner in the Tax Free service has made us go from a weakness in the way we do things to being leaders or one of the leading companies in Europe in this process, as our clients tell us."',
+        'person': 'Javier Fernández Andrino',
+        'role': 'Director of International Retail and Luxury Business Development',
+    },
+    {
+        'logo': '/resources/logos/homepage/blue-lagoon-iceland-logo.png',
+        'name': 'Blue Lagoon',
+        'vertical': 'Payments',
+        'review': '"Planet is a strategic payment partner. It’s enabling us to do the grand vision. With Planet, a guest can walk around the lagoon, and go to the restaurant, spa, cafe and purchase skincare and never have to (physically) checkout, as we charge the card with everything they purchase, using the secure token. I’ve been working with several payment partners, and Planet is number one."',
+        'person': 'Sigurður Long',
+        'role': 'Chief Information Officer & Chief Digital Officer',
+    }
+] %}
+
+{% set categories = [
+    'retail',
+    'hotels',
+    'tax free',
+    'parking',
+    'EV charging',
+    'casinos',
+    'wellness',
+    'restaurants',
+    'e-com',
+    'supermarkets',
+    'attractions'
+] %}
+
+<div class="bg-zinc-50">
+	<div class="home-hero requires-transparent-header planet-header-transparent orbs-animation bg-zinc-50 relative">
+		<div class="absolute z-0 w-full hero-b-radius h-full overflow-hidden bg-black">
+			<div class="orb-2"><img src="/resources/images/orb-pink.png"></div>
+			<div class="orb-1"><img src="/resources/images/orb-blue.png"></div>
+		</div>
+		<div class="relative h-full z-[1] flex items-center bg-cover bg-right min-h px-4 lg:px-0 content-center front-page-hero no-mobile-bg">
+			<div class="container max-w-[1280px] w-full mx-auto py-14 px-4 md:py-20">
+				<div class="pl-0 md:pl-14 lg:pl-[134px] mx-auto w-full text-left">
+					<div class="leading-[52px] overflow-hidden text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white text-left pb-6">
+					{{solutionsMadeFor|raw}}<span class="md:ml-4 lg:ml-4 w-full md:w-auto spinny-wrapper">
+						<span class="spinny-words">
+							{% for category in categories %}
+								<span>{{ category }}</span>
+							{% endfor %}
+						</span>
+					</span>
+					</div>
+					
+					<a href="{{heroContactButtonLink}}" class="lg:transition-all lg:duration-300 text-left ml-0 bg-white inline-block hover:bg-[#e00083] hover:text-white text-black font-semibold py-4 px-10 rounded-full mr-4">
+						{{heroContactButtonText}}
+					</a>
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="logos-partners py-6 bg-zinc-50">
+		<div class="swiper swiper-brands">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_1.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_2.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_3.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_4.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_5.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_6.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_7.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_8.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_9.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_10.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_11.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_12.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_13.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_14.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_15.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_16.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_17.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_18.svg')]"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="made-for py-12 md:py-20 lg:py-20 px-4 md:px-8 bg-zinc-50">
+		<div class="lg:container mx-auto">
+			<h2 class="block text-black pb-12 text-4xl leading-[44px] md:leading-none md:text-[56px] text-center font-semibold">{{madeForTitle}}</h2>
+			<div data-items="Retail,Hospitality,Travel"  data-sections=".vertical-1,.vertical-2,.vertical-3" class="plnt-switch verticals-switch mb-12">
+                <div class="toggle"></div>
+            </div>
+
+                <div>
+				<div class="toggle-section vertical-1" style="display: block;">
+					<div class="related-product-1">
+						<div class="retail-box justify-center items-stretch grid md:grid-cols-2 gap:4 md:gap-6 max-w-5xl mx-auto">
+							<div class="order-2 md:order-1 w-full flex items-center how-to-taxfree__card">
+								<div class="bg-zinc-50">
+									<h3 class="block text-[#202020] pb-4 text-[28px] md:text-[38px] text-left font-semibold">{{madeForRetailTitle}}</h3>
+									<p class="text-base md:text-xl md:max-w-sm font-light">{{madeForRetailDescription}}</p>
+									<div class="mt-8">
+										<a href="{{retailLink}}" class="arrow-link-animation">
+											<span class="arrow-text link-text font-semibold text-[#005AB2]">{{findOutMoreText}}</span>
+											<span class="arrow-img inline-block ml-4"><img alt="arrow-icon" src="/resources/icons/arrow_right_blue.svg"></span>
+										</a>
+									</div>
+								</div>
+
+							</div>
+							<div class="order-1 md:order-2 w-full flex items-cente how-to-taxfree__card">
+								<div class="bg-zinc-50">
+									<img src="/resources/images/retail-group.png" alt="{{madeForRetailTitle}}">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="toggle-section vertical-2" style="display: none;">
+					<div class="related-product-2">
+						<div class="hospitality-box justify-center items-stretch grid md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
+							<div class="order-2 md:order-1 w-full flex items-center how-to-taxfree__card">
+								<div class="bg-zinc-50">
+									<h3 class="block text-[#202020] pb-4 text-[28px] md:text-[38px] text-left font-semibold">{{madeForHospitalityTitle}}</h3>
+									<p class="text-base md:max-w-sm md:text-xl font-light">{{madeForHospitalityDescription}}</p>
+									<div class="mt-8">
+										<a href="{{hospitalityLink}}" class="arrow-link-animation">
+											<span class="arrow-text link-text font-semibold text-[#005AB2]">{{findOutMoreText}}</span>
+											<span class="arrow-img inline-block ml-4"><img alt="arrow-icon" src="/resources/icons/arrow_right_blue.svg"></span>
+										</a>
+									</div>
+								</div>
+
+							</div>
+							<div class="order-1 md:order-2 w-full flex items-cente how-to-taxfree__card">
+								<div class="bg-zinc-50">
+									<img src="/resources/images/hospitality.png" alt="{{madeForHospitalityTitle}}">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="toggle-section vertical-3" style="display: none;">
+					<div class="related-product-3">
+						<div class="travel-box justify-center items-stretch grid md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
+							<div class="order-2 md:order-1 w-full flex items-center how-to-taxfree__card">
+								<div class="bg-zinc-50 -6">
+									<h3 class="block text-[#202020] pb-4 text-[28px] md:text-[38px] text-left font-semibold">{{madeForTravelTitle}}</h3>
+									<p class="text-base md:max-w-sm md:text-xl font-light">{{madeForTravelDescription}}</p>
+									<div class="mt-8">
+										<a href="{{travelLink}}" class="arrow-link-animation">
+											<span class="arrow-text link-text font-semibold text-[#005AB2]">{{findOutMoreText}}</span>
+											<span class="arrow-img inline-block ml-4"><img alt="arrow-icon" src="/resources/icons/arrow_right_blue.svg"></span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="order-1 md:order-2 w-full flex items-cente how-to-taxfree__card">
+								<div class="bg-zinc-50">
+									<img src="/resources/images/travel.png" alt="{{madeForHospitalityTitle}}">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+	<div class="products-showcase bg-black py-12 md:py-20 rounded-[32px]">
+		<div class="lg:container px-4 md:px-8 mx-auto text-zinc-100 text-center">
+			<h2 class="text-4xl leading-[44px] md:text-[56px] font-bold mb-2 md:leading-none">{{exploreProductsTitle}}</h2>
+			<p class="text-xl mb-12 font-light">{{exploreProductsDescription}}</p>
+			<div
+				class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 mx-auto lg:max-w-[1096px]">
+				<!-- Payments -->
+				<div class="transition-all hover:bg-neutral-900 p-6 rounded-lg border-white border border-solid text-left flex flex-col justify-between">
+					<div class="flex flex-col mb-4">
+						<div class="mb-4"><img src="/resources/icons/payments.svg" alt="{{paymentsTitle}}"></div>
+						<h2 class="text-2xl md:text-[32px] font-semibold mb-4 mt-2">{{paymentsTitle}}</h2>
+						<p class="mb-6 text-base md:text-xl font-light">{{paymentsDescription}}</p>
+					</div>
+					<a href="{{paymentsLink}}" class="arrow-link-animation mb-1">
+						<span class="arrow-text link-text font-semibold text-zinc-100">{{learnMoreText}}</span>
+						<span class="arrow-img inline-block ml-4"><img alt="arrow-icon" src="/resources/icons/arrow-right.svg"></span>
+					</a>
+				</div>
+				<!-- Property Management Software -->
+				<div class="transition-all hover:bg-neutral-900 p-6 rounded-lg border-white border border-solid text-left flex flex-col justify-between">
+					<div class="flex flex-col mb-4">
+						<div class="mb-4"><img src="/resources/icons/hospitality.svg" alt="{{pmsTitle}}"></div>
+						<h2 class="text-2xl md:text-[32px] font-semibold mb-4 mt-2">{{pmsTitle}}</h2>
+						<p class="mb-6 text-base md:text-xl font-light">{{pmsDescription}}</p>
+					</div>
+					<a href="{{hotelPmsLinks}}" class="arrow-link-animation mb-1">
+						<span class="arrow-text link-text font-semibold text-zinc-100">{{learnMoreText}}</span>
+						<span class="arrow-img inline-block ml-4"><img alt="arrow-icon" src="/resources/icons/arrow-right.svg"></span>
+					</a>
+				</div>
+				<!-- Token Vault -->
+				<div class="transition-all hover:bg-neutral-900 p-6 rounded-lg border-white border border-solid text-left flex flex-col justify-between">
+					<div class="flex flex-col mb-4">
+						<div class="mb-4"><img src="/resources/icons/vault.svg" alt="{{tokenVaultTitle}}"></div>
+						<h2 class="text-2xl md:text-[32px] font-semibold mb-4 mt-2">{{tokenVaultTitle}}</h2>
+						<p class="mb-6 text-base md:text-xl font-light">{{tokenVaultDescription}}</p>
+					</div>
+					<a href="{{pciProxyLink}}" class="arrow-link-animation mb-1">
+						<span class="arrow-text link-text font-semibold text-zinc-100">{{learnMoreText}}</span>
+						<span class="arrow-img inline-block ml-4"><img alt="arrow-icon" src="/resources/icons/arrow-right.svg"></span>
+					</a>
+				</div>
+				<!-- Tax Free -->
+				<div class="transition-all hover:bg-neutral-900 p-6 rounded-lg border-white border border-solid text-left flex flex-col justify-between">
+					<div class="flex flex-col mb-4">
+						<div class="mb-4"><img src="/resources/icons/tax-free.svg" alt="{{taxFreeTitle}}"></div>
+						<h2 class="text-2xl md:text-[32px] font-semibold mb-4 mt-2">{{taxFreeTitle}}</h2>
+						<p class="mb-6 text-base md:text-xl font-light">{{taxFreeDescription}}</p>
+					</div>
+					<a href="{{taxFreeLink}}" class="arrow-link-animation mb-1">
+						<span class="arrow-text link-text font-semibold text-zinc-100">{{learnMoreText}}</span>
+						<span class="arrow-img inline-block ml-4"><img alt="arrow-icon" src="/resources/icons/arrow-right.svg"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="made-for pt-12 md:pt-20 md:pb-20 lg:pt-12 lg:pb-24 px-4 md:px-8 mx-auto bg-zinc-50">
+		<div class="max-w-5xl mx-auto">
+			<h2 class="block text-[#202020] text-4xl leading-[44px] md:leading-none md:text-[56px] text-center font-semibold mb-4">{{whyChooseTitle}}</h2>
+			<p class="text-base md:text-xl mb-8 md:mb-12 text-center font-light">{{whyChooseDescription}}
+			</p>
+		</div>
+		<div class="hidden md:block">
+			<div class="max-w-[74rem] mx-auto flex items-center justify-center md:flex-col">
+				<div class="grid grid-cols-2 md:grid-cols-12 lg:grid-cols-3 gap-4 md:gap-6 w-full">
+					<div class="hidden md:flex md:col-span-2 lg:hidden"></div>
+					<div class="col-span-1 md:col-span-3 lg:col-span-1 flex flex-col md:w-full lg:w-auto md:items-start justify-center lg:pl-40">
+						<button data-pro="friction" class="pros-showcase-btn text-left z-10 py-4 mb-4 font-semibold px-8 bg-[#f0f3fe] rounded-full  hover:bg-[#e0e6fd] hover:text-[#202020]">{{removeFriction}}</button>
+						<button data-pro="revenue" class="pros-showcase-btn text-left z-10 py-4 mb-4 font-semibold px-8 bg-[#f0f3fe] rounded-full hover:bg-[#e0e6fd] hover:text-[#202020]">{{generateRevenue}}</button>
+						<button data-pro="simplify" class="pros-selected pros-showcase-btn text-left z-10 py-4 mb-4 font-semibold px-8 bg-[#f0f3fe] rounded-full  hover:bg-[#e0e6fd] hover:text-[#202020]">{{simplify}}</button>
+					</div>
+					<div class="col-span-1 md:col-span-5 lg:col-span-2">
+						<div class="hidden pros-wrapper pros-wrapper-friction ">
+							<div class="grid grid-cols-2 gap-4 md:gap-8 items-center">
+								<div class="col-span-2 lg:col-span-1">
+									<div class="bg-[url('/resources/images/use-case-1.jpg')] md:aspect-[1/1.3] lg:min-h-[512px] bg-cover bg-center rounded-lg w-full h-full"></div>
+								</div>
+								<div class="hidden lg:block col-span-1 mt-4 lg:max-w-72">
+									<h2 class="text-[32px] font-bold leading-10">{{frictionTitle}}</h2>
+									<p class="mt-2 font-light text-lg">{{frictionDescription}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="hidden pros-wrapper pros-wrapper-revenue">
+							<div class=" grid grid-cols-2 gap-4 md:gap-8 items-center">
+								<div class="col-span-2 lg:col-span-1">
+									<div class="bg-[url('/resources/images/use-case-2.jpg')] md:aspect-[1/1.3] lg:min-h-[512px] bg-cover bg-center rounded-lg w-full h-full"></div>
+								</div>
+								<div class="hidden lg:block col-span-1 mt-4 lg:max-w-72">
+									<h2 class="text-[32px] font-bold leading-10">{{revenueTitle}}</h2>
+									<p class="mt-2 font-light text-lg">{{revenueDescription}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="pros-wrapper pros-wrapper-simplify">
+							<div class="grid grid-cols-2 gap-4 md:gap-8 items-center">
+								<div class="col-span-2 lg:col-span-1">
+									<div class="bg-[url('/resources/images/use-case-3.jpg')] md:aspect-[1/1.3] lg:min-h-[512px] bg-cover bg-center rounded-lg w-full h-full"></div>
+								</div>
+								<div class="hidden lg:block col-span-1 mt-4 lg:max-w-72">
+									<h2 class="text-[32px] font-bold leading-10">{{simplifyTitle}}</h2>
+									<p class="mt-2 font-light text-lg">{{simplifyDescription}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hidden md:flex md:col-span-2 lg:hidden"></div>
+
+				</div>
+				<div class="tablet-pros pt-8 max-w-2xl mx-auto hidden md:block lg:hidden">
+					<div class="hidden text-center col-span-1 mt-4 pros-wrapper pros-wrapper-friction">
+						<h2 class="text-[32px] font-bold leading-10">{{frictionTitle}}</h2>
+						<p class="mt-2 font-light text-lg">{{frictionDescription}}</p>
+					</div>
+					<div class="hidden text-center col-span-1 mt-4 pros-wrapper pros-wrapper-revenue">
+						<h2 class="text-[32px] font-bold leading-10">{{revenueTitle}}</h2>
+						<p class="mt-2 font-light text-lg">{{revenueDescription}}</p>
+					</div>
+					<div class="text-center col-span-1 mt-4 pros-wrapper pros-wrapper-simplify">
+						<h2 class="text-[32px] font-bold leading-10">{{simplifyTitle}}</h2>
+						<p class="mt-2 font-light text-lg">{{simplifyDescription}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="block md:hidden pb-12">
+		<div class="swiper swiper-pros">
+			<div class="swiper-custom-pagination-wrapper">
+				<div class="swiper-custom-pagination-box py-2 px-4 bg-[#f0f3fe] mb-4 rounded-full">
+					<div class="swiper-pagination swiper-custom-pagination"></div>
+				</div>
+			</div>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide text-center">
+					<div class="h-44 rounded-lg w-full bg-cover bg-no-repeat bg-center" style="background-image:url(/resources/images/use-case-2.jpg)"></div>
+					<div class="mt-4 text-center">
+						<button class="pro-mobile-claim w-full text-center py-4 mb-4 font-semibold px-8 bg-[#f0f3fe] rounded-full focus:outline-none">{{generateRevenue}}</button>
+						<div class="toggle-wrapper h-12"></div>
+						<h2 class="text-2xl font-bold">{{revenueTitle}}</h2>
+						<p class="mt-2 font-light text-base">{{revenueDescription}}</p>
+					</div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="h-44 rounded-lg w-full bg-cover bg-no-repeat bg-center" style="background-image:url(/resources/images/use-case-1.jpg)"></div>
+					<div class="mt-4 text-center">
+						<button class="pro-mobile-claim w-full text-center py-4 mb-4 font-semibold px-8 bg-[#f0f3fe] rounded-full focus:outline-none ">{{removeFriction}}</button>
+						<div class="toggle-wrapper h-12"></div>
+						<h2 class="text-2xl font-bold">{{frictionTitle}}</h2>
+						<p class="mt-2 font-light text-base">{{frictionDescription}}</p>
+					</div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="h-44 rounded-lg w-full bg-cover bg-no-repeat bg-center" style="background-image:url(/resources/images/use-case-3.jpg)"></div>
+					<div class="mt-4 text-center">
+						<button class="pro-mobile-claim w-full text-center py-4 mb-4 font-semibold px-8 bg-[#f0f3fe] rounded-full focus:outline-none">{{simplify}}</button>
+						<div class="toggle-wrapper h-12"></div>
+						<h2 class="text-2xl font-bold">{{simplifyTitle}}</h2>
+						<p class="mt-2 font-light text-base">{{simplifyDescription}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section class="bg-gray-100 py-12 md:py-20 rounded-[32px]">
+		<div class="max-w-5xl mx-auto text-center sm:px-6 px-4 md:px-8">
+			<h2 class="text-4xl md:text-[56px] leading-[44px] md:leading-none font-semibold text-gray-900">{{ourNumbersTitle}}</h2>
+			<p class="font-light mt-4 text-base md:text-xl text-[#202020]">
+				{{ourNumbersDescription}}
+			</p>
+			<div class="mt-12 flex flex-col md:flex-row justify-center gap-8 md:gap-20">
+				<div class="flex flex-col items-center">
+					<span class="text-[56px] md:text-[84px] font-semibold text-[#4f46e5] leading-none">35+</span>
+					<span class="mt-1 text-xl font-medium text-gray-900">{{yearsExperienceDescription}}</span>
+				</div>
+				<div class="flex flex-col items-center">
+					<span class="text-[56px] md:text-[84px] font-semibold text-[#4f46e5] leading-none">800K+</span>
+					<span class="mt-1 text-xl font-medium text-gray-900">{{customersCountDescription}}</span>
+				</div>
+				<div class="flex flex-col items-center">
+					<span class="text-[56px] md:text-[84px] font-semibold text-[#4f46e5] leading-none">120+</span>
+					<span class="mt-1 text-xl font-medium text-gray-900">{{activeMarkets}}</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="logos-partners py-6 bg-zinc-50">
+		<div class="swiper swiper-brands">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_1.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_2.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_3.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_4.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_5.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_6.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_7.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_8.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_9.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_10.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_11.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_12.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_13.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_14.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_15.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_16.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_17.svg')]"></div>
+				</div>
+				<div class="swiper-slide text-center">
+					<div class="min-h-9 inline-block h-full w-full bg-no-repeat bg-center bg-[url('/resources/logos/homepage/logo_18.svg')]"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bg-zinc-50">
+		<div class="md:max-w-[1344px] mx-auto pt-12 px-4 md:px-8 mx-auto">
+			<h2 class="block text-black text-4xl leading-[44px] md:leading-none md:text-[56px] text-center font-semibold mb-8 md:mb-12">{{ theyChosePlanetTitle }}</h2>
+			<div>
+				<div class="flex items-center justify-center flex-col rounded-[32px] overflow-hidden" style="box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);">
+					<div class="w-full">
+						<div class="swiper swiper-testimonials">
+							<div class="swiper-wrapper">
+								   {% for testimonial in testimonials %}
+                                <div class="swiper-slide">
+                                    <div class="bg-zinc-50 p-4 md:p-8 h-full w-full text-center">
+                                        <img src="{{ testimonial.logo }}" alt="{{ testimonial.name }} Logo" class="max-w-44 mx-auto mb-6">
+                                        <h1 class="text-xl mb-4">Using Planet for
+                                            <span class="font-bold">{{ testimonial.vertical }}</span>
+                                        </h1>
+                                        <p class="font-light text-[#202020] text-xl leading-7 mb-6">{{ testimonial.review }}</p>
+                                        <p class="text-[#202020]">{{ testimonial.person }}</p>
+                                        <p class="text-[#202020] font-semibold">{{ testimonial.role }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="custom-pagination">
+						<div class="flex justify-center mt-6 mb-8">
+							<button class="prev-inner-button w-8 h-8 bg-[#f0f3fe] rounded-full flex items-center justify-center mx-2 hover:bg-gray-300">
+								<svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+								</svg>
+							</button>
+							<button class="next-inner-button w-8 h-8 bg-[#f0f3fe] rounded-full flex items-center justify-center mx-2 hover:bg-gray-300">
+								<svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex justify-center pt-10 pb-12 md:pb-0">
+				<a href="{{ caseStudiesLink }}" class="lg:transition-all lg:duration-300 text-center bg-black inline-block hover:bg-[#e00083] hover:text-zinc-100 text-zinc-100 font-semibold py-4 px-6 rounded-full mr-4">
+					{{ readAllCustomerStoriesText }}
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="bg-zinc-50">
+		<div class="md:max-w-[1344px] mx-auto px-4 md:px-8 text-zinc-100 text-center pt-0 pb-12 md:py-20 w-full ">
+			<div class="relative z-[1] bg-[url('/resources/images/last-cta.jpg')] rounded-[32px] flex items-center bg-cover bg-center py-8 md:py-0 md:min-h-80 px-4 lg:px-0 content-center front-page-hero">
+				<div class="w-full mx-auto">
+					<div class="ml-auto w-full text-center">
+						<h1 class="text-[38px] md:text-[56px] font-semibold text-zinc-100 text-center pb-6">
+							{{ startWithPlanetTitle }}
+						</h1>
+						<a href="{{ heroContactButtonLink }}" class="lg:transition-all lg:duration-300 text-center bg-zinc-50 inline-block hover:bg-[#e00083] hover:text-zinc-100 text-[#202020] font-semibold py-4 px-6 rounded-full">
+							{{ getInTouchText }}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

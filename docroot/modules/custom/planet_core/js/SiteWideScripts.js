@@ -99,8 +99,14 @@ class PlntSwitch {
   }
 // Support page toggle
 
-new PlntSwitch({
+const supportSwitch = new PlntSwitch({
     class: ".support-switch",
     startingTab: 0,
     contentClasses: [".box-1", ".box-2"]
+});
+
+  
+const homepageVerticalsSwitch = new PlntSwitch({
+  class: ".verticals-switch",
+  startingTab: 0, 
 });

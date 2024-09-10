@@ -759,6 +759,7 @@ $settings['entity_update_backup'] = TRUE;
 
  if(getenv('APPSETTING_ENVIRONMENT')) {
   $current_env = "azure-docker";
+
   if(getenv('APPSETTING_ENVIRONMENT')) {
     $current_env = getenv('APPSETTING_ENVIRONMENT');
   } else if(getenv('LANDO')) {
@@ -769,7 +770,7 @@ $settings['entity_update_backup'] = TRUE;
 
   $azure_envs = ["azure-uat", "azure-prod", "azure-docker"];
 
-  if(in_array($current_env, $azure_envs)) {
+  if (in_array($current_env, $azure_envs)) {
     if(getenv('NGINX_DOCUMENT_ROOT')) {
       require getenv('NGINX_DOCUMENT_ROOT') . "/docroot/sites/default/settings.". $current_env .".php";
     } else {
@@ -813,9 +814,6 @@ $settings['entity_update_backup'] = TRUE;
 
  // Get Actual Environment.
  $env = isset($_ENV['AH_SITE_ENVIRONMENT']) ? $_ENV['AH_SITE_ENVIRONMENT'] : 'local';
- $env = 'prod';
-
-
 
  // Enable only the correct configuration.
  if (isset($_ENV['LANDO'])) {
