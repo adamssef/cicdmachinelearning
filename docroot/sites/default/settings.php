@@ -758,7 +758,6 @@ $settings['entity_update_backup'] = TRUE;
  */
 
  if(getenv('APPSETTING_ENVIRONMENT')) {
-  
   $current_env = "azure-docker";
   if(getenv('APPSETTING_ENVIRONMENT')) {
     $current_env = getenv('APPSETTING_ENVIRONMENT');
@@ -767,9 +766,9 @@ $settings['entity_update_backup'] = TRUE;
   } else if(getenv('DIGITALOCEAN')) {
       $current_env = "do";
   }
-  
+
   $azure_envs = ["azure-uat", "azure-prod", "azure-docker"];
-  
+
   if(in_array($current_env, $azure_envs)) {
     if(getenv('NGINX_DOCUMENT_ROOT')) {
       require getenv('NGINX_DOCUMENT_ROOT') . "/docroot/sites/default/settings.". $current_env .".php";
@@ -781,51 +780,54 @@ $settings['entity_update_backup'] = TRUE;
       require $app_root . '/' . $site_path . '/settings.' . $current_env . '.php';
     }
   }
-  
+
   // Config Environments.
   $settings['config_sync_directory'] = '../config/default/sync';
   $config_envs = ['local', 'dev', 'stg', 'prod', 'azure-uat', 'azure-prod', 'azure-docker'];
-  
-  // Enable only the correct configuration.
-  foreach ($config_envs as $config_env) {
-    $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $current_env);
+
+  if (isset($_ENV['LANDO'])) {
+    $config['config_split.config_split_local']['status'] = TRUE;
   }
-  
+  else {
+    $config['config_split.config_split_prod']['status'] = TRUE;
+  }
+
   // Enable "excluded" config only on Acquia Environments.
   $config['config_split.config_split.excluded']['status'] = $current_env;
-  
+
   // Turns on error reporting for local and dev environments
   if (in_array($current_env, ['local', 'dev'])) {
     error_reporting(E_ALL);
   }
- 
- 
+
+
   } else {
- 
- 
- 
- 
- 
  $environment = isset($_ENV['AH_SITE_ENVIRONMENT']) ? 'acquia' : 'local';
  if (file_exists($app_root . '/' . $site_path . '/settings.' . $environment . '.php')) {
    require $app_root . '/' . $site_path . '/settings.' . $environment . '.php';
  }
- 
+
  // Config Environments.
  $settings['config_sync_directory'] = '../config/default/sync';
  $config_envs = ['local', 'dev', 'stg', 'prod', 'azure-docker'];
- 
+
  // Get Actual Environment.
  $env = isset($_ENV['AH_SITE_ENVIRONMENT']) ? $_ENV['AH_SITE_ENVIRONMENT'] : 'local';
- 
+ $env = 'prod';
+
+
+
  // Enable only the correct configuration.
- foreach ($config_envs as $config_env) {
-   $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $env);
+ if (isset($_ENV['LANDO'])) {
+   $config['config_split.config_split_local']['status'] = TRUE;
  }
- 
+ else {
+   $config['config_split.config_split_prod']['status'] = TRUE;
+ }
+
  // Enable "excluded" config only on Acquia Environments.
  $config['config_split.config_split.excluded']['status'] = isset($_ENV['AH_SITE_ENVIRONMENT']);
- 
+
  // Turns on error reporting for local and dev environments
  if (in_array($env, ['local', 'dev'])) {
    error_reporting(E_ALL);
