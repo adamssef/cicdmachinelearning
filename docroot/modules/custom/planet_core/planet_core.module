@@ -396,6 +396,12 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
       case "/blog":
         $suggestions[] = 'node__blog-single-page';
         break;
+      case "/homepage-prototype-v1":
+          $suggestions[] = 'node__homepage_v1';
+          break;
+      case "/homepage-prototype-v2":
+          $suggestions[] = 'node__homepage_v2';
+          break;
       case "/sitemap":
         $suggestions[] = 'node__sitemap';
         break;
@@ -555,6 +561,14 @@ function planet_core_theme(): array {
     'views_view_field__ebook_link' => [
       'template' => 'views-view-field--ebook-link',
       'base hook' => 'views_view_field',
+    ],
+    'node__homepage_v1' => [
+      'template' => 'node--homepage',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v2' => [
+      'template' => 'node--homepage-v2',
+      'base hook' => 'node',
     ],
   ];
 }
@@ -718,5 +732,31 @@ function planet_core_preprocess_page(array &$variables) {
 
   if ($current_path_alias === '/pms-transformation') {
     $variables['#attached']['library'][] = 'planet_core/pms-transformation';
+  }
+}
+
+
+function planet_core_page_attachments_alter(array &$attachments) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $alias_manager = \Drupal::service('path_alias.manager');
+  $current_alias = $alias_manager->getAliasByPath($current_path);
+
+  if ($current_alias == '/homepage-prototype-v1' || $current_alias == '/homepage-prototype-v2') {
+    // Tailwind enabled flag.
+    $tailwind_enabled = false;
+    $attachments['#attached']['library'][] = 'planet_core/front-page';
+
+    if ($tailwind_enabled) {
+      // Attach the specific libraries and scripts only on the front page.
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#tag' => 'script',
+          '#attributes' => [
+            'src' => 'https://cdn.tailwindcss.com',
+          ],
+        ],
+        'tailwindcdn',
+      ];
+    }
   }
 }
