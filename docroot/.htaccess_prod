@@ -219,3 +219,5 @@ AddEncoding gzip svgz
 <FilesMatch "\.pdf$">
     Header set X-Robots-Tag "noindex, nofollow"
 </FilesMatch>
+
+Redirect 301 /sites/default/files/2024-05/protel-CTC.pdf /resources/docs/protel-CTC.pdf

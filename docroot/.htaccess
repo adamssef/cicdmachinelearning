@@ -231,3 +231,4 @@ AddEncoding gzip svgz
 </FilesMatch>
 
 Redirect 301 /sites/default/files/2022-12/planet-nrf-2023-brochure.pdf https://www.weareplanet.com/ls-retail-houston?utm_campaign=ptr-ab-LSretailUS23-event&utm_medium=event&utm_source=LS-Retail
+Redirect 301 /sites/default/files/2024-05/protel-CTC.pdf /resources/docs/protel-CTC.pdf
