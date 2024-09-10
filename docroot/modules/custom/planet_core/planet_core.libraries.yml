@@ -28,3 +28,11 @@ news-page:
 single-article-page:
   js:
     js/ArticlePage.js: {}
+front-page:
+  css:
+    theme:
+      css/swiper-bundle.min.css: {}
+      css/front_page.css: {}
+  js:
+    js/swiper-bundle.min.js.js: {}
+    js/frontPage.js: {}
