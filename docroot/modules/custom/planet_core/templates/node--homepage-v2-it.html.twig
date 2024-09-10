@@ -98,28 +98,11 @@
 			<div class="orb-2"><img src="/resources/images/orb-pink.png"></div>
 			<div class="orb-1"><img src="/resources/images/orb-blue.png"></div>
 		</div>
-		<div class="relative z-[1] flex items-center bg-hero-background bg-cover bg-right h-full px-4 md:px-8 lg:px-0 content-center front-page-hero no-mobile-bg">
-			<div class="max-w-[1280px] w-full mx-auto py-14 md:py-20">
-				<div class="mx-auto w-full text-center">
-					<h1 class="text-[44px] leading-[44px] md:leading-none md:text-[56px] lg:text-[88px] lg:leading-[96px] font-semibold text-zinc-100 text-center pb-4">
-						{{ heroTitle|raw }}
-					</h1>
-					<p class="font-light text-base md:text-xl max-w-3xl mx-auto leading-7 text-zinc-100 text-center pb-6">
-						{{heroDescription}}
-					</p>
-					<a href="{{heroContactButtonLink}}" class="lg:transition-all lg:duration-300 text-center bg-zinc-50 inline-block hover:bg-[#e00083] hover:text-zinc-100 text-[#202020] font-semibold py-4 px-6 rounded-full">
-						{{heroContactButtonText}}
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	{# <div class="orbs-static hero-b-radius home-hero requires-transparent-header planet-header-transparent bg-zinc-50 relative">
-		<div class="relative h-full z-[1] flex items-center bg-hero-background bg-[url('/resources/images/hero-b.jpg')] bg-cover bg-right min-h px-4 lg:px-0 content-center front-page-hero no-mobile-bg">
+		<div class="relative h-full z-[1] flex items-center bg-cover bg-right min-h px-4 lg:px-0 content-center front-page-hero no-mobile-bg">
 			<div class="container max-w-[1280px] w-full mx-auto py-14 px-4 md:py-20">
 				<div class="pl-0 md:pl-14 lg:pl-[134px] mx-auto w-full text-left">
 					<div class="leading-[52px] overflow-hidden text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white text-left pb-6">
-					{{solutionsMadeFor|raw}}<span class="md:ml-4 w-full md:w-auto spinny-wrapper">
+					{{solutionsMadeFor|raw}}<span class="md:ml-4 lg:ml-4 w-full md:w-auto spinny-wrapper">
 						<span class="spinny-words">
 							{% for category in categories %}
 								<span>{{ category }}</span>
@@ -135,7 +118,7 @@
 				</div>
 			</div>
 		</div>
-	</div> #}
+	</div>
 	<div class="logos-partners py-6 bg-zinc-50">
 		<div class="swiper swiper-brands">
 			<div class="swiper-wrapper">
@@ -199,7 +182,7 @@
 	<div class="made-for py-12 md:py-20 lg:py-20 px-4 md:px-8 bg-zinc-50">
 		<div class="lg:container mx-auto">
 			<h2 class="block text-black pb-12 text-4xl leading-[44px] md:leading-none md:text-[56px] text-center font-semibold">{{madeForTitle}}</h2>
-			<div data-items="{{ madeForRetailTitle }},{{ madeForHospitalityTitle }},{{ madeForTravelTitle }}" data-sections=".vertical-1,.vertical-2,.vertical-3" class="plnt-switch verticals-switch mb-12">
+			<div data-items="{{ madeForRetailTitle }},{{ madeForHospitalityTitle }},{{ madeForTravelTitle }}"  data-sections=".vertical-1,.vertical-2,.vertical-3" class="plnt-switch verticals-switch mb-12">
                 <div class="toggle"></div>
             </div>
 

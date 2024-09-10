@@ -396,9 +396,6 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
       case "/blog":
         $suggestions[] = 'node__blog-single-page';
         break;
-      case "/homepage-prototype-v2":
-          $suggestions[] = 'node__homepage_v2';
-          break;
       case "/sitemap":
         $suggestions[] = 'node__sitemap';
         break;
@@ -411,8 +408,37 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
       case "it":
         $suggestions[] = 'node__homepage_v1_it';
         break;
+      case "es":
+        $suggestions[] = 'node__homepage_v1_es';
+        break;
+      case "de":
+        $suggestions[] = 'node__homepage_v1_de';
+        break;
+      case "fr":
+        $suggestions[] = 'node__homepage_v1_fr';
+        break;
       default:
         $suggestions[] = 'node__homepage_v1';
+    }
+  }
+
+  if ($alias == "/homepage-prototype-v2") {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    switch ($language) {
+      case "it":
+        $suggestions[] = 'node__homepage_v2_it';
+        break;
+      case "es":
+        $suggestions[] = 'node__homepage_v2_es';
+        break;
+      case "de":
+        $suggestions[] = 'node__homepage_v2_de';
+        break;
+      case "fr":
+        $suggestions[] = 'node__homepage_v2_fr';
+        break;
+      default:
+        $suggestions[] = 'node__homepage_v2';
     }
   }
 
@@ -571,12 +597,40 @@ function planet_core_theme(): array {
       'template' => 'views-view-field--ebook-link',
       'base hook' => 'views_view_field',
     ],
+    'node__homepage_v1_it' => [
+      'template' => 'node--homepage-it',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v1_es' => [
+      'template' => 'node--homepage-es',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v1_de' => [
+      'template' => 'node--homepage-de',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v1_fr' => [
+      'template' => 'node--homepage-fr',
+      'base hook' => 'node',
+    ],
     'node__homepage_v1' => [
       'template' => 'node--homepage',
       'base hook' => 'node',
     ],
-    'node__homepage_v1_it' => [
-      'template' => 'node--homepage-it',
+    'node__homepage_v2_it' => [
+      'template' => 'node--homepage-v2-it',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v2_fr' => [
+      'template' => 'node--homepage-v2-fr',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v2_es' => [
+      'template' => 'node--homepage-v2-es',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v2_de' => [
+      'template' => 'node--homepage-v2-de',
       'base hook' => 'node',
     ],
     'node__homepage_v2' => [

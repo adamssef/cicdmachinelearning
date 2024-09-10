@@ -106,7 +106,7 @@
 					<h1 class="text-[44px] leading-[44px] md:leading-none md:text-[56px] lg:text-[88px] lg:leading-[96px] font-semibold text-zinc-100 text-center pb-4">
 						{{ heroTitle|raw }}
 					</h1>
-					<p class="font-light text-base md:text-xl max-w-3xl lg:max-w-max mx-auto leading-7 text-zinc-100 text-center pb-6">
+					<p class="font-light text-base md:text-xl max-w-3xl mx-auto leading-7 text-zinc-100 text-center pb-6">
 						{{heroDescription}}
 					</p>
 					<a href="{{heroContactButtonLink}}" class="lg:transition-all lg:duration-300 text-center bg-zinc-50 inline-block hover:bg-[#e00083] hover:text-zinc-100 text-[#202020] font-semibold py-4 px-6 rounded-full">
@@ -201,7 +201,7 @@
 	<div class="made-for py-12 md:py-20 lg:py-20 px-4 md:px-8 bg-zinc-50">
 		<div class="lg:container mx-auto">
 			<h2 class="block text-black pb-12 text-4xl leading-[44px] md:leading-none md:text-[56px] text-center font-semibold">{{madeForTitle}}</h2>
-			<div data-items="Retail,Hospitality,Travel"  data-sections=".vertical-1,.vertical-2,.vertical-3" class="plnt-switch verticals-switch mb-12">
+			<div data-items="{{ madeForRetailTitle }},{{ madeForHospitalityTitle }},{{ madeForTravelTitle }}"  data-sections=".vertical-1,.vertical-2,.vertical-3" class="plnt-switch verticals-switch mb-12">
                 <div class="toggle"></div>
             </div>
 
