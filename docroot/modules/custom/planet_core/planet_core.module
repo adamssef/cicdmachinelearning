@@ -396,9 +396,6 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
       case "/blog":
         $suggestions[] = 'node__blog-single-page';
         break;
-      case "/homepage-prototype-v1":
-          $suggestions[] = 'node__homepage_v1';
-          break;
       case "/homepage-prototype-v2":
           $suggestions[] = 'node__homepage_v2';
           break;
@@ -407,6 +404,18 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
         break;
     }
   }
+
+  if ($alias == "/homepage-prototype-v1") {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    switch ($language) {
+      case "it":
+        $suggestions[] = 'node__homepage_v1_it';
+        break;
+      default:
+        $suggestions[] = 'node__homepage_v1';
+    }
+  }
+
 
   if ($alias == "/pms-transformation") {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -564,6 +573,10 @@ function planet_core_theme(): array {
     ],
     'node__homepage_v1' => [
       'template' => 'node--homepage',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v1_it' => [
+      'template' => 'node--homepage-it',
       'base hook' => 'node',
     ],
     'node__homepage_v2' => [
