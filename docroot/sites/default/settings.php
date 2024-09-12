@@ -778,25 +778,25 @@ if (getenv('APPSETTING_ENVIRONMENT')) {
       require $app_root . '/' . $site_path . '/settings.php';
     }
   }
-
   // Config Environments.
   $settings['config_sync_directory'] = '../config/default/sync';
-
   $config_envs = [
     'local', //local environment 
+    'dev', //TBD
     'stg',  //azure uat
     'prod', //azure production
   ];
+  foreach ($config_envs as $config_env) {
+    $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $conf_split_env);
+  }
 
-  $config["config_split.config_split_{$conf_split_env}"]['status'] = TRUE;
   $config['config_split.config_split.excluded']['status'] = TRUE;
 
   // Turns on error reporting for local and dev environments
   if ($conf_split_env == "stg") {
     error_reporting(E_ALL);
   }
-}
-else {
+} else {
   $environment = isset($_ENV['AH_SITE_ENVIRONMENT']) ? 'acquia' : 'local';
   if (file_exists($app_root . '/' . $site_path . '/settings.' . $environment . '.php')) {
     require $app_root . '/' . $site_path . '/settings.' . $environment . '.php';
