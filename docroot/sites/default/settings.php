@@ -797,6 +797,7 @@ if (getenv('APPSETTING_ENVIRONMENT')) {
     error_reporting(E_ALL);
   }
 } else {
+  // This is run on either Acquia server or locally.
   $environment = isset($_ENV['AH_SITE_ENVIRONMENT']) ? 'acquia' : 'local';
   if (file_exists($app_root . '/' . $site_path . '/settings.' . $environment . '.php')) {
     require $app_root . '/' . $site_path . '/settings.' . $environment . '.php';
@@ -814,7 +815,9 @@ if (getenv('APPSETTING_ENVIRONMENT')) {
     $config['config_split.config_split_local']['status'] = TRUE;
   }
   else {
-    $config["config_split.config_split_$env"]['status'] = TRUE;
+    foreach ($config_envs as $config_env) {
+      $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $env);
+    }
   }
 
   // Enable "excluded" config only on Acquia Environments.
