@@ -770,7 +770,7 @@ if (getenv('APPSETTING_ENVIRONMENT')) {
   if($current_env == "azure-docker") {
     $conf_split_env = "stg";
   }
- 
+
   if (getenv('NGINX_DOCUMENT_ROOT')) {
     require getenv('NGINX_DOCUMENT_ROOT') . "/docroot/sites/default/settings." . $current_env . ".php";
   } else {
@@ -781,7 +781,7 @@ if (getenv('APPSETTING_ENVIRONMENT')) {
   // Config Environments.
   $settings['config_sync_directory'] = '../config/default/sync';
   $config_envs = [
-    'local', //local environment 
+    'local', //local environment
     'dev', //TBD
     'stg',  //azure uat
     'prod', //azure production
@@ -804,7 +804,7 @@ if (getenv('APPSETTING_ENVIRONMENT')) {
 
   // Config Environments.
   $settings['config_sync_directory'] = '../config/default/sync';
-  $config_envs = ['local', 'dev', 'stg', 'prod', 'azure-docker'];
+  $config_envs = ['local', 'dev', 'stg', 'prod'];
 
   // Get Actual Environment.
   $env = isset($_ENV['AH_SITE_ENVIRONMENT']) ? $_ENV['AH_SITE_ENVIRONMENT'] : 'local';
@@ -814,14 +814,14 @@ if (getenv('APPSETTING_ENVIRONMENT')) {
     $config['config_split.config_split_local']['status'] = TRUE;
   }
   else {
-    $config['config_split.config_split_prod']['status'] = TRUE;
+    $config["config_split.config_split_$env"]['status'] = TRUE;
   }
 
   // Enable "excluded" config only on Acquia Environments.
   $config['config_split.config_split.excluded']['status'] = isset($_ENV['AH_SITE_ENVIRONMENT']);
 
   // Turns on error reporting for local and dev environments
-  if (in_array($env, ['local', 'dev'])) {
+  if (in_array($env, ['local', 'stg'])) {
     error_reporting(E_ALL);
   }
 }
