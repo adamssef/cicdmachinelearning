@@ -68,6 +68,7 @@
  *
  * One example of the simplest connection array is shown below. To use the
  * sample settings, copy and uncomment the code below between the @code and
+ *
  * @endcode lines and paste it after the $databases declaration. You will need
  * to replace the database username and password and possibly the host and port
  * with the appropriate credentials for your database system.
@@ -122,6 +123,7 @@ $databases = [];
  * traditionally referred to as master/slave in database server documentation).
  *
  * The general format for the $databases array is as follows:
+ *
  * @code
  * $databases['default']['default'] = $info_array;
  * $databases['default']['replica'][] = $info_array;
@@ -262,6 +264,7 @@ $databases = [];
  * stored with backups of your database.
  *
  * Example:
+ *
  * @code
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
@@ -359,8 +362,10 @@ $settings['update_free_access'] = FALSE;
  * - \Symfony\Component\HttpFoundation\Request::HEADER_FORWARDED
  *
  * Note the default value of
+ *
  * @code
- * \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL | \Symfony\Component\HttpFoundation\Request::HEADER_FORWARDED
+ * \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL |
+ *   \Symfony\Component\HttpFoundation\Request::HEADER_FORWARDED
  * @endcode
  * is not secure by default. The value should be set to only the specific
  * headers the reverse proxy uses. For example:
@@ -378,7 +383,6 @@ $settings['update_free_access'] = FALSE;
  * @see \Symfony\Component\HttpFoundation\Request::setTrustedProxies
  */
 # $settings['reverse_proxy_trusted_headers'] = \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL | \Symfony\Component\HttpFoundation\Request::HEADER_FORWARDED;
-
 
 /**
  * Page caching:
@@ -682,6 +686,7 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * like to allow.
  *
  * For example:
+ *
  * @code
  * $settings['trusted_host_patterns'] = [
  *   '^www\.example\.com$',
@@ -757,77 +762,69 @@ $settings['entity_update_backup'] = TRUE;
  * retained after a successful entity update process.
  */
 
- if(getenv('APPSETTING_ENVIRONMENT')) {
-  
-  $current_env = "azure-docker";
-  if(getenv('APPSETTING_ENVIRONMENT')) {
-    $current_env = getenv('APPSETTING_ENVIRONMENT');
-  } else if(getenv('LANDO')) {
-    $current_env = "local";
-  } else if(getenv('DIGITALOCEAN')) {
-      $current_env = "do";
+// This will be run on Azure
+if (getenv('APPSETTING_ENVIRONMENT')) {
+  $current_env = getenv('APPSETTING_ENVIRONMENT');
+
+  $conf_split_env = "prod"; // by default prod
+  if($current_env == "azure-docker") {
+    $conf_split_env = "stg";
   }
-  
-  $azure_envs = ["azure-uat", "azure-prod", "azure-docker"];
-  
-  if(in_array($current_env, $azure_envs)) {
-    if(getenv('NGINX_DOCUMENT_ROOT')) {
-      require getenv('NGINX_DOCUMENT_ROOT') . "/docroot/sites/default/settings.". $current_env .".php";
-    } else {
-      require "settings.". $current_env .".php";
-    }
+
+  if (getenv('NGINX_DOCUMENT_ROOT')) {
+    require getenv('NGINX_DOCUMENT_ROOT') . "/docroot/sites/default/settings." . $current_env . ".php";
   } else {
-    if (file_exists($app_root . '/' . $site_path . '/settings.' . $current_env . '.php')) {
-      require $app_root . '/' . $site_path . '/settings.' . $current_env . '.php';
+    if (file_exists($app_root . '/' . $site_path . '/settings.php')) {
+      require $app_root . '/' . $site_path . '/settings.php';
     }
   }
-  
   // Config Environments.
   $settings['config_sync_directory'] = '../config/default/sync';
-  $config_envs = ['local', 'dev', 'stg', 'prod', 'azure-uat', 'azure-prod', 'azure-docker'];
-  $current_env = "prod";
-  // Enable only the correct configuration.
+  $config_envs = [
+    'local', //local environment
+    'dev', //TBD
+    'stg',  //azure uat
+    'prod', //azure production
+  ];
   foreach ($config_envs as $config_env) {
-    $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $current_env);
+    $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $conf_split_env);
   }
-  
-  // Enable "excluded" config only on Acquia Environments.
-  $config['config_split.config_split.excluded']['status'] = $current_env;
-  
+
+  $config['config_split.config_split.excluded']['status'] = TRUE;
+
   // Turns on error reporting for local and dev environments
-  if (in_array($current_env, ['local', 'dev'])) {
+  if ($conf_split_env == "stg") {
     error_reporting(E_ALL);
   }
- 
- 
-  } else {
- 
- 
- 
- 
- 
- $environment = isset($_ENV['AH_SITE_ENVIRONMENT']) ? 'acquia' : 'local';
- if (file_exists($app_root . '/' . $site_path . '/settings.' . $environment . '.php')) {
-   require $app_root . '/' . $site_path . '/settings.' . $environment . '.php';
- }
- 
- // Config Environments.
- $settings['config_sync_directory'] = '../config/default/sync';
- $config_envs = ['local', 'dev', 'stg', 'prod', 'azure-docker'];
- 
- // Get Actual Environment.
- $env = isset($_ENV['AH_SITE_ENVIRONMENT']) ? $_ENV['AH_SITE_ENVIRONMENT'] : 'local';
- 
- // Enable only the correct configuration.
- foreach ($config_envs as $config_env) {
-   $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $env);
- }
- 
- // Enable "excluded" config only on Acquia Environments.
- $config['config_split.config_split.excluded']['status'] = isset($_ENV['AH_SITE_ENVIRONMENT']);
- 
- // Turns on error reporting for local and dev environments
- if (in_array($env, ['local', 'dev'])) {
-   error_reporting(E_ALL);
- }
+} else {
+  // This is run on either Acquia server or locally.
+  $environment = isset($_ENV['AH_SITE_ENVIRONMENT']) ? 'acquia' : 'local';
+  if (file_exists($app_root . '/' . $site_path . '/settings.' . $environment . '.php')) {
+    require $app_root . '/' . $site_path . '/settings.' . $environment . '.php';
   }
+
+  // Config Environments.
+  $settings['config_sync_directory'] = '../config/default/sync';
+  $config_envs = ['local', 'dev', 'stg', 'prod'];
+
+  // Get Actual Environment.
+  $env = isset($_ENV['AH_SITE_ENVIRONMENT']) ? $_ENV['AH_SITE_ENVIRONMENT'] : 'local';
+
+  // Enable only the correct configuration.
+  if (isset($_ENV['LANDO'])) {
+    $config['config_split.config_split_local']['status'] = TRUE;
+  }
+  else {
+    foreach ($config_envs as $config_env) {
+      $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $env);
+    }
+  }
+
+  // Enable "excluded" config only on Acquia Environments.
+  $config['config_split.config_split.excluded']['status'] = isset($_ENV['AH_SITE_ENVIRONMENT']);
+
+  // Turns on error reporting for local and dev environments
+  if (in_array($env, ['local', 'stg'])) {
+    error_reporting(E_ALL);
+  }
+}
