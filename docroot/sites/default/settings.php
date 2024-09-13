@@ -762,67 +762,41 @@ $settings['entity_update_backup'] = TRUE;
  * retained after a successful entity update process.
  */
 
+// This will be run on Azure
 if (getenv('APPSETTING_ENVIRONMENT')) {
-  $current_env = "azure-docker";
+  $current_env = getenv('APPSETTING_ENVIRONMENT');
 
-  if (getenv('APPSETTING_ENVIRONMENT')) {
-    $current_env = getenv('APPSETTING_ENVIRONMENT');
+  $conf_split_env = "prod"; // by default prod
+  if($current_env == "azure-docker") {
+    $conf_split_env = "stg";
   }
-  else {
-    if (getenv('LANDO')) {
-      $current_env = "local";
-    }
-    else {
-      if (getenv('DIGITALOCEAN')) {
-        $current_env = "do";
-      }
-    }
-  }
-
-  $azure_envs = ["azure-uat", "azure-prod", "azure-docker"];
-
-  if (in_array($current_env, $azure_envs)) {
-    if (getenv('NGINX_DOCUMENT_ROOT')) {
-      require getenv('NGINX_DOCUMENT_ROOT') . "/docroot/sites/default/settings." . $current_env . ".php";
-    }
-    else {
-      require "settings." . $current_env . ".php";
+ 
+  if (getenv('NGINX_DOCUMENT_ROOT')) {
+    require getenv('NGINX_DOCUMENT_ROOT') . "/docroot/sites/default/settings." . $current_env . ".php";
+  } else {
+    if (file_exists($app_root . '/' . $site_path . '/settings.php')) {
+      require $app_root . '/' . $site_path . '/settings.php';
     }
   }
-  else {
-    if (file_exists($app_root . '/' . $site_path . '/settings.' . $current_env . '.php')) {
-      require $app_root . '/' . $site_path . '/settings.' . $current_env . '.php';
-    }
-  }
-
   // Config Environments.
   $settings['config_sync_directory'] = '../config/default/sync';
   $config_envs = [
-    'local',
-    'dev',
-    'stg',
-    'prod',
-    'azure-uat',
-    'azure-prod',
-    'azure-docker',
+    'local', //local environment 
+    'dev', //TBD
+    'stg',  //azure uat
+    'prod', //azure production
   ];
-
-  if (isset($_ENV['LANDO'])) {
-    $config['config_split.config_split_local']['status'] = TRUE;
-  }
-  else {
-    $config['config_split.config_split_prod']['status'] = TRUE;
+  foreach ($config_envs as $config_env) {
+    $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $conf_split_env);
   }
 
-  // Enable "excluded" config only on Acquia Environments.
-  $config['config_split.config_split.excluded']['status'] = $current_env;
+  $config['config_split.config_split.excluded']['status'] = TRUE;
 
   // Turns on error reporting for local and dev environments
-  if (in_array($current_env, ['local', 'dev'])) {
+  if ($conf_split_env == "stg") {
     error_reporting(E_ALL);
   }
-}
-else {
+} else {
   $environment = isset($_ENV['AH_SITE_ENVIRONMENT']) ? 'acquia' : 'local';
   if (file_exists($app_root . '/' . $site_path . '/settings.' . $environment . '.php')) {
     require $app_root . '/' . $site_path . '/settings.' . $environment . '.php';
