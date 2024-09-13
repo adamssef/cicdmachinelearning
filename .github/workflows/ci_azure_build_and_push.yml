@@ -39,7 +39,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        envs: [uat]
+        envs: [uat,prd]
     environment:
       name: ${{ matrix.envs }}
     runs-on: ubuntu-latest
