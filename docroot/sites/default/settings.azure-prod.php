@@ -32,7 +32,9 @@ $settings['trusted_host_patterns'] = [
   '^planet\.lndo\.site$',
   '^.+\.planetmktg\.dev$',
   '^.+\.planetpayment\.com$',
+  '^.+\.weareplanet\.com$',
   '^planetpayment\.com$',
+  '^weareplanet\.com$',
   '^.+\.azurewebsites\.net$',
   '^localhost$',
 ];
