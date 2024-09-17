@@ -810,14 +810,8 @@ if (getenv('APPSETTING_ENVIRONMENT')) {
   // Get Actual Environment.
   $env = isset($_ENV['AH_SITE_ENVIRONMENT']) ? $_ENV['AH_SITE_ENVIRONMENT'] : 'local';
 
-  // Enable only the correct configuration.
-  if (isset($_ENV['LANDO'])) {
-    $config['config_split.config_split_local']['status'] = TRUE;
-  }
-  else {
-    foreach ($config_envs as $config_env) {
-      $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $env);
-    }
+  foreach ($config_envs as $config_env) {
+    $config['config_split.config_split.' . $config_env]['status'] = ($config_env == $env);
   }
 
   // Enable "excluded" config only on Acquia Environments.
