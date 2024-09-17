@@ -12,13 +12,9 @@ use Drupal\user\Entity\User;
  * Implements hook_preprocess_HOOK().
  */
 function planet_2fa_preprocess_page(array &$variables) {
-
   $current_user = \Drupal::currentUser();
-
   $user = User::load($current_user->id());
-
   $tfa_service = \Drupal::service('planet_2fa.service');
-
   $logger = \Drupal::logger('planet_2fa');
 
   $is_tfa_setup = $tfa_service->isTfaSetUp($user);
