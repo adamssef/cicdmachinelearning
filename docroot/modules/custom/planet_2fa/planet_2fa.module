@@ -44,7 +44,9 @@ function planet_2fa_preprocess_page(array &$variables) {
     count($current_path_elements) === 3 &&
     strtolower($current_path_elements[1]) === 'tfa' &&
     is_numeric($current_path_elements[2]) &&
-    ($status_code[0] == 2 || $status_code === NULL)
+    // Reverted the if condition order so that we can avoid accessing offset on NULL.
+    // @see https://stackoverflow.com/questions/5694733/does-php-have-short-circuit-evaluation
+    ($status_code === NULL || $status_code[0] == 2)
   ) {
     $variables['#attached']['library'][] = 'planet_2fa/planet_2fa';
   }
