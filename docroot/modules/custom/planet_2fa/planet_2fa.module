@@ -16,7 +16,6 @@ function planet_2fa_preprocess_page(array &$variables) {
   $user = User::load($current_user->id());
   $tfa_service = \Drupal::service('planet_2fa.service');
   $logger = \Drupal::logger('planet_2fa');
-
   $is_tfa_setup = $tfa_service->isTfaSetUp($user);
   $can_login_without_tfa = $tfa_service->canLoginWithoutTfa($logger);
 
