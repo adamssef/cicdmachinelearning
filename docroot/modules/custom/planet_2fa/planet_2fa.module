@@ -13,9 +13,9 @@ use Drupal\user\Entity\User;
  */
 function planet_2fa_preprocess_page(array &$variables) {
 
-  $curent_user = \Drupal::currentUser();
+  $current_user = \Drupal::currentUser();
 
-  $user = User::load($curent_user->id());
+  $user = User::load($current_user->id());
 
   $tfa_service = \Drupal::service('planet_2fa.service');
 
