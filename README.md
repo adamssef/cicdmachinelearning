@@ -4,7 +4,7 @@ This project provides a platform base installation for Planet!
 
 
 # Looking for documentation?
-Check the documentation branch!
+Check the [documentation](https://github.com/weareplanet/planet-lead-generation/tree/documentation) branch!
 
 # Installing a new website
 ## LOCAL SETUP
