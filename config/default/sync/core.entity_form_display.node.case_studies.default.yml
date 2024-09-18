@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.case_studies.field_layout_canvas_2
     - field.field.node.case_studies.field_layout_canvas_3
     - field.field.node.case_studies.field_logo_media
+    - field.field.node.case_studies.field_logo_media_new_case_study
     - field.field.node.case_studies.field_main_image_media
     - field.field.node.case_studies.field_metrics
     - field.field.node.case_studies.field_pre_heading
@@ -320,6 +321,13 @@ content:
   field_logo_media:
     type: media_library_widget
     weight: 9
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_logo_media_new_case_study:
+    type: media_library_widget
+    weight: 27
     region: content
     settings:
       media_types: {  }

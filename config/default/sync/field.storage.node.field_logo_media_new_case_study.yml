@@ -1,0 +1,20 @@
+uuid: d2187c52-2a98-4240-9d54-7c53a2506740
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_logo_media_new_case_study
+field_name: field_logo_media_new_case_study
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

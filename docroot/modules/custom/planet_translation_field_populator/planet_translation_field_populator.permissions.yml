@@ -1,0 +1,3 @@
+access_populator:
+  title: 'Access populator'
+  description: 'Permission that controls whether a user can access populator form.'

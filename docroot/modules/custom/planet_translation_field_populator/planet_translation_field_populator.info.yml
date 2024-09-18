@@ -1,0 +1,5 @@
+name: 'planet_translation_field_populator'
+type: module
+description: 'This module allows user to select which fields and what content type will going to be populated from EN version of a nodes to other languages.'
+package: Planet
+core_version_requirement: ^10

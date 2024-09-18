@@ -1,0 +1,7 @@
+planet_translation_field_populator.populator_form:
+  path: '/admin/planet/populator'
+  defaults:
+    _form: '\Drupal\planet_translation_field_populator\Form\Populator'
+    _title: 'Populator settings'
+  requirements:
+    _permission: 'access_populator'

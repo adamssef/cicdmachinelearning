@@ -1,0 +1,7 @@
+planet_translation_field_populator.populator_form:
+  title: 'Translation field populator settings'
+  description: 'Configure settings for the fields to be populated by populator.'
+  parent: planet_config.admin_planet
+  route_name: planet_translation_field_populator.populator_form
+  weight: 21
+  menu_name: admin
