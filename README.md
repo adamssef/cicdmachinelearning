@@ -2,6 +2,10 @@
 # Intro
 This project provides a platform base installation for Planet!
 
+
+# Looking for documentation?
+Check the documentation branch!
+
 # Installing a new website
 ## LOCAL SETUP
 ### Requirements
