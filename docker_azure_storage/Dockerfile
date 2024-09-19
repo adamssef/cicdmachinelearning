@@ -46,6 +46,7 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.
 
 COPY . $APP_HOME
 
+
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=2.6.6
 # Run composer install
@@ -55,7 +56,13 @@ WORKDIR /var/www/html
 # RUN chown -R www-data:www-data ${APACHE_DOCUMENT_ROOT}/sites/default/files
 
 RUN git config --global --add safe.directory '*'
-RUN composer install --no-interaction --no-progress --ignore-platform-req=ext-soap
+
+# Install dependencies for PHP extensions
+RUN apt-get update && apt-get install -y \
+    libxml2-dev \
+    && docker-php-ext-install soap
+
+RUN composer install --no-interaction --no-progress
 COPY azure/.htaccess /var/www/html/docroot
 
 RUN chown -R www-data:www-data ${APACHE_DOCUMENT_ROOT}
