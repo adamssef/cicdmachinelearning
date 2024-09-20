@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/user/*\r\n/admin/*"
+    pages: "/user/*\r\n/admin/*\r\n/lp/in-person-payments\r\n\r\n"
