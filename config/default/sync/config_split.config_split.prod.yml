@@ -12,7 +12,6 @@ storage: folder
 folder: ../config/default/environment/prod
 module:
   gtm: 0
-  acquia_connector: 0
   planet_2fa: 0
   planet_lgpd_onetrust: 0
   real_aes: 0
@@ -21,7 +20,6 @@ module:
 theme: {  }
 complete_list:
   - key.key.tfa_key
-  - acquia_connector.settings
   - ultimate_cron.job.acquia_connector_cron
   - planet_lgpd_onetrust.settings
   - environment_indicator.indicator
