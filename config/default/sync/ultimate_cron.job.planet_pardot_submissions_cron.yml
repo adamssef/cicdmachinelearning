@@ -1,0 +1,17 @@
+uuid: 392e936c-2b55-4136-9f0e-877bf76b3d8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - planet_pardot_submissions
+title: 'Default cron handler'
+id: planet_pardot_submissions_cron
+weight: 0
+module: planet_pardot_submissions
+callback: planet_pardot_submissions_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

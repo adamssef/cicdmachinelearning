@@ -1,0 +1,164 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for planet_pardot_submissions module.
+ */
+
+use Drupal\webform\Entity\WebformSubmission;
+use GuzzleHttp\Client;
+
+/**
+ * Implements hook_cron().
+ */
+function planet_pardot_submissions_cron() {
+  \Drupal::logger('planet_pardot_submissions')->info('Cron job started.');
+  $pardot_submissions = \Drupal\webform_pardot\Entity\PardotSubmission::loadMultiple();
+  $webform_map = [];
+  $associated_webform_submissions = [];
+
+  foreach ($pardot_submissions as $submission) {
+    $status = $submission->get('status')->getValue()[0]['value'];
+
+    if ($status === 'queued') {
+      $associated_webform_submission = WebformSubmission::load($submission->get('webform_submission')->getValue()[0]['target_id']);
+      $associated_webform_submissions[] = $associated_webform_submission;
+      $associated_webform_id = $associated_webform_submission->get('webform_id')->getValue()[0]['target_id'];
+
+      if (!key_exists($associated_webform_id, $webform_map)) {
+        $webform_map[$associated_webform_id] = [];
+      }
+    }
+  }
+
+  \Drupal::logger('planet_pardot_submissions')->info('Associated webform submissions: ' . count($associated_webform_submissions));
+
+  foreach ($associated_webform_submissions as $webform_submission) {
+    $config = \Drupal::config("webform.webform." . $webform_submission->bundle());
+    $settings = $config->get('handlers')['submit_data_to_pardot']['settings'];
+    $field_mapping = $settings['pardot_fields_mapping'];
+    $data = $webform_submission->getData();
+    $url = $settings['pardot_url'];
+    $result = mapData($field_mapping, $data);
+    $response = remotePost($url, $result);
+    $status_code = $response->getStatusCode();
+
+    if ($status_code === 200) {
+      \Drupal::logger('planet_pardot_submissions')->info('Submission successful.');
+      $webform_submission_id = $webform_submission->id();
+
+      $result = \Drupal::entityTypeManager()
+        ->getStorage('pardot_submission')
+        ->loadByProperties([
+          'webform_submission' => $webform_submission_id,
+        ]);
+
+      $pardot_submission = $result[array_key_first($result)];
+      $pardot_submission->set('status', 'processed');
+
+      $pardot_submission->save();
+    }
+  }
+}
+
+/**
+ * Posts data to a remote URL.
+ *
+ * @param string $url
+ *   The URL to which the data should be posted.
+ * @param array $data
+ *   The data array to be posted to the url.
+ *
+ * @return \Psr\Http\Message\ResponseInterface
+ *   The response object.
+ */
+function remotePost($url, array $data) {
+  // Post data to the provided url.
+
+  $client = new Client();
+  $response = $client->post($url, [
+    'verify' => TRUE,
+    'form_params' => $data,
+    'headers' => [
+      'Content-type' => 'application/x-www-form-urlencoded',
+    ],
+  ]);
+
+  return $response;
+}
+
+function mapData($mapping, array $data) {
+  if (!empty($mapping)) {
+    // Parse mapping.
+    $mapping_info = [];
+    $ret = explode(PHP_EOL, $mapping);
+    foreach ($ret as $r) {
+      $line = explode('|', trim($r));
+      if (count($line) == 2) {
+        $mapping_info[$line[0]] = $line[1];
+      }
+    }
+
+    // Re map keys with new mapping and leave the rest as they are.
+    $mapped_data = [];
+    foreach ($data as $key => $value) {
+      if (!empty($mapping_info[$key])) {
+        $mapped_data[$mapping_info[$key]] = $value;
+      }
+      else {
+        $mapped_data[$key] = $value;
+      }
+    }
+
+    // Are there any second or further level mapping?
+    foreach ($mapping_info as $key => $mapped_key) {
+      $flat_key = $key;
+
+      // Array notation to dot notation.
+      if (strpos($key, '[') !== FALSE) {
+        $flat_key = str_replace(['[', ']'], ['.', ''], $key);
+      }
+
+      // Parse dot-notated key.
+      if (strpos($flat_key, '.') !== FALSE) {
+        $flat_key_array = explode('.', $flat_key);
+        $mapped_data = combinedKeyAdd($mapped_data, $flat_key_array, $mapped_key);
+      }
+    }
+
+    $data = $mapped_data;
+  }
+
+  return $data;
+}
+
+/**
+ * Adds a combined key within an array.
+ *
+ * @param array $data
+ *   Data array to add key to.
+ * @param array $flat_key_array
+ *   Multiarray key in "key.key1.key2" format.
+ * @param string $mapped_key
+ *   Name of the key to map into the array.
+ *
+ * @return array
+ *   Array containing the combined key.
+ *
+ * @see https://stackoverflow.com/questions/7003559/use-strings-to-access-potentially-large-multidimensional-arrays
+ */
+function combinedKeyAdd(array $data, array $flat_key_array, $mapped_key) {
+  $value = $data;
+  foreach ($flat_key_array as $key) {
+    // Checkboxes are stored as values.
+    if (is_array($value) && in_array($key, $value)) {
+      $value = $key;
+    }
+    else {
+      $value = !empty($value[$key]) ? $value[$key] : $value;
+    }
+  }
+  $data[$mapped_key] = $value;
+
+  return $data;
+}

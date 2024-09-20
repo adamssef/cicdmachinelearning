@@ -1,0 +1,5 @@
+name: 'planet_pardot_submissions'
+type: module
+description: 'The module that handles the pardot submissions in a custom cron.'
+package: Planet
+core_version_requirement: ^10
