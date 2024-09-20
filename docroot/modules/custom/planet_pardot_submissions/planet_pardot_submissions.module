@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for planet_pardot_submissions module.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function planet_pardot_submissions_cron() {
+  \Drupal::logger('planet_pardot_submissions')->info('Cron job started.');
+  $pardot_submissions = \Drupal\webform_pardot\Entity\PardotSubmission::loadMultiple();
+  $webform_map = [];
+  $associated_webform_submissions = [];
+
+  foreach ($pardot_submissions as $submission) {
+    $status = $submission->get('status')->getValue()[0]['value'];
+
+    if ($status === 'queued') {
+      $associated_webform_submission = WebformSubmission::load($submission->get('webform_submission')->getValue()[0]['target_id']);
+      $associated_webform_submissions[] = $associated_webform_submission;
+      $associated_webform_id = $associated_webform_submission->get('webform_id') >getValue()[0]['target_id'];
+
+      if (!key_exists($associated_webform_id, $webform_map)) {
+        $webform_map[$associated_webform_id] = [];
+      }
+    }
+  }
+
+  \Drupal::logger('planet_pardot_submissions')->info('Associated webform submissions: ' . count($associated_webform_submissions));
+
+  foreach ($associated_webform_submissions as $webform_submission) {
+    $config = \Drupal::config("webform.webform." . $webform_submission->bundle());
+    $settings = $config->get('handlers')['submit_data_to_pardot']['settings'];
+    $field_mapping = $settings['pardot_fields_mapping'];
+    $data = $webform_submission->getData();
+    $url = $settings['pardot_url'];
+    $result = mapData($field_mapping, $data);
+    $response = remotePost($url, $result);
+    $status_code = $response->getStatusCode();
+
+    if ($status_code === 200) {
+      \Drupal::logger('planet_pardot_submissions')->info('Submission successful.');
+      $webform_submission_id = $webform_submission->id();
+
+      $result = \Drupal::entityTypeManager()
+        ->getStorage('pardot_submission')
+        ->loadByProperties([
+          'webform_submission' => $webform_submission_id,
+        ]);
+
+      $pardot_submission = $result[array_key_first($result)];
+      $pardot_submission->set('status', 'processed');
+
+      $pardot_submission->save();
+    }
+  }
+}
