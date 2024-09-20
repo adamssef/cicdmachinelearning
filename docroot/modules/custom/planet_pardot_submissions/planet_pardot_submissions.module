@@ -5,6 +5,8 @@
  * Primary module hooks for planet_pardot_submissions module.
  */
 
+use Drupal\webform\Entity\WebformSubmission;
+
 /**
  * Implements hook_cron().
  */
