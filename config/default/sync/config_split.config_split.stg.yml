@@ -18,6 +18,7 @@ module:
   encrypt: 0
 theme: {  }
 complete_list:
+  - encrypt.profile.tfa_encryption_profile
   - environment_indicator.indicator
   - key.key.tfa_key
   - acquia_connector.settings
