@@ -4,7 +4,9 @@
  * @file
  * Drupal site-specific configuration file.
   */
-
+  $settings['reverse_proxy'] = TRUE;
+  $settings['reverse_proxy_addresses'] = array($_SERVER['REMOTE_ADDR']);
+  $settings['reverse_proxy_trusted_headers'] = \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_FOR | \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PROTO | \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PORT;
 
   $databases = [
     'default' => [
