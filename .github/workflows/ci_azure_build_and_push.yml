@@ -4,7 +4,7 @@ run-name: Build and Deploy by @${{ github.actor }}.
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, copy-of-the-main]
 
 jobs:
   build_image:
