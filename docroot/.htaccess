@@ -105,11 +105,10 @@ AddEncoding gzip svgz
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
 
+  # Block Sendgrid requests
+  RewriteCond %{HTTP_USER_AGENT} "SendGrid Event API" [NC]
+  RewriteRule .* - [F,L]
 
-   # Block Sendgrid requests
-   RewriteCond %{HTTP_USER_AGENT} "SendGrid Event API" [NC]
-   RewriteRule .* - [F,L]
-   
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.
   # For example if your site is at http://example.com/drupal uncomment and
@@ -231,4 +230,3 @@ AddEncoding gzip svgz
 </FilesMatch>
 
 Redirect 301 /sites/default/files/2022-12/planet-nrf-2023-brochure.pdf https://www.weareplanet.com/ls-retail-houston?utm_campaign=ptr-ab-LSretailUS23-event&utm_medium=event&utm_source=LS-Retail
-Redirect 301 /sites/default/files/2024-05/protel-CTC.pdf /resources/docs/protel-CTC.pdf
