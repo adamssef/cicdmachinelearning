@@ -54,8 +54,30 @@ jobs:
     steps:
       - name: Deploy WebApp to slot
         uses: azure/webapps-deploy@v3
+        id: deploy_webapp_to_slot
         with:
           app-name: ${{ vars.AZURE_APP_NAME }}
           slot-name: 'staging'
           images: 'ghcr.io/weareplanet/planet-lead-generation:${{ github.sha }}'
           publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+  
+  run_load_test:
+    needs: deploy_webapp
+    if: matrix.envs == 'uat'  # Run only for UAT
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Wait for 5 minutes
+        run: sleep 300 # Wait for 5 minutes (300 seconds)
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Run Load Test
+        uses: apardo04/locust-github-action@master
+        with:
+          URL:  ${{ steps.deploy_webapp_to_slot.outputs.static_web_app_url }}
+          USERS: "100"
+          RATE: "5"
+          LOCUSTFILE: "locust/locust.py"
+          RUNTIME: "60s"
