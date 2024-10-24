@@ -1,0 +1,29 @@
+name: Load Test Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_url:
+        description: 'The URL of the application to test'
+        required: true
+        default: 'https://wlms-app-weareplanet-docker-sa-website-staging.azurewebsites.net'
+
+jobs:
+  run_load_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Announce Load Test
+        run: echo "Starting load test for URL: ${{ github.event.inputs.app_url }}"
+
+      - name: Run Load Test
+        uses: apardo04/locust-github-action@master
+        with:
+          URL:  ${{ github.event.inputs.app_url }}
+          USERS: "100"
+          RATE: "5"
+          LOCUSTFILE: "locust/locust.py"
+          RUNTIME: "60s"
