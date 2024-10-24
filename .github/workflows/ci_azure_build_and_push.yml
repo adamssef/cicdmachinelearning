@@ -60,13 +60,10 @@ jobs:
           slot-name: 'staging'
           images: 'ghcr.io/weareplanet/planet-lead-generation:${{ github.sha }}'
           publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
-
-      - name: Set environment output
-        run: echo "envs=${{ matrix.envs }}" >> $GITHUB_ENV
   
   run_load_test:
     needs: deploy_webapp
-    if: ${{ steps.deploy_webapp_to_slot.outputs.envs == 'uat' }}
+    if: contains(steps.deploy_webapp_to_slot.outputs.static_web_app_url, 'wlms')
     runs-on: ubuntu-latest
 
     steps:
@@ -76,6 +73,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
+      - name: Announce Load Test
+        run: echo "WLMS environment recognized, starting load tests"
+
       - name: Run Load Test
         uses: apardo04/locust-github-action@master
         with:
