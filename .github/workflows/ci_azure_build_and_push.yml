@@ -73,6 +73,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
+      - name: Announce Load Test
+        run: echo "WLMS environment recognized, starting load tests"
+
       - name: Run Load Test
         uses: apardo04/locust-github-action@master
         with:
