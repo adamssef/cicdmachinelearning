@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Announce Load Test
-        run: echo "Starting load test for URL: ${{ github.event.inputs.app_url }}"
+        run: 'echo "Starting load test for URL: ${{ github.event.inputs.app_url }}"'
 
       - name: Run Load Test
         uses: apardo04/locust-github-action@master
