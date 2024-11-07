@@ -1,0 +1,5 @@
+name: 'planet_ab_tests'
+type: module
+description: 'Implements features related to AB tests implementation.'
+package: Planet
+core_version_requirement: ^10

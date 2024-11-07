@@ -1,0 +1,6 @@
+services:
+  planet_ab_tests.middleware.cookie_redirect:
+    class: Drupal\planet_ab_tests\Middleware\PlanetCookieRedirectMiddleware
+    arguments: [ '@http_kernel.basic', '@request_stack' ]
+    tags:
+      - { name: http_middleware, priority: 200 }
