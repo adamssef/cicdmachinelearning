@@ -9,7 +9,7 @@ dependencies:
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
-    excluded: false
+    excluded: true
 id: node.case_studies.field_case_study_result
 field_name: field_case_study_result
 entity_type: node
@@ -17,7 +17,7 @@ bundle: case_studies
 label: Result
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

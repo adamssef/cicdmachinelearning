@@ -1,0 +1,158 @@
+{% if case_study_data['company_name'] %}
+	<div class="breadcrumbs">
+		<a href="/case-studies">{{ "Customer stories"|t }}</a>
+	</div>
+{% endif %}
+{% if case_study_data['title'] %}
+	<h1 class="case-study-page__h1 case-study-page__h1 case-study-page__h1--customer-info not-displayed">{{ case_study_data['title'] }}</h1>
+{% endif %}
+
+<div class="case-study-page__meta-container">
+    {% if case_study_data['company_name'] %}
+        <div class="case-study-page__customer-info">
+            {% if case_study_data['company_name'] %}
+                <div class="case-study-page__customer-info__container">
+                    <label class="customer-info__label customer-info__label--company-name">{{ case_study_data['company_name'] }}</label>
+                </div>
+            {% endif %}
+            {% if case_study_data['company_size_in_numbers'] %}
+                <div class="case-study-page__customer-info__container case-study-page__customer-info__container--company-size">
+                    <label class="customer-info__label customer-info__label--company-size">{{ "Number of employees"|t }}</label>
+                    <span><img src="/resources/icons/headcount_icon.svg"><span>{{ case_study_data['company_size_in_numbers'] }}</span></span>
+                </div>
+            {% endif %}
+            {% if case_study_data['industry'] %}
+                <div class="case-study-page__customer-info__container">
+                    <label class="customer-info__label customer-info__label--industry">{{ "Industry"|t }}</label>
+                    <span>{{ case_study_data['industry'] }}</span>
+                </div>
+            {% endif %}
+            {% if case_study_data['headquarter_country'] %}
+                <div class="case-study-page__customer-info__container">
+                    <label class="customer-info__label customer-info__label--headquarter">{{ "Headquarter"|t }}</label>
+                    <span>{% if case_study_data['headquarter_city'] %}{{ case_study_data['headquarter_city'] }}, {% endif %}{{ case_study_data['headquarter_country'] }}</span>
+                </div>
+            {% endif %}
+            {% if case_study_data['products']|length > 0 %}
+                <div class="case-study-page__customer-info__container">
+                    <label class="customer-info__label customer-info__label--products">{% if case_study_data['products']|length == 1 %}{{ "Product"|t }}{% else %}{{ "Products"|t }}{% endif %}</label>
+                    <ul class="customer-info__label--products__ul">
+                        {% for product in case_study_data['products'] %}
+                            <li class="customer-info__label--products__li">{{ product }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% if case_study_data['company_link'] and case_study_data['company_name'] %}
+                <div class="case-study-page__customer-info__container case-study-page__customer-info__container--company-link">
+                    <a href="{{ case_study_data['company_link'] }}">Visit {{ case_study_data['company_name'] }}'s website<img src="/resources/icons/external_link_icon.svg"></a>
+                </div>
+            {% endif %}
+        {% endif %}
+        </div>
+    {% endif %}
+	<div class="plnt-blog-single-page plnt-news-single-page plnt-case-study-single-page">
+		{% if case_study_data['title'] %}
+			<h1 class="case-study-page__h1 case-study-page__h1--case-study-page">{{ case_study_data['title'] }}</h1>
+		{% endif %}
+
+		{% if case_study_data['metrics'] %}
+			<div class="case-study-page__metrics">
+					{% for metric in case_study_data['metrics'] %}
+						<div class="case-study-page__metrics__container">
+							<div class="case-study-page__metrics__container__text">
+								<div class="metric-value">{{ metric['value'] }}</div>
+								<div class="metric-label">{{ metric['label'] }}</div>
+							</div>
+						</div>
+					{% endfor %}
+			</div>
+		{% endif %}
+
+		{% if case_study_data['at_a_glance'] %}
+			<div class="case-study-page__at-a-glance">
+				<h2 class="case-study-page__h2">{{ "At a glance"|t }}</h2>
+				<div class="case-study-page__long_text">
+					{{ case_study_data['at_a_glance']|raw|t  }}
+				</div>
+			</div>
+		{% endif %}
+		{% if case_study_data['recommendation'] %}
+			{% for recommendation in case_study_data['recommendation'] %}
+				<div class="case-study-page__recommendation{% if recommendation['dark_mode'] == "1" %} case-study-page__recommendation--dark{% endif %} {{ recommendation['visual_version'] }}" >
+					<div class="case-study-page__recommendation__image__container">
+						<div class="case-study-page__recommendation__image" style="background: url({{ recommendation.customer_avatar_url }}) lightgray 50% / cover no-repeat;"></div>
+						<img class="case-study-page__recommendation__image--mobile" class="case-study-page__recommendation__text__container__image--start" src="/resources/typography/pink_quote_with_tail_up.svg"></div>
+					<div class="case-study-page__recommendation__text">
+						<div >
+							<div class="case-study-page__recommendation__text__container">
+								<img class="case-study-page__recommendation__text__container__image--start" src="/resources/typography/pink_quote_with_tail_up.svg">
+								<div><span>{{ recommendation.recommendation_text }}</span></div>
+								<img class="case-study-page__recommendation__text__container__image--end" src="/resources/typography/pink_quote_with_tail_down.svg">
+							</div>
+							<div class="case-study-page__recommendation__name">{{ recommendation.fname_and_sname }}</div>
+							<div class="case-study-page__recommendation__role">{{ case_study_data['company_name'] }}, {{ recommendation.role }}</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		{% endif %}
+		{% if (case_study_data['oembed_url']) %}
+			<div class="video-wrapper">
+				<iframe class="responsive-iframe" src="{{ case_study_data['oembed_url'] }}" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Planet helps Coin realise its omnichannel goals"></iframe>
+			</div>
+			<div class="video-subtext">{{ case_study_data['video_subtext'] }}</div>
+		{% endif %}
+		{% if case_study_data['challenge_text'] %}
+			<div class="case-study-page__the-challenge">
+				<h2 class="case-study-page__h2">{{ "The challenge"|t }}</h2>
+				<div class="case-study-page__long_text">
+					{{ case_study_data['challenge_text']|raw|t  }}
+				</div>
+			</div>
+		{% endif %}
+		{% if content.field_layout_canvas %}
+			<div class="case-study-page__link-box">
+				{{ content.field_layout_canvas }}
+			</div>
+		{% endif %}
+		{% if content.field_layout_canvas_2 %}
+			<div class="case-study-page__tip-box">
+				{{ content.field_layout_canvas_2 }}
+			</div>
+		{% endif %}
+		{% if  case_study_data['solution_text'] %}
+			<div class="case-study-page__the-solution">
+				<h2 class="case-study-page__h2">{{ "The solution"|t }}</h2>
+				<div class="case-study-page__long_text">
+					{{ case_study_data['solution_text']|raw|t  }}
+				</div>
+			</div>
+		{% endif %}
+		{% if case_study_data['solution_text_image'] %}
+			<div class="case-study-page__image-container">
+				<img src="{{ case_study_data['solution_text_image'] }}" class="case-study-page__solution-image">
+			</div>
+		{% endif %}
+		{% if case_study_data['result'] %}
+			<div class="case-study-page__the-result">
+				<h2 class="case-study-page__h2">{{ "The result"|t }}</h2>
+				<div class="case-study-page__long_text">
+					{{ case_study_data['result']|raw|t  }}
+				</div>
+			</div>
+		{% endif %}
+		{% if content.field_layout_canvas_3 %}
+			<div class="case-study-page__tip-box case-study-page__three_favorite_features">
+				{{ content.field_layout_canvas_3 }}
+			</div>
+		{% endif %}
+		{% if (case_study_data['grow_your_business_settings']['size'] == 'medium') %}
+			{% include '/modules/custom/planet_case_studies/templates/block--grow-business-with-planet.html.twig' with case_studies  %}
+		{% endif %}
+	</div>
+</div>
+
+{% if (case_study_data['grow_your_business_settings']['size'] == 'large') %}
+	{% include '/modules/custom/planet_case_studies/templates/block--grow-business-with-planet-large.html.twig' with case_studies %}
+{% endif %}
+{% include '/modules/custom/planet_case_studies/templates/block--case-studies-more.html.twig' with case_studies %}

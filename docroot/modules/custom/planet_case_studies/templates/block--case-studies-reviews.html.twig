@@ -1,0 +1,18 @@
+<div class="reviews-block-meta-container">
+    <div class="reviews-block">
+        <h2 class="case-studies-header">{{ 'Read more from our customers'|t }}</h2>
+        <div class="reviews-block__reviews">
+            {% for review in elements.reviews %}
+                <div class="review">
+                    <div class="review-box">
+                        <img src="/resources/icons/review-five-stars.png">
+                        <div class="review-title">{{ review.title|t }}</div>
+                        <div class="review-subtitle">{{ review.subtitle|t }}</div>
+                        <div class="review-body">{{ review.body|t }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a target="_blank" class="see-reviews-on-g2" href="https://www.g2.com/products/planet-payments/reviews">{{ 'See all Planet reviews on G2'|t }}</a>
+</div>

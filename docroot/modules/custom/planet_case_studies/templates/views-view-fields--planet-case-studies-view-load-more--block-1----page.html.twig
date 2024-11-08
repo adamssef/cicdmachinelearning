@@ -1,0 +1,29 @@
+{% if triplet_img_class == 'large-right' or triplet_img_class == 'large-left' %}
+    <div class="background-image-div {{ triplet_img_class }}" style="background: linear-gradient(0deg, rgba(224, 0, 131, 0.30) 0%, rgba(224, 0, 131, 0.30) 100%), url('{{ main_image_url }}') lightgray 50% / cover no-repeat;">
+        {% if logo_image_url %}
+            <img class="background-image-div__logo-img" src="{{ logo_image_url }}"/>
+        {% endif %}
+        <a href="{{ node_url }}">
+            <span class="background-span">{{ fields.title.content }}</span>
+            <span class="initially-hidden-read-more">{{ "Read the full story"|t }} <img class="read-full-story__img" src="/resources/icons/sharp-arrow-pointing-right.svg" loading="lazy"></span>
+        </a>
+    </div>
+{% elseif triplet_img_class == 'small-right-top' or triplet_img_class == 'small-left-top' %}
+    <div class="background-image-div {{ triplet_img_class }}" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('{{ main_image_url }}') lightgray 50% / cover no-repeat;">
+        {% if logo_image_url %}
+            <img class="background-image-div__logo-img" src="{{ logo_image_url }}"/>
+        {% endif %}        <a href="{{ node_url }}">
+            <span class="background-span">{{ fields.title.content }}</span>
+            <span class="initially-hidden-read-more">{{ "Read the full story"|t }} <img class="read-full-story__img" src="/resources/icons/sharp-arrow-pointing-right.svg" loading="lazy"></span>
+        </a>
+    </div>
+{% elseif triplet_img_class == 'small-right-bottom' or triplet_img_class == 'small-left-bottom' %}
+    <div class="background-image-div {{ triplet_img_class }}" style="background: linear-gradient(0deg, rgba(154, 174, 249, 0.30) 0%, rgba(154, 174, 249, 0.30) 100%), url('{{ main_image_url }}') lightgray 50% / cover no-repeat;">
+        {% if logo_image_url %}
+            <img class="background-image-div__logo-img" src="{{ logo_image_url }}"/>
+        {% endif %}        <a href="{{ node_url }}">
+            <span class="background-span">{{ fields.title.content }}</span>
+            <span class="initially-hidden-read-more">{{ "Read the full story"|t }} <img class="read-full-story__img" src="/resources/icons/sharp-arrow-pointing-right.svg" loading="lazy"></span>
+        </a>
+    </div>
+{% endif %}

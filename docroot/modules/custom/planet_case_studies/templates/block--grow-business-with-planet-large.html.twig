@@ -1,0 +1,17 @@
+{%
+ set color = case_study_data['grow_your_business_settings']['color']
+%}
+
+<div class="grow-your-business__container grow_your-business__container--large grow_your-business__container--large--{{ color }}">
+	<div class="grow_your-business__container--large__content">
+		<span class="large-content__title {% if color != 'white' %}{{ 'white' }}{% else %}{{ 'black' }}{% endif %}-text">{{ "Grow your business with Planet"|t }}</span>
+		<div class="large-content__text {% if color != 'white' %}{{ 'white' }}{% else %}{{ 'black' }}{% endif %}-text">{{ "Grow your business with Planet"|t }}{{ "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+		incididunt ut labore et dolore magna aliqua. Diam volutpat commodo sed egestas egestas. Diam phasellus vestibulum
+		lorem sed risus ultricies tristique nulla. Viverra aliquet eget sit amet tellus cras adipiscing enim. Nisl nunc mi
+		ipsum faucibus vitae aliquet. Vel elit scelerisque mauris pellentesque pulvinar."|t }}</div>
+	</div>
+	<div class="grow_your-business__container--large__buttons">
+		<a class="grow_your-business__container--large__buttons--white grow_your-business__container--large__buttons--white--for-{{ color }}"href="/contact"><span class="inside-button-text {{ color }}-text">{{ "Create your story with Planet"|t }}</span><img src="/resources/icons/Union-{{ color }}.svg" loading="lazy"></a>
+		<a class="grow_your-business__container--large__buttons--black grow_your-business__container--large__buttons--black--for-{{ color }}" href="/case-studies"><span class="inside-button-text">{{ "Discover more customer stories"|t }}</span><img src="/resources/icons/Union-{% if color != 'white' %}{{ 'white' }}{% else %}{{ 'black' }}{% endif %}.svg" loading="lazy"></a>
+	</div>
+</div>

@@ -1,0 +1,7 @@
+name: 'planet_accept_payments'
+type: module
+description: 'This is a module that holds the implementation of Accept Payments page'
+package: Planet
+core_version_requirement: ^10
+libraries:
+  - custom_tailwind/tailwind

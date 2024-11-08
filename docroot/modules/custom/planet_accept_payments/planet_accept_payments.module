@@ -1,0 +1,88 @@
+<?php
+
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function planet_accept_payments_theme(): array {
+  return [
+    'node__accept_payments' => [
+      'template' => 'node--accept-payments',
+      'base hook' => 'node',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function planet_accept_payments_theme_suggestions_node_alter(array &$suggestions, array &$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $route_object = \Drupal::routeMatch()->getRouteObject();
+  $current_url = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
+  $is_admin_page = \Drupal::service('router.admin_context')->isAdminRoute($route_object);
+
+  if (!$node or !($node instanceof NodeInterface)) {
+    return;
+  }
+
+  $node_translation_service = \Drupal::service('planet_core.node_translation_service');
+  $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments');
+
+  if (!$is_admin_page) {
+    if ($translations && in_array($alias, $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments'))) {
+      $variables['cards'] = \Drupal::service("planet_accept_payments.service")->getCards();
+      $suggestions[] = 'node__accept_payments';
+    }
+  }
+
+}
+
+function planet_accept_payments_preprocess_node(array &$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $node_translation_service = \Drupal::service('planet_core.node_translation_service');
+  $node_translation_service = \Drupal::service('planet_core.node_translation_service');
+  $case_studies_node = $node_translation_service->getNodeByPathAlias('/case-studies');
+  $translation_array = $node_translation_service->buildTranslationArrayForNode($case_studies_node);
+  $current_lang_prefix = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $route_object = \Drupal::routeMatch()->getRouteObject();
+  $current_url = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
+  $is_admin_page = \Drupal::service('router.admin_context')->isAdminRoute($route_object);
+
+  if (!$node or !($node instanceof NodeInterface)) {
+    return;
+  }
+
+  $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments');
+
+  if (!$is_admin_page) {
+    if ($translations && in_array($alias, $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments'))) {
+      $variables['brands'] = \Drupal::service('planet_accept_payments.service')->getBrandsWeWorkWith();
+      $variables['case_studies_url'] = $translation_array[$current_lang_prefix] ?? '/case-studies';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function planet_accept_payments_preprocess_page(&$variables) {
+  $route_object = \Drupal::routeMatch()->getRouteObject();
+  $current_url = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
+  $is_admin_page = \Drupal::service('router.admin_context')->isAdminRoute($route_object);
+  $node_translation_service = \Drupal::service('planet_core.node_translation_service');
+  $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments');
+
+  if (!$is_admin_page) {
+    if ($translations && in_array($alias, $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments'))) {
+      $variables['#attached']['library'][] = 'planet_accept_payments/tailwind';
+      $variables['#attached']['library'][] = 'planet_accept_payments/planet_accept_payments';
+      $variables['#attached']['library'][] = 'planet_core/brands-we-work-with';
+      $variables['#attached']['library'][] = 'planet_core/swiper-bundle';
+    }
+  }
+}

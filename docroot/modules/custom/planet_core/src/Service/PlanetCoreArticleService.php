@@ -9,6 +9,7 @@ use Drupal\node\Entity\Node;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\path_alias\AliasManagerInterface;
+use Drupal\planet_core\Service\PlanetCoreMediaService\PlanetCoreMediaServiceInterface;
 
 /**
  * Class PlanetCoreService - a helper class for article-related functionalities.
@@ -40,7 +41,14 @@ class PlanetCoreArticleService {
    * @var \Drupal\Core\Language\LanguageManagerInterface
    */
   protected $languageManager;
- 
+
+  /**
+   * The media service.
+   *
+   * @var \Drupal\planet_core\Service\PlanetCoreMediaService\PlanetCoreMediaServiceInterface
+   */
+  public $planetCoreMediaService;
+
   /**
    * Constructs a new PlantCoreService object.
    *
@@ -50,17 +58,20 @@ class PlanetCoreArticleService {
    *  The file url generator service.
    * @param \Drupal\path_alias\AliasManagerInterface $path_alias_manager
    *   The path alias manager service.
+   * @param \Drupal\planet_core\Service\PlanetCoreMediaService\PlanetCoreMediaServiceInterface $planet_core_media_service
    */
   public function __construct(
     EntityTypeManagerInterface $entity_type_manager,
     FileUrlGeneratorInterface $file_url_generator,
     AliasManagerInterface $path_alias_manager,
     LanguageManagerInterface $language_manager,
+    PlanetCoreMediaServiceInterface $planet_core_media_service
   ) {
     $this->entityTypeManager = $entity_type_manager;
     $this->fileUrlGenerator = $file_url_generator;
     $this->pathAliasManager = $path_alias_manager;
     $this->languageManager = $language_manager;
+    $this->planetCoreMediaService = $planet_core_media_service;
   }
 
   /**
@@ -79,7 +90,8 @@ class PlanetCoreArticleService {
   public function truncateText($text, $maxLength, $suffix = '...') {
     if (mb_strlen($text) <= $maxLength) {
       return $text;
-    } else {
+    }
+    else {
       $truncatedText = mb_substr($text, 0, $maxLength) . $suffix;
 
       // Remove trailing spaces if the last character is a space.
@@ -92,7 +104,8 @@ class PlanetCoreArticleService {
    * Custom hooks functions for the planet_core module.
    */
   public function getAuthorArticles($authorId, $limit = 3, $offset = 0) {
-    $author_node = $this->entityTypeManager->getStorage('node')->load($authorId);
+    $author_node = $this->entityTypeManager->getStorage('node')
+      ->load($authorId);
     $author_name = $author_node->getTitle();
     $author_name_words = explode(' ', $author_name);
 
@@ -133,7 +146,7 @@ class PlanetCoreArticleService {
       ->accessCheck(FALSE)
       ->sort('created', 'DESC'); // Sort by creation date in descending order.
 
-    $resource_nids= $query->execute();
+    $resource_nids = $query->execute();
     $resource_nodes = $node_storage->loadMultiple($resource_nids);
 
     // Empty arrays initialization.
@@ -146,7 +159,8 @@ class PlanetCoreArticleService {
       $url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
 
       // Get Tags (field_resources_tags).
-      $tags_references = $node->get('field_resources_tags')->referencedEntities();
+      $tags_references = $node->get('field_resources_tags')
+        ->referencedEntities();
       $article_tags = [];
 
       foreach ($tags_references as $tag) {
@@ -170,14 +184,7 @@ class PlanetCoreArticleService {
 
       // Get Background Image (field_resources_background_image)
       $background_image_media = $node->get('field_resources_background_image')->entity;
-
-      if ($background_image_media instanceof \Drupal\media\Entity\Media) {
-        $background_image_file = $background_image_media->get('field_media_image')->entity;
-
-        if ($background_image_file instanceof \Drupal\file\Entity\File) {
-          $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
-        }
-      }
+      $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($background_image_media->id(), 'large');
 
       // Get Creation Date
       $custom_timestamp = $node->get('field_resources_published_time')->value;
@@ -199,36 +206,36 @@ class PlanetCoreArticleService {
       'articles' => $articles,
       'articles_count' => $total_articles,
       'articles_finished' => $total_articles == count($articles),
-      'author' => array(
+      'author' => [
         'profile_picture' => $profile_picture_url,
         'first_name' => $first_word,
-        'full_name' => $author_name
-      )
+        'full_name' => $author_name,
+      ],
     ];
   }
 
   public function getToggleLinks() {
-      /** These ids are for production only */
-      $blog_url = $this->getAliasesInOtherLanguages(1576);
-      $case_studies_url = $this->getAliasesInOtherLanguages(1366);
-      $news_url = $this->getAliasesInOtherLanguages(4751);
-      $ebooks_url = $this->getAliasesInOtherLanguages(2136);
-      $newsroom_url = $this->getAliasesInOtherLanguages(4751);
-      $newsroom_archive_url = $this->getAliasesInOtherLanguages(4756);
-      $contact_url = $this->getAliasesInOtherLanguages(41);
+    /** These ids are for production only */
+    $blog_url = $this->getAliasesInOtherLanguages(1576);
+    $case_studies_url = $this->getAliasesInOtherLanguages(1366);
+    $news_url = $this->getAliasesInOtherLanguages(4751);
+    $ebooks_url = $this->getAliasesInOtherLanguages(2136);
+    $newsroom_url = $this->getAliasesInOtherLanguages(4751);
+    $newsroom_archive_url = $this->getAliasesInOtherLanguages(4756);
+    $contact_url = $this->getAliasesInOtherLanguages(41);
 
-      $current_lang = $this->languageManager->getCurrentLanguage()->getId();
+    $current_lang = $this->languageManager->getCurrentLanguage()->getId();
 
-      return array(
-        "case_studies" => $case_studies_url,
-        "ebooks" => $ebooks_url,
-        "news" => $news_url,
-        "blog" => $blog_url,
-        "newsroom" => $newsroom_url,
-        "newsroom_archive" => $newsroom_archive_url,
-        "contact" => $contact_url,
-        'current_lang' => $current_lang
-      );
+    return [
+      "case_studies" => $case_studies_url,
+      "ebooks" => $ebooks_url,
+      "news" => $news_url,
+      "blog" => $blog_url,
+      "newsroom" => $newsroom_url,
+      "newsroom_archive" => $newsroom_archive_url,
+      "contact" => $contact_url,
+      'current_lang' => $current_lang,
+    ];
   }
 
   public function getLastPublishedArticle() {
@@ -244,7 +251,6 @@ class PlanetCoreArticleService {
       ->sort('field_resources_published_time', 'DESC') // Sort by field_resources_published_time in descending order.
       ->accessCheck()
       ->range(0, 1); // Limit the result to 1 article.
-
 
     $nids = $query->execute();
 
@@ -264,7 +270,8 @@ class PlanetCoreArticleService {
       $background_image_url = "";
 
       // Get Tags (field_resources_tags).
-      $tags_references = $node->get('field_resources_tags')->referencedEntities();
+      $tags_references = $node->get('field_resources_tags')
+        ->referencedEntities();
 
       foreach ($tags_references as $tag) {
         $tag_name = $tag->getName();
@@ -284,7 +291,8 @@ class PlanetCoreArticleService {
 
         if ($author instanceof Node && $author->getType() == 'author') {
           $author_name = $author->getTitle();
-          $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
+          $mid = $author->get('field_profile_picture')
+            ->getValue()[0]['target_id'];
           $media = Media::load($mid);
           $fid = $media->field_media_image->target_id;
           $file = File::load($fid);
@@ -295,14 +303,7 @@ class PlanetCoreArticleService {
 
       // Get Background Image (field_resources_background_image).
       $background_image_media = $node->get('field_resources_background_image')->entity;
-
-      if ($background_image_media instanceof Media) {
-        $background_image_file = $background_image_media->get('field_media_image')->entity;
-
-        if ($background_image_file instanceof File) {
-          $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
-        }
-      }
+      $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($background_image_media->id(), 'large');
 
       // Get Creation Date.
       $custom_timestamp = $node->get('field_resources_published_time')->value;
@@ -331,7 +332,7 @@ class PlanetCoreArticleService {
     }
 
     // Return null if no articles are found.
-    return null;
+    return NULL;
   }
 
   /**
@@ -377,7 +378,7 @@ class PlanetCoreArticleService {
       ->condition('langcode', $language_code) // Filter by language code.
       ->accessCheck();
 
-    if(($category !== null) && ($category != "all")) {
+    if (($category !== NULL) && ($category != "all")) {
       $query->condition('field_resources_tags', $category);
       $total_count->condition('field_resources_tags', $category);
     }
@@ -388,7 +389,8 @@ class PlanetCoreArticleService {
 
     $total_count = count($total_count);
     $resource_nids = array_values($query);
-    $resource_nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($resource_nids);
+    $resource_nodes = $this->entityTypeManager->getStorage('node')
+      ->loadMultiple($resource_nids);
 
     foreach ($resource_nodes as $node) {
       // Load the node in the current language.
@@ -398,7 +400,8 @@ class PlanetCoreArticleService {
       $published_date = $node->get('field_resources_published_time')->value;
 
       // Get Tags (field_resources_tags).
-      $tags_references = $node->get('field_resources_tags')->referencedEntities();
+      $tags_references = $node->get('field_resources_tags')
+        ->referencedEntities();
       $article_tags = [];
 
       foreach ($tags_references as $tag) {
@@ -422,15 +425,7 @@ class PlanetCoreArticleService {
 
       // Get Background Image (field_resources_background_image).
       $background_image_media = $node->get('field_resources_background_image')->entity;
-      $background_image_url = '';
-
-      if ($background_image_media instanceof Media) {
-        $background_image_file = $background_image_media->get('field_media_image')->entity;
-
-        if ($background_image_file instanceof File) {
-          $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
-        }
-      }
+      $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($background_image_media->id(), 'large');
 
       // Get Author information.
       $author_id = $node->get('field_author')->target_id;
@@ -444,7 +439,8 @@ class PlanetCoreArticleService {
 
         if ($author instanceof Node && $author->getType() == 'author') {
           $author_name = $author->getTitle();
-          $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
+          $mid = $author->get('field_profile_picture')
+            ->getValue()[0]['target_id'];
           $media = Media::load($mid);
           $fid = $media->field_media_image->target_id;
           $file = File::load($fid);
@@ -468,7 +464,7 @@ class PlanetCoreArticleService {
           'full_name' => $author_name,
           'url' => $author_url,
           'profile_picture' => $author_photo,
-        ]
+        ],
       ];
     }
 
@@ -483,19 +479,21 @@ class PlanetCoreArticleService {
 
   public function getAllBlogArticleTags() {
     // Get the current page language code.
-    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'tags']);
+    $terms = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties(['vid' => 'tags']);
     $result = [];
 
     foreach ($terms as $term) {
-        $result[] = [
-            'id' => $term->id(),
-            'name' => $term->getName(),
-        ];
+      $result[] = [
+        'id' => $term->id(),
+        'name' => $term->getName(),
+      ];
     }
 
     // Sort the result array alphabetically based on the 'name' key.
-    usort($result, function ($a, $b) {
-        return strcmp($a['name'], $b['name']);
+    usort($result, function($a, $b) {
+      return strcmp($a['name'], $b['name']);
     });
 
     return $result;
@@ -510,15 +508,16 @@ class PlanetCoreArticleService {
    * @return string
    *   A string consisting of language prefix and path alias.
    */
-  public function getAliasesInOtherLanguages($node_id, $langcode = false) {
-    $path = '/node/' . (int)$node_id;
+  public function getAliasesInOtherLanguages($node_id, $langcode = FALSE) {
+    $path = '/node/' . (int) $node_id;
 
     if (!$langcode) {
       $langcode = $this->languageManager->getCurrentLanguage()->getId();
     }
+
     $path_alias = $this->pathAliasManager->getAliasByPath($path, $langcode);
-   
     $lang_prefix = $langcode != "en" ? "/" . $langcode : "";
+
     return $lang_prefix . $path_alias;
   }
 
@@ -566,7 +565,8 @@ class PlanetCoreArticleService {
 
       if ($author instanceof Node && $author->getType() == 'author') {
         $author_name = $author->getTitle();
-        $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
+        $mid = $author->get('field_profile_picture')
+          ->getValue()[0]['target_id'];
         $media = Media::load($mid);
         $fid = $media->field_media_image->target_id;
         $file = File::load($fid);
@@ -588,14 +588,8 @@ class PlanetCoreArticleService {
 
     // Get Background Image (field_resources_background_image)
     $background_image_media = $node->get('field_resources_background_image')->entity;
-
-    if ($background_image_media instanceof \Drupal\media\Entity\Media) {
-      $background_image_file = $background_image_media->get('field_media_image')->entity;
-
-      if ($background_image_file instanceof \Drupal\file\Entity\File) {
-        $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
-      }
-    }
+    $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($background_image_media->id(), 'large');
+    $background_image_url = strtok($background_image_url, '?');
 
     // Get Creation Date
     $custom_timestamp = $node->get('field_resources_published_time')->value;
@@ -607,12 +601,12 @@ class PlanetCoreArticleService {
 
     // Convert the custom timestamp to a formatted date.
     $creation_date = date('F j, Y', $custom_timestamp);
-    $related_tag = $article_tags ? $article_tags[0]['id'] : false;
+    $related_tag = $article_tags ? $article_tags[0]['id'] : FALSE;
     $related_articles = $this->getRelatedArticles($related_tag, $node->id());
     $last_updated_on = $node->get('changed')->value;
     $last_updated_on = $this->getTheByLanguageFormattedDate($last_updated_on);
 
-    $article = array(
+    $article = [
       "title" => $title,
       'url' => $url,
       'domain' => $domain,
@@ -630,7 +624,7 @@ class PlanetCoreArticleService {
       ],
       'blog_url' => $blog_url,
       'related_articles' => $related_articles,
-    );
+    ];
 
     return $article;
   }
@@ -647,13 +641,13 @@ class PlanetCoreArticleService {
    *   An array of related articles.
    */
   public function getRelatedArticles($tag_id, $exclude_node_id) {
-    \Drupal::logger('PlanetCoreArticleService')->notice('In getRelatedArticles.');
     $related_articles = [];
 
     // Get the current page language code.
     $language_code = $this->languageManager->getCurrentLanguage()->getId();
 
-    $node_storage_query = $this->entityTypeManager->getStorage('node')->getQuery();
+    $node_storage_query = $this->entityTypeManager->getStorage('node')
+      ->getQuery();
 
     $query = $node_storage_query
       ->condition('type', 'resources') // Adjust to your content type name.
@@ -695,7 +689,8 @@ class PlanetCoreArticleService {
         $related_article_title = $node->get('field_resources_title')->value;
         $related_article_url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
 
-        $tags_references = $node->get('field_resources_tags')->referencedEntities();
+        $tags_references = $node->get('field_resources_tags')
+          ->referencedEntities();
         $tags_references = array_slice($tags_references, 0, 3);
         $article_tags = [];
 
@@ -705,7 +700,8 @@ class PlanetCoreArticleService {
           $author = Node::load($author_id);
           if ($author instanceof Node && $author->getType() == 'author') {
             $author_name = $author->getTitle() ? $author->getTitle() : "";
-            $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
+            $mid = $author->get('field_profile_picture')
+              ->getValue()[0]['target_id'];
             $media = Media::load($mid);
             $fid = $media->field_media_image->target_id;
             $file = File::load($fid);
@@ -725,16 +721,8 @@ class PlanetCoreArticleService {
           ];
         }
 
-        // Get Background Image (field_resources_background_image)
         $background_image_media = $node->get('field_resources_background_image')->entity;
-
-        if ($background_image_media instanceof Media) {
-          $background_image_file = $background_image_media->get('field_media_image')->entity;
-
-          if ($background_image_file instanceof File) {
-            $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
-          }
-        }
+        $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($background_image_media->id(), 'large');
 
         // Get Creation Date
         $custom_timestamp = $node->get('field_resources_published_time')->value;
@@ -744,7 +732,8 @@ class PlanetCoreArticleService {
 
         if ($language_code != "en") {
           $url = "/" . $language_code . $related_article_url;
-        } else {
+        }
+        else {
           $url = $related_article_url;
         }
 
@@ -758,7 +747,7 @@ class PlanetCoreArticleService {
             'full_name' => $author_name ?? "",
             'url' => $author_url ?? "",
             'profile_picture' => $author_photo ?? "",
-          ]
+          ],
         ];
       }
     }
@@ -775,16 +764,17 @@ class PlanetCoreArticleService {
    * @return string
    *   The formatted date.
    */
-  public function getTheByLanguageFormattedDate(?string $timestamp):?string {
+  public function getTheByLanguageFormattedDate(?string $timestamp): ?string {
     if (!$timestamp) {
-      return null;
+      return NULL;
     }
 
     $language_code = $this->languageManager->getCurrentLanguage()->getId();
 
     if ($language_code == "en") {
       return date('F j, Y', $timestamp);
-    } else {
+    }
+    else {
       return date('j/m/y', $timestamp);
     }
   }

@@ -63,3 +63,32 @@
       display: block;
       /* The first section is shown by default */
   }
+
+.plnt-btn-pink {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 24px;
+    background-color: #e00083;
+    border: 2px solid #e00083;
+    color: white;
+    border-radius: 56px;
+    transition: all .3s ease;
+    display: inline-block;
+}
+.plnt-btn-pink:hover {
+    background: black;
+    border-color: black;
+}
+.index-cta > a {
+    display: inline-block;
+    padding: 12px 48px 12px 24px
+  }
+  .index-cta {
+    margin-top: 16px;
+  }
+  .plnt-btn-pink.with-arrow {
+    background-image: url("/resources/icons/sharp-arrow-pointing-right.svg");
+    background-position: 94% center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+  }
