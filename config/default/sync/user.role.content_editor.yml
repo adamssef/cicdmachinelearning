@@ -24,7 +24,6 @@ dependencies:
     - node.type.locations_contacts
     - node.type.newsroom
     - node.type.page
-    - node.type.payment_methods
     - node.type.planet_faq
     - node.type.planet_offices
     - node.type.planet_products

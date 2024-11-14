@@ -1,0 +1,5 @@
+name: application
+type: module
+description: Provides application level changes and updates.
+package: Planet
+core_version_requirement: ^9 || ^10
