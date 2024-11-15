@@ -402,7 +402,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     }
   }
 
-  if ($alias == "/homepage-prototype-v1") {
+  if ($alias == "/new") {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     switch ($language) {
       case "it":
@@ -808,7 +808,7 @@ function planet_core_page_attachments_alter(array &$attachments) {
   $alias_manager = \Drupal::service('path_alias.manager');
   $current_alias = $alias_manager->getAliasByPath($current_path);
 
-  if ($current_alias == '/homepage-prototype-v1' || $current_alias == '/homepage-prototype-v2') {
+  if ($current_alias == '/new' || $current_alias == '/homepage-prototype-v2') {
     // Tailwind enabled flag.
     $tailwind_enabled = false;
     $attachments['#attached']['library'][] = 'planet_core/front-page';
