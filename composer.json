@@ -17,7 +17,7 @@
     "drupal/animated_gif": "^2.0",
     "drupal/asset_injector": "^2.19",
     "drupal/autologout": "^1.4",
-    "drupal/block_class": "2.0.10",
+    "drupal/block_class": "^4.0",
     "drupal/chatgpt_plugin": "^2.1",
     "drupal/clientside_validation": "^4.0",
     "drupal/color": "^1.0",
