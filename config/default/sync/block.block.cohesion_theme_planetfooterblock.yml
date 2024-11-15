@@ -11,7 +11,7 @@ dependencies:
 id: cohesion_theme_planetfooterblock
 theme: cohesion_theme
 region: content
-weight: -18
+weight: -19
 provider: null
 plugin: planet_footer_block
 settings:

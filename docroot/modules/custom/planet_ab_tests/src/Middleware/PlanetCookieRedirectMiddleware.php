@@ -44,7 +44,7 @@ class PlanetCookieRedirectMiddleware implements HttpKernelInterface {
           return $response;
         }
         else {
-          $response = new Response('/', 200);
+          $response = $this->app->handle($request);
           $response->headers->setCookie($cookie);
           return $response;
         }
