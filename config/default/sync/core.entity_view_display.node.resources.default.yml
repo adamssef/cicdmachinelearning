@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.resources.field_enable_new_layout
     - field.field.node.resources.field_field_resources_metatag
     - field.field.node.resources.field_hide_from_components
+    - field.field.node.resources.field_html_content
     - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_pre_heading_3
     - field.field.node.resources.field_promoted_resource
@@ -24,6 +25,7 @@ dependencies:
   module:
     - cohesion_elements
     - metatag
+    - text
     - user
 id: node.resources.default
 targetEntityType: node
@@ -54,6 +56,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 9
+    region: content
+  field_html_content:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 16
     region: content
   field_layout_canvas:
     type: cohesion_entity_reference_revisions_entity_view

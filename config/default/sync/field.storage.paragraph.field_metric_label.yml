@@ -1,4 +1,4 @@
-uuid: 5b2d47dc-2d7b-4406-90c6-25e9375a5bdf
+uuid: 052d212d-8c54-41ba-8b6d-5d15d888065b
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ field_name: field_metric_label
 entity_type: paragraph
 type: string
 settings:
-  max_length: 255
+  max_length: 20
   case_sensitive: false
   is_ascii: false
 module: core

@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.resources.field_enable_new_layout
     - field.field.node.resources.field_field_resources_metatag
     - field.field.node.resources.field_hide_from_components
+    - field.field.node.resources.field_html_content
     - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_pre_heading_3
     - field.field.node.resources.field_promoted_resource
@@ -29,6 +30,7 @@ dependencies:
     - media_library
     - metatag
     - path
+    - text
 id: node.resources.default
 targetEntityType: node
 bundle: resources
@@ -71,6 +73,14 @@ content:
     region: content
     settings:
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_html_content:
+    type: text_textarea
+    weight: 29
+    region: content
+    settings:
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_layout_canvas:
