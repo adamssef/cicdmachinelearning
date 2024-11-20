@@ -59,7 +59,7 @@ content:
     region: content
   field_html_content:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 16
