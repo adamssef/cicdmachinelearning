@@ -5,6 +5,9 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_basic_page_metatag
+    - field.field.node.page.field_enable_new_layout
+    - field.field.node.page.field_html_content
+    - field.field.node.page.field_is_product_page
     - field.field.node.page.field_layout_canvas
     - field.field.node.page.field_resources_tags
     - node.type.page
@@ -14,6 +17,7 @@ dependencies:
     - content_moderation
     - metatag
     - path
+    - text
 _core:
   default_config_hash: SfpLhPExzvR0MgFp0Wp7CrmgEnhcqQ-fXIWFhbf4ue0
 id: node.page.default
@@ -34,6 +38,28 @@ content:
     settings:
       sidebar: true
       use_details: true
+    third_party_settings: {  }
+  field_enable_new_layout:
+    type: boolean_checkbox
+    weight: 28
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_html_content:
+    type: text_textarea
+    weight: 29
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_is_product_page:
+    type: boolean_checkbox
+    weight: 101
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_layout_canvas:
     type: cohesion_layout_builder_widget

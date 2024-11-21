@@ -57,7 +57,7 @@ final class JsonImporterController extends ControllerBase {
 
         $node = Node::load($nid);
         if ($node && $node->hasTranslation($langcode)) {
-          $node->set('is_product_page', TRUE);
+          $node->set('field_is_product_page', TRUE);
           $translated_node = $node->getTranslation($langcode);
           $translated_node->set('field_html_content', [
             'value' => $entry['html'],

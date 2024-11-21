@@ -6,6 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
     - field.field.node.page.field_basic_page_metatag
+    - field.field.node.page.field_enable_new_layout
+    - field.field.node.page.field_html_content
+    - field.field.node.page.field_is_product_page
     - field.field.node.page.field_layout_canvas
     - field.field.node.page.field_resources_tags
     - node.type.page
@@ -37,6 +40,9 @@ content:
     region: content
 hidden:
   field_basic_page_metatag: true
+  field_enable_new_layout: true
+  field_html_content: true
+  field_is_product_page: true
   field_layout_canvas: true
   field_resources_tags: true
   langcode: true

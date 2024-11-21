@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for planet_node_updater module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function planet_node_updater_theme(): array {
+  $array = [
+    'block__system_main_block_product_pages' => [
+      'template' => 'block--system-main-block-product-pages',
+      'base hook' => 'block',
+    ],
+  ];
+
+  return $array;
+
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function planet_node_updater_theme_suggestions_block_alter(array &$suggestions, array &$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  $test = $node->getType();
+
+  if ($test == 'page' && $variables['elements']['#plugin_id'] === 'system_main_block') {
+    if ($node->get('field_is_product_page')) {
+      $test2 = $node->get('field_is_product_page')->getValue()[0]['value'];
+
+      if ($test2 == '1') {
+        $suggestions[] = 'block__system_main_block_product_pages';
+        $variables['html_content'] = $node->get('field_html_content')->getValue()[0]['value'];
+      }
+    }
+  }
+
+}
