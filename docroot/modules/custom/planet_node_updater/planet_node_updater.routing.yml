@@ -1,0 +1,15 @@
+planet_node_updater.json_importer_blog:
+  path: '/admin/content/import-json/blog'
+  defaults:
+    _title: 'Import JSON Data'
+    _controller: '\Drupal\planet_node_updater\Controller\JsonImporterController::importJsonDataForBlogContent'
+  requirements:
+    _permission: 'administer nodes'
+
+planet_node_updater.json_importer_product:
+  path: '/admin/content/import-json/product'
+  defaults:
+    _title: 'Import JSON Data'
+    _controller: '\Drupal\planet_node_updater\Controller\JsonImporterController::importJsonDataForProductContent'
+  requirements:
+    _permission: 'administer nodes'

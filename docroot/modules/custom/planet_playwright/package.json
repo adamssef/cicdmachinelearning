@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@playwright/test": "^1.49.0"
+  },
+  "scripts": {
+    "test-extract-content-product-pages": "npx playwright test e2e/extractProductPagesContent.spec.ts",
+    "test-extract-content-blog": "npx playwright test e2e/extractBlogContent.spec.ts"
+  }
+}

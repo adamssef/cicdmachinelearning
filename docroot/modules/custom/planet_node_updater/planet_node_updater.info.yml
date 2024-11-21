@@ -1,0 +1,5 @@
+name: 'planet_node_updater'
+type: module
+description: 'Update node'
+package: Planet
+core_version_requirement: ^10

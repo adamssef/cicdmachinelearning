@@ -8,7 +8,7 @@
     - attributes: HTML attributes for the node wrapper.
 #}
 <div>
-	<div class="plnt-blog-single-page">
+	<div class="plnt-blog-single-page node-id-{{ node.id }}">
 		<div class="dynamic-index-wrapper mobile-version">
 			<div class="index-sticky">
 				<div class="index-title-wrapper">
@@ -88,7 +88,7 @@
 					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-7">
 						<div class="article-content-wrapper" style="padding-top: 0">
 							<div class="single-layout-canvas">
-								{{content.field_layout_canvas}}
+								{{ content.field_html_content }}
 							</div>
 						</div>
 					</div>

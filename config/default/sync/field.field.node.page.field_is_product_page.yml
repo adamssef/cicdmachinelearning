@@ -1,0 +1,26 @@
+uuid: 09cb2aeb-8372-4dbd-8cfb-99f3fc53de2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_product_page
+    - node.type.page
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.page.field_is_product_page
+field_name: field_is_product_page
+entity_type: node
+bundle: page
+label: 'Is product page?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean
