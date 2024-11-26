@@ -1,4 +1,4 @@
 services:
   planet_support.service:
     class: Drupal\planet_support\Service\PlanetSupportService
-    arguments: ['@entity_type.manager','@planet_core.node_translation_service', '@language_manager', '@planet_core.taxonomy_service', '@path_alias.manager', '@planet_core.media_service']
+    arguments: ['@entity_type.manager', '@planet_core.taxonomy_service']

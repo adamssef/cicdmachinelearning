@@ -23,25 +23,39 @@
     for (const key in regionData) {
       if (regionData.hasOwnProperty(key)) {
         const country = regionData[key];
-
-        // Create the country element while keeping the existing styles
         const countryElement = document.createElement('div');
         countryElement.classList.add('flex', 'flex-col');
-
         const countryNameElement = document.createElement('span');
         countryNameElement.classList.add('font-semibold', 'leading-[20px]', 'text-[19px]');
         countryNameElement.textContent = country.name;
-
         const countryPhoneElement = document.createElement('span');
         countryPhoneElement.classList.add('font-light');
         countryPhoneElement.textContent = country.phone;
-
-        // Append name and phone number to the country element
         countryElement.appendChild(countryNameElement);
         countryElement.appendChild(countryPhoneElement);
-
-        // Append country element to the container
         countryContainer.appendChild(countryElement);
+      }
+    }
+  }
+
+  function buildEmails(companyData) {
+    const emailsContainer = document.querySelector('.grid-emails');
+
+    for (const key in companyData) {
+      if (companyData.hasOwnProperty(key)) {
+        const email = companyData[key];
+        const emailElement = document.createElement('div');
+        emailElement.classList.add('flex', 'flex-col');
+        const emailNameElement = document.createElement('span');
+        emailNameElement.classList.add('font-semibold', 'leading-[20px]', 'text-[19px]');
+        emailNameElement.textContent = email.name;
+
+        const companyEmailElement = document.createElement('span');
+        companyEmailElement.classList.add('font-light');
+        companyEmailElement.textContent = email.email;
+        emailElement.appendChild(emailNameElement);
+        emailElement.appendChild(companyEmailElement);
+        emailsContainer.appendChild(emailElement);
       }
     }
   }
@@ -50,6 +64,13 @@
     const countryContainer = document.querySelector('.grid');
     if (countryContainer) {
       countryContainer.innerHTML = ''; // Remove existing countries
+    }
+  }
+
+  function clearEmails() {
+    const emailsContainer = document.querySelector('.grid-emails');
+    if (emailsContainer) {
+      emailsContainer.innerHTML = ''; // Remove existing countries
     }
   }
 
@@ -100,8 +121,6 @@
             regionText = longToShortRegionNameMap[regionText];
 
             try {
-              // Fetch data for the selected region
-
               var response;
 
              if (regionText !== null) {
@@ -158,7 +177,6 @@
         (company) => {
           company.addEventListener('click', async () => {
             toggleCompanies(company);
-
             let companyText = company.innerText;
 
             const longToShortCompanyNameMap = {
@@ -167,7 +185,7 @@
               "Hoist PMS Products": "hoist_pms",
               "Payments and Tax Free (Technical)": "payments_and_taxfree",
               "Planet Unified Commerce": "unified_commers",
-              "Protel": "protes",
+              "Protel": "protel",
               "Tax Free (General)": "tax_free"
             };
 
@@ -199,11 +217,8 @@
               }
 
               let companyData = await response.json();
-
-              // // Remove existing countries when company is changed
-              // clearCountries();
-              // // Rebuild the countries based on the response
-              // buildCountries(companyData);
+              clearEmails();
+              buildEmails(companyData);
               console.log(companyData);
             } catch (error) {
               console.error('Failed to fetch company data:', error);
