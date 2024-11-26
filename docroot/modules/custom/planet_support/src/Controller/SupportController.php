@@ -1,9 +1,7 @@
 <?php
 namespace Drupal\planet_support\Controller;
 
-use Drupal\Component\Serialization\Json;
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\planet_core\Service\PlanetCoreCaseStudiesService;
 use Drupal\planet_support\Service\PlanetSupportService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -35,6 +33,15 @@ class SupportController extends ControllerBase {
     );
   }
 
+  /**
+   * Load support countries by region.
+   *
+   * @param string $region
+   *   The region name.
+   *
+   * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *   The JSON response.
+   */
   public function loadSupportCountriesByRegion($region) {
     if ($region === "null" || $region === 'undefined') {
       $region = NULL;
@@ -43,11 +50,20 @@ class SupportController extends ControllerBase {
     return new JsonResponse($this->supportService->getAllCountriesForRegion($region));
   }
 
+  /**
+   * Load support emails by company.
+   *
+   * @param string $company
+   *   The company name.
+   *
+   * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *   The JSON response.
+   */
   public function loadSupportEmailsByCompany($company) {
     if ($company === "null" || $company === 'undefined') {
-      $region = NULL;
+      $company = NULL;
     }
 
-    return new JsonResponse($this->supportService->getAllEmailsForCompany($region));
+    return new JsonResponse($this->supportService->getAllEmailsForCompany($company));
   }
 }
