@@ -1,0 +1,62 @@
+.coh-row-bleed-xl .coh-column .coh-inline-element {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  /* background-color: violet; */
+}
+/* 
+.html-custom-page .html-custom-page-hotel-booking-engine {
+  background-image: url(/sites/default/files/2023-10/hotel-booking-engine-set-up_2.svg);
+} */
+
+article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-color: green;
+}
+
+article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-color: violet;
+}
+article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-color: blue;
+}
+article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-color: lightcoral;
+}
+article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-color: slateblue;
+}
+
+article > div > div > div:nth-child(1) .coh-container .coh-link {margin-right: 12px}
+
+@media (max-width: 991px) {
+  article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
+  padding: 16px 0
+  }
+}
+@media (min-width: 992px) {
+  article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
+    padding-right: 24px;
+  }
+
+article > div > div > div:nth-child(1) .coh-container .coh-container-boxed > .coh-container  {
+  padding-right: 64px
+  }
+  article > div > div > div:nth-child(1) .coh-container .coh-container-boxed {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+}
+article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
+  background: lightyellow;
+  width: 100%;
+
+  padding-bottom: 32px;
+}
+
+article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+  background-color: cyan;
+}

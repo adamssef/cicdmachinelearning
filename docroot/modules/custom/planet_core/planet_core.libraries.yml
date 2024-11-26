@@ -2,6 +2,7 @@ sitewide-libraries:
   css:
     theme:
       css/site_wide_styles.css: {}
+      css/product_pages_html.css: {}
   js:
     js/SiteWideScripts.js: {}
 language-popup:

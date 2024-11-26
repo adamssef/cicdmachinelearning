@@ -741,7 +741,6 @@ function planet_core_preprocess_node(array &$variables) {
   $planet_core_news_helper = \Drupal::service('planet_core.news_helper');
 
   $variables['#attached']['library'][] = 'planet_core/language-popup';
-  $variables['#attached']['library'][] = 'planet_core/sitewide-libraries';
 
   if ($alias === '/sitemap') {
     $variables['term_tree'] = \Drupal::service('planet_html_sitemap.helper')
@@ -793,6 +792,7 @@ function planet_core_preprocess_node(array &$variables) {
  */
 function planet_core_preprocess_page(array &$variables) {
   $variables['#attached']['library'][] = 'planet_core/language-popup';
+  $variables['#attached']['library'][] = 'planet_core/sitewide-libraries';
 
   $current_path = \Drupal::service('path.current')->getPath();
   $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
