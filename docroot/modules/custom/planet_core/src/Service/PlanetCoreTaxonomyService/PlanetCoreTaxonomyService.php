@@ -48,6 +48,27 @@ class PlanetCoreTaxonomyService implements PlanetCoreTaxonomyServiceInterface {
   }
 
   /**
+   * {@inheritDoc}
+   */
+  public function getNthLevelTaxonomyTermsArray(string $taxonomy_vocabulary_name, int $level = NULL): ?array {
+    $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($taxonomy_vocabulary_name);
+
+    foreach ($terms as $key=>$term) {
+      if ($level === NULL) {
+        $term_data[$key] = $term->name;
+      }
+      else {
+        if ($term->depth === $level) {
+          $term_data[$key] = $term->name;
+        }
+      }
+
+    }
+
+    return $term_data;
+  }
+
+  /**
    * Retrieves the taxonomy term ID by its name and vocabulary.
    *
    * @param string $term_name The name of the taxonomy term.

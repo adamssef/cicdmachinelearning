@@ -1,0 +1,15 @@
+planet_support.support:
+  path: '/planet/support/{region}'
+  defaults:
+    _controller: '\Drupal\planet_support\Controller\SupportController::loadSupportCountriesByRegion'
+    _title: 'Load support locations based on given parameter'
+  requirements:
+    _permission: 'access content'
+
+planet_support.support_region:
+  path: '/planet/support/email/{company}'
+  defaults:
+    _controller: '\Drupal\planet_support\Controller\SupportController::loadSupportEmailsByCompany'
+    _title: 'Load support locations based on given parameter'
+  requirements:
+    _permission: 'access content'

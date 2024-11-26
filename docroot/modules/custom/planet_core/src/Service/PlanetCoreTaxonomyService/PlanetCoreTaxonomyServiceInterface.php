@@ -15,6 +15,18 @@ interface PlanetCoreTaxonomyServiceInterface {
    */
   public function getTaxonomyTermsArray(string $taxonomy_vocabulary_name): ?array;
 
+
+  /**
+   * Get top level taxonomy terms array.
+   *
+   * @param string $taxonomy_vocabulary_name
+   *   The taxonomy vocabulary name.
+   *
+   * @return array|null
+   *   The taxonomy terms array.
+   */
+  public function getNthLevelTaxonomyTermsArray(string $taxonomy_vocabulary_name, int $level): ?array;
+
   /**
    * Retrieves the taxonomy term ID by its name and vocabulary.
    *

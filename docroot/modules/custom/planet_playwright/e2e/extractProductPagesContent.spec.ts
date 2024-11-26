@@ -156,7 +156,6 @@ test('extract content and store in JSON', async ({ browser }) => {
         "https://planet.lndo.site/de/in-app-zahlungen"
     ];
 
-    // Initialize an empty array to store data for each URL
     const extractedData = [];
 
     for (const url of urls) {
@@ -164,7 +163,6 @@ test('extract content and store in JSON', async ({ browser }) => {
         try {
             console.log(`Extracting content from: ${url}`);
             await page.goto(url, { waitUntil: 'networkidle' });
-
 
             // Extract language from the URL
             const langMatch = url.match(/\/([a-z]{2})\//);
@@ -176,20 +174,19 @@ test('extract content and store in JSON', async ({ browser }) => {
             // Check and remove the webform-submission-form element if it exists
             if (await articleElement.locator('.webform-submission-form').count() > 0) {
                 await page.evaluate(() => {
-                    const article = document.querySelector('article'); // Directly select the article element
+                    const article = document.querySelector('article');
                     if (article) {
-                        const form = article.querySelector('.webform-submission-form'); // Select the form inside the article
+                        const form = article.querySelector('.webform-submission-form');
                         if (form) {
-                            form.remove(); // Remove the form element
+                            form.remove();
                         }
                     }
                 });
             }
 
             // Get HTML content
-            let content = await page.locator('#block-cohesion-theme-content').innerHTML({ timeout: 15000 });
+            let content = await page.locator('#block-cohesion-theme-content').innerHTML({ timeout: 150000 });
             content = content.replace(/[\n\t]/g, '').replace(/<!--[\s\S]*?-->/g, '').replace(/\u00AD/g, '').replace(/>\s+</g, '><').trimStart();
-
 
             const nid = await articleElement.getAttribute('data-history-node-id');
 
@@ -201,16 +198,14 @@ test('extract content and store in JSON', async ({ browser }) => {
                 html: content,
             });
 
-            console.log(`Content extracted, cleaned, and saved for URL: ${url}`);
+            console.log(`Content and inline styles extracted for URL: ${url}`);
         } catch (error) {
             console.error(`Failed to retrieve content for ${url}: ${error.message}`);
-
-            // Handle error by adding an entry with an error message
             extractedData.push({
                 url,
                 html: "Failed to retrieve content",
                 lang: null,
-                nid: null
+                nid: null,
             });
         }
 
@@ -218,6 +213,6 @@ test('extract content and store in JSON', async ({ browser }) => {
     }
 
     // Write all data to JSON file at the end
-    fs.writeFileSync('product_pages_content.json', JSON.stringify(extractedData, null, 2));
+    fs.writeFileSync('product_pages_content_with_inline_styles.json', JSON.stringify(extractedData, null, 2));
     console.log('Content extraction and saving completed.');
 });

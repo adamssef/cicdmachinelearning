@@ -1,0 +1,11 @@
+planet_support:
+  css:
+    theme:
+      dist/css/styles.css: {}
+      css/planet_support.css: {}
+  js:
+    js/support.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

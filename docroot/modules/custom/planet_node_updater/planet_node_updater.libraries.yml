@@ -1,0 +1,4 @@
+planet_node_updater:
+  css:
+    theme:
+      css/support.css: {}

@@ -1,0 +1,5 @@
+name: 'planet_support'
+type: module
+description: 'Implements /support page.'
+package: Planet
+core_version_requirement: ^10
