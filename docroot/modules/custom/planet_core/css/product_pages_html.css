@@ -1,4 +1,4 @@
-.coh-row-bleed-xl .coh-column .coh-inline-element {
+.html-custom-page .coh-row-bleed-xl .coh-column .coh-inline-element {
   height: 100%;
   background-repeat: no-repeat;
   background-size: auto;
@@ -6,43 +6,52 @@
   /* background-color: violet; */
 }
 /* 
-.html-custom-page .html-custom-page-hotel-booking-engine {
-  background-image: url(/sites/default/files/2023-10/hotel-booking-engine-set-up_2.svg);
-} */
 
-article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+.html-custom-page article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
   background-color: green;
 }
 
-article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+.html-custom-page article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
   background-color: violet;
 }
-article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+.html-custom-page article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
   background-color: blue;
 }
-article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+.html-custom-page article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
   background-color: lightcoral;
 }
-article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+.html-custom-page article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
   background-color: slateblue;
+} */
+.html-custom-page article div div div.coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-link.coh-style-primary-light-button {
+margin-top: 16px
 }
 
-article > div > div > div:nth-child(1) .coh-container .coh-link {margin-right: 12px}
 
-@media (max-width: 991px) {
-  article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
-  padding: 16px 0
+
+.html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-link {margin-right: 12px}
+.html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-link.coh-style-secondary-outlined-atom- {display: none}
+.html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-heading {margin-bottom: 16px}
+.html-custom-page article > div > div > div:nth-child(1) .coh-container .pre-heading-hero-bleed {padding-bottom: 16px !important}
+
+@media (max-width: 1023px) {
+  .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
+    padding: 16px 0
   }
+  .html-custom-page .coh-style-container-theme---black .coh-style-e50 {
+    margin-top: 20px;
+  }
+  
 }
-@media (min-width: 992px) {
-  article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
+@media (min-width: 1024px) {
+  .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
     padding-right: 24px;
   }
 
-article > div > div > div:nth-child(1) .coh-container .coh-container-boxed > .coh-container  {
+  .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-container-boxed > .coh-container  {
   padding-right: 64px
   }
-  article > div > div > div:nth-child(1) .coh-container .coh-container-boxed {
+  .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-container-boxed {
     width: 50%;
     height: 100%;
     display: flex;
@@ -50,13 +59,457 @@ article > div > div > div:nth-child(1) .coh-container .coh-container-boxed > .co
     align-items: center;
   }
 }
-article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
-  background: lightyellow;
+.html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
   width: 100%;
-
   padding-bottom: 32px;
 }
 
-article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
-  background-color: cyan;
+.html-custom-page article > div > div > div:nth-child(1) .coh-heading {
+    font-family: 'TT Commons';
+    font-weight: 600;
+    font-size: 2.875rem;
+    line-height: 3rem;
+    letter-spacing: 0.065625rem;
+}
+.html-custom-page article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.html-custom-page .coh-style-container-theme---black .card-with-icon-title-and-text .coh-wysiwyg p, .coh-style-container-theme---black .card-with-icon-title-and-text .coh-wysiwyg h4 {
+  line-height: 22px;
+}
+.html-custom-page .coh-style-container-theme---black .card-with-icon-title-and-text .coh-link::after {
+  content: "\E870";
+  font-family: "Fontello";
+  margin-left: 16px;
+  font-size: 24px;
+  position: absolute;
+  margin-top: -4px;
+}
+.html-custom-page .coh-style-container-theme---black .card-with-icon-title-and-text .coh-link {
+  font-weight: 600;
+  margin-top: 16px
+}
+.html-custom-page .coh-style-padding-left-right---small {
+  text-align: left;
+  height: 20rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(224, 0, 130, 1);
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.html-custom-page .coh-style-container-publications {
+  display: none;
+}
+
+/** Hotel PMS */
+.html-custom-page-it-hotel-pms article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-hotel-pms article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-hotel-pms article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-hotel-pms article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-hotel-pms article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+  background-image: url('/sites/default/files/2022-11/hospitality-solutions-01.jpg');
+}
+
+.html-custom-page-it-hotel-pms article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-hotel-pms article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-pms article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hotel-pms article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-pms article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-image: url('/sites/default/files/2023-10/pms-operations_0.svg');
+}
+
+.html-custom-page-it-hotel-pms article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-hotel-pms article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-pms article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hotel-pms article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-pms article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-image: url('/sites/default/files/2023-11/protel-cloud-pms-technology_2.svg');
+}
+
+.html-custom-page-it-hotel-pms article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-hotel-pms article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-pms article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hotel-pms article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-pms article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-image: url('/sites/default/files/2023-11/protel-cloud-pms-reconcilliation.svg');
+}
+
+.html-custom-page-it-hotel-pms article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-hotel-pms article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-pms article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hotel-pms article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-pms article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-image: url('/sites/default/files/2023-11/protel-cloud-pms-experience_12.svg');
+}
+
+.html-custom-page-it-hotel-pms article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-hotel-pms article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-pms article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hotel-pms article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-pms article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-image: url('/sites/default/files/2024-06/pms-integrations.svg');
+}
+
+/** Booking Engine */
+.html-custom-page-es-motor-reservas-hotel article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-moteurs-reservation-hotels article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-sistemi-prenotazione-alberghiera article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-hotelbuchungsmaschine article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-hotel-booking-engine article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2024-03/hotel-booking-engine-direct.jpg');
+}
+
+.html-custom-page-es-motor-reservas-hotel article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-moteurs-reservation-hotels article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistemi-prenotazione-alberghiera article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotelbuchungsmaschine article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-booking-engine article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/hotel-booking-engine-set-up_2.svg');
+}
+
+.html-custom-page-es-motor-reservas-hotel article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-moteurs-reservation-hotels article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistemi-prenotazione-alberghiera article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotelbuchungsmaschine article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-booking-engine article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/hotel-booking-engine-customisation_0.svg');
+}
+
+.html-custom-page-es-motor-reservas-hotel article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-moteurs-reservation-hotels article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistemi-prenotazione-alberghiera article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotelbuchungsmaschine article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-booking-engine article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/hotel-booking-engine-secure_0.svg');
+}
+
+/** OMS */
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-order-management-system article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-auftragsverwaltungssystem article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-order-management-system article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2024-04/international-shopper-blog.jpg');
+}
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/click-and-collect-store-pick-up.svg');
+}
+
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/click-and-collect-availability.svg');
+}
+
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/click-and-collect-integration_0.svg');
+}
+
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/oms-choice.svg');
+}
+
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/oms-reporting_0.svg');
+}
+
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/oms-convert.svg');
+}
+
+/** Online payments */
+.html-custom-page-es-pagos-online article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-paiements-en-ligne article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-pagamenti-online article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12, 
+.html-custom-page-de-online-zahlung article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-online-payments article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2023-10/online-payments-platform.jpg');
+}
+
+.html-custom-page-es-pagos-online article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-en-ligne article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-online article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-online-zahlung article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-online-payments article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-11/online-payments-gateway_2.svg');
+}
+
+.html-custom-page-es-pagos-online article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-en-ligne article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-online article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-online-zahlung article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-online-payments article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-11/online-payments-flexibility_0.svg');
+}
+
+.html-custom-page-es-pagos-online article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-en-ligne article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-online article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-online-zahlung article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-online-payments article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-11/online-payments-checkout_1.svg');
+}
+
+.html-custom-page-es-pagos-online article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-en-ligne article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-online article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-online-zahlung article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-online-payments article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-11/online-payments-spend_2.svg');
+}
+
+.html-custom-page-es-pagos-online article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-en-ligne article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-online article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-online-zahlung article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-online-payments article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-12/online-payments-reporting_0.svg');
+}
+
+/** In person payments */
+.html-custom-page-es-pagos-en-persona article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-paiements-magasin article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-pagamenti-di-persona article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-personliche-zahlungen article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-in-person-payments article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2024-01/in-person-payments-acceptance.jpg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-08/Adv%20-%20IPP-1.svg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-01/in-person-payments-options.svg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-01/in-person-payments-gateway.svg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-01/in-person-payments-software.svg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-01/in-person-payments-partnership_0.svg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-10/in-person-payments-offline.svg');
+}
+
+/** DCC */
+.html-custom-page-es-dcc article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-dcc article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-dcc article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-dcc article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-dcc article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2023-10/Dynamic%20Currency%20Conversion.jpg');
+}
+
+.html-custom-page-es-dcc article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-dcc article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-dcc article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-dcc article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-dcc article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/DCC%20currencies%20available.svg');
+}
+
+.html-custom-page-es-dcc article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-dcc article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-dcc article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-dcc article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-dcc article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/DCC%20income.svg');
+}
+
+.html-custom-page-es-dcc article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-dcc article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-dcc article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-dcc article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-dcc article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/DCC%20eliminate%20risk.svg');
+}
+
+.html-custom-page-es-dcc article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-dcc article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-dcc article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-dcc article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-dcc article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/DCC%20customer%20love.svg');
+}
+
+/** Retail */
+.html-custom-page-es-retail article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-retail article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-retail article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-einzelhandel article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-retail article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2023-04/HIOPOS%20Planet%20partners%20retail%202.png');
+}
+
+.html-custom-page-es-retail article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-retail article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-retail article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-einzelhandel article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-retail article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-08/Adv%20-%20Retail_2_1.svg');
+}
+
+.html-custom-page-es-retail article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-retail article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-retail article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-einzelhandel article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-retail article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-08/Adv%20-%20Retail_3.svg');
+}
+
+.html-custom-page-es-retail article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-retail article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-retail article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-einzelhandel article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-retail article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-08/Adv%20-%20Retail_4.svg');
+}
+/** Hospitality */
+.html-custom-page-es-hosteleria article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-hospitalite article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-hospitality article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-hotel-und-gastgewerbe article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-hospitality article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2024-03/Adv%20-%20Hospitality.jpg');
+}
+
+.html-custom-page-es-hosteleria article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hospitalite article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-hospitality article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-und-gastgewerbe article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hospitality article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-10/pms-operations.svg');
+}
+
+.html-custom-page-es-hosteleria article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hospitalite article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-hospitality article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-und-gastgewerbe article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hospitality article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-03/Adv%20-%20Hospitality_Amaze_0.svg');
+}
+
+.html-custom-page-es-hosteleria article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hospitalite article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-hospitality article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-und-gastgewerbe article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hospitality article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-03/Adv%20-%20Hospitality_Integrate_0.svg');
+}
+
+.html-custom-page-es-hosteleria article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hospitalite article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-hospitality article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-und-gastgewerbe article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hospitality article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-08/Adv%20-%20Hospitality-1.svg');
+}
+
+/** Travel */
+.html-custom-page-es-viajes-transporte article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-voyage article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-viaggio article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-reisen article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-travel article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2024-06/Adv%20-%20Travel_1.jpg');
+}
+
+.html-custom-page-es-viajes-transporte article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-voyage article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-viaggio article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-reisen article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-travel article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-06/Adv%20-%20Travel_2_0.svg');
+}
+
+.html-custom-page-es-viajes-transporte article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-voyage article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-viaggio article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-reisen article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-travel article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-06/Adv%20-%20Travel_3_0.svg');
+}
+
+.html-custom-page-es-viajes-transporte article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-voyage article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-viaggio article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-reisen article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-travel article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-06/Adv%20-%20Travel_4_0.svg');
 }
