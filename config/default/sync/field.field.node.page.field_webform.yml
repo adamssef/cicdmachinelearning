@@ -1,0 +1,29 @@
+uuid: c2433fd2-a16b-46d7-8338-5cd2c9af477d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_webform
+    - node.type.page
+  module:
+    - tmgmt_content
+    - webform
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.page.field_webform
+field_name: field_webform
+entity_type: node
+bundle: page
+label: Webform
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

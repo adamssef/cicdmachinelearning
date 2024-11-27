@@ -2,3 +2,14 @@ planet_node_updater:
   css:
     theme:
       css/support.css: {}
+
+planet_node_updater_contact:
+  css:
+    theme:
+      css/contact.css: { }
+  js:
+    js/contact.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

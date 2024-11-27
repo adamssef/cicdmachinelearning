@@ -52,7 +52,14 @@ function planet_node_updater_theme_suggestions_block_alter(array &$suggestions, 
  */
 function planet_node_updater_preprocess_page(array &$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node && $node->id() === "351") {
+  $route_object = \Drupal::routeMatch()->getRouteObject();
+  $is_admin_page = \Drupal::service('router.admin_context')->isAdminRoute($route_object);
+
+  if ($node && $node->id() === '351') {
     $variables['#attached']['library'][] = 'planet_node_updater/planet_node_updater';
+  }
+
+  if (!$is_admin_page && $node && $node->id() === '41') {
+    $variables['#attached']['library'][] = 'planet_node_updater/planet_node_updater_contact';
   }
 }

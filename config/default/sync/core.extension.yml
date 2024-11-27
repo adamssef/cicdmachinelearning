@@ -101,6 +101,7 @@ module:
   planet_header: 0
   planet_html_sitemap: 0
   planet_links: 0
+  planet_node_updater: 0
   planet_offices: 0
   planet_pardot_submissions: 0
   planet_sitestudio_custom_elements: 0

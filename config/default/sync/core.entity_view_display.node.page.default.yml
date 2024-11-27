@@ -5,12 +5,16 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_basic_page_metatag
+    - field.field.node.page.field_html_content
+    - field.field.node.page.field_is_product_page
     - field.field.node.page.field_layout_canvas
     - field.field.node.page.field_resources_tags
+    - field.field.node.page.field_webform
     - node.type.page
   module:
     - cohesion_elements
     - metatag
+    - text
     - user
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
@@ -25,6 +29,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_html_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_layout_canvas:
     type: cohesion_entity_reference_revisions_entity_view
@@ -51,5 +62,7 @@ content:
 hidden:
   body: true
   content_moderation_control: true
+  field_is_product_page: true
+  field_webform: true
   langcode: true
   search_api_excerpt: true
