@@ -57,6 +57,8 @@ margin-top: 16px
     display: flex;
     align-content: center;
     align-items: center;
+  margin-left: 4rem;
+  margin-right: 4rem
   }
 }
 .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
@@ -90,6 +92,19 @@ margin-top: 16px
 .html-custom-page .coh-style-container-theme---black .card-with-icon-title-and-text .coh-link {
   font-weight: 600;
   margin-top: 16px
+}
+.html-custom-page .coh-container.animated .slide-track > .coh-column {
+  display: inline-block
+}
+.html-custom-page .coh-container.animated .slide-track {
+    width: 100% !important;
+    height: auto;
+    display: inline;
+    overflow: hidden;
+    position: relative;
+}
+.html-custom-page .coh-container.animated {
+  width: 100% !important
 }
 .html-custom-page .coh-style-padding-left-right---small {
   text-align: left;

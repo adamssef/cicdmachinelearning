@@ -12,7 +12,7 @@ function planet_node_updater_theme(): array {
   $array = [
     'block__system_main_block_product_pages' => [
       'template' => 'block--system-main-block-product-pages',
-      'base hook' => 'block',
+      'base hook' => 'node',
     ],
   ];
 
