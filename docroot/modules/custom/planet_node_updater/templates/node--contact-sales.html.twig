@@ -1,0 +1,21 @@
+<div class="flex flex-col lg:flex-row mt-[60px] max-w-[1280px] mx-6 md:mx-12 lg:mx-16 xl:mx-auto">
+    {{ node.field_webform_text.value|raw }}
+    {{ form }}
+</div>
+<div id="block-cohesion-theme-content" style="padding-top: 72px">
+{{ node.field_html_content.value|raw }}
+</div>
+
+<div class="lg:block lg:brands-we-work-with-meta-container mt-6">
+    <h3 class="font-semibold text-[32px] flex justify-center color-planet-black"> Brands we work with </h3>
+    <div class="brands-we-work-with-mega-container">
+        <div class="brands-we-work-with-container">
+            {% for i in 0..8 %}
+                {% for key, brand in brands %}
+                    <img src="{{ brand.src }}"
+                         {% if key > 10 and key < 18 %}loading="lazy"{% endif %}/>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
