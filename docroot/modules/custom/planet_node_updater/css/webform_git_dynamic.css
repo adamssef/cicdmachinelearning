@@ -1,0 +1,9 @@
+.webform-submission-form label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.webform-submission-form {
+  padding: 32px 16px;
+  max-width: 50%;
+}

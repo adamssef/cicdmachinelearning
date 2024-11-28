@@ -13,3 +13,8 @@ planet_node_updater_contact:
     - core/drupal
     - core/jquery
     - core/once
+planet_node_updater_contact_sales:
+  css:
+    theme:
+      dist/css/styles.css: { }
+      css/webform_git_dynamic.css: { }
