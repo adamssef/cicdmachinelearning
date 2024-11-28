@@ -45,6 +45,8 @@ function planet_node_updater_theme_suggestions_block_alter(array &$suggestions, 
       if ($is_product_page == '1') {
         $suggestions[] = 'block__system_main_block_product_pages';
         $variables['html_content'] = $node->get('field_html_content')->getValue()[0]['value'];
+        $form = \Drupal::entityTypeManager()->getStorage('webform')->load('get_in_touch_dynamic')->getSubmissionForm();
+        $variables['form'] = $form;
       }
 
       if (!$is_admin_page && $node && $node->id() == 376) {

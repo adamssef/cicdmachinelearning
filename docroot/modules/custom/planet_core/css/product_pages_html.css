@@ -28,7 +28,12 @@ margin-top: 16px
 }
 
 
-
+.html-custom-page #form-50-50 {display: none !important}
+.html-custom-page div.coh-container.card-heading-and-sub-text-container {
+  height: 100% !important;
+}
+.html-custom-page .coh-hero-full-width {height: 667px; background: lightcoral}
+.html-custom-page .hero-background .coh-left-text {margin-top: 170px}
 .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-link {margin-right: 12px}
 .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-link.coh-style-secondary-outlined-atom- {display: none}
 .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-heading {margin-bottom: 16px}

@@ -138,3 +138,26 @@ jQuery(document).ready(function(){
     ]
   });
  });
+
+
+ jQuery(document).ready(function($) {
+  jQuery('.coh-accordion-tabs').each(function() {
+    const tabContainer = jQuery(this);
+    const tabLinks = tabContainer.find('.coh-accordion-tabs-nav > li');
+    const tabContents = tabContainer.find('.coh-accordion-tabs-content');
+    const tabTitles = tabContainer.find('.coh-accordion-title');
+
+    tabLinks.on('click', function(e) {
+      e.preventDefault();
+      const targetId = jQuery(this).find('a').attr('href');
+
+      tabLinks.removeClass('is-active');
+      tabContents.hide().removeClass('is-active');
+      tabTitles.removeClass('is-active');
+
+      jQuery(this).addClass('is-active');
+      tabContainer.find(targetId).show().addClass('is-active');
+      tabContainer.find(`.coh-accordion-title a[href="${targetId}"]`).parent().addClass('is-active');
+    });
+  });
+});
