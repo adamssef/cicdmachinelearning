@@ -554,6 +554,11 @@ video {
   display: none;
 }
 
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -596,6 +601,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.max-w-\[1280px\] {
+  max-width: 1280px;
 }
 
 .max-w-\[264px\] {
@@ -724,6 +733,10 @@ video {
   color: rgb(32 32 32 / var(--tw-text-opacity, 1));
 }
 
+.outline {
+  outline-style: solid;
+}
+
 .hover\:shadow-planet-pp-card-hover:hover {
   --tw-shadow: 0px 6px 20px 0px #F5F5F529;
   --tw-shadow-colored: 0px 6px 20px 0px var(--tw-shadow-color);
@@ -741,6 +754,11 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mx-12 {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -748,18 +766,26 @@ video {
   .md\:w-\[264px\] {
     width: 264px;
   }
-
-  .md\:flex-row {
-    flex-direction: row;
-  }
 }
 
-@media (min-width: 1180px) {
+@media (min-width: 1024px) {
+  .lg\:mx-16 {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
   .lg\:w-1\/4 {
     width: 25%;
   }
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

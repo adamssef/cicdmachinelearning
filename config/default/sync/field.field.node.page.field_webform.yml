@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_webform
     - node.type.page
+    - webform.webform.get_in_touch_dynamic
   module:
     - tmgmt_content
     - webform
@@ -19,7 +20,13 @@ label: Webform
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 93465f48-ed41-4736-bbde-a85d5f0ed27c
+    default_data: ''
+    status: open
+    open: ''
+    close: ''
 default_value_callback: ''
 settings:
   handler: 'default:webform'

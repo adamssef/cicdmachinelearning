@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.page.field_layout_canvas
     - field.field.node.page.field_resources_tags
     - field.field.node.page.field_webform
+    - field.field.node.page.field_webform_text
     - node.type.page
     - workflows.workflow.editorial
   module:
@@ -78,6 +79,14 @@ content:
     settings:
       default_data: true
       webforms: {  }
+    third_party_settings: {  }
+  field_webform_text:
+    type: text_textarea
+    weight: 103
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

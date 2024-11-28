@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.page.field_layout_canvas
     - field.field.node.page.field_resources_tags
     - field.field.node.page.field_webform
+    - field.field.node.page.field_webform_text
     - node.type.page
   module:
     - text
@@ -45,5 +46,6 @@ hidden:
   field_layout_canvas: true
   field_resources_tags: true
   field_webform: true
+  field_webform_text: true
   langcode: true
   search_api_excerpt: true

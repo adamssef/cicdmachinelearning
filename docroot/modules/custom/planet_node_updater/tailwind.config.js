@@ -4,6 +4,7 @@ module.exports = {
     './templates/**/*.html.twig',
     './templates/*.html.twig',
     './templates/page--contact-sales.html.twig',
+    './templates/page--contact-sales.html.twig',
   ],
   safelist: [
     'border',
@@ -64,8 +65,8 @@ module.exports = {
         'planet-pp-card-hover': '0px 6px 20px 0px #F5F5F529',
       },
       screens: {
-        'lg': '1180px',
-        'lg-classic': '1024px',
+        'lg': '1024px',
+        'xl': '1280px',
       },
       colors: {
         'custom-fafafa': '#FAFAFA',

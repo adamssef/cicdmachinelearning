@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.page.field_layout_canvas
     - field.field.node.page.field_resources_tags
     - field.field.node.page.field_webform
+    - field.field.node.page.field_webform_text
     - node.type.page
   module:
     - cohesion_elements
@@ -64,5 +65,6 @@ hidden:
   content_moderation_control: true
   field_is_product_page: true
   field_webform: true
+  field_webform_text: true
   langcode: true
   search_api_excerpt: true
