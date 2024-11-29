@@ -1,11 +1,11 @@
 sitewide-libraries:
   css:
     theme:
-      css/slick.css: {}
+      # css/slick.css: {}
       css/site_wide_styles.css: {}
       css/product_pages_html.css: {}
   js:
-    js/slick.js: {}
+    # js/slick.js: {}
     js/SiteWideScripts.js: {}
 language-popup:
   css:

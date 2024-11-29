@@ -5,24 +5,11 @@
   background-position: center;
   /* background-color: violet; */
 }
-/* 
 
-.html-custom-page article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
-  background-color: green;
+#form-50-50 {
+  display: none;
 }
 
-.html-custom-page article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
-  background-color: violet;
-}
-.html-custom-page article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
-  background-color: blue;
-}
-.html-custom-page article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
-  background-color: lightcoral;
-}
-.html-custom-page article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
-  background-color: slateblue;
-} */
 .html-custom-page article div div div.coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-link.coh-style-primary-light-button {
 margin-top: 16px
 }
@@ -32,8 +19,16 @@ margin-top: 16px
 .html-custom-page div.coh-container.card-heading-and-sub-text-container {
   height: 100% !important;
 }
-.html-custom-page .coh-hero-full-width {height: 667px; background: lightcoral}
-.html-custom-page .hero-background .coh-left-text {margin-top: 170px}
+
+
+
+.html-custom-page .coh-container-image-50 {display: flex;
+flex-direction: Row-reverse;
+height: auto;
+}
+.html-custom-page .coh-container.match-height.match-height-desktop.match-height-tablet.coh-style-container-theme---light-1 {
+  height: 100% !important;
+}
 .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-link {margin-right: 12px}
 .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-link.coh-style-secondary-outlined-atom- {display: none}
 .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-heading {margin-bottom: 16px}
@@ -532,4 +527,224 @@ background-image: url('/sites/default/files/2024-06/oms-convert.svg');
 .html-custom-page-de-reisen article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-travel article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
  background-image: url('/sites/default/files/2024-06/Adv%20-%20Travel_4_0.svg');
+}
+
+
+/** Payments **/
+/* First box - Single platform */
+.coh-container-image-50 .coh-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
+}
+/* First box - Single platform */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-01/spp-gateway.jpg.webp);
+  height: auto;
+}
+
+/* Second box - Online Payments */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/check-out-solutions_0.jpg.webp);
+  height: auto;
+}
+
+/* Third box - In-Person Payments */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2024-04/PAX-A920-mobile-terminal.jpg.webp);
+  height: auto;
+}
+
+/* Fourth box - Pay-by-Link */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-02/pay-by-link.jpg.webp);
+  height: auto;
+}
+
+/* Fifth box - Payment methods */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-03/payment-methods-cards-m.jpg.webp);
+  height: auto;
+}
+
+/* Sixth box - Fraud prevention */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/fraud-prevention_0.jpg.webp);
+  height: auto;
+}
+
+/* Seventh box - DCC */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/currency-conversion-flow-m_0.jpg.webp);
+  height: auto;
+}
+/* First box - Single platform */
+.html-custom-page .ssa-component-instance-fedda788-33b1-4181-8ebd-ceccdac402b8 .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/in-store_0.jpg.webp);
+  height: auto;
+ }
+ 
+ /* Second box - Online Payments */
+ .html-custom-page .ssa-component-instance-fedda788-33b1-4181-8ebd-ceccdac402b8 .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2024-03/online.jpg.webp);
+  height: auto;
+ }
+ 
+ /* Third box - In-Person Payments */
+ .html-custom-page .ssa-component-instance-fedda788-33b1-4181-8ebd-ceccdac402b8 .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/omnichannel.jpg.webp);
+  height: auto;
+ }
+ 
+ /* Fourth box - Pay-by-Link */
+ .html-custom-page .ssa-component-instance-fedda788-33b1-4181-8ebd-ceccdac402b8 .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/unattended.jpg.webp);
+  height: auto;
+ }
+
+ .html-custom-page-payments .coh-row-inner.media-left .column-2,
+ .html-custom-page-es-pagos .coh-row-inner.media-left .column-2,
+ .html-custom-page-fr-paiements .coh-row-inner.media-left .column-2,
+ .html-custom-page-it-pagamenti .coh-row-inner.media-left .column-2,
+ .html-custom-page-de-zahlungen .coh-row-inner.media-left .column-2 {
+    background-image: url('/sites/default/files/styles/webp/public/2022-11/payments-platform-loyalty.jpg.webp');
+ }
+.html-custom-page.html-custom-page-payments .coh-hero-full-width,
+.html-custom-page.html-custom-page-es-pagos .coh-hero-full-width,
+.html-custom-page.html-custom-page-fr-paiements .coh-hero-full-width,
+.html-custom-page.html-custom-page-it-pagamenti .coh-hero-full-width,
+.html-custom-page.html-custom-page-de-zahlungen .coh-hero-full-width {
+  height: 667px;
+  background-image: url('/sites/default/files/styles/webp/public/2022-11/payments-hero.jpg.webp');
+}
+
+/* Hero background image */
+.html-custom-page-vat-refund .coh-zero > .coh-container,
+.html-custom-page-es-devolucion-iva .coh-zero > .coh-container,
+.html-custom-page-fr-remboursement-tva .coh-zero > .coh-container,
+.html-custom-page-it-rimborso-iva .coh-zero > .coh-container,
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-zero > .coh-container {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-experiences.jpg.webp);
+   background-size: cover;
+   background-position: center;
+}
+
+/* Container positioning */
+.html-custom-page-vat-refund .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-vat-refund .coh-hero-5050,
+.html-custom-page-es-devolucion-iva .coh-hero-5050,
+.html-custom-page-fr-remboursement-tva .coh-hero-5050,
+.html-custom-page-it-rimborso-iva .coh-hero-5050,
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-hero-5050 {
+   display: flex;
+   flex-direction: row-reverse;
+}
+
+/* Zero container background */
+.html-custom-page-vat-refund .coh-zero > .coh-container,
+.html-custom-page-es-devolucion-iva .coh-zero > .coh-container,
+.html-custom-page-fr-remboursement-tva .coh-zero > .coh-container,
+.html-custom-page-it-rimborso-iva .coh-zero > .coh-container,
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-zero > .coh-container {
+   height: 100%;
+}
+
+/* Zero container width */
+.html-custom-page-vat-refund .coh-zero,
+.html-custom-page-es-devolucion-iva .coh-zero,
+.html-custom-page-fr-remboursement-tva .coh-zero,
+.html-custom-page-it-rimborso-iva .coh-zero,
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-zero {
+   width: 50%;
+}
+.html-custom-page-vat-refund .coh-zero > .coh-container,
+.html-custom-page-es-devolucion-iva .coh-zero > .coh-container,
+.html-custom-page-fr-remboursement-tva .coh-zero > .coh-container,
+.html-custom-page-it-rimborso-iva .coh-zero > .coh-container,
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-zero > .coh-container {
+    background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-experiences.jpg.webp);
+}
+
+
+/* First box - Refunds */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-kiosk.jpg.webp);
+   height: auto;
+}
+
+/* Second box - Tax Free shopping */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-shopping.jpg.webp);
+   height: auto;
+}
+
+/* Third box - Self-service */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-self-service.jpg.webp);
+   height: auto;
+}
+
+/* Fourth box - Integrated */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-integrated_1.jpg.webp);
+   height: auto;
+}
+
+/* Fifth box - Retail */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-retail.jpg.webp);
+   height: auto;
+}
+
+/* Sixth box - POS */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-pos.jpg.webp);
+   height: auto;
+}
+
+/* Seventh box - All-in-one */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-all-in-one_1.jpg.webp);
+   height: auto;
+}
+.html-custom-page .coh-image.card-image {
+  border-radius: 200px;
 }

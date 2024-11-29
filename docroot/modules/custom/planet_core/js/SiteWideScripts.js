@@ -161,3 +161,35 @@ jQuery(document).ready(function(){
     });
   });
 });
+jQuery(document).ready(function($) {
+  jQuery('.coh-accordion-tab').each(function() {
+    const accordionContainer = jQuery(this);
+    const accordionTitle = accordionContainer.find('.coh-accordion-title a');
+    const accordionContent = accordionContainer.find('.coh-accordion-tabs-content');
+
+    accordionTitle.on('click', function(e) {
+      e.preventDefault();
+      const targetId = jQuery(this).attr('href');
+      const isExpanded = jQuery(this).attr('aria-expanded') === 'true';
+      
+      if (isExpanded) {
+        accordionContainer.find(targetId).slideUp();
+        jQuery(this).attr('aria-expanded', 'false');
+      } else {
+        accordionContent.slideUp();
+        accordionTitle.attr('aria-expanded', 'false');
+        accordionContainer.find(targetId).slideDown();
+        jQuery(this).attr('aria-expanded', 'true');
+      }
+    });
+  });
+});
+
+jQuery(document).ready(function() {
+  jQuery('.coh-js-scroll-to').on('click', function(e) {
+      e.preventDefault();
+      jQuery('html, body').animate({
+          scrollTop: jQuery('#contact-us').offset().top
+      }, 450); // Using the same duration as in your original HTML
+  });
+});
