@@ -21,9 +21,7 @@ dependencies:
     - field.field.node.case_studies.field_headquarter_city
     - field.field.node.case_studies.field_headquarter_country
     - field.field.node.case_studies.field_industry_type
-    - field.field.node.case_studies.field_layout_canvas
-    - field.field.node.case_studies.field_layout_canvas_2
-    - field.field.node.case_studies.field_layout_canvas_3
+    - field.field.node.case_studies.field_link_box
     - field.field.node.case_studies.field_logo_media
     - field.field.node.case_studies.field_logo_media_new_case_study
     - field.field.node.case_studies.field_main_image_media
@@ -35,6 +33,7 @@ dependencies:
     - field.field.node.case_studies.field_solution_text_image
     - field.field.node.case_studies.field_summary
     - field.field.node.case_studies.field_tags
+    - field.field.node.case_studies.field_tip_box
     - field.field.node.case_studies.field_video_media
     - field.field.node.case_studies.field_video_subtext
     - field.field.node.case_studies.field_video_thumb
@@ -74,9 +73,7 @@ hidden:
   field_headquarter_city: true
   field_headquarter_country: true
   field_industry_type: true
-  field_layout_canvas: true
-  field_layout_canvas_2: true
-  field_layout_canvas_3: true
+  field_link_box: true
   field_logo_media: true
   field_logo_media_new_case_study: true
   field_main_image_media: true
@@ -88,6 +85,7 @@ hidden:
   field_solution_text_image: true
   field_summary: true
   field_tags: true
+  field_tip_box: true
   field_video_media: true
   field_video_subtext: true
   field_video_thumb: true

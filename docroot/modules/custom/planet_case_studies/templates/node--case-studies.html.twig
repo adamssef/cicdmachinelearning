@@ -6,7 +6,7 @@
 {% if case_study_data['title'] %}
 	<h1 class="case-study-page__h1 case-study-page__h1 case-study-page__h1--customer-info not-displayed">{{ case_study_data['title'] }}</h1>
 {% endif %}
-
+{{ dump() }}
 <div class="case-study-page__meta-container">
     {% if case_study_data['company_name'] %}
         <div class="case-study-page__customer-info">
@@ -104,12 +104,22 @@
 		{% endif %}
 		{% if case_study_data['challenge_text'] %}
 			<div class="case-study-page__the-challenge">
-				<h2 class="case-study-page__h2">{{ "The challenge"|t }}</h2>
+				<h3 class="case-study-page__h3">{{ "The challenge"|t }}</h3>
 				<div class="case-study-page__long_text">
 					{{ case_study_data['challenge_text']|raw|t  }}
 				</div>
 			</div>
 		{% endif %}
+        {% if case_study_data['link_box'] %}
+            <div class="link-box__container">
+                <div class="link-box__image" style="background: url({{ case_study_data['link_box']['image'] }}) lightgray 50% / cover no-repeat;"></div>
+                <div class="link-box__text">
+                    <h3 class="case-study-page__h3">{{ case_study_data['link_box']['title']|t }}</h3>
+                    <a href="{{ case_study_data['link_box']['link'] }}" class="link-box__link">{{ case_study_data['link_box']['text'] }}<img src="/resources/icons/arrow-right-megamenu-blue.svg"></a>
+                </div>
+            </div>
+
+        {% endif %}
 		{% if content.field_layout_canvas %}
 			<div class="case-study-page__link-box">
 				{{ content.field_layout_canvas }}

@@ -243,6 +243,15 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
   margin-top: 40px;
 }
 
+.case-study-page__h3 {
+  color: #202020;
+  font-family: "TT Commons", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+}
+
 .case-study-page__long_text {
   color: #202020;
   font-family: "TT Commons", sans-serif;
@@ -461,6 +470,50 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
   margin-left: 0;
 }
 
+.link-box__container {
+  display: flex;
+  gap: 24px;
+  height: 122px;
+  background-color: #F0F3FE;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.link-box__image {
+  width: 274px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.link-box__text {
+  background-color: #f0f3fe;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.link-box__container:hover .link-box__text a img {
+  margin-left: 24px;
+  transition: all 0.3s ease-in;
+}
+
+.link-box__text a {
+  color: #005ab2;
+  text-align: center;
+  font-family: "TT Commons", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  display: flex;
+}
+
+.link-box__text a img {
+  margin-left: 16px;
+}
 .case-study-page__metrics__container__text {
   display: flex;
   flex-direction: column;
@@ -707,14 +760,12 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
 
   .case_studies__more-block-container {
     padding-top: 80px;
-    border-radius: 32px 32px 0px 0px;
+    border-radius: 32px 32px 0 0;
   }
 
-  #block-cohesion-theme-content .case_studies__more-block-container {
-    display: none;
-  }
-
-
+  /*#block-cohesion-theme-content .case_studies__more-block-container {*/
+  /*  display: none;*/
+  /*}*/
 
   .grow_your-business__container--small {
     display: none;
@@ -1258,6 +1309,10 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
 }
 
 @media (max-width: 768px) {
+  .tip-box__container h3 {
+    font-size: 18px;
+  }
+
   .grow_your-business__container--large {
     height: auto;
     border-radius: 16px;

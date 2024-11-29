@@ -1,6 +1,6 @@
 (function ($, Drupal, once) {
   'use strict';
-
+console.log('support.js loaded');
   function toggleRegions(region) {
     document.querySelectorAll('.region').forEach((el => {
       el.classList.remove('selected');

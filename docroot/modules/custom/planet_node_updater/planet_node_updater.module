@@ -39,7 +39,7 @@ function planet_node_updater_theme_suggestions_block_alter(array &$suggestions, 
   $type = $node->getType();
 
   if ($type === 'page' && $variables['elements']['#plugin_id'] === 'system_main_block') {
-    if ($node->get('field_is_product_page')) {
+    if ($node->get('field_is_product_page') && !empty($node->get('field_is_product_page')->getValue())) {
       $is_product_page = $node->get('field_is_product_page')->getValue()[0]['value'];
 
       if ($is_product_page == '1') {
@@ -73,5 +73,19 @@ function planet_node_updater_preprocess_block(&$variables) {
     $variables['#attached']['library'][] = 'planet_node_updater/planet_node_updater_contact_sales';
     $variables['#attached']['library'][] = 'planet_core/brands-we-work-with';
     $variables['#attached']['library'][] = 'planet_core/swiper-bundle';
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function planet_node_updater_preprocess_node(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $route_object = \Drupal::routeMatch()->getRouteObject();
+  $is_admin_page = \Drupal::service('router.admin_context')->isAdminRoute($route_object);
+
+  if (!$is_admin_page && $node && $node->id() == 41) {
+    $variables['#attached']['library'][] = 'planet_node_updater/planet_node_updater_contact';
+
   }
 }

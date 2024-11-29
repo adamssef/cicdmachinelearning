@@ -310,16 +310,43 @@ class PlanetCoreCaseStudiesService {
 
     $grow_your_business_paragraph = $node->field_grow_business_with_planet->referencedEntities();
     $grow_your_business_paragraph = reset($grow_your_business_paragraph);
+    $link_box_paragraph = $node->field_link_box->referencedEntities();
+    $link_box_paragraph = reset($link_box_paragraph);
+    $tip_box_paragraph = $node->field_tip_box->referencedEntities();
+    $tip_box_paragraph = reset($tip_box_paragraph);
+
 
     if (!$grow_your_business_paragraph) {
       $grow_your_business_settings = NULL;
-    } else {
+    }
+    else {
       $grow_your_business_settings = [
         'color' => $grow_your_business_paragraph->field_color_of_the_component->value,
         'size' => $grow_your_business_paragraph->field_size_of_the_component->value,
       ];
     }
+    
+    if (!$link_box_paragraph) {
+      $link_box_paragraph = NULL;
+    }
+    else {
+      $link_box_paragraph = [
+        'image' => $link_box_paragraph->field_image->target_id ? $this->planetCoreMediaService->getStyledImageUrl($link_box_paragraph->field_image->target_id, 'large') : NULL,
+        'link' => str_replace('internal:/', '',$link_box_paragraph->field_link_box_link->uri),
+        'title' => $link_box_paragraph->field_link_box_title->value,
+        'text' => $link_box_paragraph->field_link_text->value,
+      ];
+    }
 
+    if (!$tip_box_paragraph) {
+      $tip_box_paragraph = NULL;
+    }
+    else {
+      $tip_box_paragraph = [
+        'label' => $tip_box_paragraph->field_tip_box_label->value,
+        'text' => $tip_box_paragraph->field_tip_box_text->value,
+      ];
+    }
 
     if (!empty($all_products_from_term_field)) {
       foreach ($all_products_from_term_field as $product) {
@@ -348,6 +375,8 @@ class PlanetCoreCaseStudiesService {
       'result' => $node->get('field_case_study_result')->value,
       'metrics' => $metrics,
       'grow_your_business_settings' => $grow_your_business_settings,
+      'link_box' => $link_box_paragraph,
+      'tip_box' => $tip_box_paragraph,
     ];
   }
 
