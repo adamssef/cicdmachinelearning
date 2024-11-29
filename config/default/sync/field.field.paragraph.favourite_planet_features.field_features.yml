@@ -1,0 +1,24 @@
+uuid: a9ba28f1-ac42-4e94-8aa0-dd42197bf70f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_features
+    - paragraphs.paragraphs_type.favourite_planet_features
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.favourite_planet_features.field_features
+field_name: field_features
+entity_type: paragraph
+bundle: favourite_planet_features
+label: Features
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
