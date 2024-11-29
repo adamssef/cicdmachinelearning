@@ -1,4 +1,4 @@
-uuid: 82b585a9-e3db-49f7-a200-3d7df96b218c
+uuid: c5bbf2c3-3a4c-49da-be26-ac94fadaf978
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
-id: node.field_link_box
-field_name: field_link_box
+id: node.field_tip_box
+field_name: field_tip_box
 entity_type: node
 type: entity_reference_revisions
 settings:

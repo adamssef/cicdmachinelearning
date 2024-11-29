@@ -1,0 +1,30 @@
+uuid: fd89fb97-946a-426d-9fc3-90edc30ff4b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tip_box.field_tip_box_label
+    - field.field.paragraph.tip_box.field_tip_box_text
+    - paragraphs.paragraphs_type.tip_box
+id: paragraph.tip_box.default
+targetEntityType: paragraph
+bundle: tip_box
+mode: default
+content:
+  field_tip_box_label:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tip_box_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

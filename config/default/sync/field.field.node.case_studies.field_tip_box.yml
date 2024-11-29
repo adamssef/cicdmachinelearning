@@ -1,22 +1,22 @@
-uuid: 02632a41-9ed9-4fba-8760-eae39f986ecf
+uuid: b9c1851e-0c58-423a-b871-f842aae6f2a8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_link_box
+    - field.storage.node.field_tip_box
     - node.type.case_studies
-    - paragraphs.paragraphs_type.link_box
+    - paragraphs.paragraphs_type.tip_box
   module:
     - entity_reference_revisions
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
     excluded: false
-id: node.case_studies.field_link_box
-field_name: field_link_box
+id: node.case_studies.field_tip_box
+field_name: field_tip_box
 entity_type: node
 bundle: case_studies
-label: 'Link box'
+label: 'Tip box'
 description: ''
 required: false
 translatable: false
@@ -26,25 +26,25 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      link_box: link_box
+      tip_box: tip_box
     negate: 0
     target_bundles_drag_drop:
       customer_recommendation_quote:
-        weight: 6
-        enabled: false
-      grow_business_with_planet:
         weight: 7
         enabled: false
-      link_box:
+      grow_business_with_planet:
         weight: 8
-        enabled: true
-      paragraph_case_study_metrics:
+        enabled: false
+      link_box:
         weight: 9
         enabled: false
-      right_side_mega_menu:
+      paragraph_case_study_metrics:
         weight: 10
+        enabled: false
+      right_side_mega_menu:
+        weight: 11
         enabled: false
       tip_box:
         weight: 12
-        enabled: false
+        enabled: true
 field_type: entity_reference_revisions

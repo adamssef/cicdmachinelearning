@@ -312,6 +312,8 @@ class PlanetCoreCaseStudiesService {
     $grow_your_business_paragraph = reset($grow_your_business_paragraph);
     $link_box_paragraph = $node->field_link_box->referencedEntities();
     $link_box_paragraph = reset($link_box_paragraph);
+    $tip_box_paragraph = $node->field_tip_box->referencedEntities();
+    $tip_box_paragraph = reset($tip_box_paragraph);
 
 
     if (!$grow_your_business_paragraph) {
@@ -323,6 +325,7 @@ class PlanetCoreCaseStudiesService {
         'size' => $grow_your_business_paragraph->field_size_of_the_component->value,
       ];
     }
+    
     if (!$link_box_paragraph) {
       $link_box_paragraph = NULL;
     }
@@ -332,6 +335,16 @@ class PlanetCoreCaseStudiesService {
         'link' => str_replace('internal:/', '',$link_box_paragraph->field_link_box_link->uri),
         'title' => $link_box_paragraph->field_link_box_title->value,
         'text' => $link_box_paragraph->field_link_text->value,
+      ];
+    }
+
+    if (!$tip_box_paragraph) {
+      $tip_box_paragraph = NULL;
+    }
+    else {
+      $tip_box_paragraph = [
+        'label' => $tip_box_paragraph->field_tip_box_label->value,
+        'text' => $tip_box_paragraph->field_tip_box_text->value,
       ];
     }
 
@@ -363,6 +376,7 @@ class PlanetCoreCaseStudiesService {
       'metrics' => $metrics,
       'grow_your_business_settings' => $grow_your_business_settings,
       'link_box' => $link_box_paragraph,
+      'tip_box' => $tip_box_paragraph,
     ];
   }
 
