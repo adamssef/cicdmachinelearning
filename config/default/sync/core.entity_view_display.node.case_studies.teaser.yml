@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.case_studies.field_layout_canvas
     - field.field.node.case_studies.field_layout_canvas_2
     - field.field.node.case_studies.field_layout_canvas_3
+    - field.field.node.case_studies.field_link_box
     - field.field.node.case_studies.field_logo_media
     - field.field.node.case_studies.field_logo_media_new_case_study
     - field.field.node.case_studies.field_main_image_media
@@ -77,6 +78,7 @@ hidden:
   field_layout_canvas: true
   field_layout_canvas_2: true
   field_layout_canvas_3: true
+  field_link_box: true
   field_logo_media: true
   field_logo_media_new_case_study: true
   field_main_image_media: true

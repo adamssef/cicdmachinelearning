@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.case_studies.field_layout_canvas
     - field.field.node.case_studies.field_layout_canvas_2
     - field.field.node.case_studies.field_layout_canvas_3
+    - field.field.node.case_studies.field_link_box
     - field.field.node.case_studies.field_logo_media
     - field.field.node.case_studies.field_logo_media_new_case_study
     - field.field.node.case_studies.field_main_image_media
@@ -317,6 +318,24 @@ content:
     weight: 23
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_link_box:
+    type: paragraphs
+    weight: 28
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_logo_media:
     type: media_library_widget

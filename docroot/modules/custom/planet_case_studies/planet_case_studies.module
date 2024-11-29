@@ -162,7 +162,6 @@ function planet_case_studies_theme_suggestions_views_view_fields_alter(&$suggest
     return;
   }
 
-
   if (_is_path_case_studies_landing()) {
     $suggestions[] = 'views_view_fields__' . $view_id . '__' . $display_id . '__' . $field_name . '__' . $node->getType();
     $suggestions[] = 'views_view_fields__' . $view_id . '__' . $display_id . '__' . $field_name . '__' . $node->id();

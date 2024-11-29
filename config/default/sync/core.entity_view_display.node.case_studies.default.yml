@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.case_studies.field_layout_canvas
     - field.field.node.case_studies.field_layout_canvas_2
     - field.field.node.case_studies.field_layout_canvas_3
+    - field.field.node.case_studies.field_link_box
     - field.field.node.case_studies.field_logo_media
     - field.field.node.case_studies.field_logo_media_new_case_study
     - field.field.node.case_studies.field_main_image_media
@@ -195,8 +196,8 @@ content:
     weight: 0
     region: content
   field_layout_canvas_2:
-    type: entity_reference_revisions_entity_view
-    label: above
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -204,13 +205,22 @@ content:
     weight: 27
     region: content
   field_layout_canvas_3:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 28
+    region: content
+  field_link_box:
     type: entity_reference_revisions_entity_view
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 28
+    weight: 39
     region: content
   field_logo_media:
     type: entity_reference_entity_view
