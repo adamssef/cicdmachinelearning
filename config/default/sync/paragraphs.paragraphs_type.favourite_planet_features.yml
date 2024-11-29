@@ -1,0 +1,10 @@
+uuid: b2e75007-e343-4e94-bec1-4bc39d14362b
+langcode: en
+status: true
+dependencies: {  }
+id: favourite_planet_features
+label: 'Favourite Planet features'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

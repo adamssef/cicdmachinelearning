@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.case_studies.field_company_sector
     - field.field.node.case_studies.field_company_size
     - field.field.node.case_studies.field_company_size_in_numbers
+    - field.field.node.case_studies.field_favourite_features
     - field.field.node.case_studies.field_grow_business_with_planet
     - field.field.node.case_studies.field_headquarter_city
     - field.field.node.case_studies.field_headquarter_country
@@ -69,6 +70,7 @@ hidden:
   field_company_sector: true
   field_company_size: true
   field_company_size_in_numbers: true
+  field_favourite_features: true
   field_grow_business_with_planet: true
   field_headquarter_city: true
   field_headquarter_country: true

@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.case_studies.field_company_sector
     - field.field.node.case_studies.field_company_size
     - field.field.node.case_studies.field_company_size_in_numbers
+    - field.field.node.case_studies.field_favourite_features
     - field.field.node.case_studies.field_grow_business_with_planet
     - field.field.node.case_studies.field_headquarter_city
     - field.field.node.case_studies.field_headquarter_country
@@ -149,6 +150,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 24
+    region: content
+  field_favourite_features:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 41
     region: content
   field_grow_business_with_planet:
     type: entity_reference_revisions_entity_view
