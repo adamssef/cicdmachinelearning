@@ -764,6 +764,7 @@ background-image: url('/sites/default/files/2024-06/oms-convert.svg');
 .path-frontpage .coh-ce-cpt_50_50_title_text_and_image-9aae953f {
   display: none;
 }
+.path-frontpage #cards-tab-panel p.coh-style--body-xl---tt-commons-planet {display: none}
 .path-frontpage .media-left {
   flex-direction: row-reverse;
 }

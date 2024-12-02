@@ -112,32 +112,32 @@ const homepageVerticalsSwitch = new PlntSwitch({
 });
 
 
-jQuery(document).ready(function(){
-  jQuery('.slide-track').slick({
-    slidesToShow: 6,
-    "infinite": true,
-    "slidesToScroll": 1,
-    "autoplay": true,
-    "autoplaySpeed": 0,
-    draggable: false,
-    "speed": 2000,
-    "cssEase": "linear",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2
-        }
-      }
-    ]
-  });
- });
+// jQuery(document).ready(function(){
+//   jQuery('.slide-track').slick({
+//     slidesToShow: 6,
+//     "infinite": true,
+//     "slidesToScroll": 1,
+//     "autoplay": true,
+//     "autoplaySpeed": 0,
+//     draggable: false,
+//     "speed": 2000,
+//     "cssEase": "linear",
+//     responsive: [
+//       {
+//         breakpoint: 1024,
+//         settings: {
+//           slidesToShow: 3
+//         }
+//       },
+//       {
+//         breakpoint: 600,
+//         settings: {
+//           slidesToShow: 2
+//         }
+//       }
+//     ]
+//   });
+//  });
 
 
  jQuery(document).ready(function($) {
