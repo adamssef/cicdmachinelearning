@@ -314,6 +314,8 @@ class PlanetCoreCaseStudiesService {
     $link_box_paragraph = reset($link_box_paragraph);
     $tip_box_paragraph = $node->field_tip_box->referencedEntities();
     $tip_box_paragraph = reset($tip_box_paragraph);
+    $favourite_features = $node->field_favourite_features->referencedEntities();
+    $favourite_features = reset($favourite_features);
 
 
     if (!$grow_your_business_paragraph) {
@@ -348,6 +350,24 @@ class PlanetCoreCaseStudiesService {
       ];
     }
 
+    if (!$favourite_features) {
+      $favourite_features = NULL;
+    }
+    else {
+      $favourite_features = [
+        'title' => $favourite_features->field_label->value,
+        'text_items' => $favourite_features->get('field_features')->getValue(),
+      ];
+    }
+
+    $text = [];
+
+    foreach ($favourite_features['text_items'] as $feature) {
+      $text[] = $feature['value'];
+    }
+
+    $favourite_features['text_items'] = $text;
+
     if (!empty($all_products_from_term_field)) {
       foreach ($all_products_from_term_field as $product) {
         $product_tid = $product['target_id'];
@@ -377,6 +397,7 @@ class PlanetCoreCaseStudiesService {
       'grow_your_business_settings' => $grow_your_business_settings,
       'link_box' => $link_box_paragraph,
       'tip_box' => $tip_box_paragraph,
+      'favourite_features' => $favourite_features,
     ];
   }
 

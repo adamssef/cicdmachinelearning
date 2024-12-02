@@ -15,6 +15,42 @@ body.page-node-type-case-studies {
   margin: 0 auto;
 }
 
+.fav-features {
+  background-color: rgba(224, 0, 131, 0.08);
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.fav-features li span {
+  color: #202020;
+  font-family: "TT Commons", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  position: relative;
+  top: 2px;
+}
+
+.fav-features li::marker {
+  font-size:10px;
+}
+
+.fav-features__label {
+  margin-bottom: 14px;
+  display: block;
+  color: #202020;
+  font-family: "TT Commons", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.case-study-page__the-challenge {
+  margin-top: 24px;
+}
+
 .case-study-page__meta-container {
   display: flex;
   height: auto;
@@ -243,6 +279,34 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
   margin-top: 40px;
 }
 
+.need-to-know__span {
+  display: inline-flex;
+  font-weight: 600;
+}
+
+#bulb-icon {
+  width: 25px;
+  align-self: baseline;
+}
+
+.tip-box__container {
+  display: flex;
+  color: #202020;
+  font-size: 18px;
+  font-style: normal;
+  font-weight:400;
+  line-height: 36px;
+}
+
+.tip-box__meta-container {
+  padding: 16px;
+  height: auto !important;
+  background-color: #F0F3FE;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  border-radius: 8px;
+}
+
 .case-study-page__h3 {
   color: #202020;
   font-family: "TT Commons", sans-serif;
@@ -271,7 +335,6 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
 .case-study-page__h1--more-block {
   text-align: center;
   margin-bottom: 32px;
-  margin-top: 32px;
 }
 
 .case-study__more-block__content__read_full_story {
@@ -760,6 +823,7 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
 
   .case_studies__more-block-container {
     padding-top: 80px;
+    margin-top: 80px;
     border-radius: 32px 32px 0 0;
   }
 
@@ -991,10 +1055,6 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
     margin-top: 24px;
   }
 
-  .case-study-page__the-result {
-    margin-bottom: 40px;
-  }
-
   .case-study-page__link-box {
     margin-bottom: 32px;
   }
@@ -1003,6 +1063,10 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
 @media (max-width: 1024px) {
   .case-study-page__the-solution h2 {
     margin-top: 32px;
+  }
+
+  .case_studies__more-block-container {
+    margin-top: 48px;
   }
 
   .case_studies__more-block-content {
@@ -1190,6 +1254,10 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
     background-color: #202020;
   }
 
+  .case-study-page__the-result {
+    margin-bottom: 32px;
+  }
+
   .grow_your-business__container--medium {
     display:flex;
     min-height: 202px;
@@ -1197,14 +1265,15 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
     margin-top: 32px;
   }
 
-  .grow-your-business__meta_container {
-    margin-bottom: 29px;
-  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .grow_your-business__container--medium {
     margin-top: 32px;
+  }
+
+  .case_studies__more-block-container {
+    margin-top: 48px;
   }
 
   .case-study-page__tip-box.case-study-page__three_favorite_features {
@@ -1486,10 +1555,6 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
     display: none;
   }
 
-  .case-study-page__h1--more-block {
-    margin-top: 24px;
-  }
-
   .case-study-page__the-result h2 {
     margin-top: 24px;
   }
@@ -1578,6 +1643,7 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
     margin-top: 24px;
   }
 
+
   .case-study-page__h1.grow_your-business__container--small__content span:is(:first-of-type) {
     font-size: 24px;
   }
@@ -1593,6 +1659,10 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
     font-style: normal;
     font-weight: 600;
     line-height: 40px;
+  }
+
+  .case-study-page__the-result {
+    margin-bottom: 24px;
   }
 
   .case-study-page__h2 {
