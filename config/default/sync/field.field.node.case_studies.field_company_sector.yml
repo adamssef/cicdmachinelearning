@@ -6,13 +6,18 @@ dependencies:
     - field.storage.node.field_company_sector
     - node.type.case_studies
     - taxonomy.vocabulary.company_sectors
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.case_studies.field_company_sector
 field_name: field_company_sector
 entity_type: node
 bundle: case_studies
 label: 'Company sector'
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

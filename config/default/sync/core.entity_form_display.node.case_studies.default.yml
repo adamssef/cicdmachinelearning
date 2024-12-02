@@ -54,13 +54,13 @@ third_party_settings:
       children:
         - field_challenge_title
         - field_challenge_text
+        - field_link_box
+        - field_tip_box
         - field_challenge_solution_title
         - field_challenge_solution_text
         - field_solution_text_image
-        - field_layout_canvas
-        - field_layout_canvas_2
         - field_case_study_result
-        - field_layout_canvas_3
+        - field_favourite_features
         - field_grow_business_with_planet
       label: 'Challenge & Solution'
       region: content
@@ -87,7 +87,7 @@ third_party_settings:
       label: 'FIELDS FOR NEW CASE STUDIES'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 1
       format_type: fieldset
       format_settings:
         classes: rainbow
@@ -133,16 +133,11 @@ third_party_settings:
         description: ''
         required_fields: true
     group_this_filed_we_won_t_need_l:
-      children:
-        - field_pre_heading
-        - field_summary
-        - field_challenge_video
-        - field_video_thumb
-        - field_main_image_media
+      children: {  }
       label: "This fields we won't need later but are not removed yet"
       region: content
       parent_name: ''
-      weight: 6
+      weight: 2
       format_type: fieldset
       format_settings:
         classes: ''
@@ -157,7 +152,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 18
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -171,7 +166,7 @@ content:
     third_party_settings: {  }
   field_basic_page_metatag:
     type: metatag_firehose
-    weight: 17
+    weight: 11
     region: content
     settings:
       sidebar: true
@@ -179,7 +174,7 @@ content:
     third_party_settings: {  }
   field_case_study_result:
     type: string_textarea
-    weight: 22
+    weight: 21
     region: content
     settings:
       rows: 5
@@ -187,7 +182,7 @@ content:
     third_party_settings: {  }
   field_challenge_solution_text:
     type: string_textarea
-    weight: 17
+    weight: 19
     region: content
     settings:
       rows: 5
@@ -195,7 +190,7 @@ content:
     third_party_settings: {  }
   field_challenge_solution_title:
     type: string_textfield
-    weight: 16
+    weight: 18
     region: content
     settings:
       size: 60
@@ -215,14 +210,6 @@ content:
     region: content
     settings:
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_challenge_video:
-    type: string_textarea
-    weight: 20
-    region: content
-    settings:
-      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_company_link:
@@ -261,7 +248,7 @@ content:
     third_party_settings: {  }
   field_favourite_features:
     type: paragraphs
-    weight: 30
+    weight: 22
     region: content
     settings:
       title: Paragraph
@@ -279,7 +266,7 @@ content:
     third_party_settings: {  }
   field_grow_business_with_planet:
     type: paragraphs
-    weight: 24
+    weight: 23
     region: content
     settings:
       title: Paragraph
@@ -319,7 +306,7 @@ content:
     third_party_settings: {  }
   field_link_box:
     type: paragraphs
-    weight: 28
+    weight: 16
     region: content
     settings:
       title: Paragraph
@@ -344,14 +331,7 @@ content:
     third_party_settings: {  }
   field_logo_media_new_case_study:
     type: media_library_widget
-    weight: 27
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
-  field_main_image_media:
-    type: media_library_widget
-    weight: 22
+    weight: 14
     region: content
     settings:
       media_types: {  }
@@ -374,26 +354,11 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_pre_heading:
-    type: string_textfield
-    weight: 18
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_product_type:
     type: options_buttons
     weight: 26
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_promoted_case_study:
-    type: boolean_checkbox
-    weight: 0
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   field_recommendation:
     type: paragraphs
@@ -415,32 +380,14 @@ content:
     third_party_settings: {  }
   field_solution_text_image:
     type: media_library_widget
-    weight: 19
+    weight: 20
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-  field_summary:
-    type: string_textarea
-    weight: 19
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_tags:
-    type: entity_reference_autocomplete
-    weight: 3
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_tip_box:
     type: paragraphs
-    weight: 29
+    weight: 17
     region: content
     settings:
       title: Paragraph
@@ -471,54 +418,47 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_video_thumb:
-    type: media_library_widget
-    weight: 21
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 7
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 16
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 12
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   simple_sitemap:
-    weight: 11
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 14
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 19
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -532,13 +472,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 4
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -547,8 +487,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 15
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_challenge_video: true
+  field_main_image_media: true
+  field_pre_heading: true
+  field_promoted_case_study: true
+  field_summary: true
+  field_tags: true
+  field_video_thumb: true

@@ -6,6 +6,10 @@ body.page-node-type-case-studies {
   overflow-x: hidden;
 }
 
+.plnt-case-study-single-page.plnt-blog-single-page {
+  margin-top: 0;
+}
+
 .case_studies__more-block-container {
   overflow-x: hidden;
 }
@@ -826,10 +830,6 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
     margin-top: 80px;
     border-radius: 32px 32px 0 0;
   }
-
-  /*#block-cohesion-theme-content .case_studies__more-block-container {*/
-  /*  display: none;*/
-  /*}*/
 
   .grow_your-business__container--small {
     display: none;
