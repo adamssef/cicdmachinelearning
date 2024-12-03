@@ -31,4 +31,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/case-studies-2-0\r\n/casos-exito-2-0\r\n/storie-successo-2-0"
+    pages: "/case-studies\r\n/casos-exito\r\n/storie-successo\r\n/etudes-de-cas\r\n/fallstudien"
