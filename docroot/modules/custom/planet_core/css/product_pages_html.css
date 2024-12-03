@@ -602,6 +602,8 @@ background-image: url('/sites/default/files/2024-06/oms-convert.svg');
   background-image: url(/sites/default/files/styles/webp/public/2022-11/unattended.jpg.webp);
   height: auto;
  }
+ 
+ /** Payments */
 
  .html-custom-page-payments .coh-row-inner.media-left .column-2,
  .html-custom-page-es-pagos .coh-row-inner.media-left .column-2,
@@ -629,6 +631,7 @@ background-image: url('/sites/default/files/2024-06/oms-convert.svg');
    background-size: cover;
    background-position: center;
 }
+
 
 /* Container positioning */
 .html-custom-page-vat-refund .coh-hero-5050 > .coh-container:nth-child(2),
@@ -764,6 +767,146 @@ background-image: url('/sites/default/files/2024-06/oms-convert.svg');
 .path-frontpage .coh-ce-cpt_50_50_title_text_and_image-9aae953f {
   display: none;
 }
+.path-frontpage #cards-tab-panel p.coh-style--body-xl---tt-commons-planet {display: none}
 .path-frontpage .media-left {
   flex-direction: row-reverse;
+}
+
+/** PCI Proxy */
+/* Hero section */
+.html-custom-page-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-cumplimiento-pci article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+   background-image: url('/sites/default/files/2024-07/Adv%20-%20PCI_1.jpg');
+}
+/* First icon */
+.html-custom-page-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-cumplimiento-pci article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-07/Adv%20-%20PCI_3.svg');
+}
+
+/* Second icon */
+.html-custom-page-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-cumplimiento-pci article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-07/Adv%20-%20PCI_4.svg');
+}
+
+/* Third icon */
+.html-custom-page-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-cumplimiento-pci article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-07/Adv%20-%20PCI_5.svg');
+}
+
+/** In app payments */
+/* Hero section */
+.html-custom-page-in-app-payments article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-pagos-in-app article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-paiements-integres article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-pagamenti-in-app article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-in-app-zahlungen article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+   background-image: url('/sites/default/files/2024-01/in-person-payments-acceptance.jpg');
+}
+
+/* First icon */
+.html-custom-page-in-app-payments article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-08/Adv%20-%20IPP-1.svg');
+}
+
+/* Second icon */
+.html-custom-page-in-app-payments article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-01/in-person-payments-options.svg');
+}
+
+/* Third icon */
+.html-custom-page-in-app-payments article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-01/in-person-payments-gateway.svg');
+}
+
+/* Fourth icon */
+.html-custom-page-in-app-payments article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-01/in-person-payments-software.svg');
+}
+
+/* Fifth icon */
+.html-custom-page-in-app-payments article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-01/in-person-payments-partnership_0.svg');
+}
+
+/* Sixth icon */
+.html-custom-page-in-app-payments article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-10/in-person-payments-offline.svg');
+}
+
+/** Partners */
+.plnt-css-partners  .coh-hero-full-width, .plnt-css-partnerschaften .coh-hero-full-width {
+background-image: url('/sites/default/files/styles/webp/public/2022-11/partnerships-hero.jpg.webp');
+height: 667px;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+/** Unified commerce */
+/* Container positioning */
+.html-custom-page-unified-commerce .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-comercio-unificado .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-commerce-unifie .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-commercio-unificato .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-einheitlicher-handel .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-unified-commerce .coh-hero-5050,
+.html-custom-page-es-comercio-unificado .coh-hero-5050,
+.html-custom-page-fr-commerce-unifie .coh-hero-5050,
+.html-custom-page-it-commercio-unificato .coh-hero-5050,
+.html-custom-page-de-einheitlicher-handel .coh-hero-5050 {
+   display: flex;
+   flex-direction: column-reverse;
+}
+
+
+.html-custom-page-unified-commerce .coh-lazy-loading,
+.html-custom-page-es-comercio-unificado .coh-lazy-loading,
+.html-custom-page-fr-commerce-unifie .coh-lazy-loading,
+.html-custom-page-it-commercio-unificato .coh-lazy-loading,
+.html-custom-page-de-einheitlicher-handel .coh-lazy-loading {
+   display: none;
 }
