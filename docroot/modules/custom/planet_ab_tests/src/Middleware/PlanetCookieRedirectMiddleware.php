@@ -31,7 +31,15 @@ class PlanetCookieRedirectMiddleware implements HttpKernelInterface {
    * {@inheritdoc}
    */
   public function handle(Request $request, $type = self::MAIN_REQUEST, $catch = true): Response {
-    if ($request->getPathInfo() === '/') {
+    $path = $request->getPathInfo();
+    $paths = ['/', '/es', '/fr', '/de', '/it'];
+    $non_en_paths = ['/es', '/fr', '/de', '/it'];
+
+    if (in_array($path, $paths)) {
+      if (in_array($path, $non_en_paths)) {
+        $path = "$path/";
+      }
+
       $cookieName = 'homepage_ab_test';
       $random_int = mt_rand(1, 2);
 
@@ -39,7 +47,7 @@ class PlanetCookieRedirectMiddleware implements HttpKernelInterface {
       if (!$existing_cookie_value) {
         $cookie = new Cookie($cookieName, $random_int, strtotime('+1 year'), '/');
         if ($random_int === 1) {
-          $response = new RedirectResponse('/new', 302);
+          return new RedirectResponse($path ."new", 302);
           $response->headers->setCookie($cookie);
           return $response;
         }
@@ -50,7 +58,7 @@ class PlanetCookieRedirectMiddleware implements HttpKernelInterface {
         }
       } else {
         if ($existing_cookie_value === '1') {
-          return new RedirectResponse('/new', 302);
+          return new RedirectResponse($path ."new", 302);
         }
       }
     }

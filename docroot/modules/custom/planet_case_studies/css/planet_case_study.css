@@ -291,6 +291,8 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
 #bulb-icon {
   width: 25px;
   align-self: baseline;
+  margin-top: 2px;
+  margin-right: 2px;
 }
 
 .tip-box__container {
