@@ -33,7 +33,7 @@ function planet_accept_payments_theme_suggestions_node_alter(array &$suggestions
   if (!$is_admin_page) {
     $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments');
 
-    if (empty($translations || is_null($translations))) {
+    if (empty($translations) || is_null($translations)) {
       return;
     }
 
