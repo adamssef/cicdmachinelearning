@@ -31,13 +31,13 @@ function planet_accept_payments_theme_suggestions_node_alter(array &$suggestions
   $node_translation_service = \Drupal::service('planet_core.node_translation_service');
 
   if (!$is_admin_page) {
-    $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments');
+    $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/payments');
 
     if (_check_if_empty_or_null($translations)) {
       return;
     }
 
-    $lang_id = $node_translation_service->determineTheLangId();
+    $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     if (in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
       $variables['cards'] = \Drupal::service("planet_accept_payments.service")->getCards();
@@ -60,13 +60,13 @@ function planet_accept_payments_preprocess_node(array &$variables) {
   }
 
   if (!$is_admin_page) {
-    $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments');
+    $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/payments');
 
     if (_check_if_empty_or_null($translations)) {
       return;
     }
 
-    $lang_id = $node_translation_service->determineTheLangId();
+    $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     if (in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
       $variables['brands'] = \Drupal::service('planet_accept_payments.service')->getBrandsWeWorkWith();
@@ -85,13 +85,13 @@ function planet_accept_payments_preprocess_page(&$variables) {
   $node_translation_service = \Drupal::service('planet_core.node_translation_service');
 
   if (!$is_admin_page) {
-    $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments');
+    $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/payments');
 
     if (_check_if_empty_or_null($translations)) {
       return;
     }
 
-    $lang_id = $node_translation_service->determineTheLangId();
+    $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     if (in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
       $variables['#attached']['library'][] = 'planet_accept_payments/tailwind';

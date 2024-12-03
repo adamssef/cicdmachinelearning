@@ -18,7 +18,7 @@ function planet_case_studies_theme(): array {
     ],
     'select__case_studies' => [
       'template' => 'select--case-studies',
-      'base hook' => 'select'
+      'base hook' => 'select',
     ],
     'block__case_studies_reviews' => [
       'template' => 'block--case-studies-reviews',
@@ -47,22 +47,24 @@ function planet_case_studies_theme(): array {
     'views_view_fields__planet_case_studies_view_load_more__block_1____page' => [
       'template' => 'views-view-fields--planet-case-studies-view-load-more--block-1----page',
       'base hook' => 'views_view_fields',
-    ]
+    ],
   ];
 
   return $array;
-
 }
 
 /**
  * Implements hook_preprocess_HOOK().
  */
-function planet_case_studies_preprocess_node(array &$variables) {$node = $variables['node'];
-  $case_studies_helper = \Drupal::getContainer()->get('planet_core.case_studies_helper');
+function planet_case_studies_preprocess_node(array &$variables) {
+  $node = $variables['node'];
+  $case_studies_helper = \Drupal::getContainer()
+    ->get('planet_core.case_studies_helper');
 
   if (_is_path_case_studies_landing()) {
     $variables['case_studies'] = $case_studies_helper->getAllCaseStudies();
-    $variables['brands'] = \Drupal::service('planet_core.case_studies_helper')->getBrandsWeWorkWith();
+    $variables['brands'] = \Drupal::service('planet_core.case_studies_helper')
+      ->getBrandsWeWorkWith();
   }
 
   if ($node->getType() === 'case_studies') {
@@ -75,17 +77,21 @@ function planet_case_studies_preprocess_node(array &$variables) {$node = $variab
       $media_id = $node->get('field_video_media')?->getValue()[0]['target_id'];
     }
 
-    if (!is_null($media_id) && isset($node->get('field_video_media')?->getValue()[0])) {
-      $media = \Drupal::entityTypeManager()->getStorage('media')->load($media_id);
+    if (!is_null($media_id) && isset($node->get('field_video_media')
+          ?->getValue()[0])) {
+      $media = \Drupal::entityTypeManager()
+        ->getStorage('media')
+        ->load($media_id);
       if ($media->hasField('field_media_oembed_video')) {
         if ($media->get('field_media_oembed_video')?->getValue()[0]['value']) {
-          $unprocessed_url = $media->get('field_media_oembed_video')?->getValue()[0]['value'];
+          $unprocessed_url = $media->get('field_media_oembed_video')
+            ?->getValue()[0]['value'];
 
           if (str_starts_with($unprocessed_url, 'https://www.youtube.com/watch?v')) {
             $queryString = parse_url($unprocessed_url, PHP_URL_QUERY);
 
             parse_str($queryString, $queryParams);
-            $param= $queryParams['v'];
+            $param = $queryParams['v'];
           }
           else {
             $param = implode(array_slice(str_split($unprocessed_url), 17, 11));
@@ -93,7 +99,8 @@ function planet_case_studies_preprocess_node(array &$variables) {$node = $variab
 
           $final_url = 'https://www.youtube-nocookie.com/embed/' . $param;
           $variables['case_study_data']['oembed_url'] = $final_url;
-          $variables['case_study_data']['video_subtext'] = $node->get('field_video_subtext')?->getValue()[0]['value'];
+          $variables['case_study_data']['video_subtext'] = $node->get('field_video_subtext')
+            ?->getValue()[0]['value'];
         }
       }
     }
@@ -144,43 +151,45 @@ function planet_case_studies_theme_suggestions_node_alter(array &$suggestions, a
   }
 }
 
-
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function planet_case_studies_theme_suggestions_views_view_fields_alter(&$suggestions, &$variables) {
-  $view_id= $variables['view']->id();
-  $display_id = $variables['view']->current_display;
-  $field_name = $variables['field']->field;
-
-  // Add cache context for path awareness.
-  \Drupal::service('renderer')->addCacheableDependency($variables, ['#cache' => ['contexts' => ['url.path']]]);
-
-  $node = \Drupal::routeMatch()->getParameter('node');
-
-  if (!$node or !($node instanceof NodeInterface)) {
-    return;
-  }
-
   if (_is_path_case_studies_landing()) {
+    $view_id = $variables['view']->id();
+    $display_id = $variables['view']->current_display;
+    $field_name = $variables['field']->field;
+
+    // Add cache context for path awareness.
+    \Drupal::service('renderer')
+      ->addCacheableDependency($variables, ['#cache' => ['contexts' => ['url.path']]]);
+
+    $node = \Drupal::routeMatch()->getParameter('node');
+
+    if (!$node or !($node instanceof NodeInterface)) {
+      return;
+    }
+
     $suggestions[] = 'views_view_fields__' . $view_id . '__' . $display_id . '__' . $field_name . '__' . $node->getType();
     $suggestions[] = 'views_view_fields__' . $view_id . '__' . $display_id . '__' . $field_name . '__' . $node->id();
   }
-
 }
 
 function _is_path_case_studies_landing() {
   $paths = [
-    '/case-studies-2-0',
-    '/es/casos-exito-2-0',
-    '/it/storie-successo-2-0',
+    '/case-studies',
+    '/es/casos-exito',
+    '/fr/etudes-de-cas',
+    '/it/storie-successo',
+    '/de/fallstudien',
   ];
 
   $path = \Drupal::service('path.current')->getPath();
-  $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+  $current_path_alias = \Drupal::service('path_alias.manager')
+    ->getAliasByPath($path);
   $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
-  if (in_array($current_path_alias, $paths) || in_array("/$current_language"."$current_path_alias" , $paths)) {
+  if (in_array($current_path_alias, $paths) || in_array("/$current_language" . "$current_path_alias", $paths)) {
     return TRUE;
   }
 
@@ -191,7 +200,11 @@ function _is_path_case_studies_landing() {
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function planet_case_studies_theme_suggestions_select_alter(&$suggestions, &$variables) {
-  $fields =['edit-field-product-type-target-id', 'edit-field-industry-type-target-id', 'edit-field-company-size-target-id'];
+  $fields = [
+    'edit-field-product-type-target-id',
+    'edit-field-industry-type-target-id',
+    'edit-field-company-size-target-id',
+  ];
 
   if (in_array($variables['element']['#id'], $fields)) {
     $suggestions[] = 'select__case_studies';
@@ -227,7 +240,7 @@ function planet_case_studies_form_alter(&$form, FormStateInterface $form_state) 
  */
 function planet_case_studies_form_views_exposed_form_alter(&$form, FormStateInterface $form_state) {
   if (_is_path_case_studies_landing()) {
-    $form['actions']['submit']['#attributes']['disabled']  = 'disabled';
+    $form['actions']['submit']['#attributes']['disabled'] = 'disabled';
   }
 }
 
@@ -238,19 +251,26 @@ function planet_case_studies_preprocess_views_view_fields(&$variables) {
   if (_is_path_case_studies_landing()) {
     $node = $variables['row']->_entity;
 
-    $media_id = $node->get('field_main_image_media')?->getValue()[0]['target_id'];
-    $styled_image_url = \Drupal::getContainer()->get('planet_core.media_service')->getStyledImageUrl($media_id, 'wide');
+    $media_id = $node->get('field_main_image_media')
+      ?->getValue()[0]['target_id'];
+    $styled_image_url = \Drupal::getContainer()
+      ->get('planet_core.media_service')
+      ->getStyledImageUrl($media_id, 'wide');
 
-    $media_logo_id = $node->get('field_logo_media')?->getValue()[0]['target_id'];
-    $styled_logo_image_url = \Drupal::getContainer()->get('planet_core.media_service')->getImageUrl($media_logo_id, 'field_media_image');
+    $media_logo_id = $node->get('field_logo_media')
+      ?->getValue()[0]['target_id'];
+    $styled_logo_image_url = \Drupal::getContainer()
+      ->get('planet_core.media_service')
+      ->getImageUrl($media_logo_id, 'field_media_image');
     $variables['main_image_url'] = $styled_image_url;
     $variables['logo_image_url'] = $styled_logo_image_url;
 
     $lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $variables['node_url'] = $lang !== 'en' ? "/$lang" . \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id()) : \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+    $variables['node_url'] = $lang !== 'en' ? "/$lang" . \Drupal::service('path_alias.manager')
+        ->getAliasByPath('/node/' . $node->id()) : \Drupal::service('path_alias.manager')
+      ->getAliasByPath('/node/' . $node->id());
     $variables['triplet_img_class'] = $variables['row']->triplet_img_class;
   }
-
 }
 
 /**
