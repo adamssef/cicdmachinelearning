@@ -30,12 +30,16 @@ function planet_accept_payments_theme_suggestions_node_alter(array &$suggestions
 
   $node_translation_service = \Drupal::service('planet_core.node_translation_service');
 
-
   if (!$is_admin_page) {
     $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments');
+
+    if (empty($translations || is_null($translations))) {
+      return;
+    }
+
     $lang_id = $node_translation_service->determineTheLangId();
 
-    if ($translations && in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
+    if (in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
       $variables['cards'] = \Drupal::service("planet_accept_payments.service")->getCards();
       $suggestions[] = 'node__accept_payments';
     }
@@ -57,9 +61,14 @@ function planet_accept_payments_preprocess_node(array &$variables) {
 
   if (!$is_admin_page) {
     $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments');
+
+    if (empty($translations || is_null($translations))) {
+      return;
+    }
+
     $lang_id = $node_translation_service->determineTheLangId();
 
-    if ($translations && in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
+    if (in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
       $variables['brands'] = \Drupal::service('planet_accept_payments.service')->getBrandsWeWorkWith();
     }
   }
@@ -77,9 +86,14 @@ function planet_accept_payments_preprocess_page(&$variables) {
 
   if (!$is_admin_page) {
     $translations = $node_translation_service->getTranslationArrWithoutPrefixes('/accept-payments');
+
+    if (empty($translations || is_null($translations))) {
+      return;
+    }
+
     $lang_id = $node_translation_service->determineTheLangId();
 
-    if ($translations && in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
+    if (in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
       $variables['#attached']['library'][] = 'planet_accept_payments/tailwind';
       $variables['#attached']['library'][] = 'planet_accept_payments/planet_accept_payments';
       $variables['#attached']['library'][] = 'planet_core/brands-we-work-with';
