@@ -1244,6 +1244,30 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   line-height: 166% !important;
 }
 
+.article-content-wrapper .coh-row-bleed-xl > .coh-row-inner {
+  display: block;
+}
+.article-content-wrapper .coh-row-bleed-xl .card-button-wrapper {
+  display: flex;
+  padding: 0 !important
+}
+
+.article-content-wrapper .coh-row-bleed-xl > .coh-row-inner .coh-column.coh-visible-xs.coh-col-xs-12.coh-visible-sm.coh-col-sm-6.coh-visible-xl.coh-col-xl-6 .coh-inline-element {
+  padding: 10px 15px
+}
+
+.article-content-wrapper .coh-row-bleed-xl > .coh-row-inner .coh-column.coh-visible-xs.coh-col-xs-12.coh-visible-sm.coh-col-sm-6.coh-visible-xl.coh-col-xl-6 {
+  background-color: #e6f1fc;
+  border-radius: 8px;
+  width: 100%;
+  display: block;
+  max-width: none;
+  padding: 15px
+}
+.article-content-wrapper .coh-row-bleed-xl > .coh-row-inner .coh-column.coh-visible-xs.coh-col-xs-12.coh-visible-sm.coh-col-sm-6.coh-visible-xl.coh-col-xl-6:not(.coh-visible-md) {
+  display: none;
+}
+
 /** Custom select */
 /*the container must be positioned relative:*/
 .custom-select {

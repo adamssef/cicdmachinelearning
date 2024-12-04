@@ -1882,47 +1882,54 @@ background-repeat: no-repeat;
   background-size: cover;
 }
 
-
 /* First box */
 .html-custom-page-terminals-unattended article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
-  background-image: url('/sites/default/files/2024-02/im30-in-situ1.png');
-  background-size: cover;
+.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-02/im30-in-situ1.png');
+   background-size: cover;
 }
 
 /* Second box */
 .html-custom-page-terminals-unattended article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
-  background-image: url('/sites/default/files/2024-04/unattended_parking_lot_kiosk-edit%201.jpg');
-  background-size: cover;
+.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-04/unattended_parking_lot_kiosk-edit%201.jpg');
+   background-size: cover;
 }
 
 /* Third box */
 .html-custom-page-terminals-unattended article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
-  background-image: url('/sites/default/files/2024-04/cVEND%20by%20FEIG.jpg');
-  background-size: cover;
+.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-04/cVEND%20by%20FEIG.jpg');
+   background-size: cover;
 }
 
 /* Fourth box */
 .html-custom-page-terminals-unattended article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-03/Adv%20-%20Hospitality.jpg');
+   background-size: cover;
+}
+/* Add this block after the previous ones */
+/* Fifth box (translations only) */
 .html-custom-page-it-terminali-non-presidiati article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
-  background-image: url('/sites/default/files/2024-03/Adv%20-%20Hospitality.jpg');
-  background-size: cover;
+   background-image: url('/sites/default/files/2024-03/data-orchestration-blog.jpg');
+   background-size: cover;
 }
-
 /** Countertop */
 /* Hero image */
 .html-custom-page-terminals-countertop article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
@@ -1968,4 +1975,41 @@ background-size: cover;
 .html-custom-page-de-countertop-terminals article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
 background-image: url('/sites/default/files/2024-04/Adv%20-%20Hospitality.jpg');
 background-size: cover;
+}
+
+/** Welcome protel */
+.plnt-css-welcome-protel #block-cohesion-theme-content {
+   padding-top: 0 !important
+}
+.plnt-css-welcome-protel #block-cohesion-theme-content article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+   background-image: url('/sites/default/files/2023-12/protel-pms%20%281%29.jpg');
+   background-repeat: no-repeat;
+   background-size: cover
+}
+.plnt-css-welcome-protel #block-cohesion-theme-content article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-style-primary-dark-atom- {
+   margin-right: 16px
+}
+.plnt-css-welcome-protel #block-cohesion-theme-content article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .pre-heading-hero-bleed,
+.plnt-css-welcome-protel #block-cohesion-theme-content article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-style-heading-2-planet {
+   margin-bottom: 16px
+}
+.plnt-css-welcome-protel .coh-style-container-theme---white .coh-wysiwyg {
+   margin-bottom: 36px;
+}
+.plnt-css-welcome-protel .coh-style-container-theme---white .card-with-icon-title-and-text p {
+   color: black 
+}
+.plnt-css-welcome-protel .coh-style-container-theme---white .card-with-icon-title-and-text {
+   background: white;
+   color: black;
+ } 
+
+.plnt-css-welcome-protel .coh-style-container-theme---white {
+   background: #eee;
+   padding: 48px 0;
+ }
+
+.plnt-css-welcome-protel .coh-card-list-content a.coh-link {
+   font-weight: 600;
+   margin-top: 16px
 }
