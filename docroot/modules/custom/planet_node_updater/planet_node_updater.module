@@ -5,6 +5,9 @@
  * Primary module hooks for planet_node_updater module.
  */
 
+use Drupal\cohesion_elements\Entity\CohesionLayout;
+use Drupal\Core\Entity\EntityInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -73,6 +76,18 @@ function planet_node_updater_preprocess_block(&$variables) {
     $variables['#attached']['library'][] = 'planet_node_updater/planet_node_updater_contact_sales';
     $variables['#attached']['library'][] = 'planet_core/brands-we-work-with';
     $variables['#attached']['library'][] = 'planet_core/swiper-bundle';
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function planet_node_updater_entity_presave(EntityInterface $entity) {
+  if ($entity instanceof CohesionLayout) {
+    $default_langcode = $entity->get('default_langcode')->getValue();
+    if (empty($default_langcode)) {
+      $entity->set('default_langcode', 'en');
+    }
   }
 }
 
