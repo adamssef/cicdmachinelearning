@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.resources.field_field_resources_metatag
     - field.field.node.resources.field_hide_from_components
     - field.field.node.resources.field_html_content
-    - field.field.node.resources.field_layout_canvas
     - field.field.node.resources.field_pre_heading_3
     - field.field.node.resources.field_promoted_resource
     - field.field.node.resources.field_resources_author
@@ -23,7 +22,6 @@ dependencies:
     - field.field.node.resources.field_resources_title
     - node.type.resources
   module:
-    - cohesion_elements
     - metatag
     - text
     - user
@@ -63,15 +61,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 16
-    region: content
-  field_layout_canvas:
-    type: cohesion_entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 8
     region: content
   field_pre_heading_3:
     type: string
