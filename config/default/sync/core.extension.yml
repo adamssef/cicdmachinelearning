@@ -97,6 +97,7 @@ module:
   planet_case_studies: 0
   planet_config: 0
   planet_core: 0
+  planet_custom_access: 0
   planet_footer: 0
   planet_header: 0
   planet_html_sitemap: 0
