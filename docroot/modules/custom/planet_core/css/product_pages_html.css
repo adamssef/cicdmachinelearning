@@ -2080,4 +2080,10 @@ background-size: cover;
     background-size: cover;
 }
 
+/** Careers */
+.plnt-css-careers .coh-hero-full-width {
+   height: 667px;
+   background-image: url('/sites/default/files/styles/webp/public/2022-11/Careers-hero_0.jpg.webp');
+}
+
 
