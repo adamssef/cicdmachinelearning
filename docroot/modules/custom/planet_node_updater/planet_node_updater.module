@@ -82,17 +82,32 @@ function planet_node_updater_preprocess_block(&$variables) {
 /**
  * Implements hook_entity_presave().
  */
-function planet_node_updater_entity_presave(EntityInterface $entity) {
-  if ($entity instanceof CohesionLayout) {
-    $default_langcode = $entity->get('default_langcode')->getValue();
-    $current_langage = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
-    if (empty($default_langcode)) {
-      if ($current_langage == 'en') {
-        $entity->set('default_langcode', true);
-      }
-      else {
-        $entity->set('default_langcode', false);
+function planet_node_updater_entity_presave(EntityInterface $entity) {
+  // Ensure the entity is a translatable type and supports translations.
+  if ($entity instanceof CohesionLayout) {
+    $field_to_check = 'default_langcode';
+
+    // First, check the base entity (non-translated).
+    if ($entity->hasField($field_to_check) && $entity->get($field_to_check)->isEmpty()) {
+      $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      $default_value = ($current_language === 'en') ? true : false;
+      $entity->set($field_to_check, $default_value);
+    }
+
+    // Then, check translations if they exist.
+    if ($entity->isTranslatable()) {
+      $translations = $entity->getTranslationLanguages();
+
+      // Iterate over translations if any exist.
+      foreach ($translations as $language_code => $language) {
+        $translated_entity = $entity->getTranslation($language_code);
+
+        // Check if the field is NULL in the translation.
+        if ($translated_entity->hasField($field_to_check) && $translated_entity->get($field_to_check)->isEmpty()) {
+          $value = ($language_code === 'en') ? true : false;
+          $translated_entity->set($field_to_check, $value);
+        }
       }
     }
   }
