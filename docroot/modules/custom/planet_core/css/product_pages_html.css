@@ -2013,3 +2013,71 @@ background-size: cover;
    font-weight: 600;
    margin-top: 16px
 }
+
+
+
+
+/** About us */
+.plnt-css-about .coh-hero-full-width,
+.plnt-css-sobre-nosotros .coh-hero-full-width,
+.plnt-css-propos .coh-hero-full-width,
+.plnt-css-about-it .coh-hero-full-width,
+.plnt-css-uber-uns .coh-hero-full-width {
+    height: 667px;
+    background-image: url('/sites/default/files/styles/webp/public/2022-11/About-hero.jpg.webp');
+}
+
+.coh-container.card-heading-and-sub-text-container.match-height-desktop {
+   height: auto !important;
+ }
+ .plnt-css-about section.section-container .coh-style-planet-padding-bottom---extra-small .coh-heading,
+.plnt-css-sobre-nosotros section.section-container .coh-style-planet-padding-bottom---extra-small .coh-heading,
+.plnt-css-propos section.section-container .coh-style-planet-padding-bottom---extra-small .coh-heading,
+.plnt-css-about-it section.section-container .coh-style-planet-padding-bottom---extra-small .coh-heading,
+.plnt-css-uber-uns section.section-container .coh-style-planet-padding-bottom---extra-small .coh-heading {
+    text-align: center;
+}
+
+.plnt-css-about section.section-container .coh-row-xl .coh-row-inner > .coh-column,
+.plnt-css-sobre-nosotros section.section-container .coh-row-xl .coh-row-inner > .coh-column,
+.plnt-css-propos section.section-container .coh-row-xl .coh-row-inner > .coh-column,
+.plnt-css-about-it section.section-container .coh-row-xl .coh-row-inner > .coh-column,
+.plnt-css-uber-uns section.section-container .coh-row-xl .coh-row-inner > .coh-column {
+    background: white;
+    color: black;
+    height: auto;
+    max-width: none;
+}
+
+.plnt-css-about section.section-container .coh-row-xl .coh-row-inner > .coh-column > .coh-container > .coh-container *,
+.plnt-css-sobre-nosotros section.section-container .coh-row-xl .coh-row-inner > .coh-column > .coh-container > .coh-container *,
+.plnt-css-propos section.section-container .coh-row-xl .coh-row-inner > .coh-column > .coh-container > .coh-container *,
+.plnt-css-about-it section.section-container .coh-row-xl .coh-row-inner > .coh-column > .coh-container > .coh-container *,
+.plnt-css-uber-uns section.section-container .coh-row-xl .coh-row-inner > .coh-column > .coh-container > .coh-container * {
+    color: black;
+}
+
+.plnt-css-about .coh-style-planet-padding-top-bottom---small.coh-style-padding-left-right---small,
+.plnt-css-sobre-nosotros .coh-style-planet-padding-top-bottom---small.coh-style-padding-left-right---small,
+.plnt-css-propos .coh-style-planet-padding-top-bottom---small.coh-style-padding-left-right---small,
+.plnt-css-about-it .coh-style-planet-padding-top-bottom---small.coh-style-padding-left-right---small,
+.plnt-css-uber-uns .coh-style-planet-padding-top-bottom---small.coh-style-padding-left-right---small {
+    display: none;
+}
+.plnt-css-about .coh-ce-cpt_meet_our_team-f069ee51,
+.plnt-css-sobre-nosotros .coh-ce-cpt_meet_our_team-f069ee51,
+.plnt-css-propos .coh-ce-cpt_meet_our_team-f069ee51,
+.plnt-css-about-it .coh-ce-cpt_meet_our_team-f069ee51,
+.plnt-css-uber-uns .coh-ce-cpt_meet_our_team-f069ee51 {
+    display: none;
+}
+.plnt-css-about .coh-row-bleed-xl .media-left .column-2,
+.plnt-css-sobre-nosotros .coh-row-bleed-xl .media-left .column-2,
+.plnt-css-propos .coh-row-bleed-xl .media-left .column-2,
+.plnt-css-about-it .coh-row-bleed-xl .media-left .column-2,
+.plnt-css-uber-uns .coh-row-bleed-xl .media-left .column-2 {
+    background-image: url(/sites/default/files/styles/webp/public/2022-11/50%20-%20Image%20%26%20Text_.png.webp);
+    background-size: cover;
+}
+
+
