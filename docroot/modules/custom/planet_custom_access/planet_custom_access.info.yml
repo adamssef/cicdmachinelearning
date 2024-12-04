@@ -1,0 +1,5 @@
+name: 'planet_custom_access'
+type: module
+description: 'Module that handles access customizations'
+package: Planet
+core_version_requirement: ^10
