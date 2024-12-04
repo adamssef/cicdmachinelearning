@@ -22,8 +22,11 @@ if ($entity instanceof NodeInterface) {
       if ($account->hasRole('unrestricted_user')) {
         return AccessResult::allowed();
       }
+      else {
+        AccessResult::forbidden();
+      }
     }
   }
 
-  return AccessResult::forbidden();
+  return AccessResult::neutral();
 }
