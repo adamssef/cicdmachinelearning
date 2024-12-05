@@ -658,7 +658,8 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     5621, // Accept payments
     3091, // Customer resources library
     3791, // Getting started
-    2136 // Ebooks
+    2136, // Ebooks
+    4286 // Protel imprint
   ]; 
 
   if($node->getType() === "page" && !in_array($node->id(), $excluded_template_override_pages)) {
