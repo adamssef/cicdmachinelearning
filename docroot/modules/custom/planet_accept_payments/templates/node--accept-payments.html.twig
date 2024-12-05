@@ -2,7 +2,7 @@
   {
     'logo': '/resources/logos/Logo_Chopard.svg',
     'name': 'Chopard',
-    'vertical': 'Payments',
+    'vertical_text': 'Using Planet for <span class="font-semibold">Payments</span>',
     'review': '"Planet software has transformed our business operations. The intuitive interface, customizable features, and responsive customer support have been exceptional. With Planet, we\'ve streamlined processes, increased efficiency, and received unparalleled assistance whenever needed. Highly recommended for any business seeking reliable software solutions."',
     'person': 'Qiao Zhang',
     'role': 'VIP Sales Manager',
@@ -10,7 +10,7 @@
   {
     'logo': '/resources/logos/homepage/el_corte_ingles.png',
     'name': 'El Corte Ingles',
-    'vertical': 'Tax Free',
+    'vertical_text': 'Using Planet for <span class="font-semibold">Tax Free</span>',
     'review': '"I believe that the evolution of the company together with Planet as a partner in the Tax Free service has made us go from a weakness in the way we do things to being leaders or one of the leading companies in Europe in this process, as our clients tell us."',
     'person': 'Javier Fernández Andrino',
     'role': 'Director of International Retail and Luxury Business Development',
@@ -18,7 +18,7 @@
   {
     'logo': '/resources/logos/homepage/blue-lagoon-iceland-logo.png',
     'name': 'Blue Lagoon',
-    'vertical': 'Payments',
+    'vertical_text': 'Using Planet for <span class="font-semibold">Payments/span>',
     'review': '"Planet is a strategic payment partner. It’s enabling us to do the grand vision. With Planet, a guest can walk around the lagoon, and go to the restaurant, spa, cafe and purchase skincare and never have to (physically) checkout, as we charge the card with everything they purchase, using the secure token. I’ve been working with several payment partners, and Planet is number one."',
     'person': 'Sigurður Long',
     'role': 'Chief Information Officer & Chief Digital Officer',
@@ -187,7 +187,7 @@
                 <div class="swiper-slide">
                   <div class="bg-zinc-50 p-4 md:p-8 h-full w-full text-center">
                     <img src="{{ testimonial.logo }}" alt="{{ testimonial.name }} Logo" class="max-w-44 mx-auto mb-6 h-[100px]">
-                    <h1 class="text-xl mb-6">Using Planet for <span class="font-semibold">{{ testimonial.vertical|t }}</span></h1>
+                      <h1 class="text-xl mb-6">{{ testimonial.vertical_text|t }}</h1>
                     <p class="font-light text-[#202020] text-xl leading-7 mb-6">{{ testimonial.review|t }}</p>
                     <p class="text-[#202020]">{{ testimonial.person }}</p>
                     <p class="text-[#202020] font-semibold">{{ testimonial.role }}</p>
