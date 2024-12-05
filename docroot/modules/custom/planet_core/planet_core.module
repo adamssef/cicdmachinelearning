@@ -654,11 +654,14 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     return;
   }
 
-  $excludedNodeIds = [
-    5621 // Accept payments
+  $excluded_template_override_pages = [
+    5621, // Accept payments
+    3091, // Customer resources library
+    3791, // Getting started
+    2136 // Ebooks
   ]; 
 
-  if($node->getType() === "page" && !in_array($node->id(), $excludedNodeIds)) {
+  if($node->getType() === "page" && !in_array($node->id(), $excluded_template_override_pages)) {
    $suggestions[] = 'node__basic_page';
    return;
   }
