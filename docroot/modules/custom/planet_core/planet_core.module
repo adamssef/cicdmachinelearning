@@ -659,7 +659,8 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     3091, // Customer resources library
     3791, // Getting started
     2136, // Ebooks
-    4286 // Protel imprint
+    4286, // Protel imprint
+    4716, // HTML sitemap 
   ]; 
 
   if($node->getType() === "page" && !in_array($node->id(), $excluded_template_override_pages)) {
