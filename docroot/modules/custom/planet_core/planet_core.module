@@ -23,6 +23,17 @@ use Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList;
 /**
  * Sanitize cookie.
  */
+
+
+ const EXCLUDED_TEMPLATE_OVERRIDE_PAGES = [
+  5621, // Accept payments
+  3091, // Customer resources library
+  3791, // Getting started
+  2136, // Ebooks
+  4286, // Protel imprint
+  4716, // HTML sitemap
+];
+
 function _planet_core_sanitize_cookie($value) {
   return htmlspecialchars($value);
 }
@@ -654,16 +665,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     return;
   }
 
-  $excluded_template_override_pages = [
-    5621, // Accept payments
-    3091, // Customer resources library
-    3791, // Getting started
-    2136, // Ebooks
-    4286, // Protel imprint
-    4716, // HTML sitemap 
-  ]; 
-
-  if($node->getType() === "page" && !in_array($node->id(), $excluded_template_override_pages)) {
+  if($node->getType() === "page" && !in_array($node->id(), EXCLUDED_TEMPLATE_OVERRIDE_PAGES)) {
    $suggestions[] = 'node__basic_page';
    return;
   }
@@ -816,7 +818,7 @@ function planet_core_preprocess_node(array &$variables) {
     $variables['external_articles'] = $planet_core_news_helper->getPublishedNews(3, 0, "en", true, false);
   }
 
-  if ($node->getType() == 'page') {
+  if ($node->getType() == 'page' && !in_array($node->id(), EXCLUDED_TEMPLATE_OVERRIDE_PAGES)) {
     if ($node->get('field_is_product_page')->value == 1) {
       $form = \Drupal::entityTypeManager()
         ->getStorage('webform')
