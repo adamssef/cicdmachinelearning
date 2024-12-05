@@ -1,0 +1,16 @@
+diff --git a/src/CohesionApiClient.php b/src/CohesionApiClient.php
+index 2721104..8507273 100644
+--- a/src/CohesionApiClient.php
++++ b/src/CohesionApiClient.php
+@@ -75,7 +75,10 @@ class CohesionApiClient {
+    * Merge component data with layout canvas
+    */
+   public function layoutCanvasDataMerge($payload) {
+-    return $this->send('POST', '/components/update', $payload, TRUE);
++    return array(
++      "data" => array(),
++      "code" => 200
++    );  
+   }
+ 
+   /**
