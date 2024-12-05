@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.newsroom.field_external_source
     - field.field.node.newsroom.field_field_resources_metatag
     - field.field.node.newsroom.field_is_it_an_external_article
-    - field.field.node.newsroom.field_layout_canvas
+    - field.field.node.newsroom.field_news_html_content
     - field.field.node.newsroom.field_promoted_resource
     - field.field.node.newsroom.field_resources_background_image
     - field.field.node.newsroom.field_resources_published_time
@@ -16,11 +16,11 @@ dependencies:
     - field.field.node.newsroom.field_year
     - node.type.newsroom
   module:
-    - cohesion_elements
     - content_moderation
     - media_library
     - metatag
     - path
+    - text
 id: node.newsroom.default
 targetEntityType: node
 bundle: newsroom
@@ -63,11 +63,13 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  field_layout_canvas:
-    type: cohesion_layout_builder_widget
-    weight: 10
+  field_news_html_content:
+    type: text_textarea
+    weight: 27
     region: content
-    settings: {  }
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_promoted_resource:
     type: boolean_checkbox
