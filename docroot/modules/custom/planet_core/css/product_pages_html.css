@@ -784,7 +784,7 @@ background-image: url('/sites/default/files/2024-06/oms-convert.svg');
 /** PCI Proxy */
 /* Hero section */
 .html-custom-page-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
-.html-custom-page-es-cumplimiento-pci article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-cumplimiento-PCI article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
 .html-custom-page-fr-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
 .html-custom-page-it-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
 .html-custom-page-de-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
@@ -792,7 +792,7 @@ background-image: url('/sites/default/files/2024-06/oms-convert.svg');
 }
 /* First icon */
 .html-custom-page-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-es-cumplimiento-pci article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-cumplimiento-PCI article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-fr-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-it-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-de-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
@@ -801,7 +801,7 @@ background-image: url('/sites/default/files/2024-06/oms-convert.svg');
 
 /* Second icon */
 .html-custom-page-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-es-cumplimiento-pci article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-cumplimiento-PCI article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-fr-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-it-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-de-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
@@ -810,7 +810,7 @@ background-image: url('/sites/default/files/2024-06/oms-convert.svg');
 
 /* Third icon */
 .html-custom-page-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
-.html-custom-page-es-cumplimiento-pci article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-cumplimiento-PCI article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-fr-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-it-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
 .html-custom-page-de-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
@@ -2086,4 +2086,22 @@ background-size: cover;
    background-image: url('/sites/default/files/styles/webp/public/2022-11/Careers-hero_0.jpg.webp');
 }
 
+.html-custom-page .coh-container-boxed .coh-container.coh-image {
+   height: 41.6875rem !important;
+   margin-top: -41.6875rem !important;
+}
 
+.plnt-css-404 article > div > div > div.coh-container:nth-child(2) {
+      background-image: url('https://www.weareplanet.com/sites/default/files/styles/webp/public/2022-10/404_bkg_image.jpeg.webp?itok=fVo-7Dar');
+      height: 400px;
+      background-size: cover;
+      margin-top: 0
+}
+
+.plnt-css-404 .coh-row.coh-row-xl.coh-row-visible-xl .coh-column {
+   max-width: none;
+}
+.plnt-css-404 .coh-row.coh-row-xl.coh-row-visible-xl .coh-column h3 a, .plnt-css-404 .coh-row.coh-row-xl.coh-row-visible-xl .coh-column p a {
+color: black;
+text-align: left
+}

@@ -500,6 +500,10 @@ function planet_core_theme(): array {
       'template' => 'node--news-page',
       'base hook' => 'node',
     ],
+    'node__news-main-page' => [
+      'template' => 'node--press-main-page',
+      'base hook' => 'node',
+    ],
     'views_view_field__ebook_link' => [
       'template' => 'views-view-field--ebook-link',
       'base hook' => 'views_view_field',
@@ -542,6 +546,10 @@ function planet_core_theme(): array {
     ],
     'node__homepage_v2' => [
       'template' => 'node--homepage-v2',
+      'base hook' => 'node',
+    ],
+    'node__basic_page' => [
+      'template' => 'node--basic-page',
       'base hook' => 'node',
     ],
   ];
@@ -639,10 +647,22 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
  
   if ($node->getType() === 'resources') {
     $suggestions[] = 'node__resources-page';
+    return;
   }
   if ($node->getType() === 'newsroom') {
     $suggestions[] = 'node__news-page';
+    return;
   }
+
+  $excludedNodeIds = [
+    5621 // Accept payments
+  ]; 
+
+  if($node->getType() === "page" && !in_array($node->id(), $excludedNodeIds)) {
+   $suggestions[] = 'node__basic_page';
+   return;
+  }
+
  }
 
 /**
@@ -789,6 +809,16 @@ function planet_core_preprocess_node(array &$variables) {
     $variables['useful_links'] = $planet_core_article_helper->getToggleLinks();
     $variables['articles'] = $planet_core_news_helper->getPublishedNews(3, 0, "en", false, false, false);
     $variables['external_articles'] = $planet_core_news_helper->getPublishedNews(3, 0, "en", true, false);
+  }
+
+  if ($node->getType() == 'page') {
+    if ($node->get('field_is_product_page')->value == 1) {
+      $form = \Drupal::entityTypeManager()
+        ->getStorage('webform')
+        ->load('get_in_touch_dynamic')
+        ->getSubmissionForm();
+      $variables['form'] = $form;
+    }
   }
 }
 
