@@ -658,16 +658,14 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
  
   if ($node->getType() === 'resources') {
     $suggestions[] = 'node__resources-page';
-    return;
-  }
-  if ($node->getType() === 'newsroom') {
-    $suggestions[] = 'node__news-page';
-    return;
   }
 
-  if($node->getType() === "page" && !in_array($node->id(), EXCLUDED_TEMPLATE_OVERRIDE_PAGES)) {
+  if ($node->getType() === 'newsroom') {
+    $suggestions[] = 'node__news-page';
+  }
+
+  if ($node->getType() === "page" && !in_array($node->id(), EXCLUDED_TEMPLATE_OVERRIDE_PAGES) && $node->id() != 5231) {
    $suggestions[] = 'node__basic_page';
-   return;
   }
 
  }

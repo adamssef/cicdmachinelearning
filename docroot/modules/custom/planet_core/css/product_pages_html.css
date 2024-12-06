@@ -2105,3 +2105,9 @@ background-size: cover;
 color: black;
 text-align: left
 }
+
+@media (min-width: 1025px) {
+  body:not(.plnt-css-pms-transformation,.plnt-css-about,.plnt-css-careers,.plnt-css-case-studies) #block-cohesion-theme-content {
+    padding-top: 36px;
+  }
+}

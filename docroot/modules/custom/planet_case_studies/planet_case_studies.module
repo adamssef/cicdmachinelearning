@@ -44,8 +44,8 @@ function planet_case_studies_theme(): array {
       'template' => 'form--exposed-case-studies',
       'base hook' => 'form',
     ],
-    'views_view_fields__planet_case_studies_view_load_more__block_1____page' => [
-      'template' => 'views-view-fields--planet-case-studies-view-load-more--block-1----page',
+    'views_view_fields__planet_case_studies_view_load_more__block_1__page' => [
+      'template' => 'views-view-fields--planet-case-studies-view-load-more--block-1--page',
       'base hook' => 'views_view_fields',
     ],
   ];
@@ -158,7 +158,6 @@ function planet_case_studies_theme_suggestions_views_view_fields_alter(&$suggest
   if (_is_path_case_studies_landing()) {
     $view_id = $variables['view']->id();
     $display_id = $variables['view']->current_display;
-    $field_name = $variables['field']->field;
 
     // Add cache context for path awareness.
     \Drupal::service('renderer')
@@ -170,8 +169,8 @@ function planet_case_studies_theme_suggestions_views_view_fields_alter(&$suggest
       return;
     }
 
-    $suggestions[] = 'views_view_fields__' . $view_id . '__' . $display_id . '__' . $field_name . '__' . $node->getType();
-    $suggestions[] = 'views_view_fields__' . $view_id . '__' . $display_id . '__' . $field_name . '__' . $node->id();
+    $suggestions[] = 'views_view_fields__' . $view_id . '__' . $display_id . '__' . $node->getType();
+    $suggestions[] = 'views_view_fields__' . $view_id . '__' . $display_id . '__' . $node->id();
   }
 }
 

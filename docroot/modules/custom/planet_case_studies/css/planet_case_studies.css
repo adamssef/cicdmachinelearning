@@ -36,7 +36,6 @@ body.plnt-css-case-studies-2-0 {
 .customer-stories-block {
   display: flex;
   flex-direction: column;
-  margin-top: 24px;
 }
 
 .plnt-css-case-studies-2-0 .megamenu-complex-container,
@@ -1088,7 +1087,7 @@ body.plnt-css-case-studies-2-0 {
 
 @media (max-width: 1024px) {
   .case-studies-header {
-    margin-top: 48px;
+    margin-top: 92px;
   }
   .swiper-initialized:hover .swiper-button-next {
     display: none !important;
@@ -1105,7 +1104,7 @@ body.plnt-css-case-studies-2-0 {
 
 @media (min-width: 1024px) {
   .case-studies-header {
-    margin-top: 80px;
+    margin-top: 92px;
   }
 }
 
