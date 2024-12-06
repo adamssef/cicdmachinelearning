@@ -849,6 +849,10 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   background-color: white;
   background-size: contain;
 }
+.plnt-blog-ebooks-page .featured-article-image {
+  background-size: contain;
+  background-color: white;
+}
 .tags-pills span {
   font-size: 16px;
   margin-bottom: 8px;

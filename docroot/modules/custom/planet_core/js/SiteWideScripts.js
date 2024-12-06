@@ -138,51 +138,76 @@ const homepageVerticalsSwitch = new PlntSwitch({
 //     ]
 //   });
 //  });
-
-
- jQuery(document).ready(function($) {
-  jQuery('.coh-accordion-tabs').each(function() {
-    const tabContainer = jQuery(this);
-    const tabLinks = tabContainer.find('.coh-accordion-tabs-nav > li');
-    const tabContents = tabContainer.find('.coh-accordion-tabs-content');
-    const tabTitles = tabContainer.find('.coh-accordion-title');
-
-    tabLinks.on('click', function(e) {
-      e.preventDefault();
-      const targetId = jQuery(this).find('a').attr('href');
-
-      tabLinks.removeClass('is-active');
-      tabContents.hide().removeClass('is-active');
-      tabTitles.removeClass('is-active');
-
-      jQuery(this).addClass('is-active');
-      tabContainer.find(targetId).show().addClass('is-active');
-      tabContainer.find(`.coh-accordion-title a[href="${targetId}"]`).parent().addClass('is-active');
-    });
-  });
-});
 jQuery(document).ready(function($) {
-  jQuery('.coh-accordion-tab').each(function() {
-    const accordionContainer = jQuery(this);
-    const accordionTitle = accordionContainer.find('.coh-accordion-title a');
-    const accordionContent = accordionContainer.find('.coh-accordion-tabs-content');
-
-    accordionTitle.on('click', function(e) {
-      e.preventDefault();
-      const targetId = jQuery(this).attr('href');
-      const isExpanded = jQuery(this).attr('aria-expanded') === 'true';
-      
-      if (isExpanded) {
-        accordionContainer.find(targetId).slideUp();
-        jQuery(this).attr('aria-expanded', 'false');
-      } else {
-        accordionContent.slideUp();
-        accordionTitle.attr('aria-expanded', 'false');
-        accordionContainer.find(targetId).slideDown();
-        jQuery(this).attr('aria-expanded', 'true');
-      }
-    });
+  // Handle top-level tab navigation
+  $('.coh-accordion-tabs-nav li a').on('click', function(e) {
+    e.preventDefault();
+    const targetId = $(this).attr('href');
+    const $tabContent = $(targetId);
+    
+    // Update tab states
+    $('.coh-accordion-tabs-nav li').removeClass('is-active');
+    $(this).parent().addClass('is-active');
+    
+    // Hide all content sections and show target
+    $('.coh-accordion-tabs-content').hide().removeClass('is-active');
+    $tabContent.show().addClass('is-active');
   });
+
+  // Handle accordion functionality
+  $('.coh-accordion-title a').on('click', function(e) {
+    e.preventDefault();
+    const $title = $(this).parent();
+    const targetId = $(this).attr('href');
+    const $content = $(targetId);
+    const isExpanded = $(this).attr('aria-expanded') === 'true';
+
+    // Close all other accordion items
+    if (!isExpanded) {
+      $('.coh-accordion-tabs-content').not($content).slideUp();
+      $('.coh-accordion-title a').not(this).attr('aria-expanded', 'false');
+      $('.coh-accordion-title').not($title).removeClass('is-active');
+    }
+
+    // Toggle current accordion item
+    $content.slideToggle();
+    $(this).attr('aria-expanded', !isExpanded);
+    $title.toggleClass('is-active');
+  });
+
+  // Initialize: Show active tab/accordion content
+  if ($('.coh-accordion-tabs-nav li.is-active').length > 0) {
+    $('.coh-accordion-tabs-nav li.is-active a').trigger('click');
+  } else {
+    $('.coh-accordion-tabs-nav li:first a').trigger('click');
+  }
+
+  // Handle "Back to Top" buttons
+  $('.coh-js-scroll-to').on('click', function(e) {
+    e.preventDefault();
+    const targetSelector = $(this).data('coh-scroll-to');
+    const offset = $(this).data('coh-scroll-offset') || 0;
+    const duration = $(this).data('coh-scroll-duration') || 450;
+    
+    $('html, body').animate({
+      scrollTop: $(targetSelector).offset().top - offset
+    }, duration);
+  });
+
+  // Handle responsive behavior
+  function handleResponsiveChange(e) {
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      // Mobile view - force accordion mode
+      $('.coh-accordion-tabs-inner').addClass('coh-accordion-tabs-display-accordion');
+    } else {
+      // Desktop view - restore original state
+      $('.coh-accordion-tabs-inner').removeClass('coh-accordion-tabs-display-accordion');
+    }
+  }
+
+  // Initial check and listen for window resize
+  handleResponsiveChange();
+  $(window).on('resize', handleResponsiveChange);
 });
 
 jQuery(document).ready(function() {

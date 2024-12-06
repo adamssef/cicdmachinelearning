@@ -1,5 +1,5 @@
 {#
-  Custom Twig template for the Blog homepage.
+  Custom Twig template for the Ebooks homepage.
   Template variables available:
     - content: An array of content elements.
     - node: The node entity representing the "blog" content.
@@ -8,7 +8,7 @@
     - attributes: HTML attributes for the node wrapper.
 #}
 <div>
-	<div class="plnt-blog-news-page">
+	<div class="plnt-blog-news-page plnt-blog-ebooks-page">
 		<div class="coh-container coh-container-boxed news-main-title">
 			<div class="coh-row">
 				<div class="coh-row-inner">
@@ -30,25 +30,17 @@
 											<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
 												<div class="featured-article-info-wrapper">
 													<div class="featured-article-info news-card ebooks-card">
-														{% if featured_article.tags is not empty %}
+														{% if featured_article.pre_heading is not empty %}
 															<div class="article-tags tags-pills cursor-default">
 																<span>
-																	{% for tag in featured_article.tags %}
-																		{{ tag.name }}
-																		{% if not loop.last %}
-																			·
-																		{% endif %}
-																	{% endfor %}
+																	{{featured_article.pre_heading}}
 																</span>
 															</div>
 														{% endif %}
 														<a href="{{featured_article.url}}">
 															<h1 class="planet-h2 black">{{featured_article.title}}</h1>
 														</a>
-														<div class="article-author-and-date">
-															<div class="article-date">{{ featured_article.creation_date }}</div>
-														</div>
-														<p class="article-summary">{{featured_article.body}}</p>
+														<p class="article-summary">{{featured_article.summary}}</p>
 														<div class="card-button-wrapper">
 															<a class="card-button" href="{{featured_article.url}}">{{"Read content"|t}}
 																<img src="/resources/icons/blue-right-arrow.svg"></a>
@@ -91,13 +83,16 @@
 														<div class="article-title">
 															<a href="{{ ebook.url }}">{{ ebook.title }}</a>
 														</div>
-														{% if ebook.tags %}
-															<div class="article-tags white-tags-pills">
+														<p class="article-summary">{{ebook.summary}}</p>
+														{% if ebook.tags %} 
+															<div class="article-tags white-tags-pills" style="margin-top: 16px">
 																{% for tag in ebook.tags %}
 																	<span data-tagid="{{ tag.name }}">{{ tag.name }}</span>
 																{% endfor %}
 															</div>
 														{% endif %}
+														
+
 													</div>
 													<div class="card-button-wrapper">
 														<a class="card-button" href="{{ ebook.url }}">{{"Read content"|t}}

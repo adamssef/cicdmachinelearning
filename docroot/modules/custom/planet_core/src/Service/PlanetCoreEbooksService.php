@@ -87,11 +87,14 @@ class PlanetCoreEbooksService {
 
     return null;
   }
-
-  public function getPublishedEbooks($limit = 3, $offset = 0) {
+  public function getPublishedEbooks() {
+    
+    $language_code = $this->languageManager->getCurrentLanguage()->getId();
+    
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
         ->condition('type', 'e_book_')
         ->condition('status', 1)
+        ->condition('langcode', $language_code)
         ->sort('created', 'DESC')
         ->accessCheck();
 
@@ -105,36 +108,36 @@ class PlanetCoreEbooksService {
     $ebooks = [];
 
     foreach ($nodes as $node) {
+        $node = $node->getTranslation($language_code);
+        
+        $article_tags = [];
+        $tags_references = $node->get('field_resources_tags')->referencedEntities();
+        foreach ($tags_references as $tag) {
+            $article_tags[] = [
+                'name' => $tag->getName(),
+                'id' => $tag->id(),
+            ];
+        }
+
+        $url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
+        $url = $language_code != "en" ? "/" . $language_code . $url : $url;
+
         $ebooks[] = [
             'id' => $node->id(),
-            'url' => $this->pathAliasManager->getAliasByPath('/node/' . $node->id()),
+            'url' => $url,
             'title' => $node->get('title')->value,
-            'tags' => $this->getNodeTags($node),
+            'tags' => $article_tags,
             'background_image' => $this->getBackgroundImage($node),
             'summary' => $node->get('field_summary')->value,
             'pre_heading' => $node->get('field_pre_heading')->value,
             'pre_heading_2' => $node->get('field_pre_heading_2')->value,
-            'company_sector' => $node->get('field_company_sector')->entity ? 
+            'company_sector' => $node->get('field_company_sector')->entity ?
                 $node->get('field_company_sector')->entity->getName() : ''
         ];
     }
 
     return $ebooks;
 }
-
-private function getNodeTags($node) {
-    $tags = [];
-    if ($node->hasField('field_tags') && !$node->get('field_tags')->isEmpty()) {
-        foreach ($node->get('field_tags')->referencedEntities() as $tag) {
-            $tags[] = [
-                'name' => $tag->getName(),
-                'id' => $tag->id(),
-            ];
-        }
-    }
-    return $tags;
-}
-
 private function getBackgroundImage($node) {
     $media = $node->get('field_main_image_media')->entity;
     if ($media instanceof Media) {
