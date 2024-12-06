@@ -1,0 +1,19 @@
+uuid: 425e7f85-5474-4f18-b422-188fcab766ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_form_paragraph
+field_name: field_form_paragraph
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

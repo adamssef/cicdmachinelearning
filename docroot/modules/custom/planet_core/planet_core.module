@@ -20,21 +20,35 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\TranslatableInterface;
 use Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList;
 
-/**
- * Sanitize cookie.
- */
 
+class SpecialTemplates {
+  const ACCEPT_PAYMENTS = 5621;
+  const CUSTOMER_RESOURCES = 3091;
+  const GETTING_STARTED = 3791;
+  const EBOOKS = 2136;
+  const PROTEL_IMPRINT = 4286;
+  const HTML_SITEMAP = 4716;
+  const CASE_STUDIES = 5231;
+  const PRESS_FRONT = 4751;
+  const PRESS_ARCHIVE = 4756;
 
- const EXCLUDED_TEMPLATE_OVERRIDE_PAGES = [
-  5621, // Accept payments
-  3091, // Customer resources library
-  3791, // Getting started
-  2136, // Ebooks
-  4286, // Protel imprint
-  4716, // HTML sitemap
-];
+  public static function getAll(): array {
+      return [
+          self::ACCEPT_PAYMENTS,
+          self::CUSTOMER_RESOURCES,
+          self::GETTING_STARTED,
+          self::EBOOKS,
+          self::PROTEL_IMPRINT,
+          self::HTML_SITEMAP,
+          self::CASE_STUDIES,
+          self::PRESS_FRONT,
+          self::PRESS_ARCHIVE
+      ];
+  }
+}
 
-function _planet_core_sanitize_cookie($value) {
+function _planet_core_sanitize_cookie($value)
+{
   return htmlspecialchars($value);
 }
 
@@ -43,7 +57,8 @@ function _planet_core_sanitize_cookie($value) {
  *
  * Changes the title of the user page.
  */
-function planet_core_preprocess_html(&$variables): void {
+function planet_core_preprocess_html(&$variables): void
+{
   $routeName = \Drupal::routeMatch()->getRouteName();
   if ($routeName === 'entity.user.canonical') {
     $variables['head_title']['title'] = '';
@@ -84,7 +99,8 @@ function planet_core_preprocess_html(&$variables): void {
 /**
  * Implements hook_ENTITY_TYPE_presave().
  */
-function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void {
+function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void
+{
   $webform = $webform_submission->getWebform();
   $webform_id = $webform->id();
 
@@ -171,7 +187,8 @@ function planet_core_webform_submission_presave(WebformSubmissionInterface $webf
  *
  * Creates region/country dependent filter.
  */
-function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
+function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void
+{
   if ($form['#id'] === 'views-exposed-form-companies-registered-companies') {
     unset($form['region']['#options']['All']);
 
@@ -193,7 +210,8 @@ function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void {
   }
 }
 
-function planet_core_views_pre_render(ViewExecutable $view) {
+function planet_core_views_pre_render(ViewExecutable $view)
+{
   $initial_count = count($view->result);
 
   if ($view->id() === "email_contacts_terms" && $view->current_display === "block_3") {
@@ -211,7 +229,8 @@ function planet_core_views_pre_render(ViewExecutable $view) {
 /**
  * Implements hook_views_query_alter().
  */
-function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query)
+{
   $node = \Drupal::routeMatch()->getParameter('node');
   $collected_tags = [];
 
@@ -230,8 +249,7 @@ function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
 
     if (!empty($collected_tags)) {
       $query->addWhere(0, 'node__field_resources_tags.field_resources_tags_target_id', $collected_tags, 'IN');
-    }
-    else {
+    } else {
       foreach ($query->where as $key => $conditionGroup) {
         if ($conditionGroup['type'] === 'AND') {
           foreach ($conditionGroup['conditions'] as $condition_group_key => $condition) {
@@ -248,7 +266,8 @@ function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
 /**
  * Implements hook_form_alter().
  */
-function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
   if ($form_id === 'entity_clone_form') {
     if (isset($form['description'])) {
       $form['description']['#access'] = FALSE;
@@ -258,8 +277,7 @@ function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id
       foreach ($form['recursive'] as $key => $value) {
         if ($key === '#tree') {
           continue;
-        }
-        else {
+        } else {
           $form['recursive'][$key]['#access'] = FALSE;
           $form['recursive'][$key]['#description_should_be_shown'] = FALSE;
         }
@@ -271,7 +289,8 @@ function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id
 /**
  * Gets countries associated with the region.
  */
-function _planet_core_get_associative_countries_with_region(string $regionId): array {
+function _planet_core_get_associative_countries_with_region(string $regionId): array
+{
   $countries = [];
   $countries['All'] = 'All';
   $vid = 'countries';
@@ -294,7 +313,8 @@ function _planet_core_get_associative_countries_with_region(string $regionId): a
 /**
  * Implements hook_node_access().
  */
-function planet_core_node_access(NodeInterface $node, $op, AccountInterface $account) {
+function planet_core_node_access(NodeInterface $node, $op, AccountInterface $account)
+{
   if ($account->isAnonymous() && $node->gettype() == 'webform') {
     return AccessResult::forbidden()->cachePerPermissions();
   }
@@ -305,7 +325,8 @@ function planet_core_node_access(NodeInterface $node, $op, AccountInterface $acc
 /**
  * Implements hook_preprocess_HOOK().
  */
-function planet_core_preprocess_field(&$variables) {
+function planet_core_preprocess_field(&$variables)
+{
   if ($variables['field_name'] === 'field_resources_tags' && $variables['element']['#bundle'] === 'page') {
     $variables['attributes']['class'][] = 'tags-hidden-for-page-node';
   }
@@ -314,7 +335,8 @@ function planet_core_preprocess_field(&$variables) {
 /**
  * Implements hook_preprocess_HOOK() for node templates.
  */
-function planet_core_preprocess_node__author(&$variables) {
+function planet_core_preprocess_node__author(&$variables)
+{
   // Get the last 5 article titles.
   $node = $variables['node'];
 
@@ -329,10 +351,11 @@ function planet_core_preprocess_node__author(&$variables) {
   $variables['author_data'] = $author_data;
 }
 
- /**
+/**
  * Implements hook_theme_suggestions_HOOK_alter() to suggest a custom template for a specific node.
  */
-function planet_core_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+function planet_core_theme_suggestions_page_alter(array &$suggestions, array $variables)
+{
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if (!$node || !($node instanceof \Drupal\node\NodeInterface) || (\Drupal::currentUser()->isAuthenticated())) {
@@ -351,7 +374,8 @@ function planet_core_theme_suggestions_page_alter(array &$suggestions, array $va
 /**
  * Implements hook_cron().
  */
-function planet_core_cron() {
+function planet_core_cron()
+{
   // Calculate the timestamp for 30 days ago.
   $thirtyDaysAgo = new DrupalDateTime('-30 days');
   $thirtyDaysAgoTimestamp = $thirtyDaysAgo->getTimestamp();
@@ -389,8 +413,9 @@ function planet_core_cron() {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function planet_core_theme_suggestions_views_view_field_alter(array &$suggestions, array $variables) {
-  if($variables['view']->id() === 'ebook') {
+function planet_core_theme_suggestions_views_view_field_alter(array &$suggestions, array $variables)
+{
+  if ($variables['view']->id() === 'ebook') {
 
     if ($variables['field']->getPluginId() === 'entity_link') {
       $suggestions[] = 'views_view_field__ebook_link';
@@ -402,7 +427,8 @@ function planet_core_theme_suggestions_views_view_field_alter(array &$suggestion
 /**
  * Implements hook_preprocess_HOOK() for views_view_field templates.
  */
-function planet_core_preprocess_views_view_field(array &$variables) {
+function planet_core_preprocess_views_view_field(array &$variables)
+{
   $this_page_node = \Drupal::routeMatch()->getParameter('node');
 
   if ($this_page_node) {
@@ -431,7 +457,7 @@ function planet_core_preprocess_views_view_field(array &$variables) {
     }
   }
 
-  if($variables['view']->id() === 'ebook') {
+  if ($variables['view']->id() === 'ebook') {
     if ($variables['field']->getPluginId() === 'entity_link') {
       $node_translation = \Drupal::service('entity.repository')->getTranslationFromContext($variables['row']->_entity);
       $lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -451,7 +477,8 @@ function planet_core_preprocess_views_view_field(array &$variables) {
 /**
  * Implements hook_theme().
  */
-function planet_core_theme(): array {
+function planet_core_theme(): array
+{
   return [
     'views_view_fields__case_studies__featured_slider' => [
       'template' => 'views-view-fields--case-studies--featured-slider',
@@ -495,8 +522,12 @@ function planet_core_theme(): array {
       'template' => 'node--blog-single-page',
       'base hook' => 'node',
     ],
-    'node__press-single-page' => [
-      'template' => 'node--press-single-page',
+    'node__press-front-page' => [
+      'template' => 'node--press-front-page',
+      'base hook' => 'node',
+    ],
+    'node__ebook-front-page' => [
+      'template' => 'node--ebook-front-page',
       'base hook' => 'node',
     ],
     'node__press-archive-single-page' => [
@@ -511,8 +542,8 @@ function planet_core_theme(): array {
       'template' => 'node--news-page',
       'base hook' => 'node',
     ],
-    'node__news-main-page' => [
-      'template' => 'node--press-main-page',
+    'node__ebook-single-page' => [
+      'template' => 'node--ebook-single-page',
       'base hook' => 'node',
     ],
     'views_view_field__ebook_link' => [
@@ -570,32 +601,36 @@ function planet_core_theme(): array {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function planet_core_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+function planet_core_theme_suggestions_node_alter(array &$suggestions, array $variables)
+{
   $node = \Drupal::routeMatch()->getParameter('node');
   if (!$node || !($node instanceof \Drupal\node\NodeInterface)) {
     return;
   }
   $config = \Drupal::config('planet_core.settings');
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
- 
+
   // News page suggestions
-  if ($node->id() == 4751) {
-    $suggestions[] = 'node__press-single-page';
+  if ($node->id() == SpecialTemplates::PRESS_FRONT) {
+    $suggestions[] = 'node__press-front-page';
     return;
-  } else if($node->id() == 4756) {
+  } else if ($node->id() == SpecialTemplates::PRESS_ARCHIVE) {
     $suggestions[] = 'node__press-archive-single-page';
+    return;
+  } else if ($node->id() == SpecialTemplates::EBOOKS) {
+    $suggestions[] = 'node__ebook-front-page';
     return;
   } else {
     switch ($alias) {
       case "/blog":
         $suggestions[] = 'node__blog-single-page';
-        return; 
+        return;
       case "/sitemap":
         $suggestions[] = 'node__sitemap';
         return;
     }
   }
- 
+
   // Homepage v1 suggestions
   if ($alias == "/new") {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -607,7 +642,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
         $suggestions[] = 'node__homepage_v1_es';
         break;
       case "de":
-        $suggestions[] = 'node__homepage_v1_de'; 
+        $suggestions[] = 'node__homepage_v1_de';
         break;
       case "fr":
         $suggestions[] = 'node__homepage_v1_fr';
@@ -617,7 +652,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     }
     return;
   }
- 
+
   // Homepage v2 suggestions  
   if ($alias == "/homepage-prototype-v2") {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -626,7 +661,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
         $suggestions[] = 'node__homepage_v2_it';
         break;
       case "es":
-        $suggestions[] = 'node__homepage_v2_es'; 
+        $suggestions[] = 'node__homepage_v2_es';
         break;
       case "de":
         $suggestions[] = 'node__homepage_v2_de';
@@ -639,7 +674,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     }
     return;
   }
- 
+
   // PMS transformation suggestions
   if ($alias == "/pms-transformation") {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -655,7 +690,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     }
     return;
   }
- 
+
   if ($node->getType() === 'resources') {
     $suggestions[] = 'node__resources-page';
   }
@@ -664,23 +699,30 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     $suggestions[] = 'node__news-page';
   }
 
-  if ($node->getType() === "page" && !in_array($node->id(), EXCLUDED_TEMPLATE_OVERRIDE_PAGES) && $node->id() != 5231) {
-   $suggestions[] = 'node__basic_page';
+  if ($node->getType() === 'e_book_') {
+    $suggestions[] = 'node__ebook-single-page';
   }
 
- }
+  if ($node->getType() === "page" && !in_array($node->id(), SpecialTemplates::getAll())) {
+    $suggestions[] = 'node__basic_page';
+  }
+
+
+}
 
 /**
  * Implements hook_entity_insert().
  */
-function planet_core_entity_insert(EntityInterface $entity): void {
+function planet_core_entity_insert(EntityInterface $entity): void
+{
   _planet_core_update_untranslated_path($entity, 'insert');
 }
 
 /**
  * Implements hook_entity_update().
  */
-function planet_core_entity_update(EntityInterface $entity): void {
+function planet_core_entity_update(EntityInterface $entity): void
+{
   _planet_core_update_untranslated_path($entity, 'update');
 }
 
@@ -692,7 +734,8 @@ function planet_core_entity_update(EntityInterface $entity): void {
  * @param string $action
  *   The action performed in the entity.
  */
-function _planet_core_update_untranslated_path(EntityInterface $entity, string $action): void {
+function _planet_core_update_untranslated_path(EntityInterface $entity, string $action): void
+{
   $pathautoGenerator = \Drupal::service('pathauto.generator');
 
   // Check if entity has pathauto enabled and is translatable.
@@ -716,7 +759,8 @@ function _planet_core_update_untranslated_path(EntityInterface $entity, string $
  *
  * Implements hook_entity_type_alter().
  */
-function planet_core_entity_type_alter(array &$entity_types) {
+function planet_core_entity_type_alter(array &$entity_types)
+{
   foreach ($entity_types as $entity_type) {
     $constraints = $entity_type->getConstraints();
     unset($constraints['EntityUntranslatableFields']);
@@ -727,7 +771,8 @@ function planet_core_entity_type_alter(array &$entity_types) {
 /**
  * Implements hook_cloned_node_alter().
  */
-function planet_core_cloned_node_alter(NodeInterface &$node): void {
+function planet_core_cloned_node_alter(NodeInterface &$node): void
+{
   $configName = 'exclude.node.' . $node->getType();
   $excludeFields = \Drupal::config('quick_node_clone.settings')->get($configName);
   $excludeFields = $excludeFields ?: [];
@@ -763,12 +808,14 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void {
  * Assign js files and send data
  *
  */
-function planet_core_preprocess_node(array &$variables) {
+function planet_core_preprocess_node(array &$variables)
+{
   $node = $variables['node'];
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
 
   $planet_core_article_helper = \Drupal::service('planet_core.article_helper');
   $planet_core_news_helper = \Drupal::service('planet_core.news_helper');
+  $planet_core_ebooks_helper = \Drupal::service('planet_core.ebooks_helper');
 
   $variables['#attached']['library'][] = 'planet_core/language-popup';
 
@@ -800,7 +847,7 @@ function planet_core_preprocess_node(array &$variables) {
     $variables['tags'] = $planet_core_article_helper->getAllBlogArticleTags();
     $variables['#attached']['library'][] = 'planet_core/blog-page';
   }
-  if ($node->id() == 4756) { //news-archive
+  if ($node->id() == SpecialTemplates::PRESS_ARCHIVE) { //news-archive
     $variables['tags'] = $planet_core_news_helper->getAllNewsArticleTags();
     $variables['years'] = $planet_core_news_helper->getYears();
     $variables['useful_links'] = $planet_core_article_helper->getToggleLinks();
@@ -808,7 +855,7 @@ function planet_core_preprocess_node(array &$variables) {
   }
 
   // Check for specific node ID instead of alias.
-  if ($node->id() == 4751) { //news
+  if ($node->id() == SpecialTemplates::PRESS_FRONT) {
     $variables['featured_article'] = $planet_core_news_helper->getLastPublishedNews();
     $variables['tags'] = $planet_core_news_helper->getAllNewsArticleTags();
     $variables['useful_links'] = $planet_core_article_helper->getToggleLinks();
@@ -816,7 +863,12 @@ function planet_core_preprocess_node(array &$variables) {
     $variables['external_articles'] = $planet_core_news_helper->getPublishedNews(3, 0, "en", true, false);
   }
 
-  if ($node->getType() == 'page' && !in_array($node->id(), EXCLUDED_TEMPLATE_OVERRIDE_PAGES)) {
+  if ($node->id() == SpecialTemplates::EBOOKS) { //news
+    $variables['featured_article'] = $planet_core_ebooks_helper->getLastPublishedEbook();
+    $variables['articles'] = $planet_core_ebooks_helper->getPublishedEbooks();
+  }
+
+  if ($node->getType() == 'page' && !in_array($node->id(), SpecialTemplates::getAll())) {
     if ($node->get('field_is_product_page')->value == 1) {
       $form = \Drupal::entityTypeManager()
         ->getStorage('webform')
@@ -825,12 +877,23 @@ function planet_core_preprocess_node(array &$variables) {
       $variables['form'] = $form;
     }
   }
+
+  if ($node->getType() == 'e_book_' && !$node->get('field_ebook_form')->isEmpty()) {
+    $webform_id = $node->get('field_ebook_form')->target_id;
+    $form = \Drupal::entityTypeManager()
+        ->getStorage('webform')
+        ->load($webform_id)
+        ->getSubmissionForm();
+    $variables['form'] = $form;
+}
+
 }
 
 /**
  * Implements hook_preprocess_HOOK().
  */
-function planet_core_preprocess_page(array &$variables) {
+function planet_core_preprocess_page(array &$variables)
+{
   $variables['#attached']['library'][] = 'planet_core/language-popup';
   $variables['#attached']['library'][] = 'planet_core/sitewide-libraries';
 
@@ -843,7 +906,8 @@ function planet_core_preprocess_page(array &$variables) {
 }
 
 
-function planet_core_page_attachments_alter(array &$attachments) {
+function planet_core_page_attachments_alter(array &$attachments)
+{
   $current_path = \Drupal::service('path.current')->getPath();
   $alias_manager = \Drupal::service('path_alias.manager');
   $current_alias = $alias_manager->getAliasByPath($current_path);

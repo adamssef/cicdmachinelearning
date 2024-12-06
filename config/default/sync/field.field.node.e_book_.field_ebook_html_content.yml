@@ -1,0 +1,28 @@
+uuid: f0d3aa66-796e-4ed2-94d7-0d9359ca9f52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ebook_html_content
+    - filter.format.cohesion
+    - node.type.e_book_
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.e_book_.field_ebook_html_content
+field_name: field_ebook_html_content
+entity_type: node
+bundle: e_book_
+label: 'HTML Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - cohesion
+field_type: text_long
