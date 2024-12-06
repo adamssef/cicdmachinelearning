@@ -1,0 +1,24 @@
+uuid: 51db9c0d-10df-4e00-8222-409c02bf7b99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_form_pre_heading
+    - node.type.e_book_
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.e_book_.field_form_pre_heading
+field_name: field_form_pre_heading
+entity_type: node
+bundle: e_book_
+label: 'Form Pre-Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

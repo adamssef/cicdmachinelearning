@@ -877,6 +877,17 @@ function planet_core_preprocess_node(array &$variables)
       $variables['form'] = $form;
     }
   }
+
+
+  if ($node->getType() == 'e_book_' && !$node->get('field_ebook_form')->isEmpty()) {
+    $webform_id = $node->get('field_ebook_form')->target_id;
+    $form = \Drupal::entityTypeManager()
+        ->getStorage('webform')
+        ->load($webform_id)
+        ->getSubmissionForm();
+    $variables['form'] = $form;
+}
+
 }
 
 /**

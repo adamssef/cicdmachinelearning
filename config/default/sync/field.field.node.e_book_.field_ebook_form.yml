@@ -1,0 +1,36 @@
+uuid: c77de9d7-b960-48af-893d-9f82b3bce6b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ebook_form
+    - node.type.e_book_
+    - webform.webform.get_in_touch_dynamic
+  module:
+    - tmgmt_content
+    - webform
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.e_book_.field_ebook_form
+field_name: field_ebook_form
+entity_type: node
+bundle: e_book_
+label: 'Ebook Form'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 93465f48-ed41-4736-bbde-a85d5f0ed27c
+    default_data: ''
+    status: open
+    open: ''
+    close: ''
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform
