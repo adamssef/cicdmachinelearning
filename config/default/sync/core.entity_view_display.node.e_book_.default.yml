@@ -51,7 +51,7 @@ content:
     region: content
   field_ebook_form:
     type: webform_entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       source_entity: true
       lazy: false
@@ -67,7 +67,7 @@ content:
     region: content
   field_form_heading:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -75,14 +75,14 @@ content:
     region: content
   field_form_paragraph:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 17
     region: content
   field_form_pre_heading:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
