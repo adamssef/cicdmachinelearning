@@ -44,10 +44,11 @@ class PlanetCookieRedirectMiddleware implements HttpKernelInterface {
       $random_int = mt_rand(1, 2);
 
       $existing_cookie_value = $request->cookies->get($cookieName);
+
       if (!$existing_cookie_value) {
         $cookie = new Cookie($cookieName, $random_int, strtotime('+1 year'), '/');
         if ($random_int === 1) {
-          return new RedirectResponse($path ."new", 302);
+          $response = new RedirectResponse($path ."new", 302);
           $response->headers->setCookie($cookie);
           return $response;
         }

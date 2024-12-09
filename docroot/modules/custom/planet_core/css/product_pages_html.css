@@ -2106,6 +2106,15 @@ color: black;
 text-align: left
 }
 
+
+.hero-background > .coh-image {
+   margin-top: -54rem !important
+}
+
+div [class*="coh-ce-cpt_meet_our_team"] {
+   display: none;
+}
+
 /* @media (min-width: 1025px) {
   body:not(.plnt-css-pms-transformation,.plnt-css-about,.plnt-css-careers,.plnt-css-case-studies, .plnt-css-new) #block-cohesion-theme-content {
     padding-top: 36px;
