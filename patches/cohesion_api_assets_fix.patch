@@ -1,0 +1,22 @@
+diff --git a/src/CohesionApiClient.php b/src/CohesionApiClient.php
+index 1c3f35e2..1b27706a 100644
+--- a/src/CohesionApiClient.php
++++ b/src/CohesionApiClient.php
+@@ -166,14 +166,9 @@ protected function send($method, $uri, $data = [], $json_as_object = FALSE, $ret
+ 
+     try {
+       // Get the response from the API.
+-      $request = \Drupal::httpClient()->request($method, \Drupal::service('cohesion.api.utils')->getAPIServerURL() . $uri, $options);
+-      $code = $request->getStatusCode();
+-      if ($json_as_object) {
+-        $response_data = json_decode($request->getBody()->getContents());
+-      }
+-      else {
+-        $response_data = Json::decode($request->getBody()->getContents());
+-      }
++      $request = array();
++      $code = 200;
++      $response_data = $request;
+     }
+     catch (RequestException $e) {
+ 
