@@ -1259,8 +1259,8 @@
  .pre-heading-hero-bleed {
     justify-content: flex-start;
   }
-  .coh-container-boxed [class*="coh-ce-cpt__v3_hero_50_50_bleed_image"] {
+  /* .coh-container-boxed [class*="coh-ce-cpt__v3_hero_50_50_bleed_image"] {
     align-items: flex-start;
     display: flex;
-  }
+  } */
 
