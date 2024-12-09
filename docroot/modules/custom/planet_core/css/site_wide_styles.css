@@ -1264,3 +1264,10 @@
     display: flex;
   } */
 
+  .case-studies__card .views-field.views-field-fieldset-1 {
+    display: none;
+  }
+  .coh-style-case-studies-cards {
+    height: auto !important;
+  }
+
