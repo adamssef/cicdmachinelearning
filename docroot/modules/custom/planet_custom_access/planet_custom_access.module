@@ -1,0 +1,32 @@
+<?php
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * @file
+ * Primary module hooks for planet_custom_access module.
+ */
+
+/**
+ * Implements hook_node_access().
+ */
+function planet_custom_access_node_access(EntityInterface $entity, $operation, AccountInterface $account) {
+ // Terminal pages, customer-resources-library and customer-resources.
+ $restricted_pages = ['3091', '3786', '3791', '5146', '3886', '3891', '3861', '3851', '3865', '3866', '3876', '3871', '3881'];
+
+if ($entity instanceof NodeInterface) {
+    if (in_array($entity->id(), $restricted_pages)) {
+      if ($account->hasRole('unrestricted_user')) {
+        return AccessResult::allowed();
+      }
+      else {
+        AccessResult::forbidden();
+      }
+    }
+  }
+
+  return AccessResult::neutral();
+}

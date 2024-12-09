@@ -1,0 +1,32 @@
+uuid: 91e59b00-a0ca-4f3e-b01a-b3f90839ba8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.favourite_planet_features.field_features
+    - field.field.paragraph.favourite_planet_features.field_label
+    - paragraphs.paragraphs_type.favourite_planet_features
+id: paragraph.favourite_planet_features.default
+targetEntityType: paragraph
+bundle: favourite_planet_features
+mode: default
+content:
+  field_features:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

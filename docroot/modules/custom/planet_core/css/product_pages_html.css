@@ -1,0 +1,2113 @@
+.html-custom-page .coh-row-bleed-xl .coh-column .coh-inline-element {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  /* background-color: violet; */
+}
+
+#form-50-50 {
+  display: none;
+}
+
+.html-custom-page article div div div.coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-link.coh-style-primary-light-button {
+margin-top: 16px
+}
+
+
+.html-custom-page #form-50-50 {display: none !important}
+.html-custom-page div.coh-container.card-heading-and-sub-text-container {
+  height: 100% !important;
+}
+
+
+
+.html-custom-page .coh-container-image-50 {display: flex;
+flex-direction: Row-reverse;
+height: auto;
+}
+.html-custom-page .coh-container.match-height.match-height-desktop.match-height-tablet.coh-style-container-theme---light-1 {
+  height: 100% !important;
+}
+.html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-link {margin-right: 12px}
+.html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-link.coh-style-secondary-outlined-atom- {display: none}
+.html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-heading {margin-bottom: 16px}
+.html-custom-page article > div > div > div:nth-child(1) .coh-container .pre-heading-hero-bleed {padding-bottom: 16px !important}
+
+@media (max-width: 1023px) {
+  .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
+    padding: 16px 0
+  }
+  .html-custom-page .coh-style-container-theme---black .coh-style-e50 {
+    margin-top: 20px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
+    padding-right: 24px;
+  }
+
+  .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-container-boxed > .coh-container  {
+  padding-right: 64px
+  }
+  .html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-container-boxed {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+  margin-left: 4rem;
+  margin-right: 4rem
+  }
+}
+.html-custom-page article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-container .coh-container .coh-container {
+  width: 100%;
+  padding-bottom: 32px;
+}
+
+.html-custom-page article > div > div > div:nth-child(1) .coh-heading {
+    font-family: 'TT Commons';
+    font-weight: 600;
+    font-size: 2.875rem;
+    line-height: 3rem;
+    letter-spacing: 0.065625rem;
+}
+.html-custom-page article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.html-custom-page .coh-style-container-theme---black .card-with-icon-title-and-text .coh-wysiwyg p, .coh-style-container-theme---black .card-with-icon-title-and-text .coh-wysiwyg h4 {
+  line-height: 22px;
+}
+.html-custom-page .coh-style-container-theme---black .card-with-icon-title-and-text .coh-link::after {
+  content: "\E870";
+  font-family: "Fontello";
+  margin-left: 16px;
+  font-size: 24px;
+  position: absolute;
+  margin-top: -4px;
+}
+.html-custom-page .coh-style-container-theme---black .card-with-icon-title-and-text .coh-link {
+  font-weight: 600;
+  margin-top: 16px
+}
+.html-custom-page .coh-container.animated .slide-track > .coh-column {
+  display: inline-block
+}
+.html-custom-page .coh-container.animated .slide-track {
+    width: 100% !important;
+    height: auto;
+    display: inline;
+    overflow: hidden;
+    position: relative;
+}
+.html-custom-page .coh-container.animated {
+  width: 100% !important
+}
+.html-custom-page .coh-style-padding-left-right---small {
+  text-align: left;
+  height: 20rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(224, 0, 130, 1);
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.html-custom-page .coh-style-container-publications {
+  display: none;
+}
+
+/** Hotel PMS */
+.html-custom-page-it-hotel-pms article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-hotel-pms article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-hotel-pms article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-hotel-pms article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-hotel-pms article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+  background-image: url('/sites/default/files/2022-11/hospitality-solutions-01.jpg');
+}
+
+.html-custom-page-it-hotel-pms article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-hotel-pms article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-pms article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hotel-pms article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-pms article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-image: url('/sites/default/files/2023-10/pms-operations_0.svg');
+}
+
+.html-custom-page-it-hotel-pms article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-hotel-pms article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-pms article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hotel-pms article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-pms article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-image: url('/sites/default/files/2023-11/protel-cloud-pms-technology_2.svg');
+}
+
+.html-custom-page-it-hotel-pms article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-hotel-pms article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-pms article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hotel-pms article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-pms article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-image: url('/sites/default/files/2023-11/protel-cloud-pms-reconcilliation.svg');
+}
+
+.html-custom-page-it-hotel-pms article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-hotel-pms article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-pms article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hotel-pms article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-pms article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-image: url('/sites/default/files/2023-11/protel-cloud-pms-experience_12.svg');
+}
+
+.html-custom-page-it-hotel-pms article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-hotel-pms article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-pms article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hotel-pms article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-pms article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+  background-image: url('/sites/default/files/2024-06/pms-integrations.svg');
+}
+
+/** Booking Engine */
+.html-custom-page-es-motor-reservas-hotel article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-moteurs-reservation-hotels article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-sistemi-prenotazione-alberghiera article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-hotelbuchungsmaschine article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-hotel-booking-engine article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2024-03/hotel-booking-engine-direct.jpg');
+}
+
+.html-custom-page-es-motor-reservas-hotel article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-moteurs-reservation-hotels article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistemi-prenotazione-alberghiera article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotelbuchungsmaschine article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-booking-engine article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/hotel-booking-engine-set-up_2.svg');
+}
+
+.html-custom-page-es-motor-reservas-hotel article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-moteurs-reservation-hotels article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistemi-prenotazione-alberghiera article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotelbuchungsmaschine article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-booking-engine article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/hotel-booking-engine-customisation_0.svg');
+}
+
+.html-custom-page-es-motor-reservas-hotel article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-moteurs-reservation-hotels article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistemi-prenotazione-alberghiera article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotelbuchungsmaschine article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hotel-booking-engine article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/hotel-booking-engine-secure_0.svg');
+}
+
+/** OMS */
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-order-management-system article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-auftragsverwaltungssystem article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-order-management-system article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2024-04/international-shopper-blog.jpg');
+}
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/click-and-collect-store-pick-up.svg');
+}
+
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/click-and-collect-availability.svg');
+}
+
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/click-and-collect-integration_0.svg');
+}
+
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/oms-choice.svg');
+}
+
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/oms-reporting_0.svg');
+}
+
+.html-custom-page-es-sistema-omnicanal-gestion-pedidos article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-order-management-system article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-sistema-gestione-ordini-omnicanale article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-auftragsverwaltungssystem article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-order-management-system article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-06/oms-convert.svg');
+}
+
+/** Online payments */
+.html-custom-page-es-pagos-online article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-paiements-en-ligne article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-pagamenti-online article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12, 
+.html-custom-page-de-online-zahlung article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-online-payments article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2023-10/online-payments-platform.jpg');
+}
+
+.html-custom-page-es-pagos-online article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-en-ligne article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-online article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-online-zahlung article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-online-payments article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-11/online-payments-gateway_2.svg');
+}
+
+.html-custom-page-es-pagos-online article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-en-ligne article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-online article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-online-zahlung article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-online-payments article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-11/online-payments-flexibility_0.svg');
+}
+
+.html-custom-page-es-pagos-online article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-en-ligne article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-online article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-online-zahlung article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-online-payments article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-11/online-payments-checkout_1.svg');
+}
+
+.html-custom-page-es-pagos-online article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-en-ligne article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-online article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-online-zahlung article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-online-payments article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-11/online-payments-spend_2.svg');
+}
+
+.html-custom-page-es-pagos-online article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-en-ligne article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-online article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-online-zahlung article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-online-payments article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-12/online-payments-reporting_0.svg');
+}
+
+/** In person payments */
+.html-custom-page-es-pagos-en-persona article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-paiements-magasin article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-pagamenti-di-persona article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-personliche-zahlungen article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-in-person-payments article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2024-01/in-person-payments-acceptance.jpg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-08/Adv%20-%20IPP-1.svg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-01/in-person-payments-options.svg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-01/in-person-payments-gateway.svg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-01/in-person-payments-software.svg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-01/in-person-payments-partnership_0.svg');
+}
+
+.html-custom-page-es-pagos-en-persona article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-magasin article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-di-persona article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-personliche-zahlungen article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-in-person-payments article div div div:nth-child(10).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-10/in-person-payments-offline.svg');
+}
+
+/** DCC */
+.html-custom-page-es-dcc article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-dcc article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-dcc article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-dcc article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-dcc article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2023-10/Dynamic%20Currency%20Conversion.jpg');
+}
+
+.html-custom-page-es-dcc article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-dcc article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-dcc article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-dcc article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-dcc article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/DCC%20currencies%20available.svg');
+}
+
+.html-custom-page-es-dcc article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-dcc article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-dcc article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-dcc article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-dcc article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/DCC%20income.svg');
+}
+
+.html-custom-page-es-dcc article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-dcc article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-dcc article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-dcc article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-dcc article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/DCC%20eliminate%20risk.svg');
+}
+
+.html-custom-page-es-dcc article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-dcc article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-dcc article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-dcc article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-dcc article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2023-10/DCC%20customer%20love.svg');
+}
+
+/** Retail */
+.html-custom-page-es-retail article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-retail article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-retail article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-einzelhandel article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-retail article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2023-04/HIOPOS%20Planet%20partners%20retail%202.png');
+}
+
+.html-custom-page-es-retail article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-retail article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-retail article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-einzelhandel article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-retail article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-08/Adv%20-%20Retail_2_1.svg');
+}
+
+.html-custom-page-es-retail article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-retail article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-retail article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-einzelhandel article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-retail article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-08/Adv%20-%20Retail_3.svg');
+}
+
+.html-custom-page-es-retail article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-retail article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-retail article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-einzelhandel article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-retail article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-08/Adv%20-%20Retail_4.svg');
+}
+/** Hospitality */
+.html-custom-page-es-hosteleria article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-hospitalite article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-hospitality article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-hotel-und-gastgewerbe article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-hospitality article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2024-03/Adv%20-%20Hospitality.jpg');
+}
+
+.html-custom-page-es-hosteleria article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hospitalite article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-hospitality article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-und-gastgewerbe article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hospitality article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-10/pms-operations.svg');
+}
+
+.html-custom-page-es-hosteleria article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hospitalite article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-hospitality article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-und-gastgewerbe article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hospitality article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-03/Adv%20-%20Hospitality_Amaze_0.svg');
+}
+
+.html-custom-page-es-hosteleria article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hospitalite article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-hospitality article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-und-gastgewerbe article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hospitality article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-03/Adv%20-%20Hospitality_Integrate_0.svg');
+}
+
+.html-custom-page-es-hosteleria article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-hospitalite article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-hospitality article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-hotel-und-gastgewerbe article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-hospitality article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-08/Adv%20-%20Hospitality-1.svg');
+}
+
+/** Travel */
+.html-custom-page-es-viajes-transporte article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-voyage article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-viaggio article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-reisen article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-travel article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+ background-image: url('/sites/default/files/2024-06/Adv%20-%20Travel_1.jpg');
+}
+
+.html-custom-page-es-viajes-transporte article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-voyage article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-viaggio article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-reisen article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-travel article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-06/Adv%20-%20Travel_2_0.svg');
+}
+
+.html-custom-page-es-viajes-transporte article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-voyage article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-viaggio article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-reisen article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-travel article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-06/Adv%20-%20Travel_3_0.svg');
+}
+
+.html-custom-page-es-viajes-transporte article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-voyage article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-viaggio article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-reisen article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-travel article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+ background-image: url('/sites/default/files/2024-06/Adv%20-%20Travel_4_0.svg');
+}
+
+
+/** Payments **/
+/* First box - Single platform */
+.coh-container-image-50 .coh-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
+}
+/* First box - Single platform */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-01/spp-gateway.jpg.webp);
+  height: auto;
+}
+
+/* Second box - Online Payments */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/check-out-solutions_0.jpg.webp);
+  height: auto;
+}
+
+/* Third box - In-Person Payments */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2024-04/PAX-A920-mobile-terminal.jpg.webp);
+  height: auto;
+}
+
+/* Fourth box - Pay-by-Link */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-02/pay-by-link.jpg.webp);
+  height: auto;
+}
+
+/* Fifth box - Payment methods */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-03/payment-methods-cards-m.jpg.webp);
+  height: auto;
+}
+
+/* Sixth box - Fraud prevention */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/fraud-prevention_0.jpg.webp);
+  height: auto;
+}
+
+/* Seventh box - DCC */
+.html-custom-page .ssa-component-instance-a63b23d7-706e-4cf1-ba1a-7398170434bb .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/currency-conversion-flow-m_0.jpg.webp);
+  height: auto;
+}
+/* First box - Single platform */
+.html-custom-page .ssa-component-instance-fedda788-33b1-4181-8ebd-ceccdac402b8 .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/in-store_0.jpg.webp);
+  height: auto;
+ }
+ 
+ /* Second box - Online Payments */
+ .html-custom-page .ssa-component-instance-fedda788-33b1-4181-8ebd-ceccdac402b8 .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2024-03/online.jpg.webp);
+  height: auto;
+ }
+ 
+ /* Third box - In-Person Payments */
+ .html-custom-page .ssa-component-instance-fedda788-33b1-4181-8ebd-ceccdac402b8 .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/omnichannel.jpg.webp);
+  height: auto;
+ }
+ 
+ /* Fourth box - Pay-by-Link */
+ .html-custom-page .ssa-component-instance-fedda788-33b1-4181-8ebd-ceccdac402b8 .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2022-11/unattended.jpg.webp);
+  height: auto;
+ }
+ 
+ /** Payments */
+
+ .html-custom-page-payments .coh-row-inner.media-left .column-2,
+ .html-custom-page-es-pagos .coh-row-inner.media-left .column-2,
+ .html-custom-page-fr-paiements .coh-row-inner.media-left .column-2,
+ .html-custom-page-it-pagamenti .coh-row-inner.media-left .column-2,
+ .html-custom-page-de-zahlungen .coh-row-inner.media-left .column-2 {
+    background-image: url('/sites/default/files/styles/webp/public/2022-11/payments-platform-loyalty.jpg.webp');
+ }
+.html-custom-page.html-custom-page-payments .coh-hero-full-width,
+.html-custom-page.html-custom-page-es-pagos .coh-hero-full-width,
+.html-custom-page.html-custom-page-fr-paiements .coh-hero-full-width,
+.html-custom-page.html-custom-page-it-pagamenti .coh-hero-full-width,
+.html-custom-page.html-custom-page-de-zahlungen .coh-hero-full-width {
+  height: 667px;
+  background-image: url('/sites/default/files/styles/webp/public/2022-11/payments-hero.jpg.webp');
+}
+
+/* Hero background image */
+.html-custom-page-vat-refund .coh-zero > .coh-container,
+.html-custom-page-es-devolucion-iva .coh-zero > .coh-container,
+.html-custom-page-fr-remboursement-tva .coh-zero > .coh-container,
+.html-custom-page-it-rimborso-iva .coh-zero > .coh-container,
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-zero > .coh-container {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-experiences.jpg.webp);
+   background-size: cover;
+   background-position: center;
+}
+
+
+/* Container positioning */
+.html-custom-page-vat-refund .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-vat-refund .coh-hero-5050,
+.html-custom-page-es-devolucion-iva .coh-hero-5050,
+.html-custom-page-fr-remboursement-tva .coh-hero-5050,
+.html-custom-page-it-rimborso-iva .coh-hero-5050,
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-hero-5050 {
+   display: flex;
+   flex-direction: row-reverse;
+}
+
+/* Zero container background */
+.html-custom-page-vat-refund .coh-zero > .coh-container,
+.html-custom-page-es-devolucion-iva .coh-zero > .coh-container,
+.html-custom-page-fr-remboursement-tva .coh-zero > .coh-container,
+.html-custom-page-it-rimborso-iva .coh-zero > .coh-container,
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-zero > .coh-container {
+   height: 100%;
+}
+
+/* Zero container width */
+.html-custom-page-vat-refund .coh-zero,
+.html-custom-page-es-devolucion-iva .coh-zero,
+.html-custom-page-fr-remboursement-tva .coh-zero,
+.html-custom-page-it-rimborso-iva .coh-zero,
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-zero {
+   width: 50%;
+}
+.html-custom-page-vat-refund .coh-zero > .coh-container,
+.html-custom-page-es-devolucion-iva .coh-zero > .coh-container,
+.html-custom-page-fr-remboursement-tva .coh-zero > .coh-container,
+.html-custom-page-it-rimborso-iva .coh-zero > .coh-container,
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-zero > .coh-container {
+    background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-experiences.jpg.webp);
+}
+
+
+/* First box - Refunds */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-kiosk.jpg.webp);
+   height: auto;
+}
+
+/* Second box - Tax Free shopping */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-shopping.jpg.webp);
+   height: auto;
+}
+
+/* Third box - Self-service */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-self-service.jpg.webp);
+   height: auto;
+}
+
+/* Fourth box - Integrated */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-integrated_1.jpg.webp);
+   height: auto;
+}
+
+/* Fifth box - Retail */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-retail.jpg.webp);
+   height: auto;
+}
+
+/* Sixth box - POS */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-pos.jpg.webp);
+   height: auto;
+}
+
+/* Seventh box - All-in-one */
+.html-custom-page-vat-refund .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-devolucion-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-remboursement-tva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-rimborso-iva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-mehrwertsteuer-ruckerstattung .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/tax-free-all-in-one_1.jpg.webp);
+   height: auto;
+}
+.html-custom-page .coh-image.card-image {
+  border-radius: 200px;
+}
+.path-frontpage #mep_0 {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none;
+  max-height: none;
+}
+.path-frontpage #mep_0 video {
+  height: 100% !important;
+  width: 100% !important
+}
+.path-frontpage section.section-container .coh-style-planet-padding-bottom---extra-small .coh-heading {
+  text-align: center;
+}
+.path-frontpage section.section-container .coh-row-xl .coh-row-inner > .coh-column {
+  background: white;
+  color: black;
+  height: auto;
+  max-width: none;
+}
+.path-frontpage section.section-container .coh-row-xl .coh-row-inner > .coh-column > .coh-container > .coh-container * {
+  color: black;
+}
+.path-frontpage .coh-ce-cpt_50_50_title_text_and_image-9aae953f {
+  display: none;
+}
+.path-frontpage #cards-tab-panel p.coh-style--body-xl---tt-commons-planet {display: none}
+.path-frontpage .media-left {
+  flex-direction: row-reverse;
+}
+
+/** PCI Proxy */
+/* Hero section */
+.html-custom-page-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-cumplimiento-PCI article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-pci-proxy article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+   background-image: url('/sites/default/files/2024-07/Adv%20-%20PCI_1.jpg');
+}
+/* First icon */
+.html-custom-page-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-cumplimiento-PCI article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-pci-proxy article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-07/Adv%20-%20PCI_3.svg');
+}
+
+/* Second icon */
+.html-custom-page-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-cumplimiento-PCI article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-pci-proxy article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-07/Adv%20-%20PCI_4.svg');
+}
+
+/* Third icon */
+.html-custom-page-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-cumplimiento-PCI article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-pci-proxy article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-07/Adv%20-%20PCI_5.svg');
+}
+
+/** In app payments */
+/* Hero section */
+.html-custom-page-in-app-payments article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-pagos-in-app article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-paiements-integres article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-pagamenti-in-app article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-in-app-zahlungen article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+   background-image: url('/sites/default/files/2024-01/in-person-payments-acceptance.jpg');
+}
+
+/* First icon */
+.html-custom-page-in-app-payments article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-08/Adv%20-%20IPP-1.svg');
+}
+
+/* Second icon */
+.html-custom-page-in-app-payments article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-01/in-person-payments-options.svg');
+}
+
+/* Third icon */
+.html-custom-page-in-app-payments article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-01/in-person-payments-gateway.svg');
+}
+
+/* Fourth icon */
+.html-custom-page-in-app-payments article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-01/in-person-payments-software.svg');
+}
+
+/* Fifth icon */
+.html-custom-page-in-app-payments article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-01/in-person-payments-partnership_0.svg');
+}
+
+/* Sixth icon */
+.html-custom-page-in-app-payments article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pagos-in-app article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-paiements-integres article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pagamenti-in-app article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-in-app-zahlungen article div div div:nth-child(9).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-10/in-person-payments-offline.svg');
+}
+
+/** Partners */
+.plnt-css-partners  .coh-hero-full-width, .plnt-css-partnerschaften .coh-hero-full-width {
+background-image: url('/sites/default/files/styles/webp/public/2022-11/partnerships-hero.jpg.webp');
+height: 667px;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+/** Unified commerce */
+/* Container positioning */
+.html-custom-page-unified-commerce .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-comercio-unificado .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-commerce-unifie .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-commercio-unificato .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-einheitlicher-handel .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-unified-commerce .coh-hero-5050,
+.html-custom-page-es-comercio-unificado .coh-hero-5050,
+.html-custom-page-fr-commerce-unifie .coh-hero-5050,
+.html-custom-page-it-commercio-unificato .coh-hero-5050,
+.html-custom-page-de-einheitlicher-handel .coh-hero-5050 {
+   display: flex;
+}
+.html-custom-page-unified-commerce .coh-zero,
+.html-custom-page-es-comercio-unificado .coh-zero,
+.html-custom-page-fr-commerce-unifie .coh-zero,
+.html-custom-page-it-commercio-unificato .coh-zero,
+.html-custom-page-de-einheitlicher-handel .coh-zero {
+  height: auto;
+  background: url('/sites/default/files/styles/webp/public/2022-11/unified-commerce-hero.jpg.webp');
+  width: 100%;
+  background-size: cover
+}
+
+.html-custom-page .coh-lazy-loading, .html-custom-page .coh-lazy-loaded {
+  display: none;
+}
+.html-custom-page-unified-commerce .coh-lazy-loading,
+.html-custom-page-es-comercio-unificado .coh-lazy-loading,
+.html-custom-page-fr-commerce-unifie .coh-lazy-loading,
+.html-custom-page-it-commercio-unificato .coh-lazy-loading,
+.html-custom-page-de-einheitlicher-handel .coh-lazy-loading {
+   display: none;
+}
+
+/** Hotel networking */
+/** Hotel networking */
+/* Container positioning */
+.html-custom-page-hotel-networking .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-hotel-networking .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-hotel-networking .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-hotel-networking .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-hotel-netzwerke .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-hotel-networking .coh-hero-5050,
+.html-custom-page-es-hotel-networking .coh-hero-5050,
+.html-custom-page-fr-hotel-networking .coh-hero-5050,
+.html-custom-page-it-hotel-networking .coh-hero-5050,
+.html-custom-page-de-hotel-netzwerke .coh-hero-5050 {
+   display: flex;
+}
+
+.html-custom-page-hotel-networking .coh-zero,
+.html-custom-page-es-hotel-networking .coh-zero,
+.html-custom-page-fr-hotel-networking .coh-zero,
+.html-custom-page-it-hotel-networking .coh-zero,
+.html-custom-page-de-hotel-netzwerke .coh-zero {
+   height: auto;
+   background: url('/sites/default/files/styles/webp/public/2022-11/tv-networking-hero.jpg.webp');
+   width: 100%;
+   background-size: cover
+}
+
+/** Security */
+/* Container positioning */
+.html-custom-page-security-compliance-fraud .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-seguridad-cumplimiento-fraude .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-securite-conformite-fraude .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-sicurezza-conformita-frode .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-betrug-bei-der-einhaltung-von-sicherheitsvorschriften .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-security-compliance-fraud .coh-hero-5050,
+.html-custom-page-es-seguridad-cumplimiento-fraude .coh-hero-5050,
+.html-custom-page-fr-securite-conformite-fraude .coh-hero-5050,
+.html-custom-page-it-sicurezza-conformita-frode .coh-hero-5050,
+.html-custom-page-de-betrug-bei-der-einhaltung-von-sicherheitsvorschriften .coh-hero-5050 {
+   display: flex;
+}
+
+.html-custom-page-security-compliance-fraud .coh-zero,
+.html-custom-page-es-seguridad-cumplimiento-fraude .coh-zero,
+.html-custom-page-fr-securite-conformite-fraude .coh-zero,
+.html-custom-page-it-sicurezza-conformita-frode .coh-zero,
+.html-custom-page-de-betrug-bei-der-einhaltung-von-sicherheitsvorschriften .coh-zero {
+   height: auto;
+   background: url('/sites/default/files/styles/webp/public/2023-01/security-hero.jpg.webp');
+   width: 100%;
+   background-size: cover
+}
+
+/* Reconciliation */
+/** Reconciliation */
+/* Container positioning */
+.html-custom-page-reconciliation .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-servicio-de-conciliacion .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-reconciliation .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-servizio-di-riconciliazione .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-reconciliation .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-reconciliation .coh-hero-5050,
+.html-custom-page-es-servicio-de-conciliacion .coh-hero-5050,
+.html-custom-page-fr-reconciliation .coh-hero-5050,
+.html-custom-page-it-servizio-di-riconciliazione .coh-hero-5050,
+.html-custom-page-de-reconciliation .coh-hero-5050 {
+   display: flex;
+}
+
+.html-custom-page-reconciliation .coh-zero,
+.html-custom-page-es-servicio-de-conciliacion .coh-zero,
+.html-custom-page-fr-reconciliation .coh-zero,
+.html-custom-page-it-servizio-di-riconciliazione .coh-zero,
+.html-custom-page-de-reconciliation .coh-zero {
+   height: auto;
+   background: url('/sites/default/files/styles/webp/public/2023-01/reconciliation-service.jpg.webp?itok=8dQ6Y-n7');
+   width: 100%;
+   background-size: cover
+}
+
+/** Tokenisation */
+/** Tokenisation */
+.html-custom-page-tokenisation article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-tokenizacion article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-tokenisation article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-tokenizzazione article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-tokenisation article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+   background-image: url('/sites/default/files/2023-01/tokenisation-hero.jpg');
+}
+
+
+/** interactive tv */
+/** Interactive TV */
+/* Container positioning */
+.html-custom-page-interactive-tv-hotels .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-tv-interactiva-hoteles .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-tv-interattiva .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-interactive-tv-hotels .coh-hero-5050,
+.html-custom-page-es-tv-interactiva-hoteles .coh-hero-5050,
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-hero-5050,
+.html-custom-page-it-tv-interattiva .coh-hero-5050,
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-hero-5050 {
+   display: flex;
+}
+.html-custom-page .dx8-parallax {
+  background: black;
+  color: white;
+}
+.html-custom-page-interactive-tv-hotels .coh-zero:not(.dx8-parallax),
+.html-custom-page-es-tv-interactiva-hoteles .coh-zero:not(.dx8-parallax),
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-zero:not(.dx8-parallax),
+.html-custom-page-it-tv-interattiva .coh-zero:not(.dx8-parallax),
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-zero:not(.dx8-parallax) {
+   height: auto;
+   background: url('/sites/default/files/styles/webp/public/2023-01/security-hero.jpg.webp');
+   width: 100%;
+   background-size: cover
+}
+/* First box */
+.html-custom-page-interactive-tv-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tv-interactiva-hoteles .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-tv-interattiva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-09/interactive-tv-advanced_0.jpg.webp);
+  height: auto;
+}
+
+/* Second box */
+.html-custom-page-interactive-tv-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tv-interactiva-hoteles .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-tv-interattiva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-01/interactive-tv-variety.jpg.webp);
+  height: auto;
+}
+
+/* Third box */
+.html-custom-page-interactive-tv-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tv-interactiva-hoteles .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-tv-interattiva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-01/interactive-tv-cast.jpg.webp);
+  height: auto;
+}
+
+/* Fourth box */
+.html-custom-page-interactive-tv-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tv-interactiva-hoteles .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-tv-interattiva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-01/interactive-tv-personalised.jpg.webp);
+  height: auto;
+}
+
+/* Fifth box */
+.html-custom-page-interactive-tv-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tv-interactiva-hoteles .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-tv-interattiva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-01/interactive-tv-remote.jpg.webp);
+  height: auto;
+}
+
+/* Sixth box */
+.html-custom-page-interactive-tv-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tv-interactiva-hoteles .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-tv-interattiva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-01/interactive-tv-pms.jpg.webp);
+  height: auto;
+}
+
+/* Seventh box */
+.html-custom-page-interactive-tv-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tv-interactiva-hoteles .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-tv-interattiva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-01/interactive-tv-central.jpg.webp);
+  height: auto;
+}
+
+/* Eighth box */
+.html-custom-page-interactive-tv-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(16) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tv-interactiva-hoteles .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(16) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(16) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-tv-interattiva .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(16) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(16) .coh-container-image-50 .coh-container:nth-child(2) {
+  background-image: url(/sites/default/files/styles/webp/public/2023-01/interactive-tv-dashboard.jpg.webp);
+  height: auto;
+}
+.html-custom-page-interactive-tv-hotels .coh-row-bleed-xl .column-2,
+.html-custom-page-es-tv-interactiva-hoteles .coh-row-bleed-xl .column-2,
+.html-custom-page-fr-television-interactive-pour-les-hotels .coh-row-bleed-xl  .column-2,
+.html-custom-page-it-tv-interattiva .coh-row-bleed-xl  .column-2,
+.html-custom-page-de-interaktives-fernsehen-fuer-hotels .coh-row-bleed-xl .column-2 {
+   background-image: url(/sites/default/files/styles/webp/public/2022-11/hotel-technology.jpg.webp);
+}
+
+/** Digital signage */
+/* Container positioning */
+.html-custom-page-digital-signage .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-digital-signage .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-digital-signage .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-digital-signage .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-digital-signage .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-digital-signage .coh-hero-5050,
+.html-custom-page-es-digital-signage .coh-hero-5050,
+.html-custom-page-fr-digital-signage .coh-hero-5050,
+.html-custom-page-it-digital-signage .coh-hero-5050,
+.html-custom-page-de-digital-signage .coh-hero-5050 {
+   display: flex;
+}
+
+.html-custom-page-digital-signage .coh-zero,
+.html-custom-page-es-digital-signage .coh-zero,
+.html-custom-page-fr-digital-signage .coh-zero,
+.html-custom-page-it-digital-signage .coh-zero,
+.html-custom-page-de-digital-signage .coh-zero {
+   height: auto;
+   background: url('/sites/default/files/styles/webp/public/2023-02/ds-hero.jpg.webp');
+   width: 100%;
+   background-size: cover
+}
+
+/* First box */
+.html-custom-page-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/ds-digital-sign_0.jpg.webp?itok=lWtm-Yy0);
+   height: auto;
+}
+
+/* Second box */
+.html-custom-page-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/ds-conference-guide_0.jpg.webp?itok=lyTWtT9n);
+   height: auto;
+}
+
+/* Third box */
+.html-custom-page-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-digital-signage .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/ds-cloud-service.jpg.webp?itok=F5fFNrd-);
+   height: auto;
+}
+
+/** Event connectivity manager */
+/* Container positioning */
+.html-custom-page-event-connectivity-manager .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-event-connectivity-manager .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-event-connectivity-manager .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-event-connectivity-manager .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-event-connectivity-manager .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-event-connectivity-manager .coh-hero-5050,
+.html-custom-page-es-event-connectivity-manager .coh-hero-5050,
+.html-custom-page-fr-event-connectivity-manager .coh-hero-5050,
+.html-custom-page-it-event-connectivity-manager .coh-hero-5050,
+.html-custom-page-de-event-connectivity-manager .coh-hero-5050 {
+   display: flex;
+}
+
+.html-custom-page-event-connectivity-manager .coh-zero,
+.html-custom-page-es-event-connectivity-manager .coh-zero,
+.html-custom-page-fr-event-connectivity-manager .coh-zero,
+.html-custom-page-it-event-connectivity-manager .coh-zero,
+.html-custom-page-de-event-connectivity-manager .coh-zero {
+   height: auto;
+   background: url('/sites/default/files/styles/webp/public/2023-06/ecm-hero.jpg.webp');
+   width: 100%;
+   background-size: cover
+}
+
+/* First box */
+.html-custom-page-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-06/ecm-event-connectivity.jpg.webp);
+   height: auto;
+}
+
+/* Second box */
+.html-custom-page-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-06/ecm-conference-tool.jpg.webp);
+   height: auto;
+}
+
+/* Third box */
+.html-custom-page-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-06/ecm-custom-setup.jpg.webp);
+   height: auto;
+}
+
+/* Fourth box */
+.html-custom-page-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-06/ecm-time-based-events.jpg.webp);
+   height: auto;
+}
+
+/* Fifth box */
+.html-custom-page-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-06/ecm-cloud-architecture.jpg.webp);
+   height: auto;
+}
+
+/* Sixth box */
+.html-custom-page-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-event-connectivity-manager .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-06/ecm-port-grouping.jpg.webp);
+   height: auto;
+}
+
+/* Container positioning */
+.html-custom-page-merchant-acquiring .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-merchant-acquiring .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-acquisitions-marchand .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-merchant-acquiring .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-merchant-acquiring .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-merchant-acquiring .coh-hero-5050,
+.html-custom-page-es-merchant-acquiring .coh-hero-5050,
+.html-custom-page-fr-acquisitions-marchand .coh-hero-5050,
+.html-custom-page-it-merchant-acquiring .coh-hero-5050,
+.html-custom-page-de-merchant-acquiring .coh-hero-5050 {
+   display: flex;
+}
+
+.html-custom-page-merchant-acquiring .coh-zero,
+.html-custom-page-es-merchant-acquiring .coh-zero,
+.html-custom-page-fr-acquisitions-marchand .coh-zero,
+.html-custom-page-it-merchant-acquiring .coh-zero,
+.html-custom-page-de-merchant-acquiring .coh-zero {
+   height: auto;
+   width: 100%;
+   background-size: cover;
+   background-image: url('/sites/default/files/styles/webp/public/2023-02/ma-hero.jpg.webp')
+}
+/* First box */
+.html-custom-page-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-acquisitions-marchand .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/ma-localised.jpg.webp);
+   height: auto;
+}
+
+/* Second box */
+.html-custom-page-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-acquisitions-marchand .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/ma-pan-european.jpg.webp);
+   height: auto;
+}
+
+/* Third box */
+.html-custom-page-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-acquisitions-marchand .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/ma-methods.jpg.webp);
+   height: auto;
+}
+
+/* Fourth box */
+.html-custom-page-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-acquisitions-marchand .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/ma-contract.jpg.webp);
+   height: auto;
+}
+
+/* Fifth box */
+.html-custom-page-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-acquisitions-marchand .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/ma-settlement.jpg.webp);
+   height: auto;
+}
+
+/* Sixth box */
+.html-custom-page-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-acquisitions-marchand .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(12) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/ma-flexible.jpg.webp);
+   height: auto;
+}
+
+/* Seventh box */
+.html-custom-page-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-acquisitions-marchand .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(14) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/ma-reconcilliation.jpg.webp);
+   height: auto;
+}
+
+/* Eighth box */
+.html-custom-page-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(16) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(16) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-acquisitions-marchand .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(16) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(16) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-merchant-acquiring .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(16) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-02/ma-terminals.jpg.webp);
+   height: auto;
+}
+
+/** Internet services */
+/* Container positioning */
+.html-custom-page-internet-services .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-servicios-internet .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-services-internet .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-servizi-internet .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-internetdienste .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-internet-services .coh-hero-5050,
+.html-custom-page-es-servicios-internet .coh-hero-5050,
+.html-custom-page-fr-services-internet .coh-hero-5050,
+.html-custom-page-it-servizi-internet .coh-hero-5050,
+.html-custom-page-de-internetdienste .coh-hero-5050 {
+   display: flex;
+}
+
+.html-custom-page-internet-services .coh-zero,
+.html-custom-page-es-servicios-internet .coh-zero,
+.html-custom-page-fr-services-internet .coh-zero,
+.html-custom-page-it-servizi-internet .coh-zero,
+.html-custom-page-de-internetdienste .coh-zero {
+   height: auto;
+   width: 100%;
+   background-size: cover;
+   background-image: url('/sites/default/files/styles/webp/public/2023-03/internet-services-hero_1.jpg.webp')
+}
+
+/* First box */
+.html-custom-page-internet-services .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-servicios-internet .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-services-internet .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-servizi-internet .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-internetdienste .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/internet-services-design.jpg.webp);
+   height: auto;
+}
+
+/* Second box */
+.html-custom-page-internet-services .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-servicios-internet .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-services-internet .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-servizi-internet .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-internetdienste .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/internet-services-minimise.jpg.webp);
+   height: auto;
+}
+
+/* Third box */
+.html-custom-page-internet-services .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-servicios-internet .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-services-internet .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-servizi-internet .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-internetdienste .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/internet-services-prioritise.jpg.webp);
+   height: auto;
+}
+
+/** Gift cards */
+/* Container positioning */
+.html-custom-page-gift-cards .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-tarjetas-regalo .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-cartes-cadeaux .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-gift-cards .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-geschenkkarten .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-gift-cards .coh-hero-5050,
+.html-custom-page-es-tarjetas-regalo .coh-hero-5050,
+.html-custom-page-fr-cartes-cadeaux .coh-hero-5050,
+.html-custom-page-it-gift-cards .coh-hero-5050,
+.html-custom-page-de-geschenkkarten .coh-hero-5050 {
+   display: flex;
+}
+
+.html-custom-page-gift-cards .coh-zero,
+.html-custom-page-es-tarjetas-regalo .coh-zero,
+.html-custom-page-fr-cartes-cadeaux .coh-zero,
+.html-custom-page-it-gift-cards .coh-zero,
+.html-custom-page-de-geschenkkarten .coh-zero {
+   height: auto;
+   width: 100%;
+   background-size: cover;
+   background-image: url('/sites/default/files/styles/webp/public/2023-03/gcm-hero_0.jpg.webp')
+}
+
+/* First box */
+.html-custom-page-gift-cards .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tarjetas-regalo .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-cartes-cadeaux .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-gift-cards .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-geschenkkarten .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/gcm-sell-online_0.jpg.webp);
+   height: auto;
+}
+
+/* Second box */
+.html-custom-page-gift-cards .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tarjetas-regalo .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-cartes-cadeaux .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-gift-cards .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-geschenkkarten .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/gcm-global-reach_0.jpg.webp);
+   height: auto;
+}
+
+/* Third box */
+.html-custom-page-gift-cards .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tarjetas-regalo .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-cartes-cadeaux .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-gift-cards .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-geschenkkarten .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/gcm-reporting_0.jpg.webp);
+   height: auto;
+}
+
+/* Fourth box */
+.html-custom-page-gift-cards .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tarjetas-regalo .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-cartes-cadeaux .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-gift-cards .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-geschenkkarten .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/gcm-sell%20in-person_0.jpg.webp);
+   height: auto;
+}
+
+/* Fifth box */
+.html-custom-page-gift-cards .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-tarjetas-regalo .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-cartes-cadeaux .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-gift-cards .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-geschenkkarten .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/gcm-boost-sales_0.jpg.webp);
+   height: auto;
+}
+.html-custom-page-gift-cards .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-es-tarjetas-regalo .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-fr-cartes-cadeaux .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-it-gift-cards .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-de-geschenkkarten .coh-row-bleed-xl .media-left .column-2 {
+    background-image: url(/sites/default/files/styles/webp/public/2023-03/gcm-fully-integrated_0.jpg.webp);
+}
+
+/** Dashboard */
+/* Container positioning */
+.html-custom-page-dashboard .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-panel-control .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-tableau-de-bord .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-dashboard .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-dashboard .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-dashboard .coh-hero-5050,
+.html-custom-page-es-panel-control .coh-hero-5050,
+.html-custom-page-fr-tableau-de-bord .coh-hero-5050,
+.html-custom-page-it-dashboard .coh-hero-5050,
+.html-custom-page-de-dashboard .coh-hero-5050 {
+   display: flex;
+}
+
+.html-custom-page-dashboard .coh-zero,
+.html-custom-page-es-panel-control .coh-zero,
+.html-custom-page-fr-tableau-de-bord .coh-zero,
+.html-custom-page-it-dashboard .coh-zero,
+.html-custom-page-de-dashboard .coh-zero {
+   height: auto;
+   width: 100%;
+   background-size: cover;
+   background-image: url('/sites/default/files/styles/webp/public/2023-03/dashboard.jpg.webp?itok=zJkPC0Zk')
+}
+
+/* First box */
+.html-custom-page-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-panel-control .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-tableau-de-bord .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/dashboard-customisation_0.jpg.webp);
+   height: auto;
+}
+
+/* Second box */
+.html-custom-page-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-panel-control .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-tableau-de-bord .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/dashboard-brand-management_0.jpg.webp);
+   height: auto;
+}
+
+/* Third box */
+.html-custom-page-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-panel-control .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-tableau-de-bord .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/dashboard-experience_0.jpg.webp);
+   height: auto;
+}
+
+/* Fourth box */
+.html-custom-page-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-panel-control .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-tableau-de-bord .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/dashboard-monitoring_0.jpg.webp);
+   height: auto;
+}
+
+/* Fifth box */
+.html-custom-page-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-panel-control .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-tableau-de-bord .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-dashboard .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(10) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/dashboard-benchmarking.jpg.webp);
+   height: auto;
+}
+.html-custom-page-dashboard .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-es-panel-control .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-fr-tableau-de-bord .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-it-dashboard .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-de-dashboard .coh-row-bleed-xl .media-left .column-2 {
+   background-image: url(/sites/default/files/styles/webp/public/2023-01/placeholder_837x837_50-50.jpg.webp);
+}
+
+/** Click and collect */
+/* Container positioning */
+.html-custom-page-click-and-collect .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-es-click-and-collect .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-fr-click-collect .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-it-click-collect .coh-hero-5050 > .coh-container:nth-child(2),
+.html-custom-page-de-click-and-collect .coh-hero-5050 > .coh-container:nth-child(2) {
+   margin-left: 10% !important;
+   width: 50% !important;
+}
+
+/* Hero flex layout */
+.html-custom-page-click-and-collect .coh-hero-5050,
+.html-custom-page-es-click-and-collect .coh-hero-5050,
+.html-custom-page-fr-click-collect .coh-hero-5050,
+.html-custom-page-it-click-collect .coh-hero-5050,
+.html-custom-page-de-click-and-collect .coh-hero-5050 {
+   display: flex;
+}
+
+.html-custom-page-click-and-collect .coh-zero,
+.html-custom-page-es-click-and-collect .coh-zero,
+.html-custom-page-fr-click-collect .coh-zero,
+.html-custom-page-it-click-collect .coh-zero,
+.html-custom-page-de-click-and-collect .coh-zero {
+   height: auto;
+   width: 100%;
+   background-size: cover;
+   background-image: url('/sites/default/files/styles/webp/public/2023-03/click-and-collect.jpg.webp?itok=0E8Pzl54')
+}
+/* First box */
+.html-custom-page-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-click-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-click-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/click-and-collect-plug-play_3.jpg.webp);
+   height: auto;
+}
+
+/* Second box */
+.html-custom-page-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-click-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-click-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/click-and-collect-brand_1.jpg.webp);
+   height: auto;
+}
+
+/* Third box */
+.html-custom-page-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-click-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-click-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2022-11/unified-commerce-touchpoints-m.jpg.webp);
+   height: auto;
+}
+
+/* Fourth box */
+.html-custom-page-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-click-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-click-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-click-and-collect .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2022-12/unified-commerce-platform-m_1.jpg.webp);
+   height: auto;
+}
+
+.html-custom-page-click-and-collect .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-es-click-and-collect .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-fr-click-collect .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-it-click-collect .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-de-click-and-collect .coh-row-bleed-xl .media-left .column-2 {
+   background-image: url(/sites/default/files/styles/webp/public/2023-03/integrated-payments-retail.jpg.webp);
+}
+
+/** Card terminals */
+.html-custom-page-card-machines-terminals article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-lectores-de-tarjetas-terminales article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-machines-a-cartes article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-lettori-e-terminali article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-karten-terminals article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+   background-image: url(/sites/default/files/2023-05/terminals-machines_0.jpg);
+}
+/* First box */
+.html-custom-page-card-machines-terminals .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-lectores-de-tarjetas-terminales .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-machines-a-cartes .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-lettori-e-terminali .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-karten-terminals .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(2) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-05/terminals-countertop_0.jpg.webp);
+   height: auto;
+}
+
+/* Second box */
+.html-custom-page-card-machines-terminals .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-lectores-de-tarjetas-terminales .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-machines-a-cartes .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-lettori-e-terminali .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-karten-terminals .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(4) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-05/terminals-mobile_1.jpg.webp);
+   height: auto;
+}
+
+/* Third box */
+.html-custom-page-card-machines-terminals .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-lectores-de-tarjetas-terminales .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-machines-a-cartes .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-lettori-e-terminali .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-karten-terminals .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(6) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-05/terminals-unattended_1.jpg.webp);
+   height: auto;
+}
+
+/* Fourth box */
+.html-custom-page-card-machines-terminals .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-es-lectores-de-tarjetas-terminales .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-fr-machines-a-cartes .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-it-lettori-e-terminali .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2),
+.html-custom-page-de-karten-terminals .coh-accordion-tabs-content-wrapper .coh-accordion-tabs-content:nth-child(8) .coh-container-image-50 .coh-container:nth-child(2) {
+   background-image: url(/sites/default/files/styles/webp/public/2023-05/cegid-platform.jpg.webp);
+   height: auto;
+}
+.html-custom-page-card-machines-terminals .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-es-lectores-de-tarjetas-terminales .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-fr-machines-a-cartes .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-it-lettori-e-terminali .coh-row-bleed-xl .media-left .column-2,
+.html-custom-page-de-karten-terminals .coh-row-bleed-xl .media-left .column-2 {
+   background-image: url(/sites/default/files/styles/webp/public/2023-05/integrated-payments-hpy.jpg.webp);
+   background-size: cover
+}
+/** Mobile Terminals */
+/* Hero image */
+.html-custom-page-mobile-payment-terminals article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-terminales-pago-moviles article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-terminaux-paiement-mobile article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-terminali-pagamento-mobili article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-mobile-zahlungsterminals article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+   background-image: url('/sites/default/files/2024-04/mobile-terminals.jpg');
+   background-size: cover;
+}
+
+/* First box */
+.html-custom-page-mobile-payment-terminals article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-moviles article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-paiement-mobile article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-pagamento-mobili article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-mobile-zahlungsterminals article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-04/mobile-terminal-pax.jpg');
+   background-size: cover;
+}
+
+/* Second box */
+.html-custom-page-mobile-payment-terminals article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-moviles article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-paiement-mobile article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-pagamento-mobili article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-mobile-zahlungsterminals article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-03/Desk5000-ActionShot-2x.jpeg');
+   background-size: cover;
+}
+
+/* Third box */
+.html-custom-page-mobile-payment-terminals article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-moviles article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-paiement-mobile article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-pagamento-mobili article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-mobile-zahlungsterminals article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-04/mobile-terminals-set-up_1.jpg');
+   background-size: cover;
+}
+
+/** Pay by Link */
+/* Hero image */
+.html-custom-page-pay-by-link article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-pay-by-link article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-pay-by-link article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-pay-by-link article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-pay-by-link article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+   background-image: url('/sites/default/files/2024-02/pay-by-link.jpg');
+   background-size: cover;
+}
+
+/* First box */
+.html-custom-page-pay-by-link article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pay-by-link article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-pay-by-link article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pay-by-link article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-pay-by-link article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2023-10/PBL%20empower%20business.svg');
+   background-size: cover;
+}
+
+/* Second box */
+.html-custom-page-pay-by-link article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pay-by-link article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-pay-by-link article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pay-by-link article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-pay-by-link article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2023-10/PBL%20enhanced%20security.svg');
+   background-size: cover;
+}
+
+/* Third box */
+.html-custom-page-pay-by-link article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-pay-by-link article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-pay-by-link article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-pay-by-link article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-pay-by-link article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2023-10/PBL%20generate%20QR.svg');
+   background-size: cover;
+}
+
+/** Unattended */
+/* Hero image */
+.html-custom-page-terminals-unattended article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-terminali-non-presidiati article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-terminales-pago-desatendido article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12, 
+.html-custom-page-fr-terminaux-sans-surveillance article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-terminals-unbeaufsichtigt article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+  background-image: url('/sites/default/files/2022-11/unattended.jpg');
+  background-size: cover;
+}
+
+/* First box */
+.html-custom-page-terminals-unattended article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(4).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-02/im30-in-situ1.png');
+   background-size: cover;
+}
+
+/* Second box */
+.html-custom-page-terminals-unattended article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-04/unattended_parking_lot_kiosk-edit%201.jpg');
+   background-size: cover;
+}
+
+/* Third box */
+.html-custom-page-terminals-unattended article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-04/cVEND%20by%20FEIG.jpg');
+   background-size: cover;
+}
+
+/* Fourth box */
+.html-custom-page-terminals-unattended article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-03/Adv%20-%20Hospitality.jpg');
+   background-size: cover;
+}
+/* Add this block after the previous ones */
+/* Fifth box (translations only) */
+.html-custom-page-it-terminali-non-presidiati article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-pago-desatendido article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-sans-surveillance article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-terminals-unbeaufsichtigt article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+   background-image: url('/sites/default/files/2024-03/data-orchestration-blog.jpg');
+   background-size: cover;
+}
+/** Countertop */
+/* Hero image */
+.html-custom-page-terminals-countertop article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-es-terminales-fijos article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-fr-terminaux-comptoir article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-it-terminali-da-banco article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12,
+.html-custom-page-de-countertop-terminals article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+background-image: url('/sites/default/files/2024-04/integrated-payments.jpg');
+background-size: cover;
+}
+/* Box 1 */
+.html-custom-page-terminals-countertop article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-fijos article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-comptoir article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-da-banco article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-countertop-terminals article div div div:nth-child(5).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-04/PAX_A80_Starbucks.png');
+background-size: cover;
+}
+/* Box 2 */
+.html-custom-page-terminals-countertop article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-fijos article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-comptoir article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-da-banco article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-countertop-terminals article div div div:nth-child(6).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-04/Desk5000-ActionShot-2x.jpeg');
+background-size: cover;
+}
+/* Box 3 */
+.html-custom-page-terminals-countertop article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-fijos article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-comptoir article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-da-banco article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-countertop-terminals article div div div:nth-child(7).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-04/countertop-terminal-verifone_0.jpg');
+background-size: cover;
+}
+/* Box 4 */
+.html-custom-page-terminals-countertop article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-es-terminales-fijos article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-fr-terminaux-comptoir article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-it-terminali-da-banco article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element,
+.html-custom-page-de-countertop-terminals article div div div:nth-child(8).coh-style-container-theme---black .coh-row-bleed-xl .coh-column .coh-inline-element {
+background-image: url('/sites/default/files/2024-04/Adv%20-%20Hospitality.jpg');
+background-size: cover;
+}
+
+/** Welcome protel */
+.plnt-css-welcome-protel #block-cohesion-theme-content {
+   padding-top: 0 !important
+}
+.plnt-css-welcome-protel #block-cohesion-theme-content article > div > div > div:nth-child(1) .coh-row-bleed-xl .coh-row-inner .coh-col-ps-12 {
+   background-image: url('/sites/default/files/2023-12/protel-pms%20%281%29.jpg');
+   background-repeat: no-repeat;
+   background-size: cover
+}
+.plnt-css-welcome-protel #block-cohesion-theme-content article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-style-primary-dark-atom- {
+   margin-right: 16px
+}
+.plnt-css-welcome-protel #block-cohesion-theme-content article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .pre-heading-hero-bleed,
+.plnt-css-welcome-protel #block-cohesion-theme-content article > div > div > div:nth-child(1) .coh-container .coh-container-boxed .coh-style-heading-2-planet {
+   margin-bottom: 16px
+}
+.plnt-css-welcome-protel .coh-style-container-theme---white .coh-wysiwyg {
+   margin-bottom: 36px;
+}
+.plnt-css-welcome-protel .coh-style-container-theme---white .card-with-icon-title-and-text p {
+   color: black 
+}
+.plnt-css-welcome-protel .coh-style-container-theme---white .card-with-icon-title-and-text {
+   background: white;
+   color: black;
+ } 
+
+.plnt-css-welcome-protel .coh-style-container-theme---white {
+   background: #eee;
+   padding: 48px 0;
+ }
+
+.plnt-css-welcome-protel .coh-card-list-content a.coh-link {
+   font-weight: 600;
+   margin-top: 16px
+}
+
+
+
+
+/** About us */
+.plnt-css-about .coh-hero-full-width,
+.plnt-css-sobre-nosotros .coh-hero-full-width,
+.plnt-css-propos .coh-hero-full-width,
+.plnt-css-about-it .coh-hero-full-width,
+.plnt-css-uber-uns .coh-hero-full-width {
+    height: 667px;
+    background-image: url('/sites/default/files/styles/webp/public/2022-11/About-hero.jpg.webp');
+}
+
+.coh-container.card-heading-and-sub-text-container.match-height-desktop {
+   height: auto !important;
+ }
+ .plnt-css-about section.section-container .coh-style-planet-padding-bottom---extra-small .coh-heading,
+.plnt-css-sobre-nosotros section.section-container .coh-style-planet-padding-bottom---extra-small .coh-heading,
+.plnt-css-propos section.section-container .coh-style-planet-padding-bottom---extra-small .coh-heading,
+.plnt-css-about-it section.section-container .coh-style-planet-padding-bottom---extra-small .coh-heading,
+.plnt-css-uber-uns section.section-container .coh-style-planet-padding-bottom---extra-small .coh-heading {
+    text-align: center;
+}
+
+.plnt-css-about section.section-container .coh-row-xl .coh-row-inner > .coh-column,
+.plnt-css-sobre-nosotros section.section-container .coh-row-xl .coh-row-inner > .coh-column,
+.plnt-css-propos section.section-container .coh-row-xl .coh-row-inner > .coh-column,
+.plnt-css-about-it section.section-container .coh-row-xl .coh-row-inner > .coh-column,
+.plnt-css-uber-uns section.section-container .coh-row-xl .coh-row-inner > .coh-column {
+    background: white;
+    color: black;
+    height: auto;
+    max-width: none;
+}
+
+.plnt-css-about section.section-container .coh-row-xl .coh-row-inner > .coh-column > .coh-container > .coh-container *,
+.plnt-css-sobre-nosotros section.section-container .coh-row-xl .coh-row-inner > .coh-column > .coh-container > .coh-container *,
+.plnt-css-propos section.section-container .coh-row-xl .coh-row-inner > .coh-column > .coh-container > .coh-container *,
+.plnt-css-about-it section.section-container .coh-row-xl .coh-row-inner > .coh-column > .coh-container > .coh-container *,
+.plnt-css-uber-uns section.section-container .coh-row-xl .coh-row-inner > .coh-column > .coh-container > .coh-container * {
+    color: black;
+}
+
+.plnt-css-about .coh-style-planet-padding-top-bottom---small.coh-style-padding-left-right---small,
+.plnt-css-sobre-nosotros .coh-style-planet-padding-top-bottom---small.coh-style-padding-left-right---small,
+.plnt-css-propos .coh-style-planet-padding-top-bottom---small.coh-style-padding-left-right---small,
+.plnt-css-about-it .coh-style-planet-padding-top-bottom---small.coh-style-padding-left-right---small,
+.plnt-css-uber-uns .coh-style-planet-padding-top-bottom---small.coh-style-padding-left-right---small {
+    display: none;
+}
+.plnt-css-about .coh-ce-cpt_meet_our_team-f069ee51,
+.plnt-css-sobre-nosotros .coh-ce-cpt_meet_our_team-f069ee51,
+.plnt-css-propos .coh-ce-cpt_meet_our_team-f069ee51,
+.plnt-css-about-it .coh-ce-cpt_meet_our_team-f069ee51,
+.plnt-css-uber-uns .coh-ce-cpt_meet_our_team-f069ee51 {
+    display: none;
+}
+.plnt-css-about .coh-row-bleed-xl .media-left .column-2,
+.plnt-css-sobre-nosotros .coh-row-bleed-xl .media-left .column-2,
+.plnt-css-propos .coh-row-bleed-xl .media-left .column-2,
+.plnt-css-about-it .coh-row-bleed-xl .media-left .column-2,
+.plnt-css-uber-uns .coh-row-bleed-xl .media-left .column-2 {
+    background-image: url(/sites/default/files/styles/webp/public/2022-11/50%20-%20Image%20%26%20Text_.png.webp);
+    background-size: cover;
+}
+
+/** Careers */
+.plnt-css-careers .coh-hero-full-width {
+   height: 667px;
+   background-image: url('/sites/default/files/styles/webp/public/2022-11/Careers-hero_0.jpg.webp');
+}
+
+.html-custom-page .coh-container-boxed .coh-container.coh-image {
+   height: 41.6875rem !important;
+   margin-top: -41.6875rem !important;
+}
+
+.plnt-css-404 article > div > div > div.coh-container:nth-child(2) {
+      background-image: url('https://www.weareplanet.com/sites/default/files/styles/webp/public/2022-10/404_bkg_image.jpeg.webp?itok=fVo-7Dar');
+      height: 400px;
+      background-size: cover;
+      margin-top: 0
+}
+
+.plnt-css-404 .coh-row.coh-row-xl.coh-row-visible-xl .coh-column {
+   max-width: none;
+}
+.plnt-css-404 .coh-row.coh-row-xl.coh-row-visible-xl .coh-column h3 a, .plnt-css-404 .coh-row.coh-row-xl.coh-row-visible-xl .coh-column p a {
+color: black;
+text-align: left
+}
+
+@media (min-width: 1025px) {
+  body:not(.plnt-css-pms-transformation,.plnt-css-about,.plnt-css-careers,.plnt-css-case-studies, .plnt-css-new) #block-cohesion-theme-content {
+    padding-top: 36px;
+  }
+}

@@ -5,10 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.e_book_.field_basic_page_metatag
-    - field.field.node.e_book_.field_button_layout_canvas
     - field.field.node.e_book_.field_company_sector
+    - field.field.node.e_book_.field_ebook_form
+    - field.field.node.e_book_.field_ebook_html_content
+    - field.field.node.e_book_.field_form_heading
+    - field.field.node.e_book_.field_form_paragraph
+    - field.field.node.e_book_.field_form_pre_heading
     - field.field.node.e_book_.field_hide_from_website
-    - field.field.node.e_book_.field_layout_canvas
     - field.field.node.e_book_.field_main_image_media
     - field.field.node.e_book_.field_pre_heading
     - field.field.node.e_book_.field_pre_heading_2
@@ -35,10 +38,13 @@ content:
     region: content
 hidden:
   field_basic_page_metatag: true
-  field_button_layout_canvas: true
   field_company_sector: true
+  field_ebook_form: true
+  field_ebook_html_content: true
+  field_form_heading: true
+  field_form_paragraph: true
+  field_form_pre_heading: true
   field_hide_from_website: true
-  field_layout_canvas: true
   field_main_image_media: true
   field_pre_heading: true
   field_pre_heading_2: true

@@ -1,0 +1,30 @@
+uuid: fa42af5f-622a-4529-9426-32096cb59dad
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion
+    - planet_case_studies
+    - system
+  theme:
+    - cohesion_theme
+id: planet_case_studies_request_demo_block
+theme: cohesion_theme
+region: content
+weight: -19
+provider: null
+plugin: planet_case_studies_request_demo_block
+settings:
+  id: planet_case_studies_request_demo_block
+  label: 'Planet Case Studies Request Demo Block'
+  label_display: '0'
+  provider: planet_case_studies
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: 0
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/case-studies\r\n/casos-exito\r\n/storie-successo\r\n/etudes-de-cas\r\n/fallstudien"

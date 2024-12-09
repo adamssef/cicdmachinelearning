@@ -1,0 +1,4 @@
+services:
+  planet_node_updater.json_importer_controller_blog:
+    class: Drupal\planet_node_updater\Controller\JsonImporterController
+    arguments: ['@file_system']

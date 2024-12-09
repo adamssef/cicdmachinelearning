@@ -9,6 +9,9 @@ use Drupal\image\Entity\ImageStyle;
 use Drupal\media\Entity\Media;
 use Drupal\node\NodeInterface;
 use Drupal\path_alias\AliasManagerInterface;
+use Drupal\planet_core\Service\PlanetCoreMediaService\PlanetCoreMediaServiceInterface;
+use Drupal\planet_core\Service\PlanetCoreNodeTranslationsService\PlanetCoreNodeTranslationsServiceInterface;
+use Drupal\planet_core\Service\PlanetCoreTaxonomyService\PlanetCoreTaxonomyServiceInterface;
 
 /**
  * Class PlanetCoreService - a helper class for article-related functionalities.
@@ -41,6 +44,26 @@ class PlanetCoreCaseStudiesService {
    */
   protected $languageManager;
 
+  /**
+   * The taxonomy service.
+   *
+   * @var \Drupal\planet_core\Service\PlanetCoreTaxonomyService\PlanetCoreTaxonomyServiceInterface
+   */
+  public $planetCoreTaxonomyService;
+
+  /**
+   * The node translation service.
+   *
+   * @var \Drupal\planet_core\Service\PlanetCoreNodeTranslationsService\PlanetCoreNodeTranslationsServiceInterface
+   */
+  public $planetCoreNodeTranslationsService;
+
+  /**
+   * The media service.
+   *
+   * @var \Drupal\planet_core\Service\PlanetCoreMediaService\PlanetCoreMediaServiceInterface
+   */
+  public $planetCoreMediaService;
 
   /**
    * Constructs a new PlantCoreService object.
@@ -51,17 +74,31 @@ class PlanetCoreCaseStudiesService {
    *  The file url generator service.
    * @param \Drupal\path_alias\AliasManagerInterface $path_alias_manager
    *   The path alias manager service.
+   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
+   *   The language manager service.
+   * @param \Drupal\planet_core\Service\PlanetCoreTaxonomyService\PlanetCoreTaxonomyServiceInterface $planet_core_taxonomy_service
+   *   The planet core taxonomy service.
+   * @param \Drupal\planet_core\Service\PlanetCoreNodeTranslationsService\PlanetCoreNodeTranslationsServiceInterface $planet_core_node_translations_service
+   *   The node translation service.
+   * @param \Drupal\planet_core\Service\PlanetCoreMediaService\PlanetCoreMediaServiceInterface $planet_core_media_service
+   *   The media service.
    */
   public function __construct(
     EntityTypeManagerInterface $entity_type_manager,
     FileUrlGeneratorInterface $file_url_generator,
     AliasManagerInterface $path_alias_manager,
     LanguageManagerInterface $language_manager,
+    PlanetCoreTaxonomyServiceInterface $planet_core_taxonomy_service,
+    PlanetCoreNodeTranslationsServiceInterface $planet_core_node_translations_service,
+    PlanetCoreMediaServiceInterface $planet_core_media_service
   ) {
     $this->entityTypeManager = $entity_type_manager;
     $this->fileUrlGenerator = $file_url_generator;
     $this->pathAliasManager = $path_alias_manager;
     $this->languageManager = $language_manager;
+    $this->planetCoreTaxonomyService = $planet_core_taxonomy_service;
+    $this->planetCoreNodeTranslationsService = $planet_core_node_translations_service;
+    $this->planetCoreMediaService = $planet_core_media_service;
   }
 
   /**
@@ -72,17 +109,18 @@ class PlanetCoreCaseStudiesService {
    *
    * @return array An array of case study data.
    */
-  public function getCaseStudies( $product_option, $industry_option, $company_size_option, int $offset, $limit) {
-    $product_option_tid = strtolower($product_option) !== "all" ? $this->getTermByName($product_option, 'case_studies_products') : NULL;
-    $industry_option_tid = strtolower($industry_option) !== "all" ? $this->getTermByName($industry_option, 'case_studies_industry') : NULL;
-    $company_size_option_tid = strtolower($company_size_option) !== "all" ? $this->getTermByName($company_size_option, 'company_size') : NULL;
-    $current_language = $this->languageManager->getCurrentLanguage()->getId();
+  public function getCaseStudies($product_option, $industry_option, $company_size_option, int $offset, $limit) {
+    $product_option_tid = strtolower($product_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($product_option, 'case_studies_products') : NULL;
+    $industry_option_tid = strtolower($industry_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($industry_option, 'case_studies_industry') : NULL;
+    $company_size_option_tid = strtolower($company_size_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($company_size_option, 'company_size') : NULL;
+
+    $current_lang = $this->planetCoreNodeTranslationsService->determineTheLangId();
 
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'case_studies')
       ->range($offset, $limit)
       ->sort('created', 'DESC')
-      ->condition('langcode', $current_language, '=')
+      ->condition('langcode', $current_lang, '=')
       ->condition('status', TRUE)
       ->accessCheck(FALSE); // Sorting by creation date, adjust as needed
 
@@ -106,7 +144,7 @@ class PlanetCoreCaseStudiesService {
   public function getCaseStudiesForMoreBlock(int $offset, $limit, $product_option, $industry_option, $company_size_option) {
     $product_option_tids = [];
     foreach ($product_option as $product) {
-      $product_option_tids[] = $this->getTermByName($product, 'case_studies_products');
+      $product_option_tids[] = $this->planetCoreTaxonomyService->getTermIdByTermName($product, 'case_studies_products');
     }
 
     if (count($product_option_tids) === 1) {
@@ -119,11 +157,11 @@ class PlanetCoreCaseStudiesService {
     }
 
     if ($industry_option !== null) {
-      $industry_option_tid = strtolower($industry_option) !== "all" ? $this->getTermByName($industry_option, 'case_studies_industry') : NULL;
+      $industry_option_tid = strtolower($industry_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($industry_option, 'case_studies_industry') : NULL;
     }
 
     if ($company_size_option !== null) {
-      $company_size_option_tid = strtolower($company_size_option) !== "all" ? $this->getTermByName($company_size_option, 'company_size') : NULL;
+      $company_size_option_tid = strtolower($company_size_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($company_size_option, 'company_size') : NULL;
     }
 
     $current_node = \Drupal::routeMatch()->getParameter('node');
@@ -172,9 +210,9 @@ class PlanetCoreCaseStudiesService {
   }
 
   public function getTotalCaseStudiesCount($product_option, $industry_option, $company_size_option) {
-    $product_option_tid = strtolower($product_option) !== "all" ? $this->getTermByName($product_option, 'case_studies_products') : NULL;
-    $industry_option_tid = strtolower($industry_option) !== "all" ? $this->getTermByName($industry_option, 'case_studies_industry') : NULL;
-    $company_size_option_tid = strtolower($company_size_option) !== "all" ? $this->getTermByName($company_size_option, 'company_size') : NULL;
+    $product_option_tid = strtolower($product_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($product_option, 'case_studies_products') : NULL;
+    $industry_option_tid = strtolower($industry_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($industry_option, 'case_studies_industry') : NULL;
+    $company_size_option_tid = strtolower($company_size_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($company_size_option, 'company_size') : NULL;
     $current_language = $this->languageManager->getCurrentLanguage()->getId();
 
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
@@ -208,14 +246,23 @@ class PlanetCoreCaseStudiesService {
    * @return array An array of case study data.
    */
   public function getAllCaseStudies() {
+    $lang = $this->planetCoreNodeTranslationsService->determineTheLangId();
+
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'case_studies')
+      ->condition('langcode', $lang, '=')
       ->sort('created', 'DESC')
+      ->condition('status', 1)
       ->accessCheck(FALSE); // Sorting by creation date, adjust as needed
 
     $nids = $query->execute();
 
-    return $this->prepareCaseStudiesData($nids);
+    if (count($nids) < 25) {
+      return $this->prepareCaseStudiesData($nids, 25);
+    }
+    else {
+      return $this->prepareCaseStudiesData($nids);
+    }
   }
 
 
@@ -233,7 +280,7 @@ class PlanetCoreCaseStudiesService {
       return [];
     }
 
-    $industry = !is_null($node->get('field_industry_type')->target_id) ? $this->getTermName($node->get('field_industry_type')->target_id) : NULL;
+    $industry = !is_null($node->get('field_industry_type')->target_id) ? $this->planetCoreTaxonomyService->getTermNameById($node->get('field_industry_type')->target_id) : NULL;
     $all_products_from_term_field = $node->get('field_product_type')->getValue();
     $products = [];
     $metrics = $this->getMetricsDataFromParagraph($node);
@@ -245,7 +292,7 @@ class PlanetCoreCaseStudiesService {
 
     if (!empty($recommendations)) {
       foreach ($recommendations as $key => $r) {
-        $customer_avatar_url = $r->field_customer_avatar->target_id ? $this->getStyledImageUrl($r->field_customer_avatar->target_id, 'large') : NULL;
+        $customer_avatar_url = $r->field_customer_avatar->target_id ? $this->planetCoreMediaService->getStyledImageUrl($r->field_customer_avatar->target_id, 'large') : NULL;
         $selected_version_value = $r->field_quote_version_list->getValue()[0]['value'] ?? $default_quote_version_list_value;
         $selected_version_value = str_replace('_', '-',$selected_version_value);
 
@@ -263,21 +310,68 @@ class PlanetCoreCaseStudiesService {
 
     $grow_your_business_paragraph = $node->field_grow_business_with_planet->referencedEntities();
     $grow_your_business_paragraph = reset($grow_your_business_paragraph);
+    $link_box_paragraph = $node->field_link_box->referencedEntities();
+    $link_box_paragraph = reset($link_box_paragraph);
+    $tip_box_paragraph = $node->field_tip_box->referencedEntities();
+    $tip_box_paragraph = reset($tip_box_paragraph);
+    $favourite_features = $node->field_favourite_features->referencedEntities();
+    $favourite_features = reset($favourite_features);
+
 
     if (!$grow_your_business_paragraph) {
       $grow_your_business_settings = NULL;
-    } else {
+    }
+    else {
       $grow_your_business_settings = [
         'color' => $grow_your_business_paragraph->field_color_of_the_component->value,
         'size' => $grow_your_business_paragraph->field_size_of_the_component->value,
       ];
     }
+    
+    if (!$link_box_paragraph) {
+      $link_box_paragraph = NULL;
+    }
+    else {
+      $link_box_paragraph = [
+        'image' => $link_box_paragraph->field_image->target_id ? $this->planetCoreMediaService->getStyledImageUrl($link_box_paragraph->field_image->target_id, 'large') : NULL,
+        'link' => str_replace('internal:/', '',$link_box_paragraph->field_link_box_link->uri),
+        'title' => $link_box_paragraph->field_link_box_title->value,
+        'text' => $link_box_paragraph->field_link_text->value,
+      ];
+    }
 
+    if (!$tip_box_paragraph) {
+      $tip_box_paragraph = NULL;
+    }
+    else {
+      $tip_box_paragraph = [
+        'label' => $tip_box_paragraph->field_tip_box_label->value,
+        'text' => $tip_box_paragraph->field_tip_box_text->value,
+      ];
+    }
+
+    if (!$favourite_features) {
+      $favourite_features = NULL;
+    }
+    else {
+      $favourite_features = [
+        'title' => $favourite_features->field_label->value,
+        'text_items' => $favourite_features->get('field_features')->getValue(),
+      ];
+    }
+
+    $text = [];
+
+    foreach ($favourite_features['text_items'] as $feature) {
+      $text[] = $feature['value'];
+    }
+
+    $favourite_features['text_items'] = $text;
 
     if (!empty($all_products_from_term_field)) {
       foreach ($all_products_from_term_field as $product) {
         $product_tid = $product['target_id'];
-        $product_name = $this->getTermName($product_tid);
+        $product_name = $this->planetCoreTaxonomyService->getTermNameById($product_tid);
         $products[] = $product_name;
       }
     }
@@ -296,11 +390,14 @@ class PlanetCoreCaseStudiesService {
       'at_a_glance' => $node->get('field_at_a_glance')->value,
       'recommendation' => $recommendations_data,
       'solution_text' => $node->get('field_challenge_solution_text')->value,
-      'solution_text_image' => $node->get('field_solution_text_image')->target_id ? $this->getStyledImageUrl($node->get('field_solution_text_image')->target_id, 'wide') : NULL,
+      'solution_text_image' => $node->get('field_solution_text_image')->target_id ? $this->planetCoreMediaService->getStyledImageUrl($node->get('field_solution_text_image')->target_id, 'large') : NULL,
       'challenge_text' => $node->get('field_challenge_text')->value,
       'result' => $node->get('field_case_study_result')->value,
       'metrics' => $metrics,
       'grow_your_business_settings' => $grow_your_business_settings,
+      'link_box' => $link_box_paragraph,
+      'tip_box' => $tip_box_paragraph,
+      'favourite_features' => $favourite_features,
     ];
   }
 
@@ -371,69 +468,6 @@ class PlanetCoreCaseStudiesService {
   }
 
   /**
-   * Get the image URL for a media entity.
-   *
-   * It takes file path from sites/default/files.
-   *
-   * @param int $media_id
-   *   The media entity ID.
-   * @param string $field_name
-   *   The field name of the image.
-   *
-   * @return string
-   *   The URL of the image.
-   */
-  public function getImageUrl($media_id, $field_name) {
-    $media = Media::load($media_id);
-    $file = $media->get($field_name)->entity;
-    $file_uri = $file->getFileUri();
-
-    return $this->fileUrlGenerator->generateAbsoluteString($file_uri);
-  }
-
-  /**
-   * Retrieves the taxonomy term ID by its name and vocabulary.
-   *
-   * @param string $term_name The name of the taxonomy term.
-   * @param string $vocabulary The machine name of the vocabulary.
-   *
-   * @return int|null The taxonomy term ID, or NULL if not found.
-   */
-  function getTermByName($term_name, $vocabulary) {
-    $terms = \Drupal::entityTypeManager()
-      ->getStorage('taxonomy_term')
-      ->loadByProperties([
-        'name' => $term_name,
-        'vid' => $vocabulary,
-      ]);
-
-    // If there are any terms, return the first one's ID.
-    if ($terms) {
-      $term = reset($terms);
-      return $term->id();
-    }
-
-    return NULL;
-  }
-
-  /**
-   * Get the term name by its ID.
-   *
-   * @param int $term_id
-   *   The term ID.
-   *
-   * @return string
-   *   The term name.
-   */
-  function getTermName($term_id) {
-    $term = \Drupal::entityTypeManager()
-      ->getStorage('taxonomy_term')
-      ->load($term_id);
-
-    return $term->getName();
-  }
-
-  /**
    * Prepare case studies data.
    *
    * @param array $case_study_nids
@@ -442,22 +476,34 @@ class PlanetCoreCaseStudiesService {
    * @return array
    *   The array containing the data.
    */
-  private function prepareCaseStudiesData(array $case_study_nids) {
+  private function prepareCaseStudiesData(array $case_study_nids, ?int $threshold = NULL) {
     $case_studies = $this->entityTypeManager->getStorage('node')->loadMultiple($case_study_nids);
+
+    if ($threshold !== NULL) {
+      while (count($case_studies) < 21) {
+        $case_studies = array_merge($case_studies, $case_studies);
+      }
+    }
+
     $case_studies_data = [];
-    $lng_prfx  = $this->languageManager->getCurrentLanguage()->getId();
+    $langcode  = $this->planetCoreNodeTranslationsService->determineTheLangId();
 
     foreach ($case_studies as $case_study) {
-      $case_study = $case_study->getTranslation($this->languageManager->getCurrentLanguage()->getId());
-      $alias = $this->pathAliasManager->getAliasByPath('/node/' . $case_study->id());
+      $case_study = $case_study->getTranslation($langcode);
+      $alias = $this->pathAliasManager->getAliasByPath("/node/" . $case_study->id(), $langcode);
       $media_id = $case_study->get('field_main_image_media')?->target_id;
       $media_id_logo = $case_study->get('field_logo_media')?->target_id;
-      $logo_url = $this->getImageUrl($media_id_logo, 'field_media_image');
+
+      if ($media_id === NULL) {
+        $logo_url = NULL;
+      }
+
+      $logo_url = $this->planetCoreMediaService->getImageUrl($media_id_logo, 'field_media_image');
 
       $case_study_data = [
         'title' => $case_study->getTitle(),
-        'image_url' => $this->getStyledImageUrl($media_id, 'wide'),
-        'url' =>  $lng_prfx === 'en' ? $alias : "/" . $lng_prfx . $alias,
+        'image_url' => $media_id ? $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large') : NULL,
+        'url' =>  $langcode === 'en' ? $alias : "/$langcode" . $alias,
         'logo_url' => $logo_url,
         'company_name' => $case_study->get('field_company_name')->value,
       ];
@@ -466,34 +512,6 @@ class PlanetCoreCaseStudiesService {
     }
 
     return $case_studies_data;
-  }
-
-  /**
-   * Get the styled image URL for a media entity.
-   *
-   * @param int $media_id
-   *   The media entity ID.
-   * @param string $style_name
-   *   The image style name.
-   *
-   * @return string
-   *   The URL of the styled image.
-   */
-  public static function getStyledImageUrl($media_id, $style_name = 'thumbnail') {
-    $media = Media::load($media_id);
-    if ($media && $media->bundle() == 'image') {
-      $image_field = $media->get('field_media_image');
-      $file = $image_field->entity;
-
-      if ($file) {
-        $style = ImageStyle::load($style_name);
-        if ($style) {
-          return $style->buildUrl($file->getFileUri());
-        }
-      }
-    }
-
-    return NULL;
   }
 
   /**

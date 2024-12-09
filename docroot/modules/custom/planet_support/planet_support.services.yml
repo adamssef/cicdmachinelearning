@@ -1,0 +1,4 @@
+services:
+  planet_support.service:
+    class: Drupal\planet_support\Service\PlanetSupportService
+    arguments: ['@entity_type.manager', '@planet_core.taxonomy_service']

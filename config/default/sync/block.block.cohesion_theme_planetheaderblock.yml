@@ -11,7 +11,7 @@ dependencies:
 id: cohesion_theme_planetheaderblock
 theme: cohesion_theme
 region: content
-weight: -24
+weight: -22
 provider: null
 plugin: planet_header_block
 settings:

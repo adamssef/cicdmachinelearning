@@ -1,0 +1,114 @@
+{#
+  Custom Twig template for the Ebooks homepage.
+  Template variables available:
+    - content: An array of content elements.
+    - node: The node entity representing the "blog" content.
+    - label: The node label.
+    - url: The node URL.
+    - attributes: HTML attributes for the node wrapper.
+#}
+<div>
+	<div class="plnt-blog-news-page plnt-blog-ebooks-page">
+		<div class="coh-container coh-container-boxed news-main-title">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="news-title">
+						<h1 class="planet-h1">{{"Guides & Reports"|t}}</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% if featured_article is not empty %}
+			<div class="coh-container coh-container-boxed max-width-1216">
+				<div class="coh-row">
+					<div class="coh-row-inner">
+						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+							<div class="featured-article-wrapper">
+								<div class="coh-container coh-container-boxed">
+									<div class="coh-row">
+										<div class="coh-row-inner">
+											<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
+												<div class="featured-article-info-wrapper">
+													<div class="featured-article-info news-card ebooks-card">
+														{% if featured_article.pre_heading is not empty %}
+															<div class="article-tags tags-pills cursor-default">
+																<span>
+																	{{featured_article.pre_heading}}
+																</span>
+															</div>
+														{% endif %}
+														<a href="{{featured_article.url}}">
+															<h1 class="planet-h2 black">{{featured_article.title}}</h1>
+														</a>
+														<p class="article-summary">{{featured_article.summary}}</p>
+														<div class="card-button-wrapper">
+															<a class="card-button" href="{{featured_article.url}}">{{"Read content"|t}}
+																<img src="/resources/icons/blue-right-arrow.svg"></a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
+												<div class="featured-article-image" style="background-image: url({{featured_article.background_image}})"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+		<div class="coh-container coh-container-boxed blog-articles-wrapper max-width-1216">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+						<div class="article-cards-wrapper">
+							<div class="coh-row">
+								<div class="coh-row-inner article-js-wrapper">
+									{% for ebook in articles %}
+										<div data-tagid="{{ ebook.tags|map(tag => tag.id)|join(', ') }}" class="ebook-box-wrapper article-wrapper coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-4">
+											<div class="article-card news-card ebooks-card">
+												<div class="article-bg-image-wrapper">
+													<div class="article-bg-image" style="background-image:url({{ ebook.background_image }})"></div>
+												</div>
+												<div class="article-card-content">
+													<div>
+														<div class="article-tags tags-pills">
+															<span>
+																{{ ebook.pre_heading }}
+															</span>
+														</div>
+														<div class="article-title">
+															<a href="{{ ebook.url }}">{{ ebook.title }}</a>
+														</div>
+														<p class="article-summary">{{ebook.summary}}</p>
+														{% if ebook.tags %} 
+															<div class="article-tags white-tags-pills" style="margin-top: 16px">
+																{% for tag in ebook.tags %}
+																	<span data-tagid="{{ tag.name }}">{{ tag.name }}</span>
+																{% endfor %}
+															</div>
+														{% endif %}
+														
+
+													</div>
+													<div class="card-button-wrapper">
+														<a class="card-button" href="{{ ebook.url }}">{{"Read content"|t}}
+															<img src="/resources/icons/blue-right-arrow.svg">
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

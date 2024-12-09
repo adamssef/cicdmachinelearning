@@ -9,7 +9,7 @@
 
   function isFrontpage() {
     let currentPath = window.location.pathname;
-    return ($("body").hasClass("path-frontpage") && $("body").find("home-hero").length > 0) || currentPath === "/homepage-prototype-v1" || currentPath === "/homepage-prototype-v2";
+    return ($("body").hasClass("path-frontpage") && $("body").find("home-hero").length > 0) || currentPath === "/new" || currentPath === "/homepage-prototype-v2";
   }
 
   function addTransparentBgClassToHeader() {

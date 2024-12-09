@@ -1,0 +1,28 @@
+uuid: f64820e3-67ef-4035-81b4-ddac139fe0f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_html_content
+    - filter.format.cohesion
+    - node.type.newsroom
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.newsroom.field_news_html_content
+field_name: field_news_html_content
+entity_type: node
+bundle: newsroom
+label: 'HTML Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - cohesion
+field_type: text_long

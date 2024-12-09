@@ -1,0 +1,26 @@
+uuid: 44cb664e-890c-4e29-9b94-eb860e439fe5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tip_box_label
+    - paragraphs.paragraphs_type.tip_box
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.tip_box.field_tip_box_label
+field_name: field_tip_box_label
+entity_type: paragraph
+bundle: tip_box
+label: 'Tip Box Label'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Need to know'
+default_value_callback: ''
+settings: {  }
+field_type: string

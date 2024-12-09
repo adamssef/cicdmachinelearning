@@ -6,6 +6,11 @@
 /docroot/themes/contrib/
 /docroot/profiles/contrib/
 /docroot/libraries/
+/docroot/modules/custom/planet_playwright/node_modules
+/docroot/modules/custom/planet_playwright/playwright-report
+/docroot/modules/custom/planet_playwright/test-results
+/docroot/modules/custom/planet_playwright/url_content_mapping.json
+
 
 # Ignore Drupal's file directory
 /docroot/sites/*/files/

@@ -1,0 +1,24 @@
+uuid: dc72d25a-fbe3-4280-a6a4-0600113a3dc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tip_box_text
+    - paragraphs.paragraphs_type.tip_box
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.tip_box.field_tip_box_text
+field_name: field_tip_box_text
+entity_type: paragraph
+bundle: tip_box
+label: 'Tip box text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

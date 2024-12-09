@@ -1,0 +1,65 @@
+<div class="max-w-[1280px] m-auto">
+    <div>
+        <div>
+            <div class="plnt-switch support-switch"
+                 data-items="Phone numbers,E-mail contacts"
+                 data-sections=".related-product-1,.related-product-2">
+                <div class="toggle plnt-toggle-switch" style="display: block;">
+                    <div class="indicator" style="width: 138px; left: 135px;"></div>
+                    <button class="">{{ "Phone numbers"|t }}</button>
+                    <button class="active">{{ "E-mail contacts"|t }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <div class="flex justify-center pb-[15px]">
+            <div class="flex flex-col justify-center">
+                <h3 class="text-[32px] font-semibold text-planet-black mt-14 leading-[40px] mb-4">
+                    {{ "Global Support Center"|t }}</h3>
+                <p class="font-light text-xl leading-[28px]">{{ "Reach us from
+                Anywhere in the World."|t }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col md:flex-row lg:mx-12 mx-6 md:mx-12 px-3 pt-[30px] pb-[60px] switcher-section switcher-section--phones">
+        <div class=" min-w-[300px] md:min-w-none flex flex-col sm:mx-0 mb-[30px] px-3">
+            <span class="font-semibold text-2xl mb-[18px]">{{ "Phone numbers"|t }}</span>
+
+            <span class="font-semibold leading-[20px] mb-[13px] py-[3px] region selected pl-3 border-l-2 border-solid border-transparent">{{ "All"|t }}</span>
+            {% for key, region in regions %}
+                <span class="font-semibold leading-[20px] my-[13px] py-[3px] region pl-3 border-l-2 border-solid border-transparent">{{ region|t }}</span>
+            {% endfor %}
+        </div>
+        <div class="w-full pl-4 md:pl-0 flex flex-col mx-6 sm:mx-0">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {% for key, country in all_countries %}
+                    <div class="flex flex-col">
+                        <span class="font-semibold leading-[20px] text-[19px]">{{ key|t }}</span>
+                        <span class="font-light"><a class="break-words" href="tel:+{{ country.phone }}">{{ country.phone }}</a></span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col md:flex-row lg:mx-12 mx-6 md:mx-12 px-3 pt-[30px] pb-[60px] hidden switcher-section switcher-section--emails">
+        <div class=" min-w-[300px] md:min-w-none flex flex-col sm:mx-0 mb-[30px] px-3">
+            <span class="font-semibold text-2xl mb-[18px]">{{ "Email contacts"|t }}</span>
+
+            <span class="font-semibold leading-[20px] mb-[13px] py-[3px] company selected pl-3 border-l-2 border-solid border-transparent">{{ "All"|t }}</span>
+            {% for key, company in companies %}
+                <span class="font-semibold leading-[20px] my-[13px] py-[3px] company pl-3 border-l-2 border-solid border-transparent">{{ company|t }}</span>
+            {% endfor %}
+        </div>
+        <div class="w-full pl-4 md:pl-0 flex flex-col mx-6 sm:mx-0">
+            <div class="grid grid-emails grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+                {% for key, email in all_emails %}
+                    <div class="flex flex-col">
+                        <span class="font-semibold leading-[20px] text-[19px]">{{ key|t }}</span>
+                        <span class="font-light"><a class="break-words" href="mailto:{{ email.email }}">{{ email.email }}</a></span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

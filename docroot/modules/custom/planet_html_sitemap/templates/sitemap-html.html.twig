@@ -1,0 +1,52 @@
+
+{% set keys = term_tree| keys %}
+{% set first = keys[0] %}
+{% set second = keys[1] %}
+{% set third = keys[2] %}
+
+<div class="sitemap-container">
+    <h2 class="coh-heading coh-style-heading-2-planet">SITEMAP</h2>
+    <div class="sitemap-sub-container">
+        {% for key, term in term_tree %}
+            <div class="category-column">
+                <span class="category-column__name">{{ term.name | t }}</span>
+                <div class="subcategory-column subcategory-column--l1">
+                    {% for term_first_level in term_tree[key]['children'] %}
+                        {% if term_first_level.children %}
+                            <a class="column-title" href="{{ term_first_level.link }}">{{ term_first_level.name|t }}</a>
+                        {% else %}
+                            <a class="column-title leaf" href="{{ term_first_level.link }}">{{ term_first_level.name|t }}</a>
+                        {% endif %}
+
+                        {% if term_first_level.children %}
+                            <div class="subcategory-column subcategory-column--l2">
+                                {% for term_second_level in term_first_level.children %}
+                                    {% if term_second_level.is_label == '1' and term_second_level.link is null %}
+                                        <span class="subcategory-label">{{ term_second_level.name|t }}</span>
+                                    {% else %}
+                                        {% if (term_second_level.is_label == '1') %}
+                                            <a class="subcategory-label" href="{{ term_second_level.link }}">{{ term_second_level.name }}</a>
+                                        {% else %}
+                                            <a href="{{ term_second_level.link }}">{{ term_second_level.name|t }}</a>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if term_second_level.children %}
+                                        <div class="subcategory-column subcategory-column--l3">
+                                            {% for term_third_level in term_second_level.children %}
+                                                {% if term_third_level.is_label == '1' and term_third_level.link is null %}
+                                                    <span class="subcategory-label">{{ term_third_level.name|t }}</span>
+                                                {% else %}
+                                                    <a href="{{ term_third_level.link }}">{{ term_third_level.name|t }}</a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

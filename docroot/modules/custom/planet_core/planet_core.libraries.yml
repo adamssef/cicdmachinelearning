@@ -1,8 +1,11 @@
 sitewide-libraries:
   css:
     theme:
+      # css/slick.css: {}
       css/site_wide_styles.css: {}
+      css/product_pages_html.css: {}
   js:
+    # js/slick.js: {}
     js/SiteWideScripts.js: {}
 language-popup:
   css:
@@ -25,6 +28,9 @@ blog-page:
 news-page:
   js:
     js/NewsPage.js: {}
+swiper-bundle:
+  js:
+    js/swiper-bundle.min.js.js: { }
 single-article-page:
   js:
     js/ArticlePage.js: {}
@@ -36,3 +42,9 @@ front-page:
   js:
     js/swiper-bundle.min.js.js: {}
     js/frontPage.js: {}
+brands-we-work-with:
+  css:
+    theme:
+      css/brands-we-work-with.css: { }
+  js:
+    js/BrandsWeWorkWith.js: { }

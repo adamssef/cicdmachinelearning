@@ -1,0 +1,28 @@
+uuid: c357a2e1-72b6-4597-8229-c3b77c0fe834
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_html_content
+    - filter.format.cohesion
+    - node.type.page
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.page.field_html_content
+field_name: field_html_content
+entity_type: node
+bundle: page
+label: 'HTML Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - cohesion
+field_type: text_long

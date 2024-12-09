@@ -1,0 +1,15 @@
+tailwind:
+  css:
+    theme:
+      dist/css/styles.css: {}
+planet_accept_payments:
+  css:
+    theme:
+      css/swiper.css: {}
+      css/swiper-bundle.min.css: {}
+  js:
+    js/planet_accept_payments.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

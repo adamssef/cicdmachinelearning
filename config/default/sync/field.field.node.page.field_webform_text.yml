@@ -1,0 +1,31 @@
+uuid: c5c224e8-a14e-45d2-92a6-0d0bd99e934f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_webform_text
+    - filter.format.cohesion
+    - node.type.page
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.page.field_webform_text
+field_name: field_webform_text
+entity_type: node
+bundle: page
+label: 'Webform text'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '<div><p class="coh-paragraph coh-style-e50 coh-ce-cpt__v3_form_50_50_generic_-7c06e510">What happens next?</p><h1 class="coh-heading coh-style-h700 coh-ce-cpt__v3_form_50_50_generic_-bc120afd">Talk to one of our experts today</h1><div class="coh-wysiwyg coh-ce-cpt__v3_form_50_50_generic_-e7353b22"><ul><li><span class="coh-style-b200">We will call you to outline your exact needs - a quick 15-minute call.</span></li><li><span class="coh-style-b200">Once we understand how best to assist you, we can initiate the hassle-free onboarding process.</span></li><li><span class="coh-style-b200">Finally, a&nbsp;dedicated consultant from Planet will&nbsp;reach out to get you operational as soon as possible.</span></li></ul></div></div>'
+    format: cohesion
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - cohesion
+field_type: text_long

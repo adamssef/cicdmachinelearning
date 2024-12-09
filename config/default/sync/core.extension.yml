@@ -10,6 +10,7 @@ module:
   automated_cron: 0
   ban: 0
   block: 0
+  block_class: 0
   block_content: 0
   breakpoint: 0
   captcha: 0
@@ -91,17 +92,23 @@ module:
   path: 0
   path_alias: 0
   phpass: 0
+  planet_ab_tests: 0
+  planet_accept_payments: 0
+  planet_case_studies: 0
   planet_config: 0
   planet_core: 0
+  planet_custom_access: 0
   planet_footer: 0
   planet_header: 0
   planet_html_sitemap: 0
   planet_links: 0
+  planet_node_updater: 0
   planet_offices: 0
   planet_pardot_submissions: 0
   planet_sitestudio_custom_elements: 0
   planet_sitewide_fonts: 0
   planet_structured_data: 0
+  planet_support: 0
   recaptcha: 0
   redirect: 0
   redirect_domain: 0
@@ -158,6 +165,7 @@ module:
   views_autosubmit: 0
   views_fieldsets: 0
   views_filters_populate: 0
+  views_rows_wrapper: 0
   views_ui: 0
   webform: 0
   webform_node: 0

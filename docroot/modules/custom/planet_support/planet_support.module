@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for planet_support module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function planet_support_theme(): array {
+  $array = [
+    'node__support' => [
+      'template' => 'node--support',
+      'base hook' => 'node',
+    ],
+  ];
+
+  return $array;
+
+}
+
+function planet_support_theme_suggestions_node_alter(array &$suggestions, array &$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node) {
+    $support_nid = "351";
+    $nid = $node->id();
+
+    if ($nid === $support_nid) {
+      $support_service = \Drupal::service('planet_support.service');
+      $variables['regions'] = $support_service->getRegions();
+      $variables['companies'] = $support_service->getCompanies();
+      $variables['all_countries'] = $support_service->getAllCountries();
+      $variables['all_emails'] = $support_service->getAllEmails();
+      $suggestions[] = 'node__support';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function planet_support_preprocess_page(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node) {
+    $support_nid = "351";
+    $nid = $node->id();
+
+    if ($nid === $support_nid) {
+      $variables['#attached']['library'][] = 'planet_support/planet_support';
+    }
+  }
+
+
+}

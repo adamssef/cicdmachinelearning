@@ -1,15 +1,25 @@
 services:
   planet_core.article_helper:
     class: Drupal\planet_core\Service\PlanetCoreArticleService
-    arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager']
+    arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager', '@planet_core.media_service']
   planet_core.news_helper:
     class: Drupal\planet_core\Service\PlanetCoreNewsService
     arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager']
+  planet_core.ebooks_helper:
+    class: Drupal\planet_core\Service\PlanetCoreEbooksService
+    arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager']
   planet_core.case_studies_helper:
     class: Drupal\planet_core\Service\PlanetCoreCaseStudiesService
-    arguments: [ '@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager' ]
+    arguments: [ '@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager', '@planet_core.taxonomy_service', '@planet_core.node_translation_service', '@planet_core.media_service']
   planet_core.node_translation_service:
     class: Drupal\planet_core\Service\PlanetCoreNodeTranslationsService\PlanetCoreNodeTranslationsService
+    arguments: [ '@path_alias.manager', '@language_manager', '@entity_type.manager', '@database' ]
   planet_core.menu_service:
     class: Drupal\planet_core\Service\PlanetCoreMenuService\PlanetCoreMenuService
-    arguments: ['@menu.link_tree', '@path_alias.manager', '@language_manager', '@planet_core.node_translation_service']
+    arguments: [ '@menu.link_tree', '@path_alias.manager', '@language_manager', '@planet_core.node_translation_service']
+  planet_core.taxonomy_service:
+    class: Drupal\planet_core\Service\PlanetCoreTaxonomyService\PlanetCoreTaxonomyService
+    arguments: ['@entity_type.manager', '@planet_core.node_translation_service']
+  planet_core.media_service:
+    class: Drupal\planet_core\Service\PlanetCoreMediaService\PlanetCoreMediaService
+    arguments: [ '@file_url_generator']

@@ -1,0 +1,60 @@
+.swiper-brands .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+
+.swiper-testimonials .swiper-wrapper {
+  align-items: center;
+  /* add this will all relevant prefixes */
+}
+
+.made-for .planSwitch {
+  margin: 0 auto
+}
+
+.swiper-pagination.swiper-custom-pagination span.swiper-pagination-bullet-active {
+  background: black !important;
+}
+
+.swiper-pagination.swiper-custom-pagination {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
+}
+
+.arrow-link-animation .arrow-img {
+  transition: all 0.2s ease;
+}
+
+.arrow-link-animation:hover .arrow-text {
+  text-decoration: underline;
+}
+
+.arrow-link-animation:hover .arrow-img {
+  margin-left: 20px
+}
+
+.swiper-custom-pagination {
+  margin: 0
+}
+
+.swiper-custom-pagination-wrapper {
+  text-align: center;
+  margin-top: 255px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.swiper-custom-pagination-box {
+  display: inline-block;
+  margin: 10px auto;
+}
+
+.swiper-pros .swiper-slide.swiper-slide-active .pro-mobile-claim {
+  background: black;
+  color: white;
+}

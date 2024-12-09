@@ -1,0 +1,53 @@
+uuid: c4c616f8-f47b-4e43-b3b3-022a8c13737c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_favourite_features
+    - node.type.case_studies
+    - paragraphs.paragraphs_type.favourite_planet_features
+  module:
+    - entity_reference_revisions
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.case_studies.field_favourite_features
+field_name: field_favourite_features
+entity_type: node
+bundle: case_studies
+label: 'Favourite Planet features'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      favourite_planet_features: favourite_planet_features
+    negate: 0
+    target_bundles_drag_drop:
+      customer_recommendation_quote:
+        weight: 8
+        enabled: false
+      favourite_planet_features:
+        weight: 9
+        enabled: true
+      grow_business_with_planet:
+        weight: 10
+        enabled: false
+      link_box:
+        weight: 11
+        enabled: false
+      paragraph_case_study_metrics:
+        weight: 12
+        enabled: false
+      right_side_mega_menu:
+        weight: 13
+        enabled: false
+      tip_box:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

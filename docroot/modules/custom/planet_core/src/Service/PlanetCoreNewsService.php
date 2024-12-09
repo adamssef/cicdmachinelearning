@@ -42,7 +42,7 @@ class PlanetCoreNewsService {
    */
   protected $languageManager;
 
- 
+
   /**
    * Constructs a new PlantCoreService object.
    *
@@ -313,7 +313,7 @@ class PlanetCoreNewsService {
       ->sort('field_resources_published_time', 'DESC', $language_code)
       ->accessCheck();
 
-     if ($year != null && $year != "all" && !$external && $filtered) {
+    if ($year != null && $year != "all" && !$external && $filtered) {
       $query->condition('field_year', $year);
       $total_count->condition('field_year', $year);
     }
@@ -412,51 +412,51 @@ class PlanetCoreNewsService {
     $result = [];
 
     foreach ($terms as $term) {
-        $result[] = [
-            'id' => $term->id(),
-            'name' => $term->getName(),
-            'year' => (int) $term->getName(), // Convert the name to an integer for sorting
-        ];
+      $result[] = [
+        'id' => $term->id(),
+        'name' => $term->getName(),
+        'year' => (int) $term->getName(), // Convert the name to an integer for sorting
+      ];
     }
 
     // Sort the result array by the 'year' key in descending order
     usort($result, function ($a, $b) {
-        return $b['year'] - $a['year'];
+      return $b['year'] - $a['year'];
     });
 
     return $result;
-}
-
-
-public function getLastPublishedYear() {
-  $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'newsroomyears']);
-  $result = [];
-
-  foreach ($terms as $term) {
-      $result[] = [
-          'id' => $term->id(),
-          'name' => $term->getName(),
-          'year' => (int) $term->getName(), // Convert the name to an integer for sorting
-      ];
   }
 
-  // Sort the result array by the 'year' key in descending order
-  usort($result, function ($a, $b) {
+
+  public function getLastPublishedYear() {
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'newsroomyears']);
+    $result = [];
+
+    foreach ($terms as $term) {
+      $result[] = [
+        'id' => $term->id(),
+        'name' => $term->getName(),
+        'year' => (int) $term->getName(), // Convert the name to an integer for sorting
+      ];
+    }
+
+    // Sort the result array by the 'year' key in descending order
+    usort($result, function ($a, $b) {
       return $b['year'] - $a['year'];
-  });
+    });
 
-  return $result[0];
-}
+    return $result[0];
+  }
 
-public function getAllNewsArticleTags() {
+  public function getAllNewsArticleTags() {
     // Get the current page language code.
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'newsroomtags']);
     $result = [];
     foreach ($terms as $term) {
-        $result[] = [
-            'id' => $term->id(),
-            'name' => $term->getName(),
-        ];
+      $result[] = [
+        'id' => $term->id(),
+        'name' => $term->getName(),
+      ];
     }
     return $result;
   }
@@ -480,7 +480,7 @@ public function getAllNewsArticleTags() {
       $langcode = $this->languageManager->getCurrentLanguage()->getId();
     }
     $path_alias = $this->pathAliasManager->getAliasByPath($path, $langcode);
-   
+
     $lang_prefix = $langcode != "en" ? "/" . $langcode : "";
     return $lang_prefix . $path_alias;
   }

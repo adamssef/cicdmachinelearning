@@ -1,0 +1,5 @@
+name: 'planet_case_studies'
+type: module
+description: 'Module that replaces the current case studies landing page and caste study individual pages and provides new design and features'
+package: Planet
+core_version_requirement: ^10

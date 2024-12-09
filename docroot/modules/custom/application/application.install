@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Set field_layout_canvas to NULL for all case studies.
+ */
+function application_update_10001() {
+  \Drupal::logger('application')->notice('Running application_update_10001');
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+  $case_studies = $node_storage->loadByProperties(['type' => 'case_studies']);
+
+  if (empty($case_studies)) {
+    \Drupal::logger('application')->notice('No case studies found');
+  }
+  else {
+    \Drupal::logger('application')->notice('Found ' . count($case_studies) . ' case studies');
+  }
+
+  foreach ($case_studies as $case_study) {
+    // Check if the field exists and set it to NULL
+    if ($case_study->hasField('field_layout_canvas')) {
+      \Drupal::logger('application')->notice('Setting field_layout_canvas to NULL for case study with ID: ' . $case_study->id());
+      $case_study->set('field_layout_canvas', NULL);
+      $case_study->save();
+    } else {
+      \Drupal::logger('application')->notice('field_layout_canvas does not exist for case study with ID: ' . $case_study->id());
+    }
+  }
+
+  \Drupal::service('entity_type.manager')->clearCachedDefinitions();
+  \Drupal::service('cache.entity')->deleteAll();
+}
+
+

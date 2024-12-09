@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.resources.field_enable_new_layout
     - field.field.node.resources.field_field_resources_metatag
     - field.field.node.resources.field_hide_from_components
-    - field.field.node.resources.field_layout_canvas
+    - field.field.node.resources.field_html_content
     - field.field.node.resources.field_pre_heading_3
     - field.field.node.resources.field_promoted_resource
     - field.field.node.resources.field_resources_author
@@ -44,7 +44,7 @@ hidden:
   field_enable_new_layout: true
   field_field_resources_metatag: true
   field_hide_from_components: true
-  field_layout_canvas: true
+  field_html_content: true
   field_pre_heading_3: true
   field_promoted_resource: true
   field_resources_author: true

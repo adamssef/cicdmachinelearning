@@ -6,13 +6,18 @@ dependencies:
     - field.storage.node.field_video_thumb
     - media.type.image
     - node.type.case_studies
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.case_studies.field_video_thumb
 field_name: field_video_thumb
 entity_type: node
 bundle: case_studies
 label: 'Video thumbnail'
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

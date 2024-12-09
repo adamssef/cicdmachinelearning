@@ -1,0 +1,36 @@
+<div class = "customer-stories-block planet-header-transparent dark-menu-items">
+    <h2 class="case-studies-header">{{ "Explore why our customers chose Planet"|t }}</h2>
+    <span class="page-studies-subtitle">{{ "See how Planet helps businesses, streamline processes, save time and generate more revenue"|t }}</span>
+</div>
+
+<div class="brands-we-work-with-meta-container">
+    <div class="brands-we-work-with-mega-container">
+        <div class="brands-we-work-with-container">
+            {% for i in 0..8 %}
+                {% for key, brand in brands %}
+                    <img src="{{ brand.src }}" {% if key > 10 and key < 18 %}loading="lazy"{% endif %}/>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="swiper">
+    <div class="swiper-wrapper">
+        {% for key, case_study in case_studies %}
+            <div id="swiper_item_{{ key }}" style="background: linear-gradient(322deg, rgba(224, 0, 131, 0.70) 0%, rgba(224, 0, 131, 0.10) 34.5%), url('{{ case_study.image_url }}'); background-size: cover; background-repeat: no-repeat; background-position: center;" class="swiper-slide carousel__item">
+                <p>
+                    {% if case_study.logo_url %}
+                        <img class="case-study__logo-image" src="{{ case_study.logo_url }}" loading="lazy">
+                    {% endif %}
+
+                    <a class="link--read-full-story" href="{{ case_study.url }}">{{ "Read full story"|t }}
+                        <img src="/resources/icons/sharp-arrow-pointing-right.svg" loading="lazy">
+                    </a>
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
