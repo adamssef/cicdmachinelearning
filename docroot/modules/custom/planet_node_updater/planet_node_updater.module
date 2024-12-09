@@ -25,6 +25,24 @@ function planet_node_updater_theme(): array {
 }
 
 /**
+ * Implements hook_entity_presave().
+ */
+function planet_node_updater_entity_presave(EntityInterface $entity) {
+  if ($entity instanceof CohesionLayout) {
+    $default_langcode = $entity->get('default_langcode')->getValue();
+    $current_langage = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    if (empty($default_langcode)) {
+      if ($current_langage == 'en') {
+        $entity->set('default_langcode', true);
+      }
+      else {
+        $entity->set('default_langcode', false);
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function planet_node_updater_theme_suggestions_block_alter(array &$suggestions, array &$variables) {
