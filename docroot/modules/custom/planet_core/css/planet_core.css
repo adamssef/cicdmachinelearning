@@ -2139,6 +2139,19 @@ a.button-with-icon-transition {
   font-size: 14px;
 }
 
+.heading-pink-border {
+  padding-left: 16px;
+  font-family: 'TT Commons';
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+  border: 0;
+  border-left: 4px solid #e00083;
+  border-radius: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
 
 
 .news-card .tags-pills {
