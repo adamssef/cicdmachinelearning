@@ -94,16 +94,6 @@
     attach: function (context, settings) {
       let fake_elements = $('.fake-element');
 
-      window.addEventListener('scroll', function() {
-        var scrollHeight = 740; // Change this to your desired scroll height
-        var currentScroll = window.scrollY || window.pageYOffset;
-
-        if (currentScroll > scrollHeight) {
-          $('.dialog-off-canvas-main-canvas > header').css('background-color', 'white');
-        } else {
-          $('.dialog-off-canvas-main-canvas > header').css('background-color', '#F2F5F8');
-        }
-      });
 
       fake_elements.each(function(index, element) {
         let parent = $(this).closest('.case-studies__filter_select');
@@ -416,6 +406,27 @@
        * Event listener for document's ready event.
        */
       $(document).ready(function() {
+        let scrollHeight = 720;
+        let currentScroll = window.scrollY || window.pageYOffset;
+
+        if (currentScroll < scrollHeight) {
+          document.querySelector('.megamenu-header').style.backgroundColor = '#F2F5F8';
+        } else {
+          document.querySelector('.megamenu-header').style.backgroundColor = 'white';
+        }
+
+        window.addEventListener('scroll', function() {
+          let scrollHeight = 720;
+          let currentScroll = window.scrollY || window.pageYOffset;
+          if (currentScroll < scrollHeight) {
+            document.querySelector('.megamenu-header').style.backgroundColor = '#F2F5F8';
+
+          } else {
+            document.querySelector('.megamenu-header').style.backgroundColor = 'white';
+          }
+        });
+
+
         $('.triplet').each(function() {
           $(this).find('.background-image-div').each(function() {
             $(this).insertAfter($(this).parent());
