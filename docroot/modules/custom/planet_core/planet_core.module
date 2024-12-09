@@ -878,13 +878,28 @@ function planet_core_preprocess_node(array &$variables)
     }
   }
 
-  if ($node->getType() == 'e_book_' && !$node->get('field_ebook_form')->isEmpty()) {
+  if ($node->getType() == 'e_book_') {
+    if(!$node->get('field_ebook_form')->isEmpty()) {
     $webform_id = $node->get('field_ebook_form')->target_id;
     $form = \Drupal::entityTypeManager()
         ->getStorage('webform')
         ->load($webform_id)
         ->getSubmissionForm();
     $variables['form'] = $form;
+    }
+
+    if (!$node->get('field_main_image_media')->isEmpty()) {
+      $media = $node->get('field_main_image_media')->entity;
+      if ($media) {
+        $image_field = $media->get('field_media_image');
+        if (!$image_field->isEmpty()) {
+          $file = $image_field->entity;
+          $variables['image_url'] = $file->createFileUrl();
+          // Or if you want to use a specific image style:
+          // $variables['image_url'] = ImageStyle::load('your_style')->buildUrl($file->getFileUri());
+        }
+      }
+    }
 }
 
 }

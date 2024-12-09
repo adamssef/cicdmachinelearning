@@ -1,38 +1,65 @@
-
-{% if content.field_ebook_html_content %}
-	<div>
-		{{ content.field_ebook_html_content|raw }}
-		<!-- form -->
-		{% if form %}
-		<div class="coh-container ssa-component coh-component ssa-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886 coh-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886 coh-light-mode coh-ce-cpt__v3_form_50_50_generic_-9e1e96f5">
+<div>
+	<div class="coh-container ssa-component coh-component" style="padding: 24px 0">
+		<div class="coh-container coh-container-boxed">
+			<div class="coh-row coh-row-bleed-xl coh-row-visible-xl" style="min-height: 500px;">
+				<div class="coh-row-inner" style="height: 100%;">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6" style="display: flex; align-items: center;">
+						<div class="coh-container coh-container-left" style="display: flex; flex-direction: column; justify-content: center;">
+							<div class="heading-pink-border" style="display: flex; margin-bottom: 8px">
+								<div>{{ content.field_pre_heading }}</div>
+								<span>•</span>
+								<div>{{ content.field_pre_heading_2 }}</div>
+							</div>
+							<h1 class="coh-heading coh-style-h700" style="margin-bottom: 8px">{{ label }}</h1>
+							<div class="coh-wysiwyg coh-style-b200">
+								{{ content.field_summary }}
+							</div>
+							<div>
+								<div style="display: inline-block;margin-top: 16px" class="coh-container ssa-component coh-component ssa-component-instance-e483c101-2658-495c-a811-bc3b80b94116 coh-component-instance-e483c101-2658-495c-a811-bc3b80b94116 coh-button-filled coh-button-dynamic coh-button-large coh-button-enable coh-button-light-mode coh-style-button-variants" tabindex="0">
+									<a href="#download" class="coh-link coh-button-filled">
+										  {{ 'Download now'|t }}
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
+						<div class="coh-container coh-style-form coh-container-right">
+							<div class="coh-container ssa-component coh-component">
+								{% if image_url %}
+									<img style="padding: 24px 0" src="{{ image_url }}" alt="E-book cover">
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{ content.field_ebook_html_content|raw }}
+	<!-- form -->
+	{% if form %}
+		<div class="coh-container ssa-component coh-component" style="padding: 46px 0">
 			<div class="coh-container coh-container-boxed">
-				<div class="coh-row coh-row-bleed-xl coh-row-visible-xl" data-coh-row-match-heights="{&quot;xl&quot;:{&quot;target&quot;:&quot;none&quot;}}" data-once="coh-row-match-heights-init">
+				<div class="coh-row coh-row-bleed-xl coh-row-visible-xl">
 					<div class="coh-row-inner">
-						<div class="coh-column coh-ce-cpt__v3_form_50_50_generic_-399455a4 coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
-							<div class="coh-container coh-container-left coh-ce-cpt__v3_form_50_50_generic_-c76781">
-								<p class="coh-paragraph coh-style-e50 coh-ce-cpt__v3_form_50_50_generic_-7c06e510">What happens next?</p>
-								<h1 class="coh-heading coh-style-h700 coh-ce-cpt__v3_form_50_50_generic_-bc120afd">
-									Talk to one of our experts today
-								</h1>
-								<div class="coh-wysiwyg coh-ce-cpt__v3_form_50_50_generic_-e7353b22">
-									<ul>
-										<li>
-											<span class="coh-style-b200">We will call you to outline your exact needs - a quick 15-minute call.</span>
-										</li>
-										<li>
-											<span class="coh-style-b200">Once we understand how best to assist you, we can initiate the hassle-free onboarding process.</span>
-										</li>
-										<li>
-											<span class="coh-style-b200">Finally, a&nbsp;dedicated consultant from Planet will&nbsp;reach out to get you operational as soon as possible.</span>
-										</li>
-									</ul>
-								</div><img class="coh-image coh-image-responsive-xl" src="/sites/default/files/2023-11/pms-contact_1_0.jpg"></div>
+						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
+							<div class="coh-container coh-container-left">
+								<div class="heading-pink-border">{{content.field_form_pre_heading}}</div>
+								<h1 class="coh-heading coh-style-h700" style="margin-bottom: 20px">{{content.field_form_heading}}</h1>
+								<div class="coh-wysiwyg">
+									{{content.field_form_paragraph}}
+								</div>
+							</div>
 						</div>
 						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
-							<div class="coh-container coh-style-form coh-container-right coh-ce-cpt__v3_form_50_50_generic_-d5d1cbec">
-								<div class="coh-container ssa-component coh-component ssa-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886 coh-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886">
+							<div class="coh-container coh-style-form coh-container-right">
+								<div class="coh-container ssa-component coh-component">
 									<div class="site-studio-webform-element site-studio-webform-node-element">
-										<div id="contact-us">{{form}}</div>
+										<div id="download">
+											{{form}}
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -40,8 +67,5 @@
 					</div>
 				</div>
 			</div>
-		</div>
 		{% endif %}
-
 	</div>
-{% endif %}
