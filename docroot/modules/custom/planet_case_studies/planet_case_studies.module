@@ -254,7 +254,7 @@ function planet_case_studies_preprocess_views_view_fields(&$variables) {
       ?->getValue()[0]['target_id'];
     $styled_image_url = \Drupal::getContainer()
       ->get('planet_core.media_service')
-      ->getStyledImageUrl($media_id, 'wide');
+      ->getStyledImageUrl($media_id, 'large');
 
     $media_logo_id = $node->get('field_logo_media')
       ?->getValue()[0]['target_id'];
