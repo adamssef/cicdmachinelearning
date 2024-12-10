@@ -7,6 +7,7 @@ use Drupal\Core\File\FileUrlGeneratorInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\media\Entity\Media;
+use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\path_alias\AliasManagerInterface;
 use Drupal\planet_core\Service\PlanetCoreMediaService\PlanetCoreMediaServiceInterface;
@@ -114,7 +115,7 @@ class PlanetCoreCaseStudiesService {
     $industry_option_tid = strtolower($industry_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($industry_option, 'case_studies_industry') : NULL;
     $company_size_option_tid = strtolower($company_size_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($company_size_option, 'company_size') : NULL;
 
-    $current_lang = $this->planetCoreNodeTranslationsService->determineTheLangId();
+    $current_lang = $this->languageManager->getCurrentLanguage()->getId();
 
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'case_studies')
@@ -143,6 +144,8 @@ class PlanetCoreCaseStudiesService {
 
   public function getCaseStudiesForMoreBlock(int $offset, $limit, $product_option, $industry_option, $company_size_option) {
     $product_option_tids = [];
+    $current_lang = $this->languageManager->getCurrentLanguage()->getId();
+
     foreach ($product_option as $product) {
       $product_option_tids[] = $this->planetCoreTaxonomyService->getTermIdByTermName($product, 'case_studies_products');
     }
@@ -171,6 +174,7 @@ class PlanetCoreCaseStudiesService {
       ->range($offset, $limit)
       ->sort('created', 'DESC')
       ->condition('status', 1)
+      ->condition('langcode', $current_lang, '=')
       ->condition('nid', $current_node->id(), '<>')
       ->accessCheck(FALSE); // Sorting by creation date, adjust as needed
 
@@ -201,10 +205,14 @@ class PlanetCoreCaseStudiesService {
         ->sort('created', 'DESC')
         ->condition('status', 1)
         ->accessCheck(FALSE); // Sorting by creation date, adjust as needed
+
+      $additional_nids = $query->execute();
+
+      return $this->prepareCaseStudiesData(array_merge($nids, $additional_nids));
     }
 
-    $additional_nids = $query->execute();
-    $nids = array_merge($nids, $additional_nids);
+
+
 
     return $this->prepareCaseStudiesData($nids);
   }
@@ -490,7 +498,15 @@ class PlanetCoreCaseStudiesService {
 
     foreach ($case_studies as $case_study) {
       $case_study = $case_study->getTranslation($langcode);
-      $alias = $this->pathAliasManager->getAliasByPath("/node/" . $case_study->id(), $langcode);
+      $translations = $case_study->getTranslationLanguages();
+
+      if (array_key_exists($langcode, $translations)) {
+        $alias = $this->pathAliasManager->getAliasByPath("/node/" . $case_study->id(), $langcode);
+      }
+      else {
+        $alias = Node::load($case_study->id())->toUrl()->toString();
+        $langcode = 'en';
+      }
       $media_id = $case_study->get('field_main_image_media')?->target_id;
       $media_id_logo = $case_study->get('field_logo_media')?->target_id;
 
