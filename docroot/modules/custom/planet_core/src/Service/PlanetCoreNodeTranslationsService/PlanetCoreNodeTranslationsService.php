@@ -70,7 +70,7 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
    * @return ?string
    *   The translated string null otherwise
    */
-  function t2(string $string = "", $context = NULL, string $langcode = ''): string {
+  public function t2(string $string = "", $context = NULL, string $langcode = ''): string {
     $t = $string;
 
     if ($string !== "") {
@@ -127,8 +127,9 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
     return $node_translations_url;
   }
 
+
   /**
-   * Get the translation array for the Accept Payments page.
+   * Get the translation array for a given url.
    *
    * @return array
    */
@@ -139,6 +140,21 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
       $node_translation_arr = $this->buildTranslationArrayForNode($node, TRUE);
 
       return array_values($node_translation_arr);
+    }
+
+    return NULL;
+  }
+
+  /**
+   * Get the translation array for a given url.
+   *
+   * @return array
+   */
+  public function getTranslationArrWithPrefixes($url): ?array {
+    $node  = $this->getNodeByPathAlias($url);
+
+    if ($node) {
+      return $this->buildTranslationArrayForNode($node);
     }
 
     return NULL;
