@@ -64,8 +64,16 @@ class PlanetCaseStudiesRequestDemo extends BlockBase implements ContainerFactory
    * {@inheritdoc}
    */
   public function build() {
+    $node_translation_service = \Drupal::getContainer()->get('planet_core.node_translation_service');
+    $contact_sales_this_languge_url = $node_translation_service->getTranslationArrWithPrefixes('/contact/sales');
+    $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $contact_sales_url = $contact_sales_this_languge_url[$lang_id] ?? $contact_sales_this_languge_url['en'];
+
     $block_array = [
       '#theme' => 'block__case_studies_request_demo',
+      '#data' => [
+        'contact_sales_url' => $contact_sales_url,
+      ],
     ];
 
     return $block_array;
