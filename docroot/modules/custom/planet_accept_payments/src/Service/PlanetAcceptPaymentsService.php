@@ -71,15 +71,11 @@ class PlanetAcceptPaymentsService {
         "is_main" => TRUE,
         "img_path" => "/resources/images/accept_payments_online.jpg",
         "title" => "Online",
-        "url" => NULL,
+        "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Learn more"])[$current_language_prefix] ?? $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Learn more"])['en'],
         "class" => "online",
         "children" => [
-          "learn_more" => [
-            "title" => "Learn more",
-            "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Learn more"])[$current_language_prefix] ?? $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Learn more"])['en'],
-          ],
           "website" => [
-            "title" => "Website",
+            "title" => "In-app",
             "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Website"])[$current_language_prefix] ?? $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Website"])['en'],
           ],
           "pay_by_link" => [
@@ -112,8 +108,8 @@ class PlanetAcceptPaymentsService {
         "class" => "unattended",
         "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Unattended"])[$current_language_prefix] ?? $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Unattended"])['en'],
         "children" => [
-          "vending_machine" => [
-            "title" => "vending machine",
+          "ending_machine" => [
+            "title" => "Vending machine",
             "url" => NULL,
           ],
           "parking" => [
@@ -121,7 +117,7 @@ class PlanetAcceptPaymentsService {
             "url" => NULL,
           ],
           "kiosk_or_ticket" => [
-            "title" => "kiosk or ticketing",
+            "title" => "Kiosk or ticketing",
             "url" => NULL,
           ]
         ]

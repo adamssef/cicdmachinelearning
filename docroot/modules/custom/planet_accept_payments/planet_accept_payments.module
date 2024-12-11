@@ -69,6 +69,8 @@ function planet_accept_payments_preprocess_node(array &$variables) {
     $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     if (in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
+      $case_studies_this_langugage_url = $node_translation_service->getTranslationArrWithPrefixes('/case-studies');
+      $variables['case_studies_url'] = $case_studies_this_langugage_url[$lang_id] ?? $case_studies_this_langugage_url['en'];
       $variables['brands'] = \Drupal::service('planet_accept_payments.service')->getBrandsWeWorkWith();
     }
   }
