@@ -71,7 +71,13 @@ function planet_accept_payments_preprocess_node(array &$variables) {
     if (in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
       $case_studies_this_langugage_url = $node_translation_service->getTranslationArrWithPrefixes('/case-studies');
       $contact_sales_this_languge_url = $node_translation_service->getTranslationArrWithPrefixes('/contact/sales');
+      $travel_url = $node_translation_service->getTranslationArrWithPrefixes('/travel');
+      $retail_url = $node_translation_service->getTranslationArrWithPrefixes('/retail');
+      $hospitality_url = $node_translation_service->getTranslationArrWithPrefixes('/hospitality');
+      $variables['hospitality_url'] = $hospitality_url[$lang_id] ?? $hospitality_url['en'];
+      $variables['retail_url'] = $retail_url[$lang_id] ?? $retail_url['en'];
       $variables['case_studies_url'] = $case_studies_this_langugage_url[$lang_id] ?? $case_studies_this_langugage_url['en'];
+      $variables['travel_url'] = $travel_url[$lang_id] ?? $travel_url['en'];
       $variables['contact_sales_url'] = $contact_sales_this_languge_url[$lang_id] ?? $contact_sales_this_languge_url['en'];
       $variables['brands'] = \Drupal::service('planet_accept_payments.service')->getBrandsWeWorkWith();
     }
