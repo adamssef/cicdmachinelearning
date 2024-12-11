@@ -1,14 +1,13 @@
 <div id="{{ element['#id'] }}" class="case-studies__filter_select">
-
 {%
     set length = options|length - 1
 %}
 
 {% for key, option in options %}
     {% if key == 0 %}
-        <div class="fake-select-el selected fake-element"><span>{{ option['label'] }}</span><img src="/resources/icons/dropdown_arrow_pointing_down.svg"/></div>
+        <div class="fake-select-el selected fake-element"><span>{{ option['label']|t({context: 'my_context'}) }}</span><img src="/resources/icons/dropdown_arrow_pointing_down.svg"/></div>
     {% else %}
-        <div class="fake-option-el fake-element{% if key == 1 %} first-option{% endif %}{% if key == length %} last-option{% endif %}"><span>{{ option['label'] }}</span><img src="/resources/icons/dropdown_arrow_pointing_down.svg"/></div>
+        <div class="fake-option-el fake-element{% if key == 1 %} first-option{% endif %}{% if key == length %} last-option{% endif %}"><span>{{ option['label']|t({context: 'my_context'}) }}</span><img src="/resources/icons/dropdown_arrow_pointing_down.svg"/></div>
     {% endif %}
 {% endfor %}
 </div>

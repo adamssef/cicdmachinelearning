@@ -95,6 +95,7 @@ body.page-node-type-case-studies {
   width: 100%;
   display: block;
   margin-bottom: 4px;
+  cursor: inherit;
 }
 
 .case-study-page__customer-info span {

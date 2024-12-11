@@ -174,12 +174,12 @@
 			</div>
 		{% endif %}
 		{% if (case_study_data['grow_your_business_settings']['size'] == 'medium') %}
-			{% include '/modules/custom/planet_case_studies/templates/block--grow-business-with-planet.html.twig' with case_studies  %}
+            {% include '/modules/custom/planet_case_studies/templates/block--grow-business-with-planet.html.twig' with { contact_sales_url: contact_sales_url, case_studies: case_studies_url } %}
 		{% endif %}
 	</div>
 </div>
 
 {% if (case_study_data['grow_your_business_settings']['size'] == 'large') %}
-	{% include '/modules/custom/planet_case_studies/templates/block--grow-business-with-planet-large.html.twig' with case_studies %}
+    {% include '/modules/custom/planet_case_studies/templates/block--grow-business-with-planet-large.html.twig' with { contact_sales_url: contact_sales_url, case_studies: case_studies_url } %}
 {% endif %}
 {% include '/modules/custom/planet_case_studies/templates/block--case-studies-more.html.twig' with case_studies %}

@@ -6,6 +6,11 @@ dependencies:
     - field.storage.node.field_logo_media
     - media.type.image
     - node.type.case_studies
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
 id: node.case_studies.field_logo_media
 field_name: field_logo_media
 entity_type: node
@@ -13,7 +18,7 @@ bundle: case_studies
 label: 'Logo Media'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

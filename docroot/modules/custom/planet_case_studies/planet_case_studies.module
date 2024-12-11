@@ -68,6 +68,13 @@ function planet_case_studies_preprocess_node(array &$variables) {
   }
 
   if ($node->getType() === 'case_studies') {
+    $node_translation_service = \Drupal::getContainer()->get('planet_core.node_translation_service');
+    $contact_sales_this_languge_url = $node_translation_service->getTranslationArrWithPrefixes('/contact/sales');
+    $case_study_url = $node_translation_service->getTranslationArrWithPrefixes('/case-studies');
+    $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['contact_sales_url'] = $contact_sales_this_languge_url[$lang_id] ?? $contact_sales_this_languge_url['en'];
+    $variables['case_studies_url'] = $case_study_url[$lang_id] ?? $case_study_url['en'];
+
     $variables['case_study_data'] = $case_studies_helper->getSingleCaseStudyData($node);
     $variables['case_studies'] = $case_studies_helper->getCaseStudiesForMoreBlock(0, 4, $variables['case_study_data']['products'], $variables['case_study_data']['industry'], $variables['case_study_data']['company_size']);
 
@@ -225,10 +232,12 @@ function planet_case_studies_theme_suggestions_form_alter(&$suggestions, &$varia
  * Implements hook_form_FORM_ID_alter().
  */
 function planet_case_studies_form_alter(&$form, FormStateInterface $form_state) {
+  $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
   if ($form['#id'] === 'views-exposed-form-planet-case-studies-view-load-more-block-1') {
-    $form['field_product_type_target_id']['#options']['All'] = t('All products');
-    $form['field_industry_type_target_id']['#options']['All'] = t('All industries');
-    $form['field_company_size_target_id']['#options']['All'] = t('All companies');
+    $form['field_product_type_target_id']['#options']['All'] = \Drupal::getContainer()->get('planet_core.node_translation_service')->t2('All products', [], $lang_id);;
+    $form['field_industry_type_target_id']['#options']['All'] = \Drupal::getContainer()->get('planet_core.node_translation_service')->t2('All industries', [], $lang_id);;
+    $form['field_company_size_target_id']['#options']['All'] = \Drupal::getContainer()->get('planet_core.node_translation_service')->t2('All companies', [], $lang_id);;
   }
 }
 
