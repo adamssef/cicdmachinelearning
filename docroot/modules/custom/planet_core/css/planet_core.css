@@ -1826,6 +1826,9 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 .article-main-image {
   margin-bottom: 32px
 }
+.single-layout-canvas .coh-wysiwyg ul li p {
+  margin: 0 !important;
+}
 
 .single-layout-canvas .coh-style-body-large---tt-commons-planet,
 .single-layout-canvas p {
@@ -1833,6 +1836,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   line-height: 166%;
   display: block;
   font-weight: 400;
+  margin: 0 !important
 }
 
 .single-layout-canvas .coh-style-body-large---tt-commons-planet a {
