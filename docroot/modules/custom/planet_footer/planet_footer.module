@@ -9,18 +9,10 @@
  * Implements hook_theme().
  */
 function planet_footer_theme() {
-  $current_url = \Drupal::service('path.current')->getPath();
-
-  $is_admin_page = \Drupal::service('router.admin_context')
-    ->isAdminRoute(\Drupal::routeMatch()->getRouteObject());
-
-  // We do not want to display the footer block on user pages or admin pages.
-  if (!str_starts_with($current_url, '/user') && !$is_admin_page) {
     return [
       'block__planet_footer_block' => [],
       'block__planet_legal_block' => [],
     ];
-  }
 }
 
 /**
