@@ -366,15 +366,15 @@ class PlanetCoreCaseStudiesService {
         'title' => $favourite_features->field_label->value,
         'text_items' => $favourite_features->get('field_features')->getValue(),
       ];
+
+      $text = [];
+
+      foreach ($favourite_features['text_items'] as $feature) {
+        $text[] = $feature['value'];
+      }
+
+      $favourite_features['text_items'] = $text;
     }
-
-    $text = [];
-
-    foreach ($favourite_features['text_items'] as $feature) {
-      $text[] = $feature['value'];
-    }
-
-    $favourite_features['text_items'] = $text;
 
     if (!empty($all_products_from_term_field)) {
       foreach ($all_products_from_term_field as $product) {

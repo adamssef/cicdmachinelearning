@@ -1,14 +1,14 @@
 _core:
   default_config_hash: HENvUIeX6xNPGRB1w3z6rT9a71LM_hKXATF6XrM9WvM
 smtp_on: true
-smtp_host: in-v3.mailjet.com
+smtp_host: smtp.sendgrid.net
 smtp_hostbackup: ''
-smtp_port: '25'
+smtp_port: '587'
 smtp_protocol: standard
 smtp_autotls: true
 smtp_timeout: 30
-smtp_username: cebb5aaae7fc214c12c66a98e2283457
-smtp_password: 11f5f468a8613fdc3fd36751c89273cd
+smtp_username: apikey
+smtp_password: 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
 smtp_from: noreply@weareplanet.com
 smtp_fromname: Weareplanet
 smtp_client_hostname: ''
