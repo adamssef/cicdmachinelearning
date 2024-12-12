@@ -106,20 +106,15 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
       $node_translations = $node->getTranslationLanguages();
 
       foreach ($node_translations as $langcode => $translation) {
-        $string = $node->getTranslation($langcode)->toUrl()->toString();
 
-        if (
-          str_starts_with($string, '/de') ||
-          str_starts_with($string, '/fr') ||
-          str_starts_with($string, '/it') ||
-          str_starts_with($string, '/en') ||
-          str_starts_with($string, '/es')
-        ) {
-          $node_translations_url[$langcode] = $string;
+        $translated_node = $node->getTranslation($langcode);
+        $alias = $this->pathAliasManager->getAliasByPath('/node/' . $translated_node->id(), $langcode);
+
+        if (in_array($langcode, ['de', 'fr', 'it', 'es'])) {
+          $node_translations_url[$langcode] = "/$langcode" . $alias;
         }
-
         else {
-          $node_translations_url[$langcode] = $string;
+          $node_translations_url[$langcode] = $alias;
         }
       }
     }
