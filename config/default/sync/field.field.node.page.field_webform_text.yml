@@ -20,10 +20,7 @@ label: 'Webform text'
 description: ''
 required: false
 translatable: true
-default_value:
-  -
-    value: '<div><p class="coh-paragraph coh-style-e50 coh-ce-cpt__v3_form_50_50_generic_-7c06e510">What happens next?</p><h1 class="coh-heading coh-style-h700 coh-ce-cpt__v3_form_50_50_generic_-bc120afd">Talk to one of our experts today</h1><div class="coh-wysiwyg coh-ce-cpt__v3_form_50_50_generic_-e7353b22"><ul><li><span class="coh-style-b200">We will call you to outline your exact needs - a quick 15-minute call.</span></li><li><span class="coh-style-b200">Once we understand how best to assist you, we can initiate the hassle-free onboarding process.</span></li><li><span class="coh-style-b200">Finally, a&nbsp;dedicated consultant from Planet will&nbsp;reach out to get you operational as soon as possible.</span></li></ul></div></div>'
-    format: cohesion
+default_value: {  }
 default_value_callback: ''
 settings:
   allowed_formats:
