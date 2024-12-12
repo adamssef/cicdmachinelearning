@@ -79,15 +79,15 @@
   };
 
   function getSelectedProductOption() {
-    return $("#edit-field-product-type-target-id").find(".selected span:first").text();
+    return Drupal.t($("#edit-field-product-type-target-id").find(".selected span:first").text());
   }
 
   function getSelectedIndustryOption() {
-    return $("#edit-field-industry-type-target-id").find(".selected span:first").text();
+    return Drupal.t($("#edit-field-industry-type-target-id").find(".selected span:first").text());
   }
 
   function getSelectedCompanySizeOption() {
-    return $("#edit-field-company-size-target-id").find(".selected span:first").text();
+    return Drupal.t($("#edit-field-company-size-target-id").find(".selected span:first").text());
   }
 
   Drupal.behaviors.fakeSelectDropdown = {

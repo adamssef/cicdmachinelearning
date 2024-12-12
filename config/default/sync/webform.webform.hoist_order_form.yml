@@ -96,6 +96,7 @@ elements: |-
           'Coax Cable': 'Coax Cable'
           'Patch/CAT6 Cable': 'Patch/CAT6 Cable'
           'Connectivity Cable': 'Connectivity Cable -- USB/HDMI extension'
+        '#options_display': buttons_horizontal
       specify_quantities:
         '#type': textfield
         '#title': 'Specify Quantities'
