@@ -68,6 +68,7 @@ class PlanetFooterBlock extends BlockBase implements ContainerFactoryPluginInter
       'footer_menu' => $this->blockService->prepareLinksForFooter(),
       '#current_language_prefix' => $this->blockService->languageManager->getCurrentLanguage()->getId(),
       'lang_switcher_data' => $this->blockService->prepareDataForLanguageSwitcher(),
+      '#cache' => ['max-age' => 0]
     ];
 
     return $block_array;
