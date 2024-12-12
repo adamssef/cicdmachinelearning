@@ -869,12 +869,18 @@ function planet_core_preprocess_node(array &$variables)
   }
 
   if ($node->getType() == 'page' && !in_array($node->id(), SpecialTemplates::getAll())) {
-    if ($node->get('field_is_product_page')->value == 1) {
+    if(!$node->get('field_webform')->isEmpty()) {
+
+    $webform_id = $node->get('field_webform')->target_id;
       $form = \Drupal::entityTypeManager()
-        ->getStorage('webform')
-        ->load('get_in_touch_dynamic')
-        ->getSubmissionForm();
-      $variables['form'] = $form;
+          ->getStorage('webform')
+          ->load($webform_id)
+          ->getSubmissionForm();
+          $webform_html = $node->get('field_webform_text')->value;
+
+          // Pass both form and webform_html to variables
+          $variables['form'] = $form;
+          $variables['webform_html'] = $webform_html;
     }
   }
 

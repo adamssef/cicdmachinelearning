@@ -53,3 +53,5 @@ auth.json
 # Ignore solr data
 /config/solr/planet/data/
 backup*
+
+/docroot/sites/development.services.yml
