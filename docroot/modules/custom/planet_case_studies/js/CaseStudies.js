@@ -150,6 +150,7 @@
       once('loadMoreCardsScript', '.reset-filters-button', context).forEach(element => {
         $(element).click(e=>{
           resetAllTheSelects();
+          manageClearButtonVisibility([],[],'clear filter');
           manage_load_more_button_display();
         });
       });
@@ -157,6 +158,7 @@
       once('loadMoreCardsScript', '.we-are-sorry-button', context).forEach(element => {
         $(element).click(e=>{
           resetAllTheSelects();
+          manageClearButtonVisibility([],[],'clear filter');
           manage_load_more_button_display();
         })
       });
@@ -335,7 +337,11 @@
         return newTriplets;
       }
 
-      function manageClearButtonVisibility(optionArray = [] ,data= []) {
+      function manageClearButtonVisibility(optionArray = [] ,data= [], word) {
+        if (word === 'clear filter') {
+          $('.reset-filters-standalone-clear-filter-button').css('display', 'none');
+        }
+
         let resetFilters = $('.reset-filters');
         let weAreSorrySpan = $('.we-are-sorry-span');
 
@@ -349,8 +355,17 @@
         let industryOptionSelected = optionArray[1];
         let companySizeOptionSelected = optionArray[2];
 
+        const allInAllLanguages = [
+          'All', 'Todos los productos', 'Todos los sectores', 'Todas las empresas', 'Tutti i prodotti',
+          'Tutti i settori', 'Tutte la aziende', 'Alle Produkte', 'Alle Branchen', 'Alle Unternehmen',
+          'Tous les produits', 'Tous les secteurs', 'Toutes les entreprises', 'All Products', 'All Industries',
+          'All Companies',
+        ];
+
         if (
-            productOptionSelected === "All" && industryOptionSelected === "All" && companySizeOptionSelected === "All"
+            allInAllLanguages.includes(productOptionSelected) &&
+            allInAllLanguages.includes(industryOptionSelected) &&
+            allInAllLanguages.includes(companySizeOptionSelected)
         ) {
           $('.views-exposed-form ').css('margin', '48px');
           resetFilters.css('display', 'none');
@@ -359,16 +374,14 @@
         else {
           $('.views-exposed-form').css('margin', '0');
           if (data.length === 0) {
-            $('.reset-filters').addClass('with-we-are-sorry');
             weAreSorrySpan.css('display', 'block');
-            $('.reset-filters-standalone-clear-filter-button').css('display', 'none');
+            $('.reset-filters-standalone-clear-filter-button').css('display', 'block');
+            $('.reset-filters').css('display', 'block');
           }
           else {
-            $('.reset-filters').removeClass('with-we-are-sorry');
-            $('.reset-filters-standalone-clear-filter-button').css('display', 'inline-flex');
-            weAreSorrySpan.css('display', 'none');
+            $('.reset-filters').css('display', 'block');
+            $('.reset-filters-standalone-clear-filter-button').css('display', 'block');
           }
-          resetFilters.css('display', 'inline-flex');
         }
       }
 
@@ -379,7 +392,6 @@
         let optionArray = [productOptionSelected, industryOptionSelected, companySizeOptionSelected];
 
         is_loading(true);
-
         manageClearButtonVisibility();
         try {
           const url = new URL(`/planet/case_studies/${productOptionSelected}/${industryOptionSelected}/${companySizeOptionSelected}/${offset}/${previousBackgroundImageDivCount}`, window.location.origin);
