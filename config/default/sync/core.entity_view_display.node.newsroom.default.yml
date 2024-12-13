@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.newsroom.field_external_source
     - field.field.node.newsroom.field_field_resources_metatag
     - field.field.node.newsroom.field_is_it_an_external_article
+    - field.field.node.newsroom.field_is_it_hidden
     - field.field.node.newsroom.field_news_html_content
     - field.field.node.newsroom.field_promoted_resource
     - field.field.node.newsroom.field_resources_background_image
@@ -56,6 +57,16 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 11
+    region: content
+  field_is_it_hidden:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 17
     region: content
   field_news_html_content:
     type: text_default

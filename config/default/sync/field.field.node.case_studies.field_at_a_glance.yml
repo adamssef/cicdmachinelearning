@@ -19,7 +19,7 @@ bundle: case_studies
 label: 'At a glance (bullet points ideally)'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

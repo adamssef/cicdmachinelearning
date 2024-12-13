@@ -1,0 +1,28 @@
+uuid: 7f3df062-64e5-4642-a42c-f49140a255a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_it_hidden
+    - node.type.newsroom
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.newsroom.field_is_it_hidden
+field_name: field_is_it_hidden
+entity_type: node
+bundle: newsroom
+label: 'Is it hidden?'
+description: 'Should the news be hidden from the /news and /news-archive pages? This page will only be reachable by direct URL.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

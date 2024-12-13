@@ -9,76 +9,34 @@ use Drupal\node\Entity\Node;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\path_alias\AliasManagerInterface;
-use Symfony\Component\HttpFoundation\Request;
+use Drupal\planet_core\Service\PlanetCoreMediaService\PlanetCoreMediaService;
 
 /**
  * Class PlanetCoreService - a helper class for article-related functionalities.
  */
 class PlanetCoreNewsService {
 
-  /**
-   * Entity type manager service.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
   protected $entityTypeManager;
-
-  /**
-   * @var \Drupal\Core\File\FileUrlGeneratorInterface
-   */
   protected $fileUrlGenerator;
-
-  /**
-   * The path alias manager.
-   *
-   * @var \Drupal\path_alias\AliasManagerInterface
-   */
   protected $pathAliasManager;
-
-  /**
-   * The language manager.
-   *
-   * @var \Drupal\Core\Language\LanguageManagerInterface
-   */
   protected $languageManager;
+  protected $planetCoreMediaService;
 
-
-  /**
-   * Constructs a new PlantCoreService object.
-   *
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   The entity type manager service.
-   * @param \Drupal\Core\File\FileUrlGeneratorInterface $file_url_generator
-   *  The file url generator service.
-   * @param \Drupal\path_alias\AliasManagerInterface $path_alias_manager
-   *   The path alias manager service.
-   */
   public function __construct(
     EntityTypeManagerInterface $entity_type_manager,
     FileUrlGeneratorInterface $file_url_generator,
     AliasManagerInterface $path_alias_manager,
     LanguageManagerInterface $language_manager,
-  ) {
+    PlanetCoreMediaService $planetCoreMediaService
+) {
     $this->entityTypeManager = $entity_type_manager;
     $this->fileUrlGenerator = $file_url_generator;
     $this->pathAliasManager = $path_alias_manager;
     $this->languageManager = $language_manager;
-  }
+    $this->planetCoreMediaService = $planetCoreMediaService;
+}
 
-  /**
-   * Truncates a string to the given length.
-   *
-   * @param string $text
-   *   The string to truncate.
-   * @param int $maxLength
-   *   The maximum length of the truncated string.
-   * @param string $suffix
-   *   The suffix to append to the truncated string. '...' by default.
-   *
-   * @return string
-   *   The truncated string.
-   */
-  public function truncateText($text, $maxLength, $suffix = '...') {
+public function truncateText($text, $maxLength, $suffix = '...') {
     if (mb_strlen($text) <= $maxLength) {
       return $text;
     } else {
@@ -88,111 +46,7 @@ class PlanetCoreNewsService {
       return rtrim($truncatedText);
     }
   }
-
-
-  public function getLastPublishedArticle() {
-    // Get the current page language code.
-    $language_code = $this->languageManager->getCurrentLanguage()->getId();
-
-    // Query for the last published article.
-    $query = $this->entityTypeManager->getStorage('node')->getQuery()
-      ->condition('status', 1) // 1 represents published nodes.
-      ->condition('type', 'resources') // Adjust to your content type name.
-      ->condition('field_promoted_resource', 1) // Filter by field_promoted_resource being true.
-      ->condition('langcode', $language_code) // Filter by language code.
-      ->sort('field_resources_published_time', 'DESC') // Sort by field_resources_published_time in descending order.
-      ->accessCheck()
-      ->range(0, 1); // Limit the result to 1 article.
-
-
-    $nids = $query->execute();
-
-    $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
-
-    foreach ($nodes as $node) {
-      $node = $node->getTranslation($language_code);
-
-      // Get node fields and prepare data.
-      $title = $node->get('title')->value;
-      $url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
-      $url = $language_code != "en" ? "/" . $language_code . $url : $url;
-      $article_tags = [];
-      $author_name = "";
-      $author_url = "";
-      $author_photo = "";
-      $background_image_url = "";
-
-      // Get Tags (field_resources_tags).
-      $tags_references = $node->get('field_resources_tags')->referencedEntities();
-
-      foreach ($tags_references as $tag) {
-        $tag_name = $tag->getName();
-        $tag_id = $tag->id();
-        $article_tags[] = [
-          'name' => $tag_name,
-          'id' => $tag_id,
-        ];
-      }
-
-      // Get Author information.
-      $author_id = $node->get('field_author')->target_id;
-
-      if ($author_id) {
-        // Load the author node.
-        $author = Node::load($author_id);
-
-        if ($author instanceof Node && $author->getType() == 'author') {
-          $author_name = $author->getTitle();
-          $mid = $author->get('field_profile_picture')->getValue()[0]['target_id'];
-          $media = Media::load($mid);
-          $fid = $media->field_media_image->target_id;
-          $file = File::load($fid);
-          $author_photo = $this->fileUrlGenerator->generateAbsoluteString($file->getFileUri());
-          $author_url = $author->toUrl()->toString();
-        }
-      }
-
-      // Get Background Image (field_resources_background_image).
-      $background_image_media = $node->get('field_resources_background_image')->entity;
-
-      if ($background_image_media instanceof Media) {
-        $background_image_file = $background_image_media->get('field_media_image')->entity;
-
-        if ($background_image_file instanceof File) {
-          $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
-        }
-      }
-
-      // Get Creation Date.
-      $custom_timestamp = $node->get('field_resources_published_time')->value;
-      $creation_date = date('F j, Y', $custom_timestamp);
-
-      // Get the summary/excerpt of the body field.
-      $body_summary = $node->get('field_resources_subtitle')->value;
-      $body_summary = $body_summary ? $this->truncateText($body_summary, 250) : "";
-
-      $title = $this->truncateText($title, 90);
-
-      // Return a single article.
-      return [
-        'url' => $url,
-        'title' => $title,
-        'background_image' => $background_image_url,
-        'creation_date' => $creation_date,
-        'tags' => $article_tags,
-        'body' => $body_summary,
-        'author' => [
-          'full_name' => $author_name,
-          'url' => $author_url,
-          'profile_picture' => $author_photo,
-        ],
-      ];
-    }
-
-    // Return null if no articles are found.
-    return null;
-  }
-
+  
 
   public function getLastPublishedNews() {
     // Get the current page language code.
@@ -201,13 +55,14 @@ class PlanetCoreNewsService {
     // Query for the last published article.
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('status', 1) // 1 represents published nodes.
-      ->condition('type', 'newsroom') // Adjust to your content type name.
-      ->condition('field_promoted_resource', 1) // Filter by field_promoted_resource being true.
-      ->condition('field_is_it_an_external_article', false) // Include only nodes where field_resources_published_time is not empty
-      ->condition('langcode', $language_code) // Filter by language code.
-      ->sort('field_resources_published_time', 'DESC') // Sort by field_resources_published_time in descending order.
+      ->condition('type', 'newsroom')
+      ->condition('field_promoted_resource', 1) 
+      ->condition('field_is_it_an_external_article', false) 
+      ->condition('field_is_it_hidden', false) 
+      ->condition('langcode', $language_code) 
+      ->sort('field_resources_published_time', 'DESC') 
       ->accessCheck()
-      ->range(0, 1); // Limit the result to 1 article.
+      ->range(0, 1);
 
 
     $nids = $query->execute();
@@ -236,18 +91,12 @@ class PlanetCoreNewsService {
         ];
       }
 
-      // Get Background Image (field_resources_background_image).
-      $background_image_media = $node->get('field_resources_background_image')->entity;
-
-      if ($background_image_media instanceof Media) {
-        $background_image_file = $background_image_media->get('field_media_image')->entity;
-
-        if ($background_image_file instanceof File) {
-          $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
-        }
+      $background_image_url = "";
+      $media_id = $node->get('field_resources_background_image')?->target_id;
+      if($media_id) {
+        $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large');
       }
-
-      // Get Creation Date.
+      
       $custom_timestamp = $node->get('field_resources_published_time')->value;
       $creation_date = date('F j, Y', $custom_timestamp);
 
@@ -299,17 +148,29 @@ class PlanetCoreNewsService {
       ->condition('type', 'newsroom')
       ->condition('status', 1)
       ->condition('field_is_it_an_external_article', 1, $is_external) // Include only nodes where field_resources_published_time is not empty
-      ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
-      ->condition('langcode', $language_code) // Filter by language code.
-      ->accessCheck();
+      ->condition('field_promoted_resource', 1, '!=')
+      ->condition('langcode', $language_code);
+
+      $or_group = $total_count->orConditionGroup()
+      ->notExists('field_is_it_hidden')
+      ->condition('field_is_it_hidden', '0');
+      $total_count->condition($or_group);
+
+      $total_count->accessCheck();
 
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'newsroom')
       ->condition('status', 1)
       ->condition('field_promoted_resource', 1, '!=') // Exclude nodes where field_promoted_resource is true.
-      ->condition('field_is_it_an_external_article', 1, $is_external) // Include only nodes where field_resources_published_time is not empty
-      ->condition('langcode', $language_code) // Filter by language code.
-      ->range($offset, $limit) // Apply offset and limit.
+      ->condition('field_is_it_an_external_article', 1, $is_external)
+      ->condition('langcode', $language_code);
+
+      $or_group = $query->orConditionGroup()
+      ->notExists('field_is_it_hidden')
+      ->condition('field_is_it_hidden', '0');
+      $query->condition($or_group);
+
+      $query->range($offset, $limit) // Apply offset and limit.
       ->sort('field_resources_published_time', 'DESC', $language_code)
       ->accessCheck();
 
@@ -360,22 +221,18 @@ class PlanetCoreNewsService {
         ];
       }
 
-      // Get Background Image (field_resources_background_image).
-      $background_image_media = $node->get('field_resources_background_image')->entity;
-      $background_image_url = '';
-
-      if ($background_image_media instanceof Media) {
-        $background_image_file = $background_image_media->get('field_media_image')->entity;
-
-        if ($background_image_file instanceof File) {
-          $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
-        }
+      $background_image_url = "";
+      $media_id = $node->get('field_resources_background_image')?->target_id;
+      if($media_id) {
+        $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large');
       }
+      
 
       $custom_timestamp = $node->get('field_resources_published_time')->value;
       $external_url = $node->get('field_e')->value;
       $external_source = $node->get('field_external_source')->value;
       $is_external_value = $node->get('field_is_it_an_external_article')->value;
+      $is_it_hidden = $node->get('field_is_it_hidden')->value;
       $creation_date = date('F j, Y', $custom_timestamp);
       $node_id = $node->id();
 
@@ -387,6 +244,7 @@ class PlanetCoreNewsService {
         'external_url' => $external_url,
         'external_source' => $external_source,
         'is_external_value' => $is_external_value,
+        'is_hidden' => $is_it_hidden,
         'background_image' => $background_image_url,
         'published_date' => $published_date,
         'creation_date' => $creation_date,

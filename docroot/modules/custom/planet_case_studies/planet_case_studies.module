@@ -70,10 +70,9 @@ function planet_case_studies_preprocess_node(array &$variables) {
   if ($node->getType() === 'case_studies') {
     $node_translation_service = \Drupal::getContainer()->get('planet_core.node_translation_service');
     $contact_sales_this_languge_url = $node_translation_service->getTranslationArrWithPrefixes('/contact/sales');
-    $case_study_url = $node_translation_service->getTranslationArrWithPrefixes('/case-studies');
     $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $variables['contact_sales_url'] = $contact_sales_this_languge_url[$lang_id] ?? $contact_sales_this_languge_url['en'];
-    $variables['case_studies_url'] = $case_study_url[$lang_id] ?? $case_study_url['en'];
+    $variables['case_studies_url'] = _get_case_studies_url();
 
     $variables['case_study_data'] = $case_studies_helper->getSingleCaseStudyData($node);
     $variables['case_studies'] = $case_studies_helper->getCaseStudiesForMoreBlock(0, 4, $variables['case_study_data']['products'], $variables['case_study_data']['industry'], $variables['case_study_data']['company_size']);
@@ -112,6 +111,18 @@ function planet_case_studies_preprocess_node(array &$variables) {
       }
     }
   }
+}
+
+
+/**
+ * Gets the case studies URL for a current language.
+ */
+function _get_case_studies_url() {
+  $node_translation_service = \Drupal::getContainer()->get('planet_core.node_translation_service');
+  $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $case_study_url = $node_translation_service->getTranslationArrWithPrefixes('/case-studies');
+
+  return $case_study_url[$lang_id] ?? $case_study_url['en'];
 }
 
 /**
