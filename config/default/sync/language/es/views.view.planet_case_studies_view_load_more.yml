@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      filters:
+        field_product_type_target_id:
+          group_info:
+            description: ''
+      header:
+        area:
+          content:
+            value: '<div><span class="case-studies-view-header">Descubre las empresas que generan impacto con Planet</span></div>'
+            format: cohesion
+      footer:
+        area:
+          content:
+            value: '<div class="loader"><img src="/resources/icons/loader.svg"></div><p><button class="load-more-button">Load more</button></p>'
+            format: cohesion
