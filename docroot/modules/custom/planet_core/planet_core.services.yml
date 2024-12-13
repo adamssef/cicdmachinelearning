@@ -4,7 +4,7 @@ services:
     arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager', '@planet_core.media_service']
   planet_core.news_helper:
     class: Drupal\planet_core\Service\PlanetCoreNewsService
-    arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager']
+    arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager' , '@planet_core.media_service']
   planet_core.ebooks_helper:
     class: Drupal\planet_core\Service\PlanetCoreEbooksService
     arguments: ['@entity_type.manager', '@file_url_generator', '@path_alias.manager', '@language_manager']
