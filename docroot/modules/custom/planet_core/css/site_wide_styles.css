@@ -64,6 +64,20 @@
       /* The first section is shown by default */
   }
 
+/*  
+  @media (max-width: 500px) {
+    .plnt-switch .toggle button {
+      font-size: 9pt;
+      padding: 0 0.5rem
+    }
+  }
+  @media (max-width: 370px) {
+    .plnt-switch .toggle button {
+      font-size: 7pt;
+      padding: 0 0.1rem
+    }
+  } */
+
 .plnt-btn-pink {
     font-size: 16px;
     font-weight: 700;
