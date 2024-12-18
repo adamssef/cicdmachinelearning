@@ -1,0 +1,13 @@
+tailwind:
+  css:
+    theme:
+      dist/css/styles.css: {}
+      css/planet-customer-resources-library.css: {}
+  js:
+    js/views-ajax-filter.js: {}
+    js/text-search.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.ajax
+    - core/once

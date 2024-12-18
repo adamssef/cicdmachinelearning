@@ -14,9 +14,6 @@ dependencies:
     - node.type.planet_resources
     - taxonomy.vocabulary.resources_categories
     - taxonomy.vocabulary.resources_types
-  content:
-    - 'taxonomy_term:resources_categories:78138e88-2282-404b-b2fc-1902e701ad0b'
-    - 'taxonomy_term:resources_categories:b147a4f8-c915-4cee-b1fa-dcc2c8626fe0'
   module:
     - cohesion
     - dynamic_entity_reference
@@ -676,7 +673,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1373,7 +1369,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1412,14 +1407,17 @@ display:
         style: false
         row: false
       display_description: ''
-      display_extenders: {  }
+      exposed_block: true
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -2144,7 +2142,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -2793,7 +2790,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:

@@ -1,0 +1,23 @@
+{{ content._layout_builder[0].content }}
+
+<div class="flex justify-center">
+    <div class="layout-container flex flex-1 flex-col sm:flex-row justify-center max-w-[1280px] px-4 mx-auto pt-[30px] sm:pt-[70px] pb-[60px]">
+        <div class="px-3">
+            <div class="max-w-[250px] flex-1  w-full md:w-[250px]">{{ content._layout_builder[1].first }}</div>
+            <div class="max-w-[250px] flex-1  w-full md:w-[250px] bg-black p-[15px] mt-[30px] rounded-[8px] h-[173px]">
+                <img src="/resources/icons/customer_resources_library/headphones.png" alt="Headphones"/>
+                <span class="block text-2xl text-white font-semibold mt-[5px] leading-[24px]">{{ "Need Help?"|t }}</span>
+                <span class="block text-base font-light text-white my-[12px] mb-[20px] leading-[16px]">{{ "Contact your Planet support team"|t }}</span>
+                <a class="inline-flex text-base font-semibold text-white leading-[18px]" href="/support">{{ "Contact Us"|t }} <img  class="ml-5" src="/resources/icons/customer_resources_library/arrow-right-white.png" alt="Arrow pointing right"></a>
+            </div>
+            <div class="max-w-[250px] flex-1  w-full md:w-[250px] bg-white p-[15px] mt-[25px] border border-solid border-[#ddd] rounded-[8px] min-h-[173px]">
+                <img src="/resources/icons/customer_resources_library/bulb.png" alt="Bulb"/>
+                <span class="block text-2xl text-black font-semibold mt-[5px] leading-[24px]">{{ "Get started with Planet products"|t }}</span>
+                <span class="block text-base font-light text-black my-[12px] mb-[20px] leading-[16px]">{{ "Explore all the information to start using our products"|t }}</span>
+                <a class="inline-flex text-base font-semibold text-black leading-[18px]" href="/support">{{ "View contents"|t }}<img class="ml-5 invert" src="/resources/icons/customer_resources_library/arrow-right-white.png" alt="Arrow pointing right"></a>
+            </div>
+        </div>
+        {{ content._layout_builder[1].second }}
+    </div>
+</div>
+
