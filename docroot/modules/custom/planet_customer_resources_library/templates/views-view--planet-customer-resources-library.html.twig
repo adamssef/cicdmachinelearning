@@ -1,0 +1,22 @@
+
+<div class="">
+    <div class="search-results__container flex flex-col hidden flex-1">
+        <span class="hidden search-results__span text-3xl font-semibold mb-8">{{ "Search results for:"|t }}</span>
+        <span class="hidden search-results-sorry__span">{{ "Sorry, we couldn't find any matches for your search. Feel free to reach out to our support team for assistance!"|t }}</span>
+    </div>
+    <div class="content-container max-w-[1280px] grid gap-6 md:grid-cols-2 lg:grid-cols-3 px-3">
+    {% for resource in resources %}
+        <div class="flex flex-col md:flex-wrap p-6 border border-solid rounded-[8px] border-[rgba(209,209,209,1)]">
+            <img src="{{ resource.icon }}" alt="Resource icon" class="mb-[25px] h-[50px] w-fit"/>
+            <span class="border-l-[4px] border-l-[rgba(224,0,131,1)] border-solid block font-bold text-lg mb-2 text-[14px] pl-[18px] pb-[3px] h-[20px] leading-[14px]">{{ resource.sub_heading|t }}</span>
+            <span class="block font-semibold text-xl mb-2 text-2xl">{{ resource.title|t }}</span>
+            <span class="block text-gray-600 mb-5  font-light leading-[22px]">{{ resource.description|t|striptags|replace({'&nbsp;': ' '}) }}</span>
+            {%  if resource.download_link %}
+                <span class="flex justify-between"><a target="_blank" href="{{ resource.link }}" class="w-fit inline-block bg-[rgba(32,32,32,1)] text-white inline-block no-underline text-[16px] font-bold px-[20px] py-[12px] rounded-[46px]">View {{ resource.resource_type|t|capitalize }}<a download="{{ resource.filename }}" class="download-btn" target="_blank" href="{{  resource.download_link }}">Download <img src="/resources/icons/customer_resources_library/download-icon.png" alt="Download icon"></a></a></span>
+            {% else  %}
+                <a target="_blank" href="{{ resource.link }}" class="w-fit inline-block bg-[rgba(32,32,32,1)] text-white inline-block no-underline text-[16px] font-bold px-[20px] py-[12px] rounded-[46px]">View {{ resource.resource_type|t|capitalize }}</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,5 @@
+name: 'planet_customer_resources_library'
+type: module
+description: 'Provides &quot;Customer resources library&quot; page implementation'
+package: Planet
+core_version_requirement: ^10

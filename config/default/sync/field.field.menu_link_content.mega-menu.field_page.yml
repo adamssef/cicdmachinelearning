@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.menu_link_content.field_page
     - node.type.advanced_product_page
+    - node.type.layout_builder_page
     - node.type.page
     - system.menu.mega-menu
   module:
@@ -28,6 +29,7 @@ settings:
     target_bundles:
       advanced_product_page: advanced_product_page
       page: page
+      layout_builder_page: layout_builder_page
     sort:
       field: _none
       direction: ASC

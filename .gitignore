@@ -10,7 +10,8 @@
 /docroot/modules/custom/planet_playwright/playwright-report
 /docroot/modules/custom/planet_playwright/test-results
 /docroot/modules/custom/planet_playwright/url_content_mapping.json
-
+/docroot/modules/custom/planet_playwright
+/docroot/modules/custom/*/node_modules
 
 # Ignore Drupal's file directory
 /docroot/sites/*/files/
@@ -33,6 +34,15 @@
 
 # Ignore profile development.
 .gitmodules
+/*.sql
+/*.gz
+/*.7z
+/*.zip
+/node_modules
+/docroot/modules/custom/planet_playwright.7z
+/docroot/modules/custom/planet_playwright.zip
+
+
 
 # Ignore tests reports.
 /tests/_reports/

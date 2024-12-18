@@ -1,0 +1,28 @@
+planet_customer_resources_library.filtered_resources:
+  path: '/api/views/planet_resources/{category}'
+  defaults:
+    _controller: '\Drupal\planet_customer_resources_library\Controller\ResourcesController::getFilteredContent'
+    _title: 'Filtered Resources'
+  requirements:
+    _permission: 'access content'
+    category: '.+'
+  options:
+    no_cache: TRUE
+    parameters:
+      category:
+        type: string
+planet_customer_resources_library.filtered_resources_with_text:
+  path: '/api/views/planet_resources/{category}/{text}'
+  defaults:
+    _controller: '\Drupal\planet_customer_resources_library\Controller\ResourcesController::getFilteredContentWithText'
+    _title: 'Filtered Resources with Text'
+  requirements:
+    _permission: 'access content'
+    category: '.+'
+  options:
+    no_cache: TRUE
+    parameters:
+      category:
+        type: string
+      text:
+        type: string

@@ -63,6 +63,8 @@ module:
   jquery_ui: 0
   key: 0
   language: 0
+  layout_builder: 0
+  layout_discovery: 0
   link: 0
   locale: 0
   login_security: 0
@@ -99,6 +101,7 @@ module:
   planet_config: 0
   planet_core: 0
   planet_custom_access: 0
+  planet_customer_resources_library: 0
   planet_footer: 0
   planet_header: 0
   planet_html_sitemap: 0
