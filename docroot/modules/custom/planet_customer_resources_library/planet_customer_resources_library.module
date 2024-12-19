@@ -35,11 +35,13 @@ function planet_customer_resources_library_preprocess_page(array &$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if ($node) {
-    $node_id = $node->id();
     $route_object = \Drupal::routeMatch()->getRouteObject();
     $is_admin = \Drupal::service('router.admin_context')->isAdminRoute($route_object);
 
-    if ($node_id === '5622' && !$is_admin) {
+    $current_url = \Drupal::service('path.current')->getPath();
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
+
+    if ($alias === '/customer-resources-library' && !$is_admin) {
       $variables['#attached']['library'][] = 'planet_customer_resources_library/tailwind';
 
     }
