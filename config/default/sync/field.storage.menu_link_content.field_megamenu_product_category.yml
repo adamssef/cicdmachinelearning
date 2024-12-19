@@ -16,19 +16,19 @@ settings:
       label: 'Accept payments'
     -
       value: software_for_hospitaility
-      label: 'Software for Hospitaility'
+      label: 'Software for hospitaility'
     -
       value: software_for_retail
-      label: 'Software for Retail'
+      label: 'Software for retail'
     -
       value: serve_any_customer
       label: 'Serve any customer'
     -
       value: tax_free_for_merchants
-      label: 'Tax Free for Merchants'
+      label: 'Tax Free for merchants'
     -
       value: tax_free_for_shoppers
-      label: 'Tax Free for Shoppers'
+      label: 'Tax Free for shoppers'
   allowed_values_function: ''
 module: options
 locked: false
