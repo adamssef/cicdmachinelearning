@@ -38,7 +38,7 @@
             <div class="flex items-center h-full flex-col-reverse md:flex-row">
                 <div class="w-full md:w-6/12  px-4 md:px-8">
           <span
-                  class="block text-sm font-semibold leading-4 pl-4 border-l-4 border-solid border-l-[#E00083] mb-4">{{ "Accept Payments"|t }}</span>
+                  class="block text-sm font-semibold leading-4 pl-4 border-l-4 border-solid border-l-[#E00083] mb-4">{{ "ACCEPT PAYMENTS"|t }}</span>
                     <span
                             class="block font-semibold text-[28px] lg:text-5xl mb-4">{{ "Accept payments anywhere"|t }}</span>
                     <p
@@ -97,7 +97,7 @@
         <div class="lg:justify-center lg:flex-wrap lg:flex lg:gap-x-[80px]">
             <div class="mb-6 md:mb-8 lg:mb-8 w-auto md:w-[488px] lg:w-[444px]">
                 <div class="font-semibold mb-2 leading-[30px] text-2xl">{{ "Localised checkout options"|t }}</div>
-                <div class="font-light text-base md:text-xl leading-[22px] md:leading-7">{{ "Planet provides a wide variety of payment methods, giving all shoppers the ways they love to pay"|t }}</div>
+                <div class="font-light text-base md:text-xl leading-[22px] md:leading-7">{{ "Planet provides a wide variety of payment methods, giving all shoppers the ways they love to pay."|t }}</div>
             </div>
             <div class="mb-6 md:mb-8 lg:mb-8 w-auto md:w-[488px] lg:w-[444px]">
                 <div class="font-semibold mb-2 leading-[30px] text-2xl">{{ "Choice of currency"|t }}</div>
@@ -109,7 +109,7 @@
             </div>
             <div class="mb-6 md:mb-8 lg:mb-8 w-auto md:w-[488px] lg:w-[444px]">
                 <div class="font-semibold mb-2 leading-[30px] text-2xl">{{ "Security by design"|t }}</div>
-                <div class="font-light text-base md:text-xl leading-[22px] md:leading-7">{{ "Planet conforms to the highest levels of security with a PCI Level 1 certification"|t }}</div>
+                <div class="font-light text-base md:text-xl leading-[22px] md:leading-7">{{ "Planet conforms to the highest levels of security with a PCI Level 1 certification."|t }}</div>
             </div>
         </div>
     </div>
@@ -140,8 +140,8 @@
             <div class="w-full">
                 <div class="flex-start flex flex-col w-full justify-between">
                     <div>
-                        <img class="self-start pt-[12px] pb-[15px]"
-                             src="/resources/icons/bed_white.svg" alt="Bed">
+                        <img class="self-start pt-[12px] -mb-[6px]"
+                             src="/resources/icons/hospitality-payments.svg" alt="Bed">
                         <div class="flex items-center">
                             <span class="min-w-[137px] xs:max-w-[120px] xs:min-w-[100px] my-[25px] text-2xl mr-[99px] w-full">{{ "Hospitality"|t }}</span>
                             <img
@@ -155,8 +155,8 @@
         <a href="{{ travel_url }}">
             <div class="group flex items-end h-[240px] lg:max-w-[304px] box-content border border-solid border-white rounded-2xl px-6">
                 <div class="flex-start flex flex-col w-full justify-between">
-                    <img class="self-start pt-[12px] pb-[15px]"
-                         src="/resources/icons/sport_car_white.svg"
+                    <img class="self-start pt-[12px] pb-[10px] -mb-[10px] w-12"
+                         src="/resources/icons/car-white.svg"
                          alt="Sport car">
                     <div class="flex items-center">
                         <span class="min-w-[137px] xs:max-w-[120px] xs:min-w-[100px] my-[25px] text-2xl mr-[99px] w-full">{{ "Travel"|t }}</span>
@@ -196,7 +196,7 @@
                                     <div class="bg-zinc-50 p-4 md:p-8 h-full w-full text-center">
                                         <img src="{{ testimonial.logo }}"
                                              alt="{{ testimonial.name }} Logo"
-                                             class="max-w-44 mx-auto mb-6 h-[100px]">
+                                             class="mx-auto mb-6 h-[100px]">
                                         <h1 class="text-xl mb-6">{{ testimonial.vertical_text|t }}</h1>
                                         <p class="font-light text-[#202020] text-xl leading-7 mb-6">{{ testimonial.review|t }}</p>
                                         <p class="text-[#202020]">{{ testimonial.person }}</p>

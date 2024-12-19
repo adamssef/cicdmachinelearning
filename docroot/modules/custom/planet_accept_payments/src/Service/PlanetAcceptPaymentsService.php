@@ -87,7 +87,7 @@ class PlanetAcceptPaymentsService {
       "in_person" => [
         "is_main" => TRUE,
         "img_path" => "/resources/images/accept_payments_inperson.jpg",
-        "title" => "In Person",
+        "title" => "In-person",
         "class" => "inperson",
         "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["In person"])[$current_language_prefix] ?? $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["In person"])['en'],
         "children" => [
