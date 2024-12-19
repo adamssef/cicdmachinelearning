@@ -41,6 +41,7 @@ function planet_customer_resources_library_preprocess_page(array &$variables) {
     $current_url = \Drupal::service('path.current')->getPath();
     $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
 
+    // It's better to check on alias than node ID.
     if ($alias === '/customer-resources-library' && !$is_admin) {
       $variables['#attached']['library'][] = 'planet_customer_resources_library/tailwind';
 
