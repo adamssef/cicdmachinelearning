@@ -1,0 +1,22 @@
+uuid: 73140104-4117-434c-87f1-227af51e0b31
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.paragraph_case_study_metrics
+id: paragraph.paragraph_case_study_metrics.status
+field_name: status
+entity_type: paragraph
+bundle: paragraph_case_study_metrics
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,13 +1,13 @@
-uuid: 2393f83c-420b-4c45-a5f7-ce05c9d5cda2
+uuid: 43a0368d-6547-4615-bef7-7f7a74a2766c
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.author
-id: node.author.title
-field_name: title
-entity_type: node
-bundle: author
+    - taxonomy.vocabulary.company_size
+id: taxonomy_term.company_size.name
+field_name: name
+entity_type: taxonomy_term
+bundle: company_size
 label: Name
 description: ''
 required: true

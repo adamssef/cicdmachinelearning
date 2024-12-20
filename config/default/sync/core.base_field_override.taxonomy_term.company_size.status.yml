@@ -1,0 +1,22 @@
+uuid: b2e1bc5f-023e-4137-afdf-1de4211c1443
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.company_size
+id: taxonomy_term.company_size.status
+field_name: status
+entity_type: taxonomy_term
+bundle: company_size
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

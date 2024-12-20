@@ -1,0 +1,18 @@
+uuid: a16161d5-9d1e-4b37-9924-e913f80ed48b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.mega-menu
+id: menu_link_content.mega-menu.title
+field_name: title
+entity_type: menu_link_content
+bundle: mega-menu
+label: 'Menu link title'
+description: 'The text to be used for this link in the menu.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

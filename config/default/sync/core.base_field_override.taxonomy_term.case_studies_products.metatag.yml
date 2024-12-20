@@ -1,0 +1,20 @@
+uuid: 653b2b8d-87f9-4987-9660-1bd5357fb10d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.case_studies_products
+  module:
+    - metatag
+id: taxonomy_term.case_studies_products.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: case_studies_products
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The computed meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag_computed

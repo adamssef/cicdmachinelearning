@@ -1,20 +1,20 @@
-uuid: a138bffe-3ea6-4ded-b58a-186cb5d1cae2
+uuid: 00470ab1-dbe8-4530-89f7-2c5d3ad0d56f
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.author
-id: node.author.promote
+    - node.type.layout_builder_page
+id: node.layout_builder_page.promote
 field_name: promote
 entity_type: node
-bundle: author
+bundle: layout_builder_page
 label: 'Promoted to front page'
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'

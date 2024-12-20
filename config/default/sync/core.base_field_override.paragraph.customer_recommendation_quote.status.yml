@@ -1,0 +1,22 @@
+uuid: ed08a802-8feb-4f86-94d4-cc57ec06bf96
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.customer_recommendation_quote
+id: paragraph.customer_recommendation_quote.status
+field_name: status
+entity_type: paragraph
+bundle: customer_recommendation_quote
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

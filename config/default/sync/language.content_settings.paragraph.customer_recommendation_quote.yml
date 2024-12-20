@@ -1,0 +1,18 @@
+uuid: 8e5b5bbe-1d1a-4208-a8c1-5d4ab4ebba78
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.customer_recommendation_quote
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.customer_recommendation_quote
+target_entity_type_id: paragraph
+target_bundle: customer_recommendation_quote
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,22 @@
+uuid: 5ebbaa58-d80d-4cd5-aec2-2a8bc9e5ae41
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.grow_business_with_planet
+id: paragraph.grow_business_with_planet.status
+field_name: status
+entity_type: paragraph
+bundle: grow_business_with_planet
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

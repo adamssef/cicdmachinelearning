@@ -1,0 +1,18 @@
+uuid: 2bb05874-2054-4d30-9e21-30b47bd1650c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.case_studies_products
+id: taxonomy_term.case_studies_products.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: case_studies_products
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

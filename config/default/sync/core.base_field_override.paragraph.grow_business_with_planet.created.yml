@@ -1,0 +1,18 @@
+uuid: 1216e328-9a56-418a-a605-59b1555d6b7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.grow_business_with_planet
+id: paragraph.grow_business_with_planet.created
+field_name: created
+entity_type: paragraph
+bundle: grow_business_with_planet
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created
