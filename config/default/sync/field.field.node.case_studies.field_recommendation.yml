@@ -19,7 +19,7 @@ bundle: case_studies
 label: Quote
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -32,13 +32,22 @@ settings:
       customer_recommendation_quote:
         weight: 5
         enabled: true
+      favourite_planet_features:
+        weight: 9
+        enabled: false
       grow_business_with_planet:
         weight: 6
+        enabled: false
+      link_box:
+        weight: 11
         enabled: false
       paragraph_case_study_metrics:
         weight: 7
         enabled: false
       right_side_mega_menu:
         weight: 8
+        enabled: false
+      tip_box:
+        weight: 14
         enabled: false
 field_type: entity_reference_revisions
