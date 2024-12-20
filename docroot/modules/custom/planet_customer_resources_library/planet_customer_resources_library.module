@@ -22,8 +22,7 @@ function planet_customer_resources_library_theme() {
     ],
     'block__views_exposed_filter_block__planet_resources_block_2' => [
       'template' => 'block--views-exposed-filter-block--planet-resources-block-2',
-      'base hook' => '
-      ',
+      'base hook' => 'block',
     ],
   ];
 }
