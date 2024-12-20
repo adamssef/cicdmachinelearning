@@ -70,12 +70,12 @@ function planet_customer_resources_library_theme_suggestions_node_alter(array &$
     $translations = $node_translation_service->buildTranslationArrayForNode($node);
     $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
-    if (in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
-      $suggestions[] = 'node__planet_customer_resources_library';
+    if ($alias === '/customer-resources-library') {
+      if (in_array($alias, $translations) || in_array("/$lang_id" . $alias, $translations)) {
+        $suggestions[] = 'node__planet_customer_resources_library';
+      }
     }
-
   }
-
 }
 
 function planet_customer_resources_library_theme_suggestions_views_view_alter(array &$suggestions, array &$variables) {

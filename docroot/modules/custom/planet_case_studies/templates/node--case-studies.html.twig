@@ -4,7 +4,7 @@
 	</div>
 {% endif %}
 {% if case_study_data['title'] %}
-	<h1 class="case-study-page__h1 case-study-page__h1 case-study-page__h1--customer-info not-displayed">{{ case_study_data['title'] }}</h1>
+	<h1 class="case-study-page__h1 case-study-page__h1 case-study-page__h1--customer-info not-displayed">{{ case_study_data['title']|t }}</h1>
 {% endif %}
 <div class="case-study-page__meta-container">
     {% if case_study_data['company_name'] %}
@@ -23,13 +23,13 @@
             {% if case_study_data['industry'] %}
                 <div class="case-study-page__customer-info__container">
                     <label class="customer-info__label customer-info__label--industry">{{ "Industry"|t }}</label>
-                    <span>{{ case_study_data['industry'] }}</span>
+                    <span>{{ case_study_data['industry']|t }}</span>
                 </div>
             {% endif %}
             {% if case_study_data['headquarter_country'] %}
                 <div class="case-study-page__customer-info__container">
                     <label class="customer-info__label customer-info__label--headquarter">{{ "Headquarter"|t }}</label>
-                    <span>{% if case_study_data['headquarter_city'] %}{{ case_study_data['headquarter_city'] }}, {% endif %}{{ case_study_data['headquarter_country'] }}</span>
+                    <span>{% if case_study_data['headquarter_city'] %}{{ case_study_data['headquarter_city'] }}, {% endif %}{{ case_study_data['headquarter_country']|t }}</span>
                 </div>
             {% endif %}
             {% if case_study_data['products']|length > 0 %}
@@ -37,7 +37,7 @@
                     <label class="customer-info__label customer-info__label--products">{% if case_study_data['products']|length == 1 %}{{ "Product"|t }}{% else %}{{ "Products"|t }}{% endif %}</label>
                     <ul class="customer-info__label--products__ul">
                         {% for product in case_study_data['products'] %}
-                            <li class="customer-info__label--products__li">{{ product }}</li>
+                            <li class="customer-info__label--products__li">{{ product|t }}</li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -51,7 +51,7 @@
     {% endif %}
 	<div class="plnt-blog-single-page plnt-news-single-page plnt-case-study-single-page">
 		{% if case_study_data['title'] %}
-			<h1 class="case-study-page__h1 case-study-page__h1--case-study-page">{{ case_study_data['title'] }}</h1>
+			<h1 class="case-study-page__h1 case-study-page__h1--case-study-page">{{ case_study_data['title']|t }}</h1>
 		{% endif %}
 
 		{% if case_study_data['metrics'] %}
@@ -60,7 +60,7 @@
 						<div class="case-study-page__metrics__container">
 							<div class="case-study-page__metrics__container__text">
 								<div class="metric-value">{{ metric['value'] }}</div>
-								<div class="metric-label">{{ metric['label'] }}</div>
+								<div class="metric-label">{{ metric['label']|t }}</div>
 							</div>
 						</div>
 					{% endfor %}
@@ -85,11 +85,11 @@
 						<div >
 							<div class="case-study-page__recommendation__text__container">
 								<img class="case-study-page__recommendation__text__container__image--start" src="/resources/typography/pink_quote_with_tail_up.svg">
-								<div><span>{{ recommendation.recommendation_text }}</span></div>
+								<div><span>{{ recommendation.recommendation_text|t }}</span></div>
 								<img class="case-study-page__recommendation__text__container__image--end" src="/resources/typography/pink_quote_with_tail_down.svg">
 							</div>
 							<div class="case-study-page__recommendation__name">{{ recommendation.fname_and_sname }}</div>
-							<div class="case-study-page__recommendation__role">{{ case_study_data['company_name'] }}, {{ recommendation.role }}</div>
+							<div class="case-study-page__recommendation__role">{{ case_study_data['company_name'] }}, {{ recommendation.role|t }}</div>
 						</div>
 					</div>
 				</div>
@@ -99,7 +99,7 @@
 			<div class="video-wrapper">
 				<iframe class="responsive-iframe" src="{{ case_study_data['oembed_url'] }}" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Planet helps Coin realise its omnichannel goals"></iframe>
 			</div>
-			<div class="video-subtext">{{ case_study_data['video_subtext'] }}</div>
+			<div class="video-subtext">{{ case_study_data['video_subtext']|t }}</div>
 		{% endif %}
 		{% if case_study_data['challenge_text'] %}
 			<div class="case-study-page__the-challenge">
@@ -114,7 +114,7 @@
                 <div class="link-box__image" style="background: url({{ case_study_data['link_box']['image'] }}) lightgray 50% / cover no-repeat;"></div>
                 <div class="link-box__text">
                     <h3 class="case-study-page__h3">{{ case_study_data['link_box']['title']|t }}</h3>
-                    <a href="{{ case_study_data['link_box']['link'] }}" class="link-box__link">{{ case_study_data['link_box']['text'] }}<img src="/resources/icons/arrow-right-megamenu-blue.svg"></a>
+                    <a href="{{ case_study_data['link_box']['link'] }}" class="link-box__link">{{ case_study_data['link_box']['text']|t }}<img src="/resources/icons/arrow-right-megamenu-blue.svg"></a>
                 </div>
             </div>
         {% endif %}
@@ -125,16 +125,6 @@
                 </div>
             </div>
         {% endif %}
-		{% if content.field_layout_canvas %}
-			<div class="case-study-page__link-box">
-				{{ content.field_layout_canvas }}
-			</div>
-		{% endif %}
-		{% if content.field_layout_canvas_2 %}
-			<div class="case-study-page__tip-box">
-				{{ content.field_layout_canvas_2 }}
-			</div>
-		{% endif %}
 		{% if  case_study_data['solution_text'] %}
 			<div class="case-study-page__the-solution">
 				<h2 class="case-study-page__h2">{{ "The solution"|t }}</h2>
@@ -159,20 +149,15 @@
 
         {% if case_study_data['favourite_features']['text_items'] %}
             <div class="fav-features">
-                <span class="fav-features__label">{{ case_study_data['favourite_features']['title'] }}</span>
+                <span class="fav-features__label">{{ case_study_data['favourite_features']['title']|t }}</span>
                 <ul>
                     {% for feature in case_study_data['favourite_features']['text_items'] %}
-                        <li><span>{{ feature }}</span></li>
+                        <li><span>{{ feature|t }}</span></li>
                     {% endfor %}
                 </ul>
             </div>
 
         {% endif %}
-		{% if content.field_layout_canvas_3 %}
-			<div class="case-study-page__tip-box case-study-page__three_favorite_features">
-				{{ content.field_layout_canvas_3 }}
-			</div>
-		{% endif %}
 		{% if (case_study_data['grow_your_business_settings']['size'] == 'medium') %}
             {% include '/modules/custom/planet_case_studies/templates/block--grow-business-with-planet.html.twig' with { contact_sales_url: contact_sales_url, case_studies: case_studies_url } %}
 		{% endif %}
