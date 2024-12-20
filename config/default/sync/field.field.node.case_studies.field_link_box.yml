@@ -19,7 +19,7 @@ bundle: case_studies
 label: 'Link box'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -31,6 +31,9 @@ settings:
     target_bundles_drag_drop:
       customer_recommendation_quote:
         weight: 6
+        enabled: false
+      favourite_planet_features:
+        weight: 9
         enabled: false
       grow_business_with_planet:
         weight: 7
