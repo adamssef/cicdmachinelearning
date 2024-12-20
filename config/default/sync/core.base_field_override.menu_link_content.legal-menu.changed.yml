@@ -1,0 +1,18 @@
+uuid: 3a037cef-148b-4046-9b4a-2522e5342830
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.legal-menu
+id: menu_link_content.legal-menu.changed
+field_name: changed
+entity_type: menu_link_content
+bundle: legal-menu
+label: Changed
+description: 'The time that the menu link was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

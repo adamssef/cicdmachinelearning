@@ -1,0 +1,18 @@
+uuid: 4fb13fdf-3641-4301-99a6-9158857b2daf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.layout_builder_page
+id: node.layout_builder_page.changed
+field_name: changed
+entity_type: node
+bundle: layout_builder_page
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

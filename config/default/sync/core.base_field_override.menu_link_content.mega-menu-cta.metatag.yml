@@ -1,0 +1,20 @@
+uuid: a5da50ad-6e71-412d-95e7-32796a785e7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.mega-menu-cta
+  module:
+    - metatag
+id: menu_link_content.mega-menu-cta.metatag
+field_name: metatag
+entity_type: menu_link_content
+bundle: mega-menu-cta
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The computed meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag_computed

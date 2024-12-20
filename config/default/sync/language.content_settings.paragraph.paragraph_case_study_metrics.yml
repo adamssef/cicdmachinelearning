@@ -1,0 +1,18 @@
+uuid: c64a9545-7386-447a-8a76-05b40d82979f
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.paragraph_case_study_metrics
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.paragraph_case_study_metrics
+target_entity_type_id: paragraph
+target_bundle: paragraph_case_study_metrics
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,20 @@
+uuid: ad170a2f-bc50-4232-a0e8-a882ce4f14c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.company_size
+  module:
+    - path
+id: taxonomy_term.company_size.path
+field_name: path
+entity_type: taxonomy_term
+bundle: company_size
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

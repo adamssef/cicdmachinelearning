@@ -1,0 +1,22 @@
+uuid: c52f1a82-0d16-448d-9866-9e6f3d924638
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.case_studies_products
+id: taxonomy_term.case_studies_products.status
+field_name: status
+entity_type: taxonomy_term
+bundle: case_studies_products
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

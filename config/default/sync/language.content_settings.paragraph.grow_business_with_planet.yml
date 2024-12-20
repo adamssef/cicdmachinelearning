@@ -1,0 +1,18 @@
+uuid: 5beacb72-44d9-4fa9-bbf4-38a69abb6032
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.grow_business_with_planet
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.grow_business_with_planet
+target_entity_type_id: paragraph
+target_bundle: grow_business_with_planet
+default_langcode: site_default
+language_alterable: false

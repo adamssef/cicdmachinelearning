@@ -1,0 +1,18 @@
+uuid: 5cf7bcc6-1985-4762-99a7-d632065ebc46
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.legal-menu
+id: menu_link_content.legal-menu.description
+field_name: description
+entity_type: menu_link_content
+bundle: legal-menu
+label: Description
+description: 'Shown when hovering over the menu link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

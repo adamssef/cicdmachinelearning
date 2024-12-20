@@ -1,0 +1,20 @@
+uuid: 33af1841-d4e8-46b3-aa46-8323052d1bf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.case_studies_products
+  module:
+    - path
+id: taxonomy_term.case_studies_products.path
+field_name: path
+entity_type: taxonomy_term
+bundle: case_studies_products
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

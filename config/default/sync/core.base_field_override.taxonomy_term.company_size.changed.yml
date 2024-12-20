@@ -1,0 +1,18 @@
+uuid: 2ce42aad-7266-4412-9ecc-75d0c6c1c7cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.company_size
+id: taxonomy_term.company_size.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: company_size
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

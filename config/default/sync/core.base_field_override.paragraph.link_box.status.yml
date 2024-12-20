@@ -1,20 +1,20 @@
-uuid: a138bffe-3ea6-4ded-b58a-186cb5d1cae2
+uuid: 955b8d2e-9676-4a37-a16c-9a5b1f2307b0
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.author
-id: node.author.promote
-field_name: promote
-entity_type: node
-bundle: author
-label: 'Promoted to front page'
+    - paragraphs.paragraphs_type.link_box
+id: paragraph.link_box.status
+field_name: status
+entity_type: paragraph
+bundle: link_box
+label: Published
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'

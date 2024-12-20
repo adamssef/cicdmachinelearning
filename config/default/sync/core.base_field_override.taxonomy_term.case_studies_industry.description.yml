@@ -1,0 +1,21 @@
+uuid: bd3a15e8-61e8-4654-9514-12d7fdc37a3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.case_studies_industry
+  module:
+    - text
+id: taxonomy_term.case_studies_industry.description
+field_name: description
+entity_type: taxonomy_term
+bundle: case_studies_industry
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

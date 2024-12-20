@@ -1,0 +1,21 @@
+uuid: 6861e8ff-ff63-4959-8eeb-88a55fcd99c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.company_size
+  module:
+    - text
+id: taxonomy_term.company_size.description
+field_name: description
+entity_type: taxonomy_term
+bundle: company_size
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

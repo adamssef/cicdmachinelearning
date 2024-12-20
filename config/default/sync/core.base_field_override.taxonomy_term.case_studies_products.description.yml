@@ -1,0 +1,21 @@
+uuid: b2954c1e-ad20-48fd-9ba0-b0281627ee5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.case_studies_products
+  module:
+    - text
+id: taxonomy_term.case_studies_products.description
+field_name: description
+entity_type: taxonomy_term
+bundle: case_studies_products
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

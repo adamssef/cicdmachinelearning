@@ -1,18 +1,20 @@
-uuid: 2393f83c-420b-4c45-a5f7-ce05c9d5cda2
+uuid: e782e3e2-8197-455e-a1cf-6e719a2d0c19
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.author
-id: node.author.title
-field_name: title
+  module:
+    - path
+id: node.author.path
+field_name: path
 entity_type: node
 bundle: author
-label: Name
+label: 'URL alias'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: path
