@@ -3,8 +3,15 @@
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  border-radius: 6px;
+  border-radius: 16px;
 }
+
+.carousel__item:hover {
+
+  border-radius: 16px;
+}
+
+
 
 .carousel__item div {
   width: 100%;
@@ -47,7 +54,7 @@ div.carousel__item:not(.carousel__item--more-block){
 div.carousel__item:is(.carousel__item--more-block){
   width: 284px;
   height: 266px;
-  border-radius: 6px;
+  border-radius: 16px;
 }
 
 div.carousel__item::after {
@@ -60,6 +67,7 @@ div.carousel__item::after {
   background: linear-gradient(322deg, rgba(224, 0, 131, 0.70) 0%, rgba(224, 0, 131, 0.10) 78.69%);
   transition: opacity 0.3s ease;
   opacity: 0;
+  border-radius: 16px;
 }
 
 div.carousel__item--more-block::after {
@@ -72,7 +80,7 @@ div.carousel__item--more-block::after {
   background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.30) 50%, rgba(224, 0, 131, 0.10) 78.69%);
   transition: opacity 0.3s ease;
   opacity: 0;
-  border-radius: 6px;
+  border-radius: 16px;
 }
 
 div.carousel__item:hover::after {

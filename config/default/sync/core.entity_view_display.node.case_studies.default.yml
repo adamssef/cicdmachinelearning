@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.case_studies.field_headquarter_city
     - field.field.node.case_studies.field_headquarter_country
     - field.field.node.case_studies.field_industry_type
+    - field.field.node.case_studies.field_landing_page_display_style
     - field.field.node.case_studies.field_link_box
     - field.field.node.case_studies.field_logo_media
     - field.field.node.case_studies.field_logo_media_new_case_study
@@ -192,6 +193,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 34
+    region: content
+  field_landing_page_display_style:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 42
     region: content
   field_link_box:
     type: entity_reference_revisions_entity_view

@@ -11,42 +11,52 @@ function planet_case_studies_theme(): array {
     'node__case_studies_landing' => [
       'template' => 'node--case-studies-landing',
       'base hook' => 'node',
+      'variables' => []
     ],
     'node__case_studies' => [
       'template' => 'node--case-studies',
       'base hook' => 'node',
+      'variables' => []
     ],
     'select__case_studies' => [
       'template' => 'select--case-studies',
       'base hook' => 'select',
+      'variables' => []
     ],
     'block__case_studies_reviews' => [
       'template' => 'block--case-studies-reviews',
       'base hook' => 'block',
+      'variables' => []
     ],
     'block__grow_business_with_planet' => [
       'template' => 'block--grow-business-with-planet',
       'base hook' => 'block',
+      'variables' => []
     ],
     'block__grow_business_with_planet_large' => [
       'template' => 'block--grow-business-with-planet-large',
       'base hook' => 'block',
+      'variables' => []
     ],
     'block__case_studies_more' => [
       'template' => 'block--case-studies-more',
       'base hook' => 'block',
+      'variables' => []
     ],
     'block__case_studies_request_demo' => [
       'template' => 'block--case-studies-request-demo',
       'base hook' => 'block',
+      'variables' => []
     ],
     'form__exposed_case_studies' => [
       'template' => 'form--exposed-case-studies',
       'base hook' => 'form',
+      'variables' => []
     ],
     'views_view_fields__planet_case_studies_view_load_more__block_1__page' => [
       'template' => 'views-view-fields--planet-case-studies-view-load-more--block-1--page',
       'base hook' => 'views_view_fields',
+      'variables' => []
     ],
   ];
 

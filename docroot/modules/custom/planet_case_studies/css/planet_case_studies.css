@@ -368,7 +368,7 @@ body.plnt-css-case-studies-2-0 {
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  border-radius: 12px;
+  border-radius: 16px;
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
@@ -386,6 +386,15 @@ body.plnt-css-case-studies-2-0 {
   background: linear-gradient(0deg, #E00083 -4%, rgba(224, 0, 131, 0.18) 100%);
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
+  border-radius: 16px;
+}
+
+.background-image-div.large-left::after:hover, .background-image-div.large-right::after:hover {
+  border-radius: 16px;
+}
+
+.background-image-div.small-right-top::after, .background-image-div.small-left-top::after {
+  border-radius: 16px;
 }
 
 .background-image-div.small-right-top::after, .background-image-div.small-left-top::after {
@@ -398,6 +407,7 @@ body.plnt-css-case-studies-2-0 {
   background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.30) 100%);
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
+  border-radius: 16px;
 }
 
 .plnt-css-case-studies-2-0 .reset-filters {
@@ -457,6 +467,7 @@ body.plnt-css-case-studies-2-0 {
   background: linear-gradient(0deg, #9AAEF9 0%, rgba(154, 174, 249, 0.40) 100%);
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
+  border-radius: 16px;
 }
 
 .background-image-div:hover::after {
@@ -860,6 +871,14 @@ body.plnt-css-case-studies-2-0 {
     transition: transform 0.8s ease-in-out;
   }
 
+  .small-left-bottom {
+    margin-top: 11px;
+  }
+
+  .small-right-bottom {
+    margin-top: 11px;
+  }
+
   .background-image-div:hover .background-span {
     transform: translateY(0);
   }
@@ -938,6 +957,14 @@ body.plnt-css-case-studies-2-0 {
 
   .we-are-sorry-span__text span {
     white-space: normal;
+  }
+
+  .small-left-bottom {
+    margin-top: 0;
+  }
+
+  .small-right-bottom {
+    margin-top: 0;
   }
 
   .plnt-css-case-studies-2-0 .reset-filters-button span {
@@ -1104,7 +1131,7 @@ body.plnt-css-case-studies-2-0 {
 
 @media (min-width: 1024px) {
   .case-studies-header {
-    margin-top: 92px;
+    margin-top: 156px;
   }
 }
 

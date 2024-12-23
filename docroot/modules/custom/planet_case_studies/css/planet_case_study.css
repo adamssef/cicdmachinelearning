@@ -15,7 +15,6 @@ body.page-node-type-case-studies {
 }
 
 #block-cohesion-theme-content {
-  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -60,11 +59,15 @@ body.page-node-type-case-studies {
   height: auto;
   min-height: 200px;
   padding-top: 48px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .page-node-type-case-studies .breadcrumbs {
-  margin-left: 32px;
+  padding-left: 32px;
   padding-bottom: 0;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .page-node-type-case-studies .breadcrumbs > span {
@@ -208,12 +211,12 @@ body.page-node-type-case-studies {
 }
 
 div.carousel__item:is(.carousel__item--more-block):hover {
-  border-radius: 6px;
+  border-radius: 16px;
   transition: all 0.3s ease;
 }
 
 div.carousel__item:is(.carousel__item--more-block):hover:after {
-  border-radius: 6px;
+  border-radius: 16px;
 }
 
 .case-study-page__three_favorite_features ul li::before {
@@ -1153,7 +1156,7 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
 
   div.carousel__item:is(.carousel__item--more-block) {
     width: auto !important;
-    border-radius: 6px;
+    border-radius: 16px;
   }
 
   .case-study-page__meta-container {
@@ -1306,6 +1309,10 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
 
   .grow_your-business__container--large.grow_your-business__container--large--white {
     background-image: url(/resources/layers/Layer_Desktop_Black.svg);
+  }
+
+  .case-study-page__h1--customer-info {
+    padding-top: 48px;
   }
 
   .grow_your-business__container--large__buttons {

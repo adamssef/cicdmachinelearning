@@ -1,0 +1,27 @@
+uuid: 4c7ea1a0-a7f0-4aac-90f8-d3e1e3c00d26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_landing_page_display_style
+    - node.type.case_studies
+  module:
+    - options
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.case_studies.field_landing_page_display_style
+field_name: field_landing_page_display_style
+entity_type: node
+bundle: case_studies
+label: 'Landing page display style'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: lavender
+default_value_callback: ''
+settings: {  }
+field_type: list_string

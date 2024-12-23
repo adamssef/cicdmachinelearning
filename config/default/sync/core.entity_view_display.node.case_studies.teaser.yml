@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.case_studies.field_headquarter_city
     - field.field.node.case_studies.field_headquarter_country
     - field.field.node.case_studies.field_industry_type
+    - field.field.node.case_studies.field_landing_page_display_style
     - field.field.node.case_studies.field_link_box
     - field.field.node.case_studies.field_logo_media
     - field.field.node.case_studies.field_logo_media_new_case_study
@@ -75,6 +76,7 @@ hidden:
   field_headquarter_city: true
   field_headquarter_country: true
   field_industry_type: true
+  field_landing_page_display_style: true
   field_link_box: true
   field_logo_media: true
   field_logo_media_new_case_study: true

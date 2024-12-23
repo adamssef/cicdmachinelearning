@@ -63,7 +63,7 @@
     "drupal/modules_weight": "^3.0",
     "drupal/node_revision_delete": "^1.0@RC",
     "drupal/page_cache_query_ignore": "^2.2",
-    "drupal/paragraphs": "^1.17",
+    "drupal/paragraphs": "^1.18",
     "drupal/pardot": "^2.0@beta",
     "drupal/password_policy": "^4.0",
     "drupal/pathauto": "^1.12",
