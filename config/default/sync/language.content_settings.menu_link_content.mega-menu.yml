@@ -1,9 +1,9 @@
-uuid: 316cbcff-5460-491d-ab03-3816c928e69a
+uuid: b434e41a-363a-4f68-b1aa-fa736a1c59cc
 langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.case_studies_products
+    - system.menu.mega-menu
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: taxonomy_term.case_studies_products
-target_entity_type_id: taxonomy_term
-target_bundle: case_studies_products
+id: menu_link_content.mega-menu
+target_entity_type_id: menu_link_content
+target_bundle: mega-menu
 default_langcode: site_default
 language_alterable: false

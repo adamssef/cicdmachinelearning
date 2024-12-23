@@ -17,7 +17,7 @@ bundle: customer_recommendation_quote
 label: 'First name and surname'
 description: 'Enter the first and last name of the person you are citing.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
