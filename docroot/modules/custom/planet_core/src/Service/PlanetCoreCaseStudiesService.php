@@ -151,7 +151,6 @@ class PlanetCoreCaseStudiesService {
 
     if (count($product_option_tids) === 1) {
       $product_option_tid = reset($product_option_tids);
-//      $product_option_tids = NULL;
     }
 
     if (empty($product_option_tids)) {
@@ -203,14 +202,15 @@ class PlanetCoreCaseStudiesService {
         ->range(0, $how_many_left)
         ->sort('created', 'DESC')
         ->condition('status', 1)
-        ->condition('nid', $nids, 'NOT IN')
-        ->accessCheck(FALSE); // Sorting by creation date, adjust as needed
+        ->accessCheck(FALSE);
+
+      if (!empty($nids)) {
+        $query->condition('nid', $nids, 'NOT IN');
+      }
 
       $additional_nids = $query->execute();
 
-      $test = array_merge($nids, $additional_nids);
-
-      return $this->prepareCaseStudiesData($test);
+      return $this->prepareCaseStudiesData(array_merge($nids, $additional_nids));
     }
 
 
@@ -292,41 +292,36 @@ class PlanetCoreCaseStudiesService {
 
     $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
-    $translation = $node->getTranslation($langcode);
-    $recommendation_ent = $translation->get('field_recommendation')->entity;
-
-    if ($recommendation_ent && $recommendation_ent->hasTranslation($langcode)) {
-      $recommendation_ent = $recommendation_ent->getTranslation($langcode);
-      $author = $recommendation_ent->get('field_name_and_surname')->value;
-    }
-
-
     $industry = !is_null($node->get('field_industry_type')->target_id) ? $this->planetCoreTaxonomyService->getTermNameById($node->get('field_industry_type')->target_id) : NULL;
     $all_products_from_term_field = $node->get('field_product_type')->getValue();
     $products = [];
     $metrics = $this->getMetricsDataFromParagraph($node);
 
-    $recommendations = $node->field_recommendation->referencedEntities();
+    $lang_node = $node->getTranslation($langcode);
+    $recommendations = $lang_node->field_recommendation->referencedEntities();
     $recommendations_data = [];
     $definitions = \Drupal::service('entity_field.manager')->getFieldDefinitions('paragraph', 'customer_recommendation_quote');
     $default_quote_version_list_value = $definitions['field_quote_version_list']->getDefaultValueLiteral()[0]['value'];
 
     if (!empty($recommendations)) {
       foreach ($recommendations as $key => $r) {
+            $recommendation_ent = $lang_node->get('field_recommendation')->entity;
+
+            if ($r && $r->hasTranslation($langcode)) {
+              $r = $r->getTranslation($langcode);
+              $recommendation_text = $r->get('field_recommendation_text')->value;
+              $recommendations_data[$key] = [
+                'recommendation_text' => $recommendation_text ?? "",
+                'visual_version' => $selected_version_value,
+                'fname_and_sname' => $r->field_name_and_surname->getValue()[0]['value'],
+                'role' => $r->field_customer_role->getValue()[0]['value'],
+                'customer_avatar_url' => $customer_avatar_url,
+                'dark_mode' => $r->field_dark_mode->getValue()[0]['value'],
+              ];
+            }
         $customer_avatar_url = $r->field_customer_avatar->target_id ? $this->planetCoreMediaService->getStyledImageUrl($r->field_customer_avatar->target_id, 'large') : NULL;
         $selected_version_value = $r->field_quote_version_list->getValue()[0]['value'] ?? $default_quote_version_list_value;
         $selected_version_value = str_replace('_', '-',$selected_version_value);
-
-        $recommendations_data[$key] = [
-
-          'recommendation_text' => self::trimFromDoubleQuote($r->field_recommendation_text->getValue()[0]['value']),
-          'visual_version' => $selected_version_value,
-          'fname_and_sname' => $r->field_name_and_surname->getValue()[0]['value'],
-          'debug' => $author,
-          'role' => $r->field_customer_role->getValue()[0]['value'],
-          'customer_avatar_url' => $customer_avatar_url,
-          'dark_mode' => $r->field_dark_mode->getValue()[0]['value'],
-        ];
       }
     }
 

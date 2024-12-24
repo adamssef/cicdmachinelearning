@@ -1,5 +1,12 @@
+{% if landing_page_display_style == 'lavender' %}
+    {% set classes = "background-image-div background-image-div--lavender" %}
+    {% set gradient = "linear-gradient(0deg, rgba(79, 70, 229, 0.30) 0%, rgba(79, 70, 229, 0.30) 100%)" %}
+{% else %}
+    {% set classes = "background-image-div" %}
+    {% set gradient = "linear-gradient(0deg, rgba(224, 0, 131, 0.30) 0%, rgba(224, 0, 131, 0.30) 100%)" %}
+{% endif %}
 {% if triplet_img_class == 'large-right' or triplet_img_class == 'large-left' %}
-    <div class="background-image-div {{ triplet_img_class }}" style="background: linear-gradient(0deg, rgba(224, 0, 131, 0.30) 0%, rgba(224, 0, 131, 0.30) 100%), url('{{ main_image_url }}') lightgray 50% / cover no-repeat;">
+    <div class="{{ classes }} {{ triplet_img_class }}" style="background: {{ gradient }}, url('{{ main_image_url }}') lightgray 50% / cover no-repeat;">
         {% if logo_image_url %}
             <img class="background-image-div__logo-img" src="{{ logo_image_url }}"/>
         {% endif %}
@@ -9,7 +16,7 @@
         </a>
     </div>
 {% elseif triplet_img_class == 'small-right-top' or triplet_img_class == 'small-left-top' %}
-    <div class="background-image-div {{ triplet_img_class }}" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('{{ main_image_url }}') lightgray 50% / cover no-repeat;">
+    <div class="{{ classes }} {{ triplet_img_class }}" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('{{ main_image_url }}') lightgray 50% / cover no-repeat;">
         {% if logo_image_url %}
             <img class="background-image-div__logo-img" src="{{ logo_image_url }}"/>
         {% endif %}        <a href="{{ node_url }}">
@@ -18,7 +25,7 @@
         </a>
     </div>
 {% elseif triplet_img_class == 'small-right-bottom' or triplet_img_class == 'small-left-bottom' %}
-    <div class="background-image-div {{ triplet_img_class }}" style="background: linear-gradient(0deg, rgba(154, 174, 249, 0.30) 0%, rgba(154, 174, 249, 0.30) 100%), url('{{ main_image_url }}') lightgray 50% / cover no-repeat;">
+    <div class="{{ classes }} {{ triplet_img_class }}" style="background: linear-gradient(0deg, rgba(154, 174, 249, 0.30) 0%, rgba(154, 174, 249, 0.30) 100%), url('{{ main_image_url }}') lightgray 50% / cover no-repeat;">
         {% if logo_image_url %}
             <img class="background-image-div__logo-img" src="{{ logo_image_url }}"/>
         {% endif %}        <a href="{{ node_url }}">
