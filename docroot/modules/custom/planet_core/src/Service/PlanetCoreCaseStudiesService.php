@@ -292,10 +292,11 @@ class PlanetCoreCaseStudiesService {
     $translation = $node->getTranslation($langcode);
     $recommendation_ent = $translation->get('field_recommendation')->entity;
 
-    if ($recommendation_ent->hasTranslation($langcode)) {
+    if ($recommendation_ent && $recommendation_ent->hasTranslation($langcode)) {
       $recommendation_ent = $recommendation_ent->getTranslation($langcode);
+      $author = $recommendation_ent->get('field_name_and_surname')->value;
     }
-    $author = $recommendation_ent->get('field_name_and_surname')->value;
+
 
     $industry = !is_null($node->get('field_industry_type')->target_id) ? $this->planetCoreTaxonomyService->getTermNameById($node->get('field_industry_type')->target_id) : NULL;
     $all_products_from_term_field = $node->get('field_product_type')->getValue();
