@@ -70,6 +70,19 @@ div.carousel__item::after {
   border-radius: 16px;
 }
 
+div.carousel__item--lavender::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(322deg, rgba(79, 70, 229, 0.70) 0%, rgba(79, 70, 229, 0.10) 78.69%);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  border-radius: 16px;
+}
+
 div.carousel__item--more-block::after {
   content: "";
   position: absolute;
@@ -116,7 +129,7 @@ div.carousel__item:hover::after {
   max-height: 40px;
   margin-left: 16px;
   margin-bottom: 16px;
-  max-width: -webkit-fill-available;
+  max-width: 146px;
   padding-right: 16px;
 }
 

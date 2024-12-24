@@ -389,6 +389,25 @@ body.plnt-css-case-studies-2-0 {
   border-radius: 16px;
 }
 
+.background-image-div--lavender.large-left::after, .background-image-div--lavender.large-right::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(322deg, rgba(79, 70, 229, 0.70) 0%, rgba(79, 70, 229, 0.10) 78.69%)
+;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  border-radius: 16px;
+}
+
+
+
+
+/*#4F46E5*/
+
 .background-image-div.large-left::after:hover, .background-image-div.large-right::after:hover {
   border-radius: 16px;
 }
@@ -476,7 +495,8 @@ body.plnt-css-case-studies-2-0 {
 
 .background-image-div__logo-img {
   margin: 16px;
-  max-width: 84px;
+  max-width: 120px;
+  max-height: 50px;
 }
 
 .background-image-div > a > span {

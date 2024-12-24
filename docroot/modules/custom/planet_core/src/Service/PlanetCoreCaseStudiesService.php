@@ -151,7 +151,7 @@ class PlanetCoreCaseStudiesService {
 
     if (count($product_option_tids) === 1) {
       $product_option_tid = reset($product_option_tids);
-      $product_option_tids = NULL;
+//      $product_option_tids = NULL;
     }
 
     if (empty($product_option_tids)) {
@@ -203,11 +203,14 @@ class PlanetCoreCaseStudiesService {
         ->range(0, $how_many_left)
         ->sort('created', 'DESC')
         ->condition('status', 1)
+        ->condition('nid', $nids, 'NOT IN')
         ->accessCheck(FALSE); // Sorting by creation date, adjust as needed
 
       $additional_nids = $query->execute();
 
-      return $this->prepareCaseStudiesData(array_merge($nids, $additional_nids));
+      $test = array_merge($nids, $additional_nids);
+
+      return $this->prepareCaseStudiesData($test);
     }
 
 
@@ -408,7 +411,7 @@ class PlanetCoreCaseStudiesService {
       'at_a_glance' => $node->get('field_at_a_glance')->value,
       'recommendation' => $recommendations_data,
       'solution_text' => $node->get('field_challenge_solution_text')->value,
-      'solution_text_image' => $node->get('field_solution_text_image')->target_id ? $this->planetCoreMediaService->getStyledImageUrl($node->get('field_solution_text_image')->target_id, 'large') : NULL,
+      'solution_text_image' => $node->get('field_solution_text_image')->target_id ? $this->planetCoreMediaService->getStyledImageUrl($node->get('field_solution_text_image')->target_id, 'wide') : NULL,
       'challenge_text' => $node->get('field_challenge_text')->value,
       'result' => $node->get('field_case_study_result')->value,
       'metrics' => $metrics,
@@ -523,16 +526,17 @@ class PlanetCoreCaseStudiesService {
       if ($media_id === NULL) {
         $logo_url = NULL;
       }
-
-      $logo_url = $this->planetCoreMediaService->getImageUrl($media_id_logo, 'field_media_image');
+      else {
+        $logo_url = $this->planetCoreMediaService->getImageUrl($media_id_logo, 'field_media_image');
+      }
 
       $case_study_data = [
         'title' => $case_study->getTitle(),
-        'image_url' => $media_id ? $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large') : NULL,
+        'image_url' => $media_id ? $this->planetCoreMediaService->getStyledImageUrl($media_id, 'wide') : NULL,
         'url' =>  $langcode === 'en' ? $alias : "/$langcode" . $alias,
         'logo_url' => $logo_url,
         'company_name' => $case_study->get('field_company_name')->value,
-        'landing_page_display_style' => $case_study->get('field_landing_page_display_style')->value ? $case_study->get('field_landing_page_display_style')->value : 'lavender',
+        'landing_page_display_style' => $case_study->get('field_landing_page_display_style')->value ? $case_study->get('field_landing_page_display_style')->value : 'pink',
 
       ];
 

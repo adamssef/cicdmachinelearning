@@ -284,7 +284,7 @@ function planet_case_studies_preprocess_views_view_fields(&$variables) {
       ?->getValue()[0]['target_id'];
     $styled_image_url = \Drupal::getContainer()
       ->get('planet_core.media_service')
-      ->getStyledImageUrl($media_id, 'large');
+      ->getStyledImageUrl($media_id, 'wide');
 
     $media_logo_id = $node->get('field_logo_media')
       ?->getValue()[0]['target_id'];
@@ -298,6 +298,9 @@ function planet_case_studies_preprocess_views_view_fields(&$variables) {
     $variables['node_url'] = $lang !== 'en' ? "/$lang" . \Drupal::service('path_alias.manager')
         ->getAliasByPath('/node/' . $node->id()) : \Drupal::service('path_alias.manager')
       ->getAliasByPath('/node/' . $node->id());
+
+    $landing_page_display_style = $node->get('field_landing_page_display_style')->value ? $node->get('field_landing_page_display_style')->value : 'pink';
+    $variables['landing_page_display_style'] = $landing_page_display_style;
     $variables['triplet_img_class'] = $variables['row']->triplet_img_class;
   }
 }
