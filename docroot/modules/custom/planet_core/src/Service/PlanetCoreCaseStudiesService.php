@@ -287,6 +287,16 @@ class PlanetCoreCaseStudiesService {
       return [];
     }
 
+    $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+    $translation = $node->getTranslation($langcode);
+    $recommendation_ent = $translation->get('field_recommendation')->entity;
+
+    if ($recommendation_ent->hasTranslation($langcode)) {
+      $recommendation_ent = $recommendation_ent->getTranslation($langcode);
+    }
+    $author = $recommendation_ent->get('field_name_and_surname')->value;
+
     $industry = !is_null($node->get('field_industry_type')->target_id) ? $this->planetCoreTaxonomyService->getTermNameById($node->get('field_industry_type')->target_id) : NULL;
     $all_products_from_term_field = $node->get('field_product_type')->getValue();
     $products = [];
@@ -308,6 +318,7 @@ class PlanetCoreCaseStudiesService {
           'recommendation_text' => self::trimFromDoubleQuote($r->field_recommendation_text->getValue()[0]['value']),
           'visual_version' => $selected_version_value,
           'fname_and_sname' => $r->field_name_and_surname->getValue()[0]['value'],
+          'debug' => $author,
           'role' => $r->field_customer_role->getValue()[0]['value'],
           'customer_avatar_url' => $customer_avatar_url,
           'dark_mode' => $r->field_dark_mode->getValue()[0]['value'],
