@@ -7,6 +7,7 @@ on:
     branches: 
       - main
       - copy-of-the-main
+      - fix/case-study-fixes
 
 jobs:
   build_image:
