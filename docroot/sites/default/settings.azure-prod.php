@@ -146,13 +146,13 @@ if (extension_loaded('redis') && getenv('APPSETTING_ENABLE_REDIS')) {
   $settings['queue_default'] = 'queue.redis';
 
   // Or if you want to use reliable queue implementation.
-  $settings['queue_default'] = 'queue.redis_reliable';
+//  $settings['queue_default'] = 'queue.redis_reliable';
 
   // Use this to only use Redis for a specific queue (aggregator_feeds in this case).
   $settings['queue_service_aggregator_feeds'] = 'queue.redis';
 
   // Or if you want to use reliable queue implementation.
-  $settings['queue_service_aggregator_feeds'] = 'queue.redis_reliable';
+//  $settings['queue_service_aggregator_feeds'] = 'queue.redis_reliable';
 
 } else {
 
