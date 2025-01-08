@@ -157,11 +157,11 @@ class PlanetCoreCaseStudiesService {
       $product_option_tids = NULL;
     }
 
-    if ($industry_option !== null) {
+    if ($industry_option !== NULL) {
       $industry_option_tid = strtolower($industry_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($industry_option, 'case_studies_industry') : NULL;
     }
 
-    if ($company_size_option !== null) {
+    if ($company_size_option !== NULL) {
       $company_size_option_tid = strtolower($company_size_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($company_size_option, 'company_size') : NULL;
     }
 
@@ -212,9 +212,6 @@ class PlanetCoreCaseStudiesService {
 
       return $this->prepareCaseStudiesData(array_merge($nids, $additional_nids));
     }
-
-
-
 
     return $this->prepareCaseStudiesData($nids);
   }
@@ -275,7 +272,6 @@ class PlanetCoreCaseStudiesService {
     }
   }
 
-
   /**
    * Retrieves single case study data returned in an associative array.
    *
@@ -293,35 +289,36 @@ class PlanetCoreCaseStudiesService {
     $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     $industry = !is_null($node->get('field_industry_type')->target_id) ? $this->planetCoreTaxonomyService->getTermNameById($node->get('field_industry_type')->target_id) : NULL;
-    $all_products_from_term_field = $node->get('field_product_type')->getValue();
+    $all_products_from_term_field = $node->get('field_product_type')
+      ->getValue();
     $products = [];
     $metrics = $this->getMetricsDataFromParagraph($node);
 
     $lang_node = $node->getTranslation($langcode);
     $recommendations = $lang_node->field_recommendation->referencedEntities();
     $recommendations_data = [];
-    $definitions = \Drupal::service('entity_field.manager')->getFieldDefinitions('paragraph', 'customer_recommendation_quote');
+    $definitions = \Drupal::service('entity_field.manager')
+      ->getFieldDefinitions('paragraph', 'customer_recommendation_quote');
     $default_quote_version_list_value = $definitions['field_quote_version_list']->getDefaultValueLiteral()[0]['value'];
 
     if (!empty($recommendations)) {
       foreach ($recommendations as $key => $r) {
-            $selected_version_value = $r->field_quote_version_list->getValue()[0]['value'] ?? $default_quote_version_list_value;
-            $selected_version_value = str_replace('_', '-',$selected_version_value);
-            $customer_avatar_url = $r->field_customer_avatar->target_id ? $this->planetCoreMediaService->getStyledImageUrl($r->field_customer_avatar->target_id, 'large') : NULL;
+        $selected_version_value = $r->field_quote_version_list->getValue()[0]['value'] ?? $default_quote_version_list_value;
+        $selected_version_value = str_replace('_', '-', $selected_version_value);
+        $customer_avatar_url = $r->field_customer_avatar->target_id ? $this->planetCoreMediaService->getStyledImageUrl($r->field_customer_avatar->target_id, 'large') : NULL;
 
         if ($r && $r->hasTranslation($langcode)) {
-              $r = $r->getTranslation($langcode);
-              $recommendation_text = $r->get('field_recommendation_text')->value;
-              $recommendations_data[$key] = [
-                'recommendation_text' => $recommendation_text ?? "",
-                'visual_version' => $selected_version_value,
-                'fname_and_sname' => $r->field_name_and_surname->getValue()[0]['value'],
-                'role' => $r->field_customer_role->getValue()[0]['value'],
-                'customer_avatar_url' => $customer_avatar_url,
-                'dark_mode' => $r->field_dark_mode->getValue()[0]['value'],
-              ];
-            }
-
+          $r = $r->getTranslation($langcode);
+          $recommendation_text = $r->get('field_recommendation_text')->value;
+          $recommendations_data[$key] = [
+            'recommendation_text' => $recommendation_text ?? "",
+            'visual_version' => $selected_version_value,
+            'fname_and_sname' => $r->field_name_and_surname->getValue()[0]['value'],
+            'role' => $r->field_customer_role->getValue()[0]['value'],
+            'customer_avatar_url' => $customer_avatar_url,
+            'dark_mode' => $r->field_dark_mode->getValue()[0]['value'],
+          ];
+        }
       }
     }
 
@@ -334,7 +331,6 @@ class PlanetCoreCaseStudiesService {
     $favourite_features = $node->field_favourite_features->referencedEntities();
     $favourite_features = reset($favourite_features);
 
-
     if (!$grow_your_business_paragraph) {
       $grow_your_business_settings = NULL;
     }
@@ -344,14 +340,14 @@ class PlanetCoreCaseStudiesService {
         'size' => $grow_your_business_paragraph->field_size_of_the_component->value,
       ];
     }
-    
+
     if (!$link_box_paragraph) {
       $link_box_paragraph = NULL;
     }
     else {
       $link_box_paragraph = [
         'image' => $link_box_paragraph->field_image->target_id ? $this->planetCoreMediaService->getStyledImageUrl($link_box_paragraph->field_image->target_id, 'large') : NULL,
-        'link' => str_replace('internal:/', '',$link_box_paragraph->field_link_box_link->uri),
+        'link' => str_replace('internal:/', '', $link_box_paragraph->field_link_box_link->uri),
         'title' => $link_box_paragraph->field_link_box_title->value,
         'text' => $link_box_paragraph->field_link_text->value,
       ];
@@ -391,14 +387,17 @@ class PlanetCoreCaseStudiesService {
         $product_name = $this->planetCoreTaxonomyService->getTermNameById($product_tid);
 
         $term = $this->planetCoreTaxonomyService->getTermIdByTermName($product_name, 'case_studies_products');
-        $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($term);
-        $related_product_page_nid = $term->get('field_related_product_page')->getValue()[0]['target_id'];
+        $term = $this->entityTypeManager->getStorage('taxonomy_term')
+          ->load($term);
+        $related_product_page_nid = $term->get('field_related_product_page')
+          ->getValue()[0]['target_id'];
         if ($related_page_node = Node::load($related_product_page_nid)) {
-        $related_product_page_url = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($related_page_node)[$langcode];
+          $related_product_page_url = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($related_page_node)[$langcode];
           $products[] = [
             'name' => $product_name,
             'url' => $related_product_page_url,
           ];
+        }
       }
     }
 
@@ -453,11 +452,11 @@ class PlanetCoreCaseStudiesService {
     return $metrics;
   }
 
-  private static function trimFromDoubleQuote(String $string) {
-    $string = trim($string,'"');
-    $string = trim($string,'“');
-    $string = trim($string,'”');
-    return trim($string,'');
+  private static function trimFromDoubleQuote(string $string) {
+    $string = trim($string, '"');
+    $string = trim($string, '“');
+    $string = trim($string, '”');
+    return trim($string, '');
   }
 
   public function getCompanySize($node) {
@@ -485,7 +484,7 @@ class PlanetCoreCaseStudiesService {
    * @return string
    *   The company size in numbers.
    */
-  public function getCompanySizeInNumbers(NodeInterface $node):? string {
+  public function getCompanySizeInNumbers(NodeInterface $node): ?string {
     if (isset($node->get('field_company_size_in_numbers')->view()[0])) {
       return $node->get('field_company_size_in_numbers')->view()[0]['#markup'];
     }
@@ -503,7 +502,8 @@ class PlanetCoreCaseStudiesService {
    *   The array containing the data.
    */
   private function prepareCaseStudiesData(array $case_study_nids, ?int $threshold = NULL) {
-    $case_studies = $this->entityTypeManager->getStorage('node')->loadMultiple($case_study_nids);
+    $case_studies = $this->entityTypeManager->getStorage('node')
+      ->loadMultiple($case_study_nids);
 
     if ($threshold !== NULL) {
       while (count($case_studies) < 21) {
@@ -512,7 +512,7 @@ class PlanetCoreCaseStudiesService {
     }
 
     $case_studies_data = [];
-    $langcode  = $this->planetCoreNodeTranslationsService->determineTheLangId();
+    $langcode = $this->planetCoreNodeTranslationsService->determineTheLangId();
 
     foreach ($case_studies as $case_study) {
       $case_study = $case_study->getTranslation($langcode);
@@ -538,7 +538,7 @@ class PlanetCoreCaseStudiesService {
       $case_study_data = [
         'title' => $case_study->getTitle(),
         'image_url' => $media_id ? $this->planetCoreMediaService->getStyledImageUrl($media_id, 'wide') : NULL,
-        'url' =>  $langcode === 'en' ? $alias : "/$langcode" . $alias,
+        'url' => $langcode === 'en' ? $alias : "/$langcode" . $alias,
         'logo_url' => $logo_url,
         'company_name' => $case_study->get('field_company_name')->value,
         'landing_page_display_style' => $case_study->get('field_landing_page_display_style')->value ? $case_study->get('field_landing_page_display_style')->value : 'lavender',
