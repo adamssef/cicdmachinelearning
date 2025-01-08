@@ -83,7 +83,6 @@ function planet_case_studies_preprocess_node(array &$variables) {
     $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $variables['contact_sales_url'] = $contact_sales_this_languge_url[$lang_id] ?? $contact_sales_this_languge_url['en'];
     $variables['case_studies_url'] = _get_case_studies_url();
-
     $variables['case_study_data'] = $case_studies_helper->getSingleCaseStudyData($node);
     $variables['case_studies'] = $case_studies_helper->getCaseStudiesForMoreBlock(0, 4, $variables['case_study_data']['products'], $variables['case_study_data']['industry'], $variables['case_study_data']['company_size']);
 
@@ -299,7 +298,7 @@ function planet_case_studies_preprocess_views_view_fields(&$variables) {
         ->getAliasByPath('/node/' . $node->id()) : \Drupal::service('path_alias.manager')
       ->getAliasByPath('/node/' . $node->id());
 
-    $landing_page_display_style = $node->get('field_landing_page_display_style')->value ? $node->get('field_landing_page_display_style')->value : 'pink';
+    $landing_page_display_style = $node->get('field_landing_page_display_style')->value ? $node->get('field_landing_page_display_style')->value : 'lavender';
     $variables['landing_page_display_style'] = $landing_page_display_style;
     $variables['triplet_img_class'] = $variables['row']->triplet_img_class;
   }

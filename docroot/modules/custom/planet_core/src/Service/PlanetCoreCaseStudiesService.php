@@ -532,7 +532,7 @@ class PlanetCoreCaseStudiesService {
         'url' =>  $langcode === 'en' ? $alias : "/$langcode" . $alias,
         'logo_url' => $logo_url,
         'company_name' => $case_study->get('field_company_name')->value,
-        'landing_page_display_style' => $case_study->get('field_landing_page_display_style')->value ? $case_study->get('field_landing_page_display_style')->value : 'pink',
+        'landing_page_display_style' => $case_study->get('field_landing_page_display_style')->value ? $case_study->get('field_landing_page_display_style')->value : 'lavender',
 
       ];
 
