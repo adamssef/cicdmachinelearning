@@ -1,0 +1,34 @@
+uuid: b8f9768d-6220-47e5-be53-60a84447d8ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_related_product_page
+    - node.type.page
+    - taxonomy.vocabulary.case_studies_products
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: taxonomy_term.case_studies_products.field_related_product_page
+field_name: field_related_product_page
+entity_type: taxonomy_term
+bundle: case_studies_products
+label: 'Related product page'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
