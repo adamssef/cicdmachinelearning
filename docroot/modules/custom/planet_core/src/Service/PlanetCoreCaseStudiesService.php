@@ -305,9 +305,11 @@ class PlanetCoreCaseStudiesService {
 
     if (!empty($recommendations)) {
       foreach ($recommendations as $key => $r) {
-            $recommendation_ent = $lang_node->get('field_recommendation')->entity;
+            $selected_version_value = $r->field_quote_version_list->getValue()[0]['value'] ?? $default_quote_version_list_value;
+            $selected_version_value = str_replace('_', '-',$selected_version_value);
+            $customer_avatar_url = $r->field_customer_avatar->target_id ? $this->planetCoreMediaService->getStyledImageUrl($r->field_customer_avatar->target_id, 'large') : NULL;
 
-            if ($r && $r->hasTranslation($langcode)) {
+        if ($r && $r->hasTranslation($langcode)) {
               $r = $r->getTranslation($langcode);
               $recommendation_text = $r->get('field_recommendation_text')->value;
               $recommendations_data[$key] = [
@@ -319,9 +321,7 @@ class PlanetCoreCaseStudiesService {
                 'dark_mode' => $r->field_dark_mode->getValue()[0]['value'],
               ];
             }
-        $customer_avatar_url = $r->field_customer_avatar->target_id ? $this->planetCoreMediaService->getStyledImageUrl($r->field_customer_avatar->target_id, 'large') : NULL;
-        $selected_version_value = $r->field_quote_version_list->getValue()[0]['value'] ?? $default_quote_version_list_value;
-        $selected_version_value = str_replace('_', '-',$selected_version_value);
+
       }
     }
 
@@ -389,7 +389,15 @@ class PlanetCoreCaseStudiesService {
       foreach ($all_products_from_term_field as $product) {
         $product_tid = $product['target_id'];
         $product_name = $this->planetCoreTaxonomyService->getTermNameById($product_tid);
-        $products[] = $product_name;
+
+        $term = $this->planetCoreTaxonomyService->getTermIdByTermName($product_name, 'case_studies_products');
+        $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($term);
+        $related_product_page_nid = $term->get('field_related_product_page')->getValue()[0]['target_id'];
+        $related_product_page_url = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode(Node::load($related_product_page_nid))[$langcode];
+        $products[] = [
+          'name' => $product_name,
+          'url' => $related_product_page_url,
+        ];
       }
     }
 

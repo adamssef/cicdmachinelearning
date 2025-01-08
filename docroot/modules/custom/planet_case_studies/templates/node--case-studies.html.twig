@@ -37,16 +37,20 @@
                     <label class="customer-info__label customer-info__label--products">{% if case_study_data['products']|length == 1 %}{{ "Product"|t }}{% else %}{{ "Products"|t }}{% endif %}</label>
                     <ul class="customer-info__label--products__ul">
                         {% for product in case_study_data['products'] %}
-                            <li class="customer-info__label--products__li">{{ product|t }}</li>
+                            <a href="{{ product.url }}">
+                                <li class="customer-info__label--products__li">{{ product.name|t }}</li>
+                            </a>
                         {% endfor %}
                     </ul>
                 </div>
-            {% if case_study_data['company_link'] and case_study_data['company_name'] %}
-                <div class="case-study-page__customer-info__container case-study-page__customer-info__container--company-link">
-                    <a href="{{ case_study_data['company_link'] }}">Visit {{ case_study_data['company_name'] }}'s website<img src="/resources/icons/external_link_icon.svg"></a>
-                </div>
+                {% if case_study_data['company_link'] and case_study_data['company_name'] %}
+                    <div class="case-study-page__customer-info__container case-study-page__customer-info__container--company-link">
+                        <a href="{{ case_study_data['company_link'] }}">Visit {{ case_study_data['company_name'] }}
+                            's website<img
+                                    src="/resources/icons/external_link_icon.svg"></a>
+                    </div>
+                {% endif %}
             {% endif %}
-        {% endif %}
         </div>
     {% endif %}
 	<div class="plnt-blog-single-page plnt-news-single-page plnt-case-study-single-page">
@@ -75,7 +79,8 @@
 				</div>
 			</div>
 		{% endif %}
-		{% if case_study_data['recommendation'] %}
+
+		{% if case_study_data['recommendation'][0] %}
 			{% for recommendation in case_study_data['recommendation'] %}
 				<div class="case-study-page__recommendation{% if recommendation['dark_mode'] == "1" %} case-study-page__recommendation--dark{% endif %} {{ recommendation['visual_version'] }}" >
 					<div class="case-study-page__recommendation__image__container">
