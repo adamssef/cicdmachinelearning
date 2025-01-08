@@ -393,8 +393,8 @@ class PlanetCoreCaseStudiesService {
         $term = $this->planetCoreTaxonomyService->getTermIdByTermName($product_name, 'case_studies_products');
         $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($term);
         $related_product_page_nid = $term->get('field_related_product_page')->getValue()[0]['target_id'];
-        if ($node = Node::load($related_product_page_nid)) {
-          $related_product_page_url = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($node)[$langcode];
+        if ($related_page_node = Node::load($related_product_page_nid)) {
+          $related_product_page_url = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($related_page_node)[$langcode];
           $products[] = [
             'name' => $product_name,
             'url' => $related_product_page_url,
