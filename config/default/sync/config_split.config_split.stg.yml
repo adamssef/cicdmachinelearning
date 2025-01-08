@@ -11,16 +11,12 @@ no_patching: false
 storage: folder
 folder: ../config/default/environment/stg
 module:
-  planet_2fa: 0
   shield: 0
   real_aes: 0
-  tfa: 0
   encrypt: 0
 theme: {  }
 complete_list:
-  - encrypt.profile.tfa_encryption_profile
   - environment_indicator.indicator
-  - key.key.tfa_key
   - acquia_connector.settings
   - ultimate_cron.job.acquia_connector_cron
   - planet_lgpd_onetrust.settings
