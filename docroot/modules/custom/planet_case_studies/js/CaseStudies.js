@@ -282,14 +282,29 @@
         }
 
         let newTriplets = triplets.map((tripletGroup, index) => {
-          let className;
           let isEven = (howManyTriplets + index) % 2 === 0;
+
           let tripletHtml = tripletGroup.map((item, j) => {
+            let pinkStyle = `background: linear-gradient(0deg, rgba(224, 0, 131, 0.30) 0%, rgba(224, 0, 131, 0.30) 100%), url('${item.image_url}') lightgray 50% / cover no-repeat`;
+            let lavenderStyle = `background: linear-gradient(322deg, rgba(79, 70, 229, 0.7) 0%, rgba(79, 70, 229, 0.1) 34.5%), url('${item.image_url}') lightgray 50% / cover no-repeat`;
+            let className;
+            if (item.landing_page_display_style === 'pink') {
+              console.log('pink');
+              var currentStyle = pinkStyle;
+              var classNameBackground = 'background-image-div';
+            } else {
+              console.log('lavender');
+              var currentStyle = lavenderStyle;
+              var classNameBackground = 'background-image-div background-image-div--lavender';
+
+            }
             if (isEven) {
               className = j === 0 ? 'large-left' : (j === 1 ? 'small-right-top' : 'small-right-bottom');
 
+
               if (className === 'large-left') {
-                return `<div class="background-image-div ${className}" style="background: linear-gradient(0deg, rgba(224, 0, 131, 0.30) 0%, rgba(224, 0, 131, 0.30) 100%), url('${item.image_url}') lightgray 50% / cover no-repeat;"><img class="background-image-div__logo-img" src="${item.logo_url}"/><a href="${item.url}"><span class="background-span">${item.title}</span><span class="initially-hidden-read-more">Read the full story <img class="read-full-story__img" src="/resources/icons/sharp-arrow-pointing-right.svg" loading="lazy"></span></a></div>`;
+
+                return `<div class="${classNameBackground} ${className}" style="${currentStyle}"><img class="background-image-div__logo-img" src="${item.logo_url}"/><a href="${item.url}"><span class="background-span">${item.title}</span><span class="initially-hidden-read-more">Read the full story <img class="read-full-story__img" src="/resources/icons/sharp-arrow-pointing-right.svg" loading="lazy"></span></a></div>`;
               }
               else {
                 if (className === 'small-right-top') {
@@ -307,7 +322,7 @@
               className = j === 0 ? 'small-left-top' : (j === 1 ? 'small-left-bottom' : 'large-right');
 
               if (className === 'large-right') {
-                return `<div class="background-image-div ${className}" style="background: linear-gradient(0deg, rgba(224, 0, 131, 0.30) 0%, rgba(224, 0, 131, 0.30) 100%), url('${item.image_url}') lightgray 50% / cover no-repeat;"><img class="background-image-div__logo-img" src="${item.logo_url}"/><a href="${item.url}"><span class="background-span">${item.title}</span><span class="initially-hidden-read-more">Read the full story <img class="read-full-story__img" src="/resources/icons/sharp-arrow-pointing-right.svg" loading="lazy"></span></a></div>`;
+                return `<div class="${classNameBackground} ${className}" style="${currentStyle}"><img class="background-image-div__logo-img" src="${item.logo_url}"/><a href="${item.url}"><span class="background-span">${item.title}</span><span class="initially-hidden-read-more">Read the full story <img class="read-full-story__img" src="/resources/icons/sharp-arrow-pointing-right.svg" loading="lazy"></span></a></div>`;
               }
               else {
                 if (className === 'small-left-top') {
@@ -404,6 +419,8 @@
           const data = await response.json();
           manageClearButtonVisibility(optionArray, data);
           appendNewItems(data);
+
+          console.log(data)
 
           return data;
         } catch (error) {
