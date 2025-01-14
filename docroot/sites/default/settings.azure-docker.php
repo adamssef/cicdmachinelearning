@@ -67,8 +67,6 @@ $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml'
 $config['system.performance']['css']['preprocess'] = TRUE;
 $config['system.performance']['js']['preprocess'] = TRUE;
 
-$conf['redis_perm_ttl'] = "1 year";
-
 if (extension_loaded('redis') && getenv('APPSETTING_ENABLE_REDIS')) {
 
   // Set Redis as the default backend for any cache bin not otherwise specified.
