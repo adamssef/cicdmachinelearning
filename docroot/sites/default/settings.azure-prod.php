@@ -127,6 +127,7 @@ if (extension_loaded('redis') && getenv('APPSETTING_ENABLE_REDIS')) {
       ],
     ],
   ];
+
   
   /** @see: https://pantheon.io/docs/redis/ */
   // Always set the fast backend for bootstrap, discover and config, otherwise
@@ -153,7 +154,9 @@ if (extension_loaded('redis') && getenv('APPSETTING_ENABLE_REDIS')) {
 
   // Or if you want to use reliable queue implementation.
 //  $settings['queue_service_aggregator_feeds'] = 'queue.redis_reliable';
-
+  $conf['redis_perm_ttl'] = "14 days";
+  $config['redis_perm_ttl'] = "14 days";
+  $settings['redis_perm_ttl'] = "14 days";
 } else {
 
   // $settings['cache']['default'] = 'cache.backend.database';

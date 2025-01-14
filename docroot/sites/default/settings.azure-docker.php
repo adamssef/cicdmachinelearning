@@ -67,7 +67,7 @@ $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml'
 $config['system.performance']['css']['preprocess'] = TRUE;
 $config['system.performance']['js']['preprocess'] = TRUE;
 
-
+$conf['redis_perm_ttl'] = "1 year";
 
 if (extension_loaded('redis') && getenv('APPSETTING_ENABLE_REDIS')) {
 
@@ -143,15 +143,17 @@ if (extension_loaded('redis') && getenv('APPSETTING_ENABLE_REDIS')) {
   // Use for all queues unless otherwise specified for a specific queue.
   $settings['queue_default'] = 'queue.redis';
 
-  // Or if you want to use reliable queue implementation.
-  $settings['queue_default'] = 'queue.redis_reliable';
+//  // Or if you want to use reliable queue implementation.
+//  $settings['queue_default'] = 'queue.redis_reliable';
 
   // Use this to only use Redis for a specific queue (aggregator_feeds in this case).
   $settings['queue_service_aggregator_feeds'] = 'queue.redis';
 
   // Or if you want to use reliable queue implementation.
-  $settings['queue_service_aggregator_feeds'] = 'queue.redis_reliable';
-
+//  $settings['queue_service_aggregator_feeds'] = 'queue.redis_reliable';
+  $conf['redis_perm_ttl'] = "14 days";
+  $config['redis_perm_ttl'] = "14 days";
+  $settings['redis_perm_ttl'] = "14 days";
 } else {
 
   // $settings['cache']['default'] = 'cache.backend.database';
