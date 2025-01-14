@@ -77,7 +77,7 @@
     </div>
 
     <div class="megamenu-column megamenu-column--grey megamenu-column--center">
-      <span class="megamenu-column__title">{{ "Software for Hospitality"|t }}</span>
+      <span class="megamenu-column__title">{{ "Software for hospitality"|t }}</span>
       {% for item in data['megamenu']['0']['children']['software_for_hospitaility'] %}
         <div class="megamenu-column__item{% if item['title'] == "Booking Engine" %} megamenu-column__item--booking-engine{% endif %}">
           <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
@@ -87,7 +87,7 @@
           </a>
         </div>
       {% endfor %}
-      <span class="megamenu-column__title megamenu-column__title--mt32px">{{ "Software for Retail"|t }}</span>
+      <span class="megamenu-column__title megamenu-column__title--mt32px">{{ "Software for retail"|t }}</span>
       {% for item in data['megamenu']['0']['children']['software_for_retail'] %}
         <div class="megamenu-column__item">
           <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
@@ -112,7 +112,7 @@
     </div>
     <div class="lavender-metacontainer">
       <div class="megamenu-column megamenu-column--lavender magamenu-column--right">
-        <span class="megamenu-column__title">{{ "Tax Free for Merchants"|t }}</span>
+        <span class="megamenu-column__title">{{ "Tax Free for merchants"|t }}</span>
         {% for item in data['megamenu']['0']['children']['tax_free_for_merchants'] %}
           <div class="megamenu-column__item">
             <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
