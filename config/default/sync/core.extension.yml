@@ -95,7 +95,6 @@ module:
   path: 0
   path_alias: 0
   phpass: 0
-  planet_ab_tests: 1
   planet_accept_payments: 0
   planet_case_studies: 0
   planet_config: 0
@@ -179,6 +178,7 @@ module:
   webform_ui: 0
   workflows: 0
   pathauto: 1
+  planet_ab_tests: 1
   recaptcha_v3: 1
   content_translation: 10
   password_policy: 10

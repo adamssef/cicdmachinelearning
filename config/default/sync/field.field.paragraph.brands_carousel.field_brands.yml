@@ -1,0 +1,25 @@
+uuid: d74aeadc-22a6-402f-8897-7ebe74ea8a95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_brands
+    - paragraphs.paragraphs_type.brands_carousel
+  module:
+    - options
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.brands_carousel.field_brands
+field_name: field_brands
+entity_type: paragraph
+bundle: brands_carousel
+label: Brands
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

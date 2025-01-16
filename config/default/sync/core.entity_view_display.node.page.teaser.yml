@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.page.field_html_content
     - field.field.node.page.field_is_product_page
     - field.field.node.page.field_layout_canvas
+    - field.field.node.page.field_product_page_layout
     - field.field.node.page.field_resources_tags
     - field.field.node.page.field_webform
     - field.field.node.page.field_webform_text
@@ -44,6 +45,7 @@ hidden:
   field_html_content: true
   field_is_product_page: true
   field_layout_canvas: true
+  field_product_page_layout: true
   field_resources_tags: true
   field_webform: true
   field_webform_text: true

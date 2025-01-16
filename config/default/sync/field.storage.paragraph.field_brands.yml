@@ -1,0 +1,33 @@
+uuid: 87e5b8b5-46ed-4ea8-8c1f-7291cf16397e
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_brands
+field_name: field_brands
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: radisson_hotels
+      label: 'Radisson Hotels'
+    -
+      value: champneys
+      label: Champneys
+    -
+      value: soho_house
+      label: 'Soho House'
+    -
+      value: accor
+      label: Accor
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

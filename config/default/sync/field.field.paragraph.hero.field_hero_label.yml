@@ -1,0 +1,24 @@
+uuid: 26d22569-53e2-45c3-99a9-c3fcf048bc6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hero_label
+    - paragraphs.paragraphs_type.hero
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.hero.field_hero_label
+field_name: field_hero_label
+entity_type: paragraph
+bundle: hero
+label: 'Hero label'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

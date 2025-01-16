@@ -8,12 +8,14 @@ dependencies:
     - field.field.node.page.field_html_content
     - field.field.node.page.field_is_product_page
     - field.field.node.page.field_layout_canvas
+    - field.field.node.page.field_product_page_layout
     - field.field.node.page.field_resources_tags
     - field.field.node.page.field_webform
     - field.field.node.page.field_webform_text
     - node.type.page
   module:
     - cohesion_elements
+    - entity_reference_revisions
     - metatag
     - text
     - user
@@ -46,6 +48,15 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_product_page_layout:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_resources_tags:
     type: entity_reference_label
