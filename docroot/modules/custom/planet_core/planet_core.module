@@ -477,7 +477,7 @@ function planet_core_preprocess_views_view_field(array &$variables)
 /**
  * Implements hook_theme().
  */
-function planet_core_theme(): array
+function planet_core_theme($existing, $type, $theme, $path): array
 {
   return [
     'views_view_fields__case_studies__featured_slider' => [
@@ -594,7 +594,12 @@ function planet_core_theme(): array
       'template' => 'node--basic-page',
       'base hook' => 'node',
     ],
-  ];
+    'paragraph__hero__default' => [
+      'base hook' => 'paragraph',
+      'template' => 'paragraph--hero--default',
+      'path' => $path . '/templates/paragraph',  
+   ]
+   ];
 }
 
 
