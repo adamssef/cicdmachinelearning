@@ -631,27 +631,19 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     }
   }
 
-  // Homepage v1 suggestions
-  if ($alias == "/new") {
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    switch ($language) {
-      case "it":
-        $suggestions[] = 'node__homepage_v1_it';
-        break;
-      case "es":
-        $suggestions[] = 'node__homepage_v1_es';
-        break;
-      case "de":
-        $suggestions[] = 'node__homepage_v1_de';
-        break;
-      case "fr":
-        $suggestions[] = 'node__homepage_v1_fr';
-        break;
-      default:
-        $suggestions[] = 'node__homepage_v1';
-    }
+    $language_templates = [
+        'it' => 'node__homepage_v1_it',
+        'es' => 'node__homepage_v1_es',
+        'de' => 'node__homepage_v1_de',
+        'fr' => 'node__homepage_v1_fr',
+        'en' => 'node__homepage_v1',
+    ];
+    
+    $suggestions[] = $language_templates[$language] ?? 'node__homepage_v1';
     return;
-  }
+}
 
   // Homepage v2 suggestions  
   if ($alias == "/homepage-prototype-v2") {
@@ -819,6 +811,11 @@ function planet_core_preprocess_node(array &$variables)
 
   $variables['#attached']['library'][] = 'planet_core/language-popup';
 
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['#attached']['library'][] = 'planet_core/front-page';
+  }
+
+
   if ($alias === '/sitemap') {
     $variables['term_tree'] = \Drupal::service('planet_html_sitemap.helper')
       ->buildTree();
@@ -923,32 +920,5 @@ function planet_core_preprocess_page(array &$variables)
 
   if ($current_path_alias === '/pms-transformation') {
     $variables['#attached']['library'][] = 'planet_core/pms-transformation';
-  }
-}
-
-
-function planet_core_page_attachments_alter(array &$attachments)
-{
-  $current_path = \Drupal::service('path.current')->getPath();
-  $alias_manager = \Drupal::service('path_alias.manager');
-  $current_alias = $alias_manager->getAliasByPath($current_path);
-
-  if ($current_alias == '/new' || $current_alias == '/homepage-prototype-v2') {
-    // Tailwind enabled flag.
-    $tailwind_enabled = false;
-    $attachments['#attached']['library'][] = 'planet_core/front-page';
-
-    if ($tailwind_enabled) {
-      // Attach the specific libraries and scripts only on the front page.
-      $attachments['#attached']['html_head'][] = [
-        [
-          '#tag' => 'script',
-          '#attributes' => [
-            'src' => 'https://cdn.tailwindcss.com',
-          ],
-        ],
-        'tailwindcdn',
-      ];
-    }
   }
 }
