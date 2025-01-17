@@ -633,8 +633,8 @@ video {
   display: grid;
 }
 
-.min-h-\[600px\] {
-  min-height: 600px;
+.min-h-\[300px\] {
+  min-height: 300px;
 }
 
 .grid-cols-1 {
@@ -670,6 +670,14 @@ video {
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .px-4 {
@@ -753,8 +761,8 @@ video {
     order: 2;
   }
 
-  .md\:min-h-full {
-    min-height: 100%;
+  .md\:min-h-\[600px\] {
+    min-height: 600px;
   }
 
   .md\:grid-cols-2 {

@@ -25,4 +25,4 @@ services:
     arguments: [ '@file_url_generator']
   planet_core.basic_page_service:
     class: Drupal\planet_core\Service\PlanetCoreBasicPageService
-    arguments: ['@entity_type.manager']
+    arguments: ['@entity_type.manager', '@planet_core.media_service' ,'@language_manager']

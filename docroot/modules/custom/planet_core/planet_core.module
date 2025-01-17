@@ -594,11 +594,12 @@ function planet_core_theme($existing, $type, $theme, $path): array
       'template' => 'node--basic-page',
       'base hook' => 'node',
     ],
-    'paragraph__hero__default' => [
-      'base hook' => 'paragraph',
-      'template' => 'paragraph--hero--default',
-      'path' => $path . '/templates/paragraph',  
-   ]
+    'paragraph_hero_default' => [
+      'template' => 'paragraph/paragraph-hero-default',
+      'variables' => [
+        'fields' => [],
+      ],
+    ],
    ];
 }
 
@@ -875,8 +876,8 @@ function planet_core_preprocess_node(array &$variables)
 
   if ($node->getType() == 'page' && !in_array($node->id(), SpecialTemplates::getAll())) {
 
-    // $page_service = \Drupal::service('planet_core.basic_page_service');
-    // $variables['product_page_paragraphs'] = $page_service->getPageParagraphData($node);
+    $page_service = \Drupal::service('planet_core.basic_page_service');
+    $variables['product_page_paragraphs'] = $page_service->getPageParagraphData($node);
 
     if(!$node->get('field_webform')->isEmpty()) {
         $webform_id = $node->get('field_webform')->target_id;
