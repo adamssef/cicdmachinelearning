@@ -23,3 +23,6 @@ services:
   planet_core.media_service:
     class: Drupal\planet_core\Service\PlanetCoreMediaService\PlanetCoreMediaService
     arguments: [ '@file_url_generator']
+  planet_core.basic_page_service:
+    class: Drupal\planet_core\Service\PlanetCoreBasicPageService
+    arguments: ['@entity_type.manager']

@@ -8,7 +8,9 @@
 .plnt-okta-verify-tfa-setup {
   color: #0a6eb4;
 }
-
+.hero-desc-paragraph > p {
+  font-weight: 300;
+}
 form.tfa-setup ul {
   display: none;
 }

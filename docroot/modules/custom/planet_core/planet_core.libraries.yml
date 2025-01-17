@@ -48,3 +48,7 @@ brands-we-work-with:
       css/brands-we-work-with.css: { }
   js:
     js/BrandsWeWorkWith.js: { }
+basic-pages:
+  css:
+    theme:
+      css/tailwind-product-pages.css: {}

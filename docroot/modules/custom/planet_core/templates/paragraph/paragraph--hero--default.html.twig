@@ -1,1 +1,32 @@
+<div class="relative">
 {{dump()}}
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    <!-- Left content column with padding -->
+    <div class="container mx-auto px-4 md:pl-16 md:pr-8 py-16 md:py-24 order-2 md:order-1">
+        <!-- Pre-heading -->
+        <p class="block text-sm font-semibold leading-4 pl-4 uppercase border-l-4 border-solid border-l-[#E00083] mb-4">
+          {{paragraph.get('field_hero_label').getValue()[0]['value']}}
+        </p>
+        
+        <h1 class="mt-4 block font-semibold text-[28px] lg:text-5xl">
+          {{paragraph.get('field_hero_title').getValue()[0]['value']}}
+        </h1>
+        
+        <div class="mt-6 font-light leading-5 lg:leading-6 text-base lg:text-xl hero-desc-paragraph">
+            {{paragraph.get('field_hero').getValue()[0]['value']|raw}}
+        </div>
+        
+        <!-- CTA button -->
+        <div class="mt-8">
+          <a href="/contact/sales" 
+             class="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800">
+            Contact us
+          </a>
+        </div>
+    </div>
+
+    <!-- Right column with background color -->
+    <div class="bg-gray-200 min-h-[600px] md:min-h-full order-1 md:order-2">
+    </div>
+  </div>
+</div>
