@@ -3,28 +3,51 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.hero.field_button_1_label
+    - field.field.paragraph.hero.field_button_1_link
     - field.field.paragraph.hero.field_hero
     - field.field.paragraph.hero.field_hero_image
     - field.field.paragraph.hero.field_hero_label
     - field.field.paragraph.hero.field_hero_title
     - paragraphs.paragraphs_type.hero
   module:
+    - link
     - text
 id: paragraph.hero.default
 targetEntityType: paragraph
 bundle: hero
 mode: default
 content:
+  field_button_1_label:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_button_1_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_hero:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
   field_hero_image:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -33,7 +56,7 @@ content:
     region: content
   field_hero_label:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -41,7 +64,7 @@ content:
     region: content
   field_hero_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

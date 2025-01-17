@@ -1,28 +1,27 @@
-uuid: a4a5675e-1b77-4b0c-b911-74c817bcce25
+uuid: 4766a885-c329-4a01-a86a-0accbe096fa3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_hero
-    - filter.format.cohesion
+    - field.storage.paragraph.field_button_1_link
     - paragraphs.paragraphs_type.hero
   module:
-    - text
+    - link
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
     excluded: false
-id: paragraph.hero.field_hero
-field_name: field_hero
+id: paragraph.hero.field_button_1_link
+field_name: field_button_1_link
 entity_type: paragraph
 bundle: hero
-label: 'Hero description'
+label: 'Button 1 link'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats:
-    - cohesion
-field_type: text_long
+  title: 0
+  link_type: 17
+field_type: link
