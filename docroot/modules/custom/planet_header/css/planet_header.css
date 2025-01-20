@@ -10,6 +10,13 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
   background-color: transparent !important;
 }
 
+
+.megamenu-link.go-home {
+  display: flex;
+  align-items: center;
+}
+
+
 .path-frontpage .coh-hero-5050 {
   padding-top: 0 !important;
 }
@@ -1270,6 +1277,8 @@ header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
     margin-left: 16px;
     margin-right: 16px;
   }
+
+
 
   .navigation-items {
     padding-left: 16px;

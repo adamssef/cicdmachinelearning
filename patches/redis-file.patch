@@ -1,0 +1,13 @@
+diff --git a/src/Cache/CacheBase.php b/src/Cache/CacheBase.php
+index 79cb559..6971629 100644
+--- a/src/Cache/CacheBase.php
++++ b/src/Cache/CacheBase.php
+@@ -29,7 +29,7 @@ abstract class CacheBase implements CacheBackendInterface {
+    * Default lifetime for permanent items.
+    * Approximatively 1 year.
+    */
+-  const LIFETIME_PERM_DEFAULT = 31536000;
++  const LIFETIME_PERM_DEFAULT = 1209600;
+
+   /**
+    * Computed keys are let's say around 60 characters length due to

@@ -1,0 +1,32 @@
+uuid: 4a4f7f4b-6027-4290-9f3d-b2539fb313c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.case_studies_products.field_related_product_page
+    - taxonomy.vocabulary.case_studies_products
+  module:
+    - text
+id: taxonomy_term.case_studies_products.default
+targetEntityType: taxonomy_term
+bundle: case_studies_products
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_related_product_page:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -3,30 +3,30 @@
 /**
  * @file
  * Drupal site-specific configuration file.
-  */
+ */
 
-  $settings['reverse_proxy'] = TRUE;
-  $settings['reverse_proxy_addresses'] = array($_SERVER['REMOTE_ADDR']);
-  $settings['reverse_proxy_trusted_headers'] = \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_FOR | \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PROTO | \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PORT;
+$settings['reverse_proxy'] = TRUE;
+$settings['reverse_proxy_addresses'] = array($_SERVER['REMOTE_ADDR']);
+$settings['reverse_proxy_trusted_headers'] = \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_FOR | \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PROTO | \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PORT;
 
-  $databases = [
+$databases = [
+  'default' => [
     'default' => [
-      'default' => [
-        'database' => getenv('APPSETTING_DATABASE_NAME'),
-        'username' => getenv('APPSETTING_DATABASE_USER'),
-        'password' => getenv('APPSETTING_DATABASE_PASSWORD'),
-        'host' => getenv('APPSETTING_DATABASE_HOST'),
-        'port' => getenv('APPSETTING_DATABASE_PORT'),
-        'driver' => 'mysql',
-        'prefix' => ''
-      ],
+      'database' => getenv('APPSETTING_DATABASE_NAME'),
+      'username' => getenv('APPSETTING_DATABASE_USER'),
+      'password' => getenv('APPSETTING_DATABASE_PASSWORD'),
+      'host' => getenv('APPSETTING_DATABASE_HOST'),
+      'port' => getenv('APPSETTING_DATABASE_PORT'),
+      'driver' => 'mysql',
+      'prefix' => ''
     ],
+  ],
+];
+if (!getenv('APPSETTING_DISABLE_DATABASE_SSL')) {
+  // Add the 'pdo' array to the configuration
+  $databases['default']['default']['pdo'] = [
+    PDO::MYSQL_ATTR_SSL_CA => '/var/www/html/azure/certs/prod_db_ca-cert.crt.pem'
   ];
-  if (!getenv('APPSETTING_DISABLE_DATABASE_SSL')) {
-    // Add the 'pdo' array to the configuration
-    $databases['default']['default']['pdo'] = [
-        PDO::MYSQL_ATTR_SSL_CA => '/var/www/html/azure/certs/prod_db_ca-cert.crt.pem'
-    ];
 }
 
 $settings['file_temp_path'] = '/var/www/html/docroot/sites/default/files/tmp';
@@ -127,7 +127,7 @@ if (extension_loaded('redis') && getenv('APPSETTING_ENABLE_REDIS')) {
       ],
     ],
   ];
-  
+
   /** @see: https://pantheon.io/docs/redis/ */
   // Always set the fast backend for bootstrap, discover and config, otherwise
   // this gets lost when redis is enabled.
@@ -146,13 +146,13 @@ if (extension_loaded('redis') && getenv('APPSETTING_ENABLE_REDIS')) {
   $settings['queue_default'] = 'queue.redis';
 
   // Or if you want to use reliable queue implementation.
-  $settings['queue_default'] = 'queue.redis_reliable';
+  //  $settings['queue_default'] = 'queue.redis_reliable';
 
   // Use this to only use Redis for a specific queue (aggregator_feeds in this case).
   $settings['queue_service_aggregator_feeds'] = 'queue.redis';
 
   // Or if you want to use reliable queue implementation.
-  $settings['queue_service_aggregator_feeds'] = 'queue.redis_reliable';
+  //  $settings['queue_service_aggregator_feeds'] = 'queue.redis_reliable';
 
 } else {
 

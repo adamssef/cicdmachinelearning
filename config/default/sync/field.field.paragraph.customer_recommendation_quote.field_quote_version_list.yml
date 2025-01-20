@@ -18,7 +18,7 @@ bundle: customer_recommendation_quote
 label: "Quote's visual version"
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: small_picture_and_quote

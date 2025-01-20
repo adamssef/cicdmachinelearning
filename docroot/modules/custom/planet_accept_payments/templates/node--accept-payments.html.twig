@@ -65,8 +65,10 @@
                         class="{% if card.class == 'online' %}bg-online{% elseif card.class == 'inperson' %}bg-inperson{% else %}bg-unattended{% endif %} mx-2 mt-2 w-auto lg:w-[307px] h-[208px] bg-[url('{{ card.img_path }}')] bg-cover bg-no-repeat bg-top rounded-2xl"></div>
                 <div class="p-6">
                     {% if card.url %}
-                        <a href="{{ card.url }}"><span
-                                    class=" block text-2xl leading-[30px] pb-4 text-white font-semibold">{{ card.title|t }}</span></a>
+                        <a class="flex items-baseline group" href="{{ card.url }}"><span
+                                    class=" block text-2xl leading-[30px] pb-4 transition-all duration-300 mr-4 group-hover:mr-6 text-white font-semibold">{{ card.title|t }}</span><img
+                                    class="inline"
+                                    src="/resources/icons/card-long-white-arrow-right.svg"></a>
                     {% else %}
                         <span
                                 class=" block text-2xl leading-[30px] pb-4 text-white font-semibold">{{ card.title|t }}</span>
