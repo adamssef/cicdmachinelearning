@@ -237,6 +237,9 @@
       },
       "drupal/simple_sitemap": {
         "edit table": "patches/simple_sitemap.patch"
+      },
+      "drupal/redis": {
+        "Change the TTL": "patches/redis-file.patch"
       }
     },
     "drupal-lenient": {
