@@ -2,6 +2,10 @@
   flex-direction: column ;
 }
 
+.plnt-css-pms-transformation #form-50-50 {
+  display: block;
+}
+
 .plnt-css-pms-transformation .site-studio-webform-element .webform-button--submit {
   padding: 16px;
   width: 100%;
