@@ -827,7 +827,11 @@ function planet_core_preprocess_node(array &$variables)
   }
 
   if (in_array($node->getType(), ["resources", "newsroom"])) {
+    $node_translation_service = \Drupal::getContainer()->get('planet_core.node_translation_service');
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $variables['#attached']['library'][] = 'planet_core/single-article-page';
+    $variables['language'] = $language;
+    $variables['contact_us_links'] = $node_translation_service->getTranslationArrWithPrefixes('/contact/sales');
   }
 
   if ($node->getType() == 'resources') {
