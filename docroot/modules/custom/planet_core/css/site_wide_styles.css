@@ -100,11 +100,29 @@
   border-color: black;
 }
 .index-cta > a {
+  font-weight: 700;
+  font-size: 16px;
   display: inline-block;
   padding: 12px 48px 12px 24px
 }
 .index-cta {
   margin-top: 16px;
+}
+.dynamic-index-wrapper.mobile-version .index-cta {
+  padding: 0 32px;
+  margin-top: 0;
+}
+.dynamic-index-wrapper.mobile-version .index-cta > a > img {
+  margin-left: 16px
+}
+.dynamic-index-wrapper.mobile-version .index-cta > a {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  background-image: none;
 }
 .plnt-btn-pink.with-arrow {
   background-image: url("/resources/icons/sharp-arrow-pointing-right.svg");

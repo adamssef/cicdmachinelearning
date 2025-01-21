@@ -37,7 +37,7 @@
 
             
 // Iterate over each .index-list container.
-$(".index-list").each(function() {
+$(".index-list .index-list-wrapper").each(function() {
     var $indexList = $(this);
     var targetElements = [];
 
@@ -110,7 +110,7 @@ $(window).scroll(function() {
     }
 });
 
-if($(".index-sticky .index-list").is(':empty')) {
+if($(".index-sticky .index-list .index-list-wrapper").is(':empty')) {
     $(".index-sticky").hide();
 } else {
     $(".index-sticky").show();
