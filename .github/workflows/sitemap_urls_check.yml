@@ -6,11 +6,14 @@ on:
         description: 'Sitemap URLs (one per line)'
         required: true
         type: string
-      check_alternates:
-        description: 'Check alternate language URLs'
+      username:
+        description: 'Basic auth username (if required)'
         required: false
-        type: boolean
-        default: true
+        type: string
+      password:
+        description: 'Basic auth password (if required)'
+        required: false
+        type: string
 
 jobs:
   check-urls:
@@ -29,16 +32,17 @@ jobs:
       - name: Check URLs
         env:
           SITEMAP_URLS: ${{ inputs.sitemap_urls }}
-          CHECK_ALTERNATES: ${{ inputs.check_alternates }}
+          USERNAME: ${{ inputs.username }}
+          PASSWORD: ${{ inputs.password }}
         run: |
           import requests
           import xmltodict
           import sys
           import os
           
-          def check_url(url):
+          def check_url(url, auth=None):
               try:
-                  response = requests.get(url, allow_redirects=False)
+                  response = requests.get(url, allow_redirects=False, auth=auth)
                   if response.status_code not in [200, 301]:
                       print(f"❌ Error: {url} returned status code {response.status_code}")
                       return False
@@ -48,15 +52,14 @@ jobs:
                   print(f"❌ Error: {url} raised an exception: {str(e)}")
                   return False
           
-          def process_sitemap(sitemap_url):
+          def process_sitemap(sitemap_url, auth=None):
               try:
                   print(f"\nProcessing sitemap: {sitemap_url}")
-                  response = requests.get(sitemap_url)
+                  response = requests.get(sitemap_url, auth=auth)
                   response.raise_for_status()
                   sitemap = xmltodict.parse(response.text)
                   
                   urls = set()  # Using set to avoid duplicates
-                  check_alternates = os.environ['CHECK_ALTERNATES'].lower() == 'true'
                   
                   # Process each URL entry
                   urlset = sitemap['urlset']['url']
@@ -67,8 +70,8 @@ jobs:
                       # Add main URL
                       urls.add(url_entry['loc'])
                       
-                      # Add alternate language URLs if enabled
-                      if check_alternates and 'xhtml:link' in url_entry:
+                      # Add alternate language URLs
+                      if 'xhtml:link' in url_entry:
                           links = url_entry['xhtml:link']
                           if not isinstance(links, list):
                               links = [links]
@@ -87,10 +90,15 @@ jobs:
           # Get sitemap URLs from workflow input
           sitemap_urls = [url.strip() for url in os.environ['SITEMAP_URLS'].split('\n') if url.strip()]
           
+          # Check for basic auth credentials
+          username = os.environ.get('USERNAME', '')
+          password = os.environ.get('PASSWORD', '')
+          auth = (username, password) if username and password else None
+          
           # Process all sitemaps
           all_urls = []
           for sitemap_url in sitemap_urls:
-              urls = process_sitemap(sitemap_url)
+              urls = process_sitemap(sitemap_url, auth=auth)
               all_urls.extend(urls)
           
           if not all_urls:
@@ -102,7 +110,7 @@ jobs:
           # Check all URLs
           failed = False
           for url in all_urls:
-              if not check_url(url):
+              if not check_url(url, auth=auth):
                   failed = True
           
           if failed:
