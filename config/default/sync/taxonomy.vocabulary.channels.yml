@@ -1,0 +1,8 @@
+uuid: aa064c31-48d0-4839-879a-0d0b5d81f0dd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Payment channels'
+vid: channels
+description: ''
+weight: 0

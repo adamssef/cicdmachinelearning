@@ -1,0 +1,16 @@
+planet_payment_methods.payment_methods:
+  path: '/planet/payment_methods/{payment_method}/{channel}/{how_many_already_loaded}/{limit}'
+  defaults:
+    _controller: '\Drupal\planet_payment_methods\Controller\PaymentMethodsController::loadPaymentMethods'
+    _title: 'Load all published payment methods'
+  requirements:
+    _permission: 'access content'
+    how_many_already_loaded: '\d+'  # Ensure how_many_already_loaded is a positive integer.
+
+planet_payment_methods.payment_methods_count:
+  path: '/planet/payment_methods/get_total_payment_methods_count/{payment_method}/{channel}'
+  defaults:
+    _controller: '\Drupal\planet_payment_methods\Controller\PaymentMethodsController::getTotalPaymentMethodsCount'
+    _title: 'Count total published payment methods'
+  requirements:
+    _permission: 'access content'

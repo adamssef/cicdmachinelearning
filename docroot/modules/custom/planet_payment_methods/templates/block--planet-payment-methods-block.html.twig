@@ -1,0 +1,125 @@
+{% set cards = data.cards %}
+<div class="container">
+    <div class="row">
+        <div class="flex justify-center overflow-y-hidden">
+            <div class="switch w-[290px] md:w-[360px]">
+                <input id="switch-y" name="tripple" type="radio" value="Y"
+                       class="switch-input" checked/>
+                <label for="switch-y"
+                       class="switch-label switch-label-y w-[90px] md:w-[120px] left-[3px] md:left-[0px]">{{ "All channels"|t }}</label>
+                <input id="switch-i" name="tripple" type="radio" value="I"
+                       class="switch-input"/>
+                <label for="switch-i"
+                       class="switch-label switch-label-i w-[90px] md:w-[120px] left-[8px] md:left-[0px]">{{ "Online"|t }}</label>
+                <input id="switch-n" name="tripple" type="radio" value="N"
+                       class="switch-input"/>
+                <label for="switch-n"
+                       class="switch-label switch-label-n w-[90px] md:w-[120px] left-[16px] md:left-[0px]">{{ "In-person"|t }}</label>
+                <span class="switch-selector"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="my-8 flex justify-center px-4 md:px-6 text-[32px] md:text-[48px] leading-[60px] font-semibold color-planet-black text-center">{{ "Pick from over 40 payment methods."|t }}</div>
+<div class="flex justify-center dropdown-items-container">
+    <div class="flex relative items-center flex-col dropdown-items min-w-[220px]">
+        <div class="hover:bg-[#f5f5f5] transition duration-300 cursor-pointer min-w-[220px] dropdown-item dropdown-item__default dropdown-item--selected flex justify-between items-center leading-[22px] tracking-tighter flex px-4 h-12 border border-solid border-[#D1D1D1] rounded-lg">
+            <span class="select-none mr-2 font-semibold leading-[22px] tracking-[-0.5px]">{{ "Select payment method"|t }}</span><img class="select-none" src="/resources/icons/dropdown_arrow_pointing_down.svg"/>
+        </div>
+        <div class="select-none transition duration-300 bg-white dropdown-container absolute top-12 z-10 hidden rounded-lg border border-solid border-[#D1D1D1] min-w-[220px]">
+            {% for key, payment_method in data.payment_methods %}
+                {% if key == 0 %}
+                    <div class="select-none transition duration-300 hover:bg-[#f5f5f5] cursor-pointer rounded-t-lg h-12 px-4 dropdown-item flex r min-w-[220px] items-center border-b border-solid border-[#F5F5F5]">
+                        <span class="select-none lex items-start">{{ payment_method|t }}</span><span>{{ payment_method.payment_option }}</span><img
+                                class="ml-2 hidden"
+                                src="/resources/icons/dropdown_arrow_pointing_down.svg"/>
+                    </div>
+                {% elseif key|last %}
+                    <div class="select-none transition duration-300 hover:bg-[#f5f5f5] cursor-pointer rounded-b-lg h-12 px-4 dropdown-item flex r min-w-[220px] items-center border-b border-solid border-[#F5F5F5]">
+                        <span class="select-none flex items-start">{{ payment_method|t }}</span><span>{{ payment_method.payment_option }}</span><img
+                                class="ml-2 hidden"
+                                src="/resources/icons/dropdown_arrow_pointing_down.svg"/>
+                    </div>
+                {% else %}
+                    <div class="select-none transition duration-300 hover:bg-[#f5f5f5] cursor-pointer h-12 px-4 dropdown-item flex r min-w-[220px] items-center border-b border-solid border-[#F5F5F5]">
+                        <span class="select-none flex items-start">{{ payment_method|t }}</span><span>{{ payment_method.payment_option }}</span><img
+                                class="ml-2 hidden"
+                                src="/resources/icons/dropdown_arrow_pointing_down.svg"/>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="!flex justify-center reset-filters px-4 md:px-8">
+    <div class="hidden we-are-sorry-span reset-filters-not-standalone">
+        <span class="we-are-sorry-span__text flex flex-wrap justify-center">
+            <span class="flex mt-6">
+                <span class="we-are-sorry-span__text__text !text-black">{{ "We’re sorry, but it seems that there are no case studies matching your search criteria at the moment. Please try again."|t }}<button class="reset-filters-button we-are-sorry-button inline items-center text-justify ml-[19px] min-w-[88px] text-[#E00083]">{{ "Clear filter"|t }}<img class="ml-1 inline" src="/resources/icons/x-clear-filter.svg"></button></span>
+            </span>
+        </span>
+    </div>
+    <span class="m-auto hidden reset-filters-button reset-filters-standalone-clear-filter-button">
+        <span class="text-[#E00083] mt-6">{{ "Clear filter"|t }}<img class="ml-1 inline" src="/resources/icons/x-clear-filter.svg"></span>
+        <div class="clear-filter-icon clear-filter-icon-standalone"></div>
+    </span>
+</div>
+<div id="payment-methods-container" class="flex flex-wrap justify-start gap-4 sm:gap-6 md:gap-[24px] md:w-[600px] lg:w-[1176px] w-full mx-auto mt-12 pr-4 pl-4 md:pl-6 mb-8 md:mb-12"></div>
+<div class="hidden flex justify-center load-more-button">
+    <a class="cursor-pointer hover:bg-planet-pink transition duration-300 leading-5 font-bold flex items-center text-white box-content block w-[71px] px-6 rounded-[56px] h-[56px] bg-planet-black content-box mb-12 md:mb-20 text-center">{{ "Load more"|t }}</a>
+</div>
+<div class="hidden loader">
+    <img src="/resources/icons/loader.svg">
+</div>
+<div class="rounded-t-[32px] md:rounded-t-[40px] bg-black text-white leading-[40px] md:leading-[60px] text-center font-
+semibold text-[32px] md:text-5xl pt-12 md:pt-20 pb-6 md:pb-8 lg:pb-12 px-4 md:px-8"><div class="md:max-w-[704px] m-auto font-semibold leading-[40px] lg:max-w-[800px]">{{ "Give your customers even more choice with our solution"|t }}</div></div>
+<div class="flex flex-col lg:flex-row gap-6 justify-center bg-black px-4 md:px-8">
+    <!-- Online Section -->
+    {% for card in cards %}
+        <div class="group lg:hover:shadow-planet-pp-card-hover--white transition duration-300  rounded-3xl bg-white h-[350px] w-full w-auto lg:w-[323px] box-content border border-solid border-[#D1D1D1]">
+            <div
+                    class="{% if card.class == 'online' %}bg-online{% elseif card.class == 'inperson' %}bg-inperson{% else %}bg-dcc{% endif %} mx-2 mt-2 w-auto lg:w-[307px] h-[208px] bg-[url('{{ card.img_path }}')] bg-cover bg-no-repeat bg-top rounded-2xl "></div>
+            <div class="p-6">
+                {% if card.url %}
+                    <a href="{{ card.url }}">
+                        <span class=" block text-2xl leading-[30px] pb-4 text-black font-semibold">{{ card.title|t }}</span>
+                    </a>
+                {% else %}
+                    <span
+                            class=" block text-2xl leading-[30px] pb-4 text-black font-semibold">{{ card.title|t }}</span>
+                {% endif %}
+                {% for child_card in card.children %}
+                    {% if child_card.url %}
+                        <a class="block text-black py-[7px] leading-[20px] font-semibold" href="{{ child_card.url }}">
+                            <span class="transition-all duration-300 mr-4 group-hover:mr-6">{{ child_card.title|t }}</span>
+                            <img class="inline" src="/resources/icons/card-long-black-arrow-right.svg">
+                        </a>
+                    {% else %}
+                        <span class="block group text-white py-[7px] leading-[20px] font-semibold">
+                            <span class="mr-4 group-hover:mr-6">{{ child_card.title|t }}</span>
+                        </span>
+                    {% endif %}
+
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div>
+<div class="bg-black">
+    <div class="md:max-w-[1344px] mx-auto px-4 md:px-8 text-zinc-100 text-center py-12 md:py-20 w-full bg-black">
+        <div class="relative z-[1] bg-[url('/resources/images/payment_methods/last-cta-pm.jpg')] rounded-[32px] flex items-center bg-cover bg-center py-8 md:py-0 md:min-h-80 px-4 lg:px-0 content-center front-page-hero">
+            <div class="w-full mx-auto">
+                <div class="ml-auto w-full text-center">
+                    <h1 class="text-[36px] md:text-[48px] lg:text-[60px] font-semibold text-zinc-100 text-center pb-6">
+                        {{ "Start with Planet today"|t }}
+                    </h1>
+                    <a href="/contact" class="md:transition-all md:duration-300 text-center bg-zinc-50 inline-block hover:bg-[#e00083] hover:text-zinc-100 text-[#202020] font-bold py-4 px-6 rounded-full">
+                        {{ "Get in touch"|t }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
