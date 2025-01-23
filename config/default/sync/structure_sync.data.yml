@@ -325,44 +325,3529 @@ menus:
     uuid: 7d4b54b9-213e-4c37-a2df-9befdaa1dfe4
     options: {  }
 taxonomies:
-  tags:
+  acquirers:
     -
-      vid: tags
-      tid: '3206'
+      vid: acquirers
+      tid: '3041'
+      langcode: en
+      name: AirPlus
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 79d4ee54-fb61-4a67-ad68-ab11b86c7430
+    -
+      vid: acquirers
+      tid: '3035'
+      langcode: en
+      name: 'American Express International Inc.'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 582ccb66-2b31-4a4b-88ce-f52b849f64c5
+    -
+      vid: acquirers
+      tid: '3051'
+      langcode: en
+      name: 'availabill AG'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8bccfcd4-0575-4da6-bf0d-97d8d78b0638
+    -
+      vid: acquirers
+      tid: '3058'
+      langcode: en
+      name: 'boncard payment & services ag'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3f061522-d95d-4e30-bccf-c1d26c202fa5
+    -
+      vid: acquirers
+      tid: '3052'
+      langcode: en
+      name: 'Byjuno AG'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 25a7b614-ff20-465a-a49f-0a58c04f46fa
+    -
+      vid: acquirers
+      tid: '3017'
+      langcode: en
+      name: 'card complete Service Bank AG'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 07c51a26-ee57-4b66-8b42-de5bb9ba2dc6
+    -
+      vid: acquirers
+      tid: '3018'
+      langcode: en
+      name: 'Chase Paymentech Europe Ltd (J.P. Morgan)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d03a0438-5845-4615-8361-1cd3115cece6
+    -
+      vid: acquirers
+      tid: '3019'
+      langcode: en
+      name: Clearhaus
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: fec59cf6-2bc2-4c11-befd-afc3e84ef375
+    -
+      vid: acquirers
+      tid: '3039'
+      langcode: en
+      name: 'Concardis GmbH'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 56bcc084-4899-4d5e-97e7-57260b7667f1
+    -
+      vid: acquirers
+      tid: '3040'
+      langcode: en
+      name: 'Concardis GmbH Vertrieb Schweiz'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b1057a43-157c-48bc-bf0b-7aea65afc925
+    -
+      vid: acquirers
+      tid: '3042'
+      langcode: en
+      name: 'Concardis GmbH, Vertrieb Schweiz'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1664d3b3-7d47-4524-af81-0cc25308c87b
+    -
+      vid: acquirers
+      tid: '3048'
+      langcode: en
+      name: 'creditPass GmbH'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0366440c-9372-49dd-855e-872b0e7c18e3
+    -
+      vid: acquirers
+      tid: '3053'
+      langcode: en
+      name: 'CRIF AG'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d1d2e933-496c-4bde-b49d-e44a370f4376
+    -
+      vid: acquirers
+      tid: '3046'
+      langcode: en
+      name: 'Dankort / Nets Holding A/S'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6018fbb8-42cf-4a34-ab9d-d2db33ca6386
+    -
+      vid: acquirers
+      tid: '3037'
+      langcode: en
+      name: 'DC Bank AG (AT)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 356f8234-caf6-4682-9894-98538b452e79
+    -
+      vid: acquirers
+      tid: '3038'
+      langcode: en
+      name: 'Elavon Merchant Service (DE)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 628b5754-4051-4e4e-9580-bff1f06f5232
+    -
+      vid: acquirers
+      tid: '3020'
+      langcode: en
+      name: 'Elavon Merchant Services'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a86e8ea2-13b0-4f32-baa8-fc49c1955209
+    -
+      vid: acquirers
+      tid: '3021'
+      langcode: en
+      name: 'European Merchant Services EMS'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 98826fbe-abc5-4617-bac9-dada5a25ed7f
+    -
+      vid: acquirers
+      tid: '3043'
+      langcode: en
+      name: 'EVO Payments International GmbH'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 033eff91-99c7-4831-97ca-3ce2333e3c59
+    -
+      vid: acquirers
+      tid: '3022'
+      langcode: en
+      name: 'First Cash Solution'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 69028008-2b71-4273-9dc4-19493aa2b455
+    -
+      vid: acquirers
+      tid: '3023'
+      langcode: en
+      name: 'hobex AG'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a038353a-2b9b-4093-b226-d141e591f904
+    -
+      vid: acquirers
+      tid: '3024'
+      langcode: en
+      name: 'Ingenico Payment Services GmbH'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 23429bc6-5fcc-4c87-bc3a-e45c1f45eb4a
+    -
+      vid: acquirers
+      tid: '3026'
+      langcode: en
+      name: 'Lloyds Bank Cardnet'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bcfd8ee7-1d7c-47a2-bc7a-0e9047cd5eaa
+    -
+      vid: acquirers
+      tid: '3025'
+      langcode: en
+      name: 'LogPay Financial Services GmbH'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 995ff96f-0705-4584-b6f5-3d5a2f5d4fc3
+    -
+      vid: acquirers
+      tid: '3057'
+      langcode: en
+      name: Loylogic
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 575fa208-1e27-497f-9bca-0c436bfa384a
+    -
+      vid: acquirers
+      tid: '3047'
+      langcode: en
+      name: 'Migros Bank AG (CH)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3c8a6d1b-3728-42a9-85a7-d22efe80c66d
+    -
+      vid: acquirers
+      tid: '3027'
+      langcode: en
+      name: 'Nets Schweiz AG'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f8aec939-0d13-4cb5-b27c-65d77d2fa83c
+    -
+      vid: acquirers
+      tid: '3028'
+      langcode: en
+      name: 'PAYONE GmbH'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e26ef738-0f85-4ecc-a682-4ef915690dc6
+    -
+      vid: acquirers
+      tid: '3029'
+      langcode: en
+      name: 'PAYONE GmbH, Austrian branch'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c3c0d66e-2ad1-4766-97fb-f4094e7656ca
+    -
+      vid: acquirers
+      tid: '3056'
+      langcode: en
+      name: 'paysafecard.com Schweiz GmbH'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9ef3043f-2433-4755-8254-bbdb01156eea
+    -
+      vid: acquirers
+      tid: '3030'
+      langcode: en
+      name: PayU
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f494785f-9bbd-4646-b05c-1cdd91fbeead
+    -
+      vid: acquirers
+      tid: '3045'
+      langcode: en
+      name: 'PostFinance AG'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: fb99c67e-4693-456f-bb8b-71f79ba2ebaa
+    -
+      vid: acquirers
+      tid: '3050'
+      langcode: en
+      name: 'POWERPAY / MFGroup AG'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b16a1c3d-94c5-4415-ab04-d822706d43f2
+    -
+      vid: acquirers
+      tid: '3059'
+      langcode: en
+      name: Reka
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a6f11afc-2037-4f6d-b593-21b49b08106c
+    -
+      vid: acquirers
+      tid: '3049'
+      langcode: en
+      name: 'S-Public Services GmbH'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2e1d72d3-a5ea-4923-b90c-e026eb1eee67
+    -
+      vid: acquirers
+      tid: '3031'
+      langcode: en
+      name: 'Société Générale'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 31ea878a-0e63-4249-b5b7-7d4b085836ca
+    -
+      vid: acquirers
+      tid: '3054'
+      langcode: en
+      name: 'SWISSBILLING SA'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 484a5bf6-3290-499d-a0ec-896ab6c610bb
+    -
+      vid: acquirers
+      tid: '3036'
+      langcode: en
+      name: 'Swisscard AECS AG (CH)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 84ce63cb-206e-469f-bfb1-2ed5d4b33c15
+    -
+      vid: acquirers
+      tid: '3060'
+      langcode: en
+      name: 'Swisscom Pay / Swisscom (Schweiz AG)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1411c6ec-cb22-47f6-a09f-f5ab3cd3d12e
+    -
+      vid: acquirers
+      tid: '3055'
+      langcode: en
+      name: Swisspass
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 670c28e4-a9a7-489e-9ff6-0f5b70070b90
+    -
+      vid: acquirers
+      tid: '3044'
+      langcode: en
+      name: 'Wirecard AG'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: adf25f7b-83ba-4e99-a245-958a2b21e277
+    -
+      vid: acquirers
+      tid: '3032'
+      langcode: en
+      name: 'Worldline Financial Services (Europe) S.A.'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1c82e3c8-d7de-4b20-8986-586863397535
+    -
+      vid: acquirers
+      tid: '3033'
+      langcode: en
+      name: 'Worldline Switzerland Ltd.'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2b1e0641-cf93-4220-b9b4-c962f33b2ae1
+    -
+      vid: acquirers
+      tid: '3034'
+      langcode: en
+      name: WorldPay
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a6d33f89-e5e1-4008-a3af-55e5c8423adf
+  case_studies_industry:
+    -
+      vid: case_studies_industry
+      tid: '2896'
+      langcode: en
+      name: E-commerce
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 89a0d843-73a2-4c7f-ac2c-ade0f626ad04
+    -
+      vid: case_studies_industry
+      tid: '2901'
       langcode: en
       name: Hospitality
       description__value: null
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 11e617f4-051e-4016-9c84-f7742857d38f
+      uuid: 4f543bd4-2353-4d1e-80b7-52b6c94a770f
     -
-      vid: tags
-      tid: '3208'
-      langcode: en
-      name: Payments
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: 5afd5fdb-9a54-4a0d-8607-f7cb25987d6a
-    -
-      vid: tags
-      tid: '3207'
+      vid: case_studies_industry
+      tid: '2906'
       langcode: en
       name: Retail
       description__value: null
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: b45a3133-736b-4f20-8326-c6e644bd732c
+      uuid: 978aa8a7-12a8-4e5a-9c5c-9bbd056d0eb3
     -
-      vid: tags
-      tid: '3209'
+      vid: case_studies_industry
+      tid: '2911'
       langcode: en
-      name: Tax-free
+      name: 'Tax free'
       description__value: null
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: f7557f0c-5a33-4cc1-8dd1-02a26ba5a980
+      uuid: bcea8581-ab38-4f7b-87c1-864e1d482cfd
+  case_studies_products:
+    -
+      vid: case_studies_products
+      tid: '2961'
+      langcode: en
+      name: 'Currency conversion'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4f5a3643-d412-4b6a-90e3-2724407b945e
+    -
+      vid: case_studies_products
+      tid: '2966'
+      langcode: en
+      name: E-commerce
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 50f3e7b9-1b22-44a7-baa3-a3134264f19e
+    -
+      vid: case_studies_products
+      tid: '2971'
+      langcode: en
+      name: 'Hotel management system'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ff85e912-b16e-49b4-923e-61d75706bc81
+    -
+      vid: case_studies_products
+      tid: '3001'
+      langcode: en
+      name: Networking
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0d46265e-8475-4a00-a3aa-a7006917ffd6
+    -
+      vid: case_studies_products
+      tid: '2976'
+      langcode: en
+      name: Payments
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 591fec99-1b08-42d6-b156-86d89db5c8a5
+    -
+      vid: case_studies_products
+      tid: '2981'
+      langcode: en
+      name: Retail
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d9e615cb-fe81-4d79-ae72-82bf8e444555
+    -
+      vid: case_studies_products
+      tid: '2986'
+      langcode: en
+      name: 'Tax free'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4bcb6519-42c2-4796-b693-4cae3f4636a5
+  case_studies_tags:
+    -
+      vid: case_studies_tags
+      tid: '1826'
+      langcode: en
+      name: Asia
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 402dc782-2aa9-47aa-9c34-40764735cdcb
+    -
+      vid: case_studies_tags
+      tid: '1631'
+      langcode: en
+      name: Food
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bb2a39fa-5b77-467a-8c7f-9c5bf916af96
+    -
+      vid: case_studies_tags
+      tid: '1821'
+      langcode: en
+      name: Hotel
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8863daff-bc2a-4ae7-95c5-450807a9ce8d
+    -
+      vid: case_studies_tags
+      tid: '1596'
+      langcode: en
+      name: Industry
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 89394567-7120-4585-9237-2f5724d12fac
+    -
+      vid: case_studies_tags
+      tid: '1636'
+      langcode: en
+      name: PMS
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: cb924e4e-a0db-45ac-a109-cc88edef7f77
+    -
+      vid: case_studies_tags
+      tid: '1601'
+      langcode: en
+      name: Products
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 13f11a77-a785-4434-b528-f3d53a665159
+    -
+      vid: case_studies_tags
+      tid: '1606'
+      langcode: en
+      name: Topic
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3a895540-6afb-4540-9299-cec226ff372e
+  channels:
+    -
+      vid: channels
+      tid: '3068'
+      langcode: en
+      name: In-person
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1b3ffd74-55d6-470f-9304-3b96d7d572be
+    -
+      vid: channels
+      tid: '3067'
+      langcode: en
+      name: Online
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f0f43dfa-6d90-4cd2-a98c-ee6a5408162c
+  company_sectors:
+    -
+      vid: company_sectors
+      tid: '1581'
+      langcode: en
+      name: Hospitality
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e65a71fd-6b96-47f2-a70a-c4209b07b582
+    -
+      vid: company_sectors
+      tid: '1586'
+      langcode: en
+      name: Partners
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1ae15812-8fe2-4de8-98c6-fc161cf35b86
+    -
+      vid: company_sectors
+      tid: '1576'
+      langcode: en
+      name: Payments
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2a0eb07b-9d33-4490-ba2f-04ec4e647d40
+    -
+      vid: company_sectors
+      tid: '1591'
+      langcode: en
+      name: Retail
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ce16047c-275e-4f32-91c8-07304f411a52
+  company_size:
+    -
+      vid: company_size
+      tid: '2941'
+      langcode: en
+      name: 'Global organizations'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e2f25ba6-6090-4232-9955-e067f0d836c8
+    -
+      vid: company_size
+      tid: '2946'
+      langcode: en
+      name: 'Large enterprises'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b09ab86a-1e28-4669-baaf-1e8ad76aa453
+    -
+      vid: company_size
+      tid: '2951'
+      langcode: en
+      name: 'Small and medium enterprises'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d1232d06-a5eb-4433-933e-4f2bf6b0dc5c
+    -
+      vid: company_size
+      tid: '2956'
+      langcode: en
+      name: Startups
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3a565efe-156a-43c8-a350-1f55fc02eb92
+  countries:
+    -
+      vid: countries
+      tid: '1616'
+      langcode: en
+      name: Italy
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 55b04969-127f-4125-97e4-8bb273e786c4
+      field_region:
+        -
+          name: 'Europe & EU'
+          vid: regions
+    -
+      vid: countries
+      tid: '1621'
+      langcode: en
+      name: Spain
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 377ddf4e-df63-4e8a-bb8f-2cf55eb5d39b
+      field_region:
+        -
+          name: 'Europe & EU'
+          vid: regions
+    -
+      vid: countries
+      tid: '1611'
+      langcode: en
+      name: 'United Kingdom'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 45a9a682-6f90-49a5-a9d1-3c7901508ffa
+      field_region:
+        -
+          name: 'United Kingdom'
+          vid: regions
+  email_contacts_terms:
+    -
+      vid: email_contacts_terms
+      tid: '2091'
+      langcode: en
+      name: Datatrans
+      description__value: null
+      description__format: null
+      weight: '32'
+      parent: '0'
+      uuid: 156c014b-3b8e-4cd4-b8a3-7d9f6f85117b
+      field_email: {  }
+    -
+      vid: email_contacts_terms
+      tid: '2211'
+      langcode: en
+      name: 'Datatrans support'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2091'
+      uuid: 49f4f2ce-7ecc-4ab5-bda5-921cd85af02c
+      field_email:
+        -
+          value: support@datatrans.ch
+    -
+      vid: email_contacts_terms
+      tid: '2101'
+      langcode: en
+      name: 'Gateway, and Tax Free Technical Merchant support'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2066'
+      uuid: 61ce6213-cfb3-4157-b324-abdf5f91f914
+      field_email:
+        -
+          value: support.help@weareplanet.com
+    -
+      vid: email_contacts_terms
+      tid: '2081'
+      langcode: en
+      name: 'Hoist Group'
+      description__value: null
+      description__format: null
+      weight: '33'
+      parent: '0'
+      uuid: c18a3c76-0ec0-45dc-88b1-f99324d02370
+      field_email: {  }
+    -
+      vid: email_contacts_terms
+      tid: '2181'
+      langcode: en
+      name: 'Hoist Networking'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2081'
+      uuid: 88edca7a-52a6-49bd-b247-a179f3b4247b
+      field_email:
+        -
+          value: hospitality.hotelcare@hoistgroup.com
+    -
+      vid: email_contacts_terms
+      tid: '2086'
+      langcode: en
+      name: 'Hoist PMS Products'
+      description__value: null
+      description__format: null
+      weight: '34'
+      parent: '0'
+      uuid: 4137e8f5-ce4f-42a7-8e62-cb1a3e626cb5
+      field_email: {  }
+    -
+      vid: email_contacts_terms
+      tid: '2066'
+      langcode: en
+      name: 'Payments and Tax Free (Technical)'
+      description__value: null
+      description__format: null
+      weight: '28'
+      parent: '0'
+      uuid: 21de8002-8517-4f9e-96d0-b2c81955b425
+      field_email: {  }
+    -
+      vid: email_contacts_terms
+      tid: '3011'
+      langcode: en
+      name: 'Planet Acquiring'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '2066'
+      uuid: 9ba05aad-a1a7-4834-8d2e-d328905dfcfe
+      field_email:
+        -
+          value: customersupport@weareplanet.com
+    -
+      vid: email_contacts_terms
+      tid: '2096'
+      langcode: en
+      name: 'Planet Unified Commerce'
+      description__value: null
+      description__format: null
+      weight: '36'
+      parent: '0'
+      uuid: 37b76c64-6a22-4dc2-a2d8-872526f66606
+      field_email: {  }
+    -
+      vid: email_contacts_terms
+      tid: '2216'
+      langcode: en
+      name: 'Planet Unified Commerce'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2096'
+      uuid: 08c9fcc7-098e-45e8-8a53-de3ab2b987ed
+      field_email:
+        -
+          value: support@proximis.com
+    -
+      vid: email_contacts_terms
+      tid: '2186'
+      langcode: en
+      name: 'PMS (France)'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '2086'
+      uuid: b56025a0-23dc-4dfa-9562-ea95f4c07a9b
+      field_email:
+        -
+          value: pms.support.fr@weareplanet.com
+    -
+      vid: email_contacts_terms
+      tid: '2206'
+      langcode: en
+      name: 'PMS (Ireland, UK, Italy)'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '2086'
+      uuid: 844cfcca-605a-4c3a-8b20-0b0c47a764d2
+      field_email:
+        -
+          value: 'pms.support.ie@weareplanet.com '
+    -
+      vid: email_contacts_terms
+      tid: '2196'
+      langcode: en
+      name: 'PMS (Sweden, Denmark, Finland, Norway, Baltics)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2086'
+      uuid: 4e10499e-40bf-4a18-9762-1b6bbd2ab0e5
+      field_email:
+        -
+          value: pms.support.nordics@weareplanet.com
+    -
+      vid: email_contacts_terms
+      tid: '2076'
+      langcode: en
+      name: Protel
+      description__value: null
+      description__format: null
+      weight: '35'
+      parent: '0'
+      uuid: be76d4e2-6100-40e9-a8da-b36170463d3d
+      field_email: {  }
+    -
+      vid: email_contacts_terms
+      tid: '2176'
+      langcode: en
+      name: 'Protel Support'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2076'
+      uuid: 066a1752-f9c5-487e-affe-2fe480985cd5
+      field_email:
+        -
+          value: support@protel.net
+    -
+      vid: email_contacts_terms
+      tid: '2071'
+      langcode: en
+      name: 'Tax Free (General)'
+      description__value: null
+      description__format: null
+      weight: '31'
+      parent: '0'
+      uuid: 2beae40d-4b15-4ea5-8f61-b4dc4ec7d209
+      field_email: {  }
+    -
+      vid: email_contacts_terms
+      tid: '3016'
+      langcode: en
+      name: 'Tax Free - Europe – Merchant Support'
+      description__value: null
+      description__format: null
+      weight: '18'
+      parent: '2071'
+      uuid: 75ef5617-2fcc-43fa-b5f0-7ca1fa3414e1
+      field_email:
+        -
+          value: taxfreemerchant.support@weareplanet.com
+    -
+      vid: email_contacts_terms
+      tid: '2251'
+      langcode: en
+      name: 'Tax Free - Turkey - Merchant Support'
+      description__value: null
+      description__format: null
+      weight: '17'
+      parent: '2071'
+      uuid: 2b330f64-526b-4fa9-9bac-8ff5807e1ef1
+      field_email:
+        -
+          value: TR.Merchant@planetpayment.com
+    -
+      vid: email_contacts_terms
+      tid: '2256'
+      langcode: en
+      name: 'Tax Free - UAE - Merchant Support'
+      description__value: null
+      description__format: null
+      weight: '18'
+      parent: '2071'
+      uuid: 309a7bbb-b9a1-4bf2-918d-f7a3bc277d13
+      field_email:
+        -
+          value: merchants@planetpayment.com
+  newsroomtags:
+    -
+      vid: newsroomtags
+      tid: '2836'
+      langcode: en
+      name: 'Corporate news'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8d3c2db4-e394-42ce-92e9-935a49186d78
+    -
+      vid: newsroomtags
+      tid: '2841'
+      langcode: en
+      name: 'Partnership news'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f6340135-cde5-4033-a451-6a4cbb6f170b
+    -
+      vid: newsroomtags
+      tid: '2831'
+      langcode: en
+      name: 'Product news'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5d45e597-6abe-4802-99d6-8453cb05421f
+  newsroomyears:
+    -
+      vid: newsroomyears
+      tid: '2846'
+      langcode: en
+      name: '2023'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 586827a4-6198-4951-898e-4b06a207cce8
+    -
+      vid: newsroomyears
+      tid: '2851'
+      langcode: en
+      name: '2024'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c46a51f3-fef5-4cd5-8a59-affc357297b6
+  payment_methods:
+    -
+      vid: payment_methods
+      tid: '3061'
+      langcode: en
+      name: 'Credit cards'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 30d3524c-de0e-4d5a-95c8-ada86e31dad6
+    -
+      vid: payment_methods
+      tid: '3065'
+      langcode: en
+      name: 'Credit worthiness and payment by invoice'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a581f631-a978-48cd-9773-35bb18e48b95
+    -
+      vid: payment_methods
+      tid: '3062'
+      langcode: en
+      name: 'Debit cards'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 054549b6-5387-415c-9276-702983bc5739
+    -
+      vid: payment_methods
+      tid: '3064'
+      langcode: en
+      name: 'E-banking/bank transfer'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ea5d0a4a-13e8-4a8b-8212-0b2c2d2a423a
+    -
+      vid: payment_methods
+      tid: '3066'
+      langcode: en
+      name: 'Other payment methods'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c1e7c03b-a37f-4ac7-927d-8f65fe10ee4d
+    -
+      vid: payment_methods
+      tid: '3063'
+      langcode: en
+      name: Wallets
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 00d4d032-5617-447d-bf8e-98f0b24fa3d3
+  phone_number_terms:
+    -
+      vid: phone_number_terms
+      tid: '2301'
+      langcode: en
+      name: Africa
+      description__value: null
+      description__format: null
+      weight: '57'
+      parent: '0'
+      uuid: 6dd8709b-481e-4ea1-83d2-0621122ac183
+      field_enter_phone_number: {  }
+    -
+      vid: phone_number_terms
+      tid: '1926'
+      langcode: en
+      name: Americas
+      description__value: null
+      description__format: null
+      weight: '60'
+      parent: '0'
+      uuid: bfdf4db5-6ae5-4534-bd6b-050a1f887c88
+      field_enter_phone_number: {  }
+    -
+      vid: phone_number_terms
+      tid: '2271'
+      langcode: en
+      name: Asia
+      description__value: null
+      description__format: null
+      weight: '58'
+      parent: '0'
+      uuid: 1dffc541-d035-4945-b0b9-65bd6aefdaa4
+      field_enter_phone_number: {  }
+    -
+      vid: phone_number_terms
+      tid: '1916'
+      langcode: en
+      name: Austria
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '1911'
+      uuid: cca223ed-8087-453a-a45c-040b7506847d
+      field_enter_phone_number:
+        -
+          value: '+43 800 802706'
+    -
+      vid: phone_number_terms
+      tid: '2551'
+      langcode: en
+      name: Bahrain
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2271'
+      uuid: 8e64386c-aaa3-47d4-a2d3-e88eb659512c
+      field_enter_phone_number:
+        -
+          value: '+973 800 06231'
+    -
+      vid: phone_number_terms
+      tid: '2276'
+      langcode: en
+      name: 'Bahrain (Tax free)'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '2271'
+      uuid: ff516460-6f3a-409e-99d8-4931336ee8a2
+      field_enter_phone_number:
+        -
+          value: '+973 136 87777'
+    -
+      vid: phone_number_terms
+      tid: '1936'
+      langcode: en
+      name: Belgium
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '1911'
+      uuid: c0e624e8-a7dd-4616-a061-35ba11a95476
+      field_enter_phone_number:
+        -
+          value: '+322 888 1633'
+    -
+      vid: phone_number_terms
+      tid: '2296'
+      langcode: en
+      name: Canada
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '1926'
+      uuid: a5cc6043-a86a-47a1-9299-1e81e75c4b7a
+      field_enter_phone_number:
+        -
+          value: '+188 833 67778'
+    -
+      vid: phone_number_terms
+      tid: '1911'
+      langcode: en
+      name: 'Central Europe'
+      description__value: null
+      description__format: null
+      weight: '59'
+      parent: '0'
+      uuid: 8854ad8c-1658-45b9-a53c-fd517e00a41b
+      field_enter_phone_number: {  }
+    -
+      vid: phone_number_terms
+      tid: '2891'
+      langcode: en
+      name: China
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2271'
+      uuid: 56bf591a-8d53-4053-aae1-52eb87afc4db
+      field_enter_phone_number:
+        -
+          value: '+86 400 120 0018'
+    -
+      vid: phone_number_terms
+      tid: '2306'
+      langcode: en
+      name: Congo
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2301'
+      uuid: 079bdbfb-5b90-4073-89cd-61e7d59ed517
+      field_enter_phone_number:
+        -
+          value: '+242 064 000031'
+    -
+      vid: phone_number_terms
+      tid: '2311'
+      langcode: en
+      name: Croatia
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '1911'
+      uuid: 90490a44-a5d4-444b-896b-2be919b45643
+      field_enter_phone_number:
+        -
+          value: '+385 177 76944'
+    -
+      vid: phone_number_terms
+      tid: '1941'
+      langcode: en
+      name: Cyprus
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2541'
+      uuid: 75f82d8f-e823-4136-9481-9c7119a5d32c
+      field_enter_phone_number:
+        -
+          value: '+357 220 099 92'
+    -
+      vid: phone_number_terms
+      tid: '1946'
+      langcode: en
+      name: 'Czech Republic'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '1911'
+      uuid: 477c2dc4-7baa-4f79-ba4d-5dd6e3fdadf6
+      field_enter_phone_number:
+        -
+          value: '+420 800 701210'
+    -
+      vid: phone_number_terms
+      tid: '1951'
+      langcode: en
+      name: Denmark
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2546'
+      uuid: 01f331ae-b4dd-495b-a40f-0484c2fc78a2
+      field_enter_phone_number:
+        -
+          value: '+458 082 0123'
+    -
+      vid: phone_number_terms
+      tid: '2321'
+      langcode: en
+      name: 'Dominican Republic'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '1926'
+      uuid: 99b5469b-6d6a-427d-9c92-87167294d25a
+      field_enter_phone_number:
+        -
+          value: '+182 994 76346'
+    -
+      vid: phone_number_terms
+      tid: '2541'
+      langcode: en
+      name: 'Eastern Europe'
+      description__value: null
+      description__format: null
+      weight: '56'
+      parent: '0'
+      uuid: 9ae15798-2169-4073-9d3f-6fdc7bc517a8
+      field_enter_phone_number: {  }
+    -
+      vid: phone_number_terms
+      tid: '2326'
+      langcode: en
+      name: Egypt
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '2301'
+      uuid: 68ac0137-3287-43cd-86ff-3d3837515753
+      field_enter_phone_number:
+        -
+          value: '+208 000 009440'
+    -
+      vid: phone_number_terms
+      tid: '1961'
+      langcode: en
+      name: Finland
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '2546'
+      uuid: e9a1acc9-7755-465b-91ee-d47efc6feabc
+      field_enter_phone_number:
+        -
+          value: '+358 800 917626'
+    -
+      vid: phone_number_terms
+      tid: '2526'
+      langcode: en
+      name: France
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '1911'
+      uuid: a9208753-de29-448b-afe8-0a9f0097ce79
+      field_enter_phone_number:
+        -
+          value: '+331 799 72112'
+    -
+      vid: phone_number_terms
+      tid: '2331'
+      langcode: en
+      name: Georgia
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '2271'
+      uuid: 18e7b7ca-e5ac-4681-b683-f81464e2fb34
+      field_enter_phone_number:
+        -
+          value: '+995 706 777566'
+    -
+      vid: phone_number_terms
+      tid: '1966'
+      langcode: en
+      name: Germany
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '1911'
+      uuid: 99334c93-7777-4134-ac82-ac574e450187
+      field_enter_phone_number:
+        -
+          value: '+498 001 800894'
+    -
+      vid: phone_number_terms
+      tid: '1971'
+      langcode: en
+      name: Greece
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '1911'
+      uuid: 5581211d-e5d0-4462-b1c6-0c6a755fa961
+      field_enter_phone_number:
+        -
+          value: '+30 210 300 5618'
+    -
+      vid: phone_number_terms
+      tid: '2886'
+      langcode: en
+      name: 'Greece (Tax Free)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '1911'
+      uuid: 2ad186b0-a7ec-46c2-8366-694f33ee7575
+      field_enter_phone_number:
+        -
+          value: '+30 210 674 9481'
+    -
+      vid: phone_number_terms
+      tid: '2866'
+      langcode: en
+      name: 'Hong Kong'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2271'
+      uuid: 6b7406ba-24bd-4a18-b716-b4cf080d6c1f
+      field_enter_phone_number:
+        -
+          value: '+852 5803 1715'
+    -
+      vid: phone_number_terms
+      tid: '1976'
+      langcode: en
+      name: Hungary
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '1911'
+      uuid: 5c31a0df-d0b7-4ad5-afa5-4697309e59b6
+      field_enter_phone_number:
+        -
+          value: '+361 998 9760'
+    -
+      vid: phone_number_terms
+      tid: '1981'
+      langcode: en
+      name: Iceland
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '2546'
+      uuid: 86f2b915-c9a4-4425-9b41-1e4c6ee6a1d1
+      field_enter_phone_number:
+        -
+          value: '+354 800 7538'
+    -
+      vid: phone_number_terms
+      tid: '1986'
+      langcode: en
+      name: Ireland
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '1911'
+      uuid: 87c8bed9-e3ec-4773-988e-36471bbaaf92
+      field_enter_phone_number:
+        -
+          value: '+353 151 33800'
+    -
+      vid: phone_number_terms
+      tid: '2341'
+      langcode: en
+      name: Israel
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '2271'
+      uuid: cd51c18e-6b93-4854-8512-4cde9d0fc969
+      field_enter_phone_number:
+        -
+          value: '+972 722 459329'
+    -
+      vid: phone_number_terms
+      tid: '1991'
+      langcode: en
+      name: Italy
+      description__value: null
+      description__format: null
+      weight: '9'
+      parent: '1911'
+      uuid: 17e09350-69fe-4719-a85a-3ce408bad8a5
+      field_enter_phone_number:
+        -
+          value: '+390 240 708296'
+    -
+      vid: phone_number_terms
+      tid: '2346'
+      langcode: en
+      name: Jordan
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '2271'
+      uuid: 73baf315-417b-45e0-bcb5-4307738fcae5
+      field_enter_phone_number:
+        -
+          value: '+962 642 96205'
+    -
+      vid: phone_number_terms
+      tid: '2361'
+      langcode: en
+      name: Kenya
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '2301'
+      uuid: 3f934807-b9b5-4c1c-95c5-7447529835bd
+      field_enter_phone_number:
+        -
+          value: '+254 207 640 786'
+    -
+      vid: phone_number_terms
+      tid: '2366'
+      langcode: en
+      name: Kuwait
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '2271'
+      uuid: 1bd39a88-a360-4698-a6d8-df7c75b972b1
+      field_enter_phone_number:
+        -
+          value: '+965 220 69184'
+    -
+      vid: phone_number_terms
+      tid: '2371'
+      langcode: en
+      name: Lithuania
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '2541'
+      uuid: d238c644-2426-4b83-9549-3e6d29409715
+      field_enter_phone_number:
+        -
+          value: '+370 520 78243'
+    -
+      vid: phone_number_terms
+      tid: '2376'
+      langcode: en
+      name: Luxembourg
+      description__value: null
+      description__format: null
+      weight: '10'
+      parent: '1911'
+      uuid: ae265b52-7f9a-40dd-993e-b9e8e1f89769
+      field_enter_phone_number:
+        -
+          value: '+352 202 02466'
+    -
+      vid: phone_number_terms
+      tid: '2881'
+      langcode: en
+      name: Malaysia
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2271'
+      uuid: eb49f324-5469-413d-9cab-5b1c332b6319
+      field_enter_phone_number:
+        -
+          value: '+60 3 2706 0187'
+    -
+      vid: phone_number_terms
+      tid: '2381'
+      langcode: en
+      name: Mali
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '2301'
+      uuid: 4e9d2c8e-90d6-4ad1-bbb3-9f14793f0a8c
+      field_enter_phone_number:
+        -
+          value: '+223 449 60002'
+    -
+      vid: phone_number_terms
+      tid: '1996'
+      langcode: en
+      name: Malta
+      description__value: null
+      description__format: null
+      weight: '11'
+      parent: '1911'
+      uuid: d9df9062-4121-4e96-bf14-9c62e2ff92b5
+      field_enter_phone_number:
+        -
+          value: '+356 80 062 785'
+    -
+      vid: phone_number_terms
+      tid: '2386'
+      langcode: en
+      name: Mexico
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '1926'
+      uuid: 50335836-4bcc-439d-8050-2f8a5996030e
+      field_enter_phone_number:
+        -
+          value: '+528 002 889989'
+    -
+      vid: phone_number_terms
+      tid: '2391'
+      langcode: en
+      name: Morocco
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '2301'
+      uuid: b92f45f7-d4e2-4ca2-af7f-5ef3772b7fae
+      field_enter_phone_number:
+        -
+          value: '+212 530 144107'
+    -
+      vid: phone_number_terms
+      tid: '2001'
+      langcode: en
+      name: Netherlands
+      description__value: null
+      description__format: null
+      weight: '12'
+      parent: '1911'
+      uuid: 9d328f4b-4e82-466c-9cd8-34b493eab4b4
+      field_enter_phone_number:
+        -
+          value: '+31 (0) 800 0221356'
+    -
+      vid: phone_number_terms
+      tid: '2401'
+      langcode: en
+      name: Nigeria
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '2301'
+      uuid: 50289870-b8ee-4167-9031-ed4dec85d92a
+      field_enter_phone_number:
+        -
+          value: '+234 708 0601727'
+    -
+      vid: phone_number_terms
+      tid: '2546'
+      langcode: en
+      name: 'Nordic Europe'
+      description__value: null
+      description__format: null
+      weight: '55'
+      parent: '0'
+      uuid: f3679b80-699c-48fd-9fed-0f8141e864aa
+      field_enter_phone_number: {  }
+    -
+      vid: phone_number_terms
+      tid: '2006'
+      langcode: en
+      name: Norway
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '2546'
+      uuid: 9b828438-8894-49a8-9b34-8814fb2d906e
+      field_enter_phone_number:
+        -
+          value: '+47 21 99 54 60'
+    -
+      vid: phone_number_terms
+      tid: '2871'
+      langcode: en
+      name: Philippines
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2271'
+      uuid: f3dff38e-da6a-4407-b8e0-d126ddac4d82
+      field_enter_phone_number:
+        -
+          value: '+63 2 8 540 2691'
+    -
+      vid: phone_number_terms
+      tid: '2011'
+      langcode: en
+      name: Poland
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '2541'
+      uuid: 9e5e9735-c8e6-4399-bd69-5d8951f38643
+      field_enter_phone_number:
+        -
+          value: '+485 230 47001'
+    -
+      vid: phone_number_terms
+      tid: '2016'
+      langcode: en
+      name: Portugal
+      description__value: null
+      description__format: null
+      weight: '13'
+      parent: '1911'
+      uuid: ab1c902f-2c13-4e73-a9b7-8f68e86fc1c8
+      field_enter_phone_number:
+        -
+          value: '+351 308 806455'
+    -
+      vid: phone_number_terms
+      tid: '2021'
+      langcode: en
+      name: Qatar
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '2271'
+      uuid: 2aa22896-612c-41a1-9515-f387e274c895
+      field_enter_phone_number:
+        -
+          value: '+974 008 00100243'
+    -
+      vid: phone_number_terms
+      tid: '2421'
+      langcode: en
+      name: Romania
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '2541'
+      uuid: 8be13762-1132-453b-b313-725008e089c6
+      field_enter_phone_number:
+        -
+          value: '+403 163 00849'
+    -
+      vid: phone_number_terms
+      tid: '2431'
+      langcode: en
+      name: 'Saudi Arabia'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '2271'
+      uuid: d50b3de4-255f-4655-a589-61bd6e8e4096
+      field_enter_phone_number:
+        -
+          value: '+966 800 8146808'
+    -
+      vid: phone_number_terms
+      tid: '2436'
+      langcode: en
+      name: Serbia
+      description__value: null
+      description__format: null
+      weight: '14'
+      parent: '1911'
+      uuid: 17531d94-526a-47f2-8981-b0c2f3b1a244
+      field_enter_phone_number:
+        -
+          value: '+381 080 0190168'
+    -
+      vid: phone_number_terms
+      tid: '2441'
+      langcode: en
+      name: Seychelles
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '2301'
+      uuid: 39122b23-33a2-4d2e-bfa7-a1d4411555bf
+      field_enter_phone_number:
+        -
+          value: '+248 467 1914'
+    -
+      vid: phone_number_terms
+      tid: '2451'
+      langcode: en
+      name: 'Slovak Republic'
+      description__value: null
+      description__format: null
+      weight: '15'
+      parent: '1911'
+      uuid: 663df989-b33a-4233-8cee-ecb5ec1195bd
+      field_enter_phone_number:
+        -
+          value: '+421 233 215391'
+    -
+      vid: phone_number_terms
+      tid: '2456'
+      langcode: en
+      name: Slovenia
+      description__value: null
+      description__format: null
+      weight: '16'
+      parent: '1911'
+      uuid: 013d6690-1788-4f6f-a5d2-6b4ba4d8b1cb
+      field_enter_phone_number:
+        -
+          value: '+386 828 80023'
+    -
+      vid: phone_number_terms
+      tid: '2461'
+      langcode: en
+      name: 'South Africa'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '2301'
+      uuid: fe9bcc50-b179-4b53-be0a-0bdd2ab163be
+      field_enter_phone_number:
+        -
+          value: '+270 800 981892'
+    -
+      vid: phone_number_terms
+      tid: '2026'
+      langcode: en
+      name: Spain
+      description__value: null
+      description__format: null
+      weight: '17'
+      parent: '1911'
+      uuid: 16186e6c-a6c2-4ecb-b157-668801bb96d5
+      field_enter_phone_number:
+        -
+          value: '+349 016 66221'
+    -
+      vid: phone_number_terms
+      tid: '2031'
+      langcode: en
+      name: Sweden
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '2546'
+      uuid: 646508e6-5354-4694-a0be-59e07ae0bcc0
+      field_enter_phone_number:
+        -
+          value: '+46 208 89298'
+    -
+      vid: phone_number_terms
+      tid: '2036'
+      langcode: en
+      name: Switzerland
+      description__value: null
+      description__format: null
+      weight: '18'
+      parent: '1911'
+      uuid: 000c1fe7-c1aa-49a7-95d4-1146040aa5c3
+      field_enter_phone_number:
+        -
+          value: '+414 151 26044'
+    -
+      vid: phone_number_terms
+      tid: '2876'
+      langcode: en
+      name: Thailand
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2271'
+      uuid: ebf10fe2-58bc-446b-a317-93c1a43b5179
+      field_enter_phone_number:
+        -
+          value: '+66 2 105 6183'
+    -
+      vid: phone_number_terms
+      tid: '2491'
+      langcode: en
+      name: Tunisia
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '2301'
+      uuid: 1f5b1b6f-264f-429a-b291-5710e0c7dcdf
+      field_enter_phone_number:
+        -
+          value: '+216 313 99184'
+    -
+      vid: phone_number_terms
+      tid: '2041'
+      langcode: en
+      name: Turkey
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '2541'
+      uuid: 33359d2c-effb-46cd-bd04-67c70d595c96
+      field_enter_phone_number:
+        -
+          value: '+908 001 136724'
+    -
+      vid: phone_number_terms
+      tid: '2046'
+      langcode: en
+      name: UAE
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '2271'
+      uuid: 597eeb8d-2d96-4ff5-804f-8ba7515a8b5d
+      field_enter_phone_number:
+        -
+          value: '+971 800 035 704437'
+    -
+      vid: phone_number_terms
+      tid: '2496'
+      langcode: en
+      name: 'UAE (Tax Free)'
+      description__value: null
+      description__format: null
+      weight: '9'
+      parent: '2271'
+      uuid: 9d093cb9-91f6-4171-aa54-5a5a25e14512
+      field_enter_phone_number:
+        -
+          value: '+971 458 64700'
+    -
+      vid: phone_number_terms
+      tid: '2511'
+      langcode: en
+      name: Ukraine
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '2541'
+      uuid: 364fd7ac-c60a-407f-a920-9f29794d8c91
+      field_enter_phone_number:
+        -
+          value: '+380 893 240453'
+    -
+      vid: phone_number_terms
+      tid: '2506'
+      langcode: en
+      name: 'United Kingdom'
+      description__value: null
+      description__format: null
+      weight: '19'
+      parent: '1911'
+      uuid: 1f7c3729-6f30-44ff-99bb-25bb44250076
+      field_enter_phone_number:
+        -
+          value: '+44 (0) 2035143808'
+    -
+      vid: phone_number_terms
+      tid: '2056'
+      langcode: en
+      name: USA
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '1926'
+      uuid: 6a892299-9a43-4f9c-a6e3-af798e68a31c
+      field_enter_phone_number:
+        -
+          value: '+188 833 67778'
+    -
+      vid: phone_number_terms
+      tid: '2516'
+      langcode: en
+      name: Uzbekistan
+      description__value: null
+      description__format: null
+      weight: '10'
+      parent: '2271'
+      uuid: d7aa029c-4bb2-4995-9ff0-2db3613fec16
+      field_enter_phone_number:
+        -
+          value: '+998 008 001201258'
+  planet_offices_countries:
+    -
+      vid: planet_offices_countries
+      tid: '1706'
+      langcode: en
+      name: Austria
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 02a77f54-07ec-4fcc-996f-91c8e45348fb
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1711'
+      langcode: en
+      name: Belgium
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 04506f39-baec-4f60-b0ae-dcc5fedbd865
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1656'
+      langcode: en
+      name: Brazil
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bee1f4f4-cea7-4405-8693-17198cba6ca5
+      field_office_region:
+        -
+          name: Americas
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1686'
+      langcode: en
+      name: China
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2f86f7dd-db9d-4973-a65a-45cdefb2f313
+      field_office_region:
+        -
+          name: Asia
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1661'
+      langcode: en
+      name: Columbia
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: efe996a5-c608-4077-a39c-2b2d7ca381a9
+      field_office_region:
+        -
+          name: Americas
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1716'
+      langcode: en
+      name: Cyprus
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6c9350e5-300a-403a-803b-954062a190ac
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1721'
+      langcode: en
+      name: 'Czech Rep'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 22e9face-2d2a-4141-b13b-3c4df040169a
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1726'
+      langcode: en
+      name: Denmark
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 83daf100-b619-47e7-a090-928b191297b2
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1731'
+      langcode: en
+      name: Finland
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 59d7765c-8788-44ca-9ac8-55125b8f1758
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1736'
+      langcode: en
+      name: France
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7cd315f1-b3bc-4465-b748-6053d7fca456
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1741'
+      langcode: en
+      name: Germany
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7dfe9fff-ae81-484c-bfa9-6b2cd11db4d6
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1746'
+      langcode: en
+      name: Greece
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 386b7179-7d42-4286-a56c-c2abd629a019
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1691'
+      langcode: en
+      name: 'Hong Kong'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 70c3304f-ed5d-4e61-9b08-d09dab857a97
+      field_office_region:
+        -
+          name: Asia
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1751'
+      langcode: en
+      name: Iceland
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 17838001-f831-4e1d-9f6a-88bf2a4c7f8c
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1756'
+      langcode: en
+      name: Ireland
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c94df308-b885-4b6d-be3a-e80c58cb2334
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1761'
+      langcode: en
+      name: Italy
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 823b6bd6-4575-4bdb-9bf7-59f38a6b2b4a
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1766'
+      langcode: en
+      name: Luxembourg
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 657d97e0-b8f1-4f48-9a73-8ec8055fb927
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1771'
+      langcode: en
+      name: Malta
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 175eb307-2058-4994-b679-6bbd07724c87
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1666'
+      langcode: en
+      name: Mexico
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: be5be629-646a-4b0b-9b1e-88768569a481
+      field_office_region:
+        -
+          name: Americas
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1776'
+      langcode: en
+      name: Norway
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 519b9ce6-5784-43cc-94ec-837f98675e1b
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1671'
+      langcode: en
+      name: Peru
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8c5475e2-2550-4104-90ea-da1a0a00edf6
+      field_office_region:
+        -
+          name: Americas
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1781'
+      langcode: en
+      name: Portugal
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 65cfa2c9-ff13-4e5a-8bf3-88a290f1dac7
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1696'
+      langcode: en
+      name: Singapore
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3c11ade7-d236-4bbd-9408-43e1802610a8
+      field_office_region:
+        -
+          name: Asia
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1646'
+      langcode: en
+      name: 'South Africa'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1b805541-3308-47d0-b222-bb5869c1d9e6
+      field_office_region:
+        -
+          name: Africa
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1786'
+      langcode: en
+      name: Spain
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 431111e0-31dd-4d36-874b-6b12e8186860
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1791'
+      langcode: en
+      name: Sweden
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5a1fe03f-64c7-4c68-a0e1-0d7c47290589
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1796'
+      langcode: en
+      name: Switzerland
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 692a8364-5ad8-480c-8071-dce03418ee54
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1801'
+      langcode: en
+      name: Turkey
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7e6965c9-1a9c-425d-bccb-c7ffe8735796
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1816'
+      langcode: en
+      name: UAE
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7380b9a4-9aa3-49ac-a779-8b9b90c2d74a
+      field_office_region:
+        -
+          name: 'Middle East'
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1806'
+      langcode: en
+      name: UK
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a6fe87ce-058e-4486-99cc-f0dc8d861f8c
+      field_office_region:
+        -
+          name: Europe
+          vid: planet_offices_regions
+    -
+      vid: planet_offices_countries
+      tid: '1676'
+      langcode: en
+      name: US
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 75acf58b-6019-4702-a0a4-b29110eda170
+      field_office_region:
+        -
+          name: Americas
+          vid: planet_offices_regions
+  planet_offices_regions:
+    -
+      vid: planet_offices_regions
+      tid: '1641'
+      langcode: en
+      name: Africa
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 06f5702c-eaa8-479f-8486-b32686dc0e8b
+    -
+      vid: planet_offices_regions
+      tid: '1651'
+      langcode: en
+      name: Americas
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 621e899f-cc95-4015-9a8d-8b19bba43724
+    -
+      vid: planet_offices_regions
+      tid: '1681'
+      langcode: en
+      name: Asia
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a6d8bf68-1d21-4fc4-9cae-e1753a4e548a
+    -
+      vid: planet_offices_regions
+      tid: '1701'
+      langcode: en
+      name: Europe
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d0ea0861-e2dc-42da-bf82-5835136d7ffe
+    -
+      vid: planet_offices_regions
+      tid: '1811'
+      langcode: en
+      name: 'Middle East'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ca787122-6315-4262-9b2e-75588178fba1
+  regions:
+    -
+      vid: regions
+      tid: '1551'
+      langcode: en
+      name: 'Europe & EU'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '0'
+      uuid: 60343f04-77ea-49a7-9974-955a06bb74ee
+    -
+      vid: regions
+      tid: '1571'
+      langcode: en
+      name: 'Middle East & Africa'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '0'
+      uuid: 7f5024c9-2df5-4d51-a394-550e90e18730
+    -
+      vid: regions
+      tid: '1556'
+      langcode: en
+      name: 'North America'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '0'
+      uuid: eef0018d-83cf-4f09-87a5-18773d69e4e9
+    -
+      vid: regions
+      tid: '1546'
+      langcode: en
+      name: 'United Kingdom'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '0'
+      uuid: fe3a84fb-f92c-49e2-959c-7230459ef433
+  resources_categories:
+    -
+      vid: resources_categories
+      tid: '1856'
+      langcode: en
+      name: 'Portal documentation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ad8edc78-a7bf-482f-940f-958a0f292d88
+    -
+      vid: resources_categories
+      tid: '1881'
+      langcode: en
+      name: 'Product documentation'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '0'
+      uuid: a76d9961-1a77-43d9-a73a-901e3dfbd1ae
+    -
+      vid: resources_categories
+      tid: '2221'
+      langcode: en
+      name: 'Tax Free'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d589fe19-046c-4490-960f-b32b44c6695c
+    -
+      vid: resources_categories
+      tid: '1851'
+      langcode: en
+      name: 'Terminal documentation'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '0'
+      uuid: 1d40cac2-c287-409a-988d-235ba635ad56
+    -
+      vid: resources_categories
+      tid: '1846'
+      langcode: en
+      name: 'Training on Planet eCampus'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '0'
+      uuid: 51f478cf-9cd1-4c7f-8e00-2441a6f1619a
+    -
+      vid: resources_categories
+      tid: '1861'
+      langcode: en
+      name: 'Useful links'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '0'
+      uuid: 60d269b3-84b9-4046-85e5-872d876ffec0
+  resources_types:
+    -
+      vid: resources_types
+      tid: '1866'
+      langcode: en
+      name: Guide
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ca58b003-a0b7-470f-8e0b-dc26f2529d35
+    -
+      vid: resources_types
+      tid: '1871'
+      langcode: en
+      name: Portal
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 20bca34f-de2e-4771-9b08-cc89f5c93273
+    -
+      vid: resources_types
+      tid: '1876'
+      langcode: en
+      name: Training
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7cebcd2a-80c2-447b-a6bd-bda2041b9eca
+  sitemap_pages:
+    -
+      vid: sitemap_pages
+      tid: '2626'
+      langcode: en
+      name: About
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2586'
+      uuid: ce21f8ef-5fd7-4aa6-a30f-8c2f5389c8ce
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/about'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2611'
+      langcode: en
+      name: Blog
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2581'
+      uuid: 532925d7-510a-479e-8208-25840f71d76a
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/blog'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2791'
+      langcode: en
+      name: 'Card Machines and Terminals'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2681'
+      uuid: 4c9bd4e3-d7e3-44b3-b89e-9cd3767e9ab5
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/card-machines-terminals'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2621'
+      langcode: en
+      name: Careers
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '2586'
+      uuid: 80daf6c8-d5c3-453d-ad88-c549810653b5
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/careers'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2601'
+      langcode: en
+      name: 'Case Studies'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '2581'
+      uuid: ec9198cf-792d-4739-9e34-a1d97b2735d5
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/case-studies'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2746'
+      langcode: en
+      name: 'Click and Collect'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2676'
+      uuid: eaa937f1-c8e3-4ff5-8252-c8e11f432b6d
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/click-and-collect'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2631'
+      langcode: en
+      name: Contact
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '2586'
+      uuid: 8c124238-4382-4884-aa42-61f12556fffb
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/contact'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2641'
+      langcode: en
+      name: 'Contact Sales'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '2586'
+      uuid: 9b33d31b-f4f6-4f2c-8136-478e5fa79847
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/contact/sales'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2656'
+      langcode: en
+      name: 'Cookie Policy'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '2586'
+      uuid: 9d2ca1dd-74ea-4775-af9a-a868fbd6ef38
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/cookie-policy'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2796'
+      langcode: en
+      name: 'Countertop Payment Terminals'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '2681'
+      uuid: bd121937-dc32-4006-ba60-b57327ea18b1
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/terminals-countertop'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2996'
+      langcode: en
+      name: 'Customer Resources Library'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '2586'
+      uuid: 747b4e7e-70bd-482c-809f-88768a22f080
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/customer-resources-library'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2706'
+      langcode: en
+      name: Dashboard
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '2671'
+      uuid: 988f3e5b-6377-4872-b735-c4f0d3eafb55
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/dashboard'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2761'
+      langcode: en
+      name: DCC
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '2681'
+      uuid: c2c4bdab-0fb4-413e-82e6-7b9b9992cd47
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/dcc'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2721'
+      langcode: en
+      name: 'Digital Signage'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '2671'
+      uuid: 580d90de-45a2-4443-8d5e-afba6c7abca7
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/digital-signage'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2586'
+      langcode: en
+      name: 'Useful Links'
+      description__value: null
+      description__format: null
+      weight: '49'
+      parent: '0'
+      uuid: 32caca16-e34e-4ae0-a7c7-ac41764d8777
+      field_is_label:
+        -
+          value: '1'
+      field_sitemap_page_link: {  }
+    -
+      vid: sitemap_pages
+      tid: '2731'
+      langcode: en
+      name: 'Event Connectivity Manager'
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '2671'
+      uuid: f931b50a-041a-4b0f-b538-aa32a737fe9f
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/event-connectivity-manager'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2701'
+      langcode: en
+      name: 'Gift Cards'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '2671'
+      uuid: 0ed6b07e-1c2d-4219-9582-d34633ce6a5b
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/gift-cards'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2596'
+      langcode: en
+      name: 'Guides & Reports'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '2581'
+      uuid: 6b282049-619b-4af7-9b0e-64f45ffd1396
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/ebooks'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2671'
+      langcode: en
+      name: Hospitality
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '2591'
+      uuid: fdd40a1a-610f-4220-963b-ebdfa26327bb
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/hospitality'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2696'
+      langcode: en
+      name: 'Hotel Booking Engine'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '2671'
+      uuid: b7a7c57f-1837-410b-a0de-803c4d611f63
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/hotel-booking-engine'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2691'
+      langcode: en
+      name: 'Hotel Networking'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '2671'
+      uuid: 467f3abe-d8e1-4123-8066-385379ff7695
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/hotel-networking'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2686'
+      langcode: en
+      name: 'Hotel PMS'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2671'
+      uuid: f02ad013-0573-44e3-ad7a-7e3862a25c3b
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/hotel-pms'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2756'
+      langcode: en
+      name: 'In-person Payments'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '2681'
+      uuid: e2d6320a-e4e5-4b91-afc5-5ca5de930a03
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/in-person-payments'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2606'
+      langcode: en
+      name: 'Intelligence Report'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '2581'
+      uuid: eb7995fb-c38d-4487-9c66-1c93445b8c71
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/planet-intelligence-report'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2711'
+      langcode: en
+      name: 'Interactive TV'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '2671'
+      uuid: 42f83e54-c083-4039-a35f-767ac86237bd
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/interactive-tv-hotels'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2716'
+      langcode: en
+      name: 'Internet Services'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '2671'
+      uuid: 4d940c4d-aedf-4089-86b3-96f1f8a8dcbd
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/internet-services'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2661'
+      langcode: en
+      name: 'Marketing Privacy Notice - B2B'
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '2586'
+      uuid: 43b900de-cdd1-4902-9927-d8d49b7e0909
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/marketing-privacy-notice-b2b'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2781'
+      langcode: en
+      name: 'Merchant Acquiring'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '2681'
+      uuid: bd981e29-6072-48de-9cbf-bdfb53ad3948
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/merchant-acquiring'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2801'
+      langcode: en
+      name: 'Mobile Payment Terminals'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '2681'
+      uuid: 51897db0-1fea-475c-bffc-4cdecf1b3299
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/mobile-payment-terminals'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2856'
+      langcode: en
+      name: Newsroom
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '2581'
+      uuid: ccb1f3f9-e973-4cc6-bc2f-df79c68218ef
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/news'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2646'
+      langcode: en
+      name: 'Office Locations'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '2586'
+      uuid: f09921ae-233f-423e-8af5-3f57802cdf8b
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/office-locations'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2751'
+      langcode: en
+      name: 'Online Payments'
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '2681'
+      uuid: 456bc37d-0183-4d2f-b816-61a5ef13ff48
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/online-payments'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2741'
+      langcode: en
+      name: 'Order Management System'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '2676'
+      uuid: 031427e4-fdde-4f20-862c-60c211f9bb98
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/order-management-system'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2616'
+      langcode: en
+      name: Partnerships
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '2586'
+      uuid: 707badc0-dd52-4fc0-9e9d-b8411cf9cc1d
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/partners'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2821'
+      langcode: en
+      name: 'Pay by Link'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '2681'
+      uuid: fb73d567-473c-42ac-9b57-d56f6fbb56a4
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/pay-by-link'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2681'
+      langcode: en
+      name: Payments
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2591'
+      uuid: 590e33ed-2f5d-4d58-94be-925e143aa262
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/payments'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2766'
+      langcode: en
+      name: 'PCI Proxy'
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '2681'
+      uuid: 0c155e76-7ad9-4857-b71d-3755cd36706b
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/pci-proxy'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2651'
+      langcode: en
+      name: 'Privacy Policy'
+      description__value: null
+      description__format: null
+      weight: '10'
+      parent: '2586'
+      uuid: 286815ea-934f-4c14-a92d-50c2e0c5da80
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/privacy-policy'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2591'
+      langcode: en
+      name: 'Products and Services'
+      description__value: null
+      description__format: null
+      weight: '47'
+      parent: '0'
+      uuid: 341983d2-ddd4-4d4b-a1e6-fc51f39c487c
+      field_is_label:
+        -
+          value: '1'
+      field_sitemap_page_link: {  }
+    -
+      vid: sitemap_pages
+      tid: '2666'
+      langcode: en
+      name: 'Protel Imprint'
+      description__value: null
+      description__format: null
+      weight: '9'
+      parent: '2586'
+      uuid: 90a71031-6494-47ca-9d98-70134e815cd4
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/protel-imprint'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2816'
+      langcode: en
+      name: 'Reconciliation Service'
+      description__value: null
+      description__format: null
+      weight: '9'
+      parent: '2681'
+      uuid: cafbdd99-aee2-4319-8000-ab5374a2a4e4
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/reconciliation'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2581'
+      langcode: en
+      name: Resources
+      description__value: null
+      description__format: null
+      weight: '48'
+      parent: '0'
+      uuid: fe141312-9ee0-47f2-8933-3a5ded5f7a09
+      field_is_label:
+        -
+          value: '1'
+      field_sitemap_page_link: {  }
+    -
+      vid: sitemap_pages
+      tid: '2676'
+      langcode: en
+      name: Retail
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '2591'
+      uuid: c8710442-316c-4088-8cdc-8db63203397d
+      field_is_label:
+        -
+          value: '1'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/retail'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2771'
+      langcode: en
+      name: 'Security Compliance Fraud'
+      description__value: null
+      description__format: null
+      weight: '10'
+      parent: '2681'
+      uuid: 309b9dfc-5e7f-4c6f-9ab0-7abda82ee997
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/security-compliance-fraud'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2636'
+      langcode: en
+      name: Support
+      description__value: null
+      description__format: null
+      weight: '11'
+      parent: '2586'
+      uuid: 16b7ceb2-855a-4a8d-b142-a7052fee4312
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/support'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2826'
+      langcode: en
+      name: Tokenisation
+      description__value: null
+      description__format: null
+      weight: '11'
+      parent: '2681'
+      uuid: 4a9d0c9d-7780-412a-a821-af2b55b32612
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/tokenisation'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2991'
+      langcode: en
+      name: Travel
+      description__value: null
+      description__format: null
+      weight: '12'
+      parent: '2681'
+      uuid: 89b4d8f7-d72d-4da9-a853-8f67776242a7
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/travel'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2806'
+      langcode: en
+      name: 'Unattended Terminals'
+      description__value: null
+      description__format: null
+      weight: '13'
+      parent: '2681'
+      uuid: 1fce29da-03ad-46dc-8c57-cee0096bfc5b
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/terminals-unattended'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2736'
+      langcode: en
+      name: 'Unified Commerce'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '2676'
+      uuid: 77723077-1508-49ff-8043-ca15c206783b
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/unified-commerce'
+          title: ''
+          options: {  }
+    -
+      vid: sitemap_pages
+      tid: '2786'
+      langcode: en
+      name: 'VAT Refund'
+      description__value: null
+      description__format: null
+      weight: '14'
+      parent: '2681'
+      uuid: 81ea74a4-e9d4-4097-b11b-0d976bc3da33
+      field_is_label:
+        -
+          value: '0'
+      field_sitemap_page_link:
+        -
+          uri: 'internal:/vat-refund'
+          title: ''
+          options: {  }
+  tags:
+    -
+      vid: tags
+      tid: '1536'
+      langcode: en
+      name: Hospitality
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5a1feb9b-ec63-4364-bce0-a7984010fc0c
+    -
+      vid: tags
+      tid: '1541'
+      langcode: en
+      name: Payments
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 327c6ea2-5c66-4ccb-9ae6-b060ce17338b
+    -
+      vid: tags
+      tid: '1531'
+      langcode: en
+      name: Retail
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 68dae305-b760-4a68-bfbd-58a0fff36530
+    -
+      vid: tags
+      tid: '2556'
+      langcode: en
+      name: 'Tax Free'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f3761437-faee-41e8-ab0d-cd80731762e1

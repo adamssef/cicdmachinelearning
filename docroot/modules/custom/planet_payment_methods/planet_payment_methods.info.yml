@@ -1,0 +1,5 @@
+name: 'planet_payment_methods'
+type: module
+description: 'A module for payment methods related pages'
+package: Planet
+core_version_requirement: ^10

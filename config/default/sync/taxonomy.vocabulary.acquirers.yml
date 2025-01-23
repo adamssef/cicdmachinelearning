@@ -1,0 +1,8 @@
+uuid: 2844101b-1a44-4f11-803c-f8b5f4cbb000
+langcode: en
+status: true
+dependencies: {  }
+name: Acquirers
+vid: acquirers
+description: ''
+weight: 0

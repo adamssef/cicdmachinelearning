@@ -1,0 +1,16 @@
+uuid: 2e2cc1f7-399f-45b6-8462-26a37e545e34
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.payment_methods
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.payment_methods
+target_entity_type_id: node
+target_bundle: payment_methods
+default_langcode: site_default
+language_alterable: true

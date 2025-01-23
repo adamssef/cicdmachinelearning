@@ -1,0 +1,16 @@
+id: payment_methods_csv
+label: 'Migration file to import payment methods basic data from CSV file'
+migration_tags:
+  - CSV
+source:
+  plugin: csv
+  path: modules/custom/planet_migrations/sources/payment_methods.csv
+  ids: [Index]
+process:
+  title: title
+  field_weight: Index
+  field_short_description: upper_text
+  field_long_description: bottom_text
+destination:
+  plugin: 'entity:node'
+  default_bundle: payment_methods
