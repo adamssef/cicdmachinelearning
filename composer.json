@@ -28,9 +28,9 @@
     "drupal/content_lock": "^2.3",
     "drupal/content_moderation_edit_notify": "^2.0",
     "drupal/context": "^5.0@RC",
-    "drupal/core-composer-scaffold": "10.4.1",
-    "drupal/core-project-message": "10.4.1",
-    "drupal/core-recommended": "10.4.1",
+    "drupal/core-composer-scaffold": "^10.2",
+    "drupal/core-project-message": "^10.2",
+    "drupal/core-recommended": "dev-default",
     "drupal/csp": "^1.30",
     "drupal/ctools": "^4.0",
     "drupal/devel": "^5.1",
@@ -187,6 +187,7 @@
     ],
     "patches": {
       "drupal/core": {
+        "Invalid config structures can result in exceptions when saving a config entity": "https://www.drupal.org/files/issues/2021-11-29/2925890-29.patch",
         "https://www.drupal.org/project/drupal/issues/3091336": "https://www.drupal.org/files/issues/2021-01-05/AliasRepository-proper-language-fallback-3091336-62.patch",
         "Deprecated function: mb_strtolower(): Passing null to parameter #1 ($string)": "patches/core_condition.patch",
         "Invalid translation language (it) specified": "patches/core_contentedit.patch",
