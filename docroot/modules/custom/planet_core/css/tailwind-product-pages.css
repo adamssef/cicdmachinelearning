@@ -625,6 +625,10 @@ video {
   display: block;
 }
 
+.flex {
+  display: flex;
+}
+
 .inline-flex {
   display: inline-flex;
 }
@@ -645,8 +649,16 @@ video {
   align-items: center;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-l-4 {
@@ -655,6 +667,15 @@ video {
 
 .border-solid {
   border-style: solid;
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+.border-\[\#e00083\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(224 0 131 / var(--tw-border-opacity, 1));
 }
 
 .border-l-\[\#E00083\] {
@@ -670,6 +691,10 @@ video {
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-cover {
@@ -700,6 +725,16 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pl-4 {
   padding-left: 1rem;
 }
@@ -716,6 +751,11 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-light {
@@ -747,9 +787,37 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
 .hover\:bg-gray-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-\[\#e00083\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 0 131 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.focus\:border-2:focus {
+  border-width: 2px;
+}
+
+.focus\:border-solid:focus {
+  border-style: solid;
+}
+
+.focus\:border-\[rgb\(165\2c 165\2c 165\)\]:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(165 165 165 / var(--tw-border-opacity, 1));
 }
 
 @media (min-width: 768px) {
@@ -759,6 +827,10 @@ video {
 
   .md\:order-2 {
     order: 2;
+  }
+
+  .md\:mt-6 {
+    margin-top: 1.5rem;
   }
 
   .md\:min-h-\[600px\] {
