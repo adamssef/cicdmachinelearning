@@ -1,0 +1,5 @@
+name: 'Planet Menu Node Generator'
+type: module
+description: 'Checks menu items for path aliases and creates missing nodes so that you dont have to create it manually.'
+core_version_requirement: ^9 || ^10
+package: Planet

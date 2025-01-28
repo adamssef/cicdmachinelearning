@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_cron().
+ *
+ * Calls the service to check and create nodes during cron runs.
+ */
+function planet_menu_node_generator_cron() {
+  \Drupal::service('planet_menu_node_generator.menu_node_generator')->checkAndCreateNodes('legal-pages');
+}

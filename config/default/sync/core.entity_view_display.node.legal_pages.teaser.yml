@@ -1,0 +1,32 @@
+uuid: aa3b8114-1434-4d9f-adcd-076492e89f94
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.legal_pages.body
+    - node.type.legal_pages
+  module:
+    - text
+    - user
+id: node.legal_pages.teaser
+targetEntityType: node
+bundle: legal_pages
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
