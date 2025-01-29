@@ -8,7 +8,7 @@ menus:
     description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -50
     langcode: en
     uuid: 24b1c362-88bc-4633-923b-fd8e347bc313
     options: {  }
@@ -21,7 +21,7 @@ menus:
     description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -49
     langcode: en
     uuid: ba5ce12a-0921-4fc7-baa9-2c4dabdb2aec
     options: {  }
@@ -34,9 +34,35 @@ menus:
     description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -48
     langcode: en
     uuid: b348b9e3-f605-4ad3-ba16-e9de76203203
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: Datatrans
+    parent: 'menu_link_content:b348b9e3-f605-4ad3-ba16-e9de76203203'
+    uri: 'internal:/legal/specific-legal-notices/#datatrans'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: c3db2ac3-d4cb-43b0-8329-f4691b7e1cfc
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'PCI Proxy'
+    parent: 'menu_link_content:b348b9e3-f605-4ad3-ba16-e9de76203203'
+    uri: 'internal:/legal/specific-legal-notices/#pci-proxy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: c8387bff-8126-49f7-a281-3f906e95e25c
     options: {  }
   -
     menu_name: legal-pages
@@ -47,7 +73,7 @@ menus:
     description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -47
     langcode: en
     uuid: 46ce74ee-2591-472a-986e-6138fa9432e7
     options: {  }
@@ -60,9 +86,48 @@ menus:
     description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -44
     langcode: en
     uuid: a1c5e7b4-847d-4404-9e63-b968a69c300a
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'Planet Payment Inc. (Canada) '
+    parent: 'menu_link_content:a1c5e7b4-847d-4404-9e63-b968a69c300a'
+    uri: 'internal:/legal/complaints#planet-payment-canada'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: 6c2fb268-169c-4fe1-8db6-c51043fdbc2b
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'Planet Merchant Services Limited (UK)'
+    parent: 'menu_link_content:a1c5e7b4-847d-4404-9e63-b968a69c300a'
+    uri: 'internal:/legal/complaints/#planet-merchant-services-limited-uk'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 3af7ecb6-75b2-4881-9429-d45f41c95fee
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'Planet Merchant Services SAS (France)'
+    parent: 'menu_link_content:a1c5e7b4-847d-4404-9e63-b968a69c300a'
+    uri: 'internal:/legal/complaints/#planet-merchant-services-sas-france'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: b1ec9fe1-1d87-4dea-86b1-a1200e37bd80
     options: {  }
   -
     menu_name: legal-pages
@@ -73,7 +138,7 @@ menus:
     description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -43
     langcode: en
     uuid: f852fe31-04b3-4fbb-b5c1-2241cac2ef08
     options: {  }
@@ -86,9 +151,22 @@ menus:
     description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -42
     langcode: en
     uuid: f3680639-213e-4129-a6aa-e5eb4c4e92ad
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'VAT Refunding - Terms and Conditions for shoppers'
+    parent: 'menu_link_content:f3680639-213e-4129-a6aa-e5eb4c4e92ad'
+    uri: 'internal:/legal/planet-products-terms-and-conditions/#vat-refunding'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: ffeed778-f815-4933-b43d-c78a67ff9059
     options: {  }
   -
     menu_name: legal-pages
@@ -99,7 +177,7 @@ menus:
     description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -41
     langcode: en
     uuid: 92ced8c3-1f6c-4028-a6a5-c0cef95c4f8f
     options: {  }
@@ -112,7 +190,7 @@ menus:
     description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -40
     langcode: en
     uuid: f32a3d55-94f0-4139-9eed-6776df6368a7
     options: {  }
@@ -125,7 +203,7 @@ menus:
     description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -39
     langcode: en
     uuid: 98066797-eb41-4e2c-a58b-af66bd22a9e8
     options: {  }
@@ -138,9 +216,22 @@ menus:
     description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -38
     langcode: en
     uuid: 0374d1e3-5d94-4425-b952-2257d4274df8
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'Authorizations, Licences and Registrations'
+    parent: null
+    uri: 'internal:/legal/authorizations-licenses-and-registrations'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -45
+    langcode: en
+    uuid: d5d69944-e258-4c09-b87a-02d15ba635df
     options: {  }
   -
     menu_name: mega-menu

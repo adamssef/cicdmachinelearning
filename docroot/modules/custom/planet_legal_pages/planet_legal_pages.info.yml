@@ -1,0 +1,5 @@
+name: 'Planet Legal Pages'
+type: module
+description: 'A module that implements planet legal pages and it&#039;s components'
+package: Planet
+core_version_requirement: ^10

@@ -3,7 +3,6 @@
 namespace Drupal\planet_core\Service\PlanetCoreMenuService;
 
 use Drupal;
-use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
 use Drupal\menu_item_extras\Entity\MenuItemExtrasMenuLinkContentInterface;
