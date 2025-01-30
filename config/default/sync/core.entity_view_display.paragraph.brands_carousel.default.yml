@@ -3,21 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.brands_carousel.field_brands
+    - field.field.paragraph.brands_carousel.field_brands_carousel
     - paragraphs.paragraphs_type.brands_carousel
-  module:
-    - options
 id: paragraph.brands_carousel.default
 targetEntityType: paragraph
 bundle: brands_carousel
 mode: default
 content:
-  field_brands:
-    type: list_default
+  field_brands_carousel:
+    type: string
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true

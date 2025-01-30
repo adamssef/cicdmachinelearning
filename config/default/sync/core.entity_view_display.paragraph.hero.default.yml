@@ -5,6 +5,10 @@ dependencies:
   config:
     - field.field.paragraph.hero.field_button_1_label
     - field.field.paragraph.hero.field_button_1_link
+    - field.field.paragraph.hero.field_button_1_open
+    - field.field.paragraph.hero.field_button_2_label
+    - field.field.paragraph.hero.field_button_2_link
+    - field.field.paragraph.hero.field_button_2_open
     - field.field.paragraph.hero.field_hero
     - field.field.paragraph.hero.field_hero_image
     - field.field.paragraph.hero.field_hero_label
@@ -37,6 +41,46 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_button_1_open:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_button_2_label:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_button_2_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_button_2_open:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_hero:
     type: text_default

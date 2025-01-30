@@ -1,39 +1,41 @@
 <div class="relative">
-  <div class="grid grid-cols-1 md:grid-cols-2">
+  <div class="grid grid-cols-1 md:grid-cols-2 min-h-[800px]">
     <!-- Left content column with padding -->
-    <div class="container mx-auto px-4 md:pl-16 md:pr-8 py-8 md:py-24 order-2 md:order-1">
+    <div class="container mx-auto px-4 md:pl-16 md:pr-8 py-8 md:py-24 order-2 md:order-1 flex items-center">
         <!-- Pre-heading -->
-        <p class="block text-sm font-semibold leading-4 pl-4 uppercase border-l-4 border-solid border-l-[#E00083] mb-4">
-          {{ paragraph.fields.field_hero_label[0].value }}
-        </p>
-        
-        <h1 class="mt-4 block font-semibold text-[28px] lg:text-5xl">
-          {{ paragraph.fields.field_hero_title[0].value }}
-        </h1>
-        
-        <div class="mt-4 md:mt-6 font-light leading-5 lg:leading-6 text-lg lg:text-xl hero-desc-paragraph">
-            {{ paragraph.fields.field_hero[0].value|raw }}
-        </div>
-        
-        <!-- CTA buttons -->
-        <div class="mt-8 flex gap-4">
-          {# Button 1 #}
-          {% if paragraph.fields.field_button_1_link[0].uri %}
-            <a href="{{ paragraph.fields.field_button_1_link[0].alias }}" 
-               class="inline-flex items-center px-6 py-4 bg-gray-900 text-white font-medium rounded-full hover:bg-[#e00083] focus:border-2 border-2 border-transparent border-solid focus:border-solid focus:border-[rgb(165,165,165)]"
-               {% if paragraph.fields.field_button_1_open[0].value == '1' %} target="_blank" rel="noopener" {% endif %}>
-              {{ paragraph.fields.field_button_1_label[0].value }}
-            </a>
-          {% endif %}
+        <div>
+            <p class="block text-sm font-semibold leading-4 pl-4 uppercase border-l-4 border-solid border-l-[#E00083] mb-4">
+              {{ paragraph.fields.field_hero_label[0].value }}
+            </p>
+            
+            <h1 class="mt-4 block font-semibold text-[46px] leading-[3rem] lg:text-5xl">
+              {{ paragraph.fields.field_hero_title[0].value }}
+            </h1>
+            
+            <div class="mt-4 md:mt-6 font-light leading-5 lg:leading-6 text-lg lg:text-xl hero-desc-paragraph">
+                {{ paragraph.fields.field_hero[0].value|raw }}
+            </div>
+            
+            <!-- CTA buttons -->
+            <div class="mt-8 flex flex-col md:flex-row gap-2 md:gap-4">
+              {# Button 1 #}
+              {% if paragraph.fields.field_button_1_link[0].uri %}
+                <a href="{{ paragraph.fields.field_button_1_link[0].alias }}" 
+                   class="w-full md:w-auto inline-flex justify-center items-center px-6 py-4 bg-gray-900 text-white font-medium rounded-full hover:bg-[#e00083] focus:border-2 border-2 border-transparent border-solid focus:border-solid focus:border-[rgb(165,165,165)]"
+                   {% if paragraph.fields.field_button_1_open[0].value == '1' %} target="_blank" rel="noopener" {% endif %}>
+                  {{ paragraph.fields.field_button_1_label[0].value }}
+                </a>
+              {% endif %}
 
-          {# Button 2 #}
-          {% if paragraph.fields.field_button_2_link[0].uri %}
-            <a href="{{ paragraph.fields.field_button_2_link[0].uri }}" 
-               class="inline-flex items-center px-6 py-4 bg-transparent text-black font-medium rounded-full hover:bg-[#e00083] hover:text-white  focus:border-2 border-2 border-[#e00083] border-solid focus:border-solid focus:border-[rgb(165,165,165)]"
-               {% if paragraph.fields.field_button_2_open[0].value == '1' %} target="_blank" rel="noopener" {% endif %}>
-              {{ paragraph.fields.field_button_2_label[0].value }}
-            </a>
-          {% endif %}
+              {# Button 2 #}
+              {% if paragraph.fields.field_button_2_link[0].uri %}
+                <a href="{{ paragraph.fields.field_button_2_link[0].uri }}" 
+                   class="w-full md:w-auto inline-flex justify-center items-center px-6 py-4 bg-transparent text-black font-medium rounded-full hover:bg-[#e00083] hover:text-white  focus:border-2 border-2 border-[#e00083] border-solid focus:border-solid focus:border-[rgb(165,165,165)]"
+                   {% if paragraph.fields.field_button_2_open[0].value == '1' %} target="_blank" rel="noopener" {% endif %}>
+                  {{ paragraph.fields.field_button_2_label[0].value }}
+                </a>
+              {% endif %}
+            </div>
         </div>
     </div>
 

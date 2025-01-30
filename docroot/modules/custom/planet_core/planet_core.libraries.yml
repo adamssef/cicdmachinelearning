@@ -51,4 +51,8 @@ brands-we-work-with:
 basic-pages:
   css:
     theme:
+      css/brands-we-work-with.css: { }
       css/tailwind-product-pages.css: {}
+  js:
+    js/swiper-bundle.min.js.js: {}
+    js/BrandsWeWorkWith.js: { }

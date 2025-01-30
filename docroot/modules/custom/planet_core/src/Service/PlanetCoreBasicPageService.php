@@ -58,8 +58,11 @@ class PlanetCoreBasicPageService {
             $field_data['hero_image_url'] = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'max_1300x1300');
           }
 
-          // Handle field_button_1_link to get the node alias
-          if ($field_name === 'field_button_1_link' && !empty($field_data[$field_name][0]['uri'])) {
+          if ($field_name === 'field_brands_carousel' && !empty($field_data[$field_name][0]['value'])) {
+            $field_data[$field_name] = explode(' ', trim($field_data[$field_name][0]['value']));
+          }
+
+          if (in_array($field_name, ['field_button_1_link', 'field_button_2_link']) && !empty($field_data[$field_name][0]['uri'])) {
             $uri = $field_data[$field_name][0]['uri'];
             if (strpos($uri, 'entity:node/') === 0) {
               $node_id = str_replace('entity:node/', '', $uri);
