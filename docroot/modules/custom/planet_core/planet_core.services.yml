@@ -16,10 +16,10 @@ services:
     arguments: [ '@path_alias.manager', '@language_manager', '@entity_type.manager', '@database' ]
   planet_core.menu_service:
     class: Drupal\planet_core\Service\PlanetCoreMenuService\PlanetCoreMenuService
-    arguments: [ '@menu.link_tree', '@path_alias.manager', '@language_manager', '@planet_core.node_translation_service']
+    arguments: [ '@menu.link_tree', '@path_alias.manager', '@language_manager', '@planet_core.node_translation_service', '@entity_type.manager']
   planet_core.legal_pages_menu_service:
     class: Drupal\planet_core\Service\PlanetCoreMenuService\PlanetCoreLegalPagesMenuService
-    arguments: [ '@menu.link_tree', '@path_alias.manager', '@language_manager', '@planet_core.node_translation_service']
+    arguments: [ '@menu.link_tree', '@path_alias.manager', '@language_manager', '@planet_core.node_translation_service', '@path.current']
   planet_core.taxonomy_service:
     class: Drupal\planet_core\Service\PlanetCoreTaxonomyService\PlanetCoreTaxonomyService
     arguments: ['@entity_type.manager', '@planet_core.node_translation_service', '@entity.repository']

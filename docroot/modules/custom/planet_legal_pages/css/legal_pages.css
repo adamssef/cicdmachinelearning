@@ -1,0 +1,40 @@
+.body-link {
+  font-size: 16px;
+  font-weight: 300;
+  color: #005AB2;
+  text-decoration: underline;
+}
+
+.body-header {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.body-component {
+  margin-bottom: 16px;
+}
+
+.body-numeric-header {
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.font-light p {
+  font-weight: 300;
+}
+
+.last-updated {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.list {
+  margin-left: 32px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 300;
+}
