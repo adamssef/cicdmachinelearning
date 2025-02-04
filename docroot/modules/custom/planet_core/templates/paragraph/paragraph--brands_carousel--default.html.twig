@@ -1,0 +1,9 @@
+{% if paragraph.fields.field_brands_carousel is not empty %}
+	<div class="brands-we-work-with-mega-container pt-8">
+        <div class="brands-we-work-with-container">
+				{% for brand in paragraph.fields.field_brands_carousel %}
+                    <img src="/resources/logos/default/{{brand}}.svg" alt="{{brand}}">
+				{% endfor %}
+			</div>
+		</div>
+{% endif %}

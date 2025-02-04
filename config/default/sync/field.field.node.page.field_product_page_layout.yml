@@ -1,0 +1,76 @@
+uuid: 261a5980-94c0-4bf9-bbb2-5f5b91ba203b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_page_layout
+    - node.type.page
+    - paragraphs.paragraphs_type.brands_carousel
+    - paragraphs.paragraphs_type.features_content
+    - paragraphs.paragraphs_type.features_ending
+    - paragraphs.paragraphs_type.features_heading
+    - paragraphs.paragraphs_type.hero
+  module:
+    - entity_reference_revisions
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.page.field_product_page_layout
+field_name: field_product_page_layout
+entity_type: node
+bundle: page
+label: 'Product Page Layout'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      hero: hero
+      brands_carousel: brands_carousel
+      features_heading: features_heading
+      features_content: features_content
+      features_ending: features_ending
+    negate: 0
+    target_bundles_drag_drop:
+      brands_carousel:
+        weight: -20
+        enabled: true
+      customer_recommendation_quote:
+        weight: -18
+        enabled: false
+      favourite_planet_features:
+        weight: -17
+        enabled: false
+      features_content:
+        weight: 15
+        enabled: true
+      features_ending:
+        weight: 17
+        enabled: true
+      features_heading:
+        weight: -19
+        enabled: true
+      grow_business_with_planet:
+        weight: -16
+        enabled: false
+      hero:
+        weight: -21
+        enabled: true
+      link_box:
+        weight: -15
+        enabled: false
+      paragraph_case_study_metrics:
+        weight: -14
+        enabled: false
+      right_side_mega_menu:
+        weight: -13
+        enabled: false
+      tip_box:
+        weight: -12
+        enabled: false
+field_type: entity_reference_revisions

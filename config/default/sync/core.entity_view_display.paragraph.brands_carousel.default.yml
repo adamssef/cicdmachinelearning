@@ -1,0 +1,22 @@
+uuid: 2c88a54b-2498-4a98-890d-972dc1f97acf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.brands_carousel.field_brands_carousel
+    - paragraphs.paragraphs_type.brands_carousel
+id: paragraph.brands_carousel.default
+targetEntityType: paragraph
+bundle: brands_carousel
+mode: default
+content:
+  field_brands_carousel:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

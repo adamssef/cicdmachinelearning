@@ -60,6 +60,7 @@ auth.json
 # Ignore phpunit unecessary files
 .phpunit.result.cache
 
+node_modules
 # Ignore solr data
 /config/solr/planet/data/
 backup*

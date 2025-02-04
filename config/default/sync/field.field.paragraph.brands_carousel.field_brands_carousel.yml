@@ -1,0 +1,24 @@
+uuid: a80ef52a-667d-47f7-a99a-ab658542c1ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_brands_carousel
+    - paragraphs.paragraphs_type.brands_carousel
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.brands_carousel.field_brands_carousel
+field_name: field_brands_carousel
+entity_type: paragraph
+bundle: brands_carousel
+label: 'Brands carousel'
+description: "Separate logos that you want displayed with a space, example: accor sita sohohouse\r\nYou can select from the following logos:\r\naccor, benetton, bestwestern, bluelagoon, bulgari, caffenero, calvinklein, champneys, chopard, coop, dolceandgabbana, elcorteingles, europcar, eurowings, giorgioarmani, goyard, hardrockcafe, heineken, holidaycheck, hotelbeds, hugoboss, hyatt, ihghotels, mandarinoriental, nhhotelgroup, oracle, pathe, pret, printemps, radissonhotel, sbbcffffs, selfridgesandco, sita, sohohouse, starbucks, swiss, tuigroup"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

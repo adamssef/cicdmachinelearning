@@ -1,0 +1,23 @@
+uuid: d22531ae-ebfc-4edf-bb42-f478434f5f0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.brands_carousel.field_brands_carousel
+    - paragraphs.paragraphs_type.brands_carousel
+id: paragraph.brands_carousel.default
+targetEntityType: paragraph
+bundle: brands_carousel
+mode: default
+content:
+  field_brands_carousel:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
