@@ -1,0 +1,30 @@
+uuid: cd4a7836-d8b0-4dc5-ad41-860c5fa44ed4
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion
+    - planet_payment_methods
+    - system
+  theme:
+    - cohesion_theme
+id: cohesion_theme_planetpaymentmethodsblock
+theme: cohesion_theme
+region: content
+weight: -21
+provider: null
+plugin: planet_payment_methods_block
+settings:
+  id: planet_payment_methods_block
+  label: 'Planet Payment Methods Block'
+  label_display: '0'
+  provider: planet_payment_methods
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: 0
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/payment-methods\r\n/metodos-pago\r\n/zahlungsarten\r\n/metodi-di-pagamento\r\n/methodes-paiement"

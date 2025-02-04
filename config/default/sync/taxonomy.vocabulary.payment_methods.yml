@@ -1,0 +1,8 @@
+uuid: 0d9b8a02-ae27-409c-8192-64920848c33e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Payment Methods'
+vid: payment_methods
+description: ''
+weight: 0

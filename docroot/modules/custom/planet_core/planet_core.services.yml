@@ -19,7 +19,13 @@ services:
     arguments: [ '@menu.link_tree', '@path_alias.manager', '@language_manager', '@planet_core.node_translation_service']
   planet_core.taxonomy_service:
     class: Drupal\planet_core\Service\PlanetCoreTaxonomyService\PlanetCoreTaxonomyService
-    arguments: ['@entity_type.manager', '@planet_core.node_translation_service']
+    arguments: ['@entity_type.manager', '@planet_core.node_translation_service', '@entity.repository']
   planet_core.media_service:
     class: Drupal\planet_core\Service\PlanetCoreMediaService\PlanetCoreMediaService
     arguments: [ '@file_url_generator']
+  planet_core.basic_page_service:
+    class: Drupal\planet_core\Service\PlanetCoreBasicPageService
+    arguments: ['@entity_type.manager', '@planet_core.media_service' ,'@language_manager', '@path_alias.manager', '@planet_core.node_translation_service']
+  planet_core.node_service:
+    class: Drupal\planet_core\Service\PlanetCoreNodeService\PlanetCoreNodeService
+    arguments: [ '@entity_type.manager' ]

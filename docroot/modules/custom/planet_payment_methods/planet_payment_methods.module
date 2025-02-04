@@ -1,0 +1,216 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for planet_payment_methods module.
+ */
+
+use Drupal\media\Entity\Media;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function planet_payment_methods_theme(): array {
+  return [
+    'node__payment_methods_landing' => [
+      'base hook' => 'node',
+      'template' => 'node--payment-methods-landing',
+      'variables' => [
+        'contact_url' => [],
+      ],
+    ],
+    'block__planet_payment_methods_block' => [
+      'template' => 'block--planet-payment-methods-block',
+      'variables' => [
+        'data' => [
+          'cards' => [],
+          'payment_methods' => []
+        ],
+      ],
+    ],
+    'node__payment_methods' => [
+      'base hook' => 'node',
+      'template' => 'node--payment-methods',
+      'variables' => [
+        'short_description' => '',
+        'logo_uri' => '',
+        'payment_methods_url' => '',
+        'acquirers' => [],
+        'contact_sales_url' => '',
+        'form' => [],
+        'payment_methods_landing_node_url' => '',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function planet_payment_methods_theme_suggestions_node_alter(array &$suggestions, array &$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $route_object = \Drupal::routeMatch()->getRouteObject();
+  $current_url = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
+  $is_admin_page = \Drupal::service('router.admin_context')
+    ->isAdminRoute($route_object);
+
+  if (!$node || $is_admin_page) {
+    if (in_array('node__payment_methods', $suggestions)) {
+      unset($suggestions[array_search('node__payment_methods', $suggestions)]);
+      return;
+    }
+  }
+
+  if ($node && $node instanceof NodeInterface && $node->getType() === 'page') {
+    if (!$is_admin_page) {
+      $node_translation_service = \Drupal::service('planet_core.node_translation_service');
+      $landing_node = $node_translation_service->getNodeByPathAlias('/payment-methods');
+      $translation_array = $node_translation_service->buildTranslationArrayForNode($landing_node);
+      $langcode = $node_translation_service->determineTheLangId();
+
+      if (
+        "/$langcode" . $alias === $translation_array[$langcode] ||
+        $alias === $translation_array[$langcode]
+      ) {
+        $suggestions[] = 'node__payment_methods_landing';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function planet_payment_methods_theme_suggestions_block_alter(array &$suggestions, array &$variables) {
+  if (isset($variables['elements']) && isset($variables['elements']['#plugin_id'])) {
+    if ($variables['elements']['#plugin_id'] === 'planet_payment_methods_block') {
+      if (!in_array('block__payment_methods_block', $suggestions)) {
+        $suggestions[] = 'block__payment_methods_block';
+      }
+    }
+  }
+}
+
+
+
+function planet_payment_methods_preprocess_node__payment_methods(&$variables) {
+  $node_translation_service = \Drupal::service('planet_core.node_translation_service');
+  $url = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($url);
+  $payment_methods_arr = $node_translation_service->getTranslationArrWithoutPrefixes('/payment-methods');
+
+  if ($payment_methods_arr && in_array($alias, $node_translation_service->getTranslationArrWithoutPrefixes('/payment-methods'))) {
+    $node = $node_translation_service->getNodeByPathAlias('/contact/sales');
+    $translation_array = $node_translation_service->buildTranslationArrayForNode($node);
+    $langcode = $node_translation_service->determineTheLangId();
+    $variables['contact_url'] = $langcode === 'en' ? $translation_array['en'] : "/$langcode" . $translation_array[$langcode];
+  }
+
+  $this_page_node = \Drupal::routeMatch()->getParameter('node');
+
+  $node_type = \Drupal::routeMatch()->getParameter('node')?->getType();
+
+  if ($node_type === 'payment_methods') {
+    $media_id = $this_page_node->get('field_logo_media')
+      ->getValue()[0]['target_id'];
+    $media = Media::load($media_id);
+    $media_uri = $media->field_media_image->entity->getFileUri();
+    $file_url_generator = \Drupal::service('file_url_generator');
+    $url = $file_url_generator->generateAbsoluteString($media_uri);
+    $core_translation_service = Drupal::service('planet_core.node_translation_service');
+    $payment_methods_node = $core_translation_service->getNodeByPathAlias($alias);
+    $node_translation_arr = $core_translation_service->buildTranslationArrayForNode($payment_methods_node);
+    $current_language = Drupal::languageManager()
+      ->getCurrentLanguage()
+      ->getId();
+    $short_description = $this_page_node->get('field_short_description')->value;
+
+    if (!$short_description) {
+      $short_description = $this_page_node->getTranslation('en')
+        ->get('field_short_description')->value;
+    }
+
+    $long_description = $this_page_node->get('field_long_description')->value;
+
+    if (!$long_description) {
+      $long_description = $this_page_node->getTranslation('en')
+        ->get('field_long_description')->value;
+    }
+
+    $variables['short_description'] = $short_description ?? '';
+    $variables['long_description'] = $long_description ?? '';
+    $payment_methods_url = $node_translation_arr[$current_language];
+
+    $langcode = $node_translation_service->determineTheLangId();
+    $translation_array = \Drupal::service('planet_core.node_translation_service')
+      ->getTranslationArrWithPrefixes('/payment-methods');
+    $payment_methods_landing_node_url = isset($translation_array[$langcode]) ? $translation_array[$langcode] : $translation_array['en'];
+    $variables['payment_methods_landing_node_url'] = $payment_methods_landing_node_url;
+    $variables['logo_uri'] = $url;
+    $variables['payment_methods_url'] = $payment_methods_url;
+    $acquirers_raw = $this_page_node->get('field_payment_methods_acquirers')
+      ->getValue();
+    $contact_sales_node = $core_translation_service->getNodeByPathAlias('/contact/sales');
+    $contact_sales_translation_arr = $core_translation_service->buildTranslationArrayForNode($contact_sales_node);
+    $contact_sales_url = $contact_sales_translation_arr[$current_language];
+
+    $form = \Drupal::entityTypeManager()
+      ->getStorage('webform')
+      ->load('get_in_touch_dynamic')
+      ->getSubmissionForm();
+    $variables['form'] = $form;
+    $variables['contact_sales_url'] = $contact_sales_url;
+
+    if ($acquirers_raw) {
+      $acquirers = [];
+      $planet_core_taxonomy_service = \Drupal::service('planet_core.taxonomy_service');
+
+      foreach ($acquirers_raw as $acquirer) {
+        $acquirers[] = $planet_core_taxonomy_service->getTermNameById($acquirer['target_id']);
+      }
+
+      $variables['acquirers'] = $acquirers;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function planet_payment_methods_preprocess_page(&$variables) {
+  $current_url = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
+  $node_translation_service = \Drupal::service('planet_core.node_translation_service');
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $node_type = $node ? $node->getType() : NULL;
+  $landing_node = $node_translation_service->getNodeByPathAlias('/payment-methods');
+
+  if (!$landing_node) {
+    return;
+  }
+
+  $translation_array = $node_translation_service->buildTranslationArrayForNode($landing_node);
+  $langcode = $node_translation_service->determineTheLangId();
+
+  if (
+    "/$langcode" . $alias === $translation_array[$langcode] ||
+    $alias === $translation_array[$langcode]
+  ) {
+    $variables['#attached']['library'][] = 'planet_payment_methods/tailwind';
+    $variables['#attached']['library'][] = 'planet_payment_methods/planet_payment_methods';
+  }
+
+  if ($node_type && $node_type === 'payment_methods') {
+    $variables['#attached']['library'][] = 'planet_payment_methods/tailwind_css_only';
+    $variables['#attached']['library'][] = 'planet_core/get-in-touch-dynamic-form';
+  }
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function planet_payment_methods_preprocess_block__payment_methods_block(&$variables) {
+  $variables['data'] = $variables['content'][0]['#data'];
+}

@@ -1,11 +1,9 @@
 sitewide-libraries:
   css:
     theme:
-      # css/slick.css: {}
       css/site_wide_styles.css: {}
       css/product_pages_html.css: {}
   js:
-    # js/slick.js: {}
     js/SiteWideScripts.js: {}
 language-popup:
   css:
@@ -48,3 +46,15 @@ brands-we-work-with:
       css/brands-we-work-with.css: { }
   js:
     js/BrandsWeWorkWith.js: { }
+basic-pages:
+  css:
+    theme:
+      css/brands-we-work-with.css: { }
+      css/tailwind-product-pages.css: {}
+  js:
+    js/swiper-bundle.min.js.js: {}
+    js/BrandsWeWorkWith.js: { }
+get-in-touch-dynamic-form:
+  css:
+    theme:
+      css/webform-get-in-touch-dynamic.css: { }
