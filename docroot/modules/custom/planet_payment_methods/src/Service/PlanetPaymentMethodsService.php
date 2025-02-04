@@ -350,9 +350,9 @@ class PlanetPaymentMethodsService {
 
   private function getCardLinks(array $nodes): array {
     $current_language_prefix = $this->languageManager->getCurrentLanguage()->getId();
-    $link_dcc = ($current_language_prefix !== 'en') ? "/$current_language_prefix" . $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes['dcc'])[$current_language_prefix] : $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes['dcc'])[$current_language_prefix];
-    $link_online_payments = ($current_language_prefix !== 'en') ? "/$current_language_prefix" . $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes['online_payments'])[$current_language_prefix] : $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes['online_payments'])[$current_language_prefix];
-    $link_in_person_payments = ($current_language_prefix !== 'en') ? "/$current_language_prefix" . $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes['in_person_payments'])[$current_language_prefix] : $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes['in_person_payments'])[$current_language_prefix];
+    $link_dcc = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes['dcc'])[$current_language_prefix];
+    $link_online_payments = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes['online_payments'])[$current_language_prefix];
+    $link_in_person_payments = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes['in_person_payments'])[$current_language_prefix];
 
     return [
       'link_dcc' => $link_dcc,
