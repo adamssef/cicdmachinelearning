@@ -930,7 +930,7 @@ function planet_core_preprocess_page(array &$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   
   // Check if it's a node and if it's of type 'page'
-  if ($node instanceof \Drupal\node\NodeInterface && $node->getType() == 'page') {
+  if ($node instanceof \Drupal\node\NodeInterface && $node->getType() == 'page' && $node->id() != 5621) {
     $variables['#attached']['library'][] = 'planet_core/basic-pages';
   }
 
