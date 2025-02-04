@@ -1,0 +1,26 @@
+uuid: b840e7f9-3f67-42bf-bcc5-1f87d3ad8723
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_description
+    - node.type.payment_methods
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.payment_methods.field_short_description
+field_name: field_short_description
+entity_type: node
+bundle: payment_methods
+label: 'Short description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

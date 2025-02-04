@@ -1,0 +1,134 @@
+Index,title,url,category,channel,acquirers,upper_text,bottom_text
+0,Mastercard,/resources/logos/payment_methods/images/mastercard.svg,Credit cards,"Online In-person","card complete Service Bank AG
+Chase Paymentech Europe Ltd (J.P. Morgan)
+Clearhaus 
+Elavon Merchant Services
+European Merchant Services EMS 
+First Cash Solution 
+hobex AG 
+Ingenico Payment Services GmbH 
+LogPay Financial Services GmbH 
+Lloyds Bank Cardnet 
+Nets Schweiz AG 
+PAYONE GmbH 
+PAYONE GmbH, Austrian branch 
+PayU 
+Société Générale
+Worldline Financial Services (Europe) S.A. 
+Worldline Switzerland Ltd. 
+WorldPay","Mastercard is one of the two leading global credit and debit card networks, along with Visa, with extensive worldwide distribution.",
+1,Visa,/resources/logos/payment_methods/images/visa.svg,Credit cards,"Online In-person","Acquirer
+card complete Service Bank AG 
+Chase Paymentech Europe Ltd (J.P. Morgan) 
+Clearhaus 
+Elavon Merchant Services 
+European Merchant Services EMS 
+First Cash Solution 
+hobex AG 
+Ingenico Payment Services GmbH 
+LogPay Financial Services GmbH 
+Lloyds Bank Cardnet
+Nets Schweiz AG
+PAYONE GmbH 
+PAYONE GmbH, Austrian branch 
+PayU 
+Société Générale
+Worldline Financial Services (Europe) S.A. 
+Worldline Switzerland Ltd. 
+WorldPay","Visa is a top international credit and debit card network, alongside Mastercard, with one of the broadest global acceptance networks.",
+2,American Express,/resources/logos/payment_methods/images/amex.svg,Credit cards,"Online In-person","American Express International Inc.
+LogPay Financial Services GmbH 
+Swisscard AECS AG (CH) ","American Express (Amex) positions itself as a premium credit card provider, offering unique benefits such as global assistance, comprehensive insurance services, travel booking, and fast card replacement, typically within 24 hours.",
+3,Diners Club,/resources/logos/payment_methods/images/diners.svg,Credit cards,"Online In-Person","DC Bank AG (AT)
+Elavon Merchant Service (DE) 
+First Cash Solution 
+Ingenico Payment Services GmbH 
+LogPay Financial Services GmbH 
+Worldline Switzerland Ltd. 
+Worldline Financial Services (Europe) S.A. ",Diners Club does not have the same widespread acceptance as its competitors, but it is favored by business travelers due to its access to numerous airport lounges around the world.",
+4,Discover,/resources/logos/payment_methods/images/discover.svg,Credit cards,"Online In-person","DC Bank AG (AT)
+Elavon Merchant Service (DE) 
+First Cash Solution 
+Ingenico Payment Services GmbH 
+Worldline Switzerland Ltd. 
+Worldline Financial Services (Europe) S.A. ","Discover Card is a major credit card in the United States, with over 50 million users and acceptance at approximately 4 million merchants across the USA and Mexico.",
+5,JCB,/resources/logos/payment_methods/images/jcb.svg,Credit cards,"Online In-person","card complete Service Bank AG
+First Cash Solution 
+LogPay Financial Services GmbH 
+PAYONE GmbH 
+Worldline Switzerland Ltd. 
+Worldline Financial Services (Europe) S.A.","JCB is a payment card predominantly issued in Japan and used widely across Asia. In Europe, its acceptance is focused on luxury retailers, high-end hotels, and merchants catering to tourists from Japan and Asia.",
+6,China UnionPay,/resources/logos/payment_methods/images/china-union-pay.svg,Credit cards,"Online In-person","Acquirer
+Concardis GmbH 
+Concardis GmbH Vertrieb Schweiz 
+First Cash Solution 
+Worldline Switzerland Ltd. 
+Worldline Financial Services (Europe) S.A.","China UnionPay, commonly referred to as UnionPay or CUP, is a major financial services provider in China, offering a widespread card scheme primarily used for domestic transactions. It is gaining more acceptance in Europe.",
+7,AirPlus,/resources/logos/payment_methods/images/airplus-uatp.svg,Credit cards,Online,AirPlus,"AirPlus International offers business travel management solutions, simplifying the handling of travel expenses and payments for companies.",
+8,Maestro,/resources/logos/payment_methods/images/maestro.svg,Debit cards,"Online In-person","card complete Service Bank AG
+Concardis GmbH 
+Elavon Merchant Services 
+European Merchant Services EMS 
+Ingenico Payment Services GmbH 
+PAYONE GmbH 
+Société Générale
+Worldline Financial Services (Europe) S.A. 
+WorldPay","Maestro is a debit card service from Mastercard International, enabling international transactions. While accepted online in various countries, internet payments with Maestro are not yet available in Switzerland.",
+9,V Pay,/resources/logos/payment_methods/images/v-pay.svg,Debit cards,"Online In-Person","card complete Service Bank AG
+Chase Paymentech Europe Ltd (J.P. Morgan)
+Concardis GmbH
+Concardis GmbH, Vertrieb Schweiz
+Elavon Merchant Services
+European Merchant Services EMS
+EVO Payments International GmbH
+hobex AG
+Ingenico Payment Services GmbH
+Lloyds Bank Cardnet
+Nets Schweiz AG
+PAYONE GmbH
+PAYONE GmbH, Austrian branch
+Société Générale
+Wirecard AG
+Worldline Financial Services (Europe) S.A.
+Worldline Switzerland Ltd.
+WorldPay","V Pay, developed by Visa Europe, is a chip-and-PIN-based debit card designed for European consumers. It allows secure payments and ATM withdrawals, contributing to the Single European Payments Area (SEPA).",
+10,Postfinance Card,/resources/logos/payment_methods/images/postfinance-card.svg,Debit cards,"Online In-person",PostFinance AG,"The PostFinance Card allows Swiss customers to make payments online or through mobile devices, using either the PostFinance Card or PostFinance E-Finance. It is particularly popular among younger users under 18, as credit cards are restricted to adults. Merchants can activate both payment methods via the 'eCom' solution offered by Planet.","The PostFinance Card has over 3 million cardholders in Switzerland - with an above-average number of people below the age of 18 (credit cards may only be held from the age of 18)."
+11,DK,/resources/logos/payment_methods/images/dankort.svg,Debit cards,Online,Dankort / Nets Holding A/S,"Dankort is the most widely used payment card in Denmark, serving as the preferred method for everyday transactions, including online payments. Many Dankort cards are co-branded with Visa, allowing for international use.",
+12,PayPal,/resources/logos/payment_methods/images/paypal.svg,Wallets,Online,,"PayPal is one of the leading online payment services, offering a fast and easy way to receive payments. Customers can pay with just a few clicks, which can boost your sales by an average of 23.1% (source: Payment in E-Commerce, IZ 2013, ECC Cologne). With over 305 million active accounts in more than 200 markets and 25 currencies worldwide, PayPal is widely used, including by over 1.2 million active customers in Switzerland.<br><br>PayPal offers transparent fees with no monthly minimum sales requirements; fees are only charged when you receive a payment. Integration with PayPal is seamless, providing smooth management of payments in your online shop, all connected to both your front and backend systems.<br><br>When a customer chooses to pay with PayPal on your website, they are securely redirected to PayPal’s platform, where they log in with their email address and password, confirm the payment with a click, and the transaction is completed instantly. This allows you to ship goods immediately, without waiting for days for payment confirmation, ensuring quick service and customer satisfaction. Additionally, the PayPal Express Checkout button on product and cart pages enables faster checkout, helping increase sales.<br><br>For Planet users, PayPal is easily integrated via a standardised interface, allowing for quick setup with no additional integration effort required.",
+13,Amazon Pay,/resources/logos/payment_methods/images/amazon-pay.svg,Wallets,"Online In-Person",,"Amazon Pay allows merchants to offer a payment solution backed by Amazon’s advanced fraud and risk management. With access to over 300 million trusted Amazon customers, it provides a reliable and familiar payment method, enhancing consumer confidence and boosting potential sales.",
+14,Apple Pay,/resources/logos/payment_methods/images/apple-pay.svg,Wallets,"Online In-Person",,"Apple Pay is a payment system designed for Apple products such as the iPhone, iPad, MacBook Pro with Touch Bar, and Apple Watch. It supports NFC payments (card present), in-app purchases (card not present, requiring a native iOS app), and browser-based solutions through Apple Pay Web.<br><br>For in-app purchases on iOS, a native app is required, and browser-based integrations can be set up using Apple Pay Web. Technical documentation and client-side integration guides are available directly from Apple.<br><br>To process Apple Pay transactions, a payment processing certificate is needed, which can be created through Apple's developer platform. This certificate is required for both native apps and web-based transactions.",
+15,G Pay,/resources/logos/payment_methods/images/gpay.svg,Wallets,"Online In-Person",,"Google Pay is a payment platform that can be used across various devices linked to your Google account, providing merchants with a faster and more seamless checkout experience.<br><br>It supports NFC payments (card present), in-app purchases (card not present), and browser-based transactions through Google Pay Web.<br><br>To integrate Google Pay, refer to the available documentation. Merchants should also confirm with their acquirer whether their contract supports Google Pay.",
+16,Samsung Pay,/resources/logos/payment_methods/images/samsung-pay.svg,Wallets,"Online In-Person",,"Samsung Pay is a payment system available on most Samsung Galaxy phones, allowing users to make secure payments.<br><br>It supports NFC payments (card present), browser-based transactions through Samsung Pay Web, and in-app purchases (card not present). Customers can select Samsung Pay at checkout, with payment authenticated through fingerprint, iris scan, or PIN on their mobile device.<br><br>For integration details, refer to Samsung's documentation, and developers can register at Samsung's developer portal for further information.",
+17,WeChat Pay,/resources/logos/payment_methods/images/wechat.svg,Wallets,"Online In-Person","PAYONE GmbH, Austrian branch
+Worldline Financial Services (Europe) S.A.
+Worldline Switzerland Ltd. 
+","WeChat Pay is a mobile payment and digital wallet service integrated with China's most popular messaging platform, WeChat. It allows users to make mobile and online payments, as well as peer-to-peer and offline transactions, making it the preferred payment method for over 1.2 billion users.","Benefits:
+
+Access to 1.2 billion active WeChat users Targets Chinese consumers living in China and abroad Marketing opportunities for social media with the potential to generate increased conversion rates, customer satisfaction and brand awareness No chargebacks or reversals"
+18,Cryptocurrencies,/resources/logos/payment_methods/images/crypto.svg,Wallets,"Online In-Person",,"Merchants can now accept cryptocurrency payments by generating crypto invoices through a partner platform. Customers simply scan a QR code from their crypto wallet to complete the transaction. Once the payment is initiated, the transaction value is instantly converted and settled in the merchant's preferred currency, with no currency risk or additional cost, aside from a fee for payouts to the bank account.<br><br>Popular cryptocurrencies supported include BTC, ETH, LTC, BHC, NEO, XRP, and more.",
+19,TWINT,/resources/logos/payment_methods/images/twint.svg,Wallets,Online,,"TWINT is a cashless payment app widely used in Switzerland for transactions at cash registers, online, and even at vending machines. It also supports peer-to-peer transfers and payment requests.",
+20,Klarna Sofort,/resources/logos/payment_methods/images/cardklarna_web.svg,E-banking/bank transfer,Online,,"Klarna, a Swedish payment service provider, has been offering a seamless checkout experience since 2005. Online shoppers can choose from several payment options, including paying by invoice, installments, direct debit, or instant transfer.<br><br>Klarna partners with approximately 130,000 merchants across Europe and North America, making it a popular choice for both consumers and retailers.",
+21,Postfinance,/resources/logos/payment_methods/images/postfinance.svg,E-banking/bank transfer,Online,PostFinance AG,"PostFinance E-Finance allows customers to settle transactions online 24/7, making it Switzerland's leading e-finance platform with approximately 1 million users. It provides a secure and efficient way to handle payments via the internet.",
+22,Migros Bank,/resources/logos/payment_methods/images/migros-bank.svg,E-banking/bank transfer,"Online In-person",Migros Bank AG (CH) ,"Migros Bank E-Pay allows customers to make direct payments from their Migros Bank accounts for online purchases. Customers simply enter their E-Pay ID and confirm the payment via e-banking or the Mobile Banking App. Payments are processed instantly, and merchants face no credit risk. Migros Bank credits the funds to the merchant's account in real time.",The payment process involves Migros Bank confirming the transaction and immediately transferring the funds to the merchant. Merchants must integrate the payment method using Planet and hold an account with Migros Bank to receive instant payments.
+23,SEPA - AT,/resources/logos/payment_methods/images/sepa-at.svg,E-banking/bank transfer,Online,"creditPass GmbH
+LogPay Financial Services GmbH ","SEPA Lastschrift in Austria enables merchants to collect direct debits from Austrian customer accounts, with added security measures. Basic security features include limits on the amount per account, a cap on the number of transactions, and internal and public blacklist checks. Merchants can also implement additional risk checks such as address and IP verification to further mitigate risks.","Merchants require a separate contract with hobex for Austrian direct debits, with creditPass providing the necessary documentation."
+24,SEPA - DE,/resources/logos/payment_methods/images/sepa-de.svg,E-banking/bank transfer,Online,"creditPass GmbH
+LogPay Financial Services GmbH ",SEPA Lastschrift is a widely used payment method in Germany for customers who prefer bank transfers over credit cards. It allows users to debit funds directly from their bank accounts using their IBAN. Planet ensures the secure handling of these transactions. Merchants benefit from quick payments but face some risk with returned debits due to the lack of credit checks. Tools like the 4safe®-Check from creditPass can help reduce risk by verifying account details and transaction patterns.,"Merchants must comply with security checks, including blacklist reviews, transaction monitoring, and IBAN verification, to ensure the reliability of the payment process. These checks help minimise the risk of loss due to insufficient funds or fraudulent transactions."
+25,giropay,/resources/logos/payment_methods/images/giropay.svg,E-banking/bank transfer,Online,S-Public Services GmbH ,"Giropay is a popular payment method in Germany that allows customers to make secure online bank transfers using their bank's online portal via PIN and TAN, without additional registration. Merchants receive a 100% payment guarantee from the buyer’s bank, protecting against payment defaults. Giropay is available to over 35 million customers in Germany.","Benefits:<ul><li>Integrates bank transfers seamlessly into e-commerce</li><li>Provides a payment guarantee for merchants</li><li>Available to millions of German customers</li><li>Secure, familiar online banking portal for buyers</li></ul>"
+26,eps-Überweisung,/resources/logos/payment_methods/images/eps.svg,E-banking/bank transfer,Online,,"Eps is a popular bank transfer method in Austria, allowing customers to make secure online payments using their bank's online portal with PIN and TAN, without additional registration. Merchants receive an immediate payment guarantee from the buyer’s bank, providing 100% protection against payment defaults. Eps is accessible to over 4 million customers in Austria.","Benefits:<ul><li>Integration of bank transfers as an online payment method</li><li>100% payment guarantee from the buyer’s bank</li><li>High security via familiar banking portals</li><li>Plug-and-play technology available on Planet</li></ul>"
+27,iDEAL,/resources/logos/payment_methods/images/ideal.svg,E-banking/bank transfer,Online,,"iDEAL is a payment method developed by Dutch banks to simplify online payments for products and services. It allows users to make secure online payments directly between bank accounts via online banking.<br><br>As a widely used payment option in the Netherlands, iDEAL enables webshop visitors with online banking access at one of the participating banks to complete transactions seamlessly. To offer iDEAL as a payment method, businesses must have a branch or headquarters in the Netherlands.",
+28,Klarna,/resources/logos/payment_methods/images/klarna.svg,Credit worthiness and payment by invoice,"Online In-person",,"Klarna, a Swedish payment service provider, has been offering a seamless checkout experience since 2005. Online shoppers can choose from several payment options, including paying by invoice, installments, direct debit, or instant transfer.<br><br>Klarna partners with approximately 130,000 merchants across Europe and North America, making it a popular choice for both consumers and retailers.",
+29,POWERPAY,/resources/logos/payment_methods/images/powerpay.svg,Credit worthiness and payment by invoice,"Online In-person",POWERPAY / MFGroup AG,"POWERPAY, provided by MF Group, offers customers the option to purchase by invoice with the flexibility to pay in instalments. This service integrates seamlessly via the Planet's interface and is available in both web and mobile SDKs. Customers can identify themselves through their address or payment card, and the solution provides real-time customer evaluation.","POWERPAY allows merchants to offer a smooth payment process similar to conventional credit cards, with added benefits like brandable payment cards and optimal synergies for physical shops."
+30,availabill,/resources/logos/payment_methods/images/availabill.svg,Credit worthiness and payment by invoice,"Online In-person",availabill AG,"Availabill offers Swiss online merchants the option of 'purchase on account' and 'payment in instalments.' This service handles credit checks, risk management, invoicing, and receivables for merchants. Availabill assumes the full risk of payment default and manages the invoicing and dunning process, ensuring efficient and secure payments for merchants and customers.","Planet fully integrates Availabill’s services into online shops, allowing merchants to send goods while Availabill manages invoice processing, including immediate payment to the merchant."
+31,Byjuno,/resources/logos/payment_methods/images/byjuno.svg,Credit worthiness and payment by invoice,"Online In-person",Byjuno AG,"Byjuno allows customers to pay by invoice, either immediately, in installments, or via monthly billing. The service includes real-time credit checks using Switzerland's largest credit database, ensuring a high acceptance rate for merchants and guaranteed payments. Byjuno is easily integrated into online shops through the Planet's interface, offering flexible payment options and Swiss customer service.","Byjuno, a subsidiary of Intrum Justitia Group, provides merchants with a seamless invoicing system, linking the original invoice with the Byjuno invoice for easy tracking."
+32,CRIF Deltavista,/resources/logos/payment_methods/images/deltavista-crif.svg,Credit worthiness and payment by invoice,Online,CRIF AG,"Deltavista, provided by CRIF, offers businesses a powerful tool for performing creditworthiness checks on companies and individuals in Switzerland. It allows for comprehensive risk management through quick access to detailed financial and solvency information.",
+33,Swissbilling,/resources/logos/payment_methods/images/swissbilling.svg,Credit worthiness and payment by invoice,"Online In-person",SWISSBILLING SA,"SWISSBILLING allows merchants in Switzerland and Liechtenstein to offer customers payment by invoice, with options for single or multiple installments. SWISSBILLING guarantees payment to the merchant within an agreed period and handles all invoicing and receivables management, including credit checks and risk.","Key Features:<br><ul><li>Invoicing in multiple languages (German, French, Italian, English)</li><li>Payment guarantee within two days</li><li>Installment payment options for customers</li><li>Fast integration with Planet</li></ul><br><br>Conditions:<br><ul><li>Merchant fees: 1.5% to 3.5% per order</li><li>Customer fees: CHF 1.50 to CHF 3.50 per invoice</li></ul>"
+34,SwissPass,/resources/logos/payment_methods/images/swisspass.svg,Credit worthiness and payment by invoice,Online,Swisspass,"SwissPass, originally designed by SBB for public transport, now allows customers to make purchases on invoice. This includes train tickets, ski passes, and goods from railway stations. Purchases can be paid immediately or in installments, providing flexibility for consumers.<br><br>SwissPass offers a convenient way to manage various purchases, debiting them directly to the account, with options for installment payments if desired.",
+35,creditPass,/resources/logos/payment_methods/images/creditpass.svg,Credit worthiness and payment by invoice,Online,creditPass GmbH,"creditPass offers an interface for automated credit checks, connecting to multiple renowned credit agencies like BÜRGEL, infoscore, and Creditreform. Merchants can configure various checks (accounts, addresses, persons, compliance) based on customised rules, providing fast and automated decision-making.","Key Benefits:<br><ul><li>Comprehensive access to multiple credit agencies</li><li>Flexible, configurable checks for different criteria</li><li>Integrated logic system, reducing technical implementation efforts</li><li>Efficient customer verification process with minimal training needed</li></ul>"
+36,paysafecard,/resources/logos/payment_methods/images/paysafecard.svg,Other payment methods,"Online In-person",paysafecard.com Schweiz GmbH,"paysafecard is a leading prepaid payment method in Europe, offering a simple and secure way to make online payments without needing a bank account or credit card. It can be purchased in denominations and used at various online acceptance points. No registration is required, making it a convenient choice for users seeking privacy and security.<br><br>paysafecard eliminates the need for sensitive data disclosure online, reducing the risk of payment defaults for merchants.",
+37,pointspay,/resources/logos/payment_methods/images/pointspay.svg,Other payment methods,"Online In-person",Loylogic,"PointsPay allows members of leading loyalty programs to make purchases using their loyalty points. Merchants benefit from brand exposure to millions of members and higher conversion rates due to the 'reward' mindset of buyers. PointsPay also offers flexibility by allowing customers to top-up with credit cards if they lack sufficient points and earn additional loyalty points.","PointsPay provides merchants with cash payouts, whether points are redeemed or collected, enhancing customer engagement through loyalty-driven purchasing behaviors."
+38,Skrill,/resources/logos/payment_methods/images/skrill.svg,Other payment methods,"Online In-person",,"Skrill (Moneybookers) is a widely-used global payment system, trusted by over 35,000 merchants. It offers a fully integrated payment solution with access to over 200 countries. The Quick Checkout feature provides fast and easy credit card, debit card, and bank transfer options, while the Skrill eWallet serves over 7 million users, offering a secure alternative to traditional payment methods.",
+39,UATP,/resources/logos/payment_methods/images/uatp.svg,Other payment methods,"Online In-person",,"UATP is a closed network payment solution primarily used for booking business travel with airlines, travel agencies, and railway operators. It is preferred for managing corporate travel expenses. The UATP card connects various issuers within the travel industry, offering businesses an efficient way to streamline their travel payments.<br><br>UATP is a global payment solution tailored for business travel, offering a simplified and centralised method for managing travel expenses across multiple providers.",
+40,boncard,/resources/logos/payment_methods/images/boncard.svg,Other payment methods,"Online In-person",boncard payment & services ag,"Boncard payment & services ag provides gift, payment, bonus, and discount cards. Their services cater to individual retailers, chain stores, and alliances, offering flexible card solutions for customer loyalty and payment systems.<br><br>Boncard specialises in a variety of card-based solutions, helping businesses enhance customer loyalty and streamline payment processes with tailored options for different retail setups.",
+41,Reka Card,/resources/logos/payment_methods/images/reka.svg,Other payment methods,"Online In-person",Reka,"The Reka Card is a payment method widely used in Swiss tourism for services such as accommodation and leisure activities. Issued by the Swiss Travel Fund (Reka), it offers a convenient way for consumers to use Reka money across various tourism-related sectors in Switzerland.<br><br>The Reka Card is a popular choice for travelers in Switzerland, allowing seamless payments within the tourism industry, supported by various service providers across the country.",
+42,swisscom,/resources/logos/payment_methods/images/swisscom.svg,Other payment methods,"Online In-person",Swisscom Pay / Swisscom (Schweiz AG),"Swisscom Pay enables customers to make online and remote purchases easily using their mobile phones, with payments added to their mobile bill or deducted from prepaid credit. No credit card or wallet account is needed, and this service is widely accepted for various digital purchases in Swiss online stores.","Service at a Glance:<ul><li>No registration required</li><li>Secure, automated identification</li><li>Transactions between CHF 0.10 and 100.00</li><li>Intuitive payments on PC, tablet, or smartphone</li><li>Access to over 6 million Swisscom mobile customers</li><li>Swisscom handles payment clearance and collection</li></ul>"

@@ -47,4 +47,15 @@ interface PlanetCoreTaxonomyServiceInterface {
    *   The term name, null otherwise
    */
   function getTermNameById($term_id): ?string;
+
+  /**
+   * Get the term names by their IDs.
+   *
+   * @param array $terms_ids
+   *   The term IDs.
+   *
+   * @return ?array
+   *   The term names, null otherwise
+   */
+  function getTermNamesByIdList(array $term_objects): ?array;
 }

@@ -1,0 +1,18 @@
+id: pm_load_content
+label: 'Migration data to populate reference entity content in payment methods'
+migration_tags:
+  - CSV
+source:
+  plugin: csv
+  path: modules/custom/planet_migrations/sources/payment_methods.csv
+  ids: [Index]
+process:
+  field_logo_media:
+    - plugin: pm_content_loader
+      source: url
+destination:
+  plugin: 'entity:media'
+  default_bundle: image
+migration_dependencies:
+  required:
+    - payment_methods_csv
