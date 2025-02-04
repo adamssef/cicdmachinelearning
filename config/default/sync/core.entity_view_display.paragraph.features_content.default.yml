@@ -1,27 +1,26 @@
-uuid: ce6ca5ce-f189-4817-8e6d-3e1577098a9d
+uuid: e577b878-11f4-455e-beeb-67c74271e414
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.hero.field_button_1_label
-    - field.field.paragraph.hero.field_button_1_link
-    - field.field.paragraph.hero.field_button_1_open
-    - field.field.paragraph.hero.field_button_2_label
-    - field.field.paragraph.hero.field_button_2_link
-    - field.field.paragraph.hero.field_button_2_open
-    - field.field.paragraph.hero.field_hero
-    - field.field.paragraph.hero.field_hero_form
-    - field.field.paragraph.hero.field_hero_image
-    - field.field.paragraph.hero.field_hero_label
-    - field.field.paragraph.hero.field_hero_title
-    - paragraphs.paragraphs_type.hero
+    - field.field.paragraph.features_content.field_button_1_label
+    - field.field.paragraph.features_content.field_button_1_link
+    - field.field.paragraph.features_content.field_button_1_open
+    - field.field.paragraph.features_content.field_button_2_label
+    - field.field.paragraph.features_content.field_button_2_link
+    - field.field.paragraph.features_content.field_button_2_open
+    - field.field.paragraph.features_content.field_hero
+    - field.field.paragraph.features_content.field_hero_image
+    - field.field.paragraph.features_content.field_hero_label
+    - field.field.paragraph.features_content.field_hero_title
+    - field.field.paragraph.features_content.field_image_on_the_left
+    - paragraphs.paragraphs_type.features_content
   module:
     - link
     - text
-    - webform
-id: paragraph.hero.default
+id: paragraph.features_content.default
 targetEntityType: paragraph
-bundle: hero
+bundle: features_content
 mode: default
 content:
   field_button_1_label:
@@ -91,15 +90,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_hero_form:
-    type: webform_entity_reference_entity_view
-    label: above
-    settings:
-      source_entity: true
-      lazy: false
-    third_party_settings: {  }
-    weight: 10
-    region: content
   field_hero_image:
     type: entity_reference_entity_view
     label: hidden
@@ -124,6 +114,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_image_on_the_left:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 10
     region: content
 hidden:
   search_api_excerpt: true
