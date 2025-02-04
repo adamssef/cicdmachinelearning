@@ -2,7 +2,6 @@
     {% set template_path = '/modules/custom/planet_core/templates/paragraph/paragraph--' ~ paragraph.type ~ '--default.html.twig' %}
     {{ include(template_path, ignore_missing = true) }}
 {% endfor %}
-
 {% if content.field_html_content %}
   {{ content.field_html_content|raw }}
 	<!-- form -->

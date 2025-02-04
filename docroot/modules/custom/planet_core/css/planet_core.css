@@ -2291,6 +2291,7 @@ a.button-with-icon-transition {
   font-size: 16px;
   font-style: normal;
   font-family: 'TT Commons', sans-serif;
+  margin: 0 auto;
 }
 
 header:not(.white-bg) .header-secondary-cta {

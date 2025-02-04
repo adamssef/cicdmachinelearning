@@ -1,7 +1,7 @@
 <div class="relative">
-  <div class="grid grid-cols-1 md:grid-cols-2 min-h-[800px]">
+  <div class="{% if paragraph.fields.field_hero_form %} max-w-[1336px] mx-auto {% endif %}grid grid-cols-1 md:grid-cols-2 min-h-[800px]">
     <!-- Left content column with padding -->
-    <div class="container mx-auto px-4 md:pl-16 md:pr-8 py-8 md:py-24 order-2 md:order-1 flex items-center">
+    <div class="container mx-auto px-4 md:pl-16 md:pr-8 py-8 md:py-24 order-2 md:order-1 flex{% if not paragraph.fields.field_hero_form %} items-center{% endif %}">
         <!-- Pre-heading -->
         <div>
             <p class="block text-sm font-semibold leading-4 pl-4 uppercase border-l-4 border-solid border-l-[#E00083] mb-4">
@@ -39,8 +39,18 @@
         </div>
     </div>
 
-    <!-- Right column with background color -->
-    <div style="background-image: url({{ paragraph.fields.hero_image_url }})" class="bg-gray-200 bg-cover bg-center min-h-[300px] md:min-h-[600px] order-1 md:order-2">
+    <!-- Right column with form -->
+    {% if paragraph.fields.field_hero_form %}
+    <div class="order-3 md:order-2 m-4">
+      	<div class="coh-style-form site-studio-webform-element site-studio-webform-node-element" style="padding: 0">
+          <div id="contact-us" class="p-8 md:m-8" style="box-shadow: 0 0.25rem 1.5625rem rgba(0,0,0,0.1)">
+          {{paragraph.fields.field_hero_form}}
+          </div>
+        </div>
     </div>
+    {% else %}
+    <!-- Right column with image -->
+    <div style="background-image: url({{ paragraph.fields.hero_image_url }})" class="bg-gray-200 bg-cover bg-center min-h-[300px] md:min-h-[600px] order-1 md:order-2"></div>
+    {% endif %}
   </div>
 </div>

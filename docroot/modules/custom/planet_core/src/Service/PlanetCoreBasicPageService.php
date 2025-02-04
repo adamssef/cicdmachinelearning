@@ -62,6 +62,17 @@ class PlanetCoreBasicPageService {
             $field_data[$field_name] = explode(' ', trim($field_data[$field_name][0]['value']));
           }
 
+            // Add condition for field_hero_form
+        if ($field_name === 'field_hero_form' && !$paragraph->get('field_hero_form')->isEmpty()) {
+          $webform_id = $paragraph->get('field_hero_form')->target_id;
+          $form = \Drupal::entityTypeManager()
+              ->getStorage('webform')
+              ->load($webform_id)
+              ->getSubmissionForm();
+
+          $field_data[$field_name] = $form;
+        }
+
           if (in_array($field_name, ['field_button_1_link', 'field_button_2_link']) && !empty($field_data[$field_name][0]['uri'])) {
             $uri = $field_data[$field_name][0]['uri'];
             if (strpos($uri, 'entity:node/') === 0) {
