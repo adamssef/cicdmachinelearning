@@ -8,6 +8,7 @@ on:
       - main
       - copy-of-the-main
       - fix/case-study-fixes
+      - uat
 
 jobs:
   build_image:

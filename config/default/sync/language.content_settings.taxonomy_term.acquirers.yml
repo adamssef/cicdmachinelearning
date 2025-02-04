@@ -1,0 +1,16 @@
+uuid: f35a51b7-5506-4aa6-9a94-f2a1b0af22b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.acquirers
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.acquirers
+target_entity_type_id: taxonomy_term
+target_bundle: acquirers
+default_langcode: site_default
+language_alterable: false

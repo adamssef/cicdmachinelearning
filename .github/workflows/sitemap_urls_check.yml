@@ -1,0 +1,121 @@
+name: Sitemap URL Checker
+on:
+  workflow_dispatch:
+    inputs:
+      sitemap_urls:
+        description: 'Sitemap URLs (one per line)'
+        required: true
+        type: string
+      username:
+        description: 'Basic auth username (if required)'
+        required: false
+        type: string
+      password:
+        description: 'Basic auth password (if required)'
+        required: false
+        type: string
+
+jobs:
+  check-urls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests xmltodict
+          
+      - name: Check URLs
+        env:
+          SITEMAP_URLS: ${{ inputs.sitemap_urls }}
+          USERNAME: ${{ inputs.username }}
+          PASSWORD: ${{ inputs.password }}
+        run: |
+          import requests
+          import xmltodict
+          import sys
+          import os
+          
+          def check_url(url, auth=None):
+              try:
+                  response = requests.get(url, allow_redirects=False, auth=auth)
+                  if response.status_code not in [200, 301]:
+                      print(f"❌ Error: {url} returned status code {response.status_code}")
+                      return False
+                  print(f"✅ Success: {url} returned status code {response.status_code}")
+                  return True
+              except Exception as e:
+                  print(f"❌ Error: {url} raised an exception: {str(e)}")
+                  return False
+          
+          def process_sitemap(sitemap_url, auth=None):
+              try:
+                  print(f"\nProcessing sitemap: {sitemap_url}")
+                  response = requests.get(sitemap_url, auth=auth)
+                  response.raise_for_status()
+                  sitemap = xmltodict.parse(response.text)
+                  
+                  urls = set()  # Using set to avoid duplicates
+                  
+                  # Process each URL entry
+                  urlset = sitemap['urlset']['url']
+                  if not isinstance(urlset, list):
+                      urlset = [urlset]
+                      
+                  for url_entry in urlset:
+                      # Add main URL
+                      urls.add(url_entry['loc'])
+                      
+                      # Add alternate language URLs
+                      if 'xhtml:link' in url_entry:
+                          links = url_entry['xhtml:link']
+                          if not isinstance(links, list):
+                              links = [links]
+                          
+                          for link in links:
+                              if link.get('@rel') == 'alternate':
+                                  urls.add(link.get('@href'))
+                  
+                  print(f"Found {len(urls)} unique URLs in {sitemap_url}")
+                  return list(urls)
+                  
+              except Exception as e:
+                  print(f"Failed to fetch or parse sitemap from {sitemap_url}: {str(e)}")
+                  return []
+          
+          # Get sitemap URLs from workflow input
+          sitemap_urls = [url.strip() for url in os.environ['SITEMAP_URLS'].split('\n') if url.strip()]
+          
+          # Check for basic auth credentials
+          username = os.environ.get('USERNAME', '')
+          password = os.environ.get('PASSWORD', '')
+          auth = (username, password) if username and password else None
+          
+          # Process all sitemaps
+          all_urls = []
+          for sitemap_url in sitemap_urls:
+              urls = process_sitemap(sitemap_url, auth=auth)
+              all_urls.extend(urls)
+          
+          if not all_urls:
+              print("No URLs found in any sitemap!")
+              sys.exit(1)
+              
+          print(f"\nTotal unique URLs found across all sitemaps: {len(all_urls)}")
+          
+          # Check all URLs
+          failed = False
+          for url in all_urls:
+              if not check_url(url, auth=auth):
+                  failed = True
+          
+          if failed:
+              print("\nSome URLs failed the check. See logs above for details.")
+              sys.exit(1)
+          
+          print("\nAll URLs passed the check!")
+        shell: python

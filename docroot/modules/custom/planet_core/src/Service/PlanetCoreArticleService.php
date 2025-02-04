@@ -182,10 +182,20 @@ class PlanetCoreArticleService {
         ];
       }
 
-      // Get Background Image (field_resources_background_image)
-      $background_image_media = $node->get('field_resources_background_image')->entity;
-      $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($background_image_media->id(), 'large');
+     // Get Background Image (field_resources_background_image).
 
+     $background_image_url = "";
+     $media_id = $node->get('field_resources_background_image')?->target_id;
+     
+     if ($media_id) {
+         // Try to get the image in 'max_1300x1300' format first
+         $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'max_1300x1300');
+     
+         // If the 'max_1300x1300' format doesn't exist, fall back to 'large'
+         if (empty($background_image_url)) {
+             $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large');
+         }
+     }
       // Get Creation Date
       $custom_timestamp = $node->get('field_resources_published_time')->value;
 
@@ -302,8 +312,19 @@ class PlanetCoreArticleService {
       }
 
       // Get Background Image (field_resources_background_image).
-      $background_image_media = $node->get('field_resources_background_image')->entity;
-      $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($background_image_media->id(), 'large');
+
+      $background_image_url = "";
+      $media_id = $node->get('field_resources_background_image')?->target_id;
+      
+      if ($media_id) {
+          // Try to get the image in 'max_1300x1300' format first
+          $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'max_1300x1300');
+      
+          // If the 'max_1300x1300' format doesn't exist, fall back to 'large'
+          if (empty($background_image_url)) {
+              $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large');
+          }
+      }
 
       // Get Creation Date.
       $custom_timestamp = $node->get('field_resources_published_time')->value;
@@ -424,8 +445,19 @@ class PlanetCoreArticleService {
       }
 
       // Get Background Image (field_resources_background_image).
-      $background_image_media = $node->get('field_resources_background_image')->entity;
-      $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($background_image_media->id(), 'large');
+
+      $background_image_url = "";
+      $media_id = $node->get('field_resources_background_image')?->target_id;
+      
+      if ($media_id) {
+          // Try to get the image in 'max_1300x1300' format first
+          $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'max_1300x1300');
+      
+          // If the 'max_1300x1300' format doesn't exist, fall back to 'large'
+          if (empty($background_image_url)) {
+              $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large');
+          }
+      }
 
       // Get Author information.
       $author_id = $node->get('field_author')->target_id;
@@ -586,10 +618,20 @@ class PlanetCoreArticleService {
       ];
     }
 
-    // Get Background Image (field_resources_background_image)
-    $background_image_media = $node->get('field_resources_background_image')->entity;
-    $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($background_image_media->id(), 'large');
-    $background_image_url = strtok($background_image_url, '?');
+    // Get Background Image (field_resources_background_image).
+
+    $background_image_url = "";
+    $media_id = $node->get('field_resources_background_image')?->target_id;
+    
+    if ($media_id) {
+        // Try to get the image in 'max_1300x1300' format first
+        $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'max_1300x1300');
+    
+        // If the 'max_1300x1300' format doesn't exist, fall back to 'large'
+        if (empty($background_image_url)) {
+            $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large');
+        }
+    }
 
     // Get Creation Date
     $custom_timestamp = $node->get('field_resources_published_time')->value;
@@ -721,9 +763,20 @@ class PlanetCoreArticleService {
           ];
         }
 
-        $background_image_media = $node->get('field_resources_background_image')->entity;
-        $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($background_image_media->id(), 'large');
+      // Get Background Image (field_resources_background_image).
 
+      $background_image_url = "";
+      $media_id = $node->get('field_resources_background_image')?->target_id;
+      
+      if ($media_id) {
+          // Try to get the image in 'max_1300x1300' format first
+          $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'max_1300x1300');
+      
+          // If the 'max_1300x1300' format doesn't exist, fall back to 'large'
+          if (empty($background_image_url)) {
+              $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large');
+          }
+      }
         // Get Creation Date
         $custom_timestamp = $node->get('field_resources_published_time')->value;
 

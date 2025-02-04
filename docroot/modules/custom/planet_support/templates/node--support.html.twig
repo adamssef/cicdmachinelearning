@@ -42,8 +42,8 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-col md:flex-row lg:mx-12 mx-6 md:mx-12 px-3 pt-[30px] pb-[60px] hidden switcher-section switcher-section--emails">
-        <div class=" min-w-[300px] md:min-w-none flex flex-col sm:mx-0 mb-[30px] px-3">
+    <div class="flex flex-col md:flex-row lg:mx-12 mx-6 md:mx-12 lg:mx-0 px-3 lg:px-8 pt-[30px] pb-[60px] hidden switcher-section switcher-section--emails">
+        <div class=" min-w-[300px] md:min-w-none flex flex-col sm:mx-0 mb-[30px] px-3 lg:mr-[68px]">
             <span class="font-semibold text-2xl mb-[18px]">{{ "Email contacts"|t }}</span>
 
             <span class="font-semibold leading-[20px] mb-[13px] py-[3px] company selected pl-3 border-l-2 border-solid border-transparent">{{ "All"|t }}</span>
@@ -52,10 +52,10 @@
             {% endfor %}
         </div>
         <div class="w-full pl-4 md:pl-0 flex flex-col mx-6 sm:mx-0">
-            <div class="grid grid-emails grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+            <div class="grid grid-emails grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-y-5 gap-x-20">
                 {% for key, email in all_emails %}
                     <div class="flex flex-col">
-                        <span class="font-semibold leading-[20px] text-[19px]">{{ key|t }}</span>
+                        <span class="font-semibold leading-[20px] text-[19px] pb-4">{{ key|t }}</span>
                         <span class="font-light"><a class="break-words" href="mailto:{{ email.email }}">{{ email.email }}</a></span>
                     </div>
                 {% endfor %}

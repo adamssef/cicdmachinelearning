@@ -1,0 +1,46 @@
+uuid: b062b39f-524f-4dbc-b24b-4220db5fb883
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.payment_methods.body
+    - field.field.node.payment_methods.field_logo_media
+    - field.field.node.payment_methods.field_long_description
+    - field.field.node.payment_methods.field_payment_channels
+    - field.field.node.payment_methods.field_payment_method
+    - field.field.node.payment_methods.field_payment_methods_acquirers
+    - field.field.node.payment_methods.field_short_description
+    - field.field.node.payment_methods.field_weight
+    - node.type.payment_methods
+  module:
+    - text
+    - user
+id: node.payment_methods.teaser
+targetEntityType: node
+bundle: payment_methods
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_logo_media: true
+  field_long_description: true
+  field_payment_channels: true
+  field_payment_method: true
+  field_payment_methods_acquirers: true
+  field_short_description: true
+  field_weight: true
+  langcode: true
+  search_api_excerpt: true

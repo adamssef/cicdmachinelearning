@@ -1,10 +1,10 @@
 {% if case_study_data['company_name'] %}
-	<div class="breadcrumbs">
-		<a href="{{ case_studies_url }}">{{ "Customer stories"|t }}</a>
-	</div>
+    <div class="breadcrumbs">
+        <a href="{{ case_studies_url }}">{{ "Customer stories"|t }}</a>
+    </div>
 {% endif %}
 {% if case_study_data['title'] %}
-	<h1 class="case-study-page__h1 case-study-page__h1 case-study-page__h1--customer-info not-displayed">{{ case_study_data['title']|t }}</h1>
+    <h1 class="case-study-page__h1 case-study-page__h1 case-study-page__h1--customer-info not-displayed">{{ case_study_data['title']|t }}</h1>
 {% endif %}
 <div class="case-study-page__meta-container">
     {% if case_study_data['company_name'] %}
@@ -53,67 +53,67 @@
             {% endif %}
         </div>
     {% endif %}
-	<div class="plnt-blog-single-page plnt-news-single-page plnt-case-study-single-page">
-		{% if case_study_data['title'] %}
-			<h1 class="case-study-page__h1 case-study-page__h1--case-study-page">{{ case_study_data['title']|t }}</h1>
-		{% endif %}
+    <div class="plnt-blog-single-page plnt-news-single-page plnt-case-study-single-page">
+        {% if case_study_data['title'] %}
+            <h1 class="case-study-page__h1 case-study-page__h1--case-study-page">{{ case_study_data['title']|t }}</h1>
+        {% endif %}
 
-		{% if case_study_data['metrics'] %}
-			<div class="case-study-page__metrics">
-					{% for metric in case_study_data['metrics'] %}
-						<div class="case-study-page__metrics__container">
-							<div class="case-study-page__metrics__container__text">
-								<div class="metric-value">{{ metric['value'] }}</div>
-								<div class="metric-label">{{ metric['label']|t }}</div>
-							</div>
-						</div>
-					{% endfor %}
-			</div>
-		{% endif %}
+        {% if case_study_data['metrics'] %}
+            <div class="case-study-page__metrics">
+                {% for metric in case_study_data['metrics'] %}
+                    <div class="case-study-page__metrics__container">
+                        <div class="case-study-page__metrics__container__text">
+                            <div class="metric-value">{{ metric['value'] }}</div>
+                            <div class="metric-label">{{ metric['label']|t }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
 
-		{% if case_study_data['at_a_glance'] %}
-			<div class="case-study-page__at-a-glance">
-				<h2 class="case-study-page__h2">{{ "At a glance"|t }}</h2>
-				<div class="case-study-page__long_text">
-					{{ case_study_data['at_a_glance']|raw|t  }}
-				</div>
-			</div>
-		{% endif %}
+        {% if case_study_data['at_a_glance'] %}
+            <div class="case-study-page__at-a-glance">
+                <h2 class="case-study-page__h2">{{ "At a glance"|t }}</h2>
+                <div class="case-study-page__long_text">
+                    {{ case_study_data['at_a_glance']|raw|t  }}
+                </div>
+            </div>
+        {% endif %}
 
-		{% if case_study_data['recommendation'][0] %}
-			{% for recommendation in case_study_data['recommendation'] %}
-				<div class="case-study-page__recommendation{% if recommendation['dark_mode'] == "1" %} case-study-page__recommendation--dark{% endif %} {{ recommendation['visual_version'] }}" >
-					<div class="case-study-page__recommendation__image__container">
-						<div class="case-study-page__recommendation__image" style="background: url({{ recommendation.customer_avatar_url }}) lightgray 50% / cover no-repeat;"></div>
-						<img class="case-study-page__recommendation__image--mobile" class="case-study-page__recommendation__text__container__image--start" src="/resources/typography/pink_quote_with_tail_up.svg"></div>
-					<div class="case-study-page__recommendation__text">
-						<div >
-							<div class="case-study-page__recommendation__text__container">
-								<img class="case-study-page__recommendation__text__container__image--start" src="/resources/typography/pink_quote_with_tail_up.svg">
-								<div><span>{{ recommendation.recommendation_text|t }}</span></div>
-								<img class="case-study-page__recommendation__text__container__image--end" src="/resources/typography/pink_quote_with_tail_down.svg">
-							</div>
-							<div class="case-study-page__recommendation__name">{{ recommendation.fname_and_sname }}</div>
-							<div class="case-study-page__recommendation__role">{{ case_study_data['company_name'] }}, {{ recommendation.role|t }}</div>
-						</div>
-					</div>
-				</div>
-			{% endfor %}
-		{% endif %}
-		{% if (case_study_data['oembed_url']) %}
-			<div class="video-wrapper">
-				<iframe class="responsive-iframe" src="{{ case_study_data['oembed_url'] }}" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Planet helps Coin realise its omnichannel goals"></iframe>
-			</div>
-			<div class="video-subtext">{{ case_study_data['video_subtext']|t }}</div>
-		{% endif %}
-		{% if case_study_data['challenge_text'] %}
-			<div class="case-study-page__the-challenge">
-				<h2 class="case-study-page__h2">{{ "The challenge"|t }}</h2>
-				<div class="case-study-page__long_text">
-					{{ case_study_data['challenge_text']|raw|t  }}
-				</div>
-			</div>
-		{% endif %}
+        {% if case_study_data['recommendation'][0] %}
+            {% for recommendation in case_study_data['recommendation'] %}
+                <div class="case-study-page__recommendation{% if recommendation['dark_mode'] == "1" %} case-study-page__recommendation--dark{% endif %} {{ recommendation['visual_version'] }}" >
+                    <div class="case-study-page__recommendation__image__container">
+                        <div class="case-study-page__recommendation__image" style="background: url({{ recommendation.customer_avatar_url }}) lightgray 50% / cover no-repeat;"></div>
+                        <img class="case-study-page__recommendation__image--mobile" class="case-study-page__recommendation__text__container__image--start" src="/resources/typography/pink_quote_with_tail_up.svg"></div>
+                    <div class="case-study-page__recommendation__text">
+                        <div >
+                            <div class="case-study-page__recommendation__text__container">
+                                <img class="case-study-page__recommendation__text__container__image--start" src="/resources/typography/pink_quote_with_tail_up.svg">
+                                <div><span>{{ recommendation.recommendation_text }}</span></div>
+                                <img class="case-study-page__recommendation__text__container__image--end" src="/resources/typography/pink_quote_with_tail_down.svg">
+                            </div>
+                            <div class="case-study-page__recommendation__name">{{ recommendation.fname_and_sname }}</div>
+                            <div class="case-study-page__recommendation__role">{{ case_study_data['company_name'] }}, {{ recommendation.role }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if (case_study_data['oembed_url']) %}
+            <div class="video-wrapper">
+                <iframe class="responsive-iframe" src="{{ case_study_data['oembed_url'] }}" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Planet helps Coin realise its omnichannel goals"></iframe>
+            </div>
+            <div class="video-subtext">{{ case_study_data['video_subtext']|t }}</div>
+        {% endif %}
+        {% if case_study_data['challenge_text'] %}
+            <div class="case-study-page__the-challenge">
+                <h2 class="case-study-page__h2">{{ "The challenge"|t }}</h2>
+                <div class="case-study-page__long_text">
+                    {{ case_study_data['challenge_text']|raw|t  }}
+                </div>
+            </div>
+        {% endif %}
         {% if case_study_data['link_box'] %}
             <div class="link-box__container">
                 <div class="link-box__image" style="background: url({{ case_study_data['link_box']['image'] }}) lightgray 50% / cover no-repeat;"></div>
@@ -130,27 +130,27 @@
                 </div>
             </div>
         {% endif %}
-		{% if  case_study_data['solution_text'] %}
-			<div class="case-study-page__the-solution">
-				<h2 class="case-study-page__h2">{{ "The solution"|t }}</h2>
-				<div class="case-study-page__long_text">
-					{{ case_study_data['solution_text']|raw|t  }}
-				</div>
-			</div>
-		{% endif %}
-		{% if case_study_data['solution_text_image'] %}
-			<div class="case-study-page__image-container">
-				<img src="{{ case_study_data['solution_text_image'] }}" class="case-study-page__solution-image">
-			</div>
-		{% endif %}
-		{% if case_study_data['result'] %}
-			<div class="case-study-page__the-result">
-				<h2 class="case-study-page__h2">{{ "The result"|t }}</h2>
-				<div class="case-study-page__long_text">
-					{{ case_study_data['result']|raw|t  }}
-				</div>
-			</div>
-		{% endif %}
+        {% if  case_study_data['solution_text'] %}
+            <div class="case-study-page__the-solution">
+                <h2 class="case-study-page__h2">{{ "The solution"|t }}</h2>
+                <div class="case-study-page__long_text">
+                    {{ case_study_data['solution_text']|raw|t  }}
+                </div>
+            </div>
+        {% endif %}
+        {% if case_study_data['solution_text_image'] %}
+            <div class="case-study-page__image-container">
+                <img src="{{ case_study_data['solution_text_image'] }}" class="case-study-page__solution-image">
+            </div>
+        {% endif %}
+        {% if case_study_data['result'] %}
+            <div class="case-study-page__the-result">
+                <h2 class="case-study-page__h2">{{ "The result"|t }}</h2>
+                <div class="case-study-page__long_text">
+                    {{ case_study_data['result']|raw|t  }}
+                </div>
+            </div>
+        {% endif %}
 
         {% if case_study_data['favourite_features']['text_items'] %}
             <div class="fav-features">
@@ -163,10 +163,10 @@
             </div>
 
         {% endif %}
-		{% if (case_study_data['grow_your_business_settings']['size'] == 'medium') %}
+        {% if (case_study_data['grow_your_business_settings']['size'] == 'medium') %}
             {% include '/modules/custom/planet_case_studies/templates/block--grow-business-with-planet.html.twig' with { contact_sales_url: contact_sales_url, case_studies: case_studies_url } %}
-		{% endif %}
-	</div>
+        {% endif %}
+    </div>
 </div>
 
 {% if (case_study_data['grow_your_business_settings']['size'] == 'large') %}

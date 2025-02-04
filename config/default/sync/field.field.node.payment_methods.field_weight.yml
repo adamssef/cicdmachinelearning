@@ -1,0 +1,28 @@
+uuid: d2b8146b-c861-4047-9ab0-4dee62f46d2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.payment_methods
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.payment_methods.field_weight
+field_name: field_weight
+entity_type: node
+bundle: payment_methods
+label: Weight
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

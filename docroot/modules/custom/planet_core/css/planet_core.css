@@ -1712,10 +1712,13 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
   font-size: 18px;
   font-weight: 600;
 }
-
 .plnt-blog-single-page {
   padding: 0;
+}
+@media (min-width: 992px) {
+.plnt-blog-single-page {
   margin-top: 48px
+}
 }
 
 .blog-h1 {
