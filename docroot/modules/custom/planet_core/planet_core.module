@@ -477,7 +477,7 @@ function planet_core_preprocess_views_view_field(array &$variables)
 /**
  * Implements hook_theme().
  */
-function planet_core_theme(): array
+function planet_core_theme($existing, $type, $theme, $path): array
 {
   return [
     'views_view_fields__case_studies__featured_slider' => [
@@ -594,7 +594,13 @@ function planet_core_theme(): array
       'template' => 'node--basic-page',
       'base hook' => 'node',
     ],
-  ];
+    'paragraph_hero_default' => [
+      'template' => 'paragraph/paragraph-hero-default',
+      'variables' => [
+        'fields' => [],
+      ],
+    ],
+   ];
 }
 
 
@@ -870,20 +876,22 @@ function planet_core_preprocess_node(array &$variables)
   }
 
   if ($node->getType() == 'page' && !in_array($node->id(), SpecialTemplates::getAll())) {
+
+    $page_service = \Drupal::service('planet_core.basic_page_service');
+    $variables['product_page_paragraphs'] = $page_service->getPageParagraphData($node);
+
     if(!$node->get('field_webform')->isEmpty()) {
+        $webform_id = $node->get('field_webform')->target_id;
+        $form = \Drupal::entityTypeManager()
+            ->getStorage('webform')
+            ->load($webform_id)
+            ->getSubmissionForm();
+        $webform_html = $node->get('field_webform_text')->value;
 
-    $webform_id = $node->get('field_webform')->target_id;
-      $form = \Drupal::entityTypeManager()
-          ->getStorage('webform')
-          ->load($webform_id)
-          ->getSubmissionForm();
-          $webform_html = $node->get('field_webform_text')->value;
-
-          // Pass both form and webform_html to variables
-          $variables['form'] = $form;
-          $variables['webform_html'] = $webform_html;
+        $variables['form'] = $form;
+        $variables['webform_html'] = $webform_html;
     }
-  }
+}
 
   if ($node->getType() == 'e_book_') {
     if(!$node->get('field_ebook_form')->isEmpty()) {
@@ -914,14 +922,21 @@ function planet_core_preprocess_node(array &$variables)
 /**
  * Implements hook_preprocess_HOOK().
  */
-function planet_core_preprocess_page(array &$variables)
-{
+function planet_core_preprocess_page(array &$variables) {
   $variables['#attached']['library'][] = 'planet_core/language-popup';
   $variables['#attached']['library'][] = 'planet_core/sitewide-libraries';
 
+  // Get current node if it exists
+  $node = \Drupal::routeMatch()->getParameter('node');
+  
+  // Check if it's a node and if it's of type 'page'
+  if ($node instanceof \Drupal\node\NodeInterface && $node->getType() == 'page' && $node->id() != 5621) {
+    $variables['#attached']['library'][] = 'planet_core/basic-pages';
+  }
+
+  // Your existing path-based condition
   $current_path = \Drupal::service('path.current')->getPath();
   $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
-
   if ($current_path_alias === '/pms-transformation') {
     $variables['#attached']['library'][] = 'planet_core/pms-transformation';
   }

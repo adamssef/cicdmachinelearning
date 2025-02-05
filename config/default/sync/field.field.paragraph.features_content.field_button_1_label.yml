@@ -1,0 +1,24 @@
+uuid: 16da506b-ec15-4730-ad46-e3069c95f172
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_1_label
+    - paragraphs.paragraphs_type.features_content
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.features_content.field_button_1_label
+field_name: field_button_1_label
+entity_type: paragraph
+bundle: features_content
+label: 'Button 1 label'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

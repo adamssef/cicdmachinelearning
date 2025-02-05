@@ -20,6 +20,15 @@
   resize: none;
 }
 
+.webform-submission-get-in-touch-dynamic-form .js-form-type-checkbox {
+  display: flex;
+}
+
+.webform-submission-get-in-touch-dynamic-form .js-form-type-checkbox input.form-checkbox {
+  width: auto;
+  margin-right: 8px;
+}
+
 .webform-submission-get-in-touch-dynamic-form textarea:focus-visible {
   outline: #d1d1d1 solid 1px;
 }

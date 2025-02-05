@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_html_content
     - field.field.node.page.field_is_product_page
     - field.field.node.page.field_layout_canvas
+    - field.field.node.page.field_product_page_layout
     - field.field.node.page.field_resources_tags
     - field.field.node.page.field_webform
     - field.field.node.page.field_webform_text
@@ -17,6 +18,7 @@ dependencies:
     - cohesion_elements
     - content_moderation
     - metatag
+    - paragraphs
     - path
     - text
     - webform
@@ -61,6 +63,24 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_product_page_layout:
+    type: paragraphs
+    weight: 104
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_resources_tags:
     type: entity_reference_autocomplete

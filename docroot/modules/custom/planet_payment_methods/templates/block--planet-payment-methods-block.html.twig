@@ -76,10 +76,9 @@ semibold text-[32px] md:text-5xl pt-12 md:pt-20 pb-6 md:pb-8 lg:pb-12 px-4 md:px
 <div class="flex flex-col lg:flex-row gap-6 justify-center bg-black px-4 md:px-8">
     <!-- Online Section -->
     {% for card in cards %}
-        <div class="group lg:hover:shadow-planet-pp-card-hover--white transition duration-300  rounded-3xl bg-white h-[350px] w-full w-auto lg:w-[323px] box-content border border-solid border-[#D1D1D1]">
-            <div
-                    class="{% if card.class == 'online' %}bg-online{% elseif card.class == 'inperson' %}bg-inperson{% else %}bg-dcc{% endif %} mx-2 mt-2 w-auto lg:w-[307px] h-[208px] bg-[url('{{ card.img_path }}')] bg-cover bg-no-repeat bg-top rounded-2xl "></div>
-            <div class="p-6">
+        <div class="group transition duration-300  rounded-3xl bg-white h-[350px] w-auto lg:w-[323px] box-content hover:border-none">
+            <div class="{% if card.class == 'online' %}bg-online{% elseif card.class == 'inperson' %}bg-inperson{% else %}bg-dcc{% endif %} mx-2 mt-2 w-auto h-[208px] bg-[url('{{ card.img_path }}')] bg-cover bg-no-repeat bg-top rounded-2xl group-hover:mx-0 group-hover:mt-0 group-hover:h-[216px] group-hover:w-auto group-hover:mb-2 transition-all duration-300 ease-linear"></div>
+            <div class="p-6 group-hover:pt-4 transition-all duration-300 ease-linear">
                 {% if card.url %}
                     <a href="{{ card.url }}">
                         <span class=" block text-2xl leading-[30px] pb-4 text-black font-semibold">{{ card.title|t }}</span>
