@@ -24,6 +24,7 @@ dependencies:
     - node.type.locations_contacts
     - node.type.newsroom
     - node.type.page
+    - node.type.payment_methods
     - node.type.planet_faq
     - node.type.planet_offices
     - node.type.planet_products
@@ -49,6 +50,7 @@ dependencies:
     - node
     - path
     - system
+    - tmgmt
     - toolbar
     - toolbar_edit_page_button
     - tour
@@ -59,6 +61,7 @@ label: 'Content editor'
 weight: -8
 is_admin: false
 permissions:
+  - 'accept translation jobs'
   - 'access administration pages'
   - 'access analytics'
   - 'access animate on view'
@@ -100,8 +103,12 @@ permissions:
   - 'administer components'
   - 'administer helper categories'
   - 'administer helpers'
+  - 'administer tmgmt'
   - 'administer url aliases'
   - 'clone node entity'
+  - 'clone tmgmt_job entity'
+  - 'clone tmgmt_job_item entity'
+  - 'clone tmgmt_message entity'
   - 'clone webform entity'
   - 'create advanced_product_page content'
   - 'create audio media'
@@ -127,6 +134,7 @@ permissions:
   - 'create remote_video media'
   - 'create resources content'
   - 'create support_locations_contacts content'
+  - 'create translation jobs'
   - 'create url aliases'
   - 'create vector_image media'
   - 'create video media'
@@ -210,6 +218,7 @@ permissions:
   - 'delete products revisions'
   - 'delete resources revisions'
   - 'delete support_locations_contacts revisions'
+  - 'delete translation jobs'
   - 'delete webform revisions'
   - 'edit any advanced_product_page content'
   - 'edit any audio media'
@@ -289,6 +298,7 @@ permissions:
   - 'revert resources revisions'
   - 'revert support_locations_contacts revisions'
   - 'revert webform revisions'
+  - 'submit translation jobs'
   - 'take_ownership_on_clone comment entity'
   - 'take_ownership_on_clone content_moderation_state entity'
   - 'take_ownership_on_clone file entity'
