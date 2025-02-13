@@ -1,0 +1,23 @@
+{% set benefit_count = paragraph.fields.field_benefit_box|length %}
+{% set dark_mode = paragraph.fields.field_benefits_dark_mode[0].value ?? false %}
+
+<!-- Keep the div below to generate tailwind classes -->
+<div class="hidden md:grid-cols-2 md:grid-cols-3 md:grid-cols-4"></div>
+
+<div class="{% if dark_mode %}bg-black text-white{% endif %}">
+  <div class="max-w-screen-xl mx-auto py-8">
+    <h2 class="text-center font-semibold text-[32px]">
+      {{ paragraph.fields.field_main_title[0].value }}
+    </h2>
+  </div>
+  <div class="flex items-center justify-center pb-16">
+    <div class="container mx-auto max-w-6xl px-4">
+      <div class="grid grid-cols-1 md:grid-cols-{% if benefit_count < 5 %}{{ benefit_count }}{% else %}4{% endif %} justify-center gap-6 mx-auto">
+          {% for paragraph in paragraph.fields.field_benefit_box %}
+          {% set template_path = '/modules/custom/planet_core/templates/paragraph/paragraph--' ~ paragraph.type ~ '--default.html.twig' %}
+          {{ include(template_path, { 'dark_mode': dark_mode }, ignore_missing = true) }}
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

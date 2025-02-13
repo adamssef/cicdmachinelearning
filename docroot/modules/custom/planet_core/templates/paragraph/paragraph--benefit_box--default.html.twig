@@ -1,0 +1,21 @@
+<div class="w-full py-5 rounded-lg border-solid border border-gray-300">
+  <div class="flex flex-col p-6">
+    <img class="w-full mb-6 max-w-10 h-auto" src="/resources/icons/all/{{ paragraph.fields.field_icon[0].value }}.svg" alt="{{paragraph.fields.field_icon[0].value}}">
+    <div class="text-2xl font-semibold">{{ paragraph.fields.field_benefit_title[0].value }}</div>
+    <div class="text-base font-light mt-2">{{ paragraph.fields.field_benefit_text[0].value|raw }}</div>
+  </div>
+  {% if paragraph.fields.field_button_url %}
+    <a href="{{ paragraph.fields.field_button_url[0].alias }}" class="p-6 mt-4 inline-block py-2" {% if paragraph.fields.field_open_in_a_new_window[0].value == '1' %} target="_blank" rel="noopener" {% endif %}>
+      <span class="font-semibold {% if dark_mode %}text-white{% else %}text-[#005ab2]{% endif %} flex">
+        <span>
+          {% if paragraph.fields.field_button_label %}
+            {{ paragraph.fields.field_button_label[0].value }}
+          {% else %}
+            {{ "Learn more"|t }}
+          {% endif %}
+        </span>
+        <img class="ml-4" src="{% if dark_mode %}/resources/icons/sharp-arrow-pointing-right.svg{% else %}/resources/icons/arrow-right-megamenu-blue.svg{% endif %}" alt="Arrow">
+      </span>
+    </a>
+  {% endif %}
+</div>
