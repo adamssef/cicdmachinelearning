@@ -49,35 +49,35 @@ function planet_payment_methods_theme(): array {
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function planet_payment_methods_theme_suggestions_node_alter(array &$suggestions, array &$variables) {
-  $node = \Drupal::routeMatch()->getParameter('node');
-  $route_object = \Drupal::routeMatch()->getRouteObject();
-  $current_url = \Drupal::service('path.current')->getPath();
-  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
-  $is_admin_page = \Drupal::service('router.admin_context')
-    ->isAdminRoute($route_object);
+  // $node = \Drupal::routeMatch()->getParameter('node');
+  // $route_object = \Drupal::routeMatch()->getRouteObject();
+  // $current_url = \Drupal::service('path.current')->getPath();
+  // $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
+  // $is_admin_page = \Drupal::service('router.admin_context')
+  //   ->isAdminRoute($route_object);
 
-  if (!$node || $is_admin_page) {
-    if (in_array('node__payment_methods', $suggestions)) {
-      unset($suggestions[array_search('node__payment_methods', $suggestions)]);
-      return;
-    }
-  }
+  // if (!$node || $is_admin_page) {
+  //   if (in_array('node__payment_methods', $suggestions)) {
+  //     unset($suggestions[array_search('node__payment_methods', $suggestions)]);
+  //     return;
+  //   }
+  // }
 
-  if ($node && $node instanceof NodeInterface && $node->getType() === 'page') {
-    if (!$is_admin_page) {
-      $node_translation_service = \Drupal::service('planet_core.node_translation_service');
-      $landing_node = $node_translation_service->getNodeByPathAlias('/payment-methods');
-      $translation_array = $node_translation_service->buildTranslationArrayForNode($landing_node);
-      $langcode = $node_translation_service->determineTheLangId();
+  // if ($node && $node instanceof NodeInterface && $node->getType() === 'page') {
+  //   if (!$is_admin_page) {
+  //     $node_translation_service = \Drupal::service('planet_core.node_translation_service');
+  //     $landing_node = $node_translation_service->getNodeByPathAlias('/payment-methods');
+  //     $translation_array = $node_translation_service->buildTranslationArrayForNode($landing_node);
+  //     $langcode = $node_translation_service->determineTheLangId();
 
-      if (
-        "/$langcode" . $alias === $translation_array[$langcode] ||
-        $alias === $translation_array[$langcode]
-      ) {
-        $suggestions[] = 'node__payment_methods_landing';
-      }
-    }
-  }
+  //     if (
+  //       "/$langcode" . $alias === $translation_array[$langcode] ||
+  //       $alias === $translation_array[$langcode]
+  //     ) {
+  //       $suggestions[] = 'node__payment_methods_landing';
+  //     }
+  //   }
+  // }
 }
 
 /**
