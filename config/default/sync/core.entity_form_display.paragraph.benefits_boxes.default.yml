@@ -1,0 +1,52 @@
+uuid: 6385a0af-7614-4ae8-a932-4e696e99365b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.benefits_boxes.field_benefit_box
+    - field.field.paragraph.benefits_boxes.field_benefits_dark_mode
+    - field.field.paragraph.benefits_boxes.field_main_title
+    - paragraphs.paragraphs_type.benefits_boxes
+  module:
+    - paragraphs
+id: paragraph.benefits_boxes.default
+targetEntityType: paragraph
+bundle: benefits_boxes
+mode: default
+content:
+  field_benefit_box:
+    type: paragraphs
+    weight: 13
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_benefits_dark_mode:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_main_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

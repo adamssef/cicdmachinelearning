@@ -19,7 +19,7 @@ bundle: features_content
 label: 'Hero description'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

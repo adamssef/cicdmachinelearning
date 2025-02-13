@@ -1,21 +1,21 @@
-uuid: 37b86e8f-4995-4657-8d19-a847df956461
+uuid: 9d74281c-7a3c-4fb9-a8d2-3b028750eacb
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_button_2_link
-    - paragraphs.paragraphs_type.features_content
+    - field.storage.paragraph.field_button_url
+    - paragraphs.paragraphs_type.benefit_box
   module:
     - link
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
     excluded: false
-id: paragraph.features_content.field_button_2_link
-field_name: field_button_2_link
+id: paragraph.benefit_box.field_button_url
+field_name: field_button_url
 entity_type: paragraph
-bundle: features_content
-label: 'Button 2 link'
+bundle: benefit_box
+label: 'Button URL'
 description: ''
 required: false
 translatable: true

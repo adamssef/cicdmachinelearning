@@ -1,20 +1,20 @@
-uuid: ddc587aa-122d-4b06-854e-f0b22f3b4ba9
+uuid: c52aecfd-a677-402b-b56a-c1f1db402d83
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_button_1_open
-    - paragraphs.paragraphs_type.features_content
+    - field.storage.paragraph.field_benefits_dark_mode
+    - paragraphs.paragraphs_type.benefits_boxes
   module:
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
     excluded: false
-id: paragraph.features_content.field_button_1_open
-field_name: field_button_1_open
+id: paragraph.benefits_boxes.field_benefits_dark_mode
+field_name: field_benefits_dark_mode
 entity_type: paragraph
-bundle: features_content
-label: 'Open in a new tab?'
+bundle: benefits_boxes
+label: 'Dark mode'
 description: ''
 required: false
 translatable: true

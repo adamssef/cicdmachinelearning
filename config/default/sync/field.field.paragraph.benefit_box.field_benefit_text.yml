@@ -1,0 +1,26 @@
+uuid: c318dee3-a3c5-491b-bb24-9ef5c3409e7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_benefit_text
+    - paragraphs.paragraphs_type.benefit_box
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.benefit_box.field_benefit_text
+field_name: field_benefit_text
+entity_type: paragraph
+bundle: benefit_box
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

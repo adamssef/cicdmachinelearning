@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_product_page_layout
     - node.type.page
+    - paragraphs.paragraphs_type.benefits_boxes
     - paragraphs.paragraphs_type.brands_carousel
     - paragraphs.paragraphs_type.features_content
     - paragraphs.paragraphs_type.features_ending
@@ -33,10 +34,17 @@ settings:
       hero: hero
       brands_carousel: brands_carousel
       features_heading: features_heading
+      benefits_boxes: benefits_boxes
       features_content: features_content
       features_ending: features_ending
     negate: 0
     target_bundles_drag_drop:
+      benefit_box:
+        weight: 16
+        enabled: false
+      benefits_boxes:
+        weight: 15
+        enabled: true
       brands_carousel:
         weight: -20
         enabled: true

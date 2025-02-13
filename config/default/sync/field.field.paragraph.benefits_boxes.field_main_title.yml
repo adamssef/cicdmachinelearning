@@ -1,20 +1,20 @@
-uuid: 16da506b-ec15-4730-ad46-e3069c95f172
+uuid: cd28b1e2-a7df-4854-b49b-4a3522f31ae7
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_button_1_label
-    - paragraphs.paragraphs_type.features_content
+    - field.storage.paragraph.field_main_title
+    - paragraphs.paragraphs_type.benefits_boxes
   module:
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
     excluded: false
-id: paragraph.features_content.field_button_1_label
-field_name: field_button_1_label
+id: paragraph.benefits_boxes.field_main_title
+field_name: field_main_title
 entity_type: paragraph
-bundle: features_content
-label: 'Button 1 label'
+bundle: benefits_boxes
+label: Title
 description: ''
 required: false
 translatable: true
