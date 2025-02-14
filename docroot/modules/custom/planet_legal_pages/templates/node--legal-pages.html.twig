@@ -23,11 +23,11 @@
 </div>
 
 <div class="flex justify-between max-w-[1280px] m-auto lg:gap-20 mb-20 flex-col lg:flex-row">
-    <nav class="legal-menu transition-all duration-300 rounded-lg  w-full lg:w-fit px-4 md:px-8 lg-custom:px-4 xl-custom:px-0">
+    <nav class="legal-menu transition-all duration-300 rounded-lg  w-full lg:w-fit px-4 md:px-8 lg-custom:px-4 xl-custom:px-0 lg:mt-12">
         {{ macros.render_menu(menu_items) }}
     </nav>
     <div class="lg:w-[700px] mx-4 md:mx-8 lg:mr-0 mt-12 lg:mt:0">
-        <span class="text-[32px] font-semibold leading-[40px] mb-4 inline-block flex items-center">{{ label }}</span>
+        <span class="text-[32px] font-semibold leading-[40px] mb-4 flex items-center">{{ label }}</span>
         <div class="!font-light">{{ content.body }}</div>
     </div>
 </div>
