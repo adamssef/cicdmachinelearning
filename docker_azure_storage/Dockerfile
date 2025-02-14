@@ -1,4 +1,4 @@
-FROM php:8.3.14-apache
+FROM php:8.2-apache
 RUN a2enmod rewrite
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/docroot
