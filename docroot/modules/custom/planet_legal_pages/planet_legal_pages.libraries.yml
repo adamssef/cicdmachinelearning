@@ -1,0 +1,11 @@
+tailwind:
+  css:
+    theme:
+      dist/css/styles.css: {}
+      css/legal_pages.css: {}
+  js:
+    js/legal_pages.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

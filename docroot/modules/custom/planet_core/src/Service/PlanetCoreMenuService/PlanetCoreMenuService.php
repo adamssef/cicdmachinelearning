@@ -3,7 +3,6 @@
 namespace Drupal\planet_core\Service\PlanetCoreMenuService;
 
 use Drupal;
-use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
 use Drupal\menu_item_extras\Entity\MenuItemExtrasMenuLinkContentInterface;
@@ -48,6 +47,13 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
   public $planetCoreNodeTranslationsService;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  public $entityTypeManager;
+
+  /**
    * PlanetHeaderBlockService constructor.
    *
    * @param \Drupal\Core\Menu\MenuLinkTreeInterface $menu_tree
@@ -58,12 +64,15 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
    *   The language manager.
    * @param \Drupal\planet_core\Service\PlanetCoreNodeTranslationsService\PlanetCoreNodeTranslationsServiceInterface $planet_core_node_translations_service
    *  The node translation service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   * The entity type manager.
    */
   public function __construct(MenuLinkTreeInterface $menu_tree, AliasManagerInterface $path_alias_manager, LanguageManagerInterface $language_manager, PlanetCoreNodeTranslationsServiceInterface $planet_core_node_translations_service) {
     $this->menuTree= $menu_tree;
     $this->pathAliasManager = $path_alias_manager;
     $this->languageManager = $language_manager;
     $this->planetCoreNodeTranslationsService = $planet_core_node_translations_service;
+    $this->entityTypeManager = Drupal::entityTypeManager();
   }
 
   /**

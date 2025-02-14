@@ -1,0 +1,8 @@
+uuid: 3c891291-f3c8-4a5e-92f6-4dffde7e64d4
+langcode: en
+status: true
+dependencies: {  }
+id: legal-pages
+label: 'Legal pages'
+description: ''
+locked: false

@@ -1,0 +1,29 @@
+uuid: f7a9cd65-ed6d-413d-a866-13610463fe18
+langcode: en
+status: false
+dependencies:
+  module:
+    - planet_menu_node_generator
+title: 'Default cron handler'
+id: planet_menu_node_generator_cron
+weight: 0
+module: planet_menu_node_generator
+callback: planet_menu_node_generator_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ 0 * * 0'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

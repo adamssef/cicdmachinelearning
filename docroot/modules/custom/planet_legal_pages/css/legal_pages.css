@@ -1,0 +1,210 @@
+.body-link {
+  font-size: 16px;
+  font-weight: 300;
+  color: #005AB2;
+  text-decoration: underline;
+}
+
+.body-header {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.body-component {
+  margin-bottom: 16px;
+}
+
+.body-numeric-header {
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.font-light p {
+  font-weight: 300;
+}
+
+.last-updated {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.list {
+  margin-left: 32px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+/* Reset numbering */
+ol {
+  counter-reset: section;
+}
+
+/* First-level list items */
+ol > li {
+  counter-increment: section;
+  display: block;
+  margin-bottom: 16px; /* Add space between top-level items */
+}
+
+ol > li::before {
+  content: counter(section) ". ";
+}
+
+/* Second-level nested list */
+ol ol {
+  counter-reset: subsection;
+  margin-left: 30px; /* Indentation for nested list */
+}
+
+/* Second-level list items */
+ol ol > li {
+  counter-increment: subsection;
+  display: block;
+  margin-bottom: 0; /* Remove margin-bottom from all nested list items */
+}
+
+/* Format nested numbering as "2.1." */
+ol ol > li::before {
+  content: counter(section) "." counter(subsection) ". ";
+}
+
+/* Add margin-bottom ONLY to the last nested element */
+ol ol > li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+ol ol > li:last-child {
+  margin-bottom: 16px;
+}
+
+.list-address li {
+  list-style-type: none;
+}
+
+/* Table */
+
+table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+p.inline.body-component {
+  display: inline-block;
+}
+
+p.just-inline {
+  display: inline;
+}
+
+.table-container {
+  border-radius: 16px;
+  display: inline-block;
+  overflow: hidden;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+table thead {
+  background: linear-gradient(0deg, rgba(79, 70, 229, 0.10) 0%, rgba(79, 70, 229, 0.10) 100%), #FFF;
+  border-collapse: separate;
+  border-radius: 16px;
+}
+
+th, td {
+  display: table-cell;
+  padding: 16px;
+}
+
+th, td {
+  text-align: left;
+  white-space: wrap;
+  border-bottom: 1px solid rgba(79, 70, 229, 0.40);
+}
+
+th {
+  vertical-align: middle;
+  white-space: nowrap;
+  color: #04115A;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+td {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+tr td:is(:first-child) {
+  white-space: nowrap;
+}
+
+
+thead th {
+  width: auto;
+
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+.table-container {
+  border-radius: 16px;
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+.table-container {
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+th:first-child {
+  border-top-left-radius: 16px;
+}
+
+th:last-child {
+  border-top-right-radius: 16px;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 16px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 16px;
+}
