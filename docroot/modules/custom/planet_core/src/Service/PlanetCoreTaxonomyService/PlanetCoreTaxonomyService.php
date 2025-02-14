@@ -105,6 +105,7 @@ class PlanetCoreTaxonomyService implements PlanetCoreTaxonomyServiceInterface {
         'name' => $term_name,
         'vid' => $vocabulary,
       ]);
+
     if (!$terms) {
       $translated_string = $this->planetCoreNodeTranslationsService->t2($term_name, [], 'en'); // Specify context if needed
 
@@ -144,8 +145,10 @@ class PlanetCoreTaxonomyService implements PlanetCoreTaxonomyServiceInterface {
       $term = reset($terms);
       return $term->id();
     }
+
     return NULL;
   }
+
   /**
    * Get the term name by its ID.
    *

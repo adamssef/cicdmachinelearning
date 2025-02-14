@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function planet_legal_pages_theme($existing, $type, $theme, $path) {
+  return [
+    'node__legal_pages' => [
+      'template' => 'node--legal-pages',
+      'base hook' => 'node',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme().
+ */
+function planet_legal_pages_preprocess_node(&$variables) {
+  $node_type = \Drupal::routeMatch()->getParameter('node')?->getType();
+
+  if ($node_type === 'legal_pages') {
+    $variables['menu_items'] = \Drupal::service('planet_core.legal_pages_menu_service')->getMenuData('legal-pages');
+
+  }
+}
+
+function planet_legal_pages_preprocess_page(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $node_type = $node?->getType();
+
+  if ($node_type === 'legal_pages') {
+    $variables['#attached']['library'][] = 'planet_legal_pages/tailwind';
+  }
+}

@@ -106,7 +106,9 @@ module:
   planet_footer: 0
   planet_header: 0
   planet_html_sitemap: 0
+  planet_legal_pages: 0
   planet_links: 0
+  planet_menu_node_generator: 0
   planet_migrations: 0
   planet_node_updater: 0
   planet_offices: 0
