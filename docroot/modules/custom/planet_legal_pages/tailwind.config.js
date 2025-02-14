@@ -47,6 +47,7 @@ module.exports = {
     'text-sm',
     'px-6',
     'text-5xl',
+    'rotate-180'
   ],
   theme: {
     dropShadow: {

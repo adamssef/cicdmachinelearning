@@ -19,7 +19,7 @@
             if (!isElementVisible()) {
               window.scrollTo({
                 top: finalPosition - 100,
-                behavior: 'smooth'
+                behavior: 'smooth',
               });
 
               setTimeout(() => {
@@ -47,6 +47,25 @@
             scrollToTarget(targetElement);
           }
         });
+      });
+
+      /**
+       * Handles anchor link clicks.
+       */
+      once('menu-visibility', '#menu-visibility-arrow', context).forEach(function (element) {
+        element.addEventListener('click', function (event) {
+          document.querySelector('.legal-menu').classList.toggle('hidden');
+          document.querySelector('#menu-visibility-arrow').classList.toggle('rotate-180');
+        });
+      });
+
+      /**
+       * Handles anchor link clicks.
+       */
+      window.addEventListener('resize', function (event) {
+        if (window.innerWidth > 1180) {
+          document.querySelector('.legal-menu').classList.remove('hidden');
+        }
       });
 
       /**
@@ -79,7 +98,7 @@
           }
         }
       });
-;
+      ;
     },
   };
 })(jQuery, Drupal);
