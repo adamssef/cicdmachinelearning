@@ -232,4 +232,16 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
     return $current_lang;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function translateUrlAlias(string $english_alias): string {
+    $node = $this->getNodeByPathAlias('/contact/sales');
+    $translation_array = $this->buildTranslationArrayForNode($node);
+    $langcode = $this->languageManager->getCurrentLanguage()->getId();
+    $translated_alias = $translation_array[$langcode];
+
+    return $translated_alias;
+  }
+
 }
