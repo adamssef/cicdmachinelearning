@@ -18,7 +18,7 @@ bundle: payment_methods
 label: Metatag
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: '{"robots":"noindex","schema_article_image":"a:3:{s:5:\u0022@type\u0022;s:11:\u0022ImageObject\u0022;s:20:\u0022representativeOfPage\u0022;s:4:\u0022True\u0022;s:3:\u0022url\u0022;s:52:\u0022[node:field_resources_background_image:0:entity:url]\u0022;}","schema_article_author":"a:4:{s:5:\u0022@type\u0022;s:12:\u0022Organization\u0022;s:3:\u0022@id\u0022;s:10:\u0022[site:url]\u0022;s:4:\u0022name\u0022;s:24:\u0022[node:field_author:name]\u0022;s:4:\u0022logo\u0022;a:2:{s:5:\u0022@type\u0022;s:11:\u0022ImageObject\u0022;s:3:\u0022url\u0022;s:111:\u0022https:\/\/www.weareplanet.com\/sites\/default\/files\/styles\/webp\/public\/2022-11\/Planet%20Logo.png.webp?itok=VWXtEVb7\u0022;}}"}'
