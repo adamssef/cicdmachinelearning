@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.payment_methods.body
+    - field.field.node.payment_methods.field_basic_page_metatag
     - field.field.node.payment_methods.field_logo_media
     - field.field.node.payment_methods.field_long_description
     - field.field.node.payment_methods.field_payment_channels
@@ -35,6 +36,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_basic_page_metatag: true
   field_logo_media: true
   field_long_description: true
   field_payment_channels: true

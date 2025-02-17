@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.payment_methods.body
+    - field.field.node.payment_methods.field_basic_page_metatag
     - field.field.node.payment_methods.field_logo_media
     - field.field.node.payment_methods.field_long_description
     - field.field.node.payment_methods.field_payment_channels
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.payment_methods.field_weight
     - node.type.payment_methods
   module:
+    - metatag
     - text
     - user
 id: node.payment_methods.default
@@ -26,6 +28,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_basic_page_metatag:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
     region: content
   field_logo_media:
     type: entity_reference_entity_view
