@@ -37,4 +37,18 @@ interface PlanetCoreNodeTranslationsServiceInterface {
    *   The language id.
    */
   public function determineTheLangId(): string;
+
+  /**
+   * A function that can translate a url alias to a given language.
+   *
+   * For english langcode the function needs to return the alias as is.
+   *
+   * @param string $english_alias
+   *   The English alias to be translated.
+   *
+   * @return string
+   *   The translated alias.
+   */
+  public function translateUrlAlias(string $english_alias): string;
+
 }
