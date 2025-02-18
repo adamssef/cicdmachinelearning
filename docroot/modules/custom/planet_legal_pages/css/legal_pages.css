@@ -164,7 +164,6 @@ table tr:last-child td {
   border-radius: 16px;
   display: inline-block;
   overflow: hidden;
-  padding-bottom: 5px;
 }
 
 table {
@@ -207,4 +206,100 @@ tr:last-child td:first-child {
 
 tr:last-child td:last-child {
   border-bottom-right-radius: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #FAFAFA;
+}
+
+.table-container.display-none {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .table-container.display-none {
+    display: block !important;
+  }
+
+  tr:last-child td:first-child {
+    border-bottom-left-radius: 0;
+  }
+
+  tr:last-child td:last-child {
+    border-bottom-right-radius: 0;
+  }
+
+  ol ol {
+    margin-left: 0;
+  }
+
+  .table-container {
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    margin-top: 0;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(79, 70, 229, 0.40);
+  }
+
+  .table-container:is(.mini-table-container--last) {
+    border-bottom: none;
+    margin-bottom: 16px;
+  }
+
+  .table-container:not(.mini-table-container) {
+    border-bottom: none;
+
+  }
+
+  li .table-container.display-none.mini-table-container:is(:first-of-type) {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  li .table-container.display-none.mini-table-container:is(:last-of-type) {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-bottom: none;
+  }
+
+  .mini-table-container--first {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  .mini-table-container--last {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-bottom: none !important;
+  }
+
+  .table-container table {
+    border-radius: 0;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  .table-container td {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 16px;
+    border: none;
+  }
+
+  .table-container:not(:last-child):not(.mini-table-container--last) {
+    margin-bottom: 0;
+  }
+
+  tr {
+    background-color: #FAFAFA;
+  }
+
+  tr td:is(:first-of-type) {
+    color: #04115A;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+  }
 }

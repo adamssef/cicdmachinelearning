@@ -19,15 +19,11 @@ module.exports = {
     'border-l-4',
     'leading-[18px]',
     'font-semibold',
-    'text-planet-black',
-    'uppercase',
     'w-[64px]',
     'h-[64px]',
     'sm:w-full' ,
     'w-full',
     'rounded-lg',
-    'flex-grow-0',
-    'basis-[264px]',
     'w-[264px]',
     'max-w-[264px]',
     'h-[241px]',
@@ -47,7 +43,10 @@ module.exports = {
     'text-sm',
     'px-6',
     'text-5xl',
-    'rotate-180'
+    'rotate-180',
+    'md:hidden',
+    'hidden',
+    'md:inline-table'
   ],
   theme: {
     dropShadow: {
