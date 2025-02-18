@@ -1,0 +1,60 @@
+uuid: 71fdb3eb-82e5-426e-a6c1-5952c9163a71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.testimonial_quote.field_quote
+    - field.field.paragraph.testimonial_quote.field_testimonial_image
+    - field.field.paragraph.testimonial_quote.field_testimonial_name
+    - field.field.paragraph.testimonial_quote.field_testimonial_role
+    - field.field.paragraph.testimonial_quote.field_testimonial_style
+    - paragraphs.paragraphs_type.testimonial_quote
+  module:
+    - options
+    - text
+id: paragraph.testimonial_quote.default
+targetEntityType: paragraph
+bundle: testimonial_quote
+mode: default
+content:
+  field_quote:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_testimonial_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_testimonial_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_testimonial_role:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_testimonial_style:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  search_api_excerpt: true

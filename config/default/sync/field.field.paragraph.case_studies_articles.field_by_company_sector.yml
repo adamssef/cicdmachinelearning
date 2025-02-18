@@ -1,0 +1,34 @@
+uuid: daa90761-bf14-4b3a-a1c4-93c8da751065
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_by_company_sector
+    - paragraphs.paragraphs_type.case_studies_articles
+    - taxonomy.vocabulary.company_sectors
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.case_studies_articles.field_by_company_sector
+field_name: field_by_company_sector
+entity_type: paragraph
+bundle: case_studies_articles
+label: 'Or select by company sector:'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      company_sectors: company_sectors
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,25 @@
+uuid: 0235e45c-038d-4876-b306-83f71c9161de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_benefit_box_style
+    - paragraphs.paragraphs_type.benefits_boxes
+  module:
+    - options
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.benefits_boxes.field_benefit_box_style
+field_name: field_benefit_box_style
+entity_type: paragraph
+bundle: benefits_boxes
+label: 'Benefit box style'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

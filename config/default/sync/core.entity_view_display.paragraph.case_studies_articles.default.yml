@@ -1,0 +1,50 @@
+uuid: 3d81cced-bb3c-4e49-a999-252cd5fc20e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.case_studies_articles.field_by_company_sector
+    - field.field.paragraph.case_studies_articles.field_description
+    - field.field.paragraph.case_studies_articles.field_main_title
+    - field.field.paragraph.case_studies_articles.field_selected_case_studies
+    - paragraphs.paragraphs_type.case_studies_articles
+  module:
+    - text
+id: paragraph.case_studies_articles.default
+targetEntityType: paragraph
+bundle: case_studies_articles
+mode: default
+content:
+  field_by_company_sector:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_main_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_selected_case_studies:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

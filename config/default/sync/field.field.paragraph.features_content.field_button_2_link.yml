@@ -18,7 +18,7 @@ bundle: features_content
 label: 'Button 2 link'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,0 +1,28 @@
+uuid: c52aecfd-a677-402b-b56a-c1f1db402d83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_benefits_dark_mode
+    - paragraphs.paragraphs_type.benefits_boxes
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.benefits_boxes.field_benefits_dark_mode
+field_name: field_benefits_dark_mode
+entity_type: paragraph
+bundle: benefits_boxes
+label: 'Dark mode'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

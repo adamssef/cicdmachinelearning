@@ -1,0 +1,27 @@
+uuid: b3814ef3-6963-4b50-a978-f624ccfecd5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_benefit_box_style
+field_name: field_benefit_box_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: card_with_border
+      label: 'Card with border'
+    -
+      value: card_with_pink_border
+      label: 'Card with pink border'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,34 @@
+uuid: 177bfbb2-5427-4b92-a2bb-5ceabeb523e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_selected_case_studies
+    - node.type.case_studies
+    - paragraphs.paragraphs_type.case_studies_articles
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.case_studies_articles.field_selected_case_studies
+field_name: field_selected_case_studies
+entity_type: paragraph
+bundle: case_studies_articles
+label: 'Selected case studies'
+description: "This component allows to show 3 case studies (or less) filtered by:\r\n- Manual selection: by selecting manually 3 case studies, this has the priority over the following 2.\r\n- Company sector: by selecting one company sector, this will only work if manual section is empty.\r\n- Last added: if the first two options are empty, the last 3 published case studies are going to be shown."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      case_studies: case_studies
+    sort:
+      field: status
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

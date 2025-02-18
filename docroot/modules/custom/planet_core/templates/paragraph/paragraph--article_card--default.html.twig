@@ -1,0 +1,50 @@
+{#
+    Template for displaying a single case study card.
+
+    Fields to pass:
+    - paragraph.main_image (string) : URL of the main background image.
+    - paragraph.company_logo (string) : URL of the company logo (optional).
+    - paragraph.company_name (string) : Name of the company.
+    - paragraph.title (string) : Title of the case study.
+    - paragraph.description (string) : Short description or challenge text.
+    - paragraph.url (string) : URL for the "Learn more" link.
+#}
+
+<div class="w-full overflow-hidden border rounded-lg border-solid border-gray-300 h-full flex flex-col article-card">
+	<div class="pt-2 px-2">
+		<div class="h-52 rounded w-full bg-cover bg-center bg-no-repeat rounded-t-lg bg-gray-100" style="background-image: url('{{data.main_image}}')"></div>
+	</div>
+	<div class="flex flex-col flex-grow px-6 py-5">
+		<div class="flex flex-col justify-between h-full">
+			<div>
+				<a href="{{data.url}}">
+					<h2 class="text-2xl font-semibold pb-4">
+						{{data.title}}
+					</h2>
+				</a>
+
+				<div class="flex flex-wrap pb-4">
+					{% for tag in data.tags %}
+						<span class="text-base mb-2 font-semibold px-3 py-2 mr-4 border border-solid border-gray-300 rounded inline-block">
+							{{ tag.name }}
+						</span>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div class="flex items-center">
+				{% if data.author_name %}
+					<div class="flex items-center">
+						<div class="w-8 h-8 mr-4 bg-cover bg-center rounded-full" style="background-image:url('{{data.author_image}}')"></div>
+						<div class="text-gray-700 text-sm font-normal">
+							<span>{{data.author_name}}</span>
+						</div>
+					</div>
+					<div class="px-2 text-gray-700">|</div>
+				{% endif %}
+				<div class="text-gray-700 text-sm font-normal">{{data.creation_date}}</div>
+			</div>
+		</div>
+	</div>
+</div>
+

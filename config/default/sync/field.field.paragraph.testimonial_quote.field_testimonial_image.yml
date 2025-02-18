@@ -1,0 +1,36 @@
+uuid: 2241ee4f-9b26-4de4-80e4-c3bb80337f06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_testimonial_image
+    - media.type.image
+    - media.type.vector_image
+    - paragraphs.paragraphs_type.testimonial_quote
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.testimonial_quote.field_testimonial_image
+field_name: field_testimonial_image
+entity_type: paragraph
+bundle: testimonial_quote
+label: 'Testimonial image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      vector_image: vector_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference
