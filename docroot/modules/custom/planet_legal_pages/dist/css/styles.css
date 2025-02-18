@@ -566,6 +566,10 @@ video {
   z-index: 50;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -856,6 +860,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:static {
+    position: static;
+  }
+
   .md\:mx-8 {
     margin-left: 2rem;
     margin-right: 2rem;
@@ -884,6 +892,10 @@ video {
 }
 
 @media (min-width: 1180px) {
+  .lg\:static {
+    position: static;
+  }
+
   .lg\:mr-0 {
     margin-right: 0px;
   }
