@@ -1,6 +1,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.megaMenu = {
     attach: function (context) {
+
       /**
        * Scrolls smoothly to the target element.
        */
@@ -46,6 +47,21 @@
             event.preventDefault();
             scrollToTarget(targetElement);
           }
+        });
+      });
+
+
+      /**
+       * Handles anchor link clicks.
+       */
+      once('legal-menu-sublinks-click', '.child', context).forEach(function (element) {
+        element.addEventListener('click', function (event) {
+          document.querySelectorAll('.child').forEach((el) => {
+            el.classList.remove('text-[#4F46E5]');
+            el.classList.add('text-black');
+          });
+          event.target.classList.remove('text-black');
+          event.target.classList.add('text-[#4F46E5]');
         });
       });
 
@@ -98,7 +114,6 @@
           }
         }
       });
-      ;
     },
   };
 })(jQuery, Drupal);

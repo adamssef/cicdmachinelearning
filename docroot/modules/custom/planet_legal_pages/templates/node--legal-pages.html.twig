@@ -2,10 +2,10 @@
     <ul class="space-y-2 border-l-2 mt-12 md:mt-6 lg:mt-0">
         {% for item in items %}
             <li class="!mb-4">
-                <a href="{{ item.url }}" class="{% if item.active %}text-[#4F46E5]{% else %}text-black{% endif %} textblock  hover:text-[#4F46E5] font-semibold transition-all duration-300">{{ item.title }}</a>
+                <a href="{{ item.url }}" class="{% if item.active %}text-[#4F46E5]{% else %}text-black{% endif %} textblock  hover:text-[#545454] font-semibold transition-all duration-300">{{ item.title }}</a>
                 {% if item.children is defined and item.children is not empty %}
                     {% for child in item.children %}
-                        <a href="{{ child.url }}" class="text-black textblock  hover:text-[#4F46E5] font-light block">{{ child.title }}</a>
+                        <a href="{{ child.url }}" class="child textblock  hover:text-[#545454] font-light block {%  if child.active %}text-[#4F46E5]{% else %}text-black{% endif %}">{{ child.title }}</a>
                     {% endfor %}
                 {% endif %}
             </li>
@@ -14,21 +14,26 @@
 {% endmacro %}
 
 {% import _self as macros %}
-<div class="lg:hidden">
-<div class="border-b-2 border-t-[#D1D1D1]  border-t !border-b-[rgba(79,70,229,0.4)] border-solid">
-    <div>
-        <div class=" flex w-full justify-between font-semibold leading-[26px] px-4 md:px-8 lg-custom:px-4 xl-custom:px-0 py-4">{{ label }} <img id="menu-visibility-arrow" src="/resources/icons/legal_pages/arrow-up.svg" alt="arrow-up" class="p-2 transition-all duration-300"></div>
+<div class="lg:hidden fixed left-0 w-full bg-white z-50 shadow-md">
+    <div class="border-b-2 border-t-[#D1D1D1] border-t !border-b-[rgba(79,70,229,0.4)] border-solid">
+        <div class="flex w-full justify-between font-semibold leading-[26px] px-4 md:px-8 lg-custom:px-4 xl-custom:px-0 py-4">
+            {{ label }}
+            <img id="menu-visibility-arrow" src="/resources/icons/legal_pages/arrow-up.svg" alt="arrow-up" class="p-2 transition-all duration-300">
+        </div>
     </div>
 </div>
-</div>
 
-<div class="flex justify-between max-w-[1280px] m-auto lg:gap-20 mb-20 flex-col lg:flex-row">
+<!-- Add padding to prevent content from being hidden behind the fixed div -->
+<div class="pt-[60px]">
+
+
+<div class="flex max-w-[1280px] m-auto lg:gap-12 mb-20 flex-col lg:flex-row">
     <nav class="legal-menu transition-all duration-300 rounded-lg  w-full lg:w-fit px-4 md:px-8 lg-custom:px-4 xl-custom:px-0 lg:mt-12">
         {{ macros.render_menu(menu_items) }}
     </nav>
     <div class="lg:w-[700px] mx-4 md:mx-8 lg:mr-0 mt-12 lg:mt:0">
         <span class="text-[32px] font-semibold leading-[40px] mb-4 flex items-center">{{ label }}</span>
-        <div class="!font-light">{{ content.body }}</div>
+        <div class="!font-light lg:pr-8">{{ content.body }}</div>
     </div>
 </div>
 

@@ -45,6 +45,7 @@ class PlanetCoreLegalPagesMenuService extends PlanetCoreMenuService {
   function getMenuLinkData(MenuItemExtrasMenuLinkContentInterface $entity): array {
     $current_path = $this->currentPath->getPath();
     $current_path_alias = $this->pathAliasManager->getAliasByPath($current_path);
+    $id_parameter= \Drupal::request()->query->get('id');
 
     return [
       'title' => $entity->getTitle(),
@@ -57,6 +58,11 @@ class PlanetCoreLegalPagesMenuService extends PlanetCoreMenuService {
   }
 
   public function getMenuData($menu_machine_name, $menu_link_titles_to_skip = []): array {
+    $current_path = $this->currentPath->getPath();
+    $current_path_alias = $this->pathAliasManager->getAliasByPath($current_path);
+    $id_parameter= \Drupal::request()->query->get('id');
+
+
     $parameters = $this->menuTree->getCurrentRouteMenuTreeParameters($menu_machine_name);
     $tree = $this->menuTree->load($menu_machine_name, $parameters);
 
@@ -86,7 +92,22 @@ class PlanetCoreLegalPagesMenuService extends PlanetCoreMenuService {
             ['id' => $children_id->id]
           );
 
-          $children[] = $this->getMenuLinkData(array_shift($item));
+          $item = $this->getMenuLinkData(array_shift($item));
+
+          if ($id_parameter !== NULL) {
+            $children_url = $item['url'];
+            $children_url_param_extracted = explode('#', explode('?id=', $children_url)[1])[1];
+            $menu_link_data = $item;
+
+            if ($children_url_param_extracted === $id_parameter) {
+              $menu_link_data['active'] = TRUE;
+            }
+            $children[] = $menu_link_data;
+          } else {
+            $menu_link_data = $item;
+            $menu_link_data['active'] = FALSE;
+            $children[] = $menu_link_data;
+          }
         }
       }
 
