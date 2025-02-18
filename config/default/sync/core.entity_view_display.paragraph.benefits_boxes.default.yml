@@ -1,0 +1,63 @@
+uuid: 6360aad9-2e59-4195-800a-c2af2b6778a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.benefits_boxes.field_benefit_box
+    - field.field.paragraph.benefits_boxes.field_benefit_box_style
+    - field.field.paragraph.benefits_boxes.field_benefit_description
+    - field.field.paragraph.benefits_boxes.field_benefits_dark_mode
+    - field.field.paragraph.benefits_boxes.field_main_title
+    - paragraphs.paragraphs_type.benefits_boxes
+  module:
+    - entity_reference_revisions
+    - options
+    - text
+id: paragraph.benefits_boxes.default
+targetEntityType: paragraph
+bundle: benefits_boxes
+mode: default
+content:
+  field_benefit_box:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_benefit_box_style:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_benefit_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_benefits_dark_mode:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_main_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

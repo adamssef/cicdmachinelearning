@@ -1,0 +1,24 @@
+uuid: cd28b1e2-a7df-4854-b49b-4a3522f31ae7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_main_title
+    - paragraphs.paragraphs_type.benefits_boxes
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.benefits_boxes.field_main_title
+field_name: field_main_title
+entity_type: paragraph
+bundle: benefits_boxes
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,10 @@
+uuid: 7d9bca8f-c145-40e9-9516-2df06afa3b96
+langcode: en
+status: true
+dependencies: {  }
+id: benefits_boxes
+label: 'Benefits boxes'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

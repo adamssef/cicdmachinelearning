@@ -2347,3 +2347,9 @@ header .coh-planet-logo {
   }
 }
 /*End of: "Changes related to adding "Last updated on to a blog page."*/
+.children-semibold p {
+  font-weight: 600;
+}
+.children-light p {
+  font-weight: 300;
+}
