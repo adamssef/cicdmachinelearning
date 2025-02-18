@@ -1,4 +1,5 @@
 (function ($, Drupal) {
+  console.log('js file loaded')
   Drupal.behaviors.megaMenu = {
     attach: function (context) {
 
@@ -7,6 +8,7 @@
        */
       function scrollToTarget(targetElement) {
         if (targetElement) {
+          console.log('scroll to target triggered')
           requestAnimationFrame(() => {
             const targetRect = targetElement.getBoundingClientRect();
             const scrollOffset = window.scrollY || window.pageYOffset;
@@ -39,11 +41,13 @@
        */
       once('legal-menu-links', '.legal-menu a[href*="#"]', context).forEach(function (element) {
         element.addEventListener('click', function (event) {
+          console.log('click in legal menu')
           const href = element.getAttribute('href');
           const targetId = href.split('#')[1];
           const targetElement = document.getElementById(targetId);
 
           if (targetElement) {
+            console.log('target element found')
             event.preventDefault();
             scrollToTarget(targetElement);
           }
@@ -56,12 +60,15 @@
        */
       once('legal-menu-sublinks-click', '.child', context).forEach(function (element) {
         element.addEventListener('click', function (event) {
+         console.log('click in legal menu sublinks');
           document.querySelectorAll('.child').forEach((el) => {
             el.classList.remove('text-[#4F46E5]');
             el.classList.add('text-black');
+            console.log('removing text-[#4F46E5] and adding text-black');
           });
           event.target.classList.remove('text-black');
           event.target.classList.add('text-[#4F46E5]');
+          console.log('removing text-black and adding text-[#4F46E5]');
         });
       });
 
