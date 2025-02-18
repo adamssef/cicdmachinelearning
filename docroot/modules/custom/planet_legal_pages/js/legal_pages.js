@@ -79,7 +79,7 @@
        * Handles anchor link clicks.
        */
       window.addEventListener('resize', function (event) {
-        if (wCindow.innerWidth > 1180) {
+        if (window.innerWidth > 1180) {
           document.querySelector('.legal-menu').classList.remove('hidden');
         }
       });
