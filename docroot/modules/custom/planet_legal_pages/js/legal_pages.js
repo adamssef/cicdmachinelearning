@@ -1,6 +1,5 @@
 (function ($, Drupal) {
-  console.log('js file loaded')
-  Drupal.behaviors.megaMenu = {
+  Drupal.behaviors.legalPages = {
     attach: function (context) {
 
       /**
@@ -8,7 +7,7 @@
        */
       function scrollToTarget(targetElement) {
         if (targetElement) {
-          console.log('scroll to target triggered')
+          console.log('scroll to target triggered');
           requestAnimationFrame(() => {
             const targetRect = targetElement.getBoundingClientRect();
             const scrollOffset = window.scrollY || window.pageYOffset;
@@ -54,7 +53,6 @@
         });
       });
 
-
       /**
        * Handles anchor link clicks.
        */
@@ -91,12 +89,6 @@
         }
       });
 
-      /**
-       * Handles page load with hash.
-       */
-      /**
-       * Handles page load with hash.
-       */
       /**
        * Handles page load with hash.
        */

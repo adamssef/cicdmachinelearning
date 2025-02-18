@@ -20,17 +20,14 @@ function planet_legal_pages_preprocess_node(&$variables) {
 
   if ($node_type === 'legal_pages') {
     $variables['menu_items'] = \Drupal::service('planet_core.legal_pages_menu_service')->getMenuData('legal-pages');
-
   }
 }
 
 function planet_legal_pages_preprocess_page(&$variables) {
-  \Drupal::logger('planet_legal_pages')->info('Preprocess page');
   $node = \Drupal::routeMatch()->getParameter('node');
   $node_type = $node?->getType();
 
   if ($node_type === 'legal_pages') {
-    \Drupal::logger('planet_legal_pages')->info('Legal pages node');
     $variables['#attached']['library'][] = 'planet_legal_pages/tailwind';
   }
 }
