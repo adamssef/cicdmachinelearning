@@ -225,4 +225,3 @@ function planet_payment_methods_preprocess_page(&$variables) {
 function planet_payment_methods_preprocess_block__payment_methods_block(&$variables) {
   $variables['data'] = $variables['content'][0]['#data'];
 }
-
