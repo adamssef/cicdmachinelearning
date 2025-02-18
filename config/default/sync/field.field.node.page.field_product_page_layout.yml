@@ -6,11 +6,14 @@ dependencies:
     - field.storage.node.field_product_page_layout
     - node.type.page
     - paragraphs.paragraphs_type.benefits_boxes
+    - paragraphs.paragraphs_type.blog_articles
     - paragraphs.paragraphs_type.brands_carousel
+    - paragraphs.paragraphs_type.case_studies_articles
     - paragraphs.paragraphs_type.features_content
     - paragraphs.paragraphs_type.features_ending
     - paragraphs.paragraphs_type.features_heading
     - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.testimonial_quote
   module:
     - entity_reference_revisions
     - tmgmt_content
@@ -37,6 +40,9 @@ settings:
       benefits_boxes: benefits_boxes
       features_content: features_content
       features_ending: features_ending
+      blog_articles: blog_articles
+      case_studies_articles: case_studies_articles
+      testimonial_quote: testimonial_quote
     negate: 0
     target_bundles_drag_drop:
       benefit_box:
@@ -45,8 +51,14 @@ settings:
       benefits_boxes:
         weight: 15
         enabled: true
+      blog_articles:
+        weight: 20
+        enabled: true
       brands_carousel:
         weight: -20
+        enabled: true
+      case_studies_articles:
+        weight: 20
         enabled: true
       customer_recommendation_quote:
         weight: -18
@@ -78,6 +90,9 @@ settings:
       right_side_mega_menu:
         weight: -13
         enabled: false
+      testimonial_quote:
+        weight: 29
+        enabled: true
       tip_box:
         weight: -12
         enabled: false

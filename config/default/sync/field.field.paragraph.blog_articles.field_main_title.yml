@@ -1,20 +1,20 @@
-uuid: 7d2ea80d-cfec-44b7-88d3-2d27cf27fbb8
+uuid: 986aebad-d293-46bf-8a02-e59d0bcc2161
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_heading
-    - paragraphs.paragraphs_type.features_heading
+    - field.storage.paragraph.field_main_title
+    - paragraphs.paragraphs_type.blog_articles
   module:
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
     excluded: false
-id: paragraph.features_heading.field_heading
-field_name: field_heading
+id: paragraph.blog_articles.field_main_title
+field_name: field_main_title
 entity_type: paragraph
-bundle: features_heading
-label: Heading
+bundle: blog_articles
+label: Title
 description: ''
 required: false
 translatable: true

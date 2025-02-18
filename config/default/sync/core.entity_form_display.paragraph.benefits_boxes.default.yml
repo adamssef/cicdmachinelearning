@@ -4,11 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.benefits_boxes.field_benefit_box
+    - field.field.paragraph.benefits_boxes.field_benefit_box_style
+    - field.field.paragraph.benefits_boxes.field_benefit_description
     - field.field.paragraph.benefits_boxes.field_benefits_dark_mode
     - field.field.paragraph.benefits_boxes.field_main_title
     - paragraphs.paragraphs_type.benefits_boxes
   module:
     - paragraphs
+    - text
 id: paragraph.benefits_boxes.default
 targetEntityType: paragraph
 bundle: benefits_boxes
@@ -16,7 +19,7 @@ mode: default
 content:
   field_benefit_box:
     type: paragraphs
-    weight: 13
+    weight: 3
     region: content
     settings:
       title: Paragraph
@@ -32,9 +35,23 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+  field_benefit_box_style:
+    type: options_select
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_benefit_description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_benefits_dark_mode:
     type: boolean_checkbox
-    weight: 14
+    weight: 4
     region: content
     settings:
       display_label: true
@@ -46,6 +63,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

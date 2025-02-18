@@ -1,20 +1,20 @@
-uuid: 7d2ea80d-cfec-44b7-88d3-2d27cf27fbb8
+uuid: 42ebf4a0-11a3-41fd-80e8-bfbe640ed07f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_heading
-    - paragraphs.paragraphs_type.features_heading
+    - field.storage.paragraph.field_testimonial_role
+    - paragraphs.paragraphs_type.testimonial_quote
   module:
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
     excluded: false
-id: paragraph.features_heading.field_heading
-field_name: field_heading
+id: paragraph.testimonial_quote.field_testimonial_role
+field_name: field_testimonial_role
 entity_type: paragraph
-bundle: features_heading
-label: Heading
+bundle: testimonial_quote
+label: Role
 description: ''
 required: false
 translatable: true
