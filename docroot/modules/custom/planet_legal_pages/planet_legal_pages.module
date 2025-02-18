@@ -25,10 +25,12 @@ function planet_legal_pages_preprocess_node(&$variables) {
 }
 
 function planet_legal_pages_preprocess_page(&$variables) {
+  \Drupal::logger('planet_legal_pages')->info('Preprocess page');
   $node = \Drupal::routeMatch()->getParameter('node');
   $node_type = $node?->getType();
 
   if ($node_type === 'legal_pages') {
+    \Drupal::logger('planet_legal_pages')->info('Legal pages node');
     $variables['#attached']['library'][] = 'planet_legal_pages/tailwind';
   }
 }
