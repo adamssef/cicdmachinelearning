@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.legal_pages.body
+    - field.field.node.legal_pages.field_basic_page_metatag
     - node.type.legal_pages
   module:
     - text
@@ -28,5 +29,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_basic_page_metatag: true
   langcode: true
   search_api_excerpt: true
