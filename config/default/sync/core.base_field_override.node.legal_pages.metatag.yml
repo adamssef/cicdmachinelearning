@@ -1,0 +1,20 @@
+uuid: 8e8b8aeb-79f6-434a-b7dc-09335a786c08
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.legal_pages
+  module:
+    - metatag
+id: node.legal_pages.metatag
+field_name: metatag
+entity_type: node
+bundle: legal_pages
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The computed meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag_computed
