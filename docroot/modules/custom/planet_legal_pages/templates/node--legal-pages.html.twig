@@ -18,7 +18,7 @@
     <div class="border-b-2 border-t-[#D1D1D1] border-t !border-b-[rgba(79,70,229,0.4)] border-solid">
         <div class="flex w-full justify-between font-semibold leading-[26px] px-4 md:px-8 lg-custom:px-4 xl-custom:px-0 py-4">
             {{ label }}
-            <img id="menu-visibility-arrow" src="/resources/icons/legal_pages/arrow-up.svg" alt="arrow-up" class="p-2 transition-all duration-300">
+            <img id="menu-visibility-arrow" src="/resources/icons/legal_pages/arrow-down.svg" alt="arrow-up" class="p-2 transition-all duration-300">
         </div>
     </div>
 </div>
@@ -26,9 +26,8 @@
 <!-- Add padding to prevent content from being hidden behind the fixed div -->
 <div class="pt-[60px]">
 
-
-<div class="flex max-w-[1280px] m-auto lg:gap-12 mb-20 flex-col lg:flex-row">
-    <nav class="legal-menu transition-all duration-300 rounded-lg  w-full lg:w-fit px-4 md:px-8 lg:mt-12 fixed lg:static bg-white z-10">
+<div class="flex max-w-[1280px] m-auto lg:gap-12 mb-12 lg:mb-20 flex-col lg:flex-row">
+    <nav class="legal-menu transition-all duration-300 rounded-lg  w-full lg:w-fit px-4 md:px-8 lg:mt-12 fixed lg:static bg-white z-10 hidden lg:block">
         {{ macros.render_menu(menu_items) }}
     </nav>
     <div class="lg:w-[700px] mx-4 md:mx-8 lg:mr-0 mt-12 lg:mt:0">
