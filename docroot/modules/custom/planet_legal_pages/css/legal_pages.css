@@ -39,41 +39,35 @@
   font-weight: 300;
 }
 
-/* Reset numbering */
 ol {
   counter-reset: section;
 }
 
-/* First-level list items */
 ol > li {
   counter-increment: section;
   display: block;
-  margin-bottom: 16px; /* Add space between top-level items */
+  margin-bottom: 16px;
 }
 
 ol > li::before {
   content: counter(section) ". ";
 }
 
-/* Second-level nested list */
 ol ol {
   counter-reset: subsection;
-  margin-left: 30px; /* Indentation for nested list */
+  margin-left: 30px;
 }
 
-/* Second-level list items */
 ol ol > li {
   counter-increment: subsection;
   display: block;
-  margin-bottom: 0; /* Remove margin-bottom from all nested list items */
+  margin-bottom: 0;
 }
 
-/* Format nested numbering as "2.1." */
 ol ol > li::before {
   content: counter(section) "." counter(subsection) ". ";
 }
 
-/* Add margin-bottom ONLY to the last nested element */
 ol ol > li:not(:last-child) {
   margin-bottom: 8px;
 }
@@ -85,8 +79,6 @@ ol ol > li:last-child {
 .list-address li {
   list-style-type: none;
 }
-
-/* Table */
 
 table {
   width: 100%;
@@ -106,7 +98,7 @@ p.just-inline {
   border-radius: 16px;
   display: inline-block;
   overflow: hidden;
-  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.10);
   margin-top: 16px;
   margin-bottom: 16px;
 }
@@ -150,10 +142,8 @@ tr td:is(:first-child) {
   white-space: nowrap;
 }
 
-
 thead th {
   width: auto;
-
 }
 
 table tr:last-child td {
@@ -216,6 +206,22 @@ tr:nth-child(even) {
   display: none !important;
 }
 
+@media (min-width: 1180px) {
+  .legal-menu {
+    position: sticky;
+    height: 100%;
+    overflow-y: auto;
+    top: 180px;
+    background: white;
+    z-index: 10;
+  }
+
+  .legal-menu ul {
+    position: relative;
+    top: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .table-container.display-none {
     display: block !important;
@@ -223,10 +229,6 @@ tr:nth-child(even) {
 
   tr:last-child td:first-child {
     border-bottom-left-radius: 0;
-  }
-
-  tr:last-child td:last-child {
-    border-bottom-right-radius: 0;
   }
 
   ol ol {
@@ -242,6 +244,10 @@ tr:nth-child(even) {
     border-bottom: 1px solid rgba(79, 70, 229, 0.40);
   }
 
+  li .table-container:is(:first-of-type) {
+    margin-top: 16px;
+  }
+
   .table-container:is(.mini-table-container--last) {
     border-bottom: none;
     margin-bottom: 16px;
@@ -249,7 +255,6 @@ tr:nth-child(even) {
 
   .table-container:not(.mini-table-container) {
     border-bottom: none;
-
   }
 
   li .table-container.display-none.mini-table-container:is(:first-of-type) {
@@ -280,6 +285,7 @@ tr:nth-child(even) {
     border-collapse: collapse;
     table-layout: fixed;
   }
+
   .table-container td {
     width: 50%;
     box-sizing: border-box;

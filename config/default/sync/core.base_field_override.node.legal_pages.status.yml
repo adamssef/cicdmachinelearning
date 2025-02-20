@@ -1,0 +1,22 @@
+uuid: fe72d4d7-b0f1-4048-8ae8-09b6bf0059d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.legal_pages
+id: node.legal_pages.status
+field_name: status
+entity_type: node
+bundle: legal_pages
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

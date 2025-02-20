@@ -1,0 +1,20 @@
+uuid: 4f13b62b-daa8-4a72-836f-46e400a9fb29
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.legal_pages
+id: node.legal_pages.uid
+field_name: uid
+entity_type: node
+bundle: legal_pages
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

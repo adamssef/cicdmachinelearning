@@ -1,0 +1,18 @@
+uuid: 8921e95d-1f9f-4c36-a631-d8af6c0baac1
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.legal-pages
+id: menu_link_content.legal-pages.title
+field_name: title
+entity_type: menu_link_content
+bundle: legal-pages
+label: 'Menu link title'
+description: 'The text to be used for this link in the menu.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
