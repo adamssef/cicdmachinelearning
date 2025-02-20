@@ -1,0 +1,22 @@
+uuid: 99e96bf5-5650-4587-8152-450df6558d0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.legal_pages
+id: node.legal_pages.sticky
+field_name: sticky
+entity_type: node
+bundle: legal_pages
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

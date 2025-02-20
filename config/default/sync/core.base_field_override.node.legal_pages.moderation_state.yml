@@ -1,0 +1,18 @@
+uuid: 35de3ceb-befc-4704-b9e8-9ca590afee93
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.legal_pages
+id: node.legal_pages.moderation_state
+field_name: moderation_state
+entity_type: node
+bundle: legal_pages
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

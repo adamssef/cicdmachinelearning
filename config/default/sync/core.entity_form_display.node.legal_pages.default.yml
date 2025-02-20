@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.legal_pages.body
+    - field.field.node.legal_pages.field_basic_page_metatag
     - node.type.legal_pages
+    - workflows.workflow.editorial
   module:
     - content_moderation
+    - metatag
     - path
     - text
 id: node.legal_pages.default
@@ -29,6 +32,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_basic_page_metatag:
+    type: metatag_firehose
+    weight: 27
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   langcode:
     type: language_select
