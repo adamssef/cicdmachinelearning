@@ -1,35 +1,22 @@
 <?php
-namespace Drupal\planet_core\Controller;
+
+namespace Drupal\planet_partners_pages\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\planet_core\Service\PlanetCorePartnersService;
+use Drupal\planet_partners_pages\Service\PlanetCorePartnersService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class PlanetCorePartnersBase extends ControllerBase {
 
-  /**
-   * The planet core service.
-   *
-   * @var \Drupal\planet_core\Service\PlanetCorePartnersService
-   */
-  protected $planetCoreService;
+  protected PlanetCorePartnersService $planetPartnersService;
 
-  /**
-   * The planet core service.
-   *
-   * @var \Drupal\planet_core\Service\PlanetCorePartnersService
-   *   The planet core service.
-   */
-  public function __construct(PlanetCorePartnersService $planet_core_service) {
-    $this->planetCoreService = $planet_core_service;
+  public function __construct(PlanetCorePartnersService $planetPartnersService) {
+    $this->planetPartnersService = $planetPartnersService;
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
+  public static function create(ContainerInterface $container): static {
     return new static(
-      $container->get('planet_core.partners_helper')
+      $container->get('planet_partners_pages.partners_helper')
     );
   }
 

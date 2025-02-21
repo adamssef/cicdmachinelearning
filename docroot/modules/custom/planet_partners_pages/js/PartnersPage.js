@@ -11,7 +11,7 @@
             async function fetchArticles(limit, offset, lang, featured, type = false, product = false, industry = false, region = false, search = false) {
                 is_loading(true);
                 try {
-                    const url = new URL(`/planet_core/partners/`, window.location.origin);
+                    const url = new URL(`/planet_partners_pages/partners/`, window.location.origin);
                     const params = { limit, offset, lang, type, product, industry, region, featured, search };
                     Object.keys(params).forEach(key => {
                         if (params[key]) {
