@@ -1,0 +1,28 @@
+uuid: 8e92371f-33c2-491a-9d12-c32b652f66bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_new
+    - node.type.partners
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.partners.field_is_new
+field_name: field_is_new
+entity_type: node
+bundle: partners
+label: 'Is New'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

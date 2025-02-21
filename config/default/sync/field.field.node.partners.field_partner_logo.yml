@@ -1,0 +1,34 @@
+uuid: 029df35b-303c-4ea2-9046-ac1f51af9815
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partner_logo
+    - media.type.image
+    - node.type.partners
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.partners.field_partner_logo
+field_name: field_partner_logo
+entity_type: node
+bundle: partners
+label: 'Partner logo'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

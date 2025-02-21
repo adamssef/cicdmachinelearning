@@ -1,0 +1,161 @@
+{#
+  Custom Twig template for the Blog homepage.
+  Template variables available:
+    - content: An array of content elements.
+    - node: The node entity representing the "blog" content.
+    - label: The node label.
+    - url: The node URL.
+    - attributes: HTML attributes for the node wrapper.
+#}
+<div>
+	<div class="plnt-partners-page">
+		<div class="coh-container coh-container-boxed">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
+						<div class="breadcrumbs">
+							<a href="#">Partners</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<span class="planet-h4">Select an option</span>
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+						<div class="planswitch-wrapper">
+							<div class="planSwitch planSwitch-black two-options-toggle">
+								<a href="#">
+									<label class="planSwitch-selected" data-box="2" for="option_2">Partner directory</label>
+								</a>
+								<a href="https://store.protel.io" target="_blank" rel="noopener nofollow noreferrer">
+									<label data-box="3" for="option_3">PMS app integrations
+										<img src="/resources/icons/external-black.svg"></label>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="coh-container coh-container-boxed max-width-1216 news-container">
+			<div class="coh-row">
+				<div class="coh-row-inner">
+					<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+						<div class="last-articles">
+							<div class="news-title no-margin">
+								<h1 class="planet-h1">Partner directory</h1>
+								<p class="base-text">Find a Planet partner to unlock the true powers of your business. From integrations the connect straight
+																																																																																																																				to your existing Planet products, to specialists that can implement new solution..</p>
+							</div>
+							<div class="coh-row">
+								<div class="planet-search-bar">
+									<form class="partners-search-form">
+										<input class="search-input" placeholder="Search all partners"></input>
+								</form>
+								<div class="search-icon">
+									<img src="/resources/icons/search.svg">
+								</div>
+							</div>
+							<div class="planet-select-wrapper partners-select" style="">
+								<div class="coh-row">
+									<div class="coh-row-inner">
+										<div class="coh-column coh-col-sm-12 coh-col-md-3 coh-col-xl-3">
+											{% if taxonomy_type %}
+												<div class="custom-select planet-partners-select-type">
+													<div data-value="all" class="select-selected">Partner type</div>
+													<div class="select-items">
+														<div data-value="all">Partner type</div>
+														{% for tag in taxonomy_type %}
+															<div data-value="{{tag.id}}">{{tag.name}}</div>
+														{% endfor %}
+													</div>
+												</div>
+											{% endif %}
+										</div>
+										<div class="coh-column coh-col-sm-12 coh-col-md-3 coh-col-xl-3">
+											{% if taxonomy_product %}
+												<div class="custom-select planet-partners-select-product">
+													<div data-value="all" class="select-selected">Product type</div>
+													<div class="select-items">
+														<div data-value="all">Product type</div>
+														{% for tag in taxonomy_product %}
+															<div data-value="{{tag.id}}">{{tag.name}}</div>
+														{% endfor %}
+													</div>
+												</div>
+											{% endif %}
+										</div>
+										<div class="coh-column coh-col-sm-12 coh-col-md-3 coh-col-xl-3">
+											{% if taxonomy_industry %}
+												<div class="custom-select planet-partners-select-industry">
+													<div data-value="all" class="select-selected">Industry</div>
+													<div class="select-items">
+														<div data-value="all">Industry</div>
+														{% for tag in taxonomy_industry %}
+															<div data-value="{{tag.id}}">{{tag.name}}</div>
+														{% endfor %}
+													</div>
+												</div>
+											{% endif %}
+										</div>
+										<div class="coh-column coh-col-sm-12 coh-col-md-3 coh-col-xl-3">
+											{% if taxonomy_region %}
+												<div class="custom-select planet-partners-select-region">
+													<div data-value="all" class="select-selected">Region</div>
+													<div class="select-items">
+														<div data-value="all">Region</div>
+														{% for tag in taxonomy_region %}
+															<div data-value="{{tag.id}}">{{tag.name}}</div>
+														{% endfor %}
+													</div>
+												</div>
+											{% endif %}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="reset-filters" style="display: none">
+								<span>Clear filter
+									<div class="clear-filter-icon"></div>
+								</span>
+							</div>
+						</div>
+						<div class="partners-lists">
+							<div class="featured-partners-wrapper">
+								<span class="planet-h3 center">Featured partners</span>
+								<div class="article-cards-wrapper">
+									<div class="coh-row">
+										<p class="no-articles" style="display: none">We’re sorry, but it seems that there are no partners matching your search criteria at the moment. Please try again.</p>
+										<div class="loader">
+											<img src="/resources/icons/loader.svg">
+										</div>
+										<div class="coh-row-inner article-js-wrapper featured-js-wrapper"></div>
+									</div>
+								</div>
+								<div class="load-more-wrapper">
+									<a style="display: none" id="load-more-button" href="/news" class="coh-link coh-style-primary-dark-atom-">See all news</a>
+								</div>
+							</div>
+							<div class="more-partners-wrapper">
+								<span class="planet-h3 center">More partners</span>
+								<div class="article-cards-wrapper">
+									<div class="coh-row">
+										<p class="no-articles" style="display: none">We’re sorry, but it seems that there are no partners matching your search criteria at the moment. Please try again.</p>
+										<div class="loader">
+											<img src="/resources/icons/loader.svg">
+										</div>
+										<div class="coh-row-inner article-js-wrapper normal-js-wrapper"></div>
+									</div>
+								</div>
+								<div class="load-more-wrapper">
+									<a style="display: none" id="load-more-button" href="/news" class="coh-link coh-style-primary-dark-atom-">See all news</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
