@@ -99,7 +99,7 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
   /**
    * {@inheritdoc}
    */
-  public function buildTranslationArrayForNode(NodeInterface $node): ?array {
+  public function buildTranslationArrayForNode(?NodeInterface $node): ?array {
     $node_translations_url = [];
 
     if ($node) {
@@ -235,8 +235,13 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
   /**
    * {@inheritdoc}
    */
-  public function translateUrlAlias(string $english_alias): string {
-    $node = $this->getNodeByPathAlias('/contact/sales');
+  public function translateUrlAlias(string $english_alias): ?string {
+    $node = $this->getNodeByPathAlias($english_alias);
+
+    if (!$node) {
+      return NULL;
+    }
+
     $translation_array = $this->buildTranslationArrayForNode($node);
     $langcode = $this->languageManager->getCurrentLanguage()->getId();
     $translated_alias = $translation_array[$langcode];
