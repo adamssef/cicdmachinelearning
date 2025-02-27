@@ -19,3 +19,8 @@ planet_node_updater_contact_sales:
       dist/css/styles.css: { }
       css/webform_git_dynamic.css: { }
       css/webform_text_temp.css: { }
+planet_node_updater_webform:
+  css:
+    theme:
+      css/webform_git_dynamic.css: { }
+      css/webform_text_temp.css: { }
