@@ -33,14 +33,15 @@ class PlanetCoreBasicPageService
 
     public function getPageParagraphData(NodeInterface $node)
     {
-        if ($node->getType() !== 'page') {
-            return [];
-        }
-
         $langcode = $this->languageManager->getCurrentLanguage()->getId();
         $node = $node->hasTranslation($langcode) ? $node->getTranslation($langcode) : $node;
 
-        $paragraphs = $node->field_product_page_layout->referencedEntities();
+        if ($node->field_product_page_layout) {
+          $paragraphs = $node->field_product_page_layout->referencedEntities();
+        } else {
+          $paragraphs = $node->field_page_paragraphs->referencedEntities();
+        }
+
         $paragraph_data = [];
 
         if (!empty($paragraphs)) {

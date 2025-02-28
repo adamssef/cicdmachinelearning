@@ -135,21 +135,10 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
   }
 
   function getMenuLinkData(MenuItemExtrasMenuLinkContentInterface $entity): array {
-    $target_id = NULL;
-
-    if (!empty($entity->get('field_page')?->getValue())) {
-      $target_id = $entity->get('field_page')?->getValue()[0]['target_id'];
-    }
-
     $classes = NULL;
 
     if (!empty($entity->get('field_megamenu_classes')->getValue())) {
       $classes = $entity->get('field_megamenu_classes')->getValue()[0];
-    }
-
-    if ($target_id !== NULL) {
-      $page = Node::load($target_id);
-      $translation_array = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($page);
     }
 
     $icon_path = NULL;
@@ -166,7 +155,7 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
     return [
       'title' => $entity->getTitle(),
       'id' => strtolower(str_replace(' ', '-', $entity->getTitle())),
-      'url' => $translation_array ?? $entity->getUrlObject()->toString(),
+      'url' => ['en' => $entity->getUrlObject()->toString()],
       'weight' => $entity->getWeight(),
       '_blank' => str_starts_with($entity->getUrlObject()->toString(), 'http'),
       'classes' => $classes !== NULL ? $classes['value']: NULL,
