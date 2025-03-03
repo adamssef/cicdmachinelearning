@@ -33,14 +33,15 @@ class PlanetCoreBasicPageService
 
     public function getPageParagraphData(NodeInterface $node)
     {
-        if ($node->getType() !== 'page') {
-            return [];
-        }
-
         $langcode = $this->languageManager->getCurrentLanguage()->getId();
         $node = $node->hasTranslation($langcode) ? $node->getTranslation($langcode) : $node;
 
-        $paragraphs = $node->field_product_page_layout->referencedEntities();
+        if ($node->field_product_page_layout) {
+          $paragraphs = $node->field_product_page_layout->referencedEntities();
+        } else {
+          $paragraphs = $node->field_page_paragraphs->referencedEntities();
+        }
+
         $paragraph_data = [];
 
         if (!empty($paragraphs)) {
@@ -123,7 +124,7 @@ class PlanetCoreBasicPageService
                 $field_data[$field_name] = $brands;
             }
 
-            // Process Button Links
+            //Process Button Links
             if (in_array($field_name, ['field_button_1_link', 'field_button_2_link', 'field_button_url']) && !empty($field_data[$field_name][0]['uri'])) {
                 $uri = $field_data[$field_name][0]['uri'];
 
@@ -132,11 +133,8 @@ class PlanetCoreBasicPageService
                     $linked_node = $this->entityTypeManager->getStorage('node')->load($node_id);
                     if ($linked_node) {
                         $aliases = $this->nodeTranslationService->buildTranslationArrayForNode($linked_node);
-                        $field_data[$field_name][0]['alias'] = $aliases[$langcode] ?? $uri;
+                        $field_data[$field_name][0]['uri'] = $aliases[$langcode] ?? $uri;
                     }
-                } else {
-                    $internal_path = '/' . ltrim($uri, '/');
-                    $field_data[$field_name][0]['alias'] = $this->pathAliasManager->getAliasByPath($internal_path, $langcode);
                 }
             }
 

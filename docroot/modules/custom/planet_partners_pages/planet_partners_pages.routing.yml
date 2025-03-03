@@ -1,0 +1,35 @@
+planet_partners_pages.partners:
+  path: '/planet_partners_pages/partners'
+  defaults:
+    _controller: '\Drupal\planet_partners_pages\Controller\PartnersArticles::loadPartnersArticles'
+    _title: 'Load More Partners'
+  requirements:
+    _permission: 'access content'
+    limit: '\d+' 
+    offset: '\d+'
+    lang: '\w+'     
+    featured: '\d+'
+    type: '\d+'
+    industry: '\d+'
+    product: '\d+'
+    region: '\d+'
+  options:
+    parameters:
+      limit:
+        type: 'integer'
+      offset:
+        type: 'integer'
+      industry:
+        type: 'integer'
+      type:
+        type: 'integer'
+      product:
+        type: 'integer'
+      region:
+        type: 'integer'
+      lang:
+        type: 'string'
+      featured:
+        type: 'boolean'
+      search:
+        type: 'string'

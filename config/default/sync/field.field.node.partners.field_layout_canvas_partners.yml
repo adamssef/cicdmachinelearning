@@ -1,0 +1,28 @@
+uuid: e078811b-28ef-44ac-8320-5be3a718e23d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_layout_canvas_partners
+    - node.type.partners
+  module:
+    - cohesion_elements
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.partners.field_layout_canvas_partners
+field_name: field_layout_canvas_partners
+entity_type: node
+bundle: partners
+label: 'Layout Canvas'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cohesion_layout'
+  handler_settings: {  }
+  access_elements: '0'
+field_type: cohesion_entity_reference_revisions
