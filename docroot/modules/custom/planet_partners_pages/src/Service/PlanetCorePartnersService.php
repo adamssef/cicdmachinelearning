@@ -296,6 +296,7 @@ class PlanetCorePartnersService
     $title = $node->get('title')->value;
     $bg_color = $node->get('field_partner_background_color')->value;
     $website = $node->get('field_website')->value;
+    $integrated_products = $node->get('field_integrated_products')->value;
     $yt_video = $node->get('field_youtube_video')->value;
     $body = $node->get('body')->value;
 
@@ -350,6 +351,7 @@ class PlanetCorePartnersService
       'yt_video' => $yt_video,
       'bg_color' => $bg_color,
       'industry' => $industry_taxs_pretty,
+      'integrated_products' => $integrated_products,
       'partner_types' => $partner_type_taxs_pretty,
       'product_types' => $product_type_taxs_pretty,
       'regions' => $region_taxs_pretty,
@@ -359,105 +361,5 @@ class PlanetCorePartnersService
     return $article;
   }
 
-  /**
-   * Gets the related articles for the given tag ID.
-   *
-   * @param int $tag_id
-   *   The tag ID.
-   * @param int $exclude_node_id
-   *   The node ID to exclude.
-   *
-   * @return array
-   *   An array of related articles.
-   */
-  public function getRelatedNews($tag_id, $exclude_node_id)
-  {
-    \Drupal::logger('PlanetCoreArticleService')->notice('In getRelatedNews.');
-    $related_articles = [];
-
-    // Get the current page language code.
-    $language_code = $this->languageManager->getCurrentLanguage()->getId();
-
-    $node_storage_query = $this->entityTypeManager->getStorage('node')->getQuery();
-
-    $query = $node_storage_query
-      ->condition('type', 'newsroom') // Adjust to your content type name.
-      ->condition('langcode', $language_code) // Filter by language code.
-      ->condition('field_resources_tags.target_id', $tag_id)
-      ->condition('status', 1)
-      ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
-      ->sort('created', 'DESC')
-      ->range(0, 3)
-      ->accessCheck()
-      ->execute();
-
-    $related_article_ids = array_values($query);
-
-    // If no related articles are found, query the last 3 articles excluding the specified node ID.
-    if (empty($related_article_ids)) {
-      $query = $node_storage_query
-        ->condition('type', 'newsroom') // Adjust to your content type name.
-        ->condition('langcode', $language_code) // Filter by language code.
-        ->condition('status', 1)
-        ->condition('nid', $exclude_node_id, '<>') // Exclude the specified node ID.
-        ->sort('created', 'DESC')
-        ->range(0, 3)
-        ->accessCheck()
-        ->execute();
-
-      $related_article_ids = array_values($query);
-    }
-
-    foreach ($related_article_ids as $related_article_id) {
-      $node = Node::load($related_article_id);
-
-      // Load the node in the current language.
-      $node = $node->getTranslation($language_code);
-
-      if ($node instanceof Node) {
-        $related_article_title = $node->get('title')->value;
-        $related_article_url = $this->pathAliasManager->getAliasByPath('/node/' . $node->id());
-
-        $tags_references = $node->get('field_resources_tags')->referencedEntities();
-        $tags_references = array_slice($tags_references, 0, 3);
-
-        $article_tags = $this->pretty_taxonomies_lists($tags_references);
-
-
-        // Get Background Image (field_resources_background_image)
-        $background_image_media = $node->get('field_resources_background_image')->entity;
-
-        if ($background_image_media instanceof Media) {
-          $background_image_file = $background_image_media->get('field_media_image')->entity;
-
-          if ($background_image_file instanceof File) {
-            $background_image_url = $this->fileUrlGenerator->generateAbsoluteString($background_image_file->getFileUri());
-          }
-        }
-
-        // Get Creation Date
-        $custom_timestamp = $node->get('field_resources_published_time')->value;
-
-        // Convert the custom timestamp to a formatted date.
-        $creation_date = date('F j, Y', $custom_timestamp);
-
-        if ($language_code != "en") {
-          $url = "/" . $language_code . $related_article_url;
-        } else {
-          $url = $related_article_url;
-        }
-
-        $related_articles[] = [
-          'url' => $url,
-          'title' => $related_article_title,
-          'tags' => $article_tags,
-          'background_image' => $background_image_url,
-          'creation_date' => $creation_date,
-        ];
-      }
-    }
-
-    return $related_articles;
-  }
 
 }

@@ -123,6 +123,19 @@
     width: 100%;
     justify-content: end;
   }
+  @media(min-width: 1024px) {
+    .partner-logo-bg {
+    padding-top: 96px
+    }
+  }  
+
+@media (max-width: 1191px) {
+  .intro-partners-info {flex-direction: column-reverse;}
+  .twig-body-article {
+    margin-top: 24px;
+    margin-bottom: 64px
+  }
+}
   .partner-logo-bg {
     min-height: 540px;
     background-size: 30%;
@@ -175,6 +188,7 @@
     font-size: 14px;
   }
   .rounded-image {
+    margin-top: 16px;
     border-radius: 16px;
     overflow: hidden;
   }

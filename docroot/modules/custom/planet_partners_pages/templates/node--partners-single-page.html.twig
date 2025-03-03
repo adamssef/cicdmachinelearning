@@ -31,14 +31,20 @@
 								<span class="left-border-text">{{article.industry[0].name}}
 									Partner</span>
 								<div style="background-color: {{article.bg_color}};background-image: url({{article.background_image}})" class="partner-logo-bg"></div>
-								{# <div class="list-wrapper">
-																	<span class="h4-label">Industries</span>
-																	<p>
-																		{% for tag in article.industry %}
-																			<span>{{tag.name}}</span>
-																		{% endfor %}
-																	</p>
-																</div> #}
+							<div class="list-wrapper">
+								<span class="h4-label">Industries</span>
+								<p>
+									{% for tag in article.industry %}
+										<span>{{tag.name}}</span>
+									{% endfor %}
+								</p>
+							</div>
+								<div class="list-wrapper">
+								<span class="h4-label">Integrated products</span>
+								<p>
+									<span>{{article.integrated_products}}</span>
+								</p>
+							</div>
 								<div class="external-url-card ">
 									<div class="list-wrapper card-button-wrapper">
 										<a href="{{article.website}}" target="_blank" rel="noopener" class="card-button">Visit

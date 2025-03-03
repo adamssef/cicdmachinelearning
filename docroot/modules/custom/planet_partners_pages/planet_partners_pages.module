@@ -8,12 +8,8 @@ function planet_partners_pages_theme_suggestions_node_alter(array &$suggestions,
     return;
   }
 
-  $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
-
-  switch ($alias) {
-    case "/partners":
+  if ($node->id() == 5714) {
       $suggestions[] = 'node__partners-page';
-      break;
   }
 
   if ($node->getType() === 'partners') {
@@ -45,13 +41,14 @@ function planet_partners_pages_preprocess_node(array &$variables)
 
   if ($node->getType() == 'partners') {
     $variables['article'] = $planet_core_partners_helper->getSinglePartnerData($node->id());
+    $variables['#attached']['library'][] = 'planet_partners_pages/partners-page';
   }
 
-  if (in_array($alias, ["/partners",])) {
+  if ($node->id() == 5714) {
     $variables['taxonomy_type'] = $planet_core_partners_helper->getPartnersTaxonomy('partner_type');
     $variables['taxonomy_industry'] = $planet_core_partners_helper->getPartnersTaxonomy('industry');
     $variables['taxonomy_product'] = $planet_core_partners_helper->getPartnersTaxonomy('product_type');
     $variables['taxonomy_region'] = $planet_core_partners_helper->getPartnersTaxonomy('region');
     $variables['#attached']['library'][] = 'planet_partners_pages/partners-page';
-  }
+}
 }
