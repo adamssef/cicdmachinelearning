@@ -1021,6 +1021,12 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 .useful-link-box p a {
   text-decoration: underline;
 }
+.swiper-brands .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+
 
 .author-social img {
   width: 24px;

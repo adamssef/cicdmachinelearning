@@ -1,0 +1,24 @@
+uuid: febcf5b3-6f6f-4b17-b909-f0d3007122b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partner_background_color
+    - node.type.partners
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.partners.field_partner_background_color
+field_name: field_partner_background_color
+entity_type: node
+bundle: partners
+label: 'Partner background color'
+description: 'E.g.: #e00083'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

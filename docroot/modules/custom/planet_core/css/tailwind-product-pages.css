@@ -808,7 +808,12 @@ video {
   min-height: 4rem;
 }
 
-.min-h-9 {
+.min-h-56 {
+  min-height: 14rem;
+}
+
+
+  .min-h-9 {
   min-height: 2.25rem;
 }
 
@@ -816,8 +821,8 @@ video {
   min-height: 300px;
 }
 
-.min-h-\[480px\] {
-  min-height: 480px;
+.min-h-\[300px\] {
+  min-height: 300px;
 }
 
 .min-h-\[800px\] {
@@ -848,7 +853,10 @@ video {
   max-width: 2.5rem;
 }
 
-.max-w-2xl {
+.max-w-24 {
+  max-width: 6rem;
+  }
+  .max-w-2xl {
   max-width: 42rem;
 }
 
@@ -891,6 +899,7 @@ video {
 .flex-grow {
   flex-grow: 1;
 }
+
 
 .grow {
   flex-grow: 1;
@@ -1094,6 +1103,7 @@ video {
 .bg-zinc-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 250 / var(--tw-bg-opacity, 1));
+
 }
 
 .bg-\[url\(\'\/resources\/images\/hero-b\.jpg\'\)\] {
@@ -1192,8 +1202,8 @@ video {
   background-size: 80%;
 }
 
-.bg-auto {
-  background-size: auto;
+.bg-contain {
+  background-size: contain;
 }
 
 .bg-cover {
@@ -1294,6 +1304,7 @@ video {
   padding-bottom: 2rem;
 }
 
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -1305,6 +1316,7 @@ video {
 .pb-4 {
   padding-bottom: 1rem;
 }
+
 
 .pb-6 {
   padding-bottom: 1.5rem;
@@ -1858,7 +1870,11 @@ video {
     padding-right: 3rem;
   }
 
-  .md\:px-8 {
+  .md\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+    .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
   }
