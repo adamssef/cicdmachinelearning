@@ -1,9 +1,22 @@
 {% if paragraph.fields.field_brands_carousel is not empty %}
-	<div class="brands-we-work-with-mega-container pt-8">
-        <div class="brands-we-work-with-container">
-				{% for brand in paragraph.fields.field_brands_carousel %}
-                    <img src="{{brand}}" alt="Brand logo">
+	{% set logo_classes = 'min-h-9 max-w-24 inline-block h-full w-full bg-no-repeat bg-center bg-contain' %}
+	<div class="logos-partners py-6 bg-zinc-50">
+		<div class="swiper swiper-brands">
+			<div class="swiper-wrapper">
+				{% set brands = paragraph.fields.field_brands_carousel %}
+				
+				{% for brand in brands %}
+					<div class="swiper-slide text-center">
+						<div style="background-image: url('{{ brand }}')" class="{{ logo_classes }}"></div>
+					</div>
+				{% endfor %}
+				
+				{% for brand in brands %}
+					<div class="swiper-slide text-center">
+						<div style="background-image: url('{{ brand }}')" class="{{ logo_classes }}"></div>
+					</div>
 				{% endfor %}
 			</div>
 		</div>
+	</div>
 {% endif %}

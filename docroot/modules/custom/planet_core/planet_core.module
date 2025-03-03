@@ -892,6 +892,8 @@ function planet_core_preprocess_node(array &$variables)
 
         $variables['form'] = $form;
         $variables['webform_html'] = $webform_html;
+        $variables['langcode'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
     }
 }
 

@@ -1,9 +1,9 @@
 {% for paragraph in product_page_paragraphs %}
-    {% set template_path = '/modules/custom/planet_core/templates/paragraph/paragraph--' ~ paragraph.type ~ '--default.html.twig' %}
-    {{ include(template_path, ignore_missing = true) }}
+	{% set template_path = '/modules/custom/planet_core/templates/paragraph/paragraph--' ~ paragraph.type ~ '--default.html.twig' %}
+	{{ include(template_path, ignore_missing = true) }}
 {% endfor %}
 {% if content.field_html_content %}
-  {{ content.field_html_content|raw }}
+	{{ content.field_html_content|raw }}
 	<!-- form -->
 	{% if form %}
 		<div class="coh-container ssa-component coh-component ssa-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886 coh-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886 coh-light-mode coh-ce-cpt__v3_form_50_50_generic_-9e1e96f5">
@@ -15,25 +15,108 @@
 								{% if webform_html %}
 									{{ webform_html|raw }}
 								{% else %}
-									<p class="coh-paragraph coh-style-e50 coh-ce-cpt__v3_form_50_50_generic_-7c06e510">
-										What happens next?
-									</p>
-									<h1 class="coh-heading coh-style-h700 coh-ce-cpt__v3_form_50_50_generic_-bc120afd">
-										Talk to one of our experts today
-									</h1>
-									<div class="coh-wysiwyg coh-ce-cpt__v3_form_50_50_generic_-e7353b22">
-										<ul>
-											<li>
-												<span class="coh-style-b200">We will call you to outline your exact needs - a quick 15-minute call.</span>
-											</li>
-											<li>
-												<span class="coh-style-b200">Once we understand how best to assist you, we can initiate the hassle-free onboarding process.</span>
-											</li>
-											<li>
-												<span class="coh-style-b200">Finally, a&nbsp;dedicated consultant from Planet will&nbsp;reach out to get you operational as soon as possible.</span>
-											</li>
-										</ul>
-									</div>
+									{% if langcode == 'en' %}
+										<p class="coh-paragraph coh-style-e50 coh-ce-cpt__v3_form_50_50_generic_-7c06e510">
+											What happens next?
+										</p>
+										<h1 class="coh-heading coh-style-h700 coh-ce-cpt__v3_form_50_50_generic_-bc120afd">
+											Talk to one of our experts today
+										</h1>
+										<div class="coh-wysiwyg coh-ce-cpt__v3_form_50_50_generic_-e7353b22">
+											<ul>
+												<li>
+													<span class="coh-style-b200">We will call you to outline your exact needs - a quick 15-minute call.</span>
+												</li>
+												<li>
+													<span class="coh-style-b200">Once we understand how best to assist you, we can initiate the hassle-free onboarding process.</span>
+												</li>
+												<li>
+													<span class="coh-style-b200">Finally, a dedicated consultant from Planet will reach out to get you operational as soon as possible.</span>
+												</li>
+											</ul>
+										</div>
+									{% elseif langcode == 'es' %}
+										<p class="coh-paragraph coh-style-e50 coh-ce-cpt__v3_form_50_50_generic_-7c06e510">
+											¿Qué sucede a continuación?
+										</p>
+										<h1 class="coh-heading coh-style-h700 coh-ce-cpt__v3_form_50_50_generic_-bc120afd">
+											Hable con uno de nuestros expertos hoy
+										</h1>
+										<div class="coh-wysiwyg coh-ce-cpt__v3_form_50_50_generic_-e7353b22">
+											<ul>
+												<li>
+													<span class="coh-style-b200">Le llamaremos para conocer sus necesidades exactas: una breve llamada de 15 minutos.</span>
+												</li>
+												<li>
+													<span class="coh-style-b200">Una vez que entendamos cómo podemos ayudarle, iniciaremos el proceso de incorporación sin complicaciones.</span>
+												</li>
+												<li>
+													<span class="coh-style-b200">Finalmente, un consultor dedicado de Planet se pondrá en contacto para que esté operativo lo antes posible.</span>
+												</li>
+											</ul>
+										</div>
+									{% elseif langcode == 'it' %}
+										<p class="coh-paragraph coh-style-e50 coh-ce-cpt__v3_form_50_50_generic_-7c06e510">
+											Cosa succede dopo?
+										</p>
+										<h1 class="coh-heading coh-style-h700 coh-ce-cpt__v3_form_50_50_generic_-bc120afd">
+											Parla oggi con uno dei nostri esperti
+										</h1>
+										<div class="coh-wysiwyg coh-ce-cpt__v3_form_50_50_generic_-e7353b22">
+											<ul>
+												<li>
+													<span class="coh-style-b200">Ti chiameremo per comprendere le tue esigenze esatte: una rapida chiamata di 15 minuti.</span>
+												</li>
+												<li>
+													<span class="coh-style-b200">Una volta capito come aiutarti al meglio, possiamo avviare il processo di onboarding senza problemi.</span>
+												</li>
+												<li>
+													<span class="coh-style-b200">Infine, un consulente dedicato di Planet ti contatterà per metterti operativo il prima possibile.</span>
+												</li>
+											</ul>
+										</div>
+									{% elseif langcode == 'de' %}
+										<p class="coh-paragraph coh-style-e50 coh-ce-cpt__v3_form_50_50_generic_-7c06e510">
+											Was passiert als Nächstes?
+										</p>
+										<h1 class="coh-heading coh-style-h700 coh-ce-cpt__v3_form_50_50_generic_-bc120afd">
+											Sprechen Sie noch heute mit einem unserer Experten
+										</h1>
+										<div class="coh-wysiwyg coh-ce-cpt__v3_form_50_50_generic_-e7353b22">
+											<ul>
+												<li>
+													<span class="coh-style-b200">Wir rufen Sie an, um Ihre genauen Bedürfnisse zu besprechen – ein kurzes 15-minütiges Gespräch.</span>
+												</li>
+												<li>
+													<span class="coh-style-b200">Sobald wir wissen, wie wir Ihnen am besten helfen können, starten wir den reibungslosen Onboarding-Prozess.</span>
+												</li>
+												<li>
+													<span class="coh-style-b200">Schließlich wird sich ein dedizierter Berater von Planet mit Ihnen in Verbindung setzen, um Sie so schnell wie möglich betriebsbereit zu machen.</span>
+												</li>
+											</ul>
+										</div>
+									{% elseif langcode == 'fr' %}
+										<p class="coh-paragraph coh-style-e50 coh-ce-cpt__v3_form_50_50_generic_-7c06e510">
+											Que se passe-t-il ensuite ?
+										</p>
+										<h1 class="coh-heading coh-style-h700 coh-ce-cpt__v3_form_50_50_generic_-bc120afd">
+											Parlez à l'un de nos experts dès aujourd'hui
+										</h1>
+										<div class="coh-wysiwyg coh-ce-cpt__v3_form_50_50_generic_-e7353b22">
+											<ul>
+												<li>
+													<span class="coh-style-b200">Nous vous appellerons pour préciser vos besoins exacts – un appel rapide de 15 minutes.</span>
+												</li>
+												<li>
+													<span class="coh-style-b200">Une fois que nous aurons compris comment vous aider au mieux, nous pourrons lancer le processus d'intégration en toute simplicité.</span>
+												</li>
+												<li>
+													<span class="coh-style-b200">Enfin, un consultant dédié de Planet vous contactera pour vous rendre opérationnel le plus rapidement possible.</span>
+												</li>
+											</ul>
+										</div>
+									{% endif %}
+
 								{% endif %}
 							</div>
 						</div>
