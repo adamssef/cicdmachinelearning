@@ -1,0 +1,24 @@
+uuid: a58b333e-5954-4aa8-a0bf-c21e5785ed8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_what_to_expect
+    - paragraphs.paragraphs_type.event_info
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.event_info.field_what_to_expect
+field_name: field_what_to_expect
+entity_type: paragraph
+bundle: event_info
+label: 'What to expect?'
+description: "Example:\r\nMeet the Planet team, enjoy cocktails and canapés, interesting discussions about payments, music, and sunshine (fingers crossed)!"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

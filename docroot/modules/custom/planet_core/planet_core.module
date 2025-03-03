@@ -7,8 +7,8 @@
 
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Render\Markup;
 use Drupal\node\Entity\Node;
+use Drupal\planet_event_pages\EventParagraphTypes;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 use Drupal\views\Views;
@@ -19,7 +19,6 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\TranslatableInterface;
 use Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList;
-
 
 class SpecialTemplates {
   const ACCEPT_PAYMENTS = 5621;
@@ -594,8 +593,14 @@ function planet_core_theme($existing, $type, $theme, $path): array
       'template' => 'node--basic-page',
       'base hook' => 'node',
     ],
-    'paragraph_hero_default' => [
-      'template' => 'paragraph/paragraph-hero-default',
+    'paragraph__hero__default' => [
+      'template' => 'paragraph/paragraph--hero--default',
+      'variables' => [
+        'fields' => [],
+      ],
+    ],
+    'paragraph__event_info__default' => [
+      'template' => 'paragraph/paragraph--event-info--default',
       'variables' => [
         'fields' => [],
       ],
@@ -797,6 +802,35 @@ function planet_core_cloned_node_alter(NodeInterface &$node): void
   }
 }
 
+function planet_core_preprocess(&$variables) {
+  if ($variables && $variables['theme_hook_original'] && $variables['theme_hook_original'] === 'paragraph') {
+    $paragraph = $variables['elements']['#paragraph'];
+    $paragraph_type = $paragraph?->getType();
+
+    if (in_array($paragraph_type, EventParagraphTypes::$types)) {
+      $node = \Drupal::routeMatch()->getParameter('node');
+      $page_service = \Drupal::service('planet_core.basic_page_service');
+      $event_service = \Drupal::service('planet.event_pages_service');
+      $event_category_tid = $node->get('field_event_category')->getValue()[0]['target_id'];
+      $hero_data = $page_service->getPageParagraphData($node);
+      $variables['paragraphs'] = $hero_data;
+
+      foreach ($variables['paragraphs'] as $key => $paragraph) {
+        if ($paragraph_type === 'hero' && $node->getType() === 'events') {
+          if (empty($paragraph['field']['field_hero_label'])) {
+            $hero_label = $event_service->getHeroLabel($event_category_tid);
+            $variables['paragraphs'][$key]['fields']['field_hero_label'][0] = ['value' => $hero_label];
+          }
+          else {
+            $variables['hero'] = $paragraph;
+          }
+        }
+      }
+
+    }
+
+  }
+}
 
 /**
  * Assign js files and send data.
@@ -928,9 +962,9 @@ function planet_core_preprocess_page(array &$variables) {
 
   // Get current node if it exists
   $node = \Drupal::routeMatch()->getParameter('node');
-  
-  // Check if it's a node and if it's of type 'page'
-  if ($node instanceof \Drupal\node\NodeInterface && $node->getType() == 'page' && $node->id() != 5621) {
+
+  // Check if it's a node and if it's of type 'page'.
+  if ($node instanceof NodeInterface && ($node->getType() === 'page' && $node->id() != 5621 || $node->getType() === 'events')) {
     $variables['#attached']['library'][] = 'planet_core/basic-pages';
   }
 

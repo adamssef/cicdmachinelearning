@@ -1,0 +1,21 @@
+uuid: b10d9ab1-2397-47f6-8cdd-4de67d1e11fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_for_who
+field_name: field_for_who
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,28 @@
+uuid: 66fc6f0c-5191-4f00-822d-57cfc781466d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rounded_corners
+    - paragraphs.paragraphs_type.hero
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.hero.field_rounded_corners
+field_name: field_rounded_corners
+entity_type: paragraph
+bundle: hero
+label: 'Rounded corners'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

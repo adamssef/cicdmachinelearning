@@ -1,0 +1,28 @@
+uuid: 9ea6adc7-4b01-4137-9abc-d41d8320880b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_info
+    - filter.format.cohesion
+    - paragraphs.paragraphs_type.event_info
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.event_info.field_event_info
+field_name: field_event_info
+entity_type: paragraph
+bundle: event_info
+label: 'Event info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - cohesion
+field_type: text_long

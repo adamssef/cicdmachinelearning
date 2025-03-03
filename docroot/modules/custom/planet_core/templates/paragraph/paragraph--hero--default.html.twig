@@ -1,4 +1,7 @@
 <div class="relative">
+    {% for paragraph in paragraphs %}
+        {% if paragraph.type == 'hero' %}
+        {% set corners = paragraph.fields.field_rounded_corners[0].value %}
   <div class="{% if paragraph.fields.field_hero_form %} max-w-[1336px] mx-auto {% endif %}grid grid-cols-1 md:grid-cols-2 min-h-[800px]">
     <!-- Left content column with padding -->
     <div class="container mx-auto px-4 md:pl-16 md:pr-8 py-8 md:py-24 order-2 md:order-1 flex{% if not paragraph.fields.field_hero_form %} items-center{% endif %}">
@@ -50,7 +53,9 @@
     </div>
     {% else %}
     <!-- Right column with image -->
-    <div style="background-image: url({{ paragraph.fields.hero_image_url }})" class="bg-gray-200 bg-cover bg-center min-h-[300px] md:min-h-[600px] order-1 md:order-2"></div>
+    <div style="background-image: url({{ paragraph.fields.hero_image_url }})" class="{% if corners != '0' %}rounded-[16px] md:rounded-l-[24px] md:rounded-r-none {% endif %}bg-gray-200 bg-cover bg-center min-h-[300px] md:min-h-[600px] order-1 md:order-2"></div>
     {% endif %}
   </div>
+        {% endif %}
+    {% endfor %}
 </div>

@@ -1,0 +1,24 @@
+uuid: 0dde5ae7-6d75-4247-bc1d-c53887444b8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_for_who
+    - paragraphs.paragraphs_type.event_info
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.event_info.field_for_who
+field_name: field_for_who
+entity_type: paragraph
+bundle: event_info
+label: 'For who?'
+description: 'Retailers, Hoteliers, Ecommerce companies, Hospitality businesses, Technology partners, Planet team'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

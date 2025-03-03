@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for planet_event_pages module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function planet_event_pages_theme() {
+  return [
+    'node__events' => [
+      'template' => 'node--events',
+      'base hook' => 'node',
+      'variables' => [
+        'content' => []
+      ]
+    ]
+  ];
+}
+
+function planet_event_pages_preprocess_page(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node && $node->getType() === 'events') {
+    $variables['#attached']['library'][] = 'planet_event_pages/tailwind';
+  }
+}
+
+function planet_event_pages_preprocess_node__events(&$variables) {
+  $planet_core_node_translation_service = \Drupal::service('planet_core.node_translation_service');
+  $events_landing_page_url = $planet_core_node_translation_service->translateUrlAlias('/events');
+  $variables['events_landing_page_url'] = $events_landing_page_url;
+}
