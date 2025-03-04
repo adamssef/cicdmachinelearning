@@ -60,3 +60,7 @@ get-in-touch-dynamic-form:
   css:
     theme:
       css/webform-get-in-touch-dynamic.css: { }
+tailwind-templates:
+  css:
+    theme:
+      css/planet-core-templates.css: {}
