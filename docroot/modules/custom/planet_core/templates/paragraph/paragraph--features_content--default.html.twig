@@ -1,7 +1,5 @@
 <div class="bg-black">
-  <div class="py-4 md:py-0 max-w-screen-xl md:min-h-[480px] mx-auto px-8 flex flex-col-reverse md:flex-row {% if paragraph.fields.field_image_on_the_left[0].value == '1' %} md:flex-row-reverse {% endif %} gap-8 items-center">
-    
-
+  <div class="py-4 max-w-screen-xl mx-auto px-8 flex flex-col-reverse md:flex-row {% if paragraph.fields.field_image_on_the_left[0].value == '1' %} md:flex-row-reverse {% endif %} gap-8 items-center">
 
     <!-- Text Content -->
     <div class="text-white flex-1">
@@ -9,7 +7,7 @@
         {{ paragraph.fields.field_hero_label[0].value }}
       </p>
 
-      <h1 class="mb-5 block font-semibold text-[32px] leading-9 md:leading-[3rem]">
+      <h1 class="mb-5 block font-semibold text-[32px] leading-9 md:leading-10">
         {{ paragraph.fields.field_hero_title[0].value }}
       </h1>
 

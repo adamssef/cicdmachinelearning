@@ -31,7 +31,6 @@ class SpecialTemplates {
   const CASE_STUDIES = 5231;
   const PRESS_FRONT = 4751;
   const PRESS_ARCHIVE = 4756;
-  const PARTNERS_PAGE = 56;
 
   public static function getAll(): array {
       return [
@@ -43,8 +42,7 @@ class SpecialTemplates {
           self::HTML_SITEMAP,
           self::CASE_STUDIES,
           self::PRESS_FRONT,
-          self::PRESS_ARCHIVE,
-          self::PARTNERS_PAGE
+          self::PRESS_ARCHIVE
       ];
   }
 }
