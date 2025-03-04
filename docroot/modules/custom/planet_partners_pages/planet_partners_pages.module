@@ -1,22 +1,27 @@
 <?php
 
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+
 function planet_partners_pages_theme_suggestions_node_alter(array &$suggestions, array $variables)
 {
   $node = \Drupal::routeMatch()->getParameter('node');
 
-  if (!$node or !($node instanceof \Drupal\node\NodeInterface)) {
+  if (!$node || !($node instanceof NodeInterface)) {
     return;
   }
 
-  if ($node->id() == 5714) {
-      $suggestions[] = 'node__partners-page';
+  $path_alias_manager = \Drupal::service('path_alias.manager');
+  $alias = $path_alias_manager->getAliasByPath('/node/' . $node->id());
+
+  if ($alias === '/partners-pages-new') {
+    $suggestions[] = 'node__partners-page';
   }
 
   if ($node->getType() === 'partners') {
     $suggestions[] = 'node__partners-single-page';
   }
 }
-
 
 function planet_partners_pages_theme(): array
 {
@@ -35,7 +40,8 @@ function planet_partners_pages_theme(): array
 function planet_partners_pages_preprocess_node(array &$variables)
 {
   $node = $variables['node'];
-  $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+  $path_alias_manager = \Drupal::service('path_alias.manager');
+  $alias = $path_alias_manager->getAliasByPath('/node/' . $node->id());
 
   $planet_core_partners_helper = \Drupal::service('planet_partners_pages.partners_helper');
 
@@ -44,11 +50,11 @@ function planet_partners_pages_preprocess_node(array &$variables)
     $variables['#attached']['library'][] = 'planet_partners_pages/partners-page';
   }
 
-  if ($node->id() == 5714) {
+  if ($alias === '/partners-pages-new') {
     $variables['taxonomy_type'] = $planet_core_partners_helper->getPartnersTaxonomy('partner_type');
     $variables['taxonomy_industry'] = $planet_core_partners_helper->getPartnersTaxonomy('industry');
     $variables['taxonomy_product'] = $planet_core_partners_helper->getPartnersTaxonomy('product_type');
     $variables['taxonomy_region'] = $planet_core_partners_helper->getPartnersTaxonomy('region');
     $variables['#attached']['library'][] = 'planet_partners_pages/partners-page';
-}
+  }
 }
