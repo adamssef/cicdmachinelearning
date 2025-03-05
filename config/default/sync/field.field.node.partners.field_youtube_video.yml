@@ -17,7 +17,7 @@ bundle: partners
 label: 'Youtube video'
 description: 'Only provide the ID of the TY video. Example: dQw4w9WgXcQ'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

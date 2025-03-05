@@ -17,7 +17,7 @@ bundle: partners
 label: 'Partner background color'
 description: 'E.g.: #e00083'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
