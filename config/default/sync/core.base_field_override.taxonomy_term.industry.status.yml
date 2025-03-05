@@ -1,20 +1,20 @@
-uuid: 09c6e1b5-c6f3-446c-9078-236e48e57bbe
+uuid: 72ff4a6b-e728-4526-a310-2efd7a299cfd
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.partners
-id: node.partners.promote
-field_name: promote
-entity_type: node
-bundle: partners
-label: 'Promoted to front page'
+    - taxonomy.vocabulary.industry
+id: taxonomy_term.industry.status
+field_name: status
+entity_type: taxonomy_term
+bundle: industry
+label: Published
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'

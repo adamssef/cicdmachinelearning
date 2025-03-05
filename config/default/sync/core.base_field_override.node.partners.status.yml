@@ -1,20 +1,20 @@
-uuid: 09c6e1b5-c6f3-446c-9078-236e48e57bbe
+uuid: 81b840d1-b086-4901-a56b-d8597346411b
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.partners
-id: node.partners.promote
-field_name: promote
+id: node.partners.status
+field_name: status
 entity_type: node
 bundle: partners
-label: 'Promoted to front page'
+label: Published
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'
