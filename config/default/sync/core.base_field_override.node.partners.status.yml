@@ -1,26 +1,20 @@
-uuid: 8e92371f-33c2-491a-9d12-c32b652f66bf
+uuid: 81b840d1-b086-4901-a56b-d8597346411b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_is_new
     - node.type.partners
-  module:
-    - tmgmt_content
-third_party_settings:
-  tmgmt_content:
-    excluded: false
-id: node.partners.field_is_new
-field_name: field_is_new
+id: node.partners.status
+field_name: status
 entity_type: node
 bundle: partners
-label: 'Is New'
+label: Published
 description: ''
 required: false
 translatable: true
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'

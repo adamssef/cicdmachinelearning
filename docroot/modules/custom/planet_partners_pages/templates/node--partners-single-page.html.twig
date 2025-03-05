@@ -69,17 +69,10 @@
 
 					</div>
 				</div>
-
-				<div class="coh-row">
-					<div class="coh-row-inner">
-						<div class="coh-column">
-							<div class="layout-canvas">
-								{{ content.field_layout_canvas_partners }}
-							</div>
-						</div>
-
-					</div>
-				</div>
 			</div>
 		</div>
+		{% for paragraph in product_page_paragraphs %}
+			{% set template_path = '/modules/custom/planet_core/templates/paragraph/paragraph--' ~ paragraph.type ~ '--default.html.twig' %}
+			{{ include(template_path, ignore_missing = true) }}
+		{% endfor %}
 	</div>

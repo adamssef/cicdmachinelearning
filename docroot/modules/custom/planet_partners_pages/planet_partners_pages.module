@@ -3,6 +3,23 @@
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 
+function planet_partners_pages_page_attachments(array &$attachments) {
+  // Get the current node
+  $route_match = \Drupal::routeMatch();
+  $node = $route_match->getParameter('node');
+
+  // Check if it's a node and if the content type is 'partners'
+  if ($node instanceof \Drupal\node\NodeInterface && $node->bundle() === 'partners') {
+    $attachments['#attached']['html_head_link'][] = [
+      [
+        'rel' => 'stylesheet',
+        'href' => '/modules/custom/planet_core/css/tailwind-product-pages.css',
+      ],
+      'tailwind-product-pages',
+    ];
+  }
+}
+
 function planet_partners_pages_theme_suggestions_node_alter(array &$suggestions, array $variables)
 {
   $node = \Drupal::routeMatch()->getParameter('node');
@@ -48,6 +65,9 @@ function planet_partners_pages_preprocess_node(array &$variables)
   if ($node->getType() == 'partners') {
     $variables['article'] = $planet_core_partners_helper->getSinglePartnerData($node->id());
     $variables['#attached']['library'][] = 'planet_partners_pages/partners-page';
+
+    $page_service = \Drupal::service('planet_core.basic_page_service');
+    $variables['product_page_paragraphs'] = $page_service->getPageParagraphData($node);
   }
 
   if ($alias === '/partners-pages-new') {
@@ -57,4 +77,14 @@ function planet_partners_pages_preprocess_node(array &$variables)
     $variables['taxonomy_region'] = $planet_core_partners_helper->getPartnersTaxonomy('region');
     $variables['#attached']['library'][] = 'planet_partners_pages/partners-page';
   }
+
+
+
+
+
+
+
+
+
+
 }
