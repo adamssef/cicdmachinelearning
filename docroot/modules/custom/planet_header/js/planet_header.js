@@ -277,7 +277,7 @@
             document.getElementById(map.get(className)).classList.add('flip');
 
             if (isFrontPage) {
-              changeHeaderBackgroundColor('#fafafa');
+              changeHeaderBackgroundColor('#FFFFFF');
             }
           }
           else {
@@ -401,7 +401,12 @@
         }
 
         if (scrollPosition > 0) {
+          if (isFrontPage) {
             changeHeaderBackgroundColor("#FAFAFA");
+          }
+          else {
+            changeHeaderBackgroundColor('#FFFFFF');
+          }
         }
 
         if (scrollPosition > 0 && hasDarkMenuTheme > 0) {
@@ -679,7 +684,12 @@
         $(header).addClass("header-dark-theme");
         $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
         if (scrollPosition > 0) {
-          $('.megamenu-header').css('background-color', '#FAFAFA');
+          if (!isFrontpage()) {
+            $('.megamenu-header').css('background-color', '#FFFFFF');
+          }
+          else {
+            $('.megamenu-header').css('background-color', '#FAFAFA');
+          }
         }
       }
       else {
@@ -699,7 +709,14 @@
             }
           }
           else {
-            $('.megamenu-header').css('background-color', '#fafafa');
+            if (!isFrontpage()) {
+              $('.megamenu-header').css('background-color', '#FFFFFF');
+            }
+            else {
+              $('.megamenu-header').css('background-color', '#FAFAFA');
+            }
+
+            $('.megamenu-header').css('background-color', '#FFFFFF');
             removeTransparentBgClassFromHeader();
 
             $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
@@ -732,7 +749,7 @@
       switchHamburgerMenuLogoBlack();
       headerBehaviorOnResize(header);
       headerBehaviorOnScroll(header);
-      $('.megamenu-header').css('background-color', '#fafafa');
+      $('.megamenu-header').css('background-color', '#FFFFFF');
     }
 
     // Search for utm parameters in url.
