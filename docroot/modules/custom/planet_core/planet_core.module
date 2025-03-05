@@ -46,9 +46,142 @@ class SpecialTemplates {
   }
 }
 
-function _planet_core_sanitize_cookie($value)
-{
+function _planet_core_sanitize_cookie($value) {
   return htmlspecialchars($value);
+}
+
+/**
+ * Implements hook_theme().
+ */
+function planet_core_theme($existing, $type, $theme, $path): array {
+  return [
+    'views_view_fields__case_studies__featured_slider' => [
+      'template' => 'views-view-fields--case-studies--featured-slider',
+      'render element' => 'elements',
+      'base hook' => 'views_view',
+    ],
+    'views_view_fields__case_studies__featured_block' => [
+      'template' => 'views-view-fields--case-studies--featured-block',
+      'render element' => 'elements',
+      'base hook' => 'views_view',
+    ],
+    'paragraph__right_side_mega_menu' => [
+      'template' => 'paragraph--right-side-mega-menu',
+      'base hook' => 'paragraph',
+    ],
+    'node__author' => [
+      'template' => 'node--author',
+      'base hook' => 'node'
+    ],
+    'node__sitemap' => [
+      'template' => 'node--sitemap',
+      'base hook' => 'node',
+    ],
+    'onboarding_page_template' => [
+      'template' => 'page--onboarding-page-template',
+      'base hook' => 'page',
+    ],
+    'pms_transformation_de_template' => [
+      'template' => 'page--pms-transformation-page-de-template',
+      'base hook' => 'node',
+    ],
+    'pms_transformation_fr_template' => [
+      'template' => 'page--pms-transformation-page-fr-template',
+      'base hook' => 'node',
+    ],
+    'pms_transformation_template' => [
+      'template' => 'page--pms-transformation-page-template',
+      'base hook' => 'node',
+    ],
+    'node__blog-single-page' => [
+      'template' => 'node--blog-single-page',
+      'base hook' => 'node',
+    ],
+    'node__press-front-page' => [
+      'template' => 'node--press-front-page',
+      'base hook' => 'node',
+    ],
+    'node__ebook-front-page' => [
+      'template' => 'node--ebook-front-page',
+      'base hook' => 'node',
+    ],
+    'node__press-archive-single-page' => [
+      'template' => 'node--press-archive-single-page',
+      'base hook' => 'node',
+    ],
+    'node__resources-page' => [
+      'template' => 'node--resources-page',
+      'base hook' => 'node',
+    ],
+    'node__news-page' => [
+      'template' => 'node--news-page',
+      'base hook' => 'node',
+    ],
+    'node__ebook-single-page' => [
+      'template' => 'node--ebook-single-page',
+      'base hook' => 'node',
+    ],
+    'views_view_field__ebook_link' => [
+      'template' => 'views-view-field--ebook-link',
+      'base hook' => 'views_view_field',
+    ],
+    'node__homepage_v1_it' => [
+      'template' => 'node--homepage-it',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v1_es' => [
+      'template' => 'node--homepage-es',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v1_de' => [
+      'template' => 'node--homepage-de',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v1_fr' => [
+      'template' => 'node--homepage-fr',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v1' => [
+      'template' => 'node--homepage',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v2_it' => [
+      'template' => 'node--homepage-v2-it',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v2_fr' => [
+      'template' => 'node--homepage-v2-fr',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v2_es' => [
+      'template' => 'node--homepage-v2-es',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v2_de' => [
+      'template' => 'node--homepage-v2-de',
+      'base hook' => 'node',
+    ],
+    'node__homepage_v2' => [
+      'template' => 'node--homepage-v2',
+      'base hook' => 'node',
+    ],
+    'node__basic_page' => [
+      'template' => 'node--basic-page',
+      'base hook' => 'node',
+    ],
+    'paragraph__hero__default' => [
+      'template' => 'paragraph/paragraph--hero--default',
+      'variables' => [
+        'fields' => [],
+      ],
+    ],
+    'paragraph__event_info__default' => [
+      'template' => 'paragraph/paragraph--event-info--default',
+      'variables' => [
+        'fields' => [],
+      ],
+    ],
+  ];
 }
 
 /**
@@ -56,8 +189,7 @@ function _planet_core_sanitize_cookie($value)
  *
  * Changes the title of the user page.
  */
-function planet_core_preprocess_html(&$variables): void
-{
+function planet_core_preprocess_html(&$variables): void {
   $routeName = \Drupal::routeMatch()->getRouteName();
   if ($routeName === 'entity.user.canonical') {
     $variables['head_title']['title'] = '';
@@ -474,142 +606,6 @@ function planet_core_preprocess_views_view_field(array &$variables)
 }
 
 /**
- * Implements hook_theme().
- */
-function planet_core_theme($existing, $type, $theme, $path): array
-{
-  return [
-    'views_view_fields__case_studies__featured_slider' => [
-      'template' => 'views-view-fields--case-studies--featured-slider',
-      'render element' => 'elements',
-      'base hook' => 'views_view',
-    ],
-    'views_view_fields__case_studies__featured_block' => [
-      'template' => 'views-view-fields--case-studies--featured-block',
-      'render element' => 'elements',
-      'base hook' => 'views_view',
-    ],
-    'paragraph__right_side_mega_menu' => [
-      'template' => 'paragraph--right-side-mega-menu',
-      'base hook' => 'paragraph',
-    ],
-    'node__author' => [
-      'template' => 'node--author',
-      'base hook' => 'node'
-    ],
-    'node__sitemap' => [
-      'template' => 'node--sitemap',
-      'base hook' => 'node',
-    ],
-    'onboarding_page_template' => [
-      'template' => 'page--onboarding-page-template',
-      'base hook' => 'page',
-    ],
-    'pms_transformation_de_template' => [
-      'template' => 'page--pms-transformation-page-de-template',
-      'base hook' => 'node',
-    ],
-    'pms_transformation_fr_template' => [
-      'template' => 'page--pms-transformation-page-fr-template',
-      'base hook' => 'node',
-    ],
-    'pms_transformation_template' => [
-      'template' => 'page--pms-transformation-page-template',
-      'base hook' => 'node',
-    ],
-    'node__blog-single-page' => [
-      'template' => 'node--blog-single-page',
-      'base hook' => 'node',
-    ],
-    'node__press-front-page' => [
-      'template' => 'node--press-front-page',
-      'base hook' => 'node',
-    ],
-    'node__ebook-front-page' => [
-      'template' => 'node--ebook-front-page',
-      'base hook' => 'node',
-    ],
-    'node__press-archive-single-page' => [
-      'template' => 'node--press-archive-single-page',
-      'base hook' => 'node',
-    ],
-    'node__resources-page' => [
-      'template' => 'node--resources-page',
-      'base hook' => 'node',
-    ],
-    'node__news-page' => [
-      'template' => 'node--news-page',
-      'base hook' => 'node',
-    ],
-    'node__ebook-single-page' => [
-      'template' => 'node--ebook-single-page',
-      'base hook' => 'node',
-    ],
-    'views_view_field__ebook_link' => [
-      'template' => 'views-view-field--ebook-link',
-      'base hook' => 'views_view_field',
-    ],
-    'node__homepage_v1_it' => [
-      'template' => 'node--homepage-it',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v1_es' => [
-      'template' => 'node--homepage-es',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v1_de' => [
-      'template' => 'node--homepage-de',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v1_fr' => [
-      'template' => 'node--homepage-fr',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v1' => [
-      'template' => 'node--homepage',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v2_it' => [
-      'template' => 'node--homepage-v2-it',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v2_fr' => [
-      'template' => 'node--homepage-v2-fr',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v2_es' => [
-      'template' => 'node--homepage-v2-es',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v2_de' => [
-      'template' => 'node--homepage-v2-de',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v2' => [
-      'template' => 'node--homepage-v2',
-      'base hook' => 'node',
-    ],
-    'node__basic_page' => [
-      'template' => 'node--basic-page',
-      'base hook' => 'node',
-    ],
-    'paragraph__hero__default' => [
-      'template' => 'paragraph/paragraph--hero--default',
-      'variables' => [
-        'fields' => [],
-      ],
-    ],
-    'paragraph__event_info__default' => [
-      'template' => 'paragraph/paragraph--event-info--default',
-      'variables' => [
-        'fields' => [],
-      ],
-    ],
-   ];
-}
-
-
-/**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function planet_core_theme_suggestions_node_alter(array &$suggestions, array $variables)
@@ -709,23 +705,19 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
   if ($node->getType() === "page" && !in_array($node->id(), SpecialTemplates::getAll())) {
     $suggestions[] = 'node__basic_page';
   }
-
-
 }
 
 /**
  * Implements hook_entity_insert().
  */
-function planet_core_entity_insert(EntityInterface $entity): void
-{
+function planet_core_entity_insert(EntityInterface $entity): void {
   _planet_core_update_untranslated_path($entity, 'insert');
 }
 
 /**
  * Implements hook_entity_update().
  */
-function planet_core_entity_update(EntityInterface $entity): void
-{
+function planet_core_entity_update(EntityInterface $entity): void {
   _planet_core_update_untranslated_path($entity, 'update');
 }
 
@@ -737,8 +729,7 @@ function planet_core_entity_update(EntityInterface $entity): void
  * @param string $action
  *   The action performed in the entity.
  */
-function _planet_core_update_untranslated_path(EntityInterface $entity, string $action): void
-{
+function _planet_core_update_untranslated_path(EntityInterface $entity, string $action): void {
   $pathautoGenerator = \Drupal::service('pathauto.generator');
 
   // Check if entity has pathauto enabled and is translatable.
@@ -762,8 +753,7 @@ function _planet_core_update_untranslated_path(EntityInterface $entity, string $
  *
  * Implements hook_entity_type_alter().
  */
-function planet_core_entity_type_alter(array &$entity_types)
-{
+function planet_core_entity_type_alter(array &$entity_types) {
   foreach ($entity_types as $entity_type) {
     $constraints = $entity_type->getConstraints();
     unset($constraints['EntityUntranslatableFields']);
@@ -774,8 +764,7 @@ function planet_core_entity_type_alter(array &$entity_types)
 /**
  * Implements hook_cloned_node_alter().
  */
-function planet_core_cloned_node_alter(NodeInterface &$node): void
-{
+function planet_core_cloned_node_alter(NodeInterface &$node): void {
   $configName = 'exclude.node.' . $node->getType();
   $excludeFields = \Drupal::config('quick_node_clone.settings')->get($configName);
   $excludeFields = $excludeFields ?: [];
@@ -973,7 +962,7 @@ function planet_core_preprocess_page(array &$variables) {
   // Your existing path-based condition
   $current_path = \Drupal::service('path.current')->getPath();
   $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
-  if ($current_path_alias === '/pms-transformation') {
+  if ($current_path_alias === '/pms-transformation' || $node?->getType() === 'events') {
     $variables['#attached']['library'][] = 'planet_core/pms-transformation';
     $variables['#attached']['library'][] = 'planet_core/tailwind-templates';
   }

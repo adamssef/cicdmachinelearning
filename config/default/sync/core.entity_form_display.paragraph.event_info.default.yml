@@ -18,7 +18,7 @@ mode: default
 content:
   field_event_info:
     type: text_textarea
-    weight: 5
+    weight: 0
     region: content
     settings:
       rows: 5

@@ -1,0 +1,36 @@
+uuid: ecc07b9f-065c-42bf-8567-31b1cd969edc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.events.body
+    - field.field.node.events.field_event_category
+    - field.field.node.events.field_page_paragraphs
+    - node.type.events
+  module:
+    - entity_reference_revisions
+    - user
+id: node.events.default
+targetEntityType: node
+bundle: events
+mode: default
+content:
+  field_page_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_event_category: true
+  langcode: true
+  search_api_excerpt: true

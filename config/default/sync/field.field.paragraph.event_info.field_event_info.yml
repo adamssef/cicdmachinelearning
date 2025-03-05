@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_event_info
     - filter.format.cohesion
+    - filter.format.plain_text
     - paragraphs.paragraphs_type.event_info
   module:
     - text
@@ -25,4 +26,5 @@ default_value_callback: ''
 settings:
   allowed_formats:
     - cohesion
+    - plain_text
 field_type: text_long
