@@ -53,7 +53,6 @@ basic-pages:
       css/brands-we-work-with.css: {}
       css/tailwind-product-pages.css: {}
   js:
-    js/swiper-bundle.min.js.js: {}
     js/BrandsWeWorkWith.js: {}
     js/frontPage.js: {}
 get-in-touch-dynamic-form:
