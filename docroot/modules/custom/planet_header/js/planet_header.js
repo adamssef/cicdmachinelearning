@@ -334,7 +334,7 @@
     const header = document.getElementsByClassName("megamenu-header")[0];
     let scrollPosition = jQuery(window).scrollTop();
     let isExpanded = header.classList.contains("expanded");
-    let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0 || $("body").hasClass("path-frontpage");
+    let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
     let logo = $(document.getElementById('planet-logo'));
 
     if (isExpanded) {
