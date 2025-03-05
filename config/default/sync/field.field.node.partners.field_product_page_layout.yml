@@ -1,0 +1,99 @@
+uuid: 8260f31c-d19f-4251-ae1a-91f224903892
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_page_layout
+    - node.type.partners
+    - paragraphs.paragraphs_type.benefits_boxes
+    - paragraphs.paragraphs_type.blog_articles
+    - paragraphs.paragraphs_type.brands_carousel
+    - paragraphs.paragraphs_type.case_studies_articles
+    - paragraphs.paragraphs_type.features_content
+    - paragraphs.paragraphs_type.features_ending
+    - paragraphs.paragraphs_type.features_heading
+    - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.testimonial_quote
+  module:
+    - entity_reference_revisions
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.partners.field_product_page_layout
+field_name: field_product_page_layout
+entity_type: node
+bundle: partners
+label: 'Page Layout'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      hero: hero
+      brands_carousel: brands_carousel
+      features_heading: features_heading
+      benefits_boxes: benefits_boxes
+      features_content: features_content
+      features_ending: features_ending
+      blog_articles: blog_articles
+      case_studies_articles: case_studies_articles
+      testimonial_quote: testimonial_quote
+    negate: 0
+    target_bundles_drag_drop:
+      benefit_box:
+        weight: 16
+        enabled: false
+      benefits_boxes:
+        weight: 15
+        enabled: true
+      blog_articles:
+        weight: 20
+        enabled: true
+      brands_carousel:
+        weight: -20
+        enabled: true
+      case_studies_articles:
+        weight: 20
+        enabled: true
+      customer_recommendation_quote:
+        weight: -18
+        enabled: false
+      favourite_planet_features:
+        weight: -17
+        enabled: false
+      features_content:
+        weight: 15
+        enabled: true
+      features_ending:
+        weight: 17
+        enabled: true
+      features_heading:
+        weight: -19
+        enabled: true
+      grow_business_with_planet:
+        weight: -16
+        enabled: false
+      hero:
+        weight: -21
+        enabled: true
+      link_box:
+        weight: -15
+        enabled: false
+      paragraph_case_study_metrics:
+        weight: -14
+        enabled: false
+      right_side_mega_menu:
+        weight: -13
+        enabled: false
+      testimonial_quote:
+        weight: 29
+        enabled: true
+      tip_box:
+        weight: -12
+        enabled: false
+field_type: entity_reference_revisions

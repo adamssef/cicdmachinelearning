@@ -10,19 +10,19 @@ dependencies:
     - field.field.node.partners.field_integrated_products
     - field.field.node.partners.field_is_featured
     - field.field.node.partners.field_is_new
-    - field.field.node.partners.field_layout_canvas_partners
     - field.field.node.partners.field_partner_background_color
     - field.field.node.partners.field_partner_logo
     - field.field.node.partners.field_partner_type
+    - field.field.node.partners.field_product_page_layout
     - field.field.node.partners.field_product_type_tax
     - field.field.node.partners.field_region_tax
     - field.field.node.partners.field_website
     - field.field.node.partners.field_youtube_video
     - node.type.partners
   module:
-    - cohesion_elements
     - content_moderation
     - media_library
+    - paragraphs
     - path
     - text
 id: node.partners.default
@@ -92,12 +92,6 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  field_layout_canvas_partners:
-    type: cohesion_layout_builder_widget
-    weight: 23
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_partner_background_color:
     type: string_textfield
     weight: 2
@@ -122,6 +116,24 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_product_page_layout:
+    type: paragraphs
+    weight: 104
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_product_type_tax:
     type: entity_reference_autocomplete
