@@ -1102,7 +1102,6 @@
           setTimeout(() => {
             switch (currentlyOpenMenuItem) {
               case 'products':
-                console.log('producs is handling this');
                 let containerProducts = document.getElementsByClassName('megamenu-products__desktop')[0];
                 containerProducts.classList.add('display-none');
                 removeExpandedFromHeader();
