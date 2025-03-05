@@ -114,6 +114,7 @@ module:
   planet_node_updater: 0
   planet_offices: 0
   planet_pardot_submissions: 0
+  planet_partners_pages: 0
   planet_payment_methods: 0
   planet_sitestudio_custom_elements: 0
   planet_sitewide_fonts: 0

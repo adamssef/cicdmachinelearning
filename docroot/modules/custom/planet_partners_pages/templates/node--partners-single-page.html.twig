@@ -1,0 +1,85 @@
+{#
+  Custom Twig template for the "Author" content type.
+  Template variables available:
+    - content: An array of content elements.
+    - node: The node entity representing the "Author" content.
+    - label: The node label.
+    - url: The node URL.
+    - attributes: HTML attributes for the node wrapper.
+#}
+<div>
+	<div class="plnt-partners-single-partner-page">
+		<div class="partner-logo-bg coh-hero coh-hero-full-width" class="background-logo-partner" style="background-color: {{article.bg_color}};background-image: url({{article.background_image}})">
+			<div class="coh-row">
+				<div class="coh-container-boxed">
+					<div class="coh-row-inner">
+						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+							<div class="breadcrumbs text-white">
+								<a href="/partners">Partners</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="white-rounded-section">
+			<div class="coh-container coh-container-boxed">
+				<div class="coh-row">
+					<div class="coh-row-inner intro-partners-info">
+						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
+							<div class="sidebar-partner">
+								<span class="left-border-text">{{article.industry[0].name}}
+									Partner</span>
+								<div style="background-color: {{article.bg_color}};background-image: url({{article.background_image}})" class="partner-logo-bg"></div>
+							<div class="list-wrapper">
+								<span class="h4-label">Industries</span>
+								<p>
+									{% for tag in article.industry %}
+										<span>{{tag.name}}</span>
+									{% endfor %}
+								</p>
+							</div>
+								<div class="list-wrapper">
+								<span class="h4-label">Integrated products</span>
+								<p>
+									<span>{{article.integrated_products}}</span>
+								</p>
+							</div>
+								<div class="external-url-card ">
+									<div class="list-wrapper card-button-wrapper">
+										<a href="{{article.website}}" target="_blank" rel="noopener" class="card-button">Visit
+											{{article.title}}
+											website
+											<img src="/resources/icons/external.svg"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-9 twig-body-article">
+							<h2 class="planet-h2">About
+								{{article.title}}</h2>
+							<p class="base-text">{{article.body}}</p>
+							{% if article.yt_video %}
+							<iframe style="margin: 24px 0; border-radius: 16px" width="100%" height="515" src="https://www.youtube-nocookie.com/embed/{{article.yt_video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							{% endif %}
+							{% if article.featured_image %}
+							<img class="rounded-image" src="{{article.featured_image}}">
+							{% endif %}
+						</div>
+
+					</div>
+				</div>
+
+				<div class="coh-row">
+					<div class="coh-row-inner">
+						<div class="coh-column">
+							<div class="layout-canvas">
+								{{ content.field_layout_canvas_partners }}
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,7 +1,5 @@
-<div class="bg-black py-8 md:py-16">
-  <div class="max-w-screen-xl md:min-h-[480px] mx-auto px-8 flex flex-col-reverse md:flex-row {% if paragraph.fields.field_image_on_the_left[0].value == '1' %} md:flex-row-reverse {% endif %} gap-8 items-center">
-    
-
+<div class="bg-black">
+  <div class="py-4 max-w-screen-xl mx-auto px-8 flex flex-col-reverse md:flex-row {% if paragraph.fields.field_image_on_the_left[0].value == '1' %} md:flex-row-reverse {% endif %} gap-8 items-center">
 
     <!-- Text Content -->
     <div class="text-white flex-1">
@@ -9,7 +7,7 @@
         {{ paragraph.fields.field_hero_label[0].value }}
       </p>
 
-      <h1 class="mb-5 block font-semibold text-[32px] leading-9 md:leading-[3rem]">
+      <h1 class="mb-5 block font-semibold text-[32px] leading-9 md:leading-10">
         {{ paragraph.fields.field_hero_title[0].value }}
       </h1>
 
@@ -21,16 +19,20 @@
         <div class="mt-8 flex flex-col md:flex-row gap-2 md:gap-4">
           {# Button 1 #}
           {% if paragraph.fields.field_button_1_link[0].uri %}
-            <a href="{{ paragraph.fields.field_button_1_link[0].alias }}" 
+            <a href="{{ paragraph.fields.field_button_1_link[0].uri|replace({'internal:': ''}) }}" 
                class="w-full md:w-auto inline-flex justify-center items-center px-6 py-4 bg-white text-black font-bold rounded-full hover:bg-[#e00083] hover:border-[#e00083] hover:text-white focus:border-2 border-2 border-white border-solid focus:border-solid focus:border-[rgb(165,165,165)]"
                {% if paragraph.fields.field_button_1_open[0].value == '1' %} target="_blank" rel="noopener" {% endif %}>
-              {{ paragraph.fields.field_button_1_label[0].value }}
+              {% if paragraph.fields.field_button_1_label[0].value %}
+                {{ paragraph.fields.field_button_1_label[0].value }}
+              {% else %}
+                {{ 'Learn more'|t }}
+              {% endif %}
             </a>
           {% endif %}
 
           {# Button 2 #}
           {% if paragraph.fields.field_button_2_link[0].uri %}
-            <a href="{{ paragraph.fields.field_button_2_link[0].uri }}" 
+            <a href="{{ paragraph.fields.field_button_2_link[0].uri|replace({'internal:': ''}) }}" 
                class="w-full md:w-auto inline-flex justify-center items-center px-6 py-4 bg-white text-black font-bold rounded-full hover:bg-[#e00083] hover:border-[#e00083] hover:text-white focus:border-2 border-2 border-white border-solid focus:border-solid focus:border-[rgb(165,165,165)]"
                {% if paragraph.fields.field_button_2_open[0].value == '1' %} target="_blank" rel="noopener" {% endif %}>
               {{ paragraph.fields.field_button_2_label[0].value }}
@@ -40,7 +42,7 @@
       {% endif %}
     </div>
         <!-- Image Section (Always First on Mobile) -->
-    <div class="h-full w-full flex-1 min-h-[480px] bg-auto bg-center bg-no-repeat" 
+    <div class="h-full w-full flex-1 min-h-56 md:min-h-[480px] bg-contain bg-center bg-no-repeat" 
          style="background-image: url('{{ paragraph.fields.hero_image_url }}')">
     </div>
   </div>

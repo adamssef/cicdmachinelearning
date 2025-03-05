@@ -1,0 +1,60 @@
+<?php
+
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+
+function planet_partners_pages_theme_suggestions_node_alter(array &$suggestions, array $variables)
+{
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if (!$node || !($node instanceof NodeInterface)) {
+    return;
+  }
+
+  $path_alias_manager = \Drupal::service('path_alias.manager');
+  $alias = $path_alias_manager->getAliasByPath('/node/' . $node->id());
+
+  if ($alias === '/partners-pages-new') {
+    $suggestions[] = 'node__partners-page';
+  }
+
+  if ($node->getType() === 'partners') {
+    $suggestions[] = 'node__partners-single-page';
+  }
+}
+
+function planet_partners_pages_theme(): array
+{
+  return [
+    'node__partners-page' => [
+      'template' => 'node--partners-page',
+      'base hook' => 'node',
+    ],
+    'node__partners-single-page' => [
+      'template' => 'node--partners-single-page',
+      'base hook' => 'node',
+    ],
+  ];
+}
+
+function planet_partners_pages_preprocess_node(array &$variables)
+{
+  $node = $variables['node'];
+  $path_alias_manager = \Drupal::service('path_alias.manager');
+  $alias = $path_alias_manager->getAliasByPath('/node/' . $node->id());
+
+  $planet_core_partners_helper = \Drupal::service('planet_partners_pages.partners_helper');
+
+  if ($node->getType() == 'partners') {
+    $variables['article'] = $planet_core_partners_helper->getSinglePartnerData($node->id());
+    $variables['#attached']['library'][] = 'planet_partners_pages/partners-page';
+  }
+
+  if ($alias === '/partners-pages-new') {
+    $variables['taxonomy_type'] = $planet_core_partners_helper->getPartnersTaxonomy('partner_type');
+    $variables['taxonomy_industry'] = $planet_core_partners_helper->getPartnersTaxonomy('industry');
+    $variables['taxonomy_product'] = $planet_core_partners_helper->getPartnersTaxonomy('product_type');
+    $variables['taxonomy_region'] = $planet_core_partners_helper->getPartnersTaxonomy('region');
+    $variables['#attached']['library'][] = 'planet_partners_pages/partners-page';
+  }
+}

@@ -38,7 +38,8 @@ class PlanetCoreBasicPageService
 
         if ($node->field_product_page_layout) {
           $paragraphs = $node->field_product_page_layout->referencedEntities();
-        } else {
+        }
+        else if ($node->field_page_paragraphs) {
           $paragraphs = $node->field_page_paragraphs->referencedEntities();
         }
 

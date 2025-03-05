@@ -924,6 +924,8 @@ function planet_core_preprocess_node(array &$variables)
 
         $variables['form'] = $form;
         $variables['webform_html'] = $webform_html;
+        $variables['langcode'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
     }
 }
 
@@ -973,5 +975,6 @@ function planet_core_preprocess_page(array &$variables) {
   $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
   if ($current_path_alias === '/pms-transformation') {
     $variables['#attached']['library'][] = 'planet_core/pms-transformation';
+    $variables['#attached']['library'][] = 'planet_core/tailwind-templates';
   }
 }

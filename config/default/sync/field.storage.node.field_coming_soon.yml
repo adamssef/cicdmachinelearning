@@ -1,0 +1,18 @@
+uuid: c9c414c7-ae4c-4af7-94cc-e85c89982940
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_coming_soon
+field_name: field_coming_soon
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

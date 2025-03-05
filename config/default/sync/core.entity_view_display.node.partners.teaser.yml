@@ -1,0 +1,60 @@
+uuid: b4231127-20d1-496c-aac9-c3a3c58cf2b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.partners.body
+    - field.field.node.partners.field_coming_soon
+    - field.field.node.partners.field_featured_image
+    - field.field.node.partners.field_industry_tax
+    - field.field.node.partners.field_integrated_products
+    - field.field.node.partners.field_is_featured
+    - field.field.node.partners.field_is_new
+    - field.field.node.partners.field_layout_canvas_partners
+    - field.field.node.partners.field_partner_background_color
+    - field.field.node.partners.field_partner_logo
+    - field.field.node.partners.field_partner_type
+    - field.field.node.partners.field_product_type_tax
+    - field.field.node.partners.field_region_tax
+    - field.field.node.partners.field_website
+    - field.field.node.partners.field_youtube_video
+    - node.type.partners
+  module:
+    - text
+    - user
+id: node.partners.teaser
+targetEntityType: node
+bundle: partners
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_coming_soon: true
+  field_featured_image: true
+  field_industry_tax: true
+  field_integrated_products: true
+  field_is_featured: true
+  field_is_new: true
+  field_layout_canvas_partners: true
+  field_partner_background_color: true
+  field_partner_logo: true
+  field_partner_type: true
+  field_product_type_tax: true
+  field_region_tax: true
+  field_website: true
+  field_youtube_video: true
+  langcode: true
+  search_api_excerpt: true
