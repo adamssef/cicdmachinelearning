@@ -9,7 +9,7 @@
     {% if style != 'card_with_pink_border' %}
 
   {% if paragraph.fields.field_button_url %}
-    <a href="{{ paragraph.fields.field_button_url[0].alias }}" class="p-6 mt-4 inline-block py-2" {% if paragraph.fields.field_open_in_a_new_window[0].value == '1' %} target="_blank" rel="noopener" {% endif %}>
+    <a href="{{ paragraph.fields.field_button_url[0].uri|replace({'internal:': ''}) }}" class="p-6 mt-4 inline-block py-2" {% if paragraph.fields.field_open_in_a_new_window[0].value == '1' %} target="_blank" rel="noopener" {% endif %}>
       <span class="font-semibold {% if dark_mode %}text-white{% else %}text-[#005ab2]{% endif %} flex">
         <span>
           {% if paragraph.fields.field_button_label %}
