@@ -72,6 +72,6 @@ elements: |
   single_opt_in:
     '#description': '<p>Aktivieren Sie dieses Kästchen, um den Erhalt von Updates zu Produkten, Veranstaltungen, Schulungen, Berichten und Dienstleistungen von Planet zuzustimmen</p>'
   markup:
-    '#markup': '<p>Mit dem Absenden dieses Formulars akzeptieren Sie die Bedingungen unserer <a href="https://www.weareplanet.com/privacy-policy" data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" rel="noopener noreferrer" tabindex="-1" target="_blank">Datenschutzrichtlinie</a>.</p>'
+    '#markup': '<p>Mit dem Absenden dieses Formulars akzeptieren Sie die Bedingungen unserer <a href="https://www.weareplanet.com/legal/privacy-policy" data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/legal/privacy-policy" delay="150" rel="noopener noreferrer" tabindex="-1" target="_blank">Datenschutzrichtlinie</a>.</p>'
   actions:
     '#submit__label': Senden
