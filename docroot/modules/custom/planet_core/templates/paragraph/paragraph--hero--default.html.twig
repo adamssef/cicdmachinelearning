@@ -1,5 +1,4 @@
 <div class="relative">
-    {{ dump() }}
     {% for paragraph in paragraphs %}
         {% if paragraph.type == 'hero' %}
         {% set corners = paragraph.fields.field_rounded_corners[0].value %}
@@ -15,7 +14,7 @@
               {{ paragraph.fields.field_hero_title[0].value }}
             </h1>
             
-            <div class="mt-4 md:mt-6 font-light leading-5 lg:leading-6 text-base md:text-[20px] hero-desc-paragraph">
+            <div class="mt-4 md:mt-6 font-light leading-[22px] md:leading-[20px] text-[16px] md:text-[20px] hero-desc-paragraph">
                 {{ paragraph.fields.field_hero[0].value|raw }}
             </div>
             
