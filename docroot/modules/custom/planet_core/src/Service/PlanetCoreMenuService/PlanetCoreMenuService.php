@@ -152,14 +152,20 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
       $product_category = $entity->get('field_megamenu_product_category')?->getValue()[0]['value'] ?? NULL;
     }
 
-    $node_id = $entity?->get('field_page')?->getValue()[0]['target_id'];
+    $node_id = $entity?->get('field_page')?->getValue() ? $entity?->get('field_page')?->getValue()[0]['target_id'] : NULL;
     $translated_node = NULL;
 
     if ($node_id) {
       $node = Node::load($node_id);
       $language = $this->languageManager->getCurrentLanguage()->getId();
       $translation_arr = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($node);
-      $translated_node = [$language => $translation_arr[$language]];
+
+      if (isset($translation_arr[$language])) {
+        $translated_node = [$language => $translation_arr[$language]];
+      }
+      else {
+        $translated_node = ['en' => $translation_arr['en']];
+      }
     }
 
     return [
