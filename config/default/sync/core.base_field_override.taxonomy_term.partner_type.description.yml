@@ -1,0 +1,21 @@
+uuid: 8daa489d-f6d2-4eb4-af32-ebf688b0c9e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.partner_type
+  module:
+    - text
+id: taxonomy_term.partner_type.description
+field_name: description
+entity_type: taxonomy_term
+bundle: partner_type
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

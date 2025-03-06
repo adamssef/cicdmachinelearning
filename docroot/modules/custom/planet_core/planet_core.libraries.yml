@@ -39,7 +39,7 @@ front-page:
       css/front_page.css: {}
   js:
     js/swiper-bundle.min.js.js: {}
-    js/frontPage.js: {}
+    js/basicPage.js: {}
 brands-we-work-with:
   css:
     theme:
@@ -50,12 +50,10 @@ basic-pages:
   css:
     theme:
       css/swiper-bundle.min.css: {}
-      css/brands-we-work-with.css: {}
       css/tailwind-product-pages.css: {}
   js:
     js/swiper-bundle.min.js.js: {}
-    js/BrandsWeWorkWith.js: {}
-    js/frontPage.js: {}
+    js/basicPage.js: {}
 get-in-touch-dynamic-form:
   css:
     theme:

@@ -1,0 +1,22 @@
+uuid: 81b840d1-b086-4901-a56b-d8597346411b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.partners
+id: node.partners.status
+field_name: status
+entity_type: node
+bundle: partners
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
