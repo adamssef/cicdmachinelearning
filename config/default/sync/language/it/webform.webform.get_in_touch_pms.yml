@@ -28,6 +28,6 @@ elements: |
     '#title': 'Note*'
     '#placeholder': 'Dicci di più su ciò di cui hai bisogno'
   markup:
-    '#markup': '<p><span>Inviando questo modulo, accetti i termini della nostra <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Informativa sulla privacy.</a></span></p>'
+    '#markup': '<p><span>Inviando questo modulo, accetti i termini della nostra <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/legal/privacy-policy" delay="150" href="https://www.weareplanet.com/legal/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Informativa sulla privacy.</a></span></p>'
   actions:
     '#submit__label': Invia

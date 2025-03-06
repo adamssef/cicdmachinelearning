@@ -26,6 +26,6 @@ elements: |
     '#title': 'Recevoir les actualités de Planet'
     '#description': 'Cochez cette case pour donner votre consentement &agrave; recevoir des informations sur les produits, &eacute;v&eacute;nements, formations, rapports et services de Planet'
   markup:
-    '#markup': '<p>En soumettant ce formulaire, vous acceptez les termes de notre <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">politique de confidentialit&eacute;</a>.</p>'
+    '#markup': '<p>En soumettant ce formulaire, vous acceptez les termes de notre <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/legal/privacy-policy" delay="150" href="https://www.weareplanet.com/legal/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">politique de confidentialit&eacute;</a>.</p>'
   actions:
     '#submit__label': Valider

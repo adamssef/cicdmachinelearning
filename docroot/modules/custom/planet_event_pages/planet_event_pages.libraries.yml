@@ -2,3 +2,4 @@ tailwind:
   css:
     theme:
       dist/css/styles.css: {}
+      dist/css/event-pages.css: {}
