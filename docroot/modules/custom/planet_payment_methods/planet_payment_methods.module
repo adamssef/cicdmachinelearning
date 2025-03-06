@@ -70,6 +70,10 @@ function planet_payment_methods_theme_suggestions_node_alter(array &$suggestions
       $translation_array = $node_translation_service->buildTranslationArrayForNode($landing_node);
       $langcode = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
 
+      if (!isset($translation_array[$langcode])) {
+        return;
+      }
+
       if (
         "/$langcode" . $alias === $translation_array[$langcode] ||
         $alias === $translation_array[$langcode]
@@ -204,6 +208,10 @@ function planet_payment_methods_preprocess_page(&$variables) {
 
   $translation_array = $node_translation_service->buildTranslationArrayForNode($landing_node);
   $langcode = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+
+  if (!isset($translation_array[$langcode])) {
+    return;
+  }
 
   if (
     "/$langcode" . $alias === $translation_array[$langcode] ||
