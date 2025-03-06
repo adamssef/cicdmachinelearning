@@ -1226,6 +1226,10 @@ video {
   line-height: 1.625;
 }
 
+.leading-5 {
+  line-height: 1.25rem;
+}
+
 .text-\[\#005ab2\] {
   --tw-text-opacity: 1;
   color: rgb(0 90 178 / var(--tw-text-opacity, 1));
@@ -1473,5 +1477,9 @@ video {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:leading-6 {
+    line-height: 1.5rem;
   }
 }

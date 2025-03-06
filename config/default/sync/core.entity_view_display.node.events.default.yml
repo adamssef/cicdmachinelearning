@@ -15,14 +15,22 @@ targetEntityType: node
 bundle: events
 mode: default
 content:
+  field_event_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_page_paragraphs:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   links:
     settings: {  }
@@ -31,6 +39,5 @@ content:
     region: content
 hidden:
   body: true
-  field_event_category: true
   langcode: true
   search_api_excerpt: true
