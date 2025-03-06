@@ -72,6 +72,6 @@ elements: |
   single_opt_in:
     '#description': '<p>Cochez cette case pour donner votre consentement à recevoir des informations sur les produits, événements, formations, rapports et services de Planet</p>'
   markup:
-    '#markup': '<p>En soumettant ce formulaire, vous acceptez les termes de notre <a href="https://www.weareplanet.com/privacy-policy" data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" rel="noopener noreferrer" tabindex="-1" target="_blank">politique de confidentialité</a>.</p>'
+    '#markup': '<p>En soumettant ce formulaire, vous acceptez les termes de notre <a href="https://www.weareplanet.com/legal/privacy-policy" data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/legal/privacy-policy" delay="150" rel="noopener noreferrer" tabindex="-1" target="_blank">politique de confidentialité</a>.</p>'
   actions:
     '#submit__label': Valider
