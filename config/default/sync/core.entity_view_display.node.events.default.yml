@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.events.body
     - field.field.node.events.field_event_category
+    - field.field.node.events.field_event_type
     - field.field.node.events.field_page_paragraphs
     - node.type.events
   module:
@@ -22,6 +23,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_event_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_page_paragraphs:
     type: entity_reference_revisions_entity_view

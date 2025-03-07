@@ -1,23 +1,23 @@
-uuid: 486a6e23-e52c-4e8c-b9f8-6e68e247b0b5
+uuid: 3447434d-b288-4d9d-9a50-3286b25b387b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_category
+    - field.storage.node.field_event_type
     - node.type.events
-    - taxonomy.vocabulary.event_categories
+    - taxonomy.vocabulary.event_type
   module:
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
     excluded: false
-id: node.events.field_event_category
-field_name: field_event_category
+id: node.events.field_event_type
+field_name: field_event_type
 entity_type: node
 bundle: events
-label: 'Event industry'
+label: 'Event type'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -25,7 +25,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      event_categories: event_categories
+      event_type: event_type
     sort:
       field: name
       direction: asc

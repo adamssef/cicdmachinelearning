@@ -3,40 +3,48 @@
      <div>
 
      </div>
+     {% set et = paragraph.event_type_name %}
+
+     {% if et == 'corporate' or et == 'webinar'%}
+         <div class="corporate-wrapper w-full bg-[#202020] rounded-[40px] mt-12 md:mt-20 px-4 py-8 md:py-20 px-12">
+     {% endif %}
      <div class="main-wrapper px-8 max-w-[1280px] flex lg:py-20 flex-col lg:mx-auto leading-[28px] font-light text-[20px] md:gap-14 lg:gap-20 md:flex-row mb-12 md:mb-20">
          <div class="md:w-[50%]">
              <div class="max-w-[500px]">
-                 <div class="text-[32px] md:text-[48px] leading-[60px] font-semibold mb-8 mt-12 md:mt-20">
+                 <div class="{% if et == 'corporate' or et == 'webinar '%}pl-6 border-l-4 border-solid border-[#9AAEF9] {% endif %}text-[32px] md:text-[48px] leading-[60px] font-semibold mb-8 mt-12 md:mt-20{% if et == 'corporate' or et == 'webinar' %} text-white {% endif %}">
                      {{ "About the event"|t }}</div>
-                 <div class="text-[16px] md:text-[20px] font-light leading-[22px] md:leading-[28px]">{{ paragraph.fields.field_event_info[0]['value']|raw }}</div>
+                 <div class="text-[16px] md:text-[20px] font-light leading-[22px] md:leading-[28px]{% if et == 'corporate' %} text-white {% endif %}">{{ paragraph.fields.field_event_info[0]['value']|raw }}</div>
              </div>
          </div>
          <div class="flex-col md:flex-row md:w-[50%] flex flex-wrap">
              <div>
                  <div class="text-md:text-[48px] leading-[60px] font-semibold lg:mb-8 invisible hidden md:block mt-0 md:mt-20 lg:mt-12">Lorem ipsum</div>
                  <div class="flex flex-col items-start">
-                     <div class="lg:hidden font-semibold text-[16px] md:text-[20px] leading-[28px] mt-12 md:mt-0">{{ "All you need to know:" }}</div>
+                     <div class="lg:hidden font-semibold text-[16px] md:text-[20px] leading-[28px] mt-12 md:mt-0{% if et == 'corporate' %} text-white {% endif %}">{{ "All you need to know:" }}</div>
                  </div>
              </div>
              <div class="flex items-start lg:mb-4">
                  <img class="hidden lg:block p-2 bg-[#E0E6FD] rounded-[24px] mr-4" src="/resources/icons/events/checkmark.svg">
-                 <span class="leading-[28px] text-[16px] md:text-[20px]"><span class="lg:hidden font-semibold">When: </span>{{ paragraph.fields.field_when[0]['value'] }}</span>
+                 <span class="leading-[28px] text-[16px] md:text-[20px]{% if et == 'corporate' or et == 'webinar' %} text-white {% endif %}"><span class="lg:hidden font-semibold">When: </span>{{ paragraph.fields.field_when[0]['value'] }}</span>
              </div>
              <div class="flex items-start lg:mb-4">
                  <img class="hidden lg:block p-2 bg-[#E0E6FD] rounded-[24px] mr-4" src="/resources/icons/events/checkmark.svg">
-                 <span class="leading-[28px] text-[16px] md:text-[20px]"><span class="lg:hidden font-semibold">Where: </span>{{ paragraph.fields.field_where[0]['value'] }}</span>
+                 <span class="leading-[28px] text-[16px] md:text-[20px]{% if et == 'corporate' or et == 'webinar' %} text-white {% endif %}"><span class="lg:hidden font-semibold">Where: </span>{{ paragraph.fields.field_where[0]['value'] }}</span>
              </div>
              <div class="flex items-start lg:mb-4">
                  <img class="hidden lg:block p-2 bg-[#E0E6FD] rounded-[24px] mr-4" src="/resources/icons/events/checkmark.svg">
-                 <span class="leading-[28px] text-[16px] md:text-[20px]"><span class="lg:hidden font-semibold">Who: </span>{{ paragraph.fields.field_for_who[0]['value'] }}</span>
+                 <span class="leading-[28px] text-[16px] md:text-[20px]{% if et == 'corporate' or et == 'webinar' %} text-white {% endif %}"><span class="lg:hidden font-semibold">Who: </span>{{ paragraph.fields.field_for_who[0]['value'] }}</span>
              </div>
              <div class="flex items-start lg:mb-4">
                  <img class="hidden lg:block p-2 bg-[#E0E6FD] rounded-[24px] mr-4" src="/resources/icons/events/checkmark.svg">
-                 <span class="leading-[28px] text-[16px] md:text-[20px]"><span class="lg:hidden font-semibold">What: </span>{{ paragraph.fields.field_what_to_expect[0]['value'] }}</span>
+                 <span class="leading-[28px] text-[16px] md:text-[20px]{% if et == 'corporate' or et == 'webinar' %} text-white {% endif %}"><span class="lg:hidden font-semibold">What: </span>{{ paragraph.fields.field_what_to_expect[0]['value'] }}</span>
              </div>
          </div>
 
      </div>
+     {% if et == 'corporate' or et == 'webinar '%}
+        </div>
+     {% endif %}
  {% endif %}
 {% endfor %}
 
@@ -45,5 +53,9 @@
       .main-wrapper {
         flex-direction: row !important;
       }
+    }
+
+    .event-info--header {
+      border-color: #9AAEF9;
     }
 </style>

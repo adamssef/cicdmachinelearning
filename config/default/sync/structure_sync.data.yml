@@ -1249,7 +1249,7 @@ taxonomies:
   event_categories:
     -
       vid: event_categories
-      tid: '3071'
+      tid: '3074'
       langcode: en
       name: E-comm
       description__value: null
@@ -1259,7 +1259,7 @@ taxonomies:
       uuid: 7018fd0e-aad0-4331-b9ed-8ef2014cfa42
     -
       vid: event_categories
-      tid: '3069'
+      tid: '3072'
       langcode: en
       name: Hospitality
       description__value: null
@@ -1269,7 +1269,7 @@ taxonomies:
       uuid: 91172207-ca9c-4011-86b5-5b77abe4c8b3
     -
       vid: event_categories
-      tid: '3070'
+      tid: '3073'
       langcode: en
       name: Retail
       description__value: null
@@ -1277,6 +1277,38 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: 10d7b22c-71de-404d-8f94-e579f123239c
+  event_type:
+    -
+      vid: event_type
+      tid: '3077'
+      langcode: en
+      name: Corporate
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 52a6828a-58cc-4f38-a44b-b809b77681aa
+    -
+      vid: event_type
+      tid: '3076'
+      langcode: en
+      name: In-person
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d4a76855-7f83-401d-ac29-efa7a32a25ce
+    -
+      vid: event_type
+      tid: '3075'
+      langcode: en
+      name: Webinar
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f1ff6369-acfd-4abc-898e-03f7d297466c
+  industry: {  }
   newsroomtags:
     -
       vid: newsroomtags
@@ -1329,6 +1361,7 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: c46a51f3-fef5-4cd5-8a59-affc357297b6
+  partner_type: {  }
   payment_methods:
     -
       vid: payment_methods
@@ -2736,6 +2769,8 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: ca787122-6315-4262-9b2e-75588178fba1
+  product_type: {  }
+  region: {  }
   regions:
     -
       vid: regions

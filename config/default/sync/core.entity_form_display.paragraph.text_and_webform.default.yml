@@ -1,0 +1,46 @@
+uuid: ea1b9a7e-6eae-4fd9-b258-b0acb9817a23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_and_webform.field_webform
+    - field.field.paragraph.text_and_webform.field_webform_text
+    - field.field.paragraph.text_and_webform.field_webform_title
+    - paragraphs.paragraphs_type.text_and_webform
+  module:
+    - text
+    - webform
+id: paragraph.text_and_webform.default
+targetEntityType: paragraph
+bundle: text_and_webform
+mode: default
+content:
+  field_webform:
+    type: webform_entity_reference_select
+    weight: 1
+    region: content
+    settings:
+      default_data: true
+      webforms: {  }
+    third_party_settings: {  }
+  field_webform_text:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_webform_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

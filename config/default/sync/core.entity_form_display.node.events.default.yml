@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.events.body
     - field.field.node.events.field_event_category
+    - field.field.node.events.field_event_type
     - field.field.node.events.field_page_paragraphs
     - node.type.events
   module:
@@ -39,9 +40,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_event_type:
+    type: options_select
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_page_paragraphs:
     type: paragraphs
-    weight: 13
+    weight: 14
     region: content
     settings:
       title: Paragraph

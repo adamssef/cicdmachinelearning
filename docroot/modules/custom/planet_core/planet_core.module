@@ -808,6 +808,11 @@ function planet_core_preprocess(&$variables) {
       $event_service = \Drupal::service('planet.event_pages_service');
       $event_category_tid = $node->get('field_event_category')
         ->getValue()[0]['target_id'];
+
+      $event_type_tid = $node->get('field_event_type')
+        ->getValue()[0]['target_id'];
+
+
       $hero_data = $page_service->getPageParagraphData($node);
       $variables['paragraphs'] = $hero_data;
 
@@ -831,6 +836,15 @@ function planet_core_preprocess(&$variables) {
             ->getSubmissionForm();
 
           $variables['form'] = $form;
+        }
+
+        if ($paragraph_type === 'event_info' && $node->getType() === 'events') {
+          $event_type_tid = $node->get('field_event_type')
+            ->getValue()[0]['target_id'];
+          $event_type_name = \Drupal::service('planet_core.taxonomy_service')
+            ->getTermNameById($event_type_tid);
+
+          $variables['paragraphs'][$key]['event_type_name'] = strtolower($event_type_name);
         }
       }
     }

@@ -4,12 +4,17 @@
 
 .paragraph--hero-component > div {
   background-color: white !important;
+  min-height: auto;
 }
 
 @media screen and (max-width: 768px) {
   .paragraph--hero-component > div {
     padding-top: 24px;
-    min-height: initial;
+  }
+
+  .corporate-wrapper {
+    margin-top: 48px;
+    margin-bottom: 48px;
   }
 
   .paragraph--hero-component > div > div {
@@ -21,3 +26,16 @@
   padding-top: 24px;
   height: fit-content;
 }
+
+@media screen and (min-width: 769px) {
+  .hero-link {
+    width: fit-content;
+  }
+
+  .corporate-wrapper {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+
+
