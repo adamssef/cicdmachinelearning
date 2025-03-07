@@ -1,0 +1,23 @@
+.paragraph--hero-component {
+  background-color: white !important;
+}
+
+.paragraph--hero-component > div {
+  background-color: white !important;
+}
+
+@media screen and (max-width: 768px) {
+  .paragraph--hero-component > div {
+    padding-top: 24px;
+    min-height: initial;
+  }
+
+  .paragraph--hero-component > div > div {
+    padding-bottom: 48px;
+  }
+
+}
+.paragraph--hero-component > div > div {
+  padding-top: 24px;
+  height: fit-content;
+}

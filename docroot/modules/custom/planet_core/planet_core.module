@@ -181,6 +181,12 @@ function planet_core_theme($existing, $type, $theme, $path): array {
         'fields' => [],
       ],
     ],
+    'paragraph__text_and_webform__default' => [
+      'template' => 'paragraph/paragraph--text-and-webform--default',
+      'variables' => [
+        'fields' => [],
+      ],
+    ],
   ];
 }
 
@@ -800,11 +806,13 @@ function planet_core_preprocess(&$variables) {
       $node = \Drupal::routeMatch()->getParameter('node');
       $page_service = \Drupal::service('planet_core.basic_page_service');
       $event_service = \Drupal::service('planet.event_pages_service');
-      $event_category_tid = $node->get('field_event_category')->getValue()[0]['target_id'];
+      $event_category_tid = $node->get('field_event_category')
+        ->getValue()[0]['target_id'];
       $hero_data = $page_service->getPageParagraphData($node);
       $variables['paragraphs'] = $hero_data;
 
       foreach ($variables['paragraphs'] as $key => $paragraph) {
+        $paragraph_type = $paragraph['type'];
         if ($paragraph_type === 'hero' && $node->getType() === 'events') {
           if (empty($paragraph['field']['field_hero_label'])) {
             $hero_label = $event_service->getHeroLabel($event_category_tid);
@@ -814,10 +822,18 @@ function planet_core_preprocess(&$variables) {
             $variables['hero'] = $paragraph;
           }
         }
+
+        if ($paragraph_type === 'text_and_webform' && $node->getType() === 'events') {
+          $webform_id = $paragraph['fields']['field_webform'][0]['target_id'];
+          $form = \Drupal::entityTypeManager()
+            ->getStorage('webform')
+            ->load($webform_id)
+            ->getSubmissionForm();
+
+          $variables['form'] = $form;
+        }
       }
-
     }
-
   }
 }
 

@@ -616,9 +616,18 @@ video {
   margin: 1rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
 }
 
 .mb-16 {
@@ -657,6 +666,10 @@ video {
   margin-right: 1rem;
 }
 
+.mt-0 {
+  margin-top: 0px;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -683,14 +696,6 @@ video {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-0 {
-  margin-top: 0px;
-}
-
-.mb-12 {
-  margin-bottom: 3rem;
 }
 
 .block {
@@ -731,6 +736,10 @@ video {
 
 .h-52 {
   height: 13rem;
+}
+
+.h-6 {
+  height: 1.5rem;
 }
 
 .h-8 {
@@ -861,6 +870,14 @@ video {
   gap: 2rem;
 }
 
+.gap-20 {
+  gap: 5rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -893,6 +910,11 @@ video {
 .rounded-t-2xl {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+}
+
+.rounded-t-\[40px\] {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
 }
 
 .rounded-t-lg {
@@ -1085,6 +1107,11 @@ video {
   padding-bottom: 2rem;
 }
 
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .pb-16 {
   padding-bottom: 4rem;
 }
@@ -1121,6 +1148,10 @@ video {
   padding-top: 2rem;
 }
 
+.pt-\[153px\] {
+  padding-top: 153px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1128,6 +1159,10 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-\[14px\] {
+  font-size: 14px;
 }
 
 .text-\[16px\] {
@@ -1206,6 +1241,10 @@ video {
   line-height: 2.25rem;
 }
 
+.leading-\[18px\] {
+  line-height: 18px;
+}
+
 .leading-\[22px\] {
   line-height: 22px;
 }
@@ -1226,13 +1265,14 @@ video {
   line-height: 1.625;
 }
 
-.leading-5 {
-  line-height: 1.25rem;
-}
-
 .text-\[\#005ab2\] {
   --tw-text-opacity: 1;
   color: rgb(0 90 178 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#202020\] {
+  --tw-text-opacity: 1;
+  color: rgb(32 32 32 / var(--tw-text-opacity, 1));
 }
 
 .text-black {
@@ -1248,6 +1288,14 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .transition-all {
@@ -1301,6 +1349,15 @@ video {
     margin: 2rem;
   }
 
+  .md\:mx-8 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .md\:mb-20 {
+    margin-bottom: 5rem;
+  }
+
   .md\:mt-0 {
     margin-top: 0px;
   }
@@ -1311,14 +1368,6 @@ video {
 
   .md\:mt-6 {
     margin-top: 1.5rem;
-  }
-
-  .md\:mt-\[80px\] {
-    margin-top: 80px;
-  }
-
-  .md\:mb-20 {
-    margin-bottom: 5rem;
   }
 
   .md\:block {
@@ -1373,6 +1422,10 @@ video {
     gap: 1rem;
   }
 
+  .md\:gap-12 {
+    gap: 3rem;
+  }
+
   .md\:rounded-l-\[24px\] {
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
@@ -1391,6 +1444,11 @@ video {
   .md\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .md\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .md\:pl-16 {
@@ -1436,10 +1494,6 @@ video {
     margin-bottom: 2rem;
   }
 
-  .lg\:mt-0 {
-    margin-top: 0px;
-  }
-
   .lg\:mt-12 {
     margin-top: 3rem;
   }
@@ -1452,12 +1506,24 @@ video {
     display: none;
   }
 
+  .lg\:w-\[656px\] {
+    width: 656px;
+  }
+
+  .lg\:w-\[543px\] {
+    width: 543px;
+  }
+
   .lg\:max-w-64 {
     max-width: 16rem;
   }
 
   .lg\:justify-end {
     justify-content: flex-end;
+  }
+
+  .lg\:justify-center {
+    justify-content: center;
   }
 
   .lg\:gap-20 {
@@ -1478,8 +1544,11 @@ video {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+}
 
-  .lg\:leading-6 {
-    line-height: 1.5rem;
+@media (min-width: 1280px) {
+  .xl\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
