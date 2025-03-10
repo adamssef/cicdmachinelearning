@@ -1,0 +1,76 @@
+<div class="coh-container ssa-component">
+	<div class="coh-row coh-row-xl">
+		<div class="coh-row-inner main-info-wrap">
+			
+			<!-- Sidebar -->
+			<div class="coh-column sidebar-block product-overview-left-sidebar coh-col-xl-3">
+				
+				<h6 class="coh-inline-element">
+					<a href="#" class="coh-link" target="_self">Overview</a>
+				</h6>
+				
+				<span class="coh-inline-element products-listing-sidebar links-listing-block">
+					
+					<h4 class="coh-heading">Terminals</h4>
+					
+					<div class="coh-block">
+						<div class="item-list-products">
+							<ul>
+								{% for product in products %}
+									<li>
+										<div class="views-field views-field-title">
+											<span class="field-content">
+												<a href="{{ product.url }}" hreflang="en">{{ product.title }}</a>
+											</span>
+										</div>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+
+					<div class="coh-wysiwyg">
+						<!-- Dark Theme Box -->
+						<div class="dark-theme" style="background: #000; padding: 15px; margin-top: 30px; border-radius: 8px;">
+							<img alt="" src="/modules/custom/planet_sitestudio_custom_elements/images/Icons.png">
+							<h3 style="font-size: 24px; color: #fff; font-weight: 600; margin-top: 5px;">Need Help?</h3>
+							<p style="font-size: 16px; font-weight: 300; color: #fff; margin: 12px 0 20px 0;">Contact your planet support team</p>
+							<a href="/support" style="display: inline-flex; font-size: 16px; font-weight: 600; color: #fff;">
+								Contact Us
+								<img alt="" src="/modules/custom/planet_sitestudio_custom_elements/images/arrow-right.png" style="margin-left: 20px;">
+							</a>
+						</div>
+
+						<!-- Light Theme Box -->
+						<div class="light-theme" style="background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
+							<img alt="" src="/modules/custom/planet_sitestudio_custom_elements/images/Vector-bulb.png">
+							<h3 style="font-size: 24px; font-weight: 600; margin-top: 5px;">Customer Resources Library</h3>
+							<p style="font-size: 16px; font-weight: 300; margin: 12px 0 20px 0;">Can’t find the info you need? Check our comprehensive library of guides, eLearning, and useful links</p>
+							<a href="/customer-resources-library" style="display: inline-flex; font-size: 16px; color: black; font-weight: 600;">
+								View customer resources
+							</a>
+						</div>
+					</div>
+
+				</span>
+			</div>
+
+			<!-- Main Content -->
+			<div class="coh-column coh-col-xl">
+				<div class="coh-inline-element">
+					<div class="coh-wysiwyg">
+						<p>
+							<span class="coh-style-heading-2-planet">Get Started with Planet: explore, learn and get support!</span>
+						</p>
+						<p>
+							<span class="coh-style--body-regular---tt-commons-planet" style="line-height: 1.5">
+								Welcome to our one-stop destination for all things related to our products. Here, you'll find comprehensive information about our wide range of products, along with installation instructions and learning paths to help you make the most of our offerings.
+							</span>
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

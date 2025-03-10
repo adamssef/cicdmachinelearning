@@ -13,7 +13,6 @@ use Drupal\planet_core\UTMHelper;
 class SpecialTemplates {
   const ACCEPT_PAYMENTS = 5621;
   const CUSTOMER_RESOURCES = 3091;
-  const GETTING_STARTED = 3791;
   const EBOOKS = 2136;
   const PROTEL_IMPRINT = 4286;
   const HTML_SITEMAP = 4716;
@@ -25,7 +24,6 @@ class SpecialTemplates {
       return [
           self::ACCEPT_PAYMENTS,
           self::CUSTOMER_RESOURCES,
-          self::GETTING_STARTED,
           self::EBOOKS,
           self::PROTEL_IMPRINT,
           self::HTML_SITEMAP,
@@ -298,10 +296,6 @@ function planet_core_theme($existing, $type, $theme, $path): array
     'node__basic_page' => [
       'template' => 'node--basic-page',
       'base hook' => 'node',
-    ],
-    'node__getting_started' => [
-      'template' => 'node--getting-started',
-      'base hook' => 'node',
     ]
    ];
 }
@@ -336,9 +330,6 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
         return;
       case "/sitemap":
         $suggestions[] = 'node__sitemap';
-        return;
-      case "/getting-started-2":
-        $suggestions[] = 'node__getting_started';
         return;
     }
   }

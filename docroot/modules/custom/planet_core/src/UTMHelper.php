@@ -70,8 +70,9 @@ class UTMHelper {
    * @return string
    *   The sanitized cookie value.
    */
-  public static function sanitizeCookie(string $cookie_value): string {
-    // Implement your sanitization logic here
-    return filter_var($cookie_value, FILTER_SANITIZE_STRING);
+  public static function sanitizeCookie($cookie_value) {
+    // Keep only alphanumeric characters, dashes, underscores, and spaces
+    return preg_replace('/[^a-zA-Z0-9_\-\s]/', '', $cookie_value);
   }
+  
 }
