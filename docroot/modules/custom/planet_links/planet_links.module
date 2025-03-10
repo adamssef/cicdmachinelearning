@@ -8,64 +8,64 @@
 /**
  * Implements hook_preprocess_field
  */
-function planet_links_preprocess_field(&$variables) {
-  // Check if a page is for node type of resources.
-  $node = \Drupal::routeMatch()->getParameter('node');
+// function planet_links_preprocess_field(&$variables) {
+//   // Check if a page is for node type of resources.
+//   $node = \Drupal::routeMatch()->getParameter('node');
 
-  if ($node && $node->getType() == "resources") {
-    if (isset($variables['items'][0]['content']['#template'])) {
-      $variables['items'][0]['content']['#template'] = _planet_links_add_target_blank($variables['items'][0]['content']['#template']);
-    }
-  }
+//   if ($node && $node->getType() == "resources") {
+//     if (isset($variables['items'][0]['content']['#template'])) {
+//       $variables['items'][0]['content']['#template'] = _planet_links_add_target_blank($variables['items'][0]['content']['#template']);
+//     }
+//   }
 
-}
+// }
 
-/**
- * Adds target="_blank" to external links in the provided HTML content.
- *
- * @param string $content
- *   The HTML content.
- *
- * @return string
- *   The modified HTML content.
- */
-function _planet_links_add_target_blank($content) {
-  // Use regex to find <a> tags with href starting with http:// or https://.
-  $pattern = '/<a\s+([^>]*href=["\']https?:\/\/[^"\']*["\'][^>]*)>/i';
+// /**
+//  * Adds target="_blank" to external links in the provided HTML content.
+//  *
+//  * @param string $content
+//  *   The HTML content.
+//  *
+//  * @return string
+//  *   The modified HTML content.
+//  */
+// function _planet_links_add_target_blank($content) {
+//   // Use regex to find <a> tags with href starting with http:// or https://.
+//   $pattern = '/<a\s+([^>]*href=["\']https?:\/\/[^"\']*["\'][^>]*)>/i';
 
-  // Use callback function to add target="_blank" if it's not already present.
-  $content = preg_replace_callback($pattern, 'planet_links_add_target_blank_callback', $content);
+//   // Use callback function to add target="_blank" if it's not already present.
+//   $content = preg_replace_callback($pattern, 'planet_links_add_target_blank_callback', $content);
 
-  return $content;
-}
+//   return $content;
+// }
 
-/**
- * Callback function to add target="_blank" to links.
- *
- * @param array $matches
- *   The regex matches.
- *
- * @return string
- *   The modified <a> tag.
- */
-function planet_links_add_target_blank_callback($matches) {
-  $originalTag = $matches[0];
-  $attributes = $matches[1];
+// /**
+//  * Callback function to add target="_blank" to links.
+//  *
+//  * @param array $matches
+//  *   The regex matches.
+//  *
+//  * @return string
+//  *   The modified <a> tag.
+//  */
+// function planet_links_add_target_blank_callback($matches) {
+//   $originalTag = $matches[0];
+//   $attributes = $matches[1];
 
-  // Check if the href contains 'weareplanet.com'.
-  if (preg_match('/href=["\'][^"\']*weareplanet\.com[^"\']*["\']/', $attributes)) {
-    return $originalTag;
-  }
+//   // Check if the href contains 'weareplanet.com'.
+//   if (preg_match('/href=["\'][^"\']*weareplanet\.com[^"\']*["\']/', $attributes)) {
+//     return $originalTag;
+//   }
 
-  // Check if target="_blank" is already present.
-  if (!preg_match('/\btarget=["\']_blank["\']\b/', $attributes)) {
-    // Add target="_blank"
-    $attributes .= ' target="_blank"';
-    // Replace the original tag with modified attributes.
-    $modifiedTag = '<a ' . $attributes . '>';
+//   // Check if target="_blank" is already present.
+//   if (!preg_match('/\btarget=["\']_blank["\']\b/', $attributes)) {
+//     // Add target="_blank"
+//     $attributes .= ' target="_blank"';
+//     // Replace the original tag with modified attributes.
+//     $modifiedTag = '<a ' . $attributes . '>';
 
-    return $modifiedTag;
-  }
+//     return $modifiedTag;
+//   }
 
-  return $originalTag;
-}
+//   return $originalTag;
+// }

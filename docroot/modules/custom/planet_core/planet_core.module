@@ -6,20 +6,9 @@
  */
 
 use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Render\Markup;
 use Drupal\node\Entity\Node;
-use Drupal\views\Plugin\views\query\QueryPluginBase;
-use Drupal\views\ViewExecutable;
-use Drupal\views\Views;
 use Drupal\webform\WebformSubmissionInterface;
-use Drupal\node\NodeInterface;
-use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Access\AccessResult;
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\TranslatableInterface;
-use Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList;
-
+use Drupal\planet_core\UTMHelper;
 
 class SpecialTemplates {
   const ACCEPT_PAYMENTS = 5621;
@@ -47,10 +36,6 @@ class SpecialTemplates {
   }
 }
 
-function _planet_core_sanitize_cookie($value)
-{
-  return htmlspecialchars($value);
-}
 
 /**
  * Implements hook_preprocess_html().
@@ -98,239 +83,12 @@ function planet_core_preprocess_html(&$variables): void
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
+ * UTMs handling
  */
-function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void
-{
-  $webform = $webform_submission->getWebform();
-  $webform_id = $webform->id();
-
-  // Check for the variables to send the UTMs to the form.
-  $cookie_utm_source = isset($_COOKIE['Drupal_visitor_utm_source']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_source']) : '';
-  $cookie_utm_medium = isset($_COOKIE['Drupal_visitor_utm_medium']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_medium']) : '';
-  $cookie_utm_campaign = isset($_COOKIE['Drupal_visitor_utm_campaign']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_campaign']) : '';
-  $cookie_utm_term = isset($_COOKIE['Drupal_visitor_utm_term']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_term']) : '';
-  $cookie_utm_content = isset($_COOKIE['Drupal_visitor_utm_content']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_utm_content']) : '';
-  $cookie_orig_utm_source = isset($_COOKIE['Drupal_visitor_orig_utm_source']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_source']) : '';
-  $cookie_orig_utm_medium = isset($_COOKIE['Drupal_visitor_orig_utm_medium']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_medium']) : '';
-  $cookie_orig_utm_campaign = isset($_COOKIE['Drupal_visitor_orig_utm_campaign']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_campaign']) : '';
-  $cookie_orig_utm_term = isset($_COOKIE['Drupal_visitor_orig_utm_term']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_term']) : '';
-  $cookie_orig_utm_content = isset($_COOKIE['Drupal_visitor_orig_utm_content']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_utm_content']) : '';
-  $cookie_gclid = isset($_COOKIE['Drupal_visitor_gclid']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_gclid']) : '';
-  $cookie_referrer = isset($_COOKIE['Drupal_visitor_referrer']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_referrer']) : '';
-  $cookie_orig_lp = isset($_COOKIE['Drupal_visitor_orig_lp']) ? _planet_core_sanitize_cookie($_COOKIE['Drupal_visitor_orig_lp']) : '';
-
-  if ($cookie_utm_source) {
-    $webform_submission->setElementData('utm_source', $cookie_utm_source);
-  }
-
-  if ($cookie_utm_medium) {
-    $webform_submission->setElementData('utm_medium', $cookie_utm_medium);
-  }
-
-  if ($cookie_utm_campaign) {
-    $webform_submission->setElementData('utm_campaign', $cookie_utm_campaign);
-  }
-
-  if ($cookie_utm_content) {
-    $webform_submission->setElementData('utm_content', $cookie_utm_content);
-  }
-
-  if ($cookie_utm_term) {
-    $webform_submission->setElementData('utm_term', $cookie_utm_term);
-  }
-
-  if ($cookie_gclid) {
-    $webform_submission->setElementData('gclid', $cookie_gclid);
-  }
-
-
-  if ($cookie_orig_utm_source) {
-    $webform_submission->setElementData('orig_utm_source', $cookie_orig_utm_source);
-  }
-
-  if ($cookie_orig_utm_medium) {
-    $webform_submission->setElementData('orig_utm_medium', $cookie_orig_utm_medium);
-  }
-
-  if ($cookie_orig_utm_campaign) {
-    $webform_submission->setElementData('orig_utm_campaign', $cookie_orig_utm_campaign);
-  }
-
-  if ($cookie_orig_utm_content) {
-    $webform_submission->setElementData('orig_utm_content', $cookie_orig_utm_content);
-  }
-
-  if ($cookie_orig_utm_term) {
-    $webform_submission->setElementData('orig_utm_term', $cookie_orig_utm_term);
-  }
-
-  if ($cookie_referrer) {
-    $webform_submission->setElementData('referrer', $cookie_referrer);
-  }
-
-  if ($cookie_orig_lp) {
-    $webform_submission->setElementData('orig_lp', $cookie_orig_lp);
-  }
-
-  /** SUPPORT FORM - temporary */
-  if ($webform_id === 'support') {
-    // Populate the value of 'Support_Address__c' with the same value as 'email'.
-    // Need it in order to have Salesforce to send an e-mail.
-    $email = $webform_submission->getElementData('email');
-    $webform_submission->setElementData('support_address__c', $email);
-  }
+function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void {
+  UTMHelper::processSubmission($webform_submission);
 }
 
-
-/**
- * Implements hook_form_views_exposed_form_alter().
- *
- * Creates region/country dependent filter.
- */
-function planet_core_form_views_exposed_form_alter(&$form, &$form_state): void
-{
-  if ($form['#id'] === 'views-exposed-form-companies-registered-companies') {
-    unset($form['region']['#options']['All']);
-
-    $regions = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('regions');
-    if ($region = reset($regions)) {
-      $form['region']['#default_value'] = $region->tid;
-    }
-
-    $input = $form_state->getUserInput();
-    $selectedRegion = $input['region'];
-    if ($selectedRegion === 'All') {
-      $selectedRegion = array_key_first($form['region']['#options']);
-    }
-
-    $countries = _planet_core_get_associative_countries_with_region($selectedRegion);
-    $form['country']['#options'] = $countries;
-
-    $form['#attached']['library'][] = 'planet_sitestudio_custom_elements/registeredCompanies';
-  }
-}
-
-function planet_core_views_pre_render(ViewExecutable $view)
-{
-  $initial_count = count($view->result);
-
-  if ($view->id() === "email_contacts_terms" && $view->current_display === "block_3") {
-    $altered_view = Views::getView('email_contacts_terms');
-    $altered_view->setDisplay('block_3');
-    $altered_view->execute();
-
-    if ($initial_count < count($altered_view->result)) {
-      $view->result = $altered_view->result;
-    }
-  }
-
-}
-
-/**
- * Implements hook_views_query_alter().
- */
-function planet_core_views_query_alter(ViewExecutable $view, QueryPluginBase $query)
-{
-  $node = \Drupal::routeMatch()->getParameter('node');
-  $collected_tags = [];
-
-  if ($view->current_display === 'blog_more_reads') {
-    if ($node !== NULL && $node->hasField('field_resources_tags')) {
-      $node_id = $node->id();
-
-      $temp_query = \Drupal::database()->select('node__field_resources_tags', 'nrt')
-        ->fields('nrt', ['field_resources_tags_target_id'])
-        ->condition('nrt.entity_id', $node_id, '=')
-        ->execute();
-
-      $res = $temp_query->fetchAll();
-      $collected_tags = array_column($res, 'field_resources_tags_target_id');
-    }
-
-    if (!empty($collected_tags)) {
-      $query->addWhere(0, 'node__field_resources_tags.field_resources_tags_target_id', $collected_tags, 'IN');
-    } else {
-      foreach ($query->where as $key => $conditionGroup) {
-        if ($conditionGroup['type'] === 'AND') {
-          foreach ($conditionGroup['conditions'] as $condition_group_key => $condition) {
-            if ($condition['field'] === 'node__field_resources_tags.field_resources_tags_target_id IN(:node__field_resources_tags_field_resources_tags_target_id[])') {
-              unset($query->where[$key]['conditions'][$condition_group_key]);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_form_alter().
- */
-function planet_core_form_alter(&$form, FormStateInterface $form_state, $form_id)
-{
-  if ($form_id === 'entity_clone_form') {
-    if (isset($form['description'])) {
-      $form['description']['#access'] = FALSE;
-    }
-
-    if (isset($form['recursive'])) {
-      foreach ($form['recursive'] as $key => $value) {
-        if ($key === '#tree') {
-          continue;
-        } else {
-          $form['recursive'][$key]['#access'] = FALSE;
-          $form['recursive'][$key]['#description_should_be_shown'] = FALSE;
-        }
-      }
-    }
-  }
-}
-
-/**
- * Gets countries associated with the region.
- */
-function _planet_core_get_associative_countries_with_region(string $regionId): array
-{
-  $countries = [];
-  $countries['All'] = 'All';
-  $vid = 'countries';
-
-  $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, 0, NULL, TRUE);
-  if ($regionId != 'All') {
-    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
-      'vid' => $vid,
-      'field_region' => $regionId,
-    ]);
-  }
-
-  foreach ($terms as $term) {
-    $countries[$term->id()] = $term->label();
-  }
-
-  return $countries;
-}
-
-/**
- * Implements hook_node_access().
- */
-function planet_core_node_access(NodeInterface $node, $op, AccountInterface $account)
-{
-  if ($account->isAnonymous() && $node->gettype() == 'webform') {
-    return AccessResult::forbidden()->cachePerPermissions();
-  }
-
-  return AccessResult::neutral()->cachePerPermissions();
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function planet_core_preprocess_field(&$variables)
-{
-  if ($variables['field_name'] === 'field_resources_tags' && $variables['element']['#bundle'] === 'page') {
-    $variables['attributes']['class'][] = 'tags-hidden-for-page-node';
-  }
-}
 
 /**
  * Implements hook_preprocess_HOOK() for node templates.
@@ -409,21 +167,6 @@ function planet_core_cron()
 }
 
 
-
-/**
- * Implements hook_theme_suggestions_HOOK_alter().
- */
-function planet_core_theme_suggestions_views_view_field_alter(array &$suggestions, array $variables)
-{
-  if ($variables['view']->id() === 'ebook') {
-
-    if ($variables['field']->getPluginId() === 'entity_link') {
-      $suggestions[] = 'views_view_field__ebook_link';
-    }
-  }
-
-}
-
 /**
  * Implements hook_preprocess_HOOK() for views_view_field templates.
  */
@@ -480,20 +223,6 @@ function planet_core_preprocess_views_view_field(array &$variables)
 function planet_core_theme($existing, $type, $theme, $path): array
 {
   return [
-    'views_view_fields__case_studies__featured_slider' => [
-      'template' => 'views-view-fields--case-studies--featured-slider',
-      'render element' => 'elements',
-      'base hook' => 'views_view',
-    ],
-    'views_view_fields__case_studies__featured_block' => [
-      'template' => 'views-view-fields--case-studies--featured-block',
-      'render element' => 'elements',
-      'base hook' => 'views_view',
-    ],
-    'paragraph__right_side_mega_menu' => [
-      'template' => 'paragraph--right-side-mega-menu',
-      'base hook' => 'paragraph',
-    ],
     'node__author' => [
       'template' => 'node--author',
       'base hook' => 'node'
@@ -546,10 +275,6 @@ function planet_core_theme($existing, $type, $theme, $path): array
       'template' => 'node--ebook-single-page',
       'base hook' => 'node',
     ],
-    'views_view_field__ebook_link' => [
-      'template' => 'views-view-field--ebook-link',
-      'base hook' => 'views_view_field',
-    ],
     'node__homepage_v1_it' => [
       'template' => 'node--homepage-it',
       'base hook' => 'node',
@@ -570,36 +295,14 @@ function planet_core_theme($existing, $type, $theme, $path): array
       'template' => 'node--homepage',
       'base hook' => 'node',
     ],
-    'node__homepage_v2_it' => [
-      'template' => 'node--homepage-v2-it',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v2_fr' => [
-      'template' => 'node--homepage-v2-fr',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v2_es' => [
-      'template' => 'node--homepage-v2-es',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v2_de' => [
-      'template' => 'node--homepage-v2-de',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v2' => [
-      'template' => 'node--homepage-v2',
-      'base hook' => 'node',
-    ],
     'node__basic_page' => [
       'template' => 'node--basic-page',
       'base hook' => 'node',
     ],
-    'paragraph_hero_default' => [
-      'template' => 'paragraph/paragraph-hero-default',
-      'variables' => [
-        'fields' => [],
-      ],
-    ],
+    'node__getting_started' => [
+      'template' => 'node--getting-started',
+      'base hook' => 'node',
+    ]
    ];
 }
 
@@ -634,6 +337,9 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
       case "/sitemap":
         $suggestions[] = 'node__sitemap';
         return;
+      case "/getting-started-2":
+        $suggestions[] = 'node__getting_started';
+        return;
     }
   }
 
@@ -650,28 +356,6 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
     $suggestions[] = $language_templates[$language] ?? 'node__homepage_v1';
     return;
 }
-
-  // Homepage v2 suggestions  
-  if ($alias == "/homepage-prototype-v2") {
-    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    switch ($language) {
-      case "it":
-        $suggestions[] = 'node__homepage_v2_it';
-        break;
-      case "es":
-        $suggestions[] = 'node__homepage_v2_es';
-        break;
-      case "de":
-        $suggestions[] = 'node__homepage_v2_de';
-        break;
-      case "fr":
-        $suggestions[] = 'node__homepage_v2_fr';
-        break;
-      default:
-        $suggestions[] = 'node__homepage_v2';
-    }
-    return;
-  }
 
   // PMS transformation suggestions
   if ($alias == "/pms-transformation") {
@@ -708,104 +392,7 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
 
 }
 
-/**
- * Implements hook_entity_insert().
- */
-function planet_core_entity_insert(EntityInterface $entity): void
-{
-  _planet_core_update_untranslated_path($entity, 'insert');
-}
 
-/**
- * Implements hook_entity_update().
- */
-function planet_core_entity_update(EntityInterface $entity): void
-{
-  _planet_core_update_untranslated_path($entity, 'update');
-}
-
-/**
- * Trigger pathauto for untranslated content.
- *
- * @param \Drupal\Core\Entity\EntityInterface $entity
- *   The entity object.
- * @param string $action
- *   The action performed in the entity.
- */
-function _planet_core_update_untranslated_path(EntityInterface $entity, string $action): void
-{
-  $pathautoGenerator = \Drupal::service('pathauto.generator');
-
-  // Check if entity has pathauto enabled and is translatable.
-  if (!$pathautoGenerator->getPatternByEntity($entity) || !($entity instanceof TranslatableInterface)) {
-    return;
-  }
-
-  $translatedLanguages = $entity->getTranslationLanguages();
-  $allLanguages = \Drupal::languageManager()->getLanguages();
-  $untranslatedLanguages = array_diff_key($allLanguages, $translatedLanguages);
-
-  foreach ($untranslatedLanguages as $langcode => $language) {
-    $translation = $entity->addTranslation($langcode, $entity->toArray());
-    $pathautoGenerator->updateEntityAlias($translation, $action);
-  }
-}
-
-/**
- * Fix "Non-translatable fields can only be changed when updating the original
- * language." issue.
- *
- * Implements hook_entity_type_alter().
- */
-function planet_core_entity_type_alter(array &$entity_types)
-{
-  foreach ($entity_types as $entity_type) {
-    $constraints = $entity_type->getConstraints();
-    unset($constraints['EntityUntranslatableFields']);
-    $entity_type->setConstraints($constraints);
-  }
-}
-
-/**
- * Implements hook_cloned_node_alter().
- */
-function planet_core_cloned_node_alter(NodeInterface &$node): void
-{
-  $configName = 'exclude.node.' . $node->getType();
-  $excludeFields = \Drupal::config('quick_node_clone.settings')->get($configName);
-  $excludeFields = $excludeFields ?: [];
-
-  foreach ($node->getFieldDefinitions() as $fieldDefinition) {
-    $fieldStorageDefinition = $fieldDefinition->getFieldStorageDefinition();
-    $fieldSettings = $fieldStorageDefinition->getSettings();
-    $fieldName = $fieldStorageDefinition->getName();
-
-    if (!in_array($fieldName, $excludeFields)) {
-      if (isset($fieldSettings['target_type']) && $fieldSettings['target_type'] != "paragraph") {
-        $field = $node->get($fieldName);
-        if (!$field->isEmpty()) {
-          if ($field instanceof EntityReferenceRevisionsFieldItemList) {
-            foreach ($field as $value) {
-              if ($value->entity) {
-                $value->entity = $value->entity->createDuplicate();
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-
-/**
- * Assign js files and send data.
- *
- * Implements hook_preprocess_HOOK().
- *
- * Assign js files and send data
- *
- */
 function planet_core_preprocess_node(array &$variables)
 {
   $node = $variables['node'];
@@ -820,7 +407,6 @@ function planet_core_preprocess_node(array &$variables)
   if (\Drupal::service('path.matcher')->isFrontPage()) {
     $variables['#attached']['library'][] = 'planet_core/front-page';
   }
-
 
   if ($alias === '/sitemap') {
     $variables['term_tree'] = \Drupal::service('planet_html_sitemap.helper')
@@ -854,6 +440,7 @@ function planet_core_preprocess_node(array &$variables)
     $variables['tags'] = $planet_core_article_helper->getAllBlogArticleTags();
     $variables['#attached']['library'][] = 'planet_core/blog-page';
   }
+
   if ($node->id() == SpecialTemplates::PRESS_ARCHIVE) { //news-archive
     $variables['tags'] = $planet_core_news_helper->getAllNewsArticleTags();
     $variables['years'] = $planet_core_news_helper->getYears();
@@ -912,12 +499,11 @@ function planet_core_preprocess_node(array &$variables)
         if (!$image_field->isEmpty()) {
           $file = $image_field->entity;
           $variables['image_url'] = $file->createFileUrl();
-          // Or if you want to use a specific image style:
-          // $variables['image_url'] = ImageStyle::load('your_style')->buildUrl($file->getFileUri());
         }
       }
     }
 }
+
 
 }
 
