@@ -6,6 +6,8 @@
  */
 
 use Drupal\node\NodeInterface;
+use Drupal\node\Entity\Node;
+
 
 /**
  * Implements hook_theme().
@@ -24,12 +26,54 @@ function planet_customer_resources_library_theme() {
       'template' => 'block--views-exposed-filter-block--planet-resources-block-2',
       'base hook' => 'block',
     ],
+    'node__getting_started' => [
+      'template' => 'node--getting-started',
+      'base hook' => 'node',
+    ]
   ];
 }
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
+
+
+ function planet_customer_resources_library_preprocess_node(array &$variables)
+{
+  $node = $variables['node'];
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+  if ($alias == "/getting-started") {
+
+    // Get the node IDs of 'product' content type ordered by created date DESC
+    $query = \Drupal::entityQuery('node')
+      ->accessCheck(TRUE) // or FALSE depending on your case
+      ->condition('type', 'planet_products')
+      ->condition('status', 1)
+      ->sort('created', 'DESC');
+  
+    $nids = $query->execute();
+  
+    $products = [];
+  
+    if (!empty($nids)) {
+      $nodes = Node::loadMultiple($nids);
+  
+      foreach ($nodes as $node) {
+        $products[] = [
+          'title' => $node->label(),
+          'url' => $node->toUrl()->toString(),
+        ];
+      }
+    }
+  
+    // Add it to the template variables.
+    $variables['products'] = $products;
+  
+  }
+
+}
+
+
 function planet_customer_resources_library_preprocess_page(array &$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
 
@@ -43,7 +87,6 @@ function planet_customer_resources_library_preprocess_page(array &$variables) {
     // It's better to check on alias than node ID.
     if ($alias === '/customer-resources-library' && !$is_admin) {
       $variables['#attached']['library'][] = 'planet_customer_resources_library/tailwind';
-
     }
   }
 
@@ -75,6 +118,12 @@ function planet_customer_resources_library_theme_suggestions_node_alter(array &$
         $suggestions[] = 'node__planet_customer_resources_library';
       }
     }
+
+    if($alias == '/getting-started') {
+        $suggestions[] = 'node__getting_started';
+        return;
+    }
+
   }
 }
 
