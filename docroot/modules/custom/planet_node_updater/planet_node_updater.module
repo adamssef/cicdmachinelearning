@@ -6,22 +6,18 @@
  */
 
 use Drupal\cohesion_elements\Entity\CohesionLayout;
-use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Implements hook_theme().
  */
 function planet_node_updater_theme(): array {
-  $array = [
+  return [
     'block__system_main_block_contact_sales' => [
       'template' => 'block--system-main-block-contact-sales',
       'base hook' => 'block',
     ],
   ];
-
-  return $array;
-
 }
 
 /**
@@ -30,14 +26,10 @@ function planet_node_updater_theme(): array {
 function planet_node_updater_entity_presave(EntityInterface $entity) {
   if ($entity instanceof CohesionLayout) {
     $default_langcode = $entity->get('default_langcode')->getValue();
-    $current_langage = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
     if (empty($default_langcode)) {
-      if ($current_langage == 'en') {
-        $entity->set('default_langcode', true);
-      }
-      else {
-        $entity->set('default_langcode', false);
-      }
+      $entity->set('default_langcode', $current_language === 'en');
     }
   }
 }
@@ -54,19 +46,48 @@ function planet_node_updater_theme_suggestions_block_alter(array &$suggestions, 
     return;
   }
 
+  if (!method_exists($node, 'getType')) {
+    return;
+  }
+
   $type = $node->getType();
 
-  if ($type === 'page' && $variables['elements']['#plugin_id'] === 'system_main_block') {
-    if ($node->get('field_is_product_page') && !empty($node->get('field_is_product_page')->getValue())) {
-      $is_product_page = $node->get('field_is_product_page')->getValue()[0]['value'];
+  if (
+    $type === 'page' &&
+    isset($variables['elements']['#plugin_id']) &&
+    $variables['elements']['#plugin_id'] === 'system_main_block'
+  ) {
+    if (
+      $node->hasField('field_is_product_page') &&
+      !$node->get('field_is_product_page')->isEmpty()
+    ) {
+      $is_product_page_field = $node->get('field_is_product_page')->getValue();
+      $is_product_page = !empty($is_product_page_field[0]['value']) ? $is_product_page_field[0]['value'] : NULL;
 
       if (!$is_admin_page && $node && $node->id() == 376) {
         $suggestions[] = 'block__system_main_block_contact_sales';
-        $variables['html_content'] = $node->get('field_html_content')->getValue()[0]['value'];
+
+        if (
+          $node->hasField('field_html_content') &&
+          !$node->get('field_html_content')->isEmpty()
+        ) {
+          $html_content_field = $node->get('field_html_content')->getValue();
+          $variables['html_content'] = !empty($html_content_field[0]['value']) ? $html_content_field[0]['value'] : '';
+        } else {
+          $variables['html_content'] = '';
+        }
+
         $variables['brands'] = \Drupal::service('planet_core.case_studies_helper')->getBrandsWeWorkWith();
         $variables['node'] = $node;
-        $form = \Drupal::entityTypeManager()->getStorage('webform')->load('get_in_touch_dynamic')->getSubmissionForm();
-        $variables['form'] = $form;
+
+        try {
+          $webform_storage = \Drupal::entityTypeManager()->getStorage('webform');
+          $webform = $webform_storage->load('get_in_touch_dynamic');
+          $variables['form'] = $webform ? $webform->getSubmissionForm() : NULL;
+        } catch (\Exception $e) {
+          \Drupal::logger('planet_node_updater')->error('Failed to load webform: @message', ['@message' => $e->getMessage()]);
+          $variables['form'] = NULL;
+        }
       }
     }
   }
@@ -75,7 +96,7 @@ function planet_node_updater_theme_suggestions_block_alter(array &$suggestions, 
 /**
  * Implements hook_preprocess_block().
  */
-function planet_node_updater_preprocess_block(&$variables) {
+function planet_node_updater_preprocess_block(array &$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   $route_object = \Drupal::routeMatch()->getRouteObject();
   $is_admin_page = \Drupal::service('router.admin_context')->isAdminRoute($route_object);
@@ -90,13 +111,12 @@ function planet_node_updater_preprocess_block(&$variables) {
 /**
  * Implements hook_preprocess_node().
  */
-function planet_node_updater_preprocess_node(&$variables) {
+function planet_node_updater_preprocess_node(array &$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   $route_object = \Drupal::routeMatch()->getRouteObject();
   $is_admin_page = \Drupal::service('router.admin_context')->isAdminRoute($route_object);
 
   if (!$is_admin_page && $node && $node->id() == 41) {
     $variables['#attached']['library'][] = 'planet_node_updater/planet_node_updater_contact';
-
   }
 }
