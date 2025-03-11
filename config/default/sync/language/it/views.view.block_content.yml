@@ -1,7 +1,10 @@
+label: 'Custom block library'
+description: 'Find and manage custom blocks.'
 display:
   default:
     display_title: Predefinito
     display_options:
+      title: 'Custom block library'
       fields:
         changed:
           label: Aggiornato
@@ -19,5 +22,11 @@ display:
           reset_button_label: Ripristina
           exposed_sorts_label: 'Ordina per'
           sort_desc_label: Disc
+      empty:
+        area_text_custom:
+          content: 'There are no custom blocks available.'
   page_1:
     display_title: Pagina
+    display_options:
+      menu:
+        description: 'Create and edit block content.'

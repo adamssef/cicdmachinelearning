@@ -106,9 +106,6 @@ function planet_customer_resources_library_theme_suggestions_node_alter(array &$
   $is_admin_page = \Drupal::service('router.admin_context')->isAdminRoute($route_object);
 
   if (!$is_admin_page) {
-    if ($node->id() == '5627') {
-      $suggestions[] = 'node__planet_customer_resources_library';
-    }
 
     $translations = $node_translation_service->buildTranslationArrayForNode($node);
     $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
