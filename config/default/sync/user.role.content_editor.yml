@@ -21,9 +21,12 @@ dependencies:
     - node.type.case_studies
     - node.type.companies
     - node.type.e_book_
+    - node.type.layout_builder_page
+    - node.type.legal_pages
     - node.type.locations_contacts
     - node.type.newsroom
     - node.type.page
+    - node.type.partners
     - node.type.payment_methods
     - node.type.planet_faq
     - node.type.planet_offices
@@ -33,6 +36,8 @@ dependencies:
     - node.type.resources
     - node.type.support_locations_contacts
     - node.type.webform
+    - taxonomy.vocabulary.newsroomtags
+    - taxonomy.vocabulary.newsroomyears
     - workflows.workflow.editorial
   module:
     - cohesion
@@ -48,7 +53,9 @@ dependencies:
     - menu_link_content
     - node
     - path
+    - quick_node_clone
     - system
+    - taxonomy
     - tmgmt
     - toolbar
     - toolbar_edit_page_button
@@ -104,6 +111,46 @@ permissions:
   - 'administer helpers'
   - 'administer tmgmt'
   - 'administer url aliases'
+  - 'clone advanced_product_page content'
+  - 'clone author content'
+  - 'clone case_studies content'
+  - 'clone companies content'
+  - 'clone e_book_ content'
+  - 'clone layout_builder_page content'
+  - 'clone legal_pages content'
+  - 'clone locations_contacts content'
+  - 'clone newsroom content'
+  - 'clone own advanced_product_page content'
+  - 'clone own author content'
+  - 'clone own case_studies content'
+  - 'clone own companies content'
+  - 'clone own e_book_ content'
+  - 'clone own layout_builder_page content'
+  - 'clone own legal_pages content'
+  - 'clone own locations_contacts content'
+  - 'clone own newsroom content'
+  - 'clone own page content'
+  - 'clone own partners content'
+  - 'clone own payment_methods content'
+  - 'clone own planet_faq content'
+  - 'clone own planet_offices content'
+  - 'clone own planet_products content'
+  - 'clone own planet_resources content'
+  - 'clone own products content'
+  - 'clone own resources content'
+  - 'clone own support_locations_contacts content'
+  - 'clone own webform content'
+  - 'clone page content'
+  - 'clone partners content'
+  - 'clone payment_methods content'
+  - 'clone planet_faq content'
+  - 'clone planet_offices content'
+  - 'clone planet_products content'
+  - 'clone planet_resources content'
+  - 'clone products content'
+  - 'clone resources content'
+  - 'clone support_locations_contacts content'
+  - 'clone webform content'
   - 'create advanced_product_page content'
   - 'create audio media'
   - 'create author content'
@@ -113,11 +160,13 @@ permissions:
   - 'create document media'
   - 'create e_book_ content'
   - 'create image media'
+  - 'create legal_pages content'
   - 'create locations_contacts content'
   - 'create lottie_animation media'
   - 'create media'
   - 'create newsroom content'
   - 'create page content'
+  - 'create partners content'
   - 'create payment_methods content'
   - 'create pdf media'
   - 'create planet_faq content'
@@ -128,6 +177,8 @@ permissions:
   - 'create remote_video media'
   - 'create resources content'
   - 'create support_locations_contacts content'
+  - 'create terms in newsroomtags'
+  - 'create terms in newsroomyears'
   - 'create translation jobs'
   - 'create url aliases'
   - 'create vector_image media'
@@ -212,6 +263,8 @@ permissions:
   - 'delete products revisions'
   - 'delete resources revisions'
   - 'delete support_locations_contacts revisions'
+  - 'delete terms in newsroomtags'
+  - 'delete terms in newsroomyears'
   - 'delete translation jobs'
   - 'delete webform revisions'
   - 'edit any advanced_product_page content'
@@ -294,11 +347,14 @@ permissions:
   - 'revert webform revisions'
   - 'submit translation jobs'
   - 'translate any entity'
+  - 'translate case_studies node'
   - 'translate cohesion_layout'
   - 'translate editable entities'
   - 'translate image media'
   - 'translate locations_contacts node'
   - 'translate menu_link_content'
+  - 'translate newsroom node'
+  - 'translate newsroomtags taxonomy_term'
   - 'translate page node'
   - 'translate resources node'
   - 'update any media'
