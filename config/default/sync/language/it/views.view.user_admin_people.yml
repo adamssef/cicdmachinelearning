@@ -38,3 +38,6 @@ display:
             label: Ruolo
   page_1:
     display_title: Pagina
+    display_options:
+      menu:
+        title: List
