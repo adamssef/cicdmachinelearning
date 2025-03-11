@@ -25,7 +25,6 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'delete own files'
-  - 'opt-in or out of google analytics tracking'
   - 'post comments'
   - 'skip comment approval'
   - 'use text format webform_default'
