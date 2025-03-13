@@ -5,6 +5,11 @@
     margin: 0 auto;
     display: block;
   }
+  .plnt-partners-page > .coh-container {
+    max-width: 1308px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
   .planSwitch img {
     display: inline-block;
     max-width: 16px;
@@ -24,7 +29,7 @@
     padding: 8px 8px 8px 24px;
     display: flex;
     justify-content: space-between;
-    margin-top: 48px;
+    margin-top: 28px;
   }
   
   .planet-search-bar .search-input {
@@ -33,10 +38,10 @@
     border: 0;
   }
   .search-icon:hover {
-    background: #e00083;
+    background-color: #e00083;
   }
   .search-icon {
-    background: black;
+    background-color: black;
     height: 40px;
     width: 40px;
     border-radius: 100px;
@@ -44,11 +49,11 @@
     cursor: pointer;
     text-align: center;
     align-items: center;
+    background-image: url('/resources/icons/search.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
   }
-  .search-icon img {
-    max-height: 32px;
-    margin: 0 auto;
-  }
+  
   .partners-select .custom-select {
     width: 100%;
     margin: 0;
@@ -106,13 +111,16 @@
   .partners-lists {
     margin-top: 60px;
   }
-  .reset-filters span {
+  .warning-message {display: inline-block;}
+  .reset-filters .warning-message-button {
     color: #e00083;
     font-weight: 400;
     font-size: 16px;
-    display: flex;
+    display: inline-block;
     align-items: center;
+
   }
+  
   .reset-filters {
     display: inline-block;
     cursor: pointer;
@@ -124,8 +132,42 @@
     justify-content: end;
   }
   @media(min-width: 1024px) {
+    .white-rounded-section {
+      padding: 48px 0
+    }
     .partner-logo-bg {
-    padding-top: 96px
+      background-size: 30%;
+    padding-top: 96px;
+    min-height: 540px;
+    }
+  }  
+  .partners-title {
+    margin: 20px auto 0 auto;
+    text-align: center;
+    display: block;
+    width: 100%;
+  max-width: 800px;
+  }
+
+  @media (max-width: 991px) {
+    .planSwitch.two-options-toggle a label {
+      width: 100%;
+    }
+    .planSwitch-subitem label {
+    border: 2px solid #ee0083;
+      border-top: 0;
+      border-radius: 0 0 16px 16px;
+      }
+  }
+
+  @media(max-width: 1023px) {
+    .partners-search-form {width: auto;}
+    .white-rounded-section {
+      padding: 16px 0
+    }
+    .partner-logo-bg {
+      background-size: 60%;
+      min-height: 330px;
     }
   }  
 
@@ -137,16 +179,13 @@
   }
 }
   .partner-logo-bg {
-    min-height: 540px;
-    background-size: 30%;
-    background-position: center center;
+    background-position: center center !important;
     background-repeat: no-repeat;
   }
   .white-rounded-section {
     margin-top: -32px;
     background: white;
     border-radius: 32px 32px 0 0;
-    padding: 48px 0
   }
   .left-border-text {
     padding: 8px 0 8px 16px;
@@ -213,5 +252,9 @@
     margin-top: 64px
   }
   .partners-search-form {
-    width: 100%;
+    width: 80%;
+    min-height: 40px;
+  }
+  .partners-search-form .search-input:focus {
+    outline: none;
   }
