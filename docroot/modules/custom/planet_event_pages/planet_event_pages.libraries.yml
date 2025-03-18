@@ -3,3 +3,4 @@ tailwind:
     theme:
       dist/css/styles.css: {}
       css/event-pages.css: {}
+      css/events-main-page.css: {}

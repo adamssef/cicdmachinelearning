@@ -1,4 +1,4 @@
 services:
     planet.event_pages_service:
       class: Drupal\planet_event_pages\Service\PlanetEventPagesService
-      arguments: ['@planet_core.taxonomy_service']
+      arguments: ['@planet_core.taxonomy_service', '@planet_core.media_service']

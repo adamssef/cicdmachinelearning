@@ -1,0 +1,88 @@
+{# events-section.twig #}
+<div
+	class="bg-[#202020] text-white px-4 coh-hero coh-hero-full-width">
+	{# Header Section #}
+	<h1 class="text-5xl font-bold text-center pt-40 pb-20">Planet events</h1>
+
+	{# Featured Event Banner #}
+	{% if featured %}
+		{% include '/modules/custom/planet_event_pages/templates/events-helper-featured-box.html.twig' with { featured: featured } %}
+	{% endif %}
+
+
+	{# Upcoming Events Section #}
+	<h2 class="text-5xl font-bold mb-[76px] text-center">Upcoming events</h2>
+
+	{# Search and Filter Bar #}
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-5xl mx-auto my-20">
+		<div class="focus:ring-violet-300 max-h-14 col-span-1 relative flex bg-zinc-50 rounded-full w-full items-center justify-around">
+			<input type="text" placeholder="Search events" class="text-[#202020] focus:outline-none flex py-4 rounded-md px-8 w-11/12">
+			<button class="bg-black hover:bg-[#e00083] h-11 w-11 relative flex rounded-full bg-no-repeat bg-center right-0 top-0 mr-1.5" style="background-image:url('/resources/icons/search.svg')"></button>
+		</div>
+
+		<div class="col-span-1 grid gap-3 grid-cols-2">
+			<div class="relative w-full col-span-2 md:col-span-1">
+				<div class="planet-custom-select planet-custom-select-theme-dark">
+					<div class="planet-custom-select-main">Location</div>
+					<ul hidden class="planet-custom-select-list">
+						<li>Location</li>
+						<li>Location 1</li>
+						<li>Location 2</li>
+						<li>Location 3</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="relative w-full col-span-2 md:col-span-1">
+				<div class="planet-custom-select planet-custom-select-theme-dark">
+					<div class="planet-custom-select-main">Event tags</div>
+					<ul hidden class="planet-custom-select-list">
+						<li>Location</li>
+						<li>Location 1</li>
+						<li>Location 2</li>
+						<li>Location 3</li>
+					</ul>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	{# Events Grid #}
+	<div
+		class="js-events grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto pb-20">
+		{# Event 1 #}
+		<div class="bg-[#202020] rounded-lg overflow-hidden border border-zinc-50 border-solid p-2">
+			<div class="relative">
+				<div style="background-image: url('https://placecats.com/neo/600/400')" class="relative rounded h-52 w-full bg-cover bg-no-repeat bg-center">
+					<div class="absolute inset-0 bg-black/40">
+						<div class="absolute top-0 left-0 pl-2 pt-2">
+							<div class="flex items-center bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+								<span class="ml-1 text-base font-semibold">08-06 March 2024</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="p-4">
+					<h3 class="text-2xl text-zinc-50 font-bold leading-8">National Retail Federation (NRF)</h3>
+					<div class="flex items-center text-base font-light text-zinc-50 py-4">
+						<span>New York, United States</span>
+					</div>
+
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span class="bg-white/10 text-zinc-50 text-base px-2 py-1 rounded">Hospitality</span>
+						<span class="bg-white/10 text-zinc-50 text-base px-2 py-1 rounded">Retail</span>
+					</div>
+
+					<a href="#" class="inline-flex text-base items-center font-semibold text-zinc-50 hover:text-white">
+						<span class="">View details</span><img class="ml-5 h-8 w-auto" src="/resources/icons/all/navigation-forward-dark.svg">
+					</a>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+

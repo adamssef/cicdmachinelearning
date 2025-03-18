@@ -218,3 +218,39 @@ jQuery(document).ready(function() {
       }, 450); // Using the same duration as in your original HTML
   });
 });
+
+jQuery(document).ready(function() {
+
+  // Toggle dropdown on main click
+  jQuery('.planet-custom-select-main').on('click', function(e) {
+    e.stopPropagation(); // Prevent event from bubbling up to document
+
+    // Close all other lists
+    jQuery('.planet-custom-select-list').not(jQuery(this).next()).hide();
+
+    // Toggle the current one
+    jQuery(this).next('.planet-custom-select-list').toggle();
+  });
+
+  // Close dropdown when clicking outside
+  jQuery(document).on('click', function() {
+    jQuery('.planet-custom-select-list').hide();
+  });
+
+  // Prevent closing when clicking inside the list
+  jQuery('.planet-custom-select-list').on('click', function(e) {
+    e.stopPropagation();
+  });
+
+  // Close the list when clicking on an li
+  jQuery('.planet-custom-select-list li').on('click', function(e) {
+    e.stopPropagation(); // Optional: prevents bubbling
+    
+    // Optional: update the main text to what was clicked
+    jQuery(this).closest('.planet-custom-select').find('.planet-custom-select-main').text(jQuery(this).text());
+
+    // Hide the list
+    jQuery(this).parent('.planet-custom-select-list').hide();
+  });
+
+});
