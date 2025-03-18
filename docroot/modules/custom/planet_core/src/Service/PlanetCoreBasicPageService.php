@@ -111,7 +111,7 @@ class PlanetCoreBasicPageService
             // Process Brands Carousel
             if ($field_name === 'field_brands_carousel' && !empty($field_data[$field_name][0]['value'])) {
                 $brands = explode(' ', trim($field_data[$field_name][0]['value']));
-                $valid_extensions = ['svg', 'png', 'jpeg', 'jpg'];
+                $valid_extensions = ['svg', 'png', 'jpeg', 'jpg', 'webp'];
 
                 foreach ($brands as &$brand) {
                     $parsed_url = parse_url($brand);
