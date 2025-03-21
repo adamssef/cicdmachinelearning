@@ -1,0 +1,51 @@
+{% set theme = paragraph.fields.field_event_info_theme[0].value %}
+
+<div class="px-8 {% if theme == 'dark' %}bg-[#202020] mt-20 rounded-[32px] {% endif %}">
+	<div class="max-w-7xl flex py-12 md:py-20 flex-col lg:mx-auto font-light text-[20px]">
+		<div class="
+				        text-[32px] mb-8 md:text-[48px] font-semibold
+				        {% if theme == 'dark' %}
+				            pl-6 border-l-4 border-solid border-[#9AAEF9] text-zinc-50
+				        {% else %}
+							text-[#202020]
+				        {% endif %}
+				
+				
+				    ">
+			{{ "About the event"|t }}
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+			<div>
+				<div>
+					<div class="font-light-paragraph text-[16px] md:text-[20px] font-light leading-[22px] md:leading-[28px] {% if theme == 'dark' %} text-zinc-50 {% endif %}">
+						{{ paragraph.fields.field_event_info[0]['value']|raw }}
+					</div>
+				</div>
+			</div>
+
+			<div>
+				{% for item in [
+                { 'label': 'When', 'field': paragraph.fields.field_when[0]['value'] },
+                { 'label': 'Where', 'field': paragraph.fields.field_where[0]['value'] },
+                { 'label': 'Who', 'field': paragraph.fields.field_for_who[0]['value'] },
+                { 'label': 'What', 'field': paragraph.fields.field_what_to_expect[0]['value'] }
+            ] %}
+
+					<div class="lg:mb-4 flex">
+						<img class="h-6 w-6 hidden lg:inline-block p-2 bg-[#E0E6FD] rounded-[24px] mr-4" src="/resources/icons/events/checkmark.svg">
+
+						<span class="leading-[28px] text-[16px] md:text-[20px] {% if theme == 'dark' %} text-zinc-50 {% endif %}">
+							<span class="lg:hidden font-semibold">{{ item.label|t }}:</span>
+							{{ item.field }}
+						</span>
+					</div>
+
+				{% endfor %}
+			</div>
+
+		</div>
+
+	</div>
+</div>

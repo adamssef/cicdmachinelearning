@@ -1,0 +1,8 @@
+uuid: eb1bcb0e-5c1c-499c-a40e-a16d5153eee4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event type'
+vid: event_type
+description: 'Currently the types are: In-person, corporate, webinar'
+weight: 0

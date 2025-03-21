@@ -1,0 +1,18 @@
+uuid: fce07439-c646-4330-8344-1b12dcd9294a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.text_and_webform
+id: paragraph.text_and_webform.created
+field_name: created
+entity_type: paragraph
+bundle: text_and_webform
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

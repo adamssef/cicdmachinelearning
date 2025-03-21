@@ -1,0 +1,27 @@
+uuid: 80d79995-3d06-47f4-8027-85999502e168
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_info_theme
+    - paragraphs.paragraphs_type.event_info
+  module:
+    - options
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.event_info.field_event_info_theme
+field_name: field_event_info_theme
+entity_type: paragraph
+bundle: event_info
+label: Theme
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: light
+default_value_callback: ''
+settings: {  }
+field_type: list_string

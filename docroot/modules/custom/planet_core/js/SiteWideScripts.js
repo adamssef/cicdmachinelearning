@@ -218,3 +218,60 @@ jQuery(document).ready(function() {
       }, 450); // Using the same duration as in your original HTML
   });
 });
+jQuery(document).ready(function() {
+
+  // Hide the "default" option on page load
+  jQuery('.planet-custom-select-list .default-option').hide();
+
+  // Toggle dropdown on main click
+  jQuery('.planet-custom-select-main').on('click', function(e) {
+    e.stopPropagation(); // Prevent event from bubbling up to document
+
+    // Close all other lists
+    jQuery('.planet-custom-select-list').not(jQuery(this).next()).hide();
+
+    // Toggle the current one
+    jQuery(this).next('.planet-custom-select-list').toggle();
+  });
+
+  // Close dropdown when clicking outside
+  jQuery(document).on('click', function() {
+    jQuery('.planet-custom-select-list').hide();
+  });
+
+  // Prevent closing when clicking inside the list
+  jQuery('.planet-custom-select-list').on('click', function(e) {
+    e.stopPropagation();
+  });
+
+  jQuery('.planet-custom-select-list li').on('click', function(e) {
+    e.stopPropagation(); // Optional: prevents bubbling
+    
+    // Optional: update the main text to what was clicked
+    jQuery(this).closest('.planet-custom-select').find('.planet-custom-select-main').text(jQuery(this).text());
+
+    var clickedId = jQuery(this).data('id');
+
+    // Hide the list
+    jQuery(this).parent('.planet-custom-select-list').hide();
+
+    // If "default" is selected, hide it, else show it again
+    if (clickedId === 'default') {
+      jQuery('.planet-custom-select-list .default-option').hide();
+    } else {
+      jQuery('.planet-custom-select-list .default-option').show();
+    }
+  });
+
+});
+
+jQuery('.planet-events-search-wrapper').on('click', function(e) {
+  e.stopPropagation(); // Prevent the document click from firing immediately
+  jQuery(this).addClass('input-focus');
+});
+
+jQuery(document).on('click', function(e) {
+  if (!jQuery(e.target).closest('.planet-events-search-wrapper').length) {
+    jQuery('.planet-events-search-wrapper').removeClass('input-focus');
+  }
+});

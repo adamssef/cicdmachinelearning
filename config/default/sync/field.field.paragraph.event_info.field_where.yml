@@ -1,0 +1,24 @@
+uuid: be4da529-a6be-4fc8-af03-fd35f0c1ccf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_where
+    - paragraphs.paragraphs_type.event_info
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.event_info.field_where
+field_name: field_where
+entity_type: paragraph
+bundle: event_info
+label: 'Where?'
+description: 'EXAMPLE: Kwerk Madeleine, 22 Boulevard Malesherbes, 75008 Paris'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,9 @@
+
+<div class="px-4 md:pl-16 bg-zinc-50">
+    <a class="block leading-[20px] text-lg font-semibold  text-[#005ab2] m-auto py-6" href="{{ event_aliases[langcode] }}">{{ "Events"|t }}</a>
+</div>
+
+{% for paragraph in page_paragraphs %}
+	{% set template_path = '/modules/custom/planet_core/templates/paragraph/paragraph--' ~ paragraph.type ~ '--default.html.twig' %}
+	{{ include(template_path, ignore_missing = true) }}
+{% endfor %}

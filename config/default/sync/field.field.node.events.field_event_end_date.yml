@@ -1,0 +1,25 @@
+uuid: a58e57a6-f967-40c7-b8bd-324794d2a0ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_end_date
+    - node.type.events
+  module:
+    - datetime
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.events.field_event_end_date
+field_name: field_event_end_date
+entity_type: node
+bundle: events
+label: 'Event end date (if applicable)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

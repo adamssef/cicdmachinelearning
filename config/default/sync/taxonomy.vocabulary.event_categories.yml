@@ -1,0 +1,8 @@
+uuid: 69680d3e-7c4b-4ed5-ace5-b578ecb2a178
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event categories'
+vid: event_categories
+description: ''
+weight: 0

@@ -1,0 +1,7 @@
+planet_event_pages.get_all_events:
+  path: '/planet-events/all'
+  defaults:
+    _controller: 'Drupal\planet_event_pages\Controller\PlanetEventPagesController::loadEvents'
+    _title: 'All Events'
+  requirements:
+    _permission: 'access content'

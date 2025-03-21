@@ -1,0 +1,26 @@
+uuid: d5f0dfe5-f6cf-495a-a191-2a85b85fab9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_event_featured
+    - node.type.events
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.events.field_is_event_featured
+field_name: field_is_event_featured
+entity_type: node
+bundle: events
+label: 'Is featured?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

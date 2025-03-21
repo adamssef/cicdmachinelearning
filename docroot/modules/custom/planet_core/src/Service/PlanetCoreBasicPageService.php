@@ -83,6 +83,13 @@ class PlanetCoreBasicPageService
         $fields = $paragraph->getFields();
         $field_data = [];
 
+         // Fields that require processing for styled image URLs. A field FIELD_NAME_url will be added
+         // to the paragraph data with the image style max1300 URL.
+         $image_fields_optimized = [
+            'field_testimonial_image',
+            'field_optimized_image',
+        ];
+
         foreach ($fields as $field_name => $field) {
             $field_data[$field_name] = $field->getValue();
 
@@ -92,20 +99,30 @@ class PlanetCoreBasicPageService
                 $field_data['hero_image_url'] = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'max_1300x1300');
             }
 
-            // Process Hero Form
-            if ($field_name === 'field_hero_form' && !$paragraph->get('field_hero_form')->isEmpty()) {
-                $webform_id = $paragraph->get('field_hero_form')->target_id;
+            // Process Hero Form and Webform fields.
+            if (
+                in_array($field_name, ['field_hero_form', 'field_webform']) &&
+                !$paragraph->get($field_name)->isEmpty()
+            ) {
+                $webform_id = $paragraph->get($field_name)->target_id;
                 $form = \Drupal::entityTypeManager()
                     ->getStorage('webform')
                     ->load($webform_id)
                     ->getSubmissionForm();
                 $field_data[$field_name] = $form;
             }
-
-            // Process Testimonial Image
-            if ($field_name === 'field_testimonial_image' && !empty($field_data[$field_name][0]['target_id'])) {
+        
+            if (in_array($field_name, $image_fields_optimized) && !empty($field_data[$field_name][0]['target_id'])) {
                 $media_id = $field_data[$field_name][0]['target_id'];
-                $field_data['testimonial_image_url'] = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'max_1300x1300');
+                // Dynamically generate the key by appending '_optimized' to the field name
+                $field_data[$field_name . '_url'] = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'max_1300x1300');
+            }
+
+
+            // Process Brands logos - we get the full image as logos should be small by default.
+            if ($field_name === 'field_logo_image' && !empty($field_data[$field_name][0]['target_id'])) {
+                $media_id = $field_data[$field_name][0]['target_id'];
+                $field_data['field_logo_image'] = $this->planetCoreMediaService->getImageUrl($media_id, 'field_media_image');
             }
 
             // Process Brands Carousel
@@ -125,7 +142,7 @@ class PlanetCoreBasicPageService
                 $field_data[$field_name] = $brands;
             }
 
-            //Process Button Links
+            // Process Button Links
             if (in_array($field_name, ['field_button_1_link', 'field_button_2_link', 'field_button_url']) && !empty($field_data[$field_name][0]['uri'])) {
                 $uri = $field_data[$field_name][0]['uri'];
 
@@ -134,8 +151,11 @@ class PlanetCoreBasicPageService
                     $linked_node = $this->entityTypeManager->getStorage('node')->load($node_id);
                     if ($linked_node) {
                         $aliases = $this->nodeTranslationService->buildTranslationArrayForNode($linked_node);
-                        $field_data[$field_name][0]['uri'] = $aliases[$langcode] ?? $uri;
+                        $field_data[$field_name][0]['alias'] = $aliases[$langcode] ?? $uri;
                     }
+                } else {
+                    $internal_path = '/' . ltrim($uri, '/');
+                    $field_data[$field_name][0]['alias'] = $this->pathAliasManager->getAliasByPath($internal_path, $langcode);
                 }
             }
 
@@ -376,17 +396,26 @@ class PlanetCoreBasicPageService
                 $field_data['blog_articles'] = $blog_articles_list ?? [];
             }
 
-            // Process Nested Benefit Boxes
-            if ($field_name === 'field_benefit_box' && !$paragraph->get('field_benefit_box')->isEmpty()) {
-                $child_paragraphs = $paragraph->get('field_benefit_box')->referencedEntities();
-                $child_data = [];
+            // List of nested paragraph fields to process. Add here nested paragraph field name 
+            $nested_fields = [
+                'field_benefit_box',
+                'field_sponsor_logos',
+                'field_speakers',
+            ];
 
-                foreach ($child_paragraphs as $child_paragraph) {
-                    $child_data[] = $this->extractParagraphData($child_paragraph, $langcode);
+            foreach ($nested_fields as $nested_field_name) {
+                if ($field_name === $nested_field_name && !$paragraph->get($nested_field_name)->isEmpty()) {
+                    $child_paragraphs = $paragraph->get($nested_field_name)->referencedEntities();
+                    $child_data = [];
+
+                    foreach ($child_paragraphs as $child_paragraph) {
+                        $child_data[] = $this->extractParagraphData($child_paragraph, $langcode);
+                    }
+
+                    $field_data[$nested_field_name] = $child_data;
                 }
-
-                $field_data['field_benefit_box'] = $child_data;
             }
+
         }
 
         return [

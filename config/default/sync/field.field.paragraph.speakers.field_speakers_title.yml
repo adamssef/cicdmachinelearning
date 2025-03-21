@@ -1,0 +1,26 @@
+uuid: 8fce1063-cca3-4d6e-b101-fbea72f28468
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_speakers_title
+    - paragraphs.paragraphs_type.speakers
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.speakers.field_speakers_title
+field_name: field_speakers_title
+entity_type: paragraph
+bundle: speakers
+label: Title
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'Our guest speakers'
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -8,7 +8,7 @@
 .plnt-okta-verify-tfa-setup {
   color: #0a6eb4;
 }
-.hero-desc-paragraph > p {
+.hero-desc-paragraph > p, .font-light-paragraph > p {
   font-weight: 300;
 }
 form.tfa-setup ul {
@@ -2358,4 +2358,171 @@ header .coh-planet-logo {
 }
 .children-light p {
   font-weight: 300;
+}
+
+.planet-custom-select {
+  z-index: 10;
+  position: relative;
+}
+
+.planet-custom-select-main {
+  background-size: 24px;
+  padding: 1rem;
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.planet-custom-select-list {
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 6px;
+  position: absolute;
+  width: 100%;
+  list-style: none;
+}
+
+.planet-custom-select-list li {
+  text-align: left;
+  font-family: "TT Commons", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.48px;
+  cursor: pointer;
+  height: 100%;
+  padding: 12px 0 12px 16px;
+  list-style: none;
+  border-bottom: 1px solid transparent;
+}
+
+.planet-custom-select-list li:last-child {
+  border-bottom: 0;
+}
+
+
+.planet-custom-select-list {
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+}
+
+.planet-custom-select-list li {
+  color: #202020;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.planet-custom-select-list li:hover {
+  background-color: #f5f5f5;
+}
+
+/* Dark Theme */
+.planet-custom-select-theme-dark .planet-custom-select-main {
+  background-color: transparent;
+  border-color: #fafafa;
+  color: #fafafa;
+  background-image: url('/resources/icons/all/chevron-dark.svg');
+}
+
+.planet-custom-select-theme-dark .planet-custom-select-main:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Light Theme */
+.custom-select-theme-light .planet-custom-select-main {
+  background-color: #ffffff;
+  border-color: #d1d1d1;
+  color: #202020;
+  background-image: url('/resources/icons/all/chevron-light.svg');
+}
+
+.custom-select-theme-light .planet-custom-select-main:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.input-focus {
+  outline: 2px solid #e00083
+}
+#block-cohesion-theme-content {background: #fafafa}
+
+@media screen and (min-width: 769px) {
+  .text-and-webform form {
+    width: 280px;
+    padding: 48px;
+    box-sizing: content-box;
+  }
+
+  @media screen and (min-width: 1025px) {
+    .text-and-webform form {
+      width: 496px;
+    }
+  }
+
+  .text-and-webform .text-container {
+    width: 543px;
+  }
+  .text-and-webform .main-wrapper {
+    flex-direction: row !important;
+  }
+
+  .text-and-webform .coh-style-form {
+    flex-direction: row;
+  }
+
+  .text-and-webform form {
+    border-radius: 40px;
+  }
+}
+
+.text-and-webform .form-desc-text--left p {
+  font-size: 20px;
+  line-height: 28px;
+  font-style: normal;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.text-and-webform .form-desc-text--left p:is(:last-of-type) {
+  margin-bottom: 0;
+}
+
+.text-and-webform .pre-heading {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px
+}
+
+.text-and-webform .webform-submission-form {
+  border-radius: 16px;
+  padding: 36px;
+}
+
+.text-and-webform .webform-submission-form .js-form-type-checkbox {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.text-and-webform .webform-submission-form .js-form-type-checkbox input#edit-single-opt-in {
+  margin-right: 24px;
+}
+
+.text-and-webform #edit-single-opt-in::before {
+  background-color: white;
+}
+
+.text-and-webform #edit-single-opt-in::after {
+  top: 6px;
+  left: 10px;
+}
+
+.text-and-webform .webform-submission-form {
+  background-color: white;
 }

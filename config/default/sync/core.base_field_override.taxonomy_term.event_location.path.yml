@@ -1,0 +1,20 @@
+uuid: ba5e6f3e-f22c-4399-8e7c-77914040161d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.event_location
+  module:
+    - path
+id: taxonomy_term.event_location.path
+field_name: path
+entity_type: taxonomy_term
+bundle: event_location
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

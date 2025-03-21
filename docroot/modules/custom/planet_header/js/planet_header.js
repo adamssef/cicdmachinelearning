@@ -279,7 +279,7 @@
             document.getElementById(map.get(className)).classList.add('flip');
 
             if (isFrontPage) {
-              changeHeaderBackgroundColor('#FFFFFF');
+              changeHeaderBackgroundColor('#fafafa');
             }
           }
           else {
@@ -407,7 +407,7 @@
             changeHeaderBackgroundColor("#FAFAFA");
           }
           else {
-            changeHeaderBackgroundColor('#FFFFFF');
+            changeHeaderBackgroundColor('#fafafa');
           }
         }
 
@@ -687,7 +687,7 @@
         $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
         if (scrollPosition > 0) {
           if (!isFrontpage()) {
-            $('.megamenu-header').css('background-color', '#FFFFFF');
+            $('.megamenu-header').css('background-color', '#fafafa');
           }
           else {
             $('.megamenu-header').css('background-color', '#FAFAFA');
@@ -712,13 +712,13 @@
           }
           else {
             if (!isFrontpage()) {
-              $('.megamenu-header').css('background-color', '#FFFFFF');
+              $('.megamenu-header').css('background-color', '#fafafa');
             }
             else {
               $('.megamenu-header').css('background-color', '#FAFAFA');
             }
 
-            $('.megamenu-header').css('background-color', '#FFFFFF');
+            $('.megamenu-header').css('background-color', '#fafafa');
             removeTransparentBgClassFromHeader();
 
             $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
@@ -751,7 +751,7 @@
       switchHamburgerMenuLogoBlack();
       headerBehaviorOnResize(header);
       headerBehaviorOnScroll(header);
-      $('.megamenu-header').css('background-color', '#FFFFFF');
+      $('.megamenu-header').css('background-color', '#fafafa');
     }
 
     // Search for utm parameters in url.

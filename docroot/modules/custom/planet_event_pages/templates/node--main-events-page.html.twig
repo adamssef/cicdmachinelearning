@@ -1,0 +1,100 @@
+{# events-section.twig #}
+<div
+	class="bg-[#202020] text-white px-4 coh-hero coh-hero-full-width pb-20">
+	{# Header Section #}
+	<h1 class="text-5xl font-bold text-center pt-40 pb-20">{{'Planet events'|t}}</h1>
+
+	{# Featured Event Banner #}
+	{% if featured %}
+		{% include '/modules/custom/planet_event_pages/templates/events-helper-featured-box.html.twig' with { featured: featured } %}
+	{% endif %}
+
+
+	{# Upcoming Events Section #}
+	<h2 class="text-5xl font-bold mb-[76px] text-center">{{'Upcoming events'|t}}</h2>
+
+	{# Search and Filter Bar #}
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-5xl mx-auto my-20">
+		<div class="planet-events-search-wrapper max-h-14 col-span-1 relative flex bg-zinc-50 rounded-full w-full items-center justify-around">
+			<input type="text" placeholder="{{'Search events'|t}}" class="planet-events-search text-[#202020] focus:outline-none flex py-4 rounded-md px-8 w-11/12">
+			<button class="planet-events-search-btn bg-black hover:bg-[#e00083] h-11 w-11 relative flex rounded-full bg-no-repeat bg-center right-0 top-0 mr-1.5" style="background-image:url('/resources/icons/search.svg')"></button>
+		</div>
+
+		<div class="col-span-1 grid gap-3 grid-cols-2">
+			<div class="relative w-full col-span-2 md:col-span-1">
+				<div class="planet-custom-select planet-custom-select-theme-dark">
+					<div class="planet-custom-select-main">{{'Location'|t}}</div>
+					<ul hidden class="planet-custom-select-list planet-events-filter-location">
+						<li data-id="default" class="default-option">{{'Location'|t}}</li>
+						{% for location in event_locations %}
+							<li data-id="{{ location.id }}">{{ location.name }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+
+			<div class="relative w-full col-span-2 md:col-span-1">
+				<div class="planet-custom-select planet-custom-select-theme-dark">
+					<div class="planet-custom-select-main">{{'Event tags'|t}}</div>
+					<ul hidden class="planet-custom-select-list planet-events-filter-tags">
+						<li data-id="default" class="default-option">{{'Event tags'|t}}</li>
+						{% for category in event_categories %}
+							<li data-id="{{ category.id }}">{{ category.name }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	{# Events Grid #}
+	<div class="events-translated-labels"
+		data-view-details="{{'View details'|t}}" 
+		data-search-too-short="{{ 'Please enter more than 2 characters to search.'|t }}" 
+     	data-already-searched="{{ "You've already searched for this term."|t }}"
+		hidden
+	></div>
+
+
+	<div class="max-w-5xl mx-auto pb-20 js-events-notfound" style="display: none">
+		{{ "We couldn't find any events matching your search criteria. Please try using different keywords or check back later for upcoming events!"|t }}
+	</div>
+	<div class="js-events grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto pb-12">{# Event Placeholder - keep commented code to generate Tailwind styles #}
+		{# <div class="bg-[#202020] rounded-lg overflow-hidden border border-zinc-50 border-solid p-2">
+					<div class="relative">
+						<div class="relative rounded h-52 w-full bg-cover bg-no-repeat bg-center">
+							<div class="absolute inset-0 bg-black/40">
+								<div class="absolute top-0 left-0 pl-2 pt-2">
+									<div class="flex items-center bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+										<span class="ml-1 text-base font-semibold">DATE</span>
+									</div>
+								</div>
+							</div>
+						</div>
+		
+						<div class="p-4">
+							<h3 class="text-2xl text-zinc-50 font-bold leading-8">TITLE</h3>
+							<div class="flex items-center text-base font-light text-zinc-50 py-4">
+								<span>LOCATION</span>
+							</div>
+		
+							<div class="flex flex-wrap gap-2 mb-4">
+								<span class="bg-white/10 text-zinc-50 text-base px-2 py-1 rounded">TAG</span>
+							</div>
+		
+							<a href="#" class="inline-flex text-base items-center font-semibold text-zinc-50 hover:text-white">
+								<span class="">View details</span><img class="ml-5 h-8 w-auto" src="/resources/icons/all/navigation-forward-dark.svg">
+							</a>
+						</div>
+					</div>
+				</div> #}
+
+
+	</div>
+	<div class="max-w-5xl mx-auto pb-20 js-events-loader loader">
+		<img src="/resources/icons/loader.svg">
+	</div>
+	<div hidden class="js-load-more-events max-w-5xl mx-auto text-center">
+		<span class="transition-all w-auto inline-flex justify-center items-center cursor-pointer px-6 py-4 bg-zinc-50 text-[#202020] font-semibold rounded-full hover:bg-[#e00083] hover:text-zinc-50 focus:border-2 border-2 border-transparent border-solid focus:border-solid focus:border-[rgb(165,165,165)]">{{'See more news'|t}}</span>
+	</div>
+	<div class="js-total-events-count" hidden></div>
+</div>

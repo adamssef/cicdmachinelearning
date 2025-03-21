@@ -1,0 +1,50 @@
+uuid: a4aaeaf2-476d-48b5-a02a-658b61f10053
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.speaker.field_optimized_image
+    - field.field.paragraph.speaker.field_speaker_company
+    - field.field.paragraph.speaker.field_speaker_name
+    - field.field.paragraph.speaker.field_speaker_role
+    - paragraphs.paragraphs_type.speaker
+id: paragraph.speaker.default
+targetEntityType: paragraph
+bundle: speaker
+mode: default
+content:
+  field_optimized_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_speaker_company:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_speaker_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_speaker_role:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

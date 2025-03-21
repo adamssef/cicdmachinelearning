@@ -1,0 +1,9 @@
+tailwind:
+  css:
+    theme:
+      dist/css/styles.css: {}
+      css/event-pages.css: {}
+      css/events-main-page.css: {}
+events-main-page:
+  js:
+    js/EventsMainPage.js: {}
