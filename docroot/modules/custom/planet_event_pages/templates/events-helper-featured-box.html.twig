@@ -1,10 +1,10 @@
 {# _event-featured.twig #}
 <div
   style="background-image:url('{{ featured.image }}')" 
-  class="relative rounded-[32px] overflow-hidden mb-16 max-w-7xl mx-auto shadow-lg min-h-[490px] bg-cover bg-center bg-no-repeat">
+  class="featured-event-block relative rounded-[32px] overflow-hidden mb-16 max-w-7xl mx-auto shadow-lg min-h-[490px] bg-cover bg-center bg-no-repeat">
 
   {# Content container with padding #}
-  <div class="absolute inset-0 bg-black/40">
+  <div class="absolute inset-0 bg-black/40 transition-all hover:bg-black/50">
     
     {# Date #}
     <div class="absolute top-0 left-0 p-8">
@@ -27,8 +27,8 @@
 
         {# Title #}
         <a href="{{featured.url}}" class="text-zinc-50 text-[32px] font-semibold leading-[40px] my-2 flex items-center">
-          <span class="mr-6">{{ featured.title }}</span>
-          <span><img class="min-h-12 w-auto" src="/resources/icons/all/arrow-right-dark.svg"></span>
+          <span class="featured-event-link mr-6">{{ featured.title }}</span>
+          <span class="featured-event-link-arrow"><img class="min-h-12 w-auto" src="/resources/icons/all/arrow-right-dark.svg"></span>
         </a>
       </div>
 
