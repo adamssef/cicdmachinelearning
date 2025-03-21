@@ -245,7 +245,9 @@
     let isFrontPage = isFrontpage();
 
     let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
-    let img = $(element).children().first().children().first();
+
+    // let img = $(element).children().first().children().first();
+    let img = document.querySelector('.business-link img');
     // Hide all other menus and remove their flip class
     let menus = [
       document.getElementsByClassName('megamenu-products__desktop'),
@@ -324,9 +326,9 @@
 
     // Manage the flip class.
     if (!megamenuElement[0].classList.contains('display-none')) {
-      img.addClass('flip');
+      img.classList.add('flip');
     } else {
-      img.removeClass('flip');
+      img.classList.remove('flip');
     }
   }
 

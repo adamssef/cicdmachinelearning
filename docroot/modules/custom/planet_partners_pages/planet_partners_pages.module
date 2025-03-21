@@ -23,7 +23,7 @@ function planet_partners_pages_page_attachments(array &$attachments) {
 function planet_partners_pages_theme_suggestions_node_alter(array &$suggestions, array $variables)
 {
   $node = \Drupal::routeMatch()->getParameter('node');
-
+ 
   if (!$node || !($node instanceof NodeInterface)) {
     return;
   }
@@ -61,9 +61,12 @@ function planet_partners_pages_preprocess_node(array &$variables)
   $alias = $path_alias_manager->getAliasByPath('/node/' . $node->id());
 
   $planet_core_partners_helper = \Drupal::service('planet_partners_pages.partners_helper');
+  $node_translation_service = \Drupal::service('planet_core.node_translation_service');
 
   if ($node->getType() == 'partners') {
     $variables['article'] = $planet_core_partners_helper->getSinglePartnerData($node->id());
+    $variables['langcode'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['main_link'] = $node_translation_service->getTranslationArrWithPrefixes('/partners');
     $variables['#attached']['library'][] = 'planet_partners_pages/partners-page';
 
     $page_service = \Drupal::service('planet_core.basic_page_service');
