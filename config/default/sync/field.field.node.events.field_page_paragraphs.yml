@@ -13,6 +13,8 @@ dependencies:
     - paragraphs.paragraphs_type.features_ending
     - paragraphs.paragraphs_type.features_heading
     - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.speakers
+    - paragraphs.paragraphs_type.sponsors
     - paragraphs.paragraphs_type.testimonial_quote
     - paragraphs.paragraphs_type.text_and_webform
   module:
@@ -44,7 +46,9 @@ settings:
       features_heading: features_heading
       hero: hero
       testimonial_quote: testimonial_quote
+      sponsors: sponsors
       text_and_webform: text_and_webform
+      speakers: speakers
     negate: 0
     target_bundles_drag_drop:
       benefit_box:
@@ -89,18 +93,27 @@ settings:
       link_box:
         weight: 30
         enabled: false
+      logo:
+        weight: 36
+        enabled: false
       paragraph_case_study_metrics:
         weight: 31
         enabled: false
       right_side_mega_menu:
         weight: 32
         enabled: false
+      speaker:
+        weight: 41
+        enabled: false
+      speakers:
+        weight: 42
+        enabled: true
+      sponsors:
+        weight: 39
+        enabled: true
       testimonial_quote:
         weight: 33
         enabled: true
-      text_and_form_two_columns:
-        weight: 38
-        enabled: false
       text_and_webform:
         weight: 39
         enabled: true

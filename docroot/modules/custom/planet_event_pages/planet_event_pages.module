@@ -35,12 +35,20 @@ function planet_event_pages_preprocess_node(&$variables)
   $events_aliases = $planet_core_node_translation_service->buildTranslationArrayForNode($events_node);
 
   if ($node && $node->getType() === 'events') {
-    $variables['#attached']['library'][] = 'planet_event_pages/tailwind';
+    $page_service = \Drupal::service('planet_core.basic_page_service');
+    $paragraphs = $page_service->getPageParagraphData($node);
+    $variables['#attached']['library'][] = 'planet_core/basic-pages';
+    $variables['langcode'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['event_aliases'] = $events_aliases;
+    $variables['page_paragraphs'] = $paragraphs;
   }
 
   if (in_array($alias, $events_aliases)) {
     $variables['#attached']['library'][] = 'planet_event_pages/tailwind';
+    $variables['#attached']['library'][] = 'planet_event_pages/events-main-page';
     $variables['featured'] = $planet_events->getFeaturedEvent();
+    $variables['event_locations'] = $planet_events->getEventLocations();
+    $variables['event_categories'] = $planet_events->getEventCategories();
     return;
   }
 

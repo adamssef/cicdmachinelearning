@@ -17,7 +17,7 @@ bundle: event_info
 label: 'What to expect?'
 description: "Example:\r\nMeet the Planet team, enjoy cocktails and canapés, interesting discussions about payments, music, and sunshine (fingers crossed)!"
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

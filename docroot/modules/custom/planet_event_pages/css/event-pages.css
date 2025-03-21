@@ -17,15 +17,15 @@
     margin-bottom: 48px;
   }
 
-  .paragraph--hero-component > div > div {
+  /* .paragraph--hero-component > div > div {
     padding-bottom: 48px;
-  }
+  } */
 
 }
-.paragraph--hero-component > div > div {
+/* .paragraph--hero-component > div > div {
   padding-top: 24px;
   height: fit-content;
-}
+} */
 
 @media screen and (min-width: 769px) {
   .hero-link {

@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.event_info.field_event_info
+    - field.field.paragraph.event_info.field_event_info_theme
     - field.field.paragraph.event_info.field_for_who
     - field.field.paragraph.event_info.field_what_to_expect
     - field.field.paragraph.event_info.field_when
     - field.field.paragraph.event_info.field_where
     - paragraphs.paragraphs_type.event_info
   module:
+    - options
     - text
 id: paragraph.event_info.default
 targetEntityType: paragraph
@@ -22,6 +24,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_event_info_theme:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_for_who:
     type: string

@@ -17,7 +17,7 @@ bundle: event_info
 label: 'When?'
 description: "EXAMPLE:\r\nWednesday, September 18, 2024 - 7:00 PM - 10:00 PM"
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

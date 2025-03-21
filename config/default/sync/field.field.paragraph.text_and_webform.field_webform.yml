@@ -18,7 +18,7 @@ bundle: text_and_webform
 label: Webform
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

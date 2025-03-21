@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.event_info.field_event_info
+    - field.field.paragraph.event_info.field_event_info_theme
     - field.field.paragraph.event_info.field_for_who
     - field.field.paragraph.event_info.field_what_to_expect
     - field.field.paragraph.event_info.field_when
@@ -23,6 +24,12 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_event_info_theme:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_for_who:
     type: string_textfield

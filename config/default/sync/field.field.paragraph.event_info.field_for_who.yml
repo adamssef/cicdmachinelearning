@@ -17,7 +17,7 @@ bundle: event_info
 label: 'For who?'
 description: 'Retailers, Hoteliers, Ecommerce companies, Hospitality businesses, Technology partners, Planet team'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

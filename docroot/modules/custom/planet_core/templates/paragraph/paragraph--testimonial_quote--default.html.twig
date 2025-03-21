@@ -3,9 +3,9 @@
 <div class="w-full bg-[#e00083] text-white py-14">
   <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row px-6 md:px-12 gap-8 items-center">
     
-    {% if paragraph.fields.testimonial_image_url is not empty %}
+    {% if paragraph.fields.testimonial_image_url_url is not empty %}
       <div class="w-full md:w-2/5 flex justify-center lg:justify-end">
-        <img class="w-32 h-32 rounded-full bg-white" src="{{ paragraph.fields.testimonial_image_url }}" alt="{{ paragraph.fields.field_testimonial_name[0].value }}">
+        <img class="w-32 h-32 rounded-full bg-white" src="{{ paragraph.fields.testimonial_image_url_url }}" alt="{{ paragraph.fields.field_testimonial_name[0].value }}">
       </div>
     {% endif %}
 
