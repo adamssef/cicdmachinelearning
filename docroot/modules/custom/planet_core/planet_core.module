@@ -6,21 +6,9 @@
  */
 
 use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
-use Drupal\planet_event_pages\EventParagraphTypes;
-use Drupal\views\Plugin\views\query\QueryPluginBase;
-use Drupal\views\ViewExecutable;
-use Drupal\views\Views;
 use Drupal\webform\WebformSubmissionInterface;
 use Drupal\node\NodeInterface;
-use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Access\AccessResult;
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\TranslatableInterface;
-use Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList;
-use Drupal\node\Entity\Node;
-use Drupal\webform\WebformSubmissionInterface;
 use Drupal\planet_core\UTMHelper;
 
 class SpecialTemplates {
@@ -347,91 +335,6 @@ function planet_core_preprocess_views_view_field(array &$variables)
       $variables['link'] = $link;
     }
   }
-}
-
-/**
- * Implements hook_theme().
- */
-function planet_core_theme($existing, $type, $theme, $path): array
-{
-  return [
-    'node__author' => [
-      'template' => 'node--author',
-      'base hook' => 'node'
-    ],
-    'node__sitemap' => [
-      'template' => 'node--sitemap',
-      'base hook' => 'node',
-    ],
-    'onboarding_page_template' => [
-      'template' => 'page--onboarding-page-template',
-      'base hook' => 'page',
-    ],
-    'pms_transformation_de_template' => [
-      'template' => 'page--pms-transformation-page-de-template',
-      'base hook' => 'node',
-    ],
-    'pms_transformation_fr_template' => [
-      'template' => 'page--pms-transformation-page-fr-template',
-      'base hook' => 'node',
-    ],
-    'pms_transformation_template' => [
-      'template' => 'page--pms-transformation-page-template',
-      'base hook' => 'node',
-    ],
-    'node__blog-single-page' => [
-      'template' => 'node--blog-single-page',
-      'base hook' => 'node',
-    ],
-    'node__press-front-page' => [
-      'template' => 'node--press-front-page',
-      'base hook' => 'node',
-    ],
-    'node__ebook-front-page' => [
-      'template' => 'node--ebook-front-page',
-      'base hook' => 'node',
-    ],
-    'node__press-archive-single-page' => [
-      'template' => 'node--press-archive-single-page',
-      'base hook' => 'node',
-    ],
-    'node__resources-page' => [
-      'template' => 'node--resources-page',
-      'base hook' => 'node',
-    ],
-    'node__news-page' => [
-      'template' => 'node--news-page',
-      'base hook' => 'node',
-    ],
-    'node__ebook-single-page' => [
-      'template' => 'node--ebook-single-page',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v1_it' => [
-      'template' => 'node--homepage-it',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v1_es' => [
-      'template' => 'node--homepage-es',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v1_de' => [
-      'template' => 'node--homepage-de',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v1_fr' => [
-      'template' => 'node--homepage-fr',
-      'base hook' => 'node',
-    ],
-    'node__homepage_v1' => [
-      'template' => 'node--homepage',
-      'base hook' => 'node',
-    ],
-    'node__basic_page' => [
-      'template' => 'node--basic-page',
-      'base hook' => 'node',
-    ]
-   ];
 }
 
 
