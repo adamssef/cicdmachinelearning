@@ -92,32 +92,36 @@ jQuery(document).ready(function () {
           ? event.event_location.join(', ') 
           : event.event_location;
 
-      return jQuery(`
-          <div class="bg-[#202020] rounded-lg overflow-hidden border border-zinc-50 border-solid p-2">
-              <div class="relative">
-                  <div style="background-image: url('${event.image}')" class="relative rounded h-52 w-full bg-cover bg-no-repeat bg-center">
-                      <div class="absolute inset-0 bg-black/40">
-                          <div class="absolute top-0 left-0 pl-2 pt-2">
-                              <div class="flex items-center bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
-                                  <span class="ml-1 text-base font-semibold">${event.date_range}</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="p-4">
-                      <h3 class="text-2xl text-zinc-50 font-bold leading-8">${event.title}</h3>
-                      <div class="flex items-center text-base font-light text-zinc-50 py-4">
-                          <span>${location}</span>
-                      </div>
-                      <div class="flex flex-wrap gap-2 mb-4">${industries}</div>
-                      <a href="${event.url}" class="inline-flex text-base items-center font-semibold text-zinc-50 hover:text-white">
-                          <span>${viewDetailsText}</span>
-                          <img class="ml-5 h-8 w-auto" src="/resources/icons/all/navigation-forward-dark.svg" alt="${viewDetailsText}">
-                      </a>
-                  </div>
-              </div>
-          </div>
-      `);
+          return jQuery(`
+            <div class="bg-[#202020] rounded-lg overflow-hidden border border-zinc-50 border-solid group">
+                <div class="relative">
+                    <div class="m-2 mb-0 group-hover:m-0 transition-all">
+                        <div style="background-image: url('${event.image}')" class="relative p-2 transition-all rounded h-52 group-hover:h-[216px] w-full bg-cover bg-no-repeat bg-center">
+                            <div class="absolute inset-0 bg-black/20">
+                                <div class="absolute top-0 left-0 pl-2 pt-2">
+                                    <div class="flex items-center bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                                        <span class="ml-1 text-base font-semibold">${event.date_range}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="p-4">
+                        <h3 class="text-2xl text-zinc-50 font-bold leading-8">${event.title}</h3>
+                        <div class="flex items-center text-base font-light text-zinc-50 py-4">
+                            <span>${location}</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">${industries}</div>
+                        <a href="${event.url}" class="inline-flex text-base items-center font-semibold text-zinc-50 hover:text-white">
+                            <span class="group-hover:underline">${viewDetailsText}</span>
+                            <img class="transition-all group-hover:ml-6 ml-5 h-8 w-auto" src="/resources/icons/all/navigation-forward-dark.svg" alt="${viewDetailsText}">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `);
+        
   }
 
   // Filter location handler
