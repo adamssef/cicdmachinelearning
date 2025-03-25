@@ -46,6 +46,14 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.
 
 COPY . $APP_HOME
 
+RUN chown root:www-data ${APACHE_DOCUMENT_ROOT}/sites/default/settings.php || true
+RUN chown root:www-data ${APACHE_DOCUMENT_ROOT}/sites/default/settings.local.php || true
+RUN chown root:www-data ${APACHE_DOCUMENT_ROOT}/sites/default/services.yml || true
+
+RUN chmod 440 ${APACHE_DOCUMENT_ROOT}/sites/default/settings.php || true
+RUN chmod 440 ${APACHE_DOCUMENT_ROOT}/sites/default/settings.local.php || true
+RUN chmod 440 ${APACHE_DOCUMENT_ROOT}/sites/default/services.yml || true
+
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=2.6.6
