@@ -150,9 +150,31 @@
   }
 
   @media (max-width: 991px) {
-    .planSwitch.two-options-toggle a label {
+    .planSwitch.planSwitch-black.two-options-toggle { 
+      border: 0
+
+    }
+    .planSwitch.two-options-toggle .planSwitch-subitem {
+      margin: 0 auto;
+      display: inline-block;
       width: 100%;
     }
+    .planSwitch.two-options-toggle .planSwitch-subitem label {
+      margin: 0 auto;
+      display: inline-block;
+      height: 48px;
+      width: 100%;
+    }
+
+    .planSwitch.two-options-toggle a label {
+      float: none;
+      transform: none;
+      width: 100%;
+      height: auto;
+      display: inline-block;
+      line-height: 50px;
+      margin-top: -2px;
+  }
     .planSwitch-subitem label {
     border: 2px solid #ee0083;
       border-top: 0;
