@@ -19,10 +19,11 @@ if (typeof Swiper !== "undefined") {
         },
       };
   
-      // Initialize Swipers only if elements exist
-      const brandsEl = document.querySelector(".swiper-brands");
-      if (brandsEl) new Swiper(brandsEl, swiperBrandsOptions);
-  
+     // Initialize Swipers only if elements exist
+      document.querySelectorAll(".swiper-brands").forEach((brandsEl) => {
+        new Swiper(brandsEl, swiperBrandsOptions);
+      });
+
       const testimonialsEl = document.querySelector(".swiper-testimonials");
       if (testimonialsEl) {
         new Swiper(testimonialsEl, {
