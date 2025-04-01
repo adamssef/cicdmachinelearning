@@ -114,7 +114,7 @@ class PlanetCoreCaseStudiesService {
     $product_option_tid = strtolower($product_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($product_option, 'case_studies_products') : NULL;
     $industry_option_tid = strtolower($industry_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($industry_option, 'case_studies_industry') : NULL;
     $company_size_option_tid = strtolower($company_size_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($company_size_option, 'company_size') : NULL;
-    $current_lang = $this->planetCoreNodeTranslationsService->determineTheLangId();
+    $current_lang = $this->languageManager->getCurrentLanguage()->getId();
 
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'case_studies')
@@ -512,7 +512,7 @@ class PlanetCoreCaseStudiesService {
     }
 
     $case_studies_data = [];
-    $langcode = $this->planetCoreNodeTranslationsService->determineTheLangId();
+    $langcode = $this->languageManager->getCurrentLanguage()->getId();
 
     foreach ($case_studies as $case_study) {
       $case_study = $case_study->getTranslation($langcode);
