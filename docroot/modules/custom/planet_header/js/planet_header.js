@@ -328,8 +328,6 @@
     });
 
     // Manage the flip class.
-
-    console.log(megamenuElement[0])
     if (!megamenuElement[0].classList.contains('display-none')) {
       img.classList.add('flip');
     } else {
