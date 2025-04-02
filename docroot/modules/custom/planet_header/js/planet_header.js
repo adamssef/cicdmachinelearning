@@ -249,10 +249,7 @@
     let isFrontPage = isFrontpage();
 
     let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
-
-    // let img = $(element).children().first().children().first();
-    // let img = document.querySelector('.business-link img');
-    let img = megamenuElement[0].querySelector('.business-link img');
+    let img = document.querySelector('span#' + menuName + ' .business-link img');
     // Hide all other menus and remove their flip class
     let menus = [
       document.getElementsByClassName('megamenu-products__desktop'),
@@ -331,6 +328,8 @@
     });
 
     // Manage the flip class.
+
+    console.log(megamenuElement[0])
     if (!megamenuElement[0].classList.contains('display-none')) {
       img.classList.add('flip');
     } else {
