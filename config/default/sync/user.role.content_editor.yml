@@ -21,6 +21,7 @@ dependencies:
     - node.type.case_studies
     - node.type.companies
     - node.type.e_book_
+    - node.type.events
     - node.type.layout_builder_page
     - node.type.legal_pages
     - node.type.locations_contacts
@@ -36,8 +37,33 @@ dependencies:
     - node.type.resources
     - node.type.support_locations_contacts
     - node.type.webform
+    - taxonomy.vocabulary.acquirers
+    - taxonomy.vocabulary.case_studies_industry
+    - taxonomy.vocabulary.case_studies_products
+    - taxonomy.vocabulary.case_studies_tags
+    - taxonomy.vocabulary.channels
+    - taxonomy.vocabulary.company_sectors
+    - taxonomy.vocabulary.company_size
+    - taxonomy.vocabulary.countries
+    - taxonomy.vocabulary.email_contacts_terms
+    - taxonomy.vocabulary.event_categories
+    - taxonomy.vocabulary.event_location
+    - taxonomy.vocabulary.event_type
+    - taxonomy.vocabulary.industry
     - taxonomy.vocabulary.newsroomtags
     - taxonomy.vocabulary.newsroomyears
+    - taxonomy.vocabulary.partner_type
+    - taxonomy.vocabulary.payment_methods
+    - taxonomy.vocabulary.phone_number_terms
+    - taxonomy.vocabulary.planet_offices_countries
+    - taxonomy.vocabulary.planet_offices_regions
+    - taxonomy.vocabulary.product_type
+    - taxonomy.vocabulary.region
+    - taxonomy.vocabulary.regions
+    - taxonomy.vocabulary.resources_categories
+    - taxonomy.vocabulary.resources_types
+    - taxonomy.vocabulary.sitemap_pages
+    - taxonomy.vocabulary.tags
     - workflows.workflow.editorial
   module:
     - cohesion
@@ -46,20 +72,24 @@ dependencies:
     - content_moderation
     - content_translation
     - contextual
+    - entity_reference_revisions
     - file
     - filter
     - help
     - media
     - menu_link_content
     - node
+    - paragraphs
     - path
     - quick_node_clone
+    - site_settings
     - system
     - taxonomy
     - tmgmt
     - toolbar
     - toolbar_edit_page_button
     - tour
+    - trash
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
@@ -84,6 +114,7 @@ permissions:
   - 'access drupal core elements group'
   - 'access elements'
   - 'access fields'
+  - 'access files overview'
   - 'access form fields fields group'
   - 'access form help fields group'
   - 'access form layout fields group'
@@ -99,16 +130,19 @@ permissions:
   - 'access menu elements group'
   - 'access seo'
   - 'access styles'
+  - 'access taxonomy overview'
   - 'access tokens'
   - 'access toolbar'
   - 'access toolbar edit page button'
   - 'access tour'
+  - 'access trash'
   - 'access view elements group'
   - 'administer component categories'
   - 'administer component content'
   - 'administer components'
   - 'administer helper categories'
   - 'administer helpers'
+  - 'administer taxonomy'
   - 'administer tmgmt'
   - 'administer url aliases'
   - 'clone advanced_product_page content'
@@ -116,6 +150,7 @@ permissions:
   - 'clone case_studies content'
   - 'clone companies content'
   - 'clone e_book_ content'
+  - 'clone events content'
   - 'clone layout_builder_page content'
   - 'clone legal_pages content'
   - 'clone locations_contacts content'
@@ -125,6 +160,7 @@ permissions:
   - 'clone own case_studies content'
   - 'clone own companies content'
   - 'clone own e_book_ content'
+  - 'clone own events content'
   - 'clone own layout_builder_page content'
   - 'clone own legal_pages content'
   - 'clone own locations_contacts content'
@@ -159,7 +195,9 @@ permissions:
   - 'create content translations'
   - 'create document media'
   - 'create e_book_ content'
+  - 'create events content'
   - 'create image media'
+  - 'create layout_builder_page content'
   - 'create legal_pages content'
   - 'create locations_contacts content'
   - 'create lottie_animation media'
@@ -177,8 +215,33 @@ permissions:
   - 'create remote_video media'
   - 'create resources content'
   - 'create support_locations_contacts content'
+  - 'create terms in acquirers'
+  - 'create terms in case_studies_industry'
+  - 'create terms in case_studies_products'
+  - 'create terms in case_studies_tags'
+  - 'create terms in channels'
+  - 'create terms in company_sectors'
+  - 'create terms in company_size'
+  - 'create terms in countries'
+  - 'create terms in email_contacts_terms'
+  - 'create terms in event_categories'
+  - 'create terms in event_location'
+  - 'create terms in event_type'
+  - 'create terms in industry'
   - 'create terms in newsroomtags'
   - 'create terms in newsroomyears'
+  - 'create terms in partner_type'
+  - 'create terms in payment_methods'
+  - 'create terms in phone_number_terms'
+  - 'create terms in planet_offices_countries'
+  - 'create terms in planet_offices_regions'
+  - 'create terms in product_type'
+  - 'create terms in region'
+  - 'create terms in regions'
+  - 'create terms in resources_categories'
+  - 'create terms in resources_types'
+  - 'create terms in sitemap_pages'
+  - 'create terms in tags'
   - 'create translation jobs'
   - 'create url aliases'
   - 'create vector_image media'
@@ -195,14 +258,19 @@ permissions:
   - 'delete any document media'
   - 'delete any document media revisions'
   - 'delete any e_book_ content'
+  - 'delete any events content'
+  - 'delete any file'
   - 'delete any image media'
   - 'delete any image media revisions'
+  - 'delete any layout_builder_page content'
+  - 'delete any legal_pages content'
   - 'delete any locations_contacts content'
   - 'delete any lottie_animation media'
   - 'delete any lottie_animation media revisions'
   - 'delete any media'
   - 'delete any newsroom content'
   - 'delete any page content'
+  - 'delete any partners content'
   - 'delete any payment_methods content'
   - 'delete any pdf media'
   - 'delete any pdf media revisions'
@@ -225,9 +293,13 @@ permissions:
   - 'delete companies revisions'
   - 'delete content translations'
   - 'delete e_book_ revisions'
+  - 'delete events revisions'
+  - 'delete layout_builder_page revisions'
+  - 'delete legal_pages revisions'
   - 'delete locations_contacts revisions'
   - 'delete media'
   - 'delete newsroom revisions'
+  - 'delete orphan revisions'
   - 'delete own advanced_product_page content'
   - 'delete own audio media'
   - 'delete own author content'
@@ -235,12 +307,16 @@ permissions:
   - 'delete own companies content'
   - 'delete own document media'
   - 'delete own e_book_ content'
+  - 'delete own events content'
   - 'delete own files'
   - 'delete own image media'
+  - 'delete own layout_builder_page content'
+  - 'delete own legal_pages content'
   - 'delete own locations_contacts content'
   - 'delete own lottie_animation media'
   - 'delete own newsroom content'
   - 'delete own page content'
+  - 'delete own partners content'
   - 'delete own payment_methods content'
   - 'delete own pdf media'
   - 'delete own planet_faq content'
@@ -255,6 +331,7 @@ permissions:
   - 'delete own video media'
   - 'delete own webform content'
   - 'delete page revisions'
+  - 'delete partners revisions'
   - 'delete payment_methods revisions'
   - 'delete planet_faq revisions'
   - 'delete planet_offices revisions'
@@ -263,8 +340,33 @@ permissions:
   - 'delete products revisions'
   - 'delete resources revisions'
   - 'delete support_locations_contacts revisions'
+  - 'delete terms in acquirers'
+  - 'delete terms in case_studies_industry'
+  - 'delete terms in case_studies_products'
+  - 'delete terms in case_studies_tags'
+  - 'delete terms in channels'
+  - 'delete terms in company_sectors'
+  - 'delete terms in company_size'
+  - 'delete terms in countries'
+  - 'delete terms in email_contacts_terms'
+  - 'delete terms in event_categories'
+  - 'delete terms in event_location'
+  - 'delete terms in event_type'
+  - 'delete terms in industry'
   - 'delete terms in newsroomtags'
   - 'delete terms in newsroomyears'
+  - 'delete terms in partner_type'
+  - 'delete terms in payment_methods'
+  - 'delete terms in phone_number_terms'
+  - 'delete terms in planet_offices_countries'
+  - 'delete terms in planet_offices_regions'
+  - 'delete terms in product_type'
+  - 'delete terms in region'
+  - 'delete terms in regions'
+  - 'delete terms in resources_categories'
+  - 'delete terms in resources_types'
+  - 'delete terms in sitemap_pages'
+  - 'delete terms in tags'
   - 'delete translation jobs'
   - 'delete webform revisions'
   - 'edit any advanced_product_page content'
@@ -274,11 +376,15 @@ permissions:
   - 'edit any companies content'
   - 'edit any document media'
   - 'edit any e_book_ content'
+  - 'edit any events content'
   - 'edit any image media'
+  - 'edit any layout_builder_page content'
+  - 'edit any legal_pages content'
   - 'edit any locations_contacts content'
   - 'edit any lottie_animation media'
   - 'edit any newsroom content'
   - 'edit any page content'
+  - 'edit any partners content'
   - 'edit any payment_methods content'
   - 'edit any pdf media'
   - 'edit any planet_faq content'
@@ -300,11 +406,15 @@ permissions:
   - 'edit own companies content'
   - 'edit own document media'
   - 'edit own e_book_ content'
+  - 'edit own events content'
   - 'edit own image media'
+  - 'edit own layout_builder_page content'
+  - 'edit own legal_pages content'
   - 'edit own locations_contacts content'
   - 'edit own lottie_animation media'
   - 'edit own newsroom content'
   - 'edit own page content'
+  - 'edit own partners content'
   - 'edit own payment_methods content'
   - 'edit own pdf media'
   - 'edit own planet_faq content'
@@ -318,7 +428,36 @@ permissions:
   - 'edit own vector_image media'
   - 'edit own video media'
   - 'edit own webform content'
+  - 'edit terms in acquirers'
+  - 'edit terms in case_studies_industry'
+  - 'edit terms in case_studies_products'
+  - 'edit terms in case_studies_tags'
+  - 'edit terms in channels'
+  - 'edit terms in company_sectors'
+  - 'edit terms in company_size'
+  - 'edit terms in countries'
+  - 'edit terms in email_contacts_terms'
+  - 'edit terms in event_categories'
+  - 'edit terms in event_location'
+  - 'edit terms in event_type'
+  - 'edit terms in industry'
+  - 'edit terms in newsroomtags'
+  - 'edit terms in newsroomyears'
+  - 'edit terms in partner_type'
+  - 'edit terms in payment_methods'
+  - 'edit terms in phone_number_terms'
+  - 'edit terms in planet_offices_countries'
+  - 'edit terms in planet_offices_regions'
+  - 'edit terms in product_type'
+  - 'edit terms in region'
+  - 'edit terms in regions'
+  - 'edit terms in resources_categories'
+  - 'edit terms in resources_types'
+  - 'edit terms in sitemap_pages'
+  - 'edit terms in tags'
   - 'post comments'
+  - 'purge node entities'
+  - 'restore node entities'
   - 'revert advanced_product_page revisions'
   - 'revert all revisions'
   - 'revert any audio media revisions'
@@ -333,9 +472,13 @@ permissions:
   - 'revert case_studies revisions'
   - 'revert companies revisions'
   - 'revert e_book_ revisions'
+  - 'revert events revisions'
+  - 'revert layout_builder_page revisions'
+  - 'revert legal_pages revisions'
   - 'revert locations_contacts revisions'
   - 'revert newsroom revisions'
   - 'revert page revisions'
+  - 'revert partners revisions'
   - 'revert payment_methods revisions'
   - 'revert planet_faq revisions'
   - 'revert planet_offices revisions'
@@ -346,17 +489,37 @@ permissions:
   - 'revert support_locations_contacts revisions'
   - 'revert webform revisions'
   - 'submit translation jobs'
+  - 'translate acquirers taxonomy_term'
+  - 'translate advanced_product_page node'
   - 'translate any entity'
   - 'translate case_studies node'
+  - 'translate channels taxonomy_term'
   - 'translate cohesion_layout'
+  - 'translate companies node'
+  - 'translate component_content'
+  - 'translate e_book_ node'
   - 'translate editable entities'
+  - 'translate event_categories taxonomy_term'
+  - 'translate event_type taxonomy_term'
+  - 'translate events node'
   - 'translate image media'
   - 'translate locations_contacts node'
+  - 'translate lottie_animation media'
   - 'translate menu_link_content'
   - 'translate newsroom node'
   - 'translate newsroomtags taxonomy_term'
   - 'translate page node'
+  - 'translate paragraph'
+  - 'translate partners node'
+  - 'translate payment_methods node'
+  - 'translate payment_methods taxonomy_term'
+  - 'translate planet_faq node'
+  - 'translate planet_products node'
+  - 'translate planet_resources node'
+  - 'translate products node'
   - 'translate resources node'
+  - 'translate site_setting_entity'
+  - 'translate sitemap_pages taxonomy_term'
   - 'update any media'
   - 'update content translations'
   - 'update media'
@@ -384,13 +547,18 @@ permissions:
   - 'view author revisions'
   - 'view case_studies revisions'
   - 'view companies revisions'
+  - 'view deleted entities'
   - 'view e_book_ revisions'
+  - 'view events revisions'
   - 'view latest version'
+  - 'view layout_builder_page revisions'
+  - 'view legal_pages revisions'
   - 'view locations_contacts revisions'
   - 'view newsroom revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view page revisions'
+  - 'view partners revisions'
   - 'view payment_methods revisions'
   - 'view planet_faq revisions'
   - 'view planet_offices revisions'
