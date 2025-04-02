@@ -9,7 +9,9 @@
 
   function isFrontpage() {
     let currentPath = window.location.pathname;
-    return ($("body").hasClass("path-frontpage") && $("body").find("home-hero").length > 0) || currentPath === "/new" || currentPath === "/homepage-prototype-v2";
+    let body = $("body");
+
+    return (body.hasClass("path-frontpage") && body.find("home-hero").length > 0) || currentPath === "/new" || currentPath === "/homepage-prototype-v2";
   }
 
   function addTransparentBgClassToHeader() {
@@ -24,8 +26,9 @@
 
   function pageHasTransparentBackground() {
     let isFrontPage = isFrontpage();
+    let potentiallyTransparent = $("body, div");
 
-    return isFrontPage || ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
+    return isFrontPage || potentiallyTransparent.hasClass("planet-header-transparent") || potentiallyTransparent.hasClass("coh-hero-full-width");
   }
 
   function areHtmlCollectionsEqual(collection1, collection2) {
@@ -207,19 +210,20 @@
   function headerBehaviorwithNotificationBar(hero, header) {
     $(document).ready(function(){
       let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
+      let blockCoheshionThemeContent = $('#block-cohesion-theme-content');
       if(hasNotificationBar > 0) {
         header.classList.add("white-bg");
         // When click to close Notification Bar
         $(".notification-bar-button").click(function(){
           header.classList.remove("white-bg");
-          $("#block-cohesion-theme-content").css("padding-top","0px");
+          blockCoheshionThemeContent.css("padding-top","0px");
           if($(hero).hasClass("coh-hero-full-width")) {
             $(hero).css("top","0px");
           }
         });
       } else {
         header.classList.remove("white-bg");
-        $("#block-cohesion-theme-content").css("padding-top","0px");
+        blockCoheshionThemeContent.css("padding-top","0px");
         hero.addClass("menu-invisible");
         $(".hero-background").addClass("menu-invisible");
       }
@@ -247,7 +251,8 @@
     let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
 
     // let img = $(element).children().first().children().first();
-    let img = document.querySelector('.business-link img');
+    // let img = document.querySelector('.business-link img');
+    let img = megamenuElement[0].querySelector('.business-link img');
     // Hide all other menus and remove their flip class
     let menus = [
       document.getElementsByClassName('megamenu-products__desktop'),
@@ -295,7 +300,8 @@
             if (isFrontPage) {
               changeHeaderBackgroundColor('#FAFAFA');
             }
-            let hasPageTransparentBackground = !$('body').hasClass('plnt-css-node-46') && (isFrontPage || ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width") || $("body, div").hasClass("coh-hero-5050")));
+            let potentiallyTransparent = $("body, div");
+            let hasPageTransparentBackground = !$('body').hasClass('plnt-css-node-46') && (isFrontPage || (potentiallyTransparent.hasClass("planet-header-transparent") || potentiallyTransparent.hasClass("coh-hero-full-width") || potentiallyTransparent.hasClass("coh-hero-5050")));
 
             if (hasPageTransparentBackground && scrollPosition === 0) {
               addTransparentBgClassToHeader();
@@ -364,7 +370,8 @@
   function headerBehaviorOnScroll() {
     let logo = document.getElementById('planet-logo');
     let logoMobileAndTablet = document.getElementById('planet-logo--mobile-and-tablet');
-    let hasDarkMenuTheme = $("body").find(".dark-menu-items").length + $("body").find(".path-frontpage").length;
+    let body = $('body');
+    let hasDarkMenuTheme = body.find(".dark-menu-items").length + body.find(".path-frontpage").length;
     let isFrontPage = isFrontpage();
 
     $(window).on('scroll', function () {
@@ -407,7 +414,7 @@
             changeHeaderBackgroundColor("#FAFAFA");
           }
           else {
-            changeHeaderBackgroundColor('#fafafa');
+            changeHeaderBackgroundColor('#FAFAFA');
           }
         }
 
@@ -431,7 +438,8 @@
   function headerBehaviorOnResize() {
     let logo = document.getElementById('planet-logo');
     let logoMobileAndTablet = document.getElementById('planet-logo--mobile-and-tablet');
-    let hasDarkMenuTheme = $("body").find(".dark-menu-items").length + $("body").find(".path-frontpage").length;
+    let body = $('body');
+    let hasDarkMenuTheme = body.find(".dark-menu-items").length + body.find(".path-frontpage").length;
     let megamenuMobileAndTablets = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
     let hamburgerMenuIcon = document.getElementsByClassName('hamburger-menu')[0];
     let closingXIcon = document.getElementsByClassName('close-hamburger-menu')[0];
@@ -461,7 +469,6 @@
                 setDownArrowsColorWhite();
               }
             }
-
           }
 
           $(goHomeDesktop).removeClass('display-none');
@@ -663,10 +670,13 @@
     let logoMobileAndTablet = document.getElementById('planet-logo--mobile-and-tablet');
     let closingXIcon = document.getElementsByClassName('close-hamburger-menu');
     let isFrontPage = isFrontpage();
-    let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0 && !isFrontPage;
+    let body = $('body');
+    let hasDarkMenuTheme = body.find(".dark-menu-items").length > 0 && !isFrontPage;
     let hamburgerMenuIcon = document.getElementsByClassName('hamburger-menu')[0];
     let scrollPosition = jQuery(window).scrollTop();
     let isMegamenuHeaderExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
+    let megamenuHeader = $('.megamenu-header');
+
 
     if (hasDarkMenuTheme) {
       $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
@@ -712,13 +722,13 @@
           }
           else {
             if (!isFrontpage()) {
-              $('.megamenu-header').css('background-color', '#fafafa');
+              megamenuHeader.css('background-color', '#fafafa');
             }
             else {
-              $('.megamenu-header').css('background-color', '#FAFAFA');
+              megamenuHeader.css('background-color', '#FAFAFA');
             }
 
-            $('.megamenu-header').css('background-color', '#fafafa');
+            megamenuHeader.css('background-color', '#fafafa');
             removeTransparentBgClassFromHeader();
 
             $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
@@ -751,7 +761,7 @@
       switchHamburgerMenuLogoBlack();
       headerBehaviorOnResize(header);
       headerBehaviorOnScroll(header);
-      $('.megamenu-header').css('background-color', '#fafafa');
+      megamenuHeader.css('background-color', '#fafafa');
     }
 
     // Search for utm parameters in url.
@@ -816,8 +826,8 @@
       }
     }
 
-    let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
-    let hasHero = $("body").find(".coh-hero").length;
+    let hasNotificationBar = body.find(".notification-bar-container:visible").length;
+    let hasHero = body.find(".coh-hero").length;
     let hasHeroOnTop = 0;
 
     if (pageHasTransparentBackground()) {
@@ -1014,19 +1024,22 @@
             currentlyOpenMenuItem = null;
 
             let scrollPosition = jQuery(window).scrollTop();
-            let hasTransparentBg = isFrontpage() || ($("body, div").hasClass("planet-header-transparent") || $("body, div").hasClass("coh-hero-full-width"));
+            let potentiallyTransparent = $('body, div');
+            let hasTransparentBg = isFrontpage() || (potentiallyTransparent.hasClass("planet-header-transparent") || potentiallyTransparent.hasClass("coh-hero-full-width"));
             let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
             let closingXIcon = document.getElementsByClassName('close-hamburger-menu');
 
             if (scrollPosition === 0) {
               if (hasTransparentBg) {
+                let planetLogoMobileAndTablet = $(document.getElementById('planet-logo--mobile-and-tablet'));
+
                 if (hasDarkMenuTheme) {
-                  $(document.getElementById('planet-logo--mobile-and-tablet')).attr('src', '/resources/logo/planet_logo_black.svg');
+                  planetLogoMobileAndTablet.attr('src', '/resources/logo/planet_logo_black.svg');
                   $(closingXIcon).attr('src', '/resources/icons/closing-x.svg');
                 }
                 else {
                   addTransparentBgClassToHeader();
-                  $(document.getElementById('planet-logo--mobile-and-tablet')).attr('src', '/resources/logo/planet_logo.svg');
+                  planetLogoMobileAndTablet.attr('src', '/resources/logo/planet_logo.svg');
                   switchHamburgerMenuLogoWhite();
                 }
               }
