@@ -102,12 +102,13 @@ AddEncoding gzip svgz
   # To redirect all users to access the site WITHOUT the 'www.' prefix,
   # (http://www.example.com/foo will be redirected to http://example.com/foo)
   # uncomment the following:
+
+  # Redirect /ads.txt to homepage
+  RewriteCond %{REQUEST_URI} ^/ads\.txt$
+  RewriteRule ^ / [R=301,L]
+
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
-
-  # Block Sendgrid requests
-  RewriteCond %{HTTP_USER_AGENT} "SendGrid Event API" [NC]
-  RewriteRule .* - [F,L]
 
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.
