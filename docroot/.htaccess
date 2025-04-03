@@ -103,10 +103,6 @@ AddEncoding gzip svgz
   # (http://www.example.com/foo will be redirected to http://example.com/foo)
   # uncomment the following:
 
-  # Redirect /ads.txt to homepage
-  RewriteCond %{REQUEST_URI} ^/ads\.txt$
-  RewriteRule ^ / [R=301,L]
-
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
 
@@ -231,3 +227,4 @@ AddEncoding gzip svgz
 </FilesMatch>
 
 Redirect 301 /sites/default/files/2022-12/planet-nrf-2023-brochure.pdf https://www.weareplanet.com/ls-retail-houston?utm_campaign=ptr-ab-LSretailUS23-event&utm_medium=event&utm_source=LS-Retail
+Redirect 301 /ads.txt https://www.weareplanet.com
