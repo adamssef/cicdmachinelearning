@@ -1,23 +1,19 @@
-<div class="relative bg-zinc-50 paragraph--hero-component">
+<div class="flex {% if paragraph.fields.field_hero_form %} flex-col {% else %} flex-col-reverse {% endif %} md:flex-col relative bg-zinc-50 paragraph--hero-component">
 	{% set corners = paragraph.fields.field_rounded_corners[0].value %}
-	<div
-		class="{% if paragraph.fields.field_hero_form %} max-w-[1336px] mx-auto {% endif %}grid grid-cols-1 md:grid-cols-2 bg-zinc-50 md:min-h-[800px]">
-		<!-- Left content column with padding -->
-		<div
-			class="container mx-auto px-4 md:pl-16 md:pr-8 py-8 md:py-24 order-2 md:order-1 flex{% if not paragraph.fields.field_hero_form %} md:items-center{% endif %}">
-			<!-- Pre-heading -->
-			<div class="w-full">
-				<p class="block text-sm font-semibold leading-4 pl-4 uppercase border-l-4 border-solid border-l-[#E00083] mb-4">
-					{{ paragraph.fields.field_hero_label[0].value }}
-				</p>
-				<h1 class="mt-4 block font-semibold text-[46px] leading-[3rem] lg:text-5xl">
-					{{ paragraph.fields.field_hero_title[0].value }}
-				</h1>
+	<div class="relative md:absolute top-0 left-0 w-full h-full">
+		<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 md:min-h-[800px]">
+			<div class="md:items-center flex xl:px-0 px-4">
+				<div class="w-full md:pr-4">
+					<p class="block text-sm font-semibold leading-4 mt-6 md:mt-4 pl-4 uppercase border-l-4 border-solid border-l-[#E00083] mb-4">
+						{{ paragraph.fields.field_hero_label[0].value }}
+					</p>
+					<h1 class="mt-4 block font-semibold text-[46px] leading-[3rem] lg:text-5xl">
+						{{ paragraph.fields.field_hero_title[0].value }}
+					</h1>
 
-				<div class="mt-4 md:mt-6 font-light leading-[22px] md:leading-[20px] text-[16px] md:text-[20px] hero-desc-paragraph">
-					{{ paragraph.fields.field_hero[0].value|raw }}
-				</div>
-
+					<div class="mt-4 md:mt-6 font-light leading-[22px] md:leading-[20px] text-[16px] md:text-[20px] hero-desc-paragraph">
+						{{ paragraph.fields.field_hero[0].value|raw }}
+					</div>
 				<!-- CTA buttons -->
 				<div
 					class="mt-8 flex flex-col md:flex-row gap-2 md:gap-4">
@@ -35,15 +31,23 @@
 						</a>
 					{% endif %}
 
+					</div>
 				</div>
 			</div>
+			<div></div>
+		</div>
+	</div>
+	<div
+		class="{% if paragraph.fields.field_hero_form %} max-w-[1336px] mx-auto {% endif %}grid grid-cols-1 md:grid-cols-2 bg-zinc-50 md:min-h-[800px]">
+		<!-- Left content column with padding -->
+		<div><!-- Pre-heading -->
 		</div>
 
 		<!-- Right column with form -->
 		{% if paragraph.fields.field_hero_form %}
 			<div class="order-3 md:order-2 m-4">
 				<div class="coh-style-form site-studio-webform-element site-studio-webform-node-element" style="padding: 0">
-					<div id="contact-us" class="p-8 md:m-8" style="box-shadow: 0 0.25rem 1.5625rem rgba(0,0,0,0.1)">
+					<div id="contact-us" class="p-8 md:m-8 rounded-lg" style="box-shadow: 0 0.25rem 1.5625rem rgba(0,0,0,0.1)">
 						{{paragraph.fields.field_hero_form}}
 					</div>
 				</div>
