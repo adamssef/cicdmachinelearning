@@ -1,8 +1,8 @@
 <div class="flex {% if paragraph.fields.field_hero_form %} flex-col {% else %} flex-col-reverse {% endif %} md:flex-col relative bg-zinc-50 paragraph--hero-component">
 	{% set corners = paragraph.fields.field_rounded_corners[0].value %}
 	<div class="relative md:absolute top-0 left-0 w-full h-full">
-		<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 md:min-h-[700px]">
-			<div class="md:items-center flex xl:px-0 px-4">
+		<div class="max-w-7xl px-4 md:px-8 xl:px-4 2xl:px-0 mx-auto grid grid-cols-1 md:grid-cols-2 md:min-h-[700px]">
+			<div class="md:items-center flex">
 				<div class="w-full md:pr-4">
 					<p class="block text-sm font-semibold leading-4 mt-6 md:mt-4 pl-4 uppercase border-l-4 border-solid border-l-[#E00083] mb-4">
 						{{ paragraph.fields.field_hero_label[0].value }}
