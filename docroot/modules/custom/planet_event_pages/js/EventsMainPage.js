@@ -93,7 +93,7 @@ jQuery(document).ready(function () {
           : event.event_location;
 
           return jQuery(`
-            <div class="bg-[#202020] rounded-lg overflow-hidden border border-zinc-50 border-solid group">
+            <div class="bg-[#202020] rounded-lg overflow-hidden border border-gray-400 border-solid group">
                 <div class="relative">
                     <div class="m-2 mb-0 group-hover:m-0 transition-all">
                         <div style="background-image: url('${event.image}')" class="relative p-2 transition-all rounded h-52 group-hover:h-[216px] w-full bg-cover bg-no-repeat bg-center">

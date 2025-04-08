@@ -10,6 +10,7 @@
 }
 .hero-desc-paragraph > p, .font-light-paragraph > p {
   font-weight: 300;
+  line-height: 140%;
 }
 form.tfa-setup ul {
   display: none;
@@ -2499,10 +2500,23 @@ header .coh-planet-logo {
   margin-bottom: 8px
 }
 
-.text-and-webform .webform-submission-form {
-  border-radius: 16px;
-  padding: 36px;
+@media (min-width: 1025px) { 
+  .text-and-webform .webform-submission-form {
+    border-radius: 40px;
+    padding: 36px;
+  }
 }
+@media (max-width: 1024px) {
+  .text-and-webform .webform-submission-form {
+    padding-right: 16px;
+    padding-left: 16px;
+    border-radius: 40px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+}
+
+
 
 .text-and-webform .webform-submission-form .js-form-type-checkbox {
   display: flex;
@@ -2525,4 +2539,18 @@ header .coh-planet-logo {
 
 .text-and-webform .webform-submission-form {
   background-color: white;
+}
+
+.plnt-css-events .has-transparent-bg .track-my-refund-menu-item.contact-us {
+  background: white;
+  border-color: white;
+}
+.plnt-css-events .has-transparent-bg  .track-my-refund-menu-item.protel-login {
+  border-color: white;
+}
+.plnt-css-events .has-transparent-bg  .track-my-refund-menu-item.protel-login:hover {
+  border-color: #e00083;
+}
+.plnt-css-events .has-transparent-bg  .track-my-refund-menu-item.contact-us a.megamenu-link {
+  color: black !important;
 }
