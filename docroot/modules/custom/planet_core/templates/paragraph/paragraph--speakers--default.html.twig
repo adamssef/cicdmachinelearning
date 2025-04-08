@@ -7,7 +7,7 @@
       {# Define the number of speakers #}
       {% set speaker_count = paragraph.fields.field_speakers|length %}
       
-      <div class="flex flex-wrap justify-center">
+      <div class="flex flex-wrap justify-center md:max-w-xl xl:max-w-none mx-auto">
         {% for speaker in paragraph.fields.field_speakers %}
           {# Apply different widths based on the number of speakers #}
           <div 

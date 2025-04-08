@@ -1162,6 +1162,11 @@ video {
   .md\:p-8 {
     padding: 2rem;
   }
+
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1171,7 +1176,14 @@ video {
 }
 
 @media (min-width: 1280px) {
-  .xl\:px-0 {
+  .xl\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
   }
