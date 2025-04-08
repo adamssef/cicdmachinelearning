@@ -1577,10 +1577,6 @@ video {
     max-width: 16rem;
   }
 
-  .lg\:max-w-none {
-    max-width: none;
-  }
-
   .lg\:justify-end {
     justify-content: flex-end;
   }
