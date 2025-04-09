@@ -80,3 +80,28 @@ function planet_event_pages_theme_suggestions_node_alter(array &$suggestions, ar
     return;
   }
 }
+/**
+ * Implements hook_cron().
+ * Check for past events and set them to unpublished.
+ */
+function planet_event_pages_cron() {
+  $current_time = new \Drupal\Core\Datetime\DrupalDateTime('now');
+  
+  // Query for event nodes where the event end date is in the past and bypass access checks.
+  $query = \Drupal::entityQuery('node')
+    ->condition('type', 'events')
+    ->condition('field_event_end_date', $current_time->format('Y-m-d'), '<')
+    ->condition('status', 1) // Only get published nodes
+    ->accessCheck(FALSE); // Important: Bypass access checks for this query.
+
+  $nids = $query->execute();
+
+  if (!empty($nids)) {
+    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+    foreach ($nodes as $node) {
+      $node->set('status', 0); // Set the node status to unpublished (0)
+      $node->save();
+      \Drupal::logger('planet_event_pages')->notice('Unpublished event node with ID: @nid because its end date has passed.', ['@nid' => $node->id()]);
+    }
+  }
+}
