@@ -281,7 +281,7 @@
             document.getElementById(map.get(className)).classList.add('flip');
 
             if (isFrontPage) {
-              changeHeaderBackgroundColor('#fafafa');
+              changeHeaderBackgroundColor('#ffffff');
             }
           }
           else {
@@ -295,7 +295,7 @@
             let isFrontPage = isFrontpage();
 
             if (isFrontPage) {
-              changeHeaderBackgroundColor('#FAFAFA');
+              changeHeaderBackgroundColor('#ffffff');
             }
             let potentiallyTransparent = $("body, div");
             let hasPageTransparentBackground = !$('body').hasClass('plnt-css-node-46') && (isFrontPage || (potentiallyTransparent.hasClass("planet-header-transparent") || potentiallyTransparent.hasClass("coh-hero-full-width") || potentiallyTransparent.hasClass("coh-hero-5050")));
@@ -408,10 +408,10 @@
 
         if (scrollPosition > 0) {
           if (isFrontPage) {
-            changeHeaderBackgroundColor("#FAFAFA");
+            changeHeaderBackgroundColor("#ffffff");
           }
           else {
-            changeHeaderBackgroundColor('#FAFAFA');
+            changeHeaderBackgroundColor('#ffffff');
           }
         }
 
@@ -694,10 +694,10 @@
         $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
         if (scrollPosition > 0) {
           if (!isFrontpage()) {
-            $('.megamenu-header').css('background-color', '#fafafa');
+            $('.megamenu-header').css('background-color', '#ffffff');
           }
           else {
-            $('.megamenu-header').css('background-color', '#FAFAFA');
+            $('.megamenu-header').css('background-color', '#ffffff');
           }
         }
       }
@@ -719,13 +719,13 @@
           }
           else {
             if (!isFrontpage()) {
-              megamenuHeader.css('background-color', '#fafafa');
+              megamenuHeader.css('background-color', '#ffffff');
             }
             else {
-              megamenuHeader.css('background-color', '#FAFAFA');
+              megamenuHeader.css('background-color', '#ffffff');
             }
 
-            megamenuHeader.css('background-color', '#fafafa');
+            megamenuHeader.css('background-color', '#ffffff');
             removeTransparentBgClassFromHeader();
 
             $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
@@ -758,7 +758,7 @@
       switchHamburgerMenuLogoBlack();
       headerBehaviorOnResize(header);
       headerBehaviorOnScroll(header);
-      megamenuHeader.css('background-color', '#fafafa');
+      megamenuHeader.css('background-color', '#ffffff');
     }
 
     // Search for utm parameters in url.

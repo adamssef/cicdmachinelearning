@@ -2449,7 +2449,8 @@ header .coh-planet-logo {
 .input-focus {
   outline: 2px solid #e00083
 }
-#block-cohesion-theme-content {background: #fafafa}
+
+#block-cohesion-theme-content {background: #ffffff}
 
 @media screen and (min-width: 769px) {
   .text-and-webform form {
