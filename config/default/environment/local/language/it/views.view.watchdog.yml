@@ -1,0 +1,29 @@
+display:
+  default:
+    display_title: Predefinito
+    display_options:
+      fields:
+        type:
+          label: Type
+        name:
+          label: Utente
+        link:
+          label: Operations
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Ripristina
+          exposed_sorts_label: 'Ordina per'
+          sort_desc_label: Disc
+      filters:
+        type:
+          expose:
+            label: Type
+  page:
+    display_title: Page
