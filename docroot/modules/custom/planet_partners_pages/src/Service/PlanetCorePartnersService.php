@@ -281,7 +281,6 @@ class PlanetCorePartnersService
 
   function getSinglePartnerData($node_id)
   {
-    global $base_url;
 
     // Get the current page language code.
     $language_code = $this->languageManager->getCurrentLanguage()->getId();

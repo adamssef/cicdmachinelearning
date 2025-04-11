@@ -11,19 +11,15 @@
 	<div class="plnt-partners-single-partner-page">
 		<div class="partner-logo-bg coh-hero coh-hero-full-width" class="background-logo-partner" style="background-color: {{article.bg_color}};background-image: url({{article.background_image}})">
 			<div class="coh-row">
-				<div class="coh-container-boxed">
-					<div class="coh-row-inner">
-						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-12">
+				<div class="max-w-7xl px-4 md:px-8 2xl:px-0 mx-auto">
 							<div class="breadcrumbs text-white">
 								<a href="{{main_link[langcode]}}">Partners</a>
 							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 		<div class="white-rounded-section">
-			<div class="coh-container coh-container-boxed">
+			<div class="max-w-7xl px-4 md:px-8 2xl:px-0 mx-auto coh-container coh-container-boxed">
 				<div class="coh-row">
 					<div class="coh-row-inner intro-partners-info">
 						<div class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-3">
@@ -65,17 +61,51 @@
 							{% if article.featured_image %}
 							<img class="rounded-image" src="{{article.featured_image}}">
 							{% endif %}
-							<div style="margin-top: 20px">
+							
+						</div>
+
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 40px">
 							{% for paragraph in product_page_paragraphs %}
 			{% set template_path = '/modules/custom/planet_core/templates/paragraph/paragraph--' ~ paragraph.type ~ '--default.html.twig' %}
 			{{ include(template_path, ignore_missing = true) }}
 		{% endfor %}
 		</div>
+		</div>
+		{% if form %}
+		<div style="background-color: #fafafa" class="coh-container ssa-component coh-component ssa-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886 coh-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886 coh-light-mode coh-ce-cpt__v3_form_50_50_generic_-9e1e96f5">
+			<div class="coh-container coh-container-boxed max-w-7xl px-4 md:px-8 2xl:px-0 mx-auto">
+				<div class="coh-row coh-row-bleed-xl coh-row-visible-xl" data-coh-row-match-heights='{"xl":{"target":"none"}}' data-once="coh-row-match-heights-init">
+					<div class="coh-row-inner">
+						<div class="coh-column coh-ce-cpt__v3_form_50_50_generic_-399455a4 coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
+							<div class="coh-container coh-container-left coh-ce-cpt__v3_form_50_50_generic_-c76781">
+										<p class="coh-paragraph coh-style-e50 coh-ce-cpt__v3_form_50_50_generic_-7c06e510">
+											{{node.field_webform_pre_heading.value}}
+										</p>
+										<h1 class="coh-heading coh-style-h700 coh-ce-cpt__v3_form_50_50_generic_-bc120afd">
+											{{node.field_webform_title.value}}
+										</h1>
+										<div class="coh-wysiwyg coh-ce-cpt__v3_form_50_50_generic_-e7353b22">
+											{{node.field_webform_description.value|raw}}
+										</div>
+							</div>
 						</div>
-
+						<div style="background-color: #fff" class="coh-column coh-visible-sm coh-col-sm-12 coh-visible-xl coh-col-xl-6">
+							<div class="coh-container coh-style-form coh-container-right coh-ce-cpt__v3_form_50_50_generic_-d5d1cbec">
+								<div class="coh-container ssa-component coh-component ssa-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886 coh-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886">
+									<div class="site-studio-webform-element site-studio-webform-node-element">
+										<div id="contact-us">
+											{{form}}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		
+		{% endif %}
 	</div>

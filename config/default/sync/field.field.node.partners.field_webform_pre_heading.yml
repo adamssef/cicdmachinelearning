@@ -1,0 +1,24 @@
+uuid: 2e3a3f88-cec1-4d94-9f5e-d0f680f53b9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_webform_pre_heading
+    - node.type.partners
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.partners.field_webform_pre_heading
+field_name: field_webform_pre_heading
+entity_type: node
+bundle: partners
+label: 'Webform pre-heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
