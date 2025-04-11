@@ -2,5 +2,5 @@ name: Planet Sitewide Fonts
 description: "Adds some fonts to be available available globally. This is a workaround for Sitestudio error encountered
 when working on D9 -> D10 migration."
 type: module
-package: planet
+package: Planet
 core_version_requirement: ^8 || ^9 || ^10

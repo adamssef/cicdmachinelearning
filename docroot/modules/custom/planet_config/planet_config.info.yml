@@ -1,5 +1,5 @@
 name: Planet Config
 description: "Provides configuration for Planet."
 type: module
-package: planet
+package: Planet
 core_version_requirement: ^8 || ^9 || ^10
