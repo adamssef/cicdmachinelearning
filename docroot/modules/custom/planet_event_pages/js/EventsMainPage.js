@@ -93,7 +93,7 @@ jQuery(document).ready(function () {
           : event.event_location;
 
           return jQuery(`
-            <div class="bg-[#202020] rounded-lg overflow-hidden border border-zinc-50 border-solid group">
+            <a style="border-color: #545454" href="${event.url}" class="bg-[#202020] rounded-lg overflow-hidden border border-[#d1d1d1] border-solid group">
                 <div class="relative">
                     <div class="m-2 mb-0 group-hover:m-0 transition-all">
                         <div style="background-image: url('${event.image}')" class="relative p-2 transition-all rounded h-52 group-hover:h-[216px] w-full bg-cover bg-no-repeat bg-center">
@@ -113,13 +113,13 @@ jQuery(document).ready(function () {
                             <span>${location}</span>
                         </div>
                         <div class="flex flex-wrap gap-2 mb-4">${industries}</div>
-                        <a href="${event.url}" class="inline-flex text-base items-center font-semibold text-zinc-50 hover:text-white">
+                        <span class="inline-flex text-base items-center font-semibold text-zinc-50 hover:text-white">
                             <span class="group-hover:underline">${viewDetailsText}</span>
                             <img class="transition-all group-hover:ml-6 ml-5 h-8 w-auto" src="/resources/icons/all/navigation-forward-dark.svg" alt="${viewDetailsText}">
-                        </a>
+                        </span>
                     </div>
                 </div>
-            </div>
+            </a>
         `);
         
   }

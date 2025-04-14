@@ -4,11 +4,26 @@ status: true
 dependencies:
   config:
     - node.type.advanced_product_page
+    - node.type.author
     - node.type.case_studies
+    - node.type.companies
     - node.type.e_book_
+    - node.type.events
+    - node.type.layout_builder_page
+    - node.type.legal_pages
+    - node.type.locations_contacts
+    - node.type.newsroom
     - node.type.page
+    - node.type.partners
+    - node.type.payment_methods
+    - node.type.planet_faq
+    - node.type.planet_offices
+    - node.type.planet_products
+    - node.type.planet_resources
     - node.type.products
     - node.type.resources
+    - node.type.support_locations_contacts
+    - node.type.webform
   module:
     - content_moderation
 _core:
@@ -88,9 +103,24 @@ type_settings:
   entity_types:
     node:
       - advanced_product_page
+      - author
       - case_studies
+      - companies
       - e_book_
+      - events
+      - layout_builder_page
+      - legal_pages
+      - locations_contacts
+      - newsroom
       - page
+      - partners
+      - payment_methods
+      - planet_faq
+      - planet_offices
+      - planet_products
+      - planet_resources
       - products
       - resources
+      - support_locations_contacts
+      - webform
   default_moderation_state: draft

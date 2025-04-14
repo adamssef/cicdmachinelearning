@@ -154,8 +154,9 @@ class PlanetCoreBasicPageService
                         $field_data[$field_name][0]['alias'] = $aliases[$langcode] ?? $uri;
                     }
                 } else {
-                    $internal_path = '/' . ltrim($uri, '/');
-                    $field_data[$field_name][0]['alias'] = $this->pathAliasManager->getAliasByPath($internal_path, $langcode);
+                    // $internal_path = '/' . ltrim($uri, '/');
+                    // $field_data[$field_name][0]['alias'] = $this->pathAliasManager->getAliasByPath($internal_path, $langcode);
+                    $field_data[$field_name][0]['alias'] = $uri;
                 }
             }
 

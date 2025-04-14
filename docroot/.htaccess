@@ -102,12 +102,9 @@ AddEncoding gzip svgz
   # To redirect all users to access the site WITHOUT the 'www.' prefix,
   # (http://www.example.com/foo will be redirected to http://example.com/foo)
   # uncomment the following:
+
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
-
-  # Block Sendgrid requests
-  RewriteCond %{HTTP_USER_AGENT} "SendGrid Event API" [NC]
-  RewriteRule .* - [F,L]
 
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.
@@ -230,3 +227,4 @@ AddEncoding gzip svgz
 </FilesMatch>
 
 Redirect 301 /sites/default/files/2022-12/planet-nrf-2023-brochure.pdf https://www.weareplanet.com/ls-retail-houston?utm_campaign=ptr-ab-LSretailUS23-event&utm_medium=event&utm_source=LS-Retail
+Redirect 301 /ads.txt https://www.weareplanet.com

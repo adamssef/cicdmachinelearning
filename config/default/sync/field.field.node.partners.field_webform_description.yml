@@ -1,9 +1,9 @@
-uuid: 8c06eab0-3432-48d9-ad8b-a5723331bfa7
+uuid: b672e7a6-8280-46d4-92ff-508ec207c1a8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
+    - field.storage.node.field_webform_description
     - filter.format.cohesion
     - node.type.partners
   module:
@@ -12,19 +12,17 @@ dependencies:
 third_party_settings:
   tmgmt_content:
     excluded: false
-id: node.partners.body
-field_name: body
+id: node.partners.field_webform_description
+field_name: field_webform_description
 entity_type: node
 bundle: partners
-label: About
+label: 'Webform description'
 description: ''
-required: true
-translatable: true
+required: false
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: true
-  required_summary: false
   allowed_formats:
     - cohesion
-field_type: text_with_summary
+field_type: text_long

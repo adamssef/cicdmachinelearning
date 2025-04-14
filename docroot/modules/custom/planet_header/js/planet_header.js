@@ -252,6 +252,7 @@
       }
     });
   }
+
   function addDisplayNoneToAllContainers() {
     let allContainers = [
       document.getElementsByClassName('megamenu-mobile-and-tablets__container--products')[0],
@@ -305,7 +306,7 @@
             document.getElementById(map.get(className)).classList.add('flip');
 
             if (isFrontPage) {
-              changeHeaderBackgroundColor('#fafafa');
+              changeHeaderBackgroundColor('#ffffff');
             }
           }
           else {
@@ -319,7 +320,7 @@
             let isFrontPage = isFrontpage();
 
             if (isFrontPage) {
-              changeHeaderBackgroundColor('#FAFAFA');
+              changeHeaderBackgroundColor('#ffffff');
             }
             let potentiallyTransparent = document.querySelectorAll('body, div');
             let body = document.body;
@@ -445,10 +446,10 @@
 
         if (scrollPosition > 0) {
           if (isFrontPage) {
-            changeHeaderBackgroundColor("#FAFAFA");
+            changeHeaderBackgroundColor("#ffffff");
           }
           else {
-            changeHeaderBackgroundColor('#FAFAFA');
+            changeHeaderBackgroundColor('#ffffff');
           }
         }
 
@@ -738,15 +739,11 @@
 
             // Iterate over the NodeList and set the background color for each element
             megamenuHeaders.forEach(function(header) {
-              header.style.backgroundColor = '#fafafa';
+              header.style.backgroundColor = '#ffffff';
             });          }
           else {
-            var megamenuHeaders = document.querySelectorAll('.megamenu-header');
-
-            // Iterate over the NodeList and set the background color for each element
-            megamenuHeaders.forEach(function(header) {
-              header.style.backgroundColor = '#FAFAFA';
-            });          }
+            $('.megamenu-header').css('background-color', '#ffffff');
+          }
         }
       }
       else {
@@ -767,9 +764,9 @@
           }
           else {
             if (!isFrontpage()) {
-              megamenuHeader.style.backgroundColor = '#fafafa';
+              megamenuHeader.style.backgroundColor = '#ffffff';
             } else {
-              megamenuHeader.style.backgroundColor = '#FAFAFA';
+              megamenuHeader.style.backgroundColor = '#ffffff';
             }
             removeTransparentBgClassFromHeader();
             logo.src = '/resources/logo/planet_logo_black.svg';
@@ -801,7 +798,7 @@
       switchHamburgerMenuLogoBlack();
       headerBehaviorOnResize(header);
       headerBehaviorOnScroll(header);
-      megamenuHeader.style.backgroundColor = '#fafafa';
+      megamenuHeader.css('background-color', '#ffffff');
     }
 
     // Search for utm parameters in url.
@@ -958,7 +955,7 @@
         header.classList.add("white-bg");
       }
       // On mobile
-      if (window.innerWidth < 1023) {
+      if ($(window).width() < 1023) {
         if(!pageHasTransparentBackground()) {
           var blockContent = document.getElementById("block-cohesion-theme-content");
 
