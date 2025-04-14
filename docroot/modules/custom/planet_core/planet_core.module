@@ -181,7 +181,6 @@ function planet_core_preprocess_html(&$variables): void {
   $value_to_be_used = ltrim($value_to_be_used, '/');
   $value_to_be_used = str_replace('/', '-', $value_to_be_used);
   $value_to_be_used = str_replace('_', '-', $value_to_be_used);
-
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if ($node instanceof Node) {
@@ -194,7 +193,6 @@ function planet_core_preprocess_html(&$variables): void {
   }
 
   $variables['attributes']['class'][] = 'plnt-css-' . $value_to_be_used;
-
   // For admin pages we need to add a class to the body tag.
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     $variables['attributes']['class'][] = 'plnt-css-admin-page';
@@ -537,8 +535,21 @@ function planet_core_preprocess_node(array &$variables)
  * Implements hook_preprocess_HOOK().
  */
 function planet_core_preprocess_page(array &$variables) {
+  $node_type = \Drupal::routeMatch()->getParameter('node')?->getType();
   $variables['#attached']['library'][] = 'planet_core/language-popup';
-  $variables['#attached']['library'][] = 'planet_core/sitewide-libraries';
+  $current_path = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $is_landing = _is_path_case_studies_landing($alias);
+
+  if ($node_type !== 'case_studies'&& !$is_landing) {
+    $variables['#attached']['library'][] = 'planet_core/sitewide-libraries';
+    $variables['#attached']['library'][] = 'planet_core/basic-pages';
+  }
+  else {
+    $variables['#attached']['library'][] = 'planet_core/site-wide-styles';
+  }
+
+
 
   // Get current node if it exists
   $node = \Drupal::routeMatch()->getParameter('node');

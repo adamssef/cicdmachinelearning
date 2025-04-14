@@ -107,8 +107,6 @@ class PlanetCorePartnersService
 
   public function getPublishedPartners()
   {
-
-
     $offset = \Drupal::request()->get('offset');
     $limit = \Drupal::request()->get('limit');
     $lang = \Drupal::request()->get('lang');
@@ -253,9 +251,6 @@ class PlanetCorePartnersService
     }
     return $result;
   }
-
-
-
 
   /**
    * Gets aliases in other languages for the given English alias.

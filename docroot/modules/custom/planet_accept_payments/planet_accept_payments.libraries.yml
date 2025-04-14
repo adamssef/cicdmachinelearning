@@ -8,7 +8,9 @@ planet_accept_payments:
       css/swiper.css: {}
       css/swiper-bundle.min.css: {}
   js:
-    js/planet_accept_payments.js: {}
+    js/planet_accept_payments.js:
+        attributes:
+            defer: true
   dependencies:
     - core/drupal
     - core/jquery

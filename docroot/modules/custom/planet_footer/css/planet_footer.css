@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  font-family: 'TT Commons', sans-serif;
+}
+
 body {
   border-bottom: 1px solid black;
 }

@@ -4,8 +4,9 @@ planet_header:
     theme:
       css/planet_header.css: {}
   js:
-      js/planet_header.js: { }
+      js/planet_header.js:
+        attributes:
+          defer: true
   dependencies:
     - core/drupal
-    - core/jquery
     - core/once
