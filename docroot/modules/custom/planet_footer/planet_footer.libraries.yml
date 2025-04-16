@@ -4,4 +4,6 @@ planet_footer:
     theme:
       css/planet_footer.css: {}
   js:
-    js/planet_footer.js: {}
+    js/planet_footer.js:
+        attributes:
+            defer: true

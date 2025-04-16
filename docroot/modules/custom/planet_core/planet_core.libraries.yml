@@ -4,60 +4,98 @@ sitewide-libraries:
       css/site_wide_styles.css: {}
       css/product_pages_html.css: {}
   js:
-    js/SiteWideScripts.js: {}
+    js/SiteWideScripts.js:
+        attributes:
+            defer: true
+site-wide-styles:
+  css:
+    theme:
+      css/site_wide_styles.css: {}
 language-popup:
   css:
     theme:
       css/planet_core.css: {}
   js:
-    js/micromodal.min.js: {}
+    js/micromodal.min.js:
+        attributes:
+            defer: true
 pms-transformation:
   css:
     theme:
       css/planet_pms_transformation.css: {}
   js:
-    js/PmsTransformationPage.js: { }
+    js/PmsTransformationPage.js:
+        attributes:
+            defer: true
 author-page:
   js:
-    js/AuthorPage.js: {}
+    js/AuthorPage.js:
+        attributes:
+            defer: true
 blog-page:
   js:
-    js/BlogPage.js: {}
+    js/BlogPage.js:
+        attributes:
+            defer: true
 news-page:
   js:
-    js/NewsPage.js: {}
+    js/NewsPage.js:
+        attributes:
+            defer: true
 swiper-bundle:
   js:
-    js/swiper-bundle.min.js.js: { }
+    js/swiper-bundle.min.js.js:
+      attributes:
+        defer: true
 single-article-page:
   js:
-    js/ArticlePage.js: {}
+    js/ArticlePage.js:
+        attributes:
+            defer: true
 front-page:
   css:
     theme:
       css/swiper-bundle.min.css: {}
       css/front_page.css: {}
   js:
-    js/swiper-bundle.min.js.js: {}
-    js/basicPage.js: {}
+    js/swiper-bundle.min.js.js:
+        attributes:
+            defer: true
+    js/basicPage.js:
+        attributes:
+            defer: true
 brands-we-work-with:
   css:
     theme:
       css/brands-we-work-with.css: { }
   js:
-    js/BrandsWeWorkWith.js: { }
+    js/BrandsWeWorkWith.js:
+      attributes:
+        defer: true
 basic-pages:
   css:
     theme:
       css/swiper-bundle.min.css: {}
       css/tailwind-product-pages.css: {}
   js:
-    js/swiper-bundle.min.js.js: {}
-    js/basicPage.js: {}
+    js/swiper-bundle.min.js.js:
+        attributes:
+            defer: true
+    js/basicPage.js:
+        attributes:
+            defer: true
 get-in-touch-dynamic-form:
   css:
     theme:
       css/webform-get-in-touch-dynamic.css: { }
+page_loader:
+  css:
+    theme:
+      css/page-loader.css: {}
+  js:
+    js/page-loader.js: {}
+  dependencies:
+    - core/jquery
 tailwind-templates:
   css:
     theme:
