@@ -88,6 +88,14 @@ get-in-touch-dynamic-form:
   css:
     theme:
       css/webform-get-in-touch-dynamic.css: { }
+page_loader:
+  css:
+    theme:
+      css/page-loader.css: {}
+  js:
+    js/page-loader.js: {}
+  dependencies:
+    - core/jquery
 tailwind-templates:
   css:
     theme:

@@ -164,6 +164,18 @@ function planet_core_theme($existing, $type, $theme, $path): array {
  * Changes the title of the user page.
  */
 function planet_core_preprocess_html(&$variables): void {
+
+  $variables['#attached']['library'][] = 'planet_core/page_loader';
+
+  $variables['#attached']['html_head'][] = [
+    [
+      '#tag' => 'script',
+      '#value' => 'document.documentElement.classList.add("loader-active");',
+    ],
+    'planet_core_inline_loader_class'
+  ];
+
+
   $routeName = \Drupal::routeMatch()->getRouteName();
   if ($routeName === 'entity.user.canonical') {
     $variables['head_title']['title'] = '';
