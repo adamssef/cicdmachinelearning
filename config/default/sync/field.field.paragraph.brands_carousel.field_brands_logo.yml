@@ -1,0 +1,101 @@
+uuid: aa172cc2-ed89-4f93-819d-acfd97471468
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_brands_logo
+    - paragraphs.paragraphs_type.brands_carousel
+    - paragraphs.paragraphs_type.logo
+  module:
+    - entity_reference_revisions
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.brands_carousel.field_brands_logo
+field_name: field_brands_logo
+entity_type: paragraph
+bundle: brands_carousel
+label: 'Brands logo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      logo: logo
+    negate: 0
+    target_bundles_drag_drop:
+      benefit_box:
+        weight: 26
+        enabled: false
+      benefits_boxes:
+        weight: 25
+        enabled: false
+      blog_articles:
+        weight: 27
+        enabled: false
+      brands_carousel:
+        weight: 24
+        enabled: false
+      case_studies_articles:
+        weight: 28
+        enabled: false
+      customer_recommendation_quote:
+        weight: 29
+        enabled: false
+      event_info:
+        weight: 30
+        enabled: false
+      favourite_planet_features:
+        weight: 31
+        enabled: false
+      features_content:
+        weight: 32
+        enabled: false
+      features_ending:
+        weight: 33
+        enabled: false
+      features_heading:
+        weight: 34
+        enabled: false
+      grow_business_with_planet:
+        weight: 35
+        enabled: false
+      hero:
+        weight: 36
+        enabled: false
+      link_box:
+        weight: 37
+        enabled: false
+      logo:
+        weight: 38
+        enabled: true
+      paragraph_case_study_metrics:
+        weight: 39
+        enabled: false
+      right_side_mega_menu:
+        weight: 40
+        enabled: false
+      speaker:
+        weight: 41
+        enabled: false
+      speakers:
+        weight: 42
+        enabled: false
+      sponsors:
+        weight: 43
+        enabled: false
+      testimonial_quote:
+        weight: 44
+        enabled: false
+      text_and_webform:
+        weight: 45
+        enabled: false
+      tip_box:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

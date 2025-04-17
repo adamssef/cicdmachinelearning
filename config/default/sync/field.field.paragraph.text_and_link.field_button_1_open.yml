@@ -1,0 +1,28 @@
+uuid: 486cd0e6-5876-4362-9573-9760a07ea64b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_1_open
+    - paragraphs.paragraphs_type.text_and_link
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.text_and_link.field_button_1_open
+field_name: field_button_1_open
+entity_type: paragraph
+bundle: text_and_link
+label: 'Open in a new tab?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean
