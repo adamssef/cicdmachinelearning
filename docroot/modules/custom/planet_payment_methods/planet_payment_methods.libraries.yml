@@ -4,7 +4,9 @@ tailwind:
       dist/css/styles.css: {}
       css/planet-payment-methods.css: {}
   js:
-    js/payment_methods.js: {}
+    js/payment_methods.js:
+      attributes:
+        defer: true
   dependencies:
     - core/drupal
     - core/jquery

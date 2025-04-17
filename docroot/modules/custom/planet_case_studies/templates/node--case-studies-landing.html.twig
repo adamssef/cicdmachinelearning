@@ -1,3 +1,166 @@
+<style>
+  .carousel__item {
+    width: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 16px;
+  }
+
+  .carousel__item:hover {
+    border-radius: 16px;
+  }
+
+  .carousel__item div {
+    width: 100%;
+    height: auto;
+  }
+
+  .carousel__item:hover a.link--read-full-story:not(.link--read-full-story--more-block) {
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .carousel__item:hover a.link--read-full-story:not(.link--read-full-story--more-block) {
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .carousel__item:hover a.link--read-full-story:not(.link--read-full-story--more-block) img.case-study__logo-image {
+    text-decoration: none;
+    transition: none;
+  }
+
+  .carousel__item:hover .read-full-story__span {
+    margin-right: 4px;
+  }
+
+  .carousel__item:hover .read-full-story__span {
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+  }
+
+  div.carousel__item {
+    height: 320px;
+    position: relative;
+  }
+
+  div.carousel__item:not(.carousel__item--more-block){
+    width: 240px !important;
+  }
+
+  div.carousel__item:is(.carousel__item--more-block){
+    width: 284px;
+    height: 266px;
+    border-radius: 16px;
+  }
+
+  div.carousel__item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(322deg, rgba(224, 0, 131, 0.70) 0%, rgba(224, 0, 131, 0.10) 78.69%);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    border-radius: 16px;
+  }
+
+  div.carousel__item--lavender::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(322deg, rgba(79, 70, 229, 0.70) 0%, rgba(79, 70, 229, 0.10) 78.69%);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    border-radius: 16px;
+  }
+
+  div.carousel__item--more-block::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.30) 50%, rgba(224, 0, 131, 0.10) 78.69%);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    border-radius: 16px;
+  }
+
+  div.carousel__item:hover::after {
+    opacity: 1;
+  }
+
+  .link--read-full-story {
+    position: absolute;
+    padding: 12px 0;
+    bottom: 8px;
+    margin-left: 16px;
+    color: #FFF;
+    text-align: center;
+    font-family: "TT Commons", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    display: flex;
+    z-index: 10;
+    width: 100%
+  }
+
+  .link--read-full-story img:not(.case-study__logo-image) {
+    margin-left: 16px;
+  }
+
+  .case-study__logo-image {
+    height: 54px;
+    width: auto;
+    position: absolute;
+    bottom: 250px;
+    max-height: 40px;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    max-width: 146px;
+    padding-right: 16px;
+  }
+
+  .carousel__item:is(.carousel__item--more-block) .case-study__logo-image {
+    bottom: 200px;
+  }
+
+  .page-node-type-case-studies .case-study__logo-image--more-block {
+    margin-left: 0;
+    margin-bottom: 0;
+    height: 80px;
+  }
+  @media (max-width: 1024px) {
+    .page-node-type-case-studies div.carousel__item {
+      height: 208px;
+      padding-top: 16px;
+      padding-right: 16px;
+      padding-bottom: 12px;
+      padding-left: 16px;
+    }
+
+    .page-node-type-case-studies .case-study__logo-image {
+      bottom: 120px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .carousel__item:is(.carousel__item--more-block) .case-study__logo-image {
+      bottom: 140px;
+    }
+  }
+
+</style>
 <div class = "customer-stories-block planet-header-transparent dark-menu-items">
     <h2 class="case-studies-header">{{ "Explore why our customers chose Planet"|t }}</h2>
     <span class="page-studies-subtitle">{{ "See how Planet helps businesses, streamline processes, save time and generate more revenue"|t }}</span>
@@ -6,9 +169,9 @@
 <div class="brands-we-work-with-meta-container">
     <div class="brands-we-work-with-mega-container">
         <div class="brands-we-work-with-container">
-            {% for i in 0..8 %}
+            {% for i in 0..6 %}
                 {% for key, brand in brands %}
-                    <img src="{{ brand.src }}" {% if key > 10 and key < 18 %}loading="lazy"{% endif %}/>
+                    <img height="40" width="146" src="{{ brand.src }}" {% if key > 10 and key < 18 %}loading="lazy"{% endif %}/>
                 {% endfor %}
             {% endfor %}
         </div>
@@ -27,7 +190,7 @@
             <div id="swiper_item_{{ key }}" style="background: {{ linear_gradient }}, url('{{ case_study.image_url }}'); background-size: cover; background-repeat: no-repeat; background-position: center;" class="swiper-slide {{ class }}">
                 <p>
                     {% if case_study.logo_url %}
-                        <img class="case-study__logo-image" src="{{ case_study.logo_url }}" loading="lazy">
+                        <img class="case-study__logo-image" src="{{ case_study.logo_url }}" loading="lazy" width="120" height="50">
                     {% endif %}
 
                     <a class="link--read-full-story" href="{{ case_study.url }}">{{ "Read full story"|t }}

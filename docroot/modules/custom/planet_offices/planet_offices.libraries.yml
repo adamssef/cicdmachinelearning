@@ -1,7 +1,9 @@
 planet-offices:
   version: VERSION
   js:
-    js/planet-offices.js: {}
+    js/planet-offices.js:
+        attributes:
+            defer: true
   dependencies:
     - core/drupal
     - core/jquery
