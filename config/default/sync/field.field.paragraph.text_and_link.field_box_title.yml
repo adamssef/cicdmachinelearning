@@ -17,7 +17,7 @@ bundle: text_and_link
 label: Title
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

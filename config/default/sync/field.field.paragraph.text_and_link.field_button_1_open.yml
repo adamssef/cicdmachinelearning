@@ -17,7 +17,7 @@ bundle: text_and_link
 label: 'Open in a new tab?'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0
