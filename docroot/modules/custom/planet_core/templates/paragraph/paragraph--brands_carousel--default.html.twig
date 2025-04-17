@@ -1,21 +1,31 @@
-{% if paragraph.fields.field_brands_carousel is not empty %}
+{% if paragraph.fields.field_brands_carousel is not empty or paragraph.fields.field_brands_logo is not empty %}
 	{% set logo_classes = 'min-h-[68px] max-w-24 inline-block h-full w-full bg-no-repeat bg-center bg-contain' %}
-	<div class="logos-partners py-6 bg-zinc-50">
+	<div class="logos-partners py-6 bg-white">
 		<div class="swiper swiper-brands">
 			<div class="swiper-wrapper">
-				{% set brands = paragraph.fields.field_brands_carousel %}
-				
-				{% for brand in brands %}
-					<div class="swiper-slide text-center">
-						<div style="background-image: url('{{ brand }}')" class="{{ logo_classes }}"></div>
-					</div>
-				{% endfor %}
-				
-				{% for brand in brands %}
-					<div class="swiper-slide text-center">
-						<div style="background-image: url('{{ brand }}')" class="{{ logo_classes }}"></div>
-					</div>
-				{% endfor %}
+				{% set brands_from_text = paragraph.fields.field_brands_carousel ?? [] %}
+				{% set brands_from_paragraph = paragraph.fields.field_brands_logo ?? [] %}
+				{% set use_paragraph = brands_from_paragraph is not empty %}
+				{% set brands = use_paragraph ? brands_from_paragraph : brands_from_text %}
+
+				{% if brands is iterable %}
+					{% for i in 1..4 %}
+						{% for brand in brands %}
+							<div class="swiper-slide text-center">
+								{% if use_paragraph %}
+									{% set image_url = brand.fields.field_logo_image ?? '' %}
+									{% if image_url %}
+										<div style="background-image: url('{{ image_url }}')" class="{{ logo_classes }}"></div>
+									{% endif %}
+								{% else %}
+									{% if brand %}
+										<div style="background-image: url('{{ brand }}')" class="{{ logo_classes }}"></div>
+									{% endif %}
+								{% endif %}
+							</div>
+						{% endfor %}
+					{% endfor %}
+				{% endif %}
 			</div>
 		</div>
 	</div>
