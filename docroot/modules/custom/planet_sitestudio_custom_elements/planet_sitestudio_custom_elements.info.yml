@@ -1,0 +1,5 @@
+name: Planet Sitestudio Custom Elements
+description: "Provides fixes and features for drupal core elements."
+type: module
+package: Planet
+core_version_requirement: ^8 || ^9 || ^10
