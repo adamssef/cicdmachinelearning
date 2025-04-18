@@ -1,0 +1,6 @@
+---
+name: Planet Site Studio Custom Elements
+description: "Basic module for adding custom elements to site studio."
+type: module
+package: planet
+core_version_requirement: ^8 || ^9 || ^10

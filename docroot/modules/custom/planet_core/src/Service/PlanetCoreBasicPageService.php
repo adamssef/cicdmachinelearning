@@ -401,6 +401,7 @@ class PlanetCoreBasicPageService
             $nested_fields = [
                 'field_benefit_box',
                 'field_sponsor_logos',
+                'field_brands_logo',
                 'field_speakers',
             ];
 

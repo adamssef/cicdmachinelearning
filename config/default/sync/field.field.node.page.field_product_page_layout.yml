@@ -14,6 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.features_heading
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.testimonial_quote
+    - paragraphs.paragraphs_type.text_and_link
   module:
     - entity_reference_revisions
     - tmgmt_content
@@ -43,6 +44,7 @@ settings:
       blog_articles: blog_articles
       case_studies_articles: case_studies_articles
       testimonial_quote: testimonial_quote
+      text_and_link: text_and_link
     negate: 0
     target_bundles_drag_drop:
       benefit_box:
@@ -62,6 +64,9 @@ settings:
         enabled: true
       customer_recommendation_quote:
         weight: -18
+        enabled: false
+      event_info:
+        weight: 31
         enabled: false
       favourite_planet_features:
         weight: -17
@@ -84,15 +89,33 @@ settings:
       link_box:
         weight: -15
         enabled: false
+      logo:
+        weight: 39
+        enabled: false
       paragraph_case_study_metrics:
         weight: -14
         enabled: false
       right_side_mega_menu:
         weight: -13
         enabled: false
+      speaker:
+        weight: 42
+        enabled: false
+      speakers:
+        weight: 43
+        enabled: false
+      sponsors:
+        weight: 44
+        enabled: false
       testimonial_quote:
         weight: 29
         enabled: true
+      text_and_link:
+        weight: 46
+        enabled: true
+      text_and_webform:
+        weight: 47
+        enabled: false
       tip_box:
         weight: -12
         enabled: false

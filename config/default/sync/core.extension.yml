@@ -101,6 +101,7 @@ module:
   planet_core: 0
   planet_custom_access: 0
   planet_customer_resources_library: 0
+  planet_event_pages: 0
   planet_footer: 0
   planet_header: 0
   planet_event_pages: 0

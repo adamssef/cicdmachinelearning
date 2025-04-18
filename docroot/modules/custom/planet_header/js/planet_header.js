@@ -703,6 +703,8 @@
    * The DOMContentLoaded event handler.
    */
   document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('page-loader').style.display = "none";
+
     let logo = document.getElementById('planet-logo');
     let logoMobileAndTablet = document.getElementById('planet-logo--mobile-and-tablet');
     let closingXIcon = document.getElementsByClassName('close-hamburger-menu');
