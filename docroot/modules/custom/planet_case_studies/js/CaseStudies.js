@@ -1,558 +1,1219 @@
-(function (Drupal) {
-  let previousBackgroundImageDivCount = document.querySelectorAll('.background-image-div').length;
+(function ($, Drupal) {
+  "use strict";
+  let currentlyOpenMenuItem = null;
 
-  let previousProductOptionSelected = getTextFromFirstMatch(
-    '#edit-field-product-type-target-id .selected span'
-  );
-
-  let previousIndustryOptionSelected = getTextFromFirstMatch(
-    '#edit-field-industry-type-target-id .selected span'
-  );
-
-  let previousCompanySizeOptionSelected = getTextFromFirstMatch(
-    '#edit-field-company-size-target-id .selected span'
-  );
-
-  // Helper function
-  function getTextFromFirstMatch(selector) {
-    const el = document.querySelector(selector);
-    return el ? el.textContent.trim() : '';
+  function showBlackHamburgerMenu() {
+    let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
+    hamburgerMenu.classList.remove('display-none');
   }
 
-  function debounce(func, wait = 100, immediate = false) {
-    let timeout;
-    return function() {
-      const context = this, args = arguments;
-      const later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      const callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
+  function isFrontpage() {
+    let currentPath = window.location.pathname;
+    let body = $("body");
+
+    return (body.hasClass("path-frontpage") && body.find("home-hero").length > 0) || currentPath === "/new" || currentPath === "/homepage-prototype-v2";
   }
 
-  Drupal.behaviors.brandsWeWorkWithScript = {
-    attach: function (context, settings) {
-      once('brandsWeWorkWith', '.brands-we-work-with-container', context).forEach(function (container) {
-        const totalWidth = container.scrollWidth;
-        const speed = 0.2;
+  function addTransparentBgClassToHeader() {
+    const header = document.getElementsByClassName("megamenu-header")[0];
+    header.classList.add("has-transparent-bg");
+  }
 
-        // Get first child and calculate width including margin (like jQuery's outerWidth(true))
-        const firstChild = container.children[0];
-        const logoWidth = firstChild ? firstChild.offsetWidth + getComputedMargin(firstChild) : 0;
-        const resetThreshold = logoWidth * 10;
-        let animationFrameId;
+  function removeTransparentBgClassFromHeader() {
+    const header = document.getElementsByClassName("megamenu-header")[0];
+    header.classList.remove("has-transparent-bg");
+  }
 
-        function getComputedMargin(el) {
-          const style = getComputedStyle(el);
-          return parseFloat(style.marginLeft) + parseFloat(style.marginRight);
-        }
+  function pageHasTransparentBackground() {
+    let isFrontPage = isFrontpage();
+    let potentiallyTransparent = $("body, div");
 
-        function animate() {
-          Array.from(container.children).forEach(child => {
-            const transform = getComputedStyle(child).transform;
-            let currentX = 0;
+    return isFrontPage || potentiallyTransparent.hasClass("planet-header-transparent") || potentiallyTransparent.hasClass("coh-hero-full-width");
+  }
 
-            if (transform && transform !== 'none') {
-              currentX = new WebKitCSSMatrix(transform).m41;
-            }
+  function areHtmlCollectionsEqual(collection1, collection2) {
+    // Convert HTML collections to arrays
+    const array1 = Array.from(collection1);
+    const array2 = Array.from(collection2);
 
-            let newX = currentX - speed;
-
-            if (Math.abs(newX) >= totalWidth - resetThreshold) {
-              newX = 0;
-            }
-
-            child.style.transform = `translateX(${newX}px)`;
-          });
-
-          animationFrameId = requestAnimationFrame(animate);
-        }
-
-        function resetAndRestartAnimation() {
-          cancelAnimationFrame(animationFrameId);
-          Array.from(container.children).forEach(child => {
-            child.style.transform = 'translateX(0)';
-          });
-          animate();
-          setTimeout(resetAndRestartAnimation, 120000);
-        }
-
-        // Start the animation
-        animate();
-        setTimeout(resetAndRestartAnimation, 120000);
-      });
+    // Check if they have the same length
+    if (array1.length !== array2.length) {
+      return false;
     }
-  };
 
-  Drupal.behaviors.swiperCarouselEnablerScript = {
-    attach: function (context, settings) {
-      if (context === document || context instanceof HTMLDocument) {
-        const swiper = new Swiper('.swiper', {
-          loop: true,
-          // observer: true,
-          // observeParents: true,
-          centeredSlidesBounds: false,
-          autoplay: {
-            disableOnInteraction: false,
-            delay: 4000,
-            pauseOnMouseEnter: true,
-            stopOnLastSlide: false
-          },
-          slidesPerView: 'auto',
-          spaceBetween: 20,
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }
-        });
-
-        const swiperContainer = document.querySelector('.swiper');
-        if (swiperContainer) {
-          swiperContainer.addEventListener('mouseout', () => {
-            swiper.autoplay.start();
-          });
-        }
+    // Compare each element
+    for (let i = 0; i < array1.length; i++) {
+      if (array1[i] !== array2[i]) {
+        return false;
       }
     }
-  };
 
-  function getSelectedProductOption() {
-    return Drupal.t(getTextContent('#edit-field-product-type-target-id .selected span'));
+    return true;
   }
 
-  function getSelectedIndustryOption() {
-    return Drupal.t(getTextContent('#edit-field-industry-type-target-id .selected span'));
+  function switchHamburgerMenuLogoWhite() {
+    let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
+    $(hamburgerMenu).attr('src', '/resources/icons/hamburger-menu.svg');
   }
 
-  function getSelectedCompanySizeOption() {
-    return Drupal.t(getTextContent('#edit-field-company-size-target-id .selected span'));
+  function switchHamburgerMenuLogoBlack() {
+    let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
+    $(hamburgerMenu).attr('src', '/resources/icons/hamburger-menu-black.svg');
   }
 
-  // Helper function
-  function getTextContent(selector) {
-    const el = document.querySelector(selector);
-    return el ? el.textContent.trim() : '';
+  function cookieExists(name) {
+    return document.cookie.indexOf(name) !== -1;
   }
 
-  Drupal.behaviors.fakeSelectDropdown = {
-    attach: function (context, settings) {
-      const fakeElements = context.querySelectorAll('.fake-element');
+  function createCookie(name, value, hours) {
+    var expires;
+    if (hours) {
+      const date = new Date();
+      date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+      expires = "; expires=" + date.toGMTString();
+    } else {
+      expires = "";
+    }
 
-      fakeElements.forEach((element) => {
-        const parent = element.closest('.case-studies__filter_select');
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
 
-        element.addEventListener('click', (event) => {
-          if (element.classList.contains('selected')) {
-            // Check if all siblings are expanded
-            const allFakeElements = parent.querySelectorAll('.fake-element');
-            const allExpanded = Array.from(allFakeElements).every(el => el.classList.contains('expanded'));
+  function hideCloseHamburgerMenu() {
+    let closeHamburgerMenu = document.getElementsByClassName('close-hamburger-menu')[0];
+    closeHamburgerMenu.classList.add('display-none');
+    $(closeHamburgerMenu).attr('src', '/resources/icons/closing-x.svg');
+  }
 
-            if (allExpanded) {
-              allFakeElements.forEach(el => el.classList.remove('expanded'));
-              parent.parentElement?.classList.remove('parent-expanded');
-            } else {
-              document.querySelectorAll('.fake-element').forEach(el => el.classList.remove('expanded'));
-              allFakeElements.forEach(el => el.classList.add('expanded'));
-              parent.parentElement?.classList.add('parent-expanded');
+  function isHeaderForDesktopDisplayed() {
+    let insideHeaderContainer = document.getElementsByClassName('inside-header-container')[0];
+    let insideHeaderContainerStyle = window.getComputedStyle(insideHeaderContainer);
+    return insideHeaderContainerStyle.display !== 'none';
+  }
 
-              const allElement = parent.querySelector('.fake-select-el');
-              const newSelectedEl = document.querySelector('.selected.expanded');
-              if (allElement && newSelectedEl) {
-                parent.prepend(allElement);
-                parent.prepend(newSelectedEl);
+  function hideMergedMenuItems() {
+    let mergedMenuItems = document.getElementsByClassName('merged-menu-items');
+    for (let i = 0; i < mergedMenuItems.length; i++) {
+      mergedMenuItems[i].classList.add('display-none');
+    }
+  }
+
+  function hideLogo() {
+    let logo = document.getElementsByClassName('go-home');
+
+    for (let i = 0; i < logo.length; i++) {
+      logo[i].classList.add('display-none');
+    }
+  }
+
+  function showLogo() {
+    let logo = document.getElementsByClassName('go-home');
+
+    for (let i = 0; i < logo.length; i++) {
+      logo[i].classList.remove('display-none');
+    }
+  }
+
+  function showGoBack() {
+    let goBack = document.getElementsByClassName('go-back-span');
+
+    for (let i = 0; i < goBack.length; i++) {
+      goBack[i].classList.remove('display-none');
+    }
+  }
+
+  function hideGoBack() {
+    let goBack = document.getElementsByClassName('go-back-span');
+
+    for (let i = 0; i < goBack.length; i++) {
+      goBack[i].classList.add('display-none');
+    }
+  }
+
+  function showMergedMenuItems() {
+    let mergedMenuItems = document.getElementsByClassName('merged-menu-items');
+    for (let i = 0; i < mergedMenuItems.length; i++) {
+      mergedMenuItems[i].classList.remove('display-none');
+    }
+  }
+
+  function setDownArrowsColorWhite() {
+    let arrows = $('.business-link img');
+
+    arrows.map((index, arrow) => {
+      arrow.src = arrow.src = '/resources/icons/arrow-down--white.svg';
+    });
+  }
+
+  function setDownArrowsColorPink() {
+    let arrows = $('.business-link img');
+
+    arrows.map((index, arrow) => {
+      arrow.src = '/resources/icons/arrow-down.svg';
+    });
+  }
+
+  function removeExpandedFromHeader() {
+    const header = document.getElementsByClassName("megamenu-header")[0];
+    header.classList.remove("expanded");
+  }
+
+  function removeNoScrollFromBody() {
+    document.body.classList.remove('no-scroll');
+  }
+
+  function addNoScrollToBody() {
+    document.body.classList.add('no-scroll');
+  }
+
+  function unflipAllDesktopMenuArrows() {
+    let businessLinks = document.getElementsByClassName('business-link');
+    for (let i = 0; i < businessLinks.length; i++) {
+      let img = businessLinks[i].children[0];
+      img.classList.remove('flip');
+    }
+  }
+
+  function changeHeaderBackgroundColor(hexColor) {
+    let header = document.getElementsByClassName('megamenu-header')[0];
+    header.style.backgroundColor = hexColor;
+  }
+
+  function isAnyMegamenuMobileAndTabletsContainerDisplayed() {
+    let containers = document.getElementsByClassName('megamenu-mobile-and-tablets__container');
+
+    for (let i = 0; i < containers.length; i++) {
+      if (!containers[i].classList.contains('display-none')) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  function isAnyDesktopMenuExpanded() {
+    let menus = [
+      document.getElementsByClassName('megamenu-products__desktop'),
+      document.getElementsByClassName('megamenu-solutions__desktop'),
+      document.getElementsByClassName('megamenu-resources__desktop'),
+      document.getElementsByClassName('megamenu-company__desktop')
+    ];
+
+    for (let i = 0; i < menus.length; i++) {
+      if (menus[i][0] !== undefined && !menus[i][0].classList.contains('display-none')) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  function headerBehaviorwithNotificationBar(hero, header) {
+    $(document).ready(function(){
+      let hasNotificationBar = $("body").find(".notification-bar-container:visible").length;
+      let blockCoheshionThemeContent = $('#block-cohesion-theme-content');
+      if(hasNotificationBar > 0) {
+        header.classList.add("white-bg");
+        // When click to close Notification Bar
+        $(".notification-bar-button").click(function(){
+          header.classList.remove("white-bg");
+          blockCoheshionThemeContent.css("padding-top","0px");
+          if($(hero).hasClass("coh-hero-full-width")) {
+            $(hero).css("top","0px");
+          }
+        });
+      } else {
+        header.classList.remove("white-bg");
+        blockCoheshionThemeContent.css("padding-top","0px");
+        hero.addClass("menu-invisible");
+        $(".hero-background").addClass("menu-invisible");
+      }
+    });
+  }
+
+  function addDisplayNoneToAllContainers() {
+    let allContainers = [
+      document.getElementsByClassName('megamenu-mobile-and-tablets__container--products')[0],
+      document.getElementsByClassName('megamenu-mobile-and-tablets__container--solutions')[0],
+      document.getElementsByClassName('megamenu-mobile-and-tablets__container--resources')[0],
+      document.getElementsByClassName('megamenu-mobile-and-tablets__container--company')[0]
+    ];
+
+    allContainers.forEach(function (container) {
+      if (!container.classList.contains('display-none')) {
+        container.classList.add('display-none');
+      }
+    });
+  }
+
+  function processDesktopMenuItemInteraction(megamenuElement, element, menuName, className) {
+    let isFrontPage = isFrontpage();
+
+    let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
+    let img = document.querySelector('span#' + menuName + ' .business-link img');
+    // Hide all other menus and remove their flip class
+    let menus = [
+      document.getElementsByClassName('megamenu-products__desktop'),
+      document.getElementsByClassName('megamenu-solutions__desktop'),
+      document.getElementsByClassName('megamenu-resources__desktop'),
+      document.getElementsByClassName('megamenu-company__desktop')
+    ];
+
+    let map = new Map();
+    map.set('megamenu-products__desktop', 'products_img');
+    map.set('megamenu-solutions__desktop', 'solutions_img');
+    map.set('megamenu-resources__desktop', 'resources_img');
+    map.set('megamenu-company__desktop', 'company_img');
+
+    let logo = document.getElementById('planet-logo');
+    const header = document.getElementsByClassName("megamenu-header")[0];
+
+    menus.forEach(function (menu) {
+      if (areHtmlCollectionsEqual(menu, megamenuElement)) {
+        menu = menu[0];
+
+        if (menu !== undefined) {
+          if(menu.classList.contains('display-none')) {
+            menu.classList.remove('display-none');
+            header.classList.add('expanded');
+            setDownArrowsColorPink();
+            removeTransparentBgClassFromHeader();
+            $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+            document.getElementById(map.get(className)).classList.add('flip');
+
+            if (isFrontPage) {
+              changeHeaderBackgroundColor('#ffffff');
+            }
+          }
+          else {
+            menu.classList.add('display-none');
+            header.classList.remove('expanded');
+            let scrollPosition = jQuery(window).scrollTop();
+
+            if  (scrollPosition === 0 && !hasDarkMenuTheme) {
+              $(logo).attr('src', '/resources/logo/planet_logo.svg');
+            }
+            let isFrontPage = isFrontpage();
+
+            if (isFrontPage) {
+              changeHeaderBackgroundColor('#ffffff');
+            }
+            let potentiallyTransparent = $("body, div");
+            let hasPageTransparentBackground = !$('body').hasClass('plnt-css-node-46') && (isFrontPage || (potentiallyTransparent.hasClass("planet-header-transparent") || potentiallyTransparent.hasClass("coh-hero-full-width") || potentiallyTransparent.hasClass("coh-hero-5050")));
+
+            if (hasPageTransparentBackground && scrollPosition === 0) {
+              addTransparentBgClassToHeader();
+
+              if (!hasDarkMenuTheme) {
+                setDownArrowsColorWhite();
               }
             }
-          } else {
-            const children = parent.querySelectorAll('.fake-element');
-            children.forEach(el => {
-              el.classList.remove('selected');
-              el.style.display = 'none';
-            });
 
-            element.classList.add('selected');
-            children.forEach(el => el.classList.remove('expanded'));
-            parent.parentElement?.classList.remove('parent-expanded');
+            if (!hasPageTransparentBackground) {
+              $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+            }
+            document.getElementById(map.get(className)).classList.remove('flip');
+          }
+        }
+      }
+      else {
+        map.forEach((value, key) => {
+          if (className !== key) {
+            if (document.getElementsByClassName(key)[0] !== undefined) {
+              document.getElementsByClassName(key)[0].classList.add('display-none');
+              document.getElementById(value).classList.remove('flip');
+            }
           }
         });
-      });
+      }
+    });
 
-      once('clickAwayFakeOptionEl', '.views-element-container', context).forEach((element) => {
-        element.addEventListener('click', (event) => {
-          if (!event.target.closest('.case-studies__filter_select')) {
-            document.querySelectorAll('.fake-element').forEach(el => {
-              el.classList.remove('expanded');
-              el.parentElement?.parentElement?.classList.remove('parent-expanded');
-            });
-          }
-        });
-      });
+    // Manage the flip class.
+    if (!megamenuElement[0].classList.contains('display-none')) {
+      img.classList.add('flip');
+    } else {
+      img.classList.remove('flip');
     }
-  };
+  }
+
+  function manageHasTransparentBgClass() {
+    const header = document.getElementsByClassName("megamenu-header")[0];
+    let scrollPosition = jQuery(window).scrollTop();
+    let isExpanded = header.classList.contains("expanded");
+    let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
+    let logo = $(document.getElementById('planet-logo'));
+
+    if (isExpanded) {
+      header.classList.remove("has-transparent-bg");
+      setDownArrowsColorPink();
+    }
+    else {
+      if (scrollPosition === 0 && pageHasTransparentBackground()) {
+        addTransparentBgClassToHeader();
+        if (!hasDarkMenuTheme) {
+          setDownArrowsColorWhite();
+          logo.attr('src', '/resources/logo/planet_logo.svg');
+        }
+      }
+      if (scrollPosition > 0 && pageHasTransparentBackground()) {
+        removeTransparentBgClassFromHeader();
+        setDownArrowsColorPink();
+      }
+    }
+  }
 
   /**
-   * Event listener for document's ready event.
+   * Manages how the header behaves when the user scrolls the page vertically.
    */
-  document.addEventListener('DOMContentLoaded',function() {
-    let scrollHeight = 720;
-    let currentScroll = window.scrollY || window.pageYOffset;
+  function headerBehaviorOnScroll() {
+    let logo = document.getElementById('planet-logo');
+    let logoMobileAndTablet = document.getElementById('planet-logo--mobile-and-tablet');
+    let body = $('body');
+    let hasDarkMenuTheme = body.find(".dark-menu-items").length + body.find(".path-frontpage").length;
+    let isFrontPage = isFrontpage();
 
-    if (currentScroll < scrollHeight) {
-      document.querySelector('.megamenu-header').style.backgroundColor = '#F2F5F8';
-    } else {
-      document.querySelector('.megamenu-header').style.backgroundColor = 'white';
+    $(window).on('scroll', function () {
+      let isExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
+      let scrollPosition = jQuery(window).scrollTop();
+
+      if (isExpanded) {
+        removeTransparentBgClassFromHeader();
+        $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+        setDownArrowsColorPink();
+
+      }
+      else {
+        let megamenuHasTransparentBgClass = $('.megamenu-header').hasClass('has-transparent-bg');
+
+        if (scrollPosition === 0 && hasDarkMenuTheme > 0) {
+          $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          addTransparentBgClassToHeader();
+        }
+
+        if (scrollPosition === 0 && hasDarkMenuTheme === 0) {
+          $(logo).attr('src', '/resources/logo/planet_logo.svg');
+
+          if (megamenuHasTransparentBgClass) {
+            setDownArrowsColorWhite();
+          }
+
+          if (pageHasTransparentBackground()) {
+            addTransparentBgClassToHeader();
+            $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo.svg');
+            switchHamburgerMenuLogoWhite();
+          }
+          else {
+            $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          }
+        }
+
+        if (scrollPosition > 0) {
+          if (isFrontPage) {
+            changeHeaderBackgroundColor("#ffffff");
+          }
+          else {
+            changeHeaderBackgroundColor('#ffffff');
+          }
+        }
+
+        if (scrollPosition > 0 && hasDarkMenuTheme > 0) {
+          $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+          $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          removeTransparentBgClassFromHeader();
+        }
+
+        if (scrollPosition > 0 && hasDarkMenuTheme === 0) {
+          setDownArrowsColorPink();
+          $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+          removeTransparentBgClassFromHeader();
+          switchHamburgerMenuLogoBlack();
+        }
+      }
+    });
+  }
+
+  function headerBehaviorOnResize() {
+    let logo = document.getElementById('planet-logo');
+    let logoMobileAndTablet = document.getElementById('planet-logo--mobile-and-tablet');
+    let body = $('body');
+    let hasDarkMenuTheme = body.find(".dark-menu-items").length + body.find(".path-frontpage").length;
+    let megamenuMobileAndTablets = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
+    let hamburgerMenuIcon = document.getElementsByClassName('hamburger-menu')[0];
+    let closingXIcon = document.getElementsByClassName('close-hamburger-menu')[0];
+    let goBackSpan = document.getElementsByClassName('go-back-span')[0];
+    let goHome = document.getElementsByClassName('go-home')[1];
+    let goHomeDesktop = document.getElementsByClassName('go-home')[0];
+    let scrollPosition = jQuery(window).scrollTop();
+    let isAnyContainerDisplayed = isAnyMegamenuMobileAndTabletsContainerDisplayed();
+    let isMergedMenuItemsDisplayed = !document.getElementsByClassName('merged-menu-items')[0].classList.contains('display-none');
+    let mergedMenuItems = document.getElementsByClassName('merged-menu-items')[0];
+
+    $(window).on('resize', function () {
+      let isExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
+
+      if ($(window).width() > 1023) {
+        mergedMenuItems.classList.add('display-none');
+        megamenuMobileAndTablets.classList.add('display-none');
+        let megamenuMobileAndTabletsContainer = document.getElementsByClassName('megamenu-mobile-and-tablets__container')[0];
+        $(megamenuMobileAndTabletsContainer).addClass('display-none');
+
+        if (pageHasTransparentBackground() === true) {
+          if (!isAnyDesktopMenuExpanded()) {
+            addTransparentBgClassToHeader();
+            removeExpandedFromHeader();
+            if (scrollPosition === 0) {
+              if (hasDarkMenuTheme === 0) {
+                setDownArrowsColorWhite();
+              }
+            }
+          }
+
+          $(goHomeDesktop).removeClass('display-none');
+        }
+        else {
+          if (scrollPosition === 0) {
+            // addTransparentBgClassToHeader();
+          }
+          else {
+            removeTransparentBgClassFromHeader();
+          }
+          $(goHomeDesktop).removeClass('display-none');
+          $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+        }
+      }
+      else {
+        let isMobileExpanded = !megamenuMobileAndTablets.classList.contains('display-none');
+        let containerProducts = document.getElementsByClassName('megamenu-products__desktop')[0];
+        let containerSolutions = document.getElementsByClassName('megamenu-solutions__desktop')[0];
+        let containerResources = document.getElementsByClassName('megamenu-resources__desktop')[0];
+        let containerCompany = document.getElementsByClassName('megamenu-company__desktop')[0];
+
+        containerProducts.classList.add('display-none');
+        containerSolutions.classList.add('display-none');
+        containerResources.classList.add('display-none');
+        containerCompany.classList.add('display-none');
+        scrollPosition = jQuery(window).scrollTop();
+
+        if (!isMobileExpanded) {
+          removeExpandedFromHeader();
+          removeNoScrollFromBody();
+        }
+
+        unflipAllDesktopMenuArrows();
+
+        if (pageHasTransparentBackground() === true) {
+          if (scrollPosition === 0) {
+            addTransparentBgClassToHeader();
+
+            if (!isAnyContainerDisplayed) {
+              goBackSpan.classList.add('display-none');
+            }
+
+            if (hasDarkMenuTheme === 0) {
+              $(logo).attr('src', '/resources/logo/planet_logo.svg');
+              $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+              switchHamburgerMenuLogoWhite();
+              isAnyContainerDisplayed = isAnyMegamenuMobileAndTabletsContainerDisplayed();
+              isMergedMenuItemsDisplayed = !document.getElementsByClassName('merged-menu-items')[0].classList.contains('display-none');
+
+              if (!isAnyContainerDisplayed && !isMergedMenuItemsDisplayed) {
+                $(goHome).removeClass('display-none');
+                closingXIcon.classList.add('display-none');
+              }
+              else {
+                if (isMergedMenuItemsDisplayed) {
+                  goBackSpan.classList.add('display-none');
+                }
+                else {
+                  goBackSpan.classList.remove('display-none');
+                }
+              }
+            }
+            else {
+              $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+              $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+              switchHamburgerMenuLogoBlack();
+              $(goBackSpan).addClass('display-none');
+              $(goHome).removeClass('display-none');
+
+              $(closingXIcon).addClass('display-none');
+              if (isExpanded) {
+                isMergedMenuItemsDisplayed = !document.getElementsByClassName('merged-menu-items')[0].classList.contains('display-none');
+                isAnyContainerDisplayed = isAnyMegamenuMobileAndTabletsContainerDisplayed();
+
+                if (isAnyContainerDisplayed) {
+                  $(goBackSpan).removeClass('display-none');
+                  $(goHome).addClass('display-none');
+                }
+
+                if (isMergedMenuItemsDisplayed) {
+                  $(goBackSpan).addClass('display-none');
+                  $(goHome).removeClass('display-none');
+                }
+
+                $(closingXIcon).removeClass('display-none');
+                $(hamburgerMenuIcon).addClass('display-none');
+              }
+              else {
+                $(closingXIcon).addClass('display-none');
+                $(hamburgerMenuIcon).removeClass('display-none');
+              }
+              removeNoScrollFromBody();
+            }
+          } else {
+            removeTransparentBgClassFromHeader();
+            isMergedMenuItemsDisplayed = !document.getElementsByClassName('merged-menu-items')[0].classList.contains('display-none');
+
+            if (!isAnyMegamenuMobileAndTabletsContainerDisplayed() && !isMergedMenuItemsDisplayed) {
+              $(goHome).removeClass('display-none');
+              closingXIcon.classList.add('display-none');
+              hamburgerMenuIcon.classList.remove('display-none');
+              goBackSpan.classList.add('display-none');
+            }
+            else {
+              closingXIcon.classList.remove('display-none');
+              hamburgerMenuIcon.classList.add('display-none');
+
+              if (isMergedMenuItemsDisplayed) {
+                goBackSpan.classList.add('display-none');
+                $(goHome).removeClass('display-none');
+
+              }
+
+              if (isAnyContainerDisplayed) {
+                goBackSpan.classList.remove('display-none');
+                $(goHome).addClass('display-none');
+              }
+            }
+          }
+        }
+        else {
+          isAnyContainerDisplayed = isAnyMegamenuMobileAndTabletsContainerDisplayed();
+
+          if (isAnyContainerDisplayed) {
+            if (isMergedMenuItemsDisplayed) {
+              hamburgerMenuIcon.classList.add('display-none');
+              closingXIcon.classList.remove('display-none');
+            } else {
+              closingXIcon.classList.add('display-none');
+              hamburgerMenuIcon.classList.remove('display-none');
+            }
+          }
+          else {
+            $(closingXIcon).addClass('display-none');
+
+            if (isMergedMenuItemsDisplayed) {
+              $(hamburgerMenuIcon).addClass('display-none');
+              closingXIcon.classList.remove('display-none');
+              $(goBackSpan).addClass('display-none');
+              $(goHome).removeClass('display-none');
+            }
+            else {
+              closingXIcon.classList.add('display-none');
+              $(hamburgerMenuIcon).removeClass('display-none');
+            }
+          }
+        }
+      }
+
+      if (isExpanded) {
+        removeTransparentBgClassFromHeader();
+        $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+      }
+      else {
+        closingXIcon.classList.add('display-none');
+        hamburgerMenuIcon.classList.remove('display-none');
+
+        if (scrollPosition === 0 && hasDarkMenuTheme > 0) {
+          $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          addTransparentBgClassToHeader();
+        }
+
+        if (scrollPosition === 0 && hasDarkMenuTheme === 0) {
+          $(logo).attr('src', '/resources/logo/planet_logo.svg');
+          if (pageHasTransparentBackground()) {
+            addTransparentBgClassToHeader();
+            $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo.svg');
+            $(hamburgerMenuIcon).attr('style', 'display: block');
+            $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu.svg');
+            $(closingXIcon).css('display', 'none');
+          }
+          else {
+            $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          }
+        }
+
+        if (scrollPosition > 0 && hasDarkMenuTheme > 0) {
+          $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+          $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          removeTransparentBgClassFromHeader();
+        }
+
+        if (scrollPosition > 0 && hasDarkMenuTheme === 0) {
+          $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+          removeTransparentBgClassFromHeader();
+          $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu-black.svg');
+        }
+      }
+    });
+  }
+
+  /**
+   * The DOMContentLoaded event handler.
+   */
+  document.addEventListener('DOMContentLoaded', function() {
+    let logo = document.getElementById('planet-logo');
+    let logoMobileAndTablet = document.getElementById('planet-logo--mobile-and-tablet');
+    let closingXIcon = document.getElementsByClassName('close-hamburger-menu');
+    let isFrontPage = isFrontpage();
+    let body = $('body');
+    let hasDarkMenuTheme = body.find(".dark-menu-items").length > 0 && !isFrontPage;
+    let hamburgerMenuIcon = document.getElementsByClassName('hamburger-menu')[0];
+    let scrollPosition = jQuery(window).scrollTop();
+    let isMegamenuHeaderExpanded = document.getElementsByClassName("megamenu-header")[0].classList.contains("expanded");
+    let megamenuHeader = $('.megamenu-header');
+
+
+    if (hasDarkMenuTheme) {
+      $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+      switchHamburgerMenuLogoBlack();
+      $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+      $(closingXIcon).attr('src', '/resources/icons/closing-x.svg');
+    }
+    else {
+      switchHamburgerMenuLogoWhite();
+      $(logo).attr('src', '/resources/logo/planet_logo.svg');
+      $(closingXIcon).attr('src', '/resources/icons/closing-x-white.svg');
+    }
+    const header = document.getElementsByClassName("megamenu-header")[0];
+
+    if (pageHasTransparentBackground()) {
+      if (hasDarkMenuTheme) {
+        $(header).addClass("header-dark-theme");
+        $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+        if (scrollPosition > 0) {
+          if (!isFrontpage()) {
+            $('.megamenu-header').css('background-color', '#ffffff');
+          }
+          else {
+            $('.megamenu-header').css('background-color', '#ffffff');
+          }
+        }
+      }
+      else {
+        if (isMegamenuHeaderExpanded) {
+          setDownArrowsColorPink();
+        }
+        else {
+          if (scrollPosition === 0) {
+            if (!isMegamenuHeaderExpanded) {
+              setDownArrowsColorWhite();
+              if (isFrontpage()) {
+                switchHamburgerMenuLogoWhite()
+              }
+            }
+            else {
+              setDownArrowsColorPink();
+            }
+          }
+          else {
+            if (!isFrontpage()) {
+              megamenuHeader.css('background-color', '#ffffff');
+            }
+            else {
+              megamenuHeader.css('background-color', '#ffffff');
+            }
+
+            megamenuHeader.css('background-color', '#ffffff');
+            removeTransparentBgClassFromHeader();
+
+            $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+          }
+        }
+
+        // $(logo).attr('src', '/resources/logo/planet_logo.svg');
+        $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo.svg');
+        switchHamburgerMenuLogoWhite();
+      }
+
+      if (scrollPosition === 0) {
+        addTransparentBgClassToHeader();
+      }
+      else {
+        setDownArrowsColorPink();
+        removeTransparentBgClassFromHeader();
+        $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+        $(hamburgerMenuIcon).attr('src', '/resources/icons/hamburger-menu-black.svg');
+
+      }
+
+      headerBehaviorOnScroll(header);
+      headerBehaviorOnResize(header);
+    }
+    else {
+      removeTransparentBgClassFromHeader();
+      $(logo).attr('src', '/resources/logo/planet_logo_black.svg');
+      $(logoMobileAndTablet).attr('src', '/resources/logo/planet_logo_black.svg');
+      switchHamburgerMenuLogoBlack();
+      headerBehaviorOnResize(header);
+      headerBehaviorOnScroll(header);
+      megamenuHeader.css('background-color', '#ffffff');
     }
 
-    window.addEventListener('scroll', debounce(function() {
-      let scrollHeight = 720;
-      let currentScroll = window.scrollY || window.pageYOffset;
-      if (currentScroll < scrollHeight) {
-        document.querySelector('.megamenu-header').style.backgroundColor = '#F2F5F8';
-      } else {
-        document.querySelector('.megamenu-header').style.backgroundColor = 'white';
+    // Search for utm parameters in url.
+    const urlParams = new URLSearchParams(window.location.search);
+    const shortUTMTime = 8760;
+    const longUTMTime = 8760;
+
+    if (urlParams.has('utm_campaign') || urlParams.has('utm_medium') || urlParams.has('utm_source') || urlParams.has('utm_content') || urlParams.has('utm_term') || urlParams.has('gclid')){
+
+      // Get the cookies.
+      let cookies = document.cookie;
+      if (cookies !== undefined) {
+        const utmSource = urlParams.get('utm_source');
+        const utmMedium = urlParams.get('utm_medium');
+        const utmCampaign = urlParams.get('utm_campaign');
+        const utmContent = urlParams.get('utm_content');
+        const utmTerm = urlParams.get('utm_term');
+        const gclid = urlParams.get('gclid');
+
+        /**
+         * Save recent UTMs as cookies.
+         * We want to set the cookies only if they don't exist already
+         */
+        if (utmSource) {
+          createCookie('Drupal.visitor.utm_source', utmSource, shortUTMTime);
+        }
+        if (utmMedium) {
+          createCookie('Drupal.visitor.utm_medium', utmMedium, shortUTMTime);
+        }
+        if (utmCampaign) {
+          createCookie('Drupal.visitor.utm_campaign', utmCampaign, shortUTMTime);
+        }
+        if (utmContent) {
+          createCookie('Drupal.visitor.utm_content', utmContent, shortUTMTime);
+        }
+        if (utmTerm) {
+          createCookie('Drupal.visitor.utm_term', utmTerm, shortUTMTime);
+        }
+        if (gclid) {
+          createCookie('Drupal.visitor.gclid', gclid, shortUTMTime);
+        }
+
+        /**
+         * Save original UTMs as cookies.
+         * We want to set the cookies only if they don't exist already
+         */
+        if (utmSource && !cookieExists('Drupal.visitor.orig_utm_source')) {
+          createCookie('Drupal.visitor.orig_utm_source', utmSource, longUTMTime);
+        }
+        if (utmMedium && !cookieExists('Drupal.visitor.orig_utm_medium')) {
+          createCookie('Drupal.visitor.orig_utm_medium', utmMedium, longUTMTime);
+        }
+        if (utmCampaign && !cookieExists('Drupal.visitor.orig_utm_campaign')) {
+          createCookie('Drupal.visitor.orig_utm_campaign', utmCampaign, longUTMTime);
+        }
+        if (utmContent && !cookieExists('Drupal.visitor.orig_utm_content')) {
+          createCookie('Drupal.visitor.orig_utm_content', utmContent, longUTMTime);
+        }
+        if (utmTerm && !cookieExists('Drupal.visitor.orig_utm_term')) {
+          createCookie('Drupal.visitor.orig_utm_term', utmTerm, longUTMTime);
+        }
       }
-    }, 100));
+    }
 
+    let hasNotificationBar = body.find(".notification-bar-container:visible").length;
+    let hasHero = body.find(".coh-hero").length;
+    let hasHeroOnTop = 0;
 
-    document.querySelectorAll('.triplet').forEach(triplet => {
-      const backgroundDivs = triplet.querySelectorAll('.background-image-div');
+    if (pageHasTransparentBackground()) {
+      headerBehaviorOnScroll(header);
+      headerBehaviorOnResize(header);
+    }
 
-      backgroundDivs.forEach(bgDiv => {
-        const parent = bgDiv.parentElement;
-        if (parent && parent !== triplet) {
-          // Przenieś .background-image-div po jego rodzicu
-          parent.insertAdjacentElement('afterend', bgDiv);
+    if (hasHero > 0) {
+      $(".coh-hero").each(function(){
+        let hero = $(this);
+
+        if ($(this).position().top < 300){
+          $(this).addClass("coh-hero-top");
+          hasHeroOnTop = 1;
+          // if has Hero 5050
+          if($(this).hasClass("coh-hero-5050")){
+            // On Mobile
+            if ($(window).width() < 1023) {
+              headerBehaviorwithNotificationBar(hero, header);
+              headerBehaviorOnScroll(header);
+              headerBehaviorOnResize(header);
+              // On desktop
+            } else {
+              header.classList.add("white-bg");
+            }
+            // if has Hero Full Width
+          } else if ($(this).hasClass("coh-hero-full-width")) {
+            // On mobile
+            if ($(window).width() < 1023) {
+              headerBehaviorwithNotificationBar(hero, header);
+            }
+            headerBehaviorOnScroll(header);
+            headerBehaviorOnResize(header);
+          }
+        } else {
+          header.classList.add("white-bg");
+          // On mobile
+          if ($(window).width() < 1023) {
+            if(!pageHasTransparentBackground()) {
+              $("#block-cohesion-theme-content").css("padding-top","72px");
+            }
+          } else {
+            if (hasHeroOnTop === 0){
+              if(!pageHasTransparentBackground()) {
+                if (hasNotificationBar > 0) {
+                  $("#block-cohesion-theme-content").css("padding-top","138px");
+                } else {
+                  $("#block-cohesion-theme-content").css("padding-top","72px");
+                }
+              }
+            }
+          }
         }
       });
 
-      // Usuń wszystkie divy w triplet, które NIE są .background-image-div
-      triplet.querySelectorAll('div').forEach(div => {
-        if (!div.classList.contains('background-image-div')) {
-          div.remove();
+      // Pages without Hero or with Hero in the middle of the page.
+    } else {
+      if(!pageHasTransparentBackground()) {
+        header.classList.add("white-bg");
+      }
+      // On mobile
+      if ($(window).width() < 1023) {
+        if(!pageHasTransparentBackground()) {
+          $("#block-cohesion-theme-content").css("padding-top","72px");
         }
-      });
-    });
+      } else {
+        if (hasHeroOnTop === 0){
+          if(!pageHasTransparentBackground()) {
+            if (hasNotificationBar > 0) {
+              $("#block-cohesion-theme-content").css("padding-top","138px");
+            } else {
+              $("#block-cohesion-theme-content").css("padding-top","72px");
+            }
+          }
+        }
+      }
+    }
   });
 
-  Drupal.behaviors.loadMoreCardsScript = {
-    attach: function (context, settings) {
-      manage_load_more_button_display();
+  Drupal.behaviors.megaMenu = {
+    attach: function (context) {
 
-      once('loadMoreCardsScript', '.reset-filters-button', context).forEach(element => {
-        element.addEventListener('click', e => {
-          resetAllTheSelects();
-          manageClearButtonVisibility([], [], 'clear filter');
-          manage_load_more_button_display();
+      /**
+       * Manages the behaviour of the group of menu elements when user clicks on them.
+       */
+      once('select_menu_items', '.business-li', context).forEach(function (element) {
+        let elementId = $(element)[0].id;
+
+        $(element).click(()=> {
+          switch(elementId) {
+            case 'products':
+              let megamenuProducts = document.getElementsByClassName('megamenu-products__desktop');
+              processDesktopMenuItemInteraction(megamenuProducts, element, 'products', 'megamenu-products__desktop');
+              currentlyOpenMenuItem = 'products';
+              break;
+            case 'solutions':
+              let megamenuSolutions = document.getElementsByClassName('megamenu-solutions__desktop');
+              processDesktopMenuItemInteraction(megamenuSolutions, element, 'solutions', 'megamenu-solutions__desktop');
+              currentlyOpenMenuItem = 'solutions';
+              break;
+            case 'resources':
+              let megamenuResources = document.getElementsByClassName('megamenu-resources__desktop');
+              processDesktopMenuItemInteraction(megamenuResources, element, 'resources', 'megamenu-resources__desktop');
+              currentlyOpenMenuItem = 'resources';
+              break;
+            case 'company':
+              let megamenuCompany = document.getElementsByClassName('megamenu-company__desktop');
+              processDesktopMenuItemInteraction(megamenuCompany, element, 'company', 'megamenu-company__desktop');
+              currentlyOpenMenuItem = 'company';
+              break;
+          }
         });
       });
 
-      once('loadMoreCardsScript', '.we-are-sorry-button', context).forEach(element => {
-        element.addEventListener('click', e => {
-          resetAllTheSelects();
-          manageClearButtonVisibility([], [], 'clear filter');
-          manage_load_more_button_display();
+      /**
+       * Manages the hover effect on the menu items.
+       */
+      once('hover_effect', '.megamenu-column__item', context).forEach(function(element) {
+        // Mouse over
+        const imgElement = $(element).children().children()[0];
+        const originalSrc = imgElement.src;
+
+        $(element).on('mouseover', function() {
+          if (originalSrc !== undefined && !imgElement.src.includes('_lavender.svg')) {
+            imgElement.src = originalSrc.replace('.svg', '_lavender.svg');
+          }
+        });
+
+        $(element).on('mouseleave', function() {
+          // Mouse leave
+          if (imgElement.src !== undefined && imgElement.src.includes('_lavender.svg')) {
+            imgElement.src = originalSrc;
+          }
         });
       });
 
-      function resetAllTheSelects() {
-        document.querySelectorAll('.fake-element').forEach(el => {
-          if (el.classList.contains('selected')) {
-            el.classList.remove('selected');
-          }
+      /**
+       * Manages the behaviour of the mega-menu when hamburger menu icon is clicked.
+       */
+      once('hamburgerMenu_handler', '.hamburger-menu', context).forEach(function (element) {
+        element.addEventListener('click', function() {
+          let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
+          let logo = $(document.getElementById('planet-logo--mobile-and-tablet'));
+          let header = $(document.getElementsByClassName("megamenu-header")[0]);
+          let closingIcon = $(document.getElementsByClassName('close-hamburger-menu')[0]);
 
-          if (el.classList.contains('fake-select-el')) {
-            el.classList.add('selected');
+          hamburgerMenu.classList.add('display-none');
+          $(hamburgerMenu).css('display', 'none !important');
+          header.addClass("expanded");
+          closingIcon.attr('src', '/resources/icons/closing-x.svg');
+          logo.attr('src', '/resources/logo/planet_logo_black.svg');
+
+          if (!isHeaderForDesktopDisplayed()) {
+            let megamenuMobileAndTablets = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
+            let logo = $(document.getElementById('planet-logo--mobile-and-tablet'));
+            let mergedMenuItems = $(document.getElementsByClassName('merged-menu-items')[0]);
+            let closeHamburgerMenu = document.getElementsByClassName('close-hamburger-menu')[0];
+
+            closeHamburgerMenu.classList.remove('display-none');
+            $(closeHamburgerMenu).css('display', 'block');
+            logo.attr('src', '/resources/logo/planet_logo_black.svg');
+            mergedMenuItems.removeClass('display-none');
+            megamenuMobileAndTablets.classList.remove('display-none');
           }
         });
-      }
+      });
 
-      const observer = new MutationObserver(mutationsList => {
-        for (let mutation of mutationsList) {
-          if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-            const backgroundImageDivElements = document.querySelectorAll('.background-image-div');
+      /**
+       * Manages the behaviour of the mega-menu when close hamburger menu icon is clicked.
+       */
+      once('closeHamburgerMenu_handler', '.close-hamburger-menu', context).forEach(function (element) {
+        let isMobileAndTabletsExpanded = !document.getElementsByClassName("megamenu-mobile-and-tablets")[0].classList.contains("display-none");
 
-            if (backgroundImageDivElements.length !== previousBackgroundImageDivCount) {
-              manage_load_more_button_display();
-              previousBackgroundImageDivCount = backgroundImageDivElements.length;
+        element.addEventListener('click', function() {
+          if (!isHeaderForDesktopDisplayed()) {
+            let hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
+            hamburgerMenu.classList.remove('display-none');
+            hamburgerMenu.classList.add('rotate-left');
+            element.classList.add('display-none');
+            let megamenuMobileAndTablets = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
+            megamenuMobileAndTablets.classList.add('display-none');
+            hideGoBack();
+            showLogo();
+            addDisplayNoneToAllContainers();
+            showMergedMenuItems();
+            showBlackHamburgerMenu();
+            switchHamburgerMenuLogoBlack();
+            removeNoScrollFromBody();
+
+            if (!isMobileAndTabletsExpanded) {
+              removeExpandedFromHeader();
             }
 
-            if (
-              previousProductOptionSelected !== getSelectedProductOption() ||
-              previousIndustryOptionSelected !== getSelectedIndustryOption() ||
-              previousCompanySizeOptionSelected !== getSelectedCompanySizeOption()
-            ) {
-              previousProductOptionSelected = getSelectedProductOption();
-              previousIndustryOptionSelected = getSelectedIndustryOption();
-              previousCompanySizeOptionSelected = getSelectedCompanySizeOption();
+            currentlyOpenMenuItem = null;
 
-              fetchCaseStudies(9).then(data => {
-                // Remove all .triplet elements
-                document.querySelectorAll('.triplet').forEach(el => el.remove());
+            let scrollPosition = jQuery(window).scrollTop();
+            let potentiallyTransparent = $('body, div');
+            let hasTransparentBg = isFrontpage() || (potentiallyTransparent.hasClass("planet-header-transparent") || potentiallyTransparent.hasClass("coh-hero-full-width"));
+            let hasDarkMenuTheme = $("body").find(".dark-menu-items").length > 0;
+            let closingXIcon = document.getElementsByClassName('close-hamburger-menu');
 
-                appendNewItems(data);
-                manage_load_more_button_display();
-              });
+            if (scrollPosition === 0) {
+              if (hasTransparentBg) {
+                let planetLogoMobileAndTablet = $(document.getElementById('planet-logo--mobile-and-tablet'));
+
+                if (hasDarkMenuTheme) {
+                  planetLogoMobileAndTablet.attr('src', '/resources/logo/planet_logo_black.svg');
+                  $(closingXIcon).attr('src', '/resources/icons/closing-x.svg');
+                }
+                else {
+                  addTransparentBgClassToHeader();
+                  planetLogoMobileAndTablet.attr('src', '/resources/logo/planet_logo.svg');
+                  switchHamburgerMenuLogoWhite();
+                }
+              }
+            }
+            else {
+
             }
           }
+        });
+      });
+
+      /**
+       * Manages the behaviour of the mega-menu when the item's right arrow is clicked.
+       *
+       * It concerns only mobile-and-tablet version.
+       */
+      once('megamenuMobileAndTablets_handler', '.arrow-right-anchor', context).forEach(function (element) {
+        element.addEventListener('click', function() {
+          let id = element.id;
+
+          switch (id) {
+            case 'anchor-products':
+              let containerProducts = document.getElementsByClassName('megamenu-mobile-and-tablets__container--products')[0];
+              addDisplayNoneToAllContainers();
+
+              if (containerProducts.classList.contains('display-none')) {
+                containerProducts.classList.remove('display-none');
+                currentlyOpenMenuItem = 'products';
+                hideMergedMenuItems();
+                addNoScrollToBody();
+                hideLogo();
+                showGoBack();
+              }
+              break;
+            case 'anchor-solutions':
+              let containerSolutions = document.getElementsByClassName('megamenu-mobile-and-tablets__container--solutions')[0];
+              addDisplayNoneToAllContainers();
+
+              if (containerSolutions.classList.contains('display-none')) {
+                containerSolutions.classList.remove('display-none');
+                currentlyOpenMenuItem = 'solutions';
+                hideMergedMenuItems();
+                addNoScrollToBody();
+                hideLogo();
+                showGoBack();
+              }
+              break;
+            case 'anchor-resources':
+              let containerResources = document.getElementsByClassName('megamenu-mobile-and-tablets__container--resources')[0];
+              addDisplayNoneToAllContainers();
+
+              if (containerResources.classList.contains('display-none')) {
+                containerResources.classList.remove('display-none');
+                currentlyOpenMenuItem = 'resources';
+                hideMergedMenuItems();
+                addNoScrollToBody();
+                hideLogo();
+                showGoBack();
+              }
+              break;
+            case 'anchor-company':
+              let containerCompany = document.getElementsByClassName('megamenu-mobile-and-tablets__container--company')[0];
+              addDisplayNoneToAllContainers();
+
+              if (containerCompany.classList.contains('display-none')) {
+                containerCompany.classList.remove('display-none');
+                currentlyOpenMenuItem = 'company';
+                hideMergedMenuItems();
+                addNoScrollToBody();
+                hideLogo();
+                showGoBack();
+              }
+
+              break;
+          }
+        });
+      });
+
+      /**
+       * Handles click-away functionality.
+       */
+      $(document).on('click', function (e) {
+        const headerElement = document.getElementsByTagName('header')[0];
+        const megamenuDesktopElement = document.getElementsByClassName('megamenu-complex-container')[0];
+        const megamenuMobileElement = document.getElementsByClassName('megamenu-mobile-and-tablets')[0];
+
+        if (
+          !(headerElement && headerElement.contains(e.target)) &&
+          !(megamenuDesktopElement && megamenuDesktopElement.contains(e.target)) &&
+          !(megamenuMobileElement && megamenuMobileElement.contains(e.target))
+        ) {
+          setTimeout(() => {
+            switch (currentlyOpenMenuItem) {
+              case 'products':
+                let containerProducts = document.getElementsByClassName('megamenu-products__desktop')[0];
+                containerProducts.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
+                currentlyOpenMenuItem = null;
+                unflipAllDesktopMenuArrows();
+                break;
+              case 'solutions':
+                let containerSolutions = document.getElementsByClassName('megamenu-solutions__desktop')[0];
+                containerSolutions.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
+                currentlyOpenMenuItem = null;
+                unflipAllDesktopMenuArrows();
+                break;
+              case 'resources':
+                let containerResources = document.getElementsByClassName('megamenu-resources__desktop')[0];
+                containerResources.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
+                currentlyOpenMenuItem = null;
+                unflipAllDesktopMenuArrows();
+                break;
+              case 'company':
+                let containerCompany = document.getElementsByClassName('megamenu-company__desktop')[0];
+                containerCompany.classList.add('display-none');
+                removeExpandedFromHeader();
+                manageHasTransparentBgClass();
+                currentlyOpenMenuItem = null;
+                unflipAllDesktopMenuArrows();
+                break;
+              default:
+                megamenuMobileElement.classList.add('display-none');
+                hideCloseHamburgerMenu();
+                showBlackHamburgerMenu();
+                unflipAllDesktopMenuArrows();
+                break;
+            }
+          }, 300);
         }
       });
 
-      function observeDOMChanges() {
-        const config = {
-          attributes: true,
-          childList: false,
-          subtree: true,
-          attributeOldValue: true,
-          attributeFilter: ['class']
-        };
-        observer.observe(document.body, config);
-      }
-
-      function is_loading(status = true) {
-        const loader = document.querySelector('.loader');
-        const loadMoreWrapper = document.querySelector('.load-more-wrapper');
-        const noArticles = document.querySelector('.no-articles');
-
-        if (loader) {
-          loader.style.display = status ? 'block' : 'none';
-        }
-
-        if (loadMoreWrapper) {
-          loadMoreWrapper.style.display = 'none';
-        }
-
-        if (noArticles) {
-          noArticles.style.display = 'none';
-        }
-      }
-      async function manage_load_more_button_display() {
-        const loadMoreBtn = document.querySelector('.load-more-button');
-        const loader = document.querySelector('.loader');
-
-        if (loader) loader.style.display = 'block';
-        if (loadMoreBtn) loadMoreBtn.style.display = 'none';
-
-        const howManyCaseStudies = document.querySelectorAll('.background-image-div').length;
-
-        const productOptionSelected = getSelectedProductOption().startsWith('All') ? 'All' : getSelectedProductOption();
-        const industryOptionSelected = getSelectedIndustryOption().startsWith('All') ? 'All' : getSelectedIndustryOption();
-        const companySizeOptionSelected = getSelectedCompanySizeOption().startsWith('All') ? 'All' : getSelectedCompanySizeOption();
-
-        try {
-          const url = new URL(
-            `/planet/case_studies/get_total_case_studies_count/${productOptionSelected}/${industryOptionSelected}/${companySizeOptionSelected}/`,
-            window.location.origin
-          );
-
-          const response = await fetch(url);
-
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-
-          const totalCaseStudiesCount = await response.json();
-
-          if (
-            howManyCaseStudies >= 9 &&
-            howManyCaseStudies < totalCaseStudiesCount
-          ) {
-            if (loadMoreBtn) loadMoreBtn.style.display = 'flex';
-          } else {
-            if (loadMoreBtn) loadMoreBtn.style.display = 'none';
-          }
-
-          if (loader) loader.style.display = 'none';
-
-        } catch (error) {
-          console.error('Error checking case studies count:', error);
-          throw error;
-        }
-      }
-
-      function appendNewItems(data) {
-        // Prepare the new triplet elements
-        const newTriplets = prepareTriplets(data);
-
-        // Find the footer that contains the load-more-button
-        const footers = document.querySelectorAll('footer');
-        let targetFooter = null;
-
-        footers.forEach(footer => {
-          if (footer.querySelector('.load-more-button')) {
-            targetFooter = footer;
-          }
-        });
-
-        // If such a footer is found, insert the new triplets before it
-        if (targetFooter) {
-          targetFooter.insertAdjacentHTML('beforebegin', newTriplets);
-        }
-
-        // Update the triplets variable to include the newly added elements
-        triplets = document.querySelectorAll('.triplet');
-      }
-
-      function prepareTriplets(data) {
-        let howManyTriplets = document.querySelectorAll('.triplet').length;
-        let triplets = [];
-        let triplet = [];
-
-        data.forEach(item => {
-          triplet.push(item);
-          if (triplet.length === 3) {
-            triplets.push(triplet);
-            triplet = [];
-          }
-        });
-
-        if (triplet.length > 0) {
-          triplets.push(triplet);
-        }
-
-        let newTriplets = triplets.map((tripletGroup, index) => {
-          let isEven = (howManyTriplets + index) % 2 === 0;
-
-          let tripletHtml = tripletGroup.map((item, j) => {
-            let pinkStyle = `background: linear-gradient(0deg, rgba(224, 0, 131, 0.30) 0%, rgba(224, 0, 131, 0.30) 100%), url('${item.image_url}') lightgray 50% / cover no-repeat`;
-            let lavenderStyle = `background: linear-gradient(322deg, rgba(79, 70, 229, 0.7) 0%, rgba(79, 70, 229, 0.1) 34.5%), url('${item.image_url}') lightgray 50% / cover no-repeat`;
-            let currentStyle, classNameBackground;
-
-            if (item.landing_page_display_style === 'pink') {
-              currentStyle = pinkStyle;
-              classNameBackground = 'background-image-div';
-            } else {
-              currentStyle = lavenderStyle;
-              classNameBackground = 'background-image-div background-image-div--lavender';
-            }
-
-            let className;
-            if (isEven) {
-              className = j === 0 ? 'large-left' : (j === 1 ? 'small-right-top' : 'small-right-bottom');
-            } else {
-              className = j === 0 ? 'small-left-top' : (j === 1 ? 'small-left-bottom' : 'large-right');
-            }
-
-            return `<div class="${classNameBackground} ${className}" style="${currentStyle}">
-                        <img class="background-image-div__logo-img" src="${item.logo_url}"/>
-                        <a href="${item.url}">
-                            <span class="background-span">${item.title}</span>
-                            <span class="initially-hidden-read-more">Read the full story 
-                                <img class="read-full-story__img" src="/resources/icons/sharp-arrow-pointing-right.svg" loading="lazy">
-                            </span>
-                        </a>
-                    </div>`;
-          }).join('');
-
-          let tripletClass = isEven ? 'even' : 'odd';
-          if (index === triplets.length - 1) {
-            tripletClass += ' last';
-          }
-
-          tripletClass += ` triplet-size-${tripletGroup.length}`;
-
-          return `<div class="triplet ${tripletClass}">${tripletHtml}</div>`;
-        }).join('');
-
-        return newTriplets;
-      }
-
-      function manageClearButtonVisibility(optionArray = [], data = [], word) {
-        if (word === 'clear filter') {
-          const clearBtn = document.querySelector('.reset-filters-standalone-clear-filter-button');
-          if (clearBtn) clearBtn.style.display = 'none';
-        }
-
-        const resetFilters = document.querySelector('.reset-filters');
-        const weAreSorrySpan = document.querySelector('.we-are-sorry-span');
-
-        if (optionArray.length === 0) {
-          if (resetFilters) resetFilters.style.display = 'none';
-          if (weAreSorrySpan) weAreSorrySpan.style.display = 'none';
-          return;
-        }
-
-        let productOptionSelected = optionArray[0];
-        let industryOptionSelected = optionArray[1];
-        let companySizeOptionSelected = optionArray[2];
-
-        const allInAllLanguages = [
-          'All', 'Todos los productos', 'Todos los sectores', 'Todas las empresas', 'Tutti i prodotti',
-          'Tutti i settori', 'Tutte la aziende', 'Alle Produkte', 'Alle Branchen', 'Alle Unternehmen',
-          'Tous les produits', 'Tous les secteurs', 'Toutes les entreprises', 'All Products', 'All Industries',
-          'All Companies',
-        ];
-
-        const viewsForm = document.querySelector('.views-exposed-form');
-
-        const allSelected =
-          allInAllLanguages.includes(productOptionSelected) &&
-          allInAllLanguages.includes(industryOptionSelected) &&
-          allInAllLanguages.includes(companySizeOptionSelected);
-
-        if (allSelected) {
-          if (viewsForm) viewsForm.style.margin = '48px';
-          if (resetFilters) resetFilters.style.display = 'none';
-          if (weAreSorrySpan) weAreSorrySpan.style.display = 'none';
-        } else {
-          if (viewsForm) viewsForm.style.margin = '0';
-
-          const clearBtn = document.querySelector('.reset-filters-standalone-clear-filter-button');
-          if (data.length === 0) {
-            if (weAreSorrySpan) weAreSorrySpan.style.display = 'block';
-            if (clearBtn) clearBtn.style.display = 'block';
-            if (resetFilters) resetFilters.style.display = 'block';
-          } else {
-            if (clearBtn) clearBtn.style.display = 'block';
-            if (resetFilters) resetFilters.style.display = 'block';
-          }
-        }
-      }
-
-      async function fetchCaseStudies(limit = 9, offset = 0, context_hint= "") {
-        let productOptionSelected = getSelectedProductOption().startsWith('All') ? 'All' : getSelectedProductOption();
-        let industryOptionSelected = getSelectedIndustryOption().startsWith('All') ? 'All' : getSelectedIndustryOption();
-        let companySizeOptionSelected = getSelectedCompanySizeOption().startsWith('All') ? 'All' : getSelectedCompanySizeOption();
-        let optionArray = [productOptionSelected, industryOptionSelected, companySizeOptionSelected];
-
-        is_loading(true);
-        manageClearButtonVisibility();
-        try {
-          const url = new URL(`/planet/case_studies/${productOptionSelected}/${industryOptionSelected}/${companySizeOptionSelected}/${offset}/${previousBackgroundImageDivCount}`, window.location.origin);
-          const response = await fetch(url);
-
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-
-          const data = await response.json();
-          manageClearButtonVisibility(optionArray, data);
-          appendNewItems(data);
-          return data;
-        } catch (error) {
-          console.error('Error loading more case studies:', error);
-          throw error;
-        }
-      }
-
-      observeDOMChanges();
-
-
-      manageClearButtonVisibility();
-
-      once('loadMoreButtonInit', '.load-more-button', context).forEach(loadMoreButton => {
-        loadMoreButton.addEventListener('click', async function () {
-          try {
-            const currentNumberOfLoadedItems = document.querySelectorAll('.background-image-div').length;
-            await manage_load_more_button_display();
-            await fetchCaseStudies(9, currentNumberOfLoadedItems, "");
-          } catch (error) {
-            console.error('Error:', error);
+      /**
+       * Handles the behaviour of the menu when go-back icon is clicked.
+       */
+      once('go-back-handler', '.go-back-span', context).forEach(function (element) {
+        element.addEventListener('click', function() {
+          switch (currentlyOpenMenuItem) {
+            case 'products':
+              let containerProducts = document.getElementsByClassName('megamenu-mobile-and-tablets__container--products')[0];
+              containerProducts.classList.add('display-none');
+              showMergedMenuItems();
+              removeNoScrollFromBody();
+              showLogo();
+              hideGoBack();
+              break;
+            case 'solutions':
+              let containerSolutions = document.getElementsByClassName('megamenu-mobile-and-tablets__container--solutions')[0];
+              containerSolutions.classList.add('display-none');
+              showMergedMenuItems();
+              removeNoScrollFromBody();
+              showLogo();
+              hideGoBack();
+              break;
+            case 'resources':
+              let containerResources = document.getElementsByClassName('megamenu-mobile-and-tablets__container--resources')[0];
+              containerResources.classList.add('display-none');
+              showMergedMenuItems();
+              removeNoScrollFromBody();
+              showLogo();
+              hideGoBack();
+              break;
+            case 'company':
+              let containerCompany = document.getElementsByClassName('megamenu-mobile-and-tablets__container--company')[0];
+              containerCompany.classList.add('display-none');
+              showMergedMenuItems();
+              removeNoScrollFromBody();
+              showLogo();
+              hideGoBack();
+              break;
           }
         });
       });
     }
   };
-})(Drupal);
+})(jQuery, Drupal);
