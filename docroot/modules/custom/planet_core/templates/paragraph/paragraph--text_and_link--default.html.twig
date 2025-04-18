@@ -1,0 +1,25 @@
+<div class="bg-white">
+	<div class="max-w-4xl mx-auto px-4 py-20">
+		{% if paragraph.fields.field_box_title %}
+			<h2 class="text-center font-semibold text-3xl lg:text-5xl leading-tight">
+				{{ paragraph.fields.field_box_title[0].value }}
+			</h2>
+		{% endif %}
+		{% if paragraph.fields.field_box_desc %}
+			<span class="mt-4 block text-xl font-light text-center hero-desc-paragraph">
+				{{ paragraph.fields.field_box_desc[0].value|raw }}
+			</span>
+		{% endif %}
+		<div class="flex items-center justify-center mt-6">
+			<div class="container mx-auto max-w-6xl px-4">
+				<div class="flex flex-wrap justify-center gap-6 mx-auto">
+					{% if paragraph.fields.field_button_1_link[0].alias %}
+						<a href="{{ paragraph.fields.field_button_1_link[0].alias|replace({'internal:': ''}) }}" class="hero-link font-semibold  transition-all duration-300 w-full md:w-fit inline-flex justify-center items-center px-6 py-4 bg-gray-900 text-white rounded-full hover:bg-[#e00083] focus:border-2 border-2 border-transparent border-solid focus:border-solid focus:border-[rgb(165,165,165)]" {% if paragraph.fields.field_button_1_open[0].value == '1' %} target="_blank" rel="noopener" {% endif %}>
+							{{ paragraph.fields.field_button_1_label[0].value }}
+						</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
