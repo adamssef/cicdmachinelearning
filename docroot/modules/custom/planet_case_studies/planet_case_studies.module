@@ -64,23 +64,6 @@ function planet_case_studies_theme(): array {
 }
 
 /**
- * Implements hook_page_attachments().
- */
-function planet_case_studies_page_attachments(array &$attachments) {
-  $attachments['#attached']['html_head_link'][] = [
-    [
-      'rel' => 'preload',
-      'href' => '/themes/custom/mytheme/fonts/my-font.woff2',
-      'as' => 'font',
-      'type' => 'font/woff2',
-      'crossorigin' => 'anonymous',
-    ],
-    TRUE,
-  ];
-}
-
-
-/**
  * Implements hook_page_attachments_alter().
  *
  * Remove global styling and cohesion theme files from certain pages.
@@ -117,6 +100,7 @@ function planet_case_studies_page_attachments_alter(array &$attachments) {
     !empty(array_intersect($translation_arr_prefixed, $pages_to_exclude_cohesion_theme_files))
     || in_array($node_type, $node_types_to_skip)
   ) {
+    unset($attachments['#attached']['library'][array_search('cohesion/coh-theme', $attachments['#attached']['library'])]);
     unset($attachments['#attached']['library'][array_search('cohesion/coh-theme', $attachments['#attached']['library'])]);
   }
 }

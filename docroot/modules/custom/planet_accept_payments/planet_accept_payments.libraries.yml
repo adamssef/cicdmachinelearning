@@ -7,6 +7,7 @@ planet_accept_payments:
     theme:
       css/swiper.css: {}
       css/swiper-bundle.min.css: {}
+      css/planet_accept_payments_carousel_item.css: {}
   js:
     js/planet_accept_payments.js:
         attributes:
