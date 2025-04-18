@@ -1,30 +1,23 @@
-/**
- * @file
- * Brands We Work With Script.
- */
-
-(function (Drupal, once) {
+(function ($, Drupal) {
   Drupal.behaviors.brandsWeWorkWithScript = {
     attach: function (context, settings) {
-      // Select elements with the class 'brands-we-work-with-container' that have not been processed yet.
-      const elements = once('brandsWeWorkWithSolo', '.brands-we-work-with-container', context);
-
-      elements.forEach(function (element) {
-        const totalWidth = element.scrollWidth;
-        const speed = 0.2;
-        const logoWidth = element.children[0].offsetWidth;
-        const resetThreshold = logoWidth * 10;
+      once('brandsWeWorkWithSolo', '.brands-we-work-with-container', context).forEach(function (element) {
+        var container = $(element);
+        var totalWidth = container[0].scrollWidth;
+        var speed = 0.2;
+        var logoWidth = container.children().first().outerWidth(true);
+        var resetThreshold = logoWidth * 10;
 
         function animate() {
-          Array.from(element.children).forEach(function (child) {
-            const currentTransform = new WebKitCSSMatrix(window.getComputedStyle(child).transform).m41;
+          container.children().each(function(index) {
+            let currentTransform = new WebKitCSSMatrix(window.getComputedStyle(this).transform).m41;
             let newX = currentTransform - speed;
 
             if (Math.abs(newX) >= totalWidth - resetThreshold) {
               newX = 0; // Reset position back to the beginning.
             }
 
-            child.style.transform = `translateX(${newX}px)`;
+            this.style.transform = `translateX(${newX}px)`;
           });
 
           requestAnimationFrame(animate);
@@ -34,4 +27,4 @@
       });
     }
   };
-})(Drupal, once);
+})(jQuery, Drupal);

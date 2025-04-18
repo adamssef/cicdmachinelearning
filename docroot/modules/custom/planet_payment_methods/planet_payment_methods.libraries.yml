@@ -9,7 +9,6 @@ tailwind:
         defer: true
   dependencies:
     - core/drupal
-    - core/jquery
     - core/once
 tailwind_css_only:
   css:
@@ -18,5 +17,4 @@ tailwind_css_only:
       css/planet-payment-methods.css: {}
   dependencies:
     - core/drupal
-    - core/jquery
     - core/once
