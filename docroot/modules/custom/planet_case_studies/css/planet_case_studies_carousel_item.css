@@ -7,11 +7,8 @@
 }
 
 .carousel__item:hover {
-
   border-radius: 16px;
 }
-
-
 
 .carousel__item div {
   width: 100%;
