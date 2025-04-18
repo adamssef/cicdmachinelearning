@@ -587,7 +587,7 @@ body .download-btn {
 
 .accordion .panel .panel-heading h4.panel-title:after {
   content: "";
-  background-image: url(/modules/custom/planet_sitestudio_custom_elements/images/plus-icon.png);
+  background-image: url(/resources/icons/plus-icon.png);
   background-size: 20px;
   width: 20px;
   height: 20px;
