@@ -399,7 +399,6 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
   if (!$node || !($node instanceof \Drupal\node\NodeInterface)) {
     return;
   }
-  $config = \Drupal::config('planet_core.settings');
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
 
   // News page suggestions
