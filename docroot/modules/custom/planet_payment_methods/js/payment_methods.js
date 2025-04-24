@@ -1,4 +1,4 @@
-(function ($, Drupal, once) {
+(function (Drupal, once) {
   'use strict';
 
   function initializeState() {
@@ -15,16 +15,12 @@
       selectedChannelLabel: false,
     };
 
-    let defaultDropdownItem = document.getElementsByClassName('dropdown-item__default')[0].innerText;
-    initialState.dropdownElements[0] = defaultDropdownItem;
+    initialState.dropdownElements[0] = document.getElementsByClassName('dropdown-item__default')[0].innerText;
     let otherItems = document.querySelectorAll('.dropdown-item:not(.dropdown-item__default)');
-    console.log(otherItems)
 
     otherItems.forEach(function (item) {
       initialState.dropdownElements.push(Drupal.t(item.innerText.trim()));
     });
-
-    console.log(initialState)
 
     return initialState;
   }
@@ -59,14 +55,13 @@
   }
 
   function showDropdownContainer() {
-    $('.dropdown-container').removeClass('hidden');
+    document.getElementsByClassName('dropdown-container')[0].classList.remove('hidden');
     state.isDropdownExpanded = true;
   }
 
   function hideDropdownContainer() {
-    $('.dropdown-container').addClass('hidden');
+    document.getElementsByClassName('dropdown-container')[0].classList.add('hidden');
     state.isDropdownExpanded = false;
-
   }
 
   function hideClearFilterButtons() {
@@ -218,10 +213,9 @@
     Drupal.behaviors.clickAway = {
       attach: function () {
         once('clickAwayFunctionality', '.dialog-off-canvas-main-canvas').forEach((element) => {
-          $(element).click(function(event) {
-            if (!$(event.target).closest('.dropdown-items').length) {
+          element.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown-items')) {
               hideDropdownContainer();
-
             }
           });
         });
@@ -349,4 +343,4 @@
         });
       },
     };
-  })(jQuery, Drupal, once);
+  })(Drupal, once);

@@ -1,7 +1,0 @@
----
-services:
-  cache_context.view_component:
-    class:
-      Drupal\planet_sitestudio_custom_elements\CacheContext\ViewComponentCacheContext
-    tags:
-      - {name: cache.context}

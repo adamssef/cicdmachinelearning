@@ -1,6 +1,5 @@
----
-name: Planet Site Studio Custom Elements
-description: "Basic module for adding custom elements to site studio."
+name: Planet Sitestudio Custom Elements
+description: "Provides fixes and features for drupal core elements."
 type: module
-package: planet
+package: Planet
 core_version_requirement: ^8 || ^9 || ^10

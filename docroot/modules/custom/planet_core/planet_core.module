@@ -159,11 +159,64 @@ function planet_core_theme($existing, $type, $theme, $path): array {
 }
 
 /**
+ * Implements hook_page_attachments_alter().
+ *
+ * Remove global styling and cohesion theme files from certain pages.
+ */
+function planet_core_page_attachments_alter(array &$attachments) {
+  unset($attachments['#attached']['library'][array_search('cohesion_theme/global-styling', $attachments['#attached']['library'])]);
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_path_alias = \Drupal::service('path_alias.manager')
+    ->getAliasByPath($current_path);
+
+  $is_front_page = \Drupal::service('path.matcher')->isFrontPage();
+
+  $translation_arr_prefixed = \Drupal::service('planet_core.node_translation_service')
+    ->getTranslationArrWithPrefixes($current_path_alias);
+
+  $translation_arr_prefixed = $translation_arr_prefixed ?? [];
+
+  $pages_to_exclude_cohesion_theme_files = [
+    '/payment-methods',
+    '/case-studies',
+    '/support'
+  ];
+
+  $node_types_to_skip = [
+    'payment_methods',
+    'case_studies'
+  ];
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $node_type = $node instanceof NodeInterface ? $node->getType() : NULL;
+
+  if (
+    $is_front_page ||
+    !empty(array_intersect($translation_arr_prefixed, $pages_to_exclude_cohesion_theme_files))
+    || in_array($node_type, $node_types_to_skip)
+  ) {
+    unset($attachments['#attached']['library'][array_search('cohesion/coh-theme', $attachments['#attached']['library'])]);
+  }
+}
+
+/**
  * Implements hook_preprocess_html().
  *
  * Changes the title of the user page.
  */
 function planet_core_preprocess_html(&$variables): void {
+
+  // $variables['#attached']['library'][] = 'planet_core/page_loader';
+
+  // $variables['#attached']['html_head'][] = [
+  //   [
+  //     '#tag' => 'script',
+  //     '#value' => 'document.documentElement.classList.add("loader-active");',
+  //   ],
+  //   'planet_core_inline_loader_class'
+  // ];
+
+
   $routeName = \Drupal::routeMatch()->getRouteName();
   if ($routeName === 'entity.user.canonical') {
     $variables['head_title']['title'] = '';
@@ -181,7 +234,6 @@ function planet_core_preprocess_html(&$variables): void {
   $value_to_be_used = ltrim($value_to_be_used, '/');
   $value_to_be_used = str_replace('/', '-', $value_to_be_used);
   $value_to_be_used = str_replace('_', '-', $value_to_be_used);
-
   $node = \Drupal::routeMatch()->getParameter('node');
 
   if ($node instanceof Node) {
@@ -194,7 +246,6 @@ function planet_core_preprocess_html(&$variables): void {
   }
 
   $variables['attributes']['class'][] = 'plnt-css-' . $value_to_be_used;
-
   // For admin pages we need to add a class to the body tag.
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     $variables['attributes']['class'][] = 'plnt-css-admin-page';
@@ -348,7 +399,6 @@ function planet_core_theme_suggestions_node_alter(array &$suggestions, array $va
   if (!$node || !($node instanceof \Drupal\node\NodeInterface)) {
     return;
   }
-  $config = \Drupal::config('planet_core.settings');
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
 
   // News page suggestions
@@ -537,8 +587,26 @@ function planet_core_preprocess_node(array &$variables)
  * Implements hook_preprocess_HOOK().
  */
 function planet_core_preprocess_page(array &$variables) {
+  $node_type = \Drupal::routeMatch()->getParameter('node')?->getType();
   $variables['#attached']['library'][] = 'planet_core/language-popup';
-  $variables['#attached']['library'][] = 'planet_core/sitewide-libraries';
+  $current_path = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $is_landing = _is_path_case_studies_landing($alias);
+  $payments_translation_arr = \Drupal::service('planet_core.node_translation_service')->getTranslationArrWithPrefixes('/payments');
+  if (
+    $node_type !== 'case_studies'&&
+    !$is_landing &&
+    !in_array($alias,$payments_translation_arr)
+  ) {
+    $variables['#attached']['library'][] = 'planet_core/sitewide-libraries';
+    $variables['#attached']['library'][] = 'planet_core/basic-pages';
+  }
+  else {
+    $variables['#attached']['library'][] = 'planet_core/site-wide-styles';
+    $variables['#attached']['library'][] = 'planet_core/sitewide-libraries';
+  }
+
+
 
   // Get current node if it exists
   $node = \Drupal::routeMatch()->getParameter('node');

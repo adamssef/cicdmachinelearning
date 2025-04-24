@@ -101,6 +101,7 @@ module:
   planet_core: 0
   planet_custom_access: 0
   planet_customer_resources_library: 0
+  planet_event_pages: 0
   planet_footer: 0
   planet_header: 0
   planet_html_sitemap: 0
@@ -112,7 +113,6 @@ module:
   planet_offices: 0
   planet_pardot_submissions: 0
   planet_payment_methods: 0
-  planet_sitestudio_custom_elements: 0
   planet_sitewide_fonts: 0
   planet_structured_data: 0
   planet_support: 0

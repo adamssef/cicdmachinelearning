@@ -1,3 +1,8 @@
+html:not(.js) #page-loader {
+  display: none !important;
+}
+
+
 header.megamenu-header.has-transparent-bg:not(.header-dark-theme) a {
   color: white !important;
 }
