@@ -140,14 +140,21 @@ function planet_payment_methods_preprocess_node__payment_methods(&$variables) {
     }
 
     $long_description = $this_page_node->get('field_long_description')->value;
+    $long_description_label = $this_page_node->get('field_long_description_label');
 
     if (!$long_description) {
       $long_description = $this_page_node->getTranslation('en')
         ->get('field_long_description')->value;
     }
 
+    if ($long_description_label) {
+      $long_description_label = $this_page_node->getTranslation('en')
+        ->get('field_long_description_label')->value;
+    }
+
     $variables['short_description'] = $short_description ?? '';
     $variables['long_description'] = $long_description ?? '';
+    $variables['long_description_label'] = $long_description_label ?? '';
     $payment_methods_url = $node_translation_arr[$current_language];
 
     $langcode = $node_translation_service->determineTheLangId();
