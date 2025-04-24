@@ -1,19 +1,16 @@
-
 <div class="flex items-center flex-col m-auto pb-12 md:pb-0">
-    <!-- Desktop view - Change to relative positioning and make it expand -->
-
     <div class="block w-full relative">
         <div class="hidden md:block md:mt-6 lg:mt-8">
             <div class="flex items-stretch self-start">
                 <div class="md:w-6/12 px-4 md:pr-6 lg:pr-8 md:pl-0 md:ml-8 flex flex-col justify-center items-end">
-                    <!-- Content Section -->
                     <div class="max-w-[640px] w-full">
                         <div class="flex items-center flex-col self-start">
                             <div class="block w-full md:mt-0">
                                 <div class="w-full h-full top-0 left-0 z-10">
                                     <div class="xl:container mx-auto h-full">
                                         <div class="max-w-[640px] w-full md:w-6/12 px-4 md:px-0 py-8 md:py-0">
-                                            <a class="pr-4 md:pr-8 hidden self-start max-w-[1280px] md:block leading-[20px] text-lg font-semibold text-[#005AB2] m-auto md:pb-6" href="{{ payment_methods_landing_node_url }}">{{ "Payment methods"|t }}</a>
+                                            <a class="pr-4 md:pr-8 hidden self-start max-w-[1280px] md:block leading-[20px] text-lg font-semibold text-[#005AB2] m-auto md:pb-6"
+                                               href="{{ payment_methods_landing_node_url }}">{{ "Payment methods"|t }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -22,7 +19,6 @@
 
                     </div>
                 </div>
-                <!-- Image Section -->
                 <div class="md:w-6/12 rounded-l-2xl overflow-hidden grid place-items-center"></div>
             </div>
         </div>
@@ -30,10 +26,9 @@
             <div class="flex items-stretch min-h-[440px] self-start">
                 <div class="md:w-6/12 px-4 md:pr-6 lg:pr-8 md:pl-0 md:ml-8 flex flex-col justify-center items-end">
                     <!-- Content Section -->
-                    <div class="max-w-[640px] w-full pt-4 pb-12 md:py-6 lg:pt-8 md:pb-20">
-
+                    <div class="max-w-[640px] w-full pt-4 pb-12 md:py-6 lg:pt-8 md:pb-20 font-light">
                         <span class="block font-semibold text-[28px] md:text-5xl mb-4">{{ elements['#title']|striptags }}</span>
-                        <p class="font-light leading-5 lg:leading-6 text-base lg:text-xl">{{ short_description|t }}</p>
+                        <p class="short-description font-light leading-5 lg:leading-6 text-base lg:text-xl">{{ short_description|t }}</p>
                         <a class="flex items-center font-semibold block md:flex h-14 flex justify-center rounded-full tracking-tight text-white text-lg bg-planet-black hover:bg-[rgb(224,0,131)] hover:text-white transition-all duration-300 ease-in-out mt-8 py-4 px-6 w-full md:w-fit"
                            href="{{ contact_sales_url }}">{{ "Contact sales"|t }}</a>
                     </div>
@@ -41,8 +36,7 @@
                 <!-- Image Section -->
                 <div class="md:w-6/12 rounded-l-2xl overflow-hidden grid place-items-center">
                     <img src="{{ logo_uri }}"
-                         class="w-full h-full object-contain object-center min-h-[240px] max-h-[470px]"
-                         alt="{{ elements['#title']|striptags }}">
+                         class="w-full h-full object-contain object-center min-h-[240px] max-h-[470px]">
                 </div>
             </div>
         </div>
@@ -54,7 +48,8 @@
                     <div class="w-full h-full top-0 left-0 z-10">
                         <div class="xl:container mx-auto h-full">
                             <div class="max-w-[640px] w-full md:w-6/12 px-4 md:px-0 py-4 md:py-0">
-                                <a class="pr-4 md:pr-8 self-start max-w-[1280px] md:block leading-[20px] text-lg font-semibold text-[#005AB2] m-auto md:pb-6" href="{{ payment_methods_landing_node_url }}">{{ "Payment methods"|t }}</a>
+                                <a class="pr-4 md:pr-8 self-start max-w-[1280px] md:block leading-[20px] text-lg font-semibold text-[#005AB2] m-auto md:pb-6"
+                                   href="{{ payment_methods_landing_node_url }}">{{ "Payment methods"|t }}</a>
                             </div>
                         </div>
                     </div>
@@ -62,9 +57,9 @@
             </div>
             <div class="flex flex-col-reverse gap-6">
                 <div class="w-full px-4">
-                    <div class="py-8">
+                    <div class="py-8 font-light">
                         <span class="block font-semibold text-[28px] md:text-5xl mb-4">{{ elements['#title']|striptags }}</span>
-                        <p class="font-light leading-5 lg:leading-6 text-base lg:text-xl">{{ short_description|t }}</p>
+                        <p class="short-description font-light leading-5 lg:leading-6 text-base lg:text-xl">{{ short_description|t }}</p>
                         <a class="flex items-center font-semibold block md:flex h-14 flex justify-center rounded-full tracking-tight text-white text-lg bg-planet-black hover:bg-[rgb(224,0,131)] hover:text-white transition-all duration-300 ease-in-out mt-8 py-4 px-6 w-full md:w-fit"
                            href="{{ contact_sales_url }}">{{ "Contact sales"|t }}</a>
                     </div>
@@ -78,26 +73,28 @@
         </div>
     </div>
     {% if acquirers %}
-        <div class="pb-8 md:pb-[72px] lg:pb-20 px-4 md:px-8 lg:px-0 w-full flex flex-col items-center lg:max-w-[800px] mt-[96px] md:mt-[80px]">
+        <div class="pb-8 md:pb-20 px-4 md:px-8 lg:px-0 w-full flex flex-col items-center lg:max-w-[800px] mt-[96px] md:mt-[80px]">
             <div class="text-center mb-6 md:mb-12 font-semibold text-[32px] md:text-5xl flex justify-center text-planet-black leading-[40px] md:leading-[60px]">{{ "Acquirers we work with"|t }}</div>
             {% for acquirer in acquirers %}
-                <div class="w-full w-full lg:w-[800px] text-2xl font-semibold leading-[30px] flex justify-start py-4 text-planet-black border-b border-planet-grey border-solid">{{ acquirer }}</div>
+                <div class="w-full lg:w-[800px] text-2xl font-semibold leading-[30px] flex justify-start py-4 text-planet-black border-b border-planet-grey border-solid">{{ acquirer }}</div>
             {% endfor %}
         </div>
     {% endif %}
-</div>
-
-<div class="m-auto bg-planet-black flex justify-center px-4 md:px-6 lg:px-8 py-12 lg:py-20 rounded-t-[40px]">
-    <div class="flex-col lg:flex-row max-w-[1280px] w-full flex gap-6 md:gap-12 lg:gap-20 ">
-        <div class="w-full lg:w-1/2">
-            <div class="block text-sm text-white font-semibold leading-4 pl-4 border-l-4 border-solid border-l-[#E00083] mb-4"><span >{{ "GET PLANET SUPPORT"|t }}</span></div>
-            <div class="text-white mb-4 text-4xl md:text-5xl font-semibold leading-[60px]">{{ "Get in touch"|t }}</div>
-            <div class="font-light leading-[28px] text-xl text-white">{{ "Learn about our payment methods "|t }}</div>
+    {% if long_description %}
+        <div class="w-fit rounded-lg py-6 px-4 md:px-8 md:py-8 flex flex-col items-center lg:max-w-[800px] border-solid border border-[#C2CEFB] mb-12 md:mb-19 lg:mb-20 mx-4 md:mx-8 font-light">
+            <div class="text-center mb-6 md:mb-12 font-semibold text-[32px] md:text-5xl flex justify-center text-planet-black leading-[40px] md:leading-[60px]">{{ long_description_label|t }}</div>
+            {{ long_description|raw }}
         </div>
-        <div class="w-full lg:w-1/2">{{ form }}</div>
+    {% endif %}
+    <div class="m-auto bg-planet-black flex justify-center px-4 md:px-6 lg:px-8 py-12 lg:py-20 rounded-t-[40px]">
+        <div class="flex-col lg:flex-row max-w-[1280px] w-full flex gap-6 md:gap-12 lg:gap-20 ">
+            <div class="w-full lg:w-1/2">
+                <div class="block text-sm text-white font-semibold leading-4 pl-4 border-l-4 border-solid border-l-[#E00083] mb-4">
+                    <span>{{ "GET PLANET SUPPORT"|t }}</span></div>
+                <div class="text-white mb-4 text-4xl md:text-5xl font-semibold leading-[60px]">{{ "Get in touch"|t }}</div>
+                <div class="font-light leading-[28px] text-xl text-white">{{ "Learn about our payment methods "|t }}</div>
+            </div>
+            <div class="w-full lg:w-1/2">{{ form }}</div>
+        </div>
     </div>
 </div>
-
-
-
-
