@@ -1,5 +1,5 @@
 {
-  "name": "planet_accept_payments",
+  "name": "planet_payment_methods",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

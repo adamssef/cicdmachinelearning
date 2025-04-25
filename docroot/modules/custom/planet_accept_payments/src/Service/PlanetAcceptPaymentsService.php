@@ -55,6 +55,7 @@ class PlanetAcceptPaymentsService {
       "Countertop" => "terminals-countertop",
       "On the move" => "mobile-payment-terminals",
       "Unattended" => "terminals-unattended",
+      "Parking" => "payments-parking"
     ];
 
     $nodes = [];
@@ -64,7 +65,6 @@ class PlanetAcceptPaymentsService {
     }
 
     $current_language_prefix = $this->languageManager->getCurrentLanguage()->getId();
-
 
     $final_arr = [
       "online" => [
@@ -108,16 +108,20 @@ class PlanetAcceptPaymentsService {
         "class" => "unattended",
         "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Unattended"])[$current_language_prefix] ?? $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Unattended"])['en'],
         "children" => [
-          "ending_machine" => [
-            "title" => "Vending machine",
+          "vending_machine" => [
+            "title" => "Vending",
             "url" => NULL,
           ],
           "parking" => [
             "title" => "Parking",
+            "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Parking"])[$current_language_prefix] ?? $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["Parking"])['en']
+          ],
+          "tolls_and_ticketing" => [
+            "title" => "Tolls and ticketing",
             "url" => NULL,
           ],
-          "kiosk_or_ticket" => [
-            "title" => "Kiosk or ticketing",
+          "ev_charging" => [
+            "title" => "EV charging",
             "url" => NULL,
           ]
         ]
