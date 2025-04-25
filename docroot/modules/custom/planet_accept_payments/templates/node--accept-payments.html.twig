@@ -60,7 +60,7 @@
         <!-- Online Section -->
         {% for card in cards %}
             <div
-                    class="rounded-3xl bg-black h-[404px] w-full w-auto lg:w-[323px] box-content border border-solid border-[#D1D1D1]">
+                    class="rounded-3xl bg-black h-[408px] w-full w-auto lg:w-[323px] box-content border border-solid border-[#D1D1D1]">
                 <div
                         class="{% if card.class == 'online' %}bg-online{% elseif card.class == 'inperson' %}bg-inperson{% else %}bg-unattended{% endif %} mx-2 mt-2 w-auto lg:w-[307px] h-[208px] bg-[url('{{ card.img_path }}')] bg-cover bg-no-repeat bg-top rounded-2xl"></div>
                 <div class="p-6">
@@ -120,7 +120,7 @@
         class="lg:mb-6 w-100 bg-black h-auto px-4 rounded-3xl lg:rounded-[32px] pb-20 md:px-8 text-white flex flex-col items-center">
     <div
             class="text-center text-[28px] leading-[34px] md:text-5xl mt-12 md:mt-20 mb-8 md:mb-12 font-semibold md:leading-[60px]">{{ "We power business"|t }}</div>
-    <div class="flex flex-col lg:flex-row gap-6 w-full lg:w-auto justify-center">
+    <div class="flex flex-col md:flex-row gap-6 w-full lg:w-auto justify-center">
         <a class="h-[240px] lg:max-w-[304px] group flex items-end  box-content border border-solid border-white rounded-2xl px-6"
            href="{{ retail_url }}">
             <div class="w-full">
