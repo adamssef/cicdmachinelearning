@@ -111,7 +111,7 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
         $alias = $this->pathAliasManager->getAliasByPath('/node/' . $translated_node->id(), $langcode);
 
         if (in_array($langcode, ['de', 'fr', 'it', 'es'])) {
-          $node_translations_url[$langcode] = "/$langcode" . $alias;
+          $node_translations_url[$langcode] = '/' . explode('/', $alias)[1];
         }
         else {
           $node_translations_url[$langcode] = $alias;
