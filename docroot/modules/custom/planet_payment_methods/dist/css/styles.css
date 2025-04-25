@@ -1759,6 +1759,10 @@ video {
     padding-top: 5rem;
   }
 
+  .md\:pb-\[72px\] {
+    padding-bottom: 72px;
+  }
+
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -1849,6 +1853,10 @@ video {
 
   .lg\:pt-8 {
     padding-top: 2rem;
+  }
+
+  .lg\:pb-20 {
+    padding-bottom: 5rem;
   }
 
   .lg\:text-\[60px\] {
