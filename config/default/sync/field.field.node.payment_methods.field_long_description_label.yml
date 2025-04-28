@@ -1,13 +1,11 @@
-uuid: 4ff90368-c0a2-457b-932b-e7cc7e32940d
+uuid: 91858c8a-e1f4-43d5-91aa-aa5625de603f
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_long_description_label
-    - filter.format.plain_text
     - node.type.payment_methods
   module:
-    - text
     - tmgmt_content
 third_party_settings:
   tmgmt_content:
@@ -19,10 +17,8 @@ bundle: payment_methods
 label: 'Long description label'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  allowed_formats:
-    - plain_text
-field_type: text
+settings: {  }
+field_type: string

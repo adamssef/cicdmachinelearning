@@ -1,17 +1,18 @@
-uuid: bd78c4e3-d3fc-43ce-95fc-1dbfbe63d0af
+uuid: f035faee-60a0-459b-a41f-e2c6b16a617f
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - text
 id: node.field_long_description_label
 field_name: field_long_description_label
 entity_type: node
-type: text
+type: string
 settings:
   max_length: 255
-module: text
+  case_sensitive: false
+  is_ascii: false
+module: core
 locked: false
 cardinality: 1
 translatable: true
