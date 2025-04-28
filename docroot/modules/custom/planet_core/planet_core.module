@@ -592,11 +592,11 @@ function planet_core_preprocess_page(array &$variables) {
   $current_path = \Drupal::service('path.current')->getPath();
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
   $is_landing = _is_path_case_studies_landing($alias);
-  $payments_translation_arr = \Drupal::service('planet_core.node_translation_service')->getTranslationArrWithPrefixes('/payments');
+  $payments_translation_arr = \Drupal::service('planet_core.node_translation_service')->getTranslationArrWithoutPrefixes('/payments');
   if (
     $node_type !== 'case_studies'&&
     !$is_landing &&
-    !in_array($alias,$payments_translation_arr)
+    !in_array($alias, $payments_translation_arr)
   ) {
     $variables['#attached']['library'][] = 'planet_core/sitewide-libraries';
     $variables['#attached']['library'][] = 'planet_core/basic-pages';
@@ -605,8 +605,6 @@ function planet_core_preprocess_page(array &$variables) {
     $variables['#attached']['library'][] = 'planet_core/site-wide-styles';
     $variables['#attached']['library'][] = 'planet_core/sitewide-libraries';
   }
-
-
 
   // Get current node if it exists
   $node = \Drupal::routeMatch()->getParameter('node');

@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.payment_methods.field_basic_page_metatag
     - field.field.node.payment_methods.field_logo_media
     - field.field.node.payment_methods.field_long_description
+    - field.field.node.payment_methods.field_long_description_label
     - field.field.node.payment_methods.field_payment_channels
     - field.field.node.payment_methods.field_payment_method
     - field.field.node.payment_methods.field_payment_methods_acquirers
@@ -28,6 +29,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   field_basic_page_metatag:
     type: metatag_empty_formatter
@@ -51,6 +57,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 104
+    region: content
+  field_long_description_label:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 110
     region: content
   field_payment_channels:
     type: entity_reference_label

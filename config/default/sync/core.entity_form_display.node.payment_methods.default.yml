@@ -7,12 +7,14 @@ dependencies:
     - field.field.node.payment_methods.field_basic_page_metatag
     - field.field.node.payment_methods.field_logo_media
     - field.field.node.payment_methods.field_long_description
+    - field.field.node.payment_methods.field_long_description_label
     - field.field.node.payment_methods.field_payment_channels
     - field.field.node.payment_methods.field_payment_method
     - field.field.node.payment_methods.field_payment_methods_acquirers
     - field.field.node.payment_methods.field_short_description
     - field.field.node.payment_methods.field_weight
     - node.type.payment_methods
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - media_library
@@ -61,6 +63,14 @@ content:
     region: content
     settings:
       rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_long_description_label:
+    type: string_textfield
+    weight: 130
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_payment_channels:
