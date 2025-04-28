@@ -1,0 +1,28 @@
+uuid: 5cd676ad-1080-4efa-a8a7-9b793f33be5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hero
+    - filter.format.cohesion
+    - paragraphs.paragraphs_type.features_content
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.features_content.field_hero
+field_name: field_hero
+entity_type: paragraph
+bundle: features_content
+label: 'Hero description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - cohesion
+field_type: text_long

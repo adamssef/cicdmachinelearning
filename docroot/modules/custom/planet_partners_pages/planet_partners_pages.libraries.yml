@@ -1,0 +1,6 @@
+partners-page:
+  js:
+    js/PartnersPage.js: {}
+  css:
+    theme:
+      css/PartnersPage.css: { }

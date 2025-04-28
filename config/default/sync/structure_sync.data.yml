@@ -1,328 +1,237 @@
 menus:
   -
-    menu_name: mega-menu
-    title: Products
+    menu_name: legal-pages
+    title: Legal
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/legal'
     link_title: ''
     description: null
     enabled: true
     expanded: false
     weight: -50
     langcode: en
-    uuid: d733f4d7-6abc-4990-9763-c95e7571f9fd
+    uuid: 24b1c362-88bc-4633-923b-fd8e347bc313
     options: {  }
   -
-    menu_name: mega-menu
-    title: Online
-    parent: 'menu_link_content:d733f4d7-6abc-4990-9763-c95e7571f9fd'
-    uri: 'internal:/online-payments'
+    menu_name: legal-pages
+    title: 'Legal notice'
+    parent: null
+    uri: 'internal:/legal/legal-notice'
     link_title: ''
-    description: 'Accept payments on your website, mobile app or via a secure link'
-    enabled: true
-    expanded: false
-    weight: -50
-    langcode: en
-    uuid: c5bbf30f-cd04-4312-bc6b-33f510ea6ee6
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: In-person
-    parent: 'menu_link_content:d733f4d7-6abc-4990-9763-c95e7571f9fd'
-    uri: 'internal:/in-person-payments'
-    link_title: ''
-    description: 'Take in-person payments inside, outside or on-the-go'
+    description: null
     enabled: true
     expanded: false
     weight: -49
     langcode: en
-    uuid: d02610e5-f980-4518-b0de-f8d1b339a286
+    uuid: ba5ce12a-0921-4fc7-baa9-2c4dabdb2aec
     options: {  }
   -
-    menu_name: mega-menu
-    title: 'Accept Payments'
-    parent: 'menu_link_content:d733f4d7-6abc-4990-9763-c95e7571f9fd'
-    uri: 'internal:/payments'
+    menu_name: legal-pages
+    title: 'Specific Legal Notices'
+    parent: null
+    uri: 'internal:/legal/specific-legal-notices'
     link_title: ''
-    description: 'One partner to accept payments anywhere, anytime'
+    description: null
     enabled: true
     expanded: false
     weight: -48
     langcode: en
-    uuid: c208018a-7373-4952-9daf-358b0cc23186
+    uuid: b348b9e3-f605-4ad3-ba16-e9de76203203
     options: {  }
   -
-    menu_name: mega-menu
-    title: 'Property Management Software'
-    parent: 'menu_link_content:d733f4d7-6abc-4990-9763-c95e7571f9fd'
-    uri: 'internal:/hotel-pms'
+    menu_name: legal-pages
+    title: Datatrans
+    parent: 'menu_link_content:b348b9e3-f605-4ad3-ba16-e9de76203203'
+    uri: 'internal:/legal/specific-legal-notices?id=datatrans#datatrans'
     link_title: ''
-    description: 'Manage your day-to-day hotel operations easily and securely'
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: c3db2ac3-d4cb-43b0-8329-f4691b7e1cfc
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'PCI Proxy'
+    parent: 'menu_link_content:b348b9e3-f605-4ad3-ba16-e9de76203203'
+    uri: 'internal:/legal/specific-legal-notices?id=pci-proxy#pci-proxy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: c8387bff-8126-49f7-a281-3f906e95e25c
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'Terms of Use of our Website'
+    parent: null
+    uri: 'internal:/legal/website-terms-of-use'
+    link_title: ''
+    description: null
     enabled: true
     expanded: false
     weight: -47
     langcode: en
-    uuid: 36165264-fd57-4a14-a23b-c47ddd9f45e9
+    uuid: 46ce74ee-2591-472a-986e-6138fa9432e7
     options: {  }
   -
-    menu_name: mega-menu
-    title: 'Booking Engine'
-    parent: 'menu_link_content:d733f4d7-6abc-4990-9763-c95e7571f9fd'
-    uri: 'internal:/hotel-booking-engine'
+    menu_name: legal-pages
+    title: Complaints
+    parent: null
+    uri: 'internal:/legal/complaints'
     link_title: ''
-    description: 'Take direct bookings from your website'
-    enabled: true
-    expanded: false
-    weight: -46
-    langcode: en
-    uuid: b15ab7b3-46a2-49ec-b82f-6b178559b718
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: 'Order Management Software'
-    parent: 'menu_link_content:d733f4d7-6abc-4990-9763-c95e7571f9fd'
-    uri: 'internal:/order-management-system'
-    link_title: ''
-    description: 'Fulfil online orders from your store efficiently'
-    enabled: true
-    expanded: false
-    weight: -45
-    langcode: en
-    uuid: 6ee3fcc1-6a94-43ab-b66a-c5cdb4319265
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: 'Dynamic Currency Conversion'
-    parent: 'menu_link_content:d733f4d7-6abc-4990-9763-c95e7571f9fd'
-    uri: 'internal:/dcc'
-    link_title: ''
-    description: 'Localise the checkout experience for international customers'
+    description: null
     enabled: true
     expanded: false
     weight: -44
     langcode: en
-    uuid: 43feab65-08ab-4762-b756-c4a608f9777f
+    uuid: a1c5e7b4-847d-4404-9e63-b968a69c300a
     options: {  }
   -
-    menu_name: mega-menu
-    title: Issuing
-    parent: 'menu_link_content:d733f4d7-6abc-4990-9763-c95e7571f9fd'
-    uri: 'internal:/vat-refund'
-    link_title: ''
-    description: 'Issue Tax Free forms – at scale'
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: en
-    uuid: 9a2cbdaf-7d37-46ca-b229-68cdb97f046e
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: Solutions
-    parent: null
-    uri: 'route:<nolink>'
+    menu_name: legal-pages
+    title: 'Planet Payment Inc. (Canada) '
+    parent: 'menu_link_content:a1c5e7b4-847d-4404-9e63-b968a69c300a'
+    uri: 'internal:/legal/complaints?id=planet-payment-canada#planet-payment-canada'
     link_title: ''
     description: null
-    enabled: true
-    expanded: false
-    weight: -49
-    langcode: en
-    uuid: c4fca33c-eda3-4e27-a04f-5be3dc4b706a
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: Retail
-    parent: 'menu_link_content:c4fca33c-eda3-4e27-a04f-5be3dc4b706a'
-    uri: 'internal:/retail'
-    link_title: ''
-    description: 'Bring your payments, Tax Free, and OMS together on Planet'
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: en
-    uuid: 15bbf707-fd0b-4509-a832-42d4eb191777
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: Hospitality
-    parent: 'menu_link_content:c4fca33c-eda3-4e27-a04f-5be3dc4b706a'
-    uri: 'internal:/hospitality'
-    link_title: ''
-    description: 'Payments and Software for hotels, bars, restaurants and quick service outlets'
-    enabled: true
-    expanded: false
-    weight: 1
-    langcode: en
-    uuid: bd8ad94a-560c-45d2-8aa9-9d8efe6a60c9
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: Travel
-    parent: 'menu_link_content:c4fca33c-eda3-4e27-a04f-5be3dc4b706a'
-    uri: 'internal:/travel'
-    link_title: ''
-    description: 'Create smoother payments journeys'
-    enabled: true
-    expanded: false
-    weight: 2
-    langcode: en
-    uuid: c8748a16-080b-4e7e-ad4c-6edd791352f9
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: Resources
-    parent: null
-    uri: 'route:<nolink>'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -48
-    langcode: en
-    uuid: bb9f73e2-2ee1-43ad-82ba-a35927cdde4e
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: Blogs
-    parent: 'menu_link_content:bb9f73e2-2ee1-43ad-82ba-a35927cdde4e'
-    uri: 'internal:/blog'
-    link_title: ''
-    description: 'Read about the latest insights, trends and topics from Planet'
     enabled: true
     expanded: false
     weight: -50
     langcode: en
-    uuid: a828e4e7-90da-4035-94b0-668227f6adb9
+    uuid: 6c2fb268-169c-4fe1-8db6-c51043fdbc2b
     options: {  }
   -
-    menu_name: mega-menu
-    title: 'Case studies'
-    parent: 'menu_link_content:bb9f73e2-2ee1-43ad-82ba-a35927cdde4e'
-    uri: 'internal:/case-studies'
-    link_title: ''
-    description: 'Discover why businesses around the world choose Planet'
-    enabled: true
-    expanded: false
-    weight: -49
-    langcode: en
-    uuid: 67f886e3-06b3-450c-b1eb-5bfc2e17d2b4
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: 'Customer resources'
-    parent: 'menu_link_content:bb9f73e2-2ee1-43ad-82ba-a35927cdde4e'
-    uri: 'internal:/customer-resources-library'
-    link_title: ''
-    description: 'Committed to exceptional support and resources for a seamless experience'
-    enabled: true
-    expanded: false
-    weight: -48
-    langcode: en
-    uuid: 8f0b2c3f-12bf-49cc-8270-80ccc93e3746
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: Partners
-    parent: 'menu_link_content:bb9f73e2-2ee1-43ad-82ba-a35927cdde4e'
-    uri: 'internal:/partners'
-    link_title: ''
-    description: 'Meet the partners we work with to bring more to the end customer'
-    enabled: true
-    expanded: false
-    weight: -47
-    langcode: en
-    uuid: 8c1cdaff-9d79-4984-938f-4900fb2400ed
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: 'E-books and documentation'
-    parent: 'menu_link_content:bb9f73e2-2ee1-43ad-82ba-a35927cdde4e'
-    uri: 'internal:/ebooks'
-    link_title: ''
-    description: 'Discover valuable industry insights in our latest guides and e-books'
-    enabled: true
-    expanded: false
-    weight: -46
-    langcode: en
-    uuid: 79e52e4f-1174-4b11-8ef5-0b1951c924ad
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: 'Planet ecampus'
-    parent: 'menu_link_content:bb9f73e2-2ee1-43ad-82ba-a35927cdde4e'
-    uri: 'https://ecampus.weareplanet.com/local/coursecatalogue/index.php?categoryid=4'
-    link_title: ''
-    description: 'Browse our wide range of courses designed to enhance your knowledge of Planet’s products'
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: en
-    uuid: d5f8cf59-fed9-4af6-b346-b8c1bfff7c87
-    options: {  }
-  -
-    menu_name: mega-menu
-    title: Company
-    parent: null
-    uri: 'route:<nolink>'
+    menu_name: legal-pages
+    title: 'Planet Merchant Services Limited (UK)'
+    parent: 'menu_link_content:a1c5e7b4-847d-4404-9e63-b968a69c300a'
+    uri: 'internal:/legal/complaints?id=planet-merchant-services-limited-uk#planet-merchant-services-limited-uk'
     link_title: ''
     description: null
     enabled: true
     expanded: false
-    weight: -47
+    weight: -49
     langcode: en
-    uuid: 0c14aece-a0b2-4832-9a65-8de319c1314d
+    uuid: 3af7ecb6-75b2-4881-9429-d45f41c95fee
     options: {  }
   -
-    menu_name: mega-menu
-    title: 'About us'
-    parent: 'menu_link_content:0c14aece-a0b2-4832-9a65-8de319c1314d'
-    uri: 'internal:/about'
+    menu_name: legal-pages
+    title: 'Planet Merchant Services SAS (France)'
+    parent: 'menu_link_content:a1c5e7b4-847d-4404-9e63-b968a69c300a'
+    uri: 'internal:/legal/complaints?id=planet-merchant-services-sas-france#planet-merchant-services-sas-france'
     link_title: ''
-    description: 'Find out more about Planet, our integrated solutions, and who we serve'
+    description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -48
     langcode: en
-    uuid: a5abafff-284f-4d47-a3c5-43200b5912d5
+    uuid: b1ec9fe1-1d87-4dea-86b1-a1200e37bd80
     options: {  }
   -
-    menu_name: mega-menu
-    title: Newsroom
-    parent: 'menu_link_content:0c14aece-a0b2-4832-9a65-8de319c1314d'
-    uri: 'internal:/news'
+    menu_name: legal-pages
+    title: 'Modern Slavery Statement'
+    parent: null
+    uri: 'internal:/legal/modern-slavery-statement'
     link_title: ''
-    description: 'Find resources and Planet contact details for press and media'
+    description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -43
     langcode: en
-    uuid: 1424d64a-cf25-4c7a-9624-fee4f0e4b000
+    uuid: f852fe31-04b3-4fbb-b5c1-2241cac2ef08
     options: {  }
   -
-    menu_name: mega-menu
-    title: Careers
-    parent: 'menu_link_content:0c14aece-a0b2-4832-9a65-8de319c1314d'
-    uri: 'internal:/careers'
+    menu_name: legal-pages
+    title: 'Planet Products Terms and Conditions'
+    parent: null
+    uri: 'internal:/legal/products-terms-and-conditions'
     link_title: ''
-    description: 'Discover our latest opportunities and start your journey with Planet'
+    description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -42
     langcode: en
-    uuid: 2a3202d4-68c0-4211-a634-dedd481b4bf8
+    uuid: f3680639-213e-4129-a6aa-e5eb4c4e92ad
     options: {  }
   -
-    menu_name: mega-menu
-    title: Support
-    parent: 'menu_link_content:0c14aece-a0b2-4832-9a65-8de319c1314d'
-    uri: 'internal:/support'
+    menu_name: legal-pages
+    title: 'VAT Refunding - Terms and Conditions for shoppers'
+    parent: 'menu_link_content:f3680639-213e-4129-a6aa-e5eb4c4e92ad'
+    uri: 'internal:/legal/products-terms-and-conditions?id=vat-refunding#vat-refunding'
     link_title: ''
-    description: 'Get in touch with us today for local support in your country'
+    description: null
     enabled: true
     expanded: false
-    weight: 0
+    weight: -50
     langcode: en
-    uuid: 7d4b54b9-213e-4c37-a2df-9befdaa1dfe4
+    uuid: ffeed778-f815-4933-b43d-c78a67ff9059
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'Privacy Policy'
+    parent: null
+    uri: 'internal:/legal/privacy-policy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -41
+    langcode: en
+    uuid: 92ced8c3-1f6c-4028-a6a5-c0cef95c4f8f
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'Cookies Policy'
+    parent: null
+    uri: 'internal:/legal/cookies-policy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -40
+    langcode: en
+    uuid: f32a3d55-94f0-4139-9eed-6776df6368a7
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'Subprocessor and Service Provider list'
+    parent: null
+    uri: 'internal:/legal/subprocessor-and-service-provider-list'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -39
+    langcode: en
+    uuid: 98066797-eb41-4e2c-a58b-af66bd22a9e8
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'Marketing Privacy Notice (B2B)'
+    parent: null
+    uri: 'internal:/legal/marketing-privacy-notice'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -38
+    langcode: en
+    uuid: 0374d1e3-5d94-4425-b952-2257d4274df8
+    options: {  }
+  -
+    menu_name: legal-pages
+    title: 'Authorizations, Licences and Registrations'
+    parent: null
+    uri: 'internal:/legal/authorizations-licenses-and-registrations'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -45
+    langcode: en
+    uuid: d5d69944-e258-4c09-b87a-02d15ba635df
     options: {  }
 taxonomies:
   acquirers:
@@ -335,7 +244,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 79d4ee54-fb61-4a67-ad68-ab11b86c7430
+      uuid: 41ff02fd-b151-4615-88f9-a58abf98d9b6
     -
       vid: acquirers
       tid: '3035'
@@ -345,7 +254,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 582ccb66-2b31-4a4b-88ce-f52b849f64c5
+      uuid: 7ab1dc53-3e90-4da5-9054-f06762cf8f11
     -
       vid: acquirers
       tid: '3051'
@@ -355,7 +264,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 8bccfcd4-0575-4da6-bf0d-97d8d78b0638
+      uuid: ebfa4bb2-ca39-4fd3-866a-79e1d95cbae6
     -
       vid: acquirers
       tid: '3058'
@@ -365,7 +274,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 3f061522-d95d-4e30-bccf-c1d26c202fa5
+      uuid: 41ac4e48-3198-4d90-a44d-a8c610cf363c
     -
       vid: acquirers
       tid: '3052'
@@ -375,7 +284,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 25a7b614-ff20-465a-a49f-0a58c04f46fa
+      uuid: e97d30f9-41cf-425a-92f5-d0b6d777bbc7
     -
       vid: acquirers
       tid: '3017'
@@ -385,7 +294,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 07c51a26-ee57-4b66-8b42-de5bb9ba2dc6
+      uuid: ad037697-02fe-44c0-9f7e-3fbd7c0e0562
     -
       vid: acquirers
       tid: '3018'
@@ -395,7 +304,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: d03a0438-5845-4615-8361-1cd3115cece6
+      uuid: 74c00726-08c5-4c5d-81a1-f192e9edf11c
     -
       vid: acquirers
       tid: '3019'
@@ -405,7 +314,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: fec59cf6-2bc2-4c11-befd-afc3e84ef375
+      uuid: 3fc287db-e919-487e-b6c2-be0e78a60eee
     -
       vid: acquirers
       tid: '3039'
@@ -415,7 +324,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 56bcc084-4899-4d5e-97e7-57260b7667f1
+      uuid: d644d1f7-1b34-496d-94e5-3ca16e4728a0
     -
       vid: acquirers
       tid: '3040'
@@ -425,7 +334,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: b1057a43-157c-48bc-bf0b-7aea65afc925
+      uuid: 8b94a8e4-dfb7-4ae9-bc1a-7df6d954abd6
     -
       vid: acquirers
       tid: '3042'
@@ -435,7 +344,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 1664d3b3-7d47-4524-af81-0cc25308c87b
+      uuid: 410a1609-1899-4324-b860-a47c5d590000
     -
       vid: acquirers
       tid: '3048'
@@ -445,7 +354,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 0366440c-9372-49dd-855e-872b0e7c18e3
+      uuid: c4aafdcb-6d78-44f8-8dc9-d6f098f4a5de
     -
       vid: acquirers
       tid: '3053'
@@ -455,7 +364,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: d1d2e933-496c-4bde-b49d-e44a370f4376
+      uuid: 6ee1a6d5-27c1-4658-acbd-f773c23babea
     -
       vid: acquirers
       tid: '3046'
@@ -465,7 +374,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 6018fbb8-42cf-4a34-ab9d-d2db33ca6386
+      uuid: a245ded9-8370-49e0-bf37-a6c4a141f5ea
     -
       vid: acquirers
       tid: '3037'
@@ -475,7 +384,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 356f8234-caf6-4682-9894-98538b452e79
+      uuid: 9a426e85-60fb-4525-9bd0-7857e6da6dbc
     -
       vid: acquirers
       tid: '3038'
@@ -485,7 +394,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 628b5754-4051-4e4e-9580-bff1f06f5232
+      uuid: e1ef229a-1df3-4727-a773-0047b306ff9a
     -
       vid: acquirers
       tid: '3020'
@@ -495,7 +404,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: a86e8ea2-13b0-4f32-baa8-fc49c1955209
+      uuid: 12c76163-639b-41b9-9dc5-2fd13602bdcb
     -
       vid: acquirers
       tid: '3021'
@@ -505,7 +414,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 98826fbe-abc5-4617-bac9-dada5a25ed7f
+      uuid: f375a12c-8d2e-4df6-bb80-009a317872b8
     -
       vid: acquirers
       tid: '3043'
@@ -515,7 +424,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 033eff91-99c7-4831-97ca-3ce2333e3c59
+      uuid: fbfda7b1-ec17-4da5-b969-fa8efc39285c
     -
       vid: acquirers
       tid: '3022'
@@ -525,7 +434,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 69028008-2b71-4273-9dc4-19493aa2b455
+      uuid: c76e3339-b5ac-4ba4-a5a8-e815d9f847c4
     -
       vid: acquirers
       tid: '3023'
@@ -535,7 +444,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: a038353a-2b9b-4093-b226-d141e591f904
+      uuid: 2967d5f2-4494-4e69-aae0-436ce04ae77d
     -
       vid: acquirers
       tid: '3024'
@@ -545,7 +454,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 23429bc6-5fcc-4c87-bc3a-e45c1f45eb4a
+      uuid: 6191ba5d-efdb-4136-a1b2-8431f1ece25d
     -
       vid: acquirers
       tid: '3026'
@@ -555,7 +464,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: bcfd8ee7-1d7c-47a2-bc7a-0e9047cd5eaa
+      uuid: 2bfa0770-51d0-4772-9956-aa715f93ad48
     -
       vid: acquirers
       tid: '3025'
@@ -565,7 +474,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 995ff96f-0705-4584-b6f5-3d5a2f5d4fc3
+      uuid: 58d1116b-442c-40b2-a745-02f1aa5a7fdf
     -
       vid: acquirers
       tid: '3057'
@@ -575,7 +484,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 575fa208-1e27-497f-9bca-0c436bfa384a
+      uuid: 69fc0f55-3a7b-4505-949c-47284b8d1faf
     -
       vid: acquirers
       tid: '3047'
@@ -585,7 +494,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 3c8a6d1b-3728-42a9-85a7-d22efe80c66d
+      uuid: e39c41d3-c822-433b-8254-f8ec9df4d38a
     -
       vid: acquirers
       tid: '3027'
@@ -595,7 +504,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: f8aec939-0d13-4cb5-b27c-65d77d2fa83c
+      uuid: 80198ab3-5446-4eab-9a9f-56acae3a2436
     -
       vid: acquirers
       tid: '3028'
@@ -605,7 +514,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: e26ef738-0f85-4ecc-a682-4ef915690dc6
+      uuid: f2b3d007-c0ac-4d4f-82b4-c0cb13ee3efa
     -
       vid: acquirers
       tid: '3029'
@@ -615,7 +524,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: c3c0d66e-2ad1-4766-97fb-f4094e7656ca
+      uuid: 88587c81-3256-42c8-9d02-2d38c09e3921
     -
       vid: acquirers
       tid: '3056'
@@ -625,7 +534,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 9ef3043f-2433-4755-8254-bbdb01156eea
+      uuid: 4a7f787a-7d62-4d6a-9ca9-1088feb1aa51
     -
       vid: acquirers
       tid: '3030'
@@ -635,7 +544,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: f494785f-9bbd-4646-b05c-1cdd91fbeead
+      uuid: 597af9ea-4bb3-4839-8c50-6cdf3aa5f76d
     -
       vid: acquirers
       tid: '3045'
@@ -645,7 +554,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: fb99c67e-4693-456f-bb8b-71f79ba2ebaa
+      uuid: 3a13dd0d-bf88-48b2-a38b-84559aa07f70
     -
       vid: acquirers
       tid: '3050'
@@ -655,7 +564,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: b16a1c3d-94c5-4415-ab04-d822706d43f2
+      uuid: 04a3145f-99e8-4901-bb0b-b302013280bf
     -
       vid: acquirers
       tid: '3059'
@@ -665,7 +574,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: a6f11afc-2037-4f6d-b593-21b49b08106c
+      uuid: a104961a-d650-4097-bc4b-328a01ea0aee
     -
       vid: acquirers
       tid: '3049'
@@ -675,7 +584,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 2e1d72d3-a5ea-4923-b90c-e026eb1eee67
+      uuid: 522ad474-0488-462d-89b7-d11d9dc85c49
     -
       vid: acquirers
       tid: '3031'
@@ -685,7 +594,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 31ea878a-0e63-4249-b5b7-7d4b085836ca
+      uuid: 64295865-8415-41ec-af10-6aa280b5c277
     -
       vid: acquirers
       tid: '3054'
@@ -695,7 +604,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 484a5bf6-3290-499d-a0ec-896ab6c610bb
+      uuid: bd2c89ca-3350-4a22-9ff4-10a1e0001dea
     -
       vid: acquirers
       tid: '3036'
@@ -705,7 +614,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 84ce63cb-206e-469f-bfb1-2ed5d4b33c15
+      uuid: b454f2f0-14c5-4897-99a2-1ebbfe633774
     -
       vid: acquirers
       tid: '3060'
@@ -715,7 +624,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 1411c6ec-cb22-47f6-a09f-f5ab3cd3d12e
+      uuid: eab8b69c-1747-42fc-bf50-2e5011eac57a
     -
       vid: acquirers
       tid: '3055'
@@ -725,7 +634,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 670c28e4-a9a7-489e-9ff6-0f5b70070b90
+      uuid: a82d7e25-ebaa-45d2-a6f1-5e14f45a31e1
     -
       vid: acquirers
       tid: '3044'
@@ -735,7 +644,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: adf25f7b-83ba-4e99-a245-958a2b21e277
+      uuid: b9e7d69c-fcd9-4e7e-946f-dd701b87d1df
     -
       vid: acquirers
       tid: '3032'
@@ -745,7 +654,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 1c82e3c8-d7de-4b20-8986-586863397535
+      uuid: 68564845-52c7-49c6-ad0e-55b38c9e4b55
     -
       vid: acquirers
       tid: '3033'
@@ -755,7 +664,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: 2b1e0641-cf93-4220-b9b4-c962f33b2ae1
+      uuid: c5939a6f-e5c4-42c1-b8f2-de9a8a57625c
     -
       vid: acquirers
       tid: '3034'
@@ -765,7 +674,7 @@ taxonomies:
       description__format: null
       weight: '0'
       parent: '0'
-      uuid: a6d33f89-e5e1-4008-a3af-55e5c8423adf
+      uuid: fb760f25-5407-4a22-bb2d-53364f696596
   case_studies_industry:
     -
       vid: case_studies_industry
@@ -848,6 +757,10 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: 0d46265e-8475-4a00-a3aa-a7006917ffd6
+      field_related_product_page:
+        -
+          name: About
+          vid: sitemap_pages
     -
       vid: case_studies_products
       tid: '2976'
@@ -868,6 +781,10 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: d9e615cb-fe81-4d79-ae72-82bf8e444555
+      field_related_product_page:
+        -
+          name: 'Eastern Europe'
+          vid: phone_number_terms
     -
       vid: case_studies_products
       tid: '2986'
@@ -952,7 +869,7 @@ taxonomies:
   channels:
     -
       vid: channels
-      tid: '3068'
+      tid: '3062'
       langcode: en
       name: In-person
       description__value: null
@@ -962,7 +879,7 @@ taxonomies:
       uuid: 1b3ffd74-55d6-470f-9304-3b96d7d572be
     -
       vid: channels
-      tid: '3067'
+      tid: '3061'
       langcode: en
       name: Online
       description__value: null
@@ -1329,6 +1246,69 @@ taxonomies:
       field_email:
         -
           value: merchants@planetpayment.com
+  event_categories:
+    -
+      vid: event_categories
+      tid: '3074'
+      langcode: en
+      name: E-comm
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7018fd0e-aad0-4331-b9ed-8ef2014cfa42
+    -
+      vid: event_categories
+      tid: '3072'
+      langcode: en
+      name: Hospitality
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 91172207-ca9c-4011-86b5-5b77abe4c8b3
+    -
+      vid: event_categories
+      tid: '3073'
+      langcode: en
+      name: Retail
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 10d7b22c-71de-404d-8f94-e579f123239c
+  event_type:
+    -
+      vid: event_type
+      tid: '3077'
+      langcode: en
+      name: Corporate
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 52a6828a-58cc-4f38-a44b-b809b77681aa
+    -
+      vid: event_type
+      tid: '3076'
+      langcode: en
+      name: In-person
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d4a76855-7f83-401d-ac29-efa7a32a25ce
+    -
+      vid: event_type
+      tid: '3075'
+      langcode: en
+      name: Webinar
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f1ff6369-acfd-4abc-898e-03f7d297466c
+  industry: {  }
   newsroomtags:
     -
       vid: newsroomtags
@@ -1381,10 +1361,11 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: c46a51f3-fef5-4cd5-8a59-affc357297b6
+  partner_type: {  }
   payment_methods:
     -
       vid: payment_methods
-      tid: '3061'
+      tid: '3063'
       langcode: en
       name: 'Credit cards'
       description__value: null
@@ -1394,7 +1375,7 @@ taxonomies:
       uuid: 30d3524c-de0e-4d5a-95c8-ada86e31dad6
     -
       vid: payment_methods
-      tid: '3065'
+      tid: '3067'
       langcode: en
       name: 'Credit worthiness and payment by invoice'
       description__value: null
@@ -1404,7 +1385,7 @@ taxonomies:
       uuid: a581f631-a978-48cd-9773-35bb18e48b95
     -
       vid: payment_methods
-      tid: '3062'
+      tid: '3064'
       langcode: en
       name: 'Debit cards'
       description__value: null
@@ -1414,7 +1395,7 @@ taxonomies:
       uuid: 054549b6-5387-415c-9276-702983bc5739
     -
       vid: payment_methods
-      tid: '3064'
+      tid: '3066'
       langcode: en
       name: 'E-banking/bank transfer'
       description__value: null
@@ -1424,7 +1405,7 @@ taxonomies:
       uuid: ea5d0a4a-13e8-4a8b-8212-0b2c2d2a423a
     -
       vid: payment_methods
-      tid: '3066'
+      tid: '3068'
       langcode: en
       name: 'Other payment methods'
       description__value: null
@@ -1434,7 +1415,7 @@ taxonomies:
       uuid: c1e7c03b-a37f-4ac7-927d-8f65fe10ee4d
     -
       vid: payment_methods
-      tid: '3063'
+      tid: '3065'
       langcode: en
       name: Wallets
       description__value: null
@@ -2788,6 +2769,8 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: ca787122-6315-4262-9b2e-75588178fba1
+  product_type: {  }
+  region: {  }
   regions:
     -
       vid: regions

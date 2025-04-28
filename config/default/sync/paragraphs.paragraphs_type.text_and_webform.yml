@@ -1,0 +1,10 @@
+uuid: 0699c965-a229-40ae-bee0-544c87371bd8
+langcode: en
+status: true
+dependencies: {  }
+id: text_and_webform
+label: 'Text and webform'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

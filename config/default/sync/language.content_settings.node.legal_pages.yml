@@ -1,0 +1,18 @@
+uuid: eb1ea1aa-2ea5-4292-97a9-26c083861566
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.legal_pages
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: node.legal_pages
+target_entity_type_id: node
+target_bundle: legal_pages
+default_langcode: site_default
+language_alterable: false

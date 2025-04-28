@@ -1,0 +1,10 @@
+uuid: 4f71a5f2-c3d2-4c33-bad3-f6791c989404
+langcode: en
+status: true
+dependencies: {  }
+id: features_ending
+label: 'Features ending'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

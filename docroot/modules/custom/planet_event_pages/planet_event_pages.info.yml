@@ -1,0 +1,5 @@
+name: 'planet_event_pages'
+type: module
+description: 'A module dedicated to event pages implementation.'
+package: Planet
+core_version_requirement: ^10

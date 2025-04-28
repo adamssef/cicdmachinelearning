@@ -4,7 +4,7 @@
       once('brandsWeWorkWithSolo', '.brands-we-work-with-container', context).forEach(function (element) {
         var container = $(element);
         var totalWidth = container[0].scrollWidth;
-        var speed = 0.2;
+        var speed = 0.3;
         var logoWidth = container.children().first().outerWidth(true);
         var resetThreshold = logoWidth * 10;
 

@@ -1,0 +1,39 @@
+{#
+    Template for displaying a single case study card.
+
+    Fields to pass:
+    - paragraph.main_image (string) : URL of the main background image.
+    - paragraph.company_logo (string) : URL of the company logo (optional).
+    - paragraph.company_name (string) : Name of the company.
+    - paragraph.title (string) : Title of the case study.
+    - paragraph.description (string) : Short description or challenge text.
+    - paragraph.url (string) : URL for the "Learn more" link.
+#}
+
+<div class="w-full overflow-hidden border rounded-lg border-solid border-gray-300 h-full flex flex-col article-card">
+	<div class="relative">
+		{# <div class="absolute company-logo w-24 h-12 bg-white bg-center bg-no-repeat rounded-br bg-[length:80%]" style="background-image: url('{{paragraph.company_logo}}')"></div> #}
+		<div class="pt-2 px-2">
+			<div class="h-52 rounded w-full bg-cover bg-center bg-no-repeat rounded-t-lg" style="background-image: url('{{paragraph.main_image}}')"></div>
+		</div>
+	</div>
+	<div class="flex flex-col flex-grow px-6 pt-5">
+		<div>
+			<p class="text-sm font-semibold leading-4 pl-4 uppercase border-l-4 border-solid border-[#E00083] mb-2.5">
+				{{paragraph.company_name}}
+			</p>
+			<h2 class="text-2xl font-semibold">
+				{{paragraph.title}}
+			</h2>
+			<p class="text-base font-light mt-2">
+				{{paragraph.description}}
+			</p>
+		</div>
+		<div class="mt-auto">
+			<a href="{{paragraph.url}}" class="button-with-icon-transition flex items-center py-6 text-[#005ab2] font-semibold">
+				<span>{{"Read full case study"|t}}</span>
+				<img class="ml-4" src="/resources/icons/arrow-right-megamenu-blue.svg" alt="Arrow">
+			</a>
+		</div>
+	</div>
+</div>

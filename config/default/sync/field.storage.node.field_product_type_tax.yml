@@ -1,0 +1,20 @@
+uuid: a687ff6f-53d5-4958-818a-dde04d6f1dc1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_product_type_tax
+field_name: field_product_type_tax
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,150 @@
+uuid: b6f82c83-2f17-4970-8913-277ad5318482
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero.field_button_1_label
+    - field.field.paragraph.hero.field_button_1_link
+    - field.field.paragraph.hero.field_button_1_open
+    - field.field.paragraph.hero.field_button_2_label
+    - field.field.paragraph.hero.field_button_2_link
+    - field.field.paragraph.hero.field_button_2_open
+    - field.field.paragraph.hero.field_hero
+    - field.field.paragraph.hero.field_hero_form
+    - field.field.paragraph.hero.field_hero_image
+    - field.field.paragraph.hero.field_hero_label
+    - field.field.paragraph.hero.field_hero_title
+    - field.field.paragraph.hero.field_rounded_corners
+    - paragraphs.paragraphs_type.hero
+  module:
+    - field_group
+    - link
+    - media_library
+    - text
+    - webform
+third_party_settings:
+  field_group:
+    group_buttons:
+      children:
+        - field_button_1_label
+        - field_button_1_link
+        - field_button_1_open
+        - field_button_2_label
+        - field_button_2_link
+        - field_button_2_open
+      label: Buttons
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: false
+id: paragraph.hero.default
+targetEntityType: paragraph
+bundle: hero
+mode: default
+content:
+  field_button_1_label:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_button_1_link:
+    type: link_default
+    weight: 7
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_button_1_open:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_button_2_label:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_button_2_link:
+    type: link_default
+    weight: 11
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_button_2_open:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_hero:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_hero_form:
+    type: webform_entity_reference_select
+    weight: 4
+    region: content
+    settings:
+      default_data: true
+      webforms: {  }
+    third_party_settings: {  }
+  field_hero_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_hero_label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_hero_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rounded_corners:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

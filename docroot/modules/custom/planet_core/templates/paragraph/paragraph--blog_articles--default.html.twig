@@ -1,0 +1,25 @@
+<div class="max-w-screen-xl mx-auto py-10 px-4">
+	{% if paragraph.fields.field_main_title %}
+		<h2 class="text-center font-semibold text-[32px]">
+			{{ paragraph.fields.field_main_title[0].value }}
+		</h2>
+	{% endif %}
+	{% if paragraph.fields.field_description %}
+		<span class="mt-2 block text-xl font-light text-center children-light">
+			{{ paragraph.fields.field_description[0].value|raw }}
+		</span>
+	{% endif %}
+	<div class="container mx-auto max-w-6xl mt-10">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			{% if paragraph.fields.blog_articles %}
+				{% for paragraph in paragraph.fields.blog_articles %}
+					{% set template_path = '/modules/custom/planet_core/templates/paragraph/paragraph--article_card--default.html.twig' %}
+					{{ include(template_path, { 'data': paragraph}, ignore_missing = true) }}
+				{% endfor %}
+			{% endif %}
+		</div>
+		<div class="load-more-wrapper pt-8">
+			<a href="{{paragraph.fields.blog_main_page_url}}" class="text-base coh-link coh-style-primary-dark-atom-">{{"Read more articles"|t}}</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,10 @@
+uuid: a475c308-dfc4-4a18-9bcd-3166c64b055a
+langcode: en
+status: true
+dependencies: {  }
+id: sponsors
+label: 'Sponsors '
+icon_uuid: null
+icon_default: null
+description: 'Used mainly on events to display "This event is sponsored by: brand logos"'
+behavior_plugins: {  }

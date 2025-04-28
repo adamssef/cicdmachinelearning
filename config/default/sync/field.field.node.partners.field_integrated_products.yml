@@ -1,0 +1,28 @@
+uuid: d1e761a7-6ac0-41ae-bde2-1c6f3392256a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_integrated_products
+    - filter.format.plain_text
+    - node.type.partners
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.partners.field_integrated_products
+field_name: field_integrated_products
+entity_type: node
+bundle: partners
+label: 'Integrated products'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

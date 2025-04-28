@@ -1,0 +1,18 @@
+uuid: 2ced97f8-7f3e-4b4f-b9f7-8d7d25cc8534
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.legal_pages
+id: node.legal_pages.created
+field_name: created
+entity_type: node
+bundle: legal_pages
+label: 'Authored on'
+description: 'The date and time that the content was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

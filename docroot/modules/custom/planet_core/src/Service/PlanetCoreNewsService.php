@@ -93,8 +93,15 @@ public function truncateText($text, $maxLength, $suffix = '...') {
 
       $background_image_url = "";
       $media_id = $node->get('field_resources_background_image')?->target_id;
-      if($media_id) {
-        $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large');
+
+      if ($media_id) {
+          // Try to get the image in 'max_1300x1300' format first
+          $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'max_1300x1300');
+
+          // If the 'max_1300x1300' format doesn't exist, fall back to 'large'
+          if (empty($background_image_url)) {
+              $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large');
+          }
       }
       
       $custom_timestamp = $node->get('field_resources_published_time')->value;
@@ -223,8 +230,15 @@ public function truncateText($text, $maxLength, $suffix = '...') {
 
       $background_image_url = "";
       $media_id = $node->get('field_resources_background_image')?->target_id;
-      if($media_id) {
-        $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large');
+      
+      if ($media_id) {
+          // Try to get the image in 'max_1300x1300' format first
+          $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'max_1300x1300');
+      
+          // If the 'max_1300x1300' format doesn't exist, fall back to 'large'
+          if (empty($background_image_url)) {
+              $background_image_url = $this->planetCoreMediaService->getStyledImageUrl($media_id, 'large');
+          }
       }
       
 

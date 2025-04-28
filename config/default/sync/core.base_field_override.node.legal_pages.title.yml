@@ -1,0 +1,18 @@
+uuid: 73542ab2-2a98-4c98-bbfa-955279eed579
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.legal_pages
+id: node.legal_pages.title
+field_name: title
+entity_type: node
+bundle: legal_pages
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

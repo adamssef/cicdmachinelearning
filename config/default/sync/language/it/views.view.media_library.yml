@@ -23,6 +23,8 @@ display:
             group_items:
               1:
                 title: Pubblicato
+              2:
+                title: 'Non pubblicato'
         name:
           expose:
             label: Nome

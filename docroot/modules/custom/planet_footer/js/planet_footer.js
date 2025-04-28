@@ -3,7 +3,7 @@
  * Dropdown language switcher JS.
  */
 
-(function ($, Drupal) {
+(function (Drupal, once) {
   'use strict';
 
   function getCookie(name) {
@@ -15,64 +15,67 @@
   function setLangCookie() {
     const now = new Date();
     const expiryDate = new Date(now.getTime() + 24 * 60 * 60 * 1000);
-    const cookieOptions = {
-      expires: expiryDate.toUTCString(),
-      path: '/',
-      secure: true, // Secure attribute (requires HTTPS)
-      sameSite: 'Strict' // SameSite attribute (or 'Lax' or 'None' depending on your use case)
-    };
-    document.cookie = `modal-lang-detection=true; expires=${cookieOptions.expires}; path=${cookieOptions.path}; secure=${cookieOptions.secure}; SameSite=${cookieOptions.sameSite}`;
+    document.cookie = `modal-lang-detection=true; expires=${expiryDate.toUTCString()}; path=/; Secure; SameSite=Strict`;
   }
 
   Drupal.behaviors.languageSwitcher = {
     attach: function (context, settings) {
-      once('block-language-switcher', '#block-language-switcher', context).forEach(element => {
-        let $el = $(element);
-        let $selectMenu = $(".language-switcher__select-menu", $el);
-        let $selectButton = $(".language-switcher__button", $el);
-        let $dropdown = $(".language-switcher__drop-down", $el);
+      once('block-language-switcher', '#block-language-switcher', context).forEach(function (element) {
+        const selectMenu = element.querySelector('.language-switcher__select-menu');
+        const selectButton = element.querySelector('.language-switcher__button');
+        const dropdown = element.querySelector('.language-switcher__drop-down');
 
-        $selectButton.click(function (event) {
+        selectButton.addEventListener('click', function (event) {
           event.stopPropagation();
-          $dropdown.show();
-          $selectMenu.attr("aria-expanded", "true");
-          $selectMenu.addClass("is-expanded");
+          dropdown.style.display = 'block';
+          selectMenu.setAttribute('aria-expanded', 'true');
+          selectMenu.classList.add('is-expanded');
         });
 
-        $("body, .language-switcher__select-menu").click(function () {
-          $dropdown.hide();
-          $selectMenu.attr("aria-expanded", "false");
-          $selectMenu.removeClass("is-expanded");
+        document.body.addEventListener('click', function () {
+          dropdown.style.display = 'none';
+          selectMenu.setAttribute('aria-expanded', 'false');
+          selectMenu.classList.remove('is-expanded');
+        });
+
+        selectMenu.addEventListener('click', function (event) {
+          event.stopPropagation();
         });
       });
 
       const browserLanguage = navigator.language || navigator.userLanguage;
       const browserLanguageCode = browserLanguage.substr(0, 2);
 
-      // Check if the 'modal-language-detection' div element and cookie are not set
       const modalElement = document.getElementById('modal-language-detection');
-      const hasLanguage = $("#modal-language-detection").hasClass("lang-" + browserLanguageCode);
-      const isEnglish = $("#modal-language-detection").hasClass("en");
 
-      if (modalElement && isEnglish && hasLanguage && !getCookie('modal-lang-detection')) {
+      // ✅ Bezpieczne sprawdzenie, czy modal istnieje
+      if (modalElement) {
+        const hasLanguage = modalElement.classList.contains('lang-' + browserLanguageCode);
+        const isEnglish = modalElement.classList.contains('en');
 
-        $(".btn-lang-all").hide();
-        $(".btn-lang-" + browserLanguageCode).show();
+        if (isEnglish && hasLanguage && !getCookie('modal-lang-detection')) {
+          document.querySelectorAll('.btn-lang-all').forEach(function (btn) {
+            btn.style.display = 'none';
+          });
+          document.querySelectorAll('.btn-lang-' + browserLanguageCode).forEach(function (btn) {
+            btn.style.display = 'block';
+          });
 
-        // Show the corresponding language button based on the browser language code
-        MicroModal.show('modal-language-detection', {
-          disableFocus: true,
-          closeTrigger: 'data-micromodal-close',
-          onClose: () => {
-            setLangCookie();
-          }
-        });
-        $(".btn-lang-all").click(function() {
-          setLangCookie();
-        })
+          MicroModal.show('modal-language-detection', {
+            disableFocus: true,
+            closeTrigger: 'data-micromodal-close',
+            onClose: () => {
+              setLangCookie();
+            }
+          });
+
+          document.querySelectorAll('.btn-lang-all').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              setLangCookie();
+            });
+          });
+        }
       }
-
     }
-  }
-
-})(jQuery, Drupal);
+  };
+})(Drupal, once);

@@ -1,0 +1,28 @@
+uuid: 393c8c2e-0d4e-4ec4-add4-313176da905f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_box_desc
+    - filter.format.cohesion
+    - paragraphs.paragraphs_type.text_and_link
+  module:
+    - text
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.text_and_link.field_box_desc
+field_name: field_box_desc
+entity_type: paragraph
+bundle: text_and_link
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - cohesion
+field_type: text_long

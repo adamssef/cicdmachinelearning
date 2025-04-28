@@ -1,0 +1,10 @@
+uuid: 30b0ede2-ba24-4231-b601-9f9676fcb3af
+langcode: en
+status: true
+dependencies: {  }
+id: case_studies_articles
+label: 'Case studies articles'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

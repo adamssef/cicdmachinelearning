@@ -15,7 +15,7 @@ interface PlanetCoreNodeTranslationsServiceInterface {
    * @return array
    *   An array of translations for the node.
    */
-  public function buildTranslationArrayForNode(NodeInterface $node): ?array;
+  public function buildTranslationArrayForNode(?NodeInterface $node): ?array;
 
   public function getNodeByPathAlias(string $alias): ?NodeInterface;
 
@@ -37,4 +37,18 @@ interface PlanetCoreNodeTranslationsServiceInterface {
    *   The language id.
    */
   public function determineTheLangId(): string;
+
+  /**
+   * A function that can translate a url alias to a given language.
+   *
+   * For english langcode the function needs to return the alias as it is.
+   *
+   * @param string $english_alias
+   *   The English alias to be translated.
+   *
+   * @return string
+   *   The translated alias.
+   */
+  public function translateUrlAlias(string $english_alias): ?string;
+
 }

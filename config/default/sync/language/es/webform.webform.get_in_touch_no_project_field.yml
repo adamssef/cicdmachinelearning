@@ -25,6 +25,6 @@ elements: |-
     '#title': 'Recibir comunicaciones de Planet'
     '#description': 'Marque esta casilla para dar su consentimiento para recibir comunicaciones sobre los productos, eventos, formaciones, informes y servicios de Planet'
   markup:
-    '#markup': '<p>Al enviar este formulario, acepta los t&eacute;rminos de nuestra <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Pol&iacute;tica de privacidad</a>.</p>'
+    '#markup': '<p>Al enviar este formulario, acepta los t&eacute;rminos de nuestra <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/legal/privacy-policy" delay="150" href="https://www.weareplanet.com/legal/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Pol&iacute;tica de privacidad</a>.</p>'
   actions:
     '#submit__label': Enviar

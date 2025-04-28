@@ -1,0 +1,17 @@
+uuid: 2a2e86ed-9754-4a3a-8852-8940c6e37283
+langcode: en
+status: true
+dependencies:
+  module:
+    - planet_event_pages
+title: 'Default cron handler'
+id: planet_event_pages_cron
+weight: 0
+module: planet_event_pages
+callback: planet_event_pages_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

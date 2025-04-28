@@ -1,0 +1,27 @@
+uuid: 7b7dad09-6532-432c-9b50-5333bf7dda04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_1_link
+    - paragraphs.paragraphs_type.features_content
+  module:
+    - link
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.features_content.field_button_1_link
+field_name: field_button_1_link
+entity_type: paragraph
+bundle: features_content
+label: 'Button 1 link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

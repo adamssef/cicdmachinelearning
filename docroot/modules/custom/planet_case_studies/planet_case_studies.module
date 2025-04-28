@@ -63,63 +63,66 @@ function planet_case_studies_theme(): array {
   return $array;
 }
 
-/**
- * Implements hook_preprocess_HOOK().
- */
-function planet_case_studies_preprocess_node(array &$variables) {
-  $node = $variables['node'];
-  $case_studies_helper = \Drupal::getContainer()
-    ->get('planet_core.case_studies_helper');
+  /**
+   * Implements hook_preprocess_HOOK().
+   */
+  function planet_case_studies_preprocess_node(array &$variables) {
+    $node = $variables['node'];
+    $case_studies_helper = \Drupal::getContainer()
+      ->get('planet_core.case_studies_helper');
 
-  if (_is_path_case_studies_landing()) {
-    $variables['case_studies'] = $case_studies_helper->getAllCaseStudies();
-    $variables['brands'] = \Drupal::service('planet_core.case_studies_helper')
-      ->getBrandsWeWorkWith();
-  }
-
-  if ($node->getType() === 'case_studies') {
-    $node_translation_service = \Drupal::getContainer()->get('planet_core.node_translation_service');
-    $contact_sales_this_languge_url = $node_translation_service->getTranslationArrWithPrefixes('/contact/sales');
-    $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $variables['contact_sales_url'] = $contact_sales_this_languge_url[$lang_id] ?? $contact_sales_this_languge_url['en'];
-    $variables['case_studies_url'] = _get_case_studies_url();
-    $variables['case_study_data'] = $case_studies_helper->getSingleCaseStudyData($node);
-    $variables['case_studies'] = $case_studies_helper->getCaseStudiesForMoreBlock(0, 4, $variables['case_study_data']['products'], $variables['case_study_data']['industry'], $variables['case_study_data']['company_size']);
-
-    $media_id = NULL;
-
-    if (isset($node->get('field_video_media')?->getValue()[0])) {
-      $media_id = $node->get('field_video_media')?->getValue()[0]['target_id'];
+    if (_is_path_case_studies_landing()) {
+      $variables['case_studies'] = $case_studies_helper->getAllCaseStudies('large');
+      $variables['brands'] = \Drupal::service('planet_core.case_studies_helper')
+        ->getBrandsWeWorkWith();
     }
 
-    if (!is_null($media_id) && isset($node->get('field_video_media')
-          ?->getValue()[0])) {
-      $media = \Drupal::entityTypeManager()
-        ->getStorage('media')
-        ->load($media_id);
-      if ($media->hasField('field_media_oembed_video')) {
-        if ($media->get('field_media_oembed_video')?->getValue()[0]['value']) {
-          $unprocessed_url = $media->get('field_media_oembed_video')
-            ?->getValue()[0]['value'];
+    if ($node->getType() === 'case_studies') {
+      $node_translation_service = \Drupal::getContainer()
+        ->get('planet_core.node_translation_service');
+      $contact_sales_this_languge_url = $node_translation_service->getTranslationArrWithPrefixes('/contact/sales');
+      $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      $variables['contact_sales_url'] = $contact_sales_this_languge_url[$lang_id] ?? $contact_sales_this_languge_url['en'];
+      $variables['case_studies_url'] = _get_case_studies_url();
+      $variables['case_study_data'] = $case_studies_helper->getSingleCaseStudyData($node);
+      $variables['case_studies'] = $case_studies_helper->getCaseStudiesForMoreBlock(0, 4, $variables['case_study_data']['products'], $variables['case_study_data']['industry'], $variables['case_study_data']['company_size']);
 
-          if (str_starts_with($unprocessed_url, 'https://www.youtube.com/watch?v')) {
-            $queryString = parse_url($unprocessed_url, PHP_URL_QUERY);
+      $media_id = NULL;
 
-            parse_str($queryString, $queryParams);
-            $param = $queryParams['v'];
+      if (isset($node->get('field_video_media')?->getValue()[0])) {
+        $media_id = $node->get('field_video_media')
+          ?->getValue()[0]['target_id'];
+      }
+
+      if (!is_null($media_id) && isset($node->get('field_video_media')
+            ?->getValue()[0])) {
+        $media = \Drupal::entityTypeManager()
+          ->getStorage('media')
+          ->load($media_id);
+        if ($media->hasField('field_media_oembed_video')) {
+          if ($media->get('field_media_oembed_video')
+            ?->getValue()[0]['value']) {
+            $unprocessed_url = $media->get('field_media_oembed_video')
+              ?->getValue()[0]['value'];
+
+            if (str_starts_with($unprocessed_url, 'https://www.youtube.com/watch?v')) {
+              $queryString = parse_url($unprocessed_url, PHP_URL_QUERY);
+
+              parse_str($queryString, $queryParams);
+              $param = $queryParams['v'];
+            }
+            else {
+              $param = implode(array_slice(str_split($unprocessed_url), 17, 11));
+            }
+
+            $final_url = 'https://www.youtube-nocookie.com/embed/' . $param;
+            $variables['case_study_data']['oembed_url'] = $final_url;
+            $variables['case_study_data']['video_subtext'] = $node->get('field_video_subtext')
+              ?->getValue()[0]['value'];
           }
-          else {
-            $param = implode(array_slice(str_split($unprocessed_url), 17, 11));
-          }
-
-          $final_url = 'https://www.youtube-nocookie.com/embed/' . $param;
-          $variables['case_study_data']['oembed_url'] = $final_url;
-          $variables['case_study_data']['video_subtext'] = $node->get('field_video_subtext')
-            ?->getValue()[0]['value'];
         }
       }
     }
-  }
 }
 
 
@@ -201,6 +204,9 @@ function planet_case_studies_theme_suggestions_views_view_fields_alter(&$suggest
   }
 }
 
+/**
+ * Check if the current path is the case studies landing page.
+ */
 function _is_path_case_studies_landing() {
   $paths = [
     '/case-studies',

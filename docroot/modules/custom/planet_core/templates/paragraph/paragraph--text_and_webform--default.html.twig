@@ -1,0 +1,12 @@
+        <div class="text-and-webform flex justify-center bg-black rounded-t-[40px]">
+            <div class="coh-style-form flex flex-col md:flex-row lg:justify-center py-12 md:py-20 max-w-[1280px] md:mx-8 xl:mx-auto gap-8 lg:gap-20">
+                <div class="text-container mb-4 w-full lg:w-[543px] md:w-auto">
+                    <label class="pms-transformation__label text-[14px] font-semibold leading-[18px] uppercase pl-4 border-l-4 border-[#E00083] border-solid h-6 mb-4 text-white">{{ "GET IN TOUCH"|t }}</label>
+                    <h2 class="text-[48px] font-semibold leading-[60px] text-white mb-4">
+                        {{ paragraph.fields.field_webform_title[0]['value'] }}
+                    </h2>
+                    <div class="text-white text-[16px] md:text-[20px] font-light leading-[22px] md:leading-[28px]">{{ paragraph.fields.field_webform_text[0]['value'] }}</div>
+                </div>
+                {{ paragraph.fields.field_webform }}
+            </div>
+        </div>

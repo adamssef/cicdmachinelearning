@@ -1290,7 +1290,7 @@ video {
 .pros-selected {
   transition: all 0.3s ease;
   background-color: black !important;
-  background-image: url('/resources/icons/right-white-arrow.svg');
+  background-image: url('/resources/icons/all/navigation-forward-dark.svg');
   background-position: 95% center;
   background-repeat: no-repeat;
   color: white;

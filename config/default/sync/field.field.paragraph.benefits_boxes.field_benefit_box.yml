@@ -1,0 +1,74 @@
+uuid: e55379bb-1803-4432-be2d-ec56856d6874
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_benefit_box
+    - paragraphs.paragraphs_type.benefit_box
+    - paragraphs.paragraphs_type.benefits_boxes
+  module:
+    - entity_reference_revisions
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.benefits_boxes.field_benefit_box
+field_name: field_benefit_box
+entity_type: paragraph
+bundle: benefits_boxes
+label: 'Benefit Box'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      benefit_box: benefit_box
+    negate: 0
+    target_bundles_drag_drop:
+      benefit_box:
+        weight: 16
+        enabled: true
+      benefits_boxes:
+        weight: 15
+        enabled: false
+      brands_carousel:
+        weight: 17
+        enabled: false
+      customer_recommendation_quote:
+        weight: 18
+        enabled: false
+      favourite_planet_features:
+        weight: 19
+        enabled: false
+      features_content:
+        weight: 20
+        enabled: false
+      features_ending:
+        weight: 21
+        enabled: false
+      features_heading:
+        weight: 22
+        enabled: false
+      grow_business_with_planet:
+        weight: 23
+        enabled: false
+      hero:
+        weight: 24
+        enabled: false
+      link_box:
+        weight: 25
+        enabled: false
+      paragraph_case_study_metrics:
+        weight: 26
+        enabled: false
+      right_side_mega_menu:
+        weight: 27
+        enabled: false
+      tip_box:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

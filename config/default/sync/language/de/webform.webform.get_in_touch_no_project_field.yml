@@ -29,6 +29,6 @@ elements: |-
     '#title': 'Über Ihr Projekt*'
     '#placeholder': 'Erzählen Sie uns mehr über Ihr Projekt'
   markup:
-    '#markup': '<p>Mit dem Absenden dieses Formulars akzeptieren Sie die Bedingungen unserer <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/privacy-policy" delay="150" href="https://www.weareplanet.com/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Datenschutzrichtlinie.</a></p>'
+    '#markup': '<p>Mit dem Absenden dieses Formulars akzeptieren Sie die Bedingungen unserer <a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/legal/privacy-policy" delay="150" href="https://www.weareplanet.com/legal/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Datenschutzrichtlinie.</a></p>'
   actions:
     '#submit__label': Senden

@@ -1,0 +1,25 @@
+uuid: 9eaa7151-4e61-44fd-ae2a-ba996cd5f8d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_testimonial_style
+    - paragraphs.paragraphs_type.testimonial_quote
+  module:
+    - options
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.testimonial_quote.field_testimonial_style
+field_name: field_testimonial_style
+entity_type: paragraph
+bundle: testimonial_quote
+label: 'Testimonial style'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

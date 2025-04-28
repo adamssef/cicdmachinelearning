@@ -99,7 +99,7 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
   /**
    * {@inheritdoc}
    */
-  public function buildTranslationArrayForNode(NodeInterface $node): ?array {
+  public function buildTranslationArrayForNode(?NodeInterface $node): ?array {
     $node_translations_url = [];
 
     if ($node) {
@@ -202,10 +202,46 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
   public function determineTheLangId():string {
     $current_lang = $this->languageManager->getCurrentLanguage()->getId();
 
+    $request_uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : FALSE;
+
+    if ($request_uri === FALSE) {
+      return $current_lang;
+    } else {
+      switch ($request_uri) {
+        case str_contains($request_uri, '/es/'):
+          $lang = 'es';
+          break;
+        case str_contains($request_uri, '/fr/'):
+          $lang = 'fr';
+          break;
+        case str_contains($request_uri, '/de/'):
+          $lang = 'de';
+          break;
+        case str_contains($request_uri, '/it/'):
+          $lang = 'it';
+          break;
+        default:
+          $lang = $current_lang;
+      }
+    }
+
+    if ($current_lang !== $lang) {
+      $current_lang = $lang;
+    }
+
+    return $current_lang;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function determineTheLangIdForCount():string {
+    $current_lang = $this->languageManager->getCurrentLanguage()->getId();
+
     $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : FALSE;
 
     if ($referer === FALSE) {
-      $lang = $current_lang;
+      return $current_lang;
     } else {
       switch ($referer) {
         case str_contains($referer, '/es/'):
@@ -221,7 +257,7 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
           $lang = 'it';
           break;
         default:
-          $lang = 'en';
+          $lang = $current_lang;
       }
     }
 
@@ -230,6 +266,23 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
     }
 
     return $current_lang;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function translateUrlAlias(string $english_alias): ?string {
+    $node = $this->getNodeByPathAlias($english_alias);
+
+    if (!$node) {
+      return NULL;
+    }
+
+    $translation_array = $this->buildTranslationArrayForNode($node);
+    $langcode = $this->languageManager->getCurrentLanguage()->getId();
+    $translated_alias = $translation_array[$langcode];
+
+    return $translated_alias;
   }
 
 }

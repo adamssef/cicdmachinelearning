@@ -1,0 +1,20 @@
+uuid: 06a356cd-f5ff-4c8d-9be7-bf9ff68d139d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.legal_pages
+  module:
+    - path
+id: node.legal_pages.path
+field_name: path
+entity_type: node
+bundle: legal_pages
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

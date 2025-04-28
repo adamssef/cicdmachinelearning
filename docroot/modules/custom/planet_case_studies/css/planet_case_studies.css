@@ -321,7 +321,6 @@ body.plnt-css-case-studies-2-0 {
 }
 
 .fake-select-el {
-  width: 100%;
   justify-content: space-between;
 }
 
@@ -691,7 +690,10 @@ body.plnt-css-case-studies-2-0 {
 
 #block-views-block-planet-case-studies-view-load-more-block-1 footer {
   margin-top: 48px;
-  margin-bottom: 80px
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .review-box .review-subtitle {

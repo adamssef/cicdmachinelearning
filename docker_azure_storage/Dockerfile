@@ -1,4 +1,4 @@
-FROM php:8.3.14-apache
+FROM php:8.2-apache
 RUN a2enmod rewrite
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/docroot
@@ -45,6 +45,14 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.
 # COPY sshd_config /etc/ssh/
 
 COPY . $APP_HOME
+
+RUN chown root:www-data ${APACHE_DOCUMENT_ROOT}/sites/default/settings.php || true
+RUN chown root:www-data ${APACHE_DOCUMENT_ROOT}/sites/default/settings.local.php || true
+RUN chown root:www-data ${APACHE_DOCUMENT_ROOT}/sites/default/services.yml || true
+
+RUN chmod 440 ${APACHE_DOCUMENT_ROOT}/sites/default/settings.php || true
+RUN chmod 440 ${APACHE_DOCUMENT_ROOT}/sites/default/settings.local.php || true
+RUN chmod 440 ${APACHE_DOCUMENT_ROOT}/sites/default/services.yml || true
 
 
 # Install Composer

@@ -1,0 +1,45 @@
+{# _event-featured.twig #}
+<div
+  style="background-image:url('{{ featured.image }}')" 
+  class="featured-event-block relative rounded-[32px] overflow-hidden mb-16 max-w-7xl mx-auto shadow-lg min-h-[490px] bg-cover bg-center bg-no-repeat">
+
+  {# Content container with padding #}
+  <div class="absolute inset-0 bg-black/40 transition-all hover:bg-black/50">
+    
+    {# Date #}
+    <div class="absolute top-0 left-0 p-8">
+      <div class="flex items-center bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+        <img src="/resources/icons/all/calendar-02-dark.svg">
+        <span class="ml-1 text-[22px] font-semibold">
+          {{ featured.date_range }}
+        </span>
+      </div>
+    </div>
+
+    {# Bottom content #}
+    <div class="absolute bottom-0 left-0 w-full p-4 md:p-8 bg-gradient-to-t from-black/80 to-transparent">
+      <div class="flex flex-col text-left mb-2">
+
+        {# Location #}
+        <span class="text-[14px] font-semibold leading-[18px] pl-4 border-l-4 border-[#E00083] border-solid text-white uppercase">
+          {{ featured.event_location[0] }}
+        </span>
+
+        {# Title #}
+        <a href="{{featured.url}}" class="text-zinc-50 text-[32px] font-semibold leading-[40px] my-2 flex items-center">
+          <span class="featured-event-link mr-6">{{ featured.title }}</span>
+          <span class="featured-event-link-arrow"><img class="min-h-12 w-auto" src="/resources/icons/all/arrow-right-dark.svg"></span>
+        </a>
+      </div>
+
+      {# Industry tags #}
+      <div class="flex flex-wrap gap-2 mt-2">
+        {% for industry in featured.event_industry %}
+          <span class="bg-white/20 text-white backdrop-blur-sm text-sm px-3 py-1 ml-1 font-semibold rounded">
+            {{ industry }}
+          </span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

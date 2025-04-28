@@ -1,0 +1,24 @@
+uuid: 89356ba4-fff9-45a1-a88d-2de7f95cabf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon
+    - paragraphs.paragraphs_type.benefit_box
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.benefit_box.field_icon
+field_name: field_icon
+entity_type: paragraph
+bundle: benefit_box
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

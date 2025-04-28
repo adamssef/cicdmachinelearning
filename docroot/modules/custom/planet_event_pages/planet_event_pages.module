@@ -1,0 +1,105 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for planet_event_pages module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function planet_event_pages_theme() {
+  return [
+    'node__events' => [
+      'template' => 'node--events',
+      'base hook' => 'node'
+    ],
+    'node__main_events_page' => [
+      'template' => 'node--main-events-page',
+      'base hook' => 'node'
+    ]
+  ];
+}
+
+function planet_event_pages_preprocess_node(&$variables) {
+  $node = $variables['node'];
+
+  $planet_core_node_translation_service = \Drupal::service('planet_core.node_translation_service');
+  $planet_events = \Drupal::service('planet.event_pages_service');
+
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+  $events_node = $planet_core_node_translation_service->getNodeByPathAlias("/events");
+
+  // Cache the events aliases for one day
+  $cache_key = 'lang_aliases:events_main_page';
+  $cache_bin = \Drupal::cache();
+  $cached_data = $cache_bin->get($cache_key);
+
+  if ($cached_data) {
+    $events_aliases = $cached_data->data;
+  } else {
+    $events_aliases = $planet_core_node_translation_service->buildTranslationArrayForNode($events_node);
+    $cache_bin->set($cache_key, $events_aliases, time() + 86400); // Cache for 1 day
+  }
+
+  if ($node && $node->getType() === 'events') {
+    $page_service = \Drupal::service('planet_core.basic_page_service');
+    $events_landing_page_url = $planet_core_node_translation_service->translateUrlAlias('/events');
+
+    $paragraphs = $page_service->getPageParagraphData($node);
+    $variables['#attached']['library'][] = 'planet_core/basic-pages';
+    $variables['langcode'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['event_aliases'] = $events_aliases;
+    $variables['page_paragraphs'] = $paragraphs;
+    $variables['events_landing_page_url'] = $events_landing_page_url;
+  }
+
+  if (in_array($alias, $events_aliases)) {
+    $variables['#attached']['library'][] = 'planet_event_pages/tailwind';
+    $variables['#attached']['library'][] = 'planet_event_pages/events-main-page';
+    $variables['featured'] = $planet_events->getFeaturedEvent();
+    $variables['event_locations'] = $planet_events->getEventLocations();
+    $variables['event_categories'] = $planet_events->getEventCategories();
+  }
+}
+
+function planet_event_pages_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (!$node || !($node instanceof \Drupal\node\NodeInterface)) {
+    return;
+  }
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+
+  $planet_core_node_translation_service = \Drupal::service('planet_core.node_translation_service');
+  $events_node = $planet_core_node_translation_service->getNodeByPathAlias("/events");
+  $events_aliases = $planet_core_node_translation_service->buildTranslationArrayForNode($events_node);
+
+  if (in_array($alias, $events_aliases)) {
+    $suggestions[] = 'node__main_events_page';
+  }
+}
+
+/**
+ * Implements hook_cron().
+ * Check for past events and set them to unpublished.
+ */
+function planet_event_pages_cron() {
+  $current_time = new \Drupal\Core\Datetime\DrupalDateTime('now');
+
+  $query = \Drupal::entityQuery('node')
+    ->condition('type', 'events')
+    ->condition('field_event_end_date', $current_time->format('Y-m-d'), '<')
+    ->condition('status', 1) // Only get published nodes
+    ->accessCheck(FALSE); // Important: Bypass access checks for this query.
+
+  $nids = $query->execute();
+
+  if (!empty($nids)) {
+    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+    foreach ($nodes as $node) {
+      $node->set('status', 0); // Set the node status to unpublished (0)
+      $node->save();
+      \Drupal::logger('planet_event_pages')->notice('Unpublished event node with ID: @nid because its end date has passed.', ['@nid' => $node->id()]);
+    }
+  }
+}

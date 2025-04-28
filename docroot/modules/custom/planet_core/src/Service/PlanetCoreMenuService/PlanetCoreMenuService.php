@@ -3,7 +3,6 @@
 namespace Drupal\planet_core\Service\PlanetCoreMenuService;
 
 use Drupal;
-use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
 use Drupal\menu_item_extras\Entity\MenuItemExtrasMenuLinkContentInterface;
@@ -48,6 +47,13 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
   public $planetCoreNodeTranslationsService;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  public $entityTypeManager;
+
+  /**
    * PlanetHeaderBlockService constructor.
    *
    * @param \Drupal\Core\Menu\MenuLinkTreeInterface $menu_tree
@@ -58,12 +64,15 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
    *   The language manager.
    * @param \Drupal\planet_core\Service\PlanetCoreNodeTranslationsService\PlanetCoreNodeTranslationsServiceInterface $planet_core_node_translations_service
    *  The node translation service.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   * The entity type manager.
    */
   public function __construct(MenuLinkTreeInterface $menu_tree, AliasManagerInterface $path_alias_manager, LanguageManagerInterface $language_manager, PlanetCoreNodeTranslationsServiceInterface $planet_core_node_translations_service) {
     $this->menuTree= $menu_tree;
     $this->pathAliasManager = $path_alias_manager;
     $this->languageManager = $language_manager;
     $this->planetCoreNodeTranslationsService = $planet_core_node_translations_service;
+    $this->entityTypeManager = Drupal::entityTypeManager();
   }
 
   /**
@@ -126,21 +135,10 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
   }
 
   function getMenuLinkData(MenuItemExtrasMenuLinkContentInterface $entity): array {
-    $target_id = NULL;
-
-    if (!empty($entity->get('field_page')?->getValue())) {
-      $target_id = $entity->get('field_page')?->getValue()[0]['target_id'];
-    }
-
     $classes = NULL;
 
     if (!empty($entity->get('field_megamenu_classes')->getValue())) {
       $classes = $entity->get('field_megamenu_classes')->getValue()[0];
-    }
-
-    if ($target_id !== NULL) {
-      $page = Node::load($target_id);
-      $translation_array = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($page);
     }
 
     $icon_path = NULL;
@@ -154,10 +152,26 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
       $product_category = $entity->get('field_megamenu_product_category')?->getValue()[0]['value'] ?? NULL;
     }
 
+    $node_id = $entity?->get('field_page')?->getValue() ? $entity?->get('field_page')?->getValue()[0]['target_id'] : NULL;
+    $translated_node = NULL;
+
+    if ($node_id) {
+      $node = Node::load($node_id);
+      $language = $this->languageManager->getCurrentLanguage()->getId();
+      $translation_arr = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($node);
+
+      if (isset($translation_arr[$language])) {
+        $translated_node = [$language => $translation_arr[$language]];
+      }
+      else {
+        $translated_node = ['en' => $translation_arr['en']];
+      }
+    }
+
     return [
       'title' => $entity->getTitle(),
       'id' => strtolower(str_replace(' ', '-', $entity->getTitle())),
-      'url' => $translation_array ?? $entity->getUrlObject()->toString(),
+      'url' => $translated_node ?? ['en' => $entity->getUrlObject()->toString()],
       'weight' => $entity->getWeight(),
       '_blank' => str_starts_with($entity->getUrlObject()->toString(), 'http'),
       'classes' => $classes !== NULL ? $classes['value']: NULL,

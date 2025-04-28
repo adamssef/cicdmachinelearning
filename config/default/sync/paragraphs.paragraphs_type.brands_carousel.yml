@@ -1,0 +1,10 @@
+uuid: db9c1ffa-3a02-4d3b-a749-5ab511522f1e
+langcode: en
+status: true
+dependencies: {  }
+id: brands_carousel
+label: 'Brands carousel'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

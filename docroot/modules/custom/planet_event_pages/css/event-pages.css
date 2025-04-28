@@ -1,0 +1,9 @@
+.featured-event-block:hover .featured-event-link {
+  text-decoration: underline;
+}
+.featured-event-block .featured-event-link-arrow {
+  transition: all 0.3s ease;
+}
+.featured-event-block:hover .featured-event-link-arrow {
+  transform: translateX(24px);
+}

@@ -1,0 +1,95 @@
+uuid: 433feced-e3ee-4c68-bd5e-8b5bfbdbd19f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sponsor_logos
+    - paragraphs.paragraphs_type.logo
+    - paragraphs.paragraphs_type.sponsors
+  module:
+    - entity_reference_revisions
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.sponsors.field_sponsor_logos
+field_name: field_sponsor_logos
+entity_type: paragraph
+bundle: sponsors
+label: 'Sponsors logos'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      logo: logo
+    negate: 0
+    target_bundles_drag_drop:
+      benefit_box:
+        weight: 23
+        enabled: false
+      benefits_boxes:
+        weight: 22
+        enabled: false
+      blog_articles:
+        weight: 24
+        enabled: false
+      brands_carousel:
+        weight: 25
+        enabled: false
+      case_studies_articles:
+        weight: 26
+        enabled: false
+      customer_recommendation_quote:
+        weight: 27
+        enabled: false
+      event_info:
+        weight: 28
+        enabled: false
+      favourite_planet_features:
+        weight: 29
+        enabled: false
+      features_content:
+        weight: 30
+        enabled: false
+      features_ending:
+        weight: 31
+        enabled: false
+      features_heading:
+        weight: 32
+        enabled: false
+      grow_business_with_planet:
+        weight: 33
+        enabled: false
+      hero:
+        weight: 34
+        enabled: false
+      link_box:
+        weight: 35
+        enabled: false
+      logo:
+        weight: 37
+        enabled: true
+      paragraph_case_study_metrics:
+        weight: 36
+        enabled: false
+      right_side_mega_menu:
+        weight: 37
+        enabled: false
+      sponsors:
+        weight: 21
+        enabled: false
+      testimonial_quote:
+        weight: 38
+        enabled: false
+      text_and_webform:
+        weight: 39
+        enabled: false
+      tip_box:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  font-family: 'TT Commons', sans-serif;
+}
+
 body {
   border-bottom: 1px solid black;
 }
@@ -121,7 +126,7 @@ body {
 .footer-container__list li a:not(.linkedin-menu-icon) {
   font-weight: 300;
   color: white;
-  font-family: 'TT Commons',sans-serif;';
+  font-family: 'TT Commons',sans-serif;
 }
 
 .footer-container__list--sitemap {

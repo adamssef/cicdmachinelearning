@@ -1,0 +1,5 @@
+name: Planet Partners Pages
+description: "Provides partners pages."
+type: module
+package: Planet
+core_version_requirement: ^10

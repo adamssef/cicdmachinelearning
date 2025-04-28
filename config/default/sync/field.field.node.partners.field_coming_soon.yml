@@ -1,0 +1,28 @@
+uuid: 2d556bf2-b0e1-4bc3-bd89-1a93b0bd0334
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coming_soon
+    - node.type.partners
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.partners.field_coming_soon
+field_name: field_coming_soon
+entity_type: node
+bundle: partners
+label: 'Coming soon'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

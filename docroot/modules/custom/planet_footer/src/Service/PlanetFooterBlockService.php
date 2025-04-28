@@ -272,7 +272,7 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
    * @return array
    *   An array of menu content for the legal section.
    */
-  private function prepareItemArray(string $title, string $path, int $weight):array {
+  private function prepareItemArray(string $title, string $path, int $weight):?array {
     if (
       preg_match('/node\/(\d+)/', $path, $matches) ||
       preg_match('/node\/([a-zA-Z]{2})\/(\d+)/', $path, $matches)
@@ -296,7 +296,7 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
       ];
     }
 
-    throw new Exception("Could not prepare item array for a given URL.");
+    return NULL;
   }
 
 }

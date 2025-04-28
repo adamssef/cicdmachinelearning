@@ -25,7 +25,7 @@ function planet_payment_methods_theme(): array {
       'variables' => [
         'data' => [
           'cards' => [],
-          'payment_methods' => []
+          'payment_methods' => [],
         ],
       ],
     ],
@@ -68,7 +68,11 @@ function planet_payment_methods_theme_suggestions_node_alter(array &$suggestions
       $node_translation_service = \Drupal::service('planet_core.node_translation_service');
       $landing_node = $node_translation_service->getNodeByPathAlias('/payment-methods');
       $translation_array = $node_translation_service->buildTranslationArrayForNode($landing_node);
-      $langcode = $node_translation_service->determineTheLangId();
+      $langcode = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+
+      if (!isset($translation_array[$langcode])) {
+        return;
+      }
 
       if (
         "/$langcode" . $alias === $translation_array[$langcode] ||
@@ -95,6 +99,8 @@ function planet_payment_methods_theme_suggestions_block_alter(array &$suggestion
 
 
 
+
+
 function planet_payment_methods_preprocess_node__payment_methods(&$variables) {
   $node_translation_service = \Drupal::service('planet_core.node_translation_service');
   $url = \Drupal::service('path.current')->getPath();
@@ -105,6 +111,7 @@ function planet_payment_methods_preprocess_node__payment_methods(&$variables) {
     $node = $node_translation_service->getNodeByPathAlias('/contact/sales');
     $translation_array = $node_translation_service->buildTranslationArrayForNode($node);
     $langcode = $node_translation_service->determineTheLangId();
+
     $variables['contact_url'] = $langcode === 'en' ? $translation_array['en'] : "/$langcode" . $translation_array[$langcode];
   }
 
@@ -179,6 +186,14 @@ function planet_payment_methods_preprocess_node__payment_methods(&$variables) {
 /**
  * Implements hook_preprocess_hook().
  */
+function planet_payment_methods_preprocess_node__payment_methods_landing(&$variables) {
+  $variables['contact_url'] = \Drupal::service('planet_core.node_translation_service')
+    ->translateUrlAlias('/contact/sales');
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
 function planet_payment_methods_preprocess_page(&$variables) {
   $current_url = \Drupal::service('path.current')->getPath();
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_url);
@@ -192,7 +207,11 @@ function planet_payment_methods_preprocess_page(&$variables) {
   }
 
   $translation_array = $node_translation_service->buildTranslationArrayForNode($landing_node);
-  $langcode = $node_translation_service->determineTheLangId();
+  $langcode = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+
+  if (!isset($translation_array[$langcode])) {
+    return;
+  }
 
   if (
     "/$langcode" . $alias === $translation_array[$langcode] ||

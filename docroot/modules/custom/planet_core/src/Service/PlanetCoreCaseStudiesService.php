@@ -4,6 +4,7 @@ namespace Drupal\planet_core\Service;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileUrlGeneratorInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\media\Entity\Media;
@@ -114,7 +115,7 @@ class PlanetCoreCaseStudiesService {
     $product_option_tid = strtolower($product_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($product_option, 'case_studies_products') : NULL;
     $industry_option_tid = strtolower($industry_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($industry_option, 'case_studies_industry') : NULL;
     $company_size_option_tid = strtolower($company_size_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($company_size_option, 'company_size') : NULL;
-    $current_lang = $this->planetCoreNodeTranslationsService->determineTheLangId();
+    $current_lang = $this->languageManager->getCurrentLanguage()->getId();
 
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'case_studies')
@@ -220,7 +221,7 @@ class PlanetCoreCaseStudiesService {
     $product_option_tid = strtolower($product_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($product_option, 'case_studies_products') : NULL;
     $industry_option_tid = strtolower($industry_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($industry_option, 'case_studies_industry') : NULL;
     $company_size_option_tid = strtolower($company_size_option) !== "all" ? $this->planetCoreTaxonomyService->getTermIdByTermName($company_size_option, 'company_size') : NULL;
-    $current_language = $this->languageManager->getCurrentLanguage()->getId();
+    $current_language = $this->planetCoreNodeTranslationsService->determineTheLangIdForCount();
 
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', 'case_studies')
@@ -252,7 +253,7 @@ class PlanetCoreCaseStudiesService {
    *
    * @return array An array of case study data.
    */
-  public function getAllCaseStudies() {
+  public function getAllCaseStudies($style = NULL) {
     $lang = $this->planetCoreNodeTranslationsService->determineTheLangId();
 
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
@@ -264,11 +265,13 @@ class PlanetCoreCaseStudiesService {
 
     $nids = $query->execute();
 
+    $style = $style ?? 'wide';
+
     if (count($nids) < 25) {
-      return $this->prepareCaseStudiesData($nids, 25);
+      return $this->prepareCaseStudiesData($nids, 25, $style);
     }
     else {
-      return $this->prepareCaseStudiesData($nids);
+      return $this->prepareCaseStudiesData($nids, NULL, $style);
     }
   }
 
@@ -501,7 +504,7 @@ class PlanetCoreCaseStudiesService {
    * @return array
    *   The array containing the data.
    */
-  private function prepareCaseStudiesData(array $case_study_nids, ?int $threshold = NULL) {
+  private function prepareCaseStudiesData(array $case_study_nids, ?int $threshold = NULL, $style = NULL) {
     $case_studies = $this->entityTypeManager->getStorage('node')
       ->loadMultiple($case_study_nids);
 
@@ -512,7 +515,7 @@ class PlanetCoreCaseStudiesService {
     }
 
     $case_studies_data = [];
-    $langcode = $this->planetCoreNodeTranslationsService->determineTheLangId();
+    $langcode = $this->languageManager->getCurrentLanguage()->getId();
 
     foreach ($case_studies as $case_study) {
       $case_study = $case_study->getTranslation($langcode);
@@ -532,12 +535,12 @@ class PlanetCoreCaseStudiesService {
         $logo_url = NULL;
       }
       else {
-        $logo_url = $this->planetCoreMediaService->getImageUrl($media_id_logo, 'field_media_image');
+        $logo_url = $this->planetCoreMediaService->getStyledImageUrl($media_id_logo, 'medium');
       }
 
       $case_study_data = [
         'title' => $case_study->getTitle(),
-        'image_url' => $media_id ? $this->planetCoreMediaService->getStyledImageUrl($media_id, 'wide') : NULL,
+        'image_url' => $media_id ? $this->planetCoreMediaService->getStyledImageUrl($media_id, $style ?? 'wide') : NULL,
         'url' => $langcode === 'en' ? $alias : "/$langcode" . $alias,
         'logo_url' => $logo_url,
         'company_name' => $case_study->get('field_company_name')->value,

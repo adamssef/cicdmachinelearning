@@ -1,0 +1,27 @@
+uuid: 6f974541-0de0-4bbc-9153-9a619a130de8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_basic_page_metatag
+    - node.type.payment_methods
+  module:
+    - metatag
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.payment_methods.field_basic_page_metatag
+field_name: field_basic_page_metatag
+entity_type: node
+bundle: payment_methods
+label: Metatag
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: '{"robots":"noindex","schema_article_image":"a:3:{s:5:\u0022@type\u0022;s:11:\u0022ImageObject\u0022;s:20:\u0022representativeOfPage\u0022;s:4:\u0022True\u0022;s:3:\u0022url\u0022;s:52:\u0022[node:field_resources_background_image:0:entity:url]\u0022;}","schema_article_author":"a:4:{s:5:\u0022@type\u0022;s:12:\u0022Organization\u0022;s:3:\u0022@id\u0022;s:10:\u0022[site:url]\u0022;s:4:\u0022name\u0022;s:24:\u0022[node:field_author:name]\u0022;s:4:\u0022logo\u0022;a:2:{s:5:\u0022@type\u0022;s:11:\u0022ImageObject\u0022;s:3:\u0022url\u0022;s:111:\u0022https:\/\/www.weareplanet.com\/sites\/default\/files\/styles\/webp\/public\/2022-11\/Planet%20Logo.png.webp?itok=VWXtEVb7\u0022;}}"}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

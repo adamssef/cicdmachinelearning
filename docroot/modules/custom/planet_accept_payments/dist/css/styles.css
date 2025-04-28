@@ -846,8 +846,8 @@ video {
   background-color: rgb(250 250 250 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[url\(\'\/resources\/images\/accept_payments_hero\.png\'\)\] {
-  background-image: url('/resources/images/accept_payments_hero.png');
+.bg-\[url\(\'\/resources\/images\/accept-payments-hero-new\.jpg\'\)\] {
+  background-image: url('/resources/images/accept-payments-hero-new.jpg');
 }
 
 .bg-inperson {
@@ -1197,8 +1197,8 @@ video {
     border-radius: 0px;
   }
 
-  .md\:bg-\[url\(\'\/resources\/images\/accept_payments_hero\.png\'\)\] {
-    background-image: url('/resources/images/accept_payments_hero.png');
+  .md\:bg-\[url\(\'\/resources\/images\/accept-payments-hero-new\.jpg\'\)\] {
+    background-image: url('/resources/images/accept-payments-hero-new.jpg');
   }
 
   .md\:bg-none {

@@ -1,0 +1,26 @@
+uuid: 85f13f01-66a3-49e3-b8ad-2aa94258f946
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_featured
+    - node.type.partners
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: node.partners.field_is_featured
+field_name: field_is_featured
+entity_type: node
+bundle: partners
+label: 'Is Featured'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

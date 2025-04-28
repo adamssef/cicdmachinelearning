@@ -1,0 +1,24 @@
+uuid: 7652e36c-28eb-42ef-9ffc-1958a27dc86a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_speaker_name
+    - paragraphs.paragraphs_type.speaker
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.speaker.field_speaker_name
+field_name: field_speaker_name
+entity_type: paragraph
+bundle: speaker
+label: Name
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

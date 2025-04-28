@@ -1,0 +1,8 @@
+services:
+  planet_menu_node_generator.menu_node_generator:
+    class: Drupal\planet_menu_node_generator\Service\MenuNodeGeneratorService
+    arguments:
+      - '@menu.link_tree'
+      - '@path_alias.manager'
+      - '@entity_type.manager'
+      - '@logger.factory'

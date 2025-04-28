@@ -1,0 +1,28 @@
+uuid: 597bf17e-1a3c-4745-83a6-386d7c522e0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_1_open
+    - paragraphs.paragraphs_type.hero
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: paragraph.hero.field_button_1_open
+field_name: field_button_1_open
+entity_type: paragraph
+bundle: hero
+label: 'Open in a new tab?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,10 @@
+uuid: ac4c4975-2dba-44a9-89e7-6368af411635
+langcode: en
+status: true
+dependencies: {  }
+id: logo
+label: Logo
+icon_uuid: null
+icon_default: null
+description: 'Logo of a brand'
+behavior_plugins: {  }
