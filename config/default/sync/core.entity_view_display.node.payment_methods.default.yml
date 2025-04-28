@@ -59,9 +59,10 @@ content:
     weight: 104
     region: content
   field_long_description_label:
-    type: text_default
+    type: string
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 110
     region: content
