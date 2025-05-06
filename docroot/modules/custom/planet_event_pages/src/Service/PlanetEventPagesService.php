@@ -259,6 +259,12 @@ public function getEventData($node, string $langcode = NULL): array {
   } else {
     $image = "";
   }
+
+  $is_featured_event = false;
+  if($node->get('field_is_event_featured')) {
+    $is_featured_event = (bool) $node->get('field_is_event_featured')->value;
+  } 
+
   return [
     'title' => $node->label() ?? '',
     'url' => $node->toUrl()?->toString() ?? '',
@@ -271,7 +277,7 @@ public function getEventData($node, string $langcode = NULL): array {
     'event_type' => $this->getTaxonomyTermNames($node, 'field_event_type', $langcode) ?? [],
     'event_industry' => $this->getTaxonomyTermNames($node, 'field_event_category', $langcode) ?? [],
     'event_location' => $this->getTaxonomyTermNames($node, 'field_event_location', $langcode) ?? [],
-    'is_featured' => (bool) ($node->get('field_is_event_featured')->value ?? FALSE),
+    'is_featured' => $is_featured_event,
     'langcode' => $langcode ?? '',
   ];
 }
