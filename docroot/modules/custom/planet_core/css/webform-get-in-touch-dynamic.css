@@ -73,6 +73,22 @@
   box-sizing: content-box;
   display: flex;
   justify-content: center;
+  font-family: 'TT Commons';
+  font-weight: 600;
+  color: rgb(238,238,238);
+  background-color: rgb(32,32,32);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  padding-top: 1rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  -webkit-border-radius: 3.5rem;
+  border-radius: 3.5rem;
+  border-color: rgb(32,32,32);
+  border-style: solid;
+  border-width: 0.125rem;
 }
 
 .webform-submission-get-in-touch-dynamic-form #edit-markup p {
