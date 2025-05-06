@@ -43,6 +43,56 @@ form.tfa-setup ul {
 /** END */
 
 /** [LANGUAGE SWITCHER] */
+.coh-style-primary-dark-atom- {
+  font-family: 'TT Commons';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  color: rgb(238, 238, 238);
+  background-color: rgb(32, 32, 32);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  padding-top: 1rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  -webkit-border-radius:
+3.5rem;
+  border-radius:
+3.5rem;
+  border-color:
+rgb(32, 32, 32);
+  border-style:
+solid;
+  border-width:
+0.125rem;
+}
+.coh-style-secondary-outlined-atom- {
+  font-family: 'TT Commons';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  padding-top: 1rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  -webkit-border-radius:
+3.5rem;
+  border-radius:
+3.5rem;
+  border-color:
+rgb(224, 0, 130);
+  border-style:
+solid;
+  border-width:
+0.125rem;
+}
 .language-switcher {
   display: flex;
   flex: 1;
@@ -1227,6 +1277,7 @@ a[href^="/node/"].toolbar-icon-edit.toolbar-item {
 
 .main-banner-text p {
   font-size: 20px;
+  font-weight: 300;
   margin-top: 16px;
   display: block;
   color: #202020;
