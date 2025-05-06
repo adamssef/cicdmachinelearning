@@ -3,6 +3,10 @@
   box-sizing: border-box;
   user-select: none;
 }
+body::selection {
+  background-color: #e00083 !important;
+  color: white !important;
+}
 .plnt-toggle-switch {
   display: none; /* Hide the toggle initially */
 }

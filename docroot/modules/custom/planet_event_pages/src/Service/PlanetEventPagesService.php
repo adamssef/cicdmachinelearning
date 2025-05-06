@@ -259,20 +259,26 @@ public function getEventData($node, string $langcode = NULL): array {
   } else {
     $image = "";
   }
+
+  $is_featured_event = false;
+  if($node->get('field_is_event_featured')) {
+    $is_featured_event = (bool) $node->get('field_is_event_featured')->value;
+  } 
+
   return [
-    'title' => $node->label(),
-    'url' => $node->toUrl()->toString(),
-    'start_date' => $start_date_raw,
-    'end_date' => $end_date_raw,
-    'image' => $image,
-    'start_date_formatted' => $date_range['start_date_formatted'],
-    'end_date_formatted' => $date_range['end_date_formatted'],
-    'date_range' => $date_range['range_display'],
-    'event_type' => $this->getTaxonomyTermNames($node, 'field_event_type', $langcode),
-    'event_industry' => $this->getTaxonomyTermNames($node, 'field_event_category', $langcode),
-    'event_location' => $this->getTaxonomyTermNames($node, 'field_event_location', $langcode),
-    'is_featured' => (bool) $node->get('field_is_event_featured')->value,
-    'langcode' => $langcode, // Include language code in response for reference
+    'title' => $node->label() ?? '',
+    'url' => $node->toUrl()?->toString() ?? '',
+    'start_date' => $start_date_raw ?? '',
+    'end_date' => $end_date_raw ?? '',
+    'image' => $image ?? '',
+    'start_date_formatted' => $date_range['start_date_formatted'] ?? '',
+    'end_date_formatted' => $date_range['end_date_formatted'] ?? '',
+    'date_range' => $date_range['range_display'] ?? '',
+    'event_type' => $this->getTaxonomyTermNames($node, 'field_event_type', $langcode) ?? [],
+    'event_industry' => $this->getTaxonomyTermNames($node, 'field_event_category', $langcode) ?? [],
+    'event_location' => $this->getTaxonomyTermNames($node, 'field_event_location', $langcode) ?? [],
+    'is_featured' => $is_featured_event,
+    'langcode' => $langcode ?? '',
   ];
 }
   
