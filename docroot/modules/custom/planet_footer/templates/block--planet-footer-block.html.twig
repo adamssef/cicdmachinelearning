@@ -26,8 +26,11 @@
               <h4 class="footer-container__h4">{{ key|t }}</h4>
               {% for footer_menu_subitem in footer_menu_item %}
                 {% if footer_menu_subitem['url'][current_language_prefix] %}
-                  <a
-                    href="{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
+                  {% if current_language_prefix == 'en' %}
+                    <a href="{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
+                  {% else %}
+                    <a href="/{{ current_language_prefix }}{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
+                  {% endif %}
                 {% else %}
                   <a
                     href="{{ footer_menu_subitem['url']['en'] }}">{{ footer_menu_subitem['title'] }}</a>
@@ -55,7 +58,6 @@
                       href="/{{ current_language_prefix }}{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
                   {% endif %}
                 {% else %}
-                  latralalal
                   <a {% if footer_menu_subitem['title'] == "Track my refund" %} target="_blank" {% endif %}
                     href="{{ footer_menu_subitem['url']['en'] }}">{{ footer_menu_subitem['title'] }}</a>
                 {% endif %}
