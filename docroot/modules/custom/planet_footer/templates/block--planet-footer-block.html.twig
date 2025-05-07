@@ -5,16 +5,16 @@
 {% set lang_switcher_data = elements['content'][0]['lang_switcher_data']['#data'] %}
 
 <footer class="footer-meta-container">
-  <div class="footer_meta_container__container container__logos">
-    <div class="links-column">
-      <a class="planet-logo" href="https://www.weareplanet.com"><img
-          src="/resources/logo/planet_logo.svg"></a>
-      <div
-        class="language-switcher-container">{% include '/modules/custom/planet_language_switcher/templates/language-switcher.html.twig' with {'data': lang_switcher_data } %}</div>
-      <a href="https://www.linkedin.com/company/planet/"
-         class="linkedin-menu-icon"></a>
-    </div>
-  </div>
+	<div class="footer_meta_container__container container__logos">
+		<div class="links-column">
+			<a class="planet-logo" href="https://www.weareplanet.com"><img src="/resources/logo/planet_logo.svg"></a>
+			<!-- [NOTE This is a workaround for what Twig Tweak normally does. -->
+			<div class="language-switcher-container">{% include '/modules/custom/planet_language_switcher/templates/language-switcher.html.twig' with {'data': lang_switcher_data } %}</div>
+			<a href="https://www.linkedin.com/company/planet/" class="linkedin-menu-icon">
+				<img src="/resources/icons/all/linked-in-dark.svg">
+			</a>
+		</div>
+	</div>
 
   <div class="footer-meta-container__rows">
     <div class="footer-row--first footer-row">
@@ -26,8 +26,11 @@
               <h4 class="footer-container__h4">{{ key|t }}</h4>
               {% for footer_menu_subitem in footer_menu_item %}
                 {% if footer_menu_subitem['url'][current_language_prefix] %}
-                  <a
-                    href="{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
+                  {% if current_language_prefix == 'en' %}
+                    <a href="{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
+                  {% else %}
+                    <a href="/{{ current_language_prefix }}{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
+                  {% endif %}
                 {% else %}
                   <a
                     href="{{ footer_menu_subitem['url']['en'] }}">{{ footer_menu_subitem['title'] }}</a>
@@ -55,7 +58,6 @@
                       href="/{{ current_language_prefix }}{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
                   {% endif %}
                 {% else %}
-                  latralalal
                   <a {% if footer_menu_subitem['title'] == "Track my refund" %} target="_blank" {% endif %}
                     href="{{ footer_menu_subitem['url']['en'] }}">{{ footer_menu_subitem['title'] }}</a>
                 {% endif %}
