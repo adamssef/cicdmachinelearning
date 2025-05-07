@@ -16,42 +16,54 @@
 		</div>
 	</div>
 
-	<div class="footer-meta-container__rows">
-		<div class="footer-row--first footer-row">
-			{% for key, footer_menu_item in footer_menu %}
-				{% if key in first_row_keys %}
-					<div class="footer_meta_container__container container__{{ key|lower }}">
-						<div class="links-column">
-							<h4 class="footer-container__h4">{{ key|t }}</h4>
-									{% for footer_menu_subitem in footer_menu_item %}
-										{% if footer_menu_subitem['url'][current_language_prefix] %}
-											<a href="{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
-										{% else %}
-											<a href="{{ footer_menu_subitem['url']['en'] }}">{{ footer_menu_subitem['title'] }}</a>
-										{% endif %}
-									{% endfor %}
-						</div>
-					</div>
-				{% endif %}
-			{% endfor %}
-		</div>
-		<div class="footer-row--second footer-row">
-			{% for key, footer_menu_item in footer_menu %}
-				{% if key in second_row_keys %}
-					<div class="footer_meta_container__container container__{% if key == 'Tax Free' %}tax-free{% else %}{{ key|lower }}{% endif %}">
-						<div class="links-column">
-							<h4 class="footer-container__h4">{{ key|t }}</h4>
-							{% for footer_menu_subitem in footer_menu_item %}
-								{% if footer_menu_subitem['url'][current_language_prefix] %}
-									<a {% if footer_menu_subitem['title'] == "Track my refund" %} target="_blank" {% endif %} href="{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
-								{% else %}
-									<a {% if footer_menu_subitem['title'] == "Track my refund" %} target="_blank" {% endif %} href="{{ footer_menu_subitem['url']['en'] }}">{{ footer_menu_subitem['title'] }}</a>
-								{% endif %}
-							{% endfor %}
-						</div>
-					</div>
-				{% endif %}
-			{% endfor %}
-		</div>
-	</div>
+  <div class="footer-meta-container__rows">
+    <div class="footer-row--first footer-row">
+      {% for key, footer_menu_item in footer_menu %}
+        {% if key in first_row_keys %}
+          <div
+            class="footer_meta_container__container container__{{ key|lower }}">
+            <div class="links-column">
+              <h4 class="footer-container__h4">{{ key|t }}</h4>
+              {% for footer_menu_subitem in footer_menu_item %}
+                {% if footer_menu_subitem['url'][current_language_prefix] %}
+                  <a
+                    href="{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
+                {% else %}
+                  <a
+                    href="{{ footer_menu_subitem['url']['en'] }}">{{ footer_menu_subitem['title'] }}</a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="footer-row--second footer-row">
+      {% for key, footer_menu_item in footer_menu %}
+        {% if key in second_row_keys %}
+          <div
+            class="footer_meta_container__container container__{% if key == 'Tax Free' %}tax-free{% else %}{{ key|lower }}{% endif %}">
+            <div class="links-column">
+              <h4 class="footer-container__h4">{{ key|t }}</h4>
+              {% for footer_menu_subitem in footer_menu_item %}
+                {% if footer_menu_subitem['url'][current_language_prefix] %}
+                  {% if current_language_prefix == 'en' %}
+                    <a {% if footer_menu_subitem['title'] == "Track my refund" %} target="_blank" {% endif %}
+                      href="{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
+                  {% else %}
+                    <a {% if footer_menu_subitem['title'] == "Track my refund" %} target="_blank" {% endif %}
+                      href="/{{ current_language_prefix }}{{ footer_menu_subitem['url'][current_language_prefix] }}">{{ footer_menu_subitem['title'] }}</a>
+                  {% endif %}
+                {% else %}
+                  latralalal
+                  <a {% if footer_menu_subitem['title'] == "Track my refund" %} target="_blank" {% endif %}
+                    href="{{ footer_menu_subitem['url']['en'] }}">{{ footer_menu_subitem['title'] }}</a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
 </footer>
