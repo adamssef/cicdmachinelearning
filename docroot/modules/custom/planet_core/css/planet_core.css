@@ -102,6 +102,11 @@ solid;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+.coh-style-b200 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 200%;
+}
 .language-switcher {
   display: flex;
   flex: 1;
