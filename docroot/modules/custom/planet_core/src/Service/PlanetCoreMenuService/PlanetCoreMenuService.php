@@ -161,7 +161,12 @@ class PlanetCoreMenuService implements PlanetCoreMenuServiceInterface {
       $translation_arr = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($node);
 
       if (isset($translation_arr[$language])) {
-        $translated_node = [$language => $translation_arr[$language]];
+        if ($language === 'en') {
+          $translated_node = [$language => $translation_arr[$language]];
+        }
+        else {
+          $translated_node = [$language => "/$language" . $translation_arr[$language]];
+        }
       }
       else {
         $translated_node = ['en' => $translation_arr['en']];
