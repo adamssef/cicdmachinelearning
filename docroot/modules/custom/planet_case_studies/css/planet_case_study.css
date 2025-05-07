@@ -2,6 +2,10 @@ header, footer {
   max-width: 100%;
 }
 
+body {
+  margin: 0;
+}
+
 body.page-node-type-case-studies {
   overflow-x: hidden;
 }
@@ -68,6 +72,7 @@ body.page-node-type-case-studies {
   padding-bottom: 0;
   max-width: 1280px;
   margin: 0 auto;
+  padding-top: 32px;
 }
 
 .page-node-type-case-studies .breadcrumbs > span {
