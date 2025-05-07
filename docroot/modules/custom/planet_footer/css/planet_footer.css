@@ -64,18 +64,6 @@ body {
   color: white;
 }
 
-.linkedin-menu-icon::before {
-  line-height: 1.0;
-  font-weight: normal;
-  text-transform: none;
-  speak: none;
-  font-variant: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\F0E1";
-  font-family: "icomoon", sans-serif;
-}
-
 
 .container__logos.container__logos--hidden {
   visibility: hidden;
