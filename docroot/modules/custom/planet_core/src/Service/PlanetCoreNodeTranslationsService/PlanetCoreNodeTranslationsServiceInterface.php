@@ -15,7 +15,7 @@ interface PlanetCoreNodeTranslationsServiceInterface {
    * @return array
    *   An array of translations for the node.
    */
-  public function buildTranslationArrayForNode(?NodeInterface $node): ?array;
+  public function buildTranslationArrayForNode(?NodeInterface $node, bool $with_prefixes = TRUE): ?array;
 
   public function getNodeByPathAlias(string $alias): ?NodeInterface;
 

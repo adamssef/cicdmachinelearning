@@ -136,7 +136,7 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
 
           $final_child_menus[$key][$title] = [
             'title' => $title,
-            'url' => $this->nodeTranslationService->buildTranslationArrayForNode($node),
+            'url' => $this->nodeTranslationService->buildTranslationArrayForNode($node, FALSE),
             'weight' => $weight,
           ];
         }
@@ -281,7 +281,7 @@ class PlanetFooterBlockService implements PlanetFooterBlockServiceInterface {
 
       return [
         'title' => $title,
-        'url' => $this->nodeTranslationService->buildTranslationArrayForNode($node),
+        'url' => $this->nodeTranslationService->buildTranslationArrayForNode($node, FALSE),
         'weight' => $weight,
         'node' => $node,
       ];

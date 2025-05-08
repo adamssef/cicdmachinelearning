@@ -102,6 +102,18 @@ solid;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+.coh-style-h400, .coh-style-heading-4-planet {
+  font-family: 'TT Commons';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 2.125rem;
+}
+.page-node-type-payment-methods div ul {
+  list-style:
+disc;
+}
 .coh-style-b200 {
   font-size: 18px;
   font-weight: 300;

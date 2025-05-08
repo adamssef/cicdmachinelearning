@@ -99,29 +99,39 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
   /**
    * {@inheritdoc}
    */
-  public function buildTranslationArrayForNode(?NodeInterface $node): ?array {
+  public function buildTranslationArrayForNode(?NodeInterface $node, bool $with_prefixes = TRUE): ?array {
+    if (!$node) {
+      return NULL;
+    }
+
     $node_translations_url = [];
+    $language_prefixes = ['de', 'fr', 'it', 'es'];
+    $node_translations = $node->getTranslationLanguages();
 
-    if ($node) {
-      $node_translations = $node->getTranslationLanguages();
+    foreach ($node_translations as $langcode => $translation) {
+      $translated_node = $node->getTranslation($langcode);
+      $alias = $this->pathAliasManager->getAliasByPath('/node/' . $translated_node->id(), $langcode);
 
-      foreach ($node_translations as $langcode => $translation) {
+      $slug = explode('/', trim($alias, '/'))[0] ?? '';
 
-        $translated_node = $node->getTranslation($langcode);
-        $alias = $this->pathAliasManager->getAliasByPath('/node/' . $translated_node->id(), $langcode);
-
-        if (in_array($langcode, ['de', 'fr', 'it', 'es'])) {
-          $node_translations_url[$langcode] = '/' . explode('/', $alias)[1];
-        }
-        else {
+      if (!$with_prefixes) {
+        $node_translations_url[$langcode] = in_array($langcode, $language_prefixes)
+          ? '/' . $slug
+          : $alias;
+      }
+      else {
+        if (in_array($langcode, $language_prefixes)) {
+          $node_translations_url[$langcode] = "/$langcode/$slug";
+        } elseif ($langcode === 'en') {
           $node_translations_url[$langcode] = $alias;
+        } else {
+          $node_translations_url[$langcode] = "/$langcode" . $alias;
         }
       }
     }
 
     return $node_translations_url;
   }
-
 
   /**
    * Get the translation array for a given url.
@@ -132,7 +142,7 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
     $node  = $this->getNodeByPathAlias($url);
 
     if ($node) {
-      $node_translation_arr = $this->buildTranslationArrayForNode($node, TRUE);
+      $node_translation_arr = $this->buildTranslationArrayForNode($node, FALSE);
 
       return array_values($node_translation_arr);
     }
@@ -284,5 +294,4 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
 
     return $translated_alias;
   }
-
 }

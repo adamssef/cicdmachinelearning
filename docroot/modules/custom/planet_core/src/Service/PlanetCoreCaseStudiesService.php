@@ -535,12 +535,12 @@ class PlanetCoreCaseStudiesService {
         $logo_url = NULL;
       }
       else {
-        $logo_url = $this->planetCoreMediaService->getStyledImageUrl($media_id_logo, 'medium');
+        $logo_url = $this->planetCoreMediaService->getStyledImageUrl($media_id_logo, 'medium', TRUE);
       }
 
       $case_study_data = [
         'title' => $case_study->getTitle(),
-        'image_url' => $media_id ? $this->planetCoreMediaService->getStyledImageUrl($media_id, $style ?? 'wide') : NULL,
+        'image_url' => $media_id ? $this->planetCoreMediaService->getStyledImageUrl($media_id, $style ?? 'wide', TRUE) : NULL,
         'url' => $langcode === 'en' ? $alias : "/$langcode" . $alias,
         'logo_url' => $logo_url,
         'company_name' => $case_study->get('field_company_name')->value,
