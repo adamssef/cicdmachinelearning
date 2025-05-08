@@ -840,6 +840,44 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
 /** END BLUE **/
 
 
+
+.coh-style-primary-light-atom-:hover {
+  background-color: rgb(224,0,130);
+  border-color: rgb(224,0,130);
+  color: rgb(255,255,255);
+}
+
+.coh-style-primary-light-atom- {
+  font-family: 'TT Commons';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  color: rgb(0,0,0);
+  background-color: rgb(255,255,255);
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+  text-align: center;
+  padding-top: 0.1875rem;
+  padding-right: 2.4375rem;
+  padding-bottom: 0.1875rem;
+  padding-left: 2.4375rem;
+  -webkit-border-radius: 4.6875rem;
+  border-radius: 4.6875rem;
+  border-color: rgb(255,255,255);
+  border-style: solid;
+  border-width: 0.125rem;
+  max-width: 100px;
+}
+.coh-style-primary-light-atom-:focus {
+  border-color: rgb(165,165,165);
+}
+
+.coh-style-primary-light-atom-:disabled {
+  background-color: rgb(238,238,238);
+  border-color: rgb(238,238,238);
+  color: rgba(0,0,0,0.4);
+}
+
 @media (max-width: 1360px) {
   .page-node-type-case-studies .breadcrumbs {
     padding-left: 2px;
@@ -1423,6 +1461,7 @@ div.carousel__item:is(.carousel__item--more-block):hover:after {
     padding-right: 0 !important;
     padding-left: 0 !important;
   }
+
 
   .grow_your-business__container--medium--black {
     background-color: #202020;
