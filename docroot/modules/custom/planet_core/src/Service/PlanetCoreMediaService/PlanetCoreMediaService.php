@@ -51,10 +51,10 @@ class PlanetCoreMediaService implements PlanetCoreMediaServiceInterface {
   /**
    * {@inheritDoc}
    */
-  public function getStyledImageUrl($media_id, $style_name = 'thumbnail') {
+  public function getStyledImageUrl($media_id, $style_name = 'thumbnail', $is_relative_url = FALSE) {
     $media = Media::load($media_id);
 
-    if ($media && $media->bundle() == 'image') {
+    if ($media && $media->bundle() === 'image') {
       $image_field = $media->get('field_media_image');
       $file = $image_field->entity;
 
@@ -70,11 +70,19 @@ class PlanetCoreMediaService implements PlanetCoreMediaServiceInterface {
           }
 
           if ($file->getMimeType() === 'image/svg+xml') {
-            // In case of SVG we just want to return original file location.
-            return $this->fileUrlGenerator->generateAbsoluteString($file_uri);
+            $url = $this->fileUrlGenerator->generateAbsoluteString($file_uri);
+          }
+          else {
+            $url = $style->buildUrl($file_uri);
           }
 
-          return $style->buildUrl($file_uri);
+          // Convert to relative URL if requested
+          if ($is_relative_url) {
+            $parsed_url = parse_url($url);
+            return $parsed_url['path'] ?? $url; // fallback to original if parsing fails
+          }
+
+          return $url;
         }
       }
     }
