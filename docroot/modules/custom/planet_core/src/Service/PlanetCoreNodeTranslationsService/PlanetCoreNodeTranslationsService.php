@@ -105,33 +105,37 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
     }
 
     $node_translations_url = [];
-    $language_prefixes = ['de', 'fr', 'it', 'es'];
-    $node_translations = $node->getTranslationLanguages();
 
-    foreach ($node_translations as $langcode => $translation) {
-      $translated_node = $node->getTranslation($langcode);
-      $alias = $this->pathAliasManager->getAliasByPath('/node/' . $translated_node->id(), $langcode);
+    if ($node) {
+      $node_translations = $node->getTranslationLanguages();
+      $language_prefixes = ['de', 'fr', 'it', 'es'];
 
-      $slug = explode('/', trim($alias, '/'))[0] ?? '';
+      foreach ($node_translations as $langcode => $translation) {
+        $translated_node = $node->getTranslation($langcode);
+        $alias = $this->pathAliasManager->getAliasByPath('/node/' . $translated_node->id(), $langcode);
 
-      if (!$with_prefixes) {
-        $node_translations_url[$langcode] = in_array($langcode, $language_prefixes)
-          ? '/' . $slug
-          : $alias;
-      }
-      else {
-        if (in_array($langcode, $language_prefixes)) {
-          $node_translations_url[$langcode] = "/$langcode/$slug";
-        } elseif ($langcode === 'en') {
-          $node_translations_url[$langcode] = $alias;
-        } else {
-          $node_translations_url[$langcode] = "/$langcode" . $alias;
+        if ($with_prefixes === FALSE) {
+            $node_translations_url[$langcode] = $alias;
+        }
+        else {
+          if (in_array($langcode, $language_prefixes)) {
+            $node_translations_url[$langcode] = "/$langcode" . $alias;
+          }
+          else {
+            if ($langcode !== 'en') {
+              $node_translations_url[$langcode] = "/$langcode" . $alias;
+            }
+            else {
+              $node_translations_url[$langcode] = $alias;
+            }
+          }
         }
       }
     }
 
     return $node_translations_url;
   }
+
 
   /**
    * Get the translation array for a given url.
@@ -294,4 +298,5 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
 
     return $translated_alias;
   }
+
 }
