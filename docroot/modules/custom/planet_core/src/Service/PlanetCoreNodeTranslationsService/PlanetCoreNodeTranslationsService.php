@@ -99,22 +99,36 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
   /**
    * {@inheritdoc}
    */
-  public function buildTranslationArrayForNode(?NodeInterface $node): ?array {
+  public function buildTranslationArrayForNode(?NodeInterface $node, bool $with_prefixes = TRUE): ?array {
+    if (!$node) {
+      return NULL;
+    }
+
     $node_translations_url = [];
 
     if ($node) {
       $node_translations = $node->getTranslationLanguages();
+      $language_prefixes = ['de', 'fr', 'it', 'es'];
 
       foreach ($node_translations as $langcode => $translation) {
-
         $translated_node = $node->getTranslation($langcode);
         $alias = $this->pathAliasManager->getAliasByPath('/node/' . $translated_node->id(), $langcode);
 
-        if (in_array($langcode, ['de', 'fr', 'it', 'es'])) {
-          $node_translations_url[$langcode] = '/' . explode('/', $alias)[1];
+        if ($with_prefixes === FALSE) {
+            $node_translations_url[$langcode] = $alias;
         }
         else {
-          $node_translations_url[$langcode] = $alias;
+          if (in_array($langcode, $language_prefixes)) {
+            $node_translations_url[$langcode] = "/$langcode" . $alias;
+          }
+          else {
+            if ($langcode !== 'en') {
+              $node_translations_url[$langcode] = "/$langcode" . $alias;
+            }
+            else {
+              $node_translations_url[$langcode] = $alias;
+            }
+          }
         }
       }
     }
@@ -132,7 +146,7 @@ class PlanetCoreNodeTranslationsService implements PlanetCoreNodeTranslationsSer
     $node  = $this->getNodeByPathAlias($url);
 
     if ($node) {
-      $node_translation_arr = $this->buildTranslationArrayForNode($node, TRUE);
+      $node_translation_arr = $this->buildTranslationArrayForNode($node, FALSE);
 
       return array_values($node_translation_arr);
     }

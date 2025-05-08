@@ -165,10 +165,10 @@
         <div class="{{ item['classes'] }}">
           {% if "ecampus" in item.title or "eCampus" in item.title %}
             {% if data['#current_language_prefix'] == 'fr' %}
-                <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="https://ecampus.weareplanet.com/local/coursecatalogue/index.php?categoryid=4&lang=fr_wp">
-                  <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
-                  <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
-                </a>
+              <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="https://ecampus.weareplanet.com/local/coursecatalogue/index.php?categoryid=4&lang=fr_wp">
+                <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
+                <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
+              </a>
             {% elseif data['#current_language_prefix'] == 'de' %}
               <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="https://ecampus.weareplanet.com/local/coursecatalogue/index.php?categoryid=4&lang=de_wp">
                 <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
@@ -181,10 +181,10 @@
               </a>
             {% endif %}
           {% else %}
-          <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
-            <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
-            <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
-          </a>
+            <a class="megamenu-link" {% if item['_blank'] %}target="_blank" {% endif %}href="{% if item['url'][data['#current_language_prefix']] %}{{ item['url'][data['#current_language_prefix']] }}{% else %}{{ item['url']['en'] }}{% endif %}">
+              <div class="megamenu-column__mini-header">{{ item['title']|t }}</div>
+              <div class="megamenu-column__mini-text">{{ item['description']|t }}</div>
+            </a>
           {% endif %}
         </div>
       {% endfor %}

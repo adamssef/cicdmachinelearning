@@ -29,6 +29,6 @@ interface PlanetCoreMediaServiceInterface {
    * @return string
    *   The URL of the styled image.
    */
-  public function getStyledImageUrl($media_id, $style_name);
+  public function getStyledImageUrl($media_id, $style_name, $is_relative_url = FALSE);
 
   }
