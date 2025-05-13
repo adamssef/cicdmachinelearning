@@ -56,7 +56,7 @@ class PlanetAcceptPaymentsService {
       "On the move" => "mobile-payment-terminals",
       "Unattended" => "terminals-unattended",
       "Parking" => "payments-parking",
-      "EV" => "ev-charging"
+      "EV charging" => "ev-charging"
     ];
 
     $nodes = [];
@@ -66,6 +66,8 @@ class PlanetAcceptPaymentsService {
     }
 
     $current_language_prefix = $this->languageManager->getCurrentLanguage()->getId();
+
+    $test = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["EV charging"]);
 
     $final_arr = [
       "online" => [
@@ -123,7 +125,7 @@ class PlanetAcceptPaymentsService {
           ],
           "ev_charging" => [
             "title" => "EV charging",
-            "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["EV"]),
+            "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["EV charging"]),
           ]
         ]
       ],
