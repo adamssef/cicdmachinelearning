@@ -119,7 +119,6 @@ class PlanetCorePartnersService
 
     // Get the current page language code.
     $language_code = $lang;
-    $is_featured = $featured == true ? '=' : '!=';
 
     // Initialize arrays to store data.
     $articles = [];
@@ -157,8 +156,8 @@ class PlanetCorePartnersService
       $total_count->condition('field_industry_tax', $industry);
     }
 
-    // Add the 'field_year' condition only if $year is not null
-    if ($featured) {
+    if ($featured !== null) {
+      $is_featured = $featured == true ? '=' : '!=';
       $query->condition('field_is_featured', 1, $is_featured);
       $total_count->condition('field_is_featured', 1, $is_featured);
     }
