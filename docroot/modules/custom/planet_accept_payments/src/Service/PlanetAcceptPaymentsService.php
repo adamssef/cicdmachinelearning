@@ -55,7 +55,8 @@ class PlanetAcceptPaymentsService {
       "Countertop" => "terminals-countertop",
       "On the move" => "mobile-payment-terminals",
       "Unattended" => "terminals-unattended",
-      "Parking" => "payments-parking"
+      "Parking" => "payments-parking",
+      "EV" => "ev-charging"
     ];
 
     $nodes = [];
@@ -122,7 +123,7 @@ class PlanetAcceptPaymentsService {
           ],
           "ev_charging" => [
             "title" => "EV charging",
-            "url" => NULL,
+            "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["EV"]),
           ]
         ]
       ],
