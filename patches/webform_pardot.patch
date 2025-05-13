@@ -7,19 +7,23 @@ index 55819d1..89af3fa 100644
  
      $data = $webform_submission->getData();
 +
-+    // Verify custom pardot url. See: /admin/planet/pardot.
-+    $webform_machinename = $webform_submission->get("webform_id")->getValue()[0]['target_id'];
-+    $source_url = $data['website_origin_page'];
++    // Priority 1: Check if 'pardot_handler_url' is set in the submission.
++    if (!empty($data['pardot_handler_url'])) {
++      $url = $data['pardot_handler_url'];
++    }
++    else {
++      // Priority 2: Check config-based redirect.
++      $webform_machinename = $webform_submission->get("webform_id")->getValue()[0]['target_id'];
++      $source_url = $data['website_origin_page'] ?? '';
 +
-+    // Obtain config for specific pardot url.
-+    if ($domain_redirects = \Drupal::config('planet_config.pardot')->get('webform_redirects')) {
-+      foreach ($domain_redirects as $key => $value) {
-+        if ($webform_machinename == $key) {
-+          foreach ($value as $source_url_config) {
-+            if (str_contains($source_url, str_replace('/', '', $source_url_config["sub_path"]))) {
-+              // set new url
-+              $url = $source_url_config["destination"];
-+              break;
++      if ($domain_redirects = \Drupal::config('planet_config.pardot')->get('webform_redirects')) {
++        foreach ($domain_redirects as $key => $value) {
++          if ($webform_machinename == $key) {
++            foreach ($value as $source_url_config) {
++              if (str_contains($source_url, str_replace('/', '', $source_url_config["sub_path"]))) {
++                $url = $source_url_config["destination"];
++                break 2; // stop both loops
++              }
 +            }
 +          }
 +        }
@@ -28,16 +32,12 @@ index 55819d1..89af3fa 100644
 +
 +    // Planet Custom Pardot.
 +    if (isset($data['single_opt_in'])) {
-+      if ($data['single_opt_in'] == '1') {
-+        $data['single_opt_in'] = 'true';
-+      } else {
-+        $data['single_opt_in'] = 'false';
-+      }
++      $data['single_opt_in'] = $data['single_opt_in'] == '1' ? 'true' : 'false';
 +    }
++
 +    if (isset($data['type_of_business']) && $data['type_of_business'] == 'Other') {
 +      $data['type_of_business'] = 'Partners';
 +    }
-+
      $mapping = $this->getPardotFieldsMapping($webform_submission);
      $data = $this->mapData($mapping, $data);
  

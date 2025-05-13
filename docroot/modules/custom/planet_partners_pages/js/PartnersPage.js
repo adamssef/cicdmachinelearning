@@ -85,15 +85,18 @@
         }
 
         renderNoArticles() {
-            $(".no-articles").show();
+            // Show the "not found" message
+            $(".js-notfound").show();
+            
             // Hide loader when showing no articles message
             $(".loader").hide();
             $(".article-js-wrapper").empty();
+            $(".no-articles").hide(); // Hide the old no-articles message if it exists
         }
 
         toggleLoader(status = true) {
             $(".loader").toggle(status);
-            $(".load-more-wrapper, .no-articles").hide();
+            $(".load-more-wrapper, .no-articles, .js-notfound").hide();
         }
 
         initializeFilteredView() {
