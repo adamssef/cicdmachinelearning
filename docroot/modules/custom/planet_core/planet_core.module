@@ -256,11 +256,67 @@ function planet_core_preprocess_html(&$variables): void {
  * Implements hook_ENTITY_TYPE_presave().
  * UTMs handling
  */
-function planet_core_webform_submission_presave(WebformSubmissionInterface $webform_submission): void {
-  UTMHelper::processSubmission($webform_submission);
+
+function planet_core_webform_submission_presave(WebformSubmissionInterface $submission): void {
+  UTMHelper::processSubmission($submission);
+
+  $webform = $submission->getWebform();
+  $webform_id = $webform->id();
+  $source_entity = $submission->getSourceEntity();
+
+  if ($source_entity && $source_entity->getEntityTypeId() === 'node') {
+    foreach ($source_entity->getFields() as $field) {
+      if ($field->getFieldDefinition()->getFieldStorageDefinition()->getSetting('target_type') === 'paragraph') {
+        foreach ($field->getValue() as $item) {
+          $paragraph = \Drupal::entityTypeManager()->getStorage('paragraph')->load($item['target_id']);
+
+          if ($paragraph && $paragraph->bundle() === 'text_and_webform') {
+            $referenced_webform = $paragraph->get('field_webform')->entity;
+
+            if ($referenced_webform && $referenced_webform->id() === $webform_id) {
+              $handler_url = $paragraph->get('field_pardot_handler_url')->value ?? null;
+
+              if (!empty($handler_url)) {
+                $data = $submission->getData();
+                $data['pardot_handler_url'] = $handler_url;
+                $submission->setData($data);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
+function planet_core_webform_submission_view_alter(array &$build, WebformSubmissionInterface $submission, $display) {
+  $data = $submission->getData();
 
+  $fields = [
+    'pardot_handler_url',
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_term',
+    'utm_content',
+    'orig_utm_source',
+    'orig_utm_medium',
+    'orig_utm_campaign',
+    'orig_utm_term',
+    'orig_utm_content',
+  ];
+
+  foreach ($fields as $field_name) {
+    if (!empty($data[$field_name])) {
+      $build[$field_name] = [
+        '#type' => 'item',
+        '#title' => ucfirst(str_replace('_', ' ', $field_name)),
+        '#markup' => $data[$field_name],
+        '#weight' => 100,
+      ];
+    }
+  }
+}
 /**
  * Implements hook_preprocess_HOOK() for node templates.
  */
