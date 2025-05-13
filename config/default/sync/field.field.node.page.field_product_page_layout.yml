@@ -15,6 +15,7 @@ dependencies:
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.testimonial_quote
     - paragraphs.paragraphs_type.text_and_link
+    - paragraphs.paragraphs_type.text_and_webform
   module:
     - entity_reference_revisions
     - tmgmt_content
@@ -45,6 +46,7 @@ settings:
       case_studies_articles: case_studies_articles
       testimonial_quote: testimonial_quote
       text_and_link: text_and_link
+      text_and_webform: text_and_webform
     negate: 0
     target_bundles_drag_drop:
       benefit_box:
@@ -115,7 +117,7 @@ settings:
         enabled: true
       text_and_webform:
         weight: 47
-        enabled: false
+        enabled: true
       tip_box:
         weight: -12
         enabled: false
