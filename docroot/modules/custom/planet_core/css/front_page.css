@@ -1183,6 +1183,7 @@ video {
 .orb-1,
 .orb-2 {
   position: absolute;
+  display: none;
 }
 @media (min-width: 1024px) {
   .orbs-animation, .orbs-static {
@@ -1198,11 +1199,11 @@ video {
 .orbs-animation, .orbs-static {
   width: 100%;
 }
-.orb-1 {
+.orb-1-animation {
   animation: orb-1 16s infinite;
 }
 
-.orb-2 {
+.orb-2-animation {
   animation: orb-2 16s infinite;
 }
 
