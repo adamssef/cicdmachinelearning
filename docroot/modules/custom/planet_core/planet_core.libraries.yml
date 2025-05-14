@@ -64,6 +64,9 @@ front-page:
     js/basicPage.js:
         attributes:
             defer: true
+    js/frontPage.js:
+        attributes:
+            defer: true
 brands-we-work-with:
   css:
     theme:
