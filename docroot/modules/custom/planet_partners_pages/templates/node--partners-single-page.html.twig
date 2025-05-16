@@ -62,17 +62,18 @@
 							<img class="rounded-image" src="{{article.featured_image}}">
 							{% endif %}
 							
-						</div>
-
-					</div>
-				</div>
-				</div>
-				<div style="margin-top: 40px">
+							<div style="margin-top: 40px">
 							{% for paragraph in product_page_paragraphs %}
 			{% set template_path = '/modules/custom/planet_core/templates/paragraph/paragraph--' ~ paragraph.type ~ '--default.html.twig' %}
 			{{ include(template_path, ignore_missing = true) }}
 		{% endfor %}
 		</div>
+						</div>
+
+					</div>
+				</div>
+				</div>
+				
 		</div>
 		{% if form %}
 		<div style="background-color: #fafafa" class="coh-container ssa-component coh-component ssa-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886 coh-component-instance-1070647a-83fa-41c0-b6ea-2bead2272886 coh-light-mode coh-ce-cpt__v3_form_50_50_generic_-9e1e96f5">
