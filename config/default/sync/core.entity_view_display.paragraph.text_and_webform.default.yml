@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text_and_webform.field_pardot_handler_url
     - field.field.paragraph.text_and_webform.field_webform
     - field.field.paragraph.text_and_webform.field_webform_text
     - field.field.paragraph.text_and_webform.field_webform_title
@@ -15,6 +16,14 @@ targetEntityType: paragraph
 bundle: text_and_webform
 mode: default
 content:
+  field_pardot_handler_url:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_webform:
     type: webform_entity_reference_entity_view
     label: above

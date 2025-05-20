@@ -1,5 +1,6 @@
 FROM php:8.2-apache
 RUN a2enmod rewrite
+RUN a2enmod headers
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/docroot
 ENV APP_HOME=/var/www/html
@@ -43,7 +44,6 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-av
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
 # COPY sshd_config /etc/ssh/
-
 COPY . $APP_HOME
 
 RUN chown root:www-data ${APACHE_DOCUMENT_ROOT}/sites/default/settings.php || true
@@ -54,10 +54,13 @@ RUN chmod 440 ${APACHE_DOCUMENT_ROOT}/sites/default/settings.php || true
 RUN chmod 440 ${APACHE_DOCUMENT_ROOT}/sites/default/settings.local.php || true
 RUN chmod 440 ${APACHE_DOCUMENT_ROOT}/sites/default/services.yml || true
 
-
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=2.6.6
-# Run composer install
+RUN apt-get update && apt-get install -y curl \
+  && curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php \
+  && php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer --version=2.8.9 \
+  && rm /tmp/composer-setup.php \
+  && chmod +x /usr/local/bin/composer \
+  && /usr/local/bin/composer --version
 WORKDIR /var/www/html
 
 # RUN ln -s /home/files ${APACHE_DOCUMENT_ROOT}/sites/default/files
@@ -70,6 +73,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     && docker-php-ext-install soap
 
+# Run composer install
 RUN composer install --no-interaction --no-progress
 COPY azure/.htaccess /var/www/html/docroot
 

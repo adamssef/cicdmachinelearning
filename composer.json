@@ -3,6 +3,11 @@
   "type": "project",
   "description": "Planet",
   "license": "GPL-2.0-or-later",
+  "autoload": {
+    "files": [
+        "docroot/modules/custom/planet_core/src/helpers.php"
+    ]
+  },
   "require": {
     "php": ">=8.1",
     "ext-json": "*",
@@ -194,7 +199,7 @@
         "Remove unexisting permissions": "https://www.drupal.org/files/issues/2023-09-14/3358586-11.patch",
         "'Output is empty' when running drush cohesion:rebuild": "https://www.drupal.org/files/issues/2023-09-13/3386915-6.patch",
         "An empty views pager offset field can cause a PHP type error to be triggered": "https://www.drupal.org/files/issues/2023-05-30/3361177-8.patch"
-        
+
       },
       "drupal/pardot": {
         "Disable pardot js": "patches/path_pardot.patch",
