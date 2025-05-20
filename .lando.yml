@@ -53,14 +53,11 @@ services:
         XDEBUG_CONFIG: discover_client_host=1
         SIMPLETEST_DB: mysql://drupal:drupal@database/drupal#test
     build_as_root:
-      # add a2enmod headers to enable mod_headers
-      # for add in header "Access-Control-Allow-Origin" for specific json files
       - a2enmod headers
       - service apache2 reload
       - apt-get update && apt-get install -y imagemagick
       - docker-php-ext-install sysvsem && docker-php-ext-enable sysvsem
-      # Installs nodejs for running Jest unit tests
-      - curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
+      - curl -fsSL https://deb.nodesource.com/setup_21.x
       - apt-get install -y nodejs
     build:
       - "composer install"
