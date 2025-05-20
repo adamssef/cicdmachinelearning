@@ -314,7 +314,6 @@ public function getEventData($node, string $langcode = NULL): array {
     $intl_available = class_exists('\IntlDateFormatter');
   
     if ($intl_available) {
-      // Use IntlDateFormatter (full month version)
       $formatter_day = new \IntlDateFormatter(
         $langcode,
         \IntlDateFormatter::NONE,
