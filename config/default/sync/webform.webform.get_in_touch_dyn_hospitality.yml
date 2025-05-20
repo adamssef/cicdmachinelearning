@@ -357,7 +357,7 @@ elements: |-
     '#markup': '<p>By submitting this form, you accept the terms in our&nbsp;<a data-remove-tab-index="true" data-sk="tooltip_parent" data-stringify-link="https://www.weareplanet.com/legal/privacy-policy" delay="150" href="https://www.weareplanet.com/legal/privacy-policy" rel="noopener noreferrer" tabindex="-1" target="_blank">Privacy Policy</a>.</p>'
   captcha:
     '#type': captcha
-    '#captcha_type': recaptcha_v3/get_in_touch
+    '#captcha_type': recaptcha/reCAPTCHA
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'

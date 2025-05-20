@@ -1,8 +1,0 @@
-uuid: 947221e3-1a36-4cc5-87e2-c1edb0e8384c
-langcode: en
-status: true
-dependencies: {  }
-id: sign_up_footer
-label: 'Sign Up Footer'
-threshold: 0.5
-challenge: recaptcha/reCAPTCHA
