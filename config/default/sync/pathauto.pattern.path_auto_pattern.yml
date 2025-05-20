@@ -9,14 +9,15 @@ label: 'Path Auto Pattern'
 type: 'canonical_entities:node'
 pattern: '[node:title]'
 selection_criteria:
-  bd68008f-dd74-47fa-a632-23c004319b02:
+  779c2aba-a570-424e-be80-28462a248a12:
     id: 'entity_bundle:node'
     negate: false
-    uuid: bd68008f-dd74-47fa-a632-23c004319b02
+    uuid: 779c2aba-a570-424e-be80-28462a248a12
     context_mapping:
       node: node
     bundles:
       case_studies: case_studies
+      events: events
       page: page
       resources: resources
 selection_logic: and
