@@ -1,7 +1,7 @@
 _core:
   default_config_hash: jv0PKCJEOq2bOwY9RspuPZCf67ifVJ4tfTk-BfZMw8k
-site_key: 6LfmW0chAAAAAESJQuMJZDRUjk9aRixQD1ZIFEan
-secret_key: 6LfmW0chAAAAABIYDWm1CtDg_gTcrIgYvhQ4jXMY
+site_key: 6LdOnr8qAAAAAMbV7Nzx4n3cb0ABAgvOSd38B8aH
+secret_key: 6LdOnr8qAAAAAG9w9zjfRdmhtGAcM8dPa5sIC5Te
 verify_hostname: true
 default_challenge: ''
 error_message: 'Antibot verification failed.'
