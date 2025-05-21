@@ -4,7 +4,6 @@ namespace Drupal\planet_accept_payments\Service;
 
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\planet_core\Service\PlanetCoreNodeTranslationsService\PlanetCoreNodeTranslationsServiceInterface;
-use Drupal\planet_core\Service\PlanetCoreNodeTranslationsService\PlanetCoreTranslationInterface;
 
 class PlanetAcceptPaymentsService {
 
@@ -67,8 +66,6 @@ class PlanetAcceptPaymentsService {
 
     $current_language_prefix = $this->languageManager->getCurrentLanguage()->getId();
 
-    $test = $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["EV charging"]);
-
     $final_arr = [
       "online" => [
         "is_main" => TRUE,
@@ -125,7 +122,7 @@ class PlanetAcceptPaymentsService {
           ],
           "ev_charging" => [
             "title" => "EV charging",
-            "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["EV charging"]),
+            "url" => $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["EV charging"])[$current_language_prefix] ?? $this->planetCoreNodeTranslationsService->buildTranslationArrayForNode($nodes["EV charging"])['en'],
           ]
         ]
       ],
@@ -135,8 +132,6 @@ class PlanetAcceptPaymentsService {
   }
 
   public function getBrandsWeWorkWith() {
-    // Make the shit for Bvlgari, Europcar, Hyatt, Ihg, Mandarin oriental, nh, pret, printemps, selfridges, tui
-
     return [
       [
         'name' => 'Bvlgari',
