@@ -36,6 +36,13 @@
   top: 7px;
 }
 
+.title-wrap {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .switch-input {
   display: none;
 }

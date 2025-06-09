@@ -1,6 +1,10 @@
 (function (Drupal, once) {
   'use strict';
 
+  function hasOverflow(el) {
+    return el.scrollWidth > el.clientWidth;
+  }
+
   function initializeState() {
     let initialState = {
       defaultText: getDefaultTextForInitialization(),
@@ -91,6 +95,16 @@
 
   function hideLoadMoreButton() {
     document.querySelector('.load-more-button').classList.add('hidden');
+  }
+
+  function addTooltip() {
+    document.querySelectorAll('.title-wrap').forEach(el => {
+      if (hasOverflow(el)) {
+        el.setAttribute('title', el.textContent.trim());
+      } else {
+        el.removeAttribute('title');
+      }
+    });
   }
 
   function showLoadMoreButton() {
@@ -189,7 +203,7 @@
           imageContainer.classList.add('w-[64px]', 'h-[64px]', 'rounded-lg', 'mb-[25px]', 'mt-[25px]');
           let singlePaymentMethodContainer = document.createElement('div');
           let titleContainer = document.createElement('div');
-          titleContainer.classList.add('text-2xl', 'leading-[30px]', 'font-semibold', 'text-planet-black', 'mb-6');
+          titleContainer.classList.add('title-wrap','text-2xl', 'leading-[30px]', 'font-semibold', 'text-planet-black', 'mb-6');
           titleContainer.innerText = paymentMethod.title;
           let category = document.createElement('div');
           category.classList.add('text-sm', 'font-semibold', 'leading-[18px]', 'uppercase', 'text-planet-black', 'border-l-4', 'border-planet-pink', 'border-solid', 'pl-4', 'mb-2');
@@ -206,6 +220,7 @@
           surroundingAnchor.removeAttribute('target');
           surroundingAnchor.classList.add('w-full', 'md:w-[264px]', 'hover:shadow-planet-pp-card-hover', 'transition-shadow', 'duration-300', 'rounded-[8px]');
           mainContainer.appendChild(surroundingAnchor);
+          addTooltip();
         }
       });
     }

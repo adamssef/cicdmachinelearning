@@ -81,11 +81,11 @@ semibold text-[32px] md:text-5xl pt-12 md:pt-20 pb-6 md:pb-8 lg:pb-12 px-4 md:px
             <div class="p-6 group-hover:pt-4 transition-all duration-300 ease-linear">
                 {% if card.url %}
                     <a href="{{ card.url }}">
-                        <span class=" block text-2xl leading-[30px] pb-4 text-black font-semibold">{{ card.title|t }}</span>
+                        <span class="title-wrap block text-2xl leading-[30px] pb-4 text-black font-semibold">{{ card.title|t }}</span>
                     </a>
                 {% else %}
                     <span
-                            class=" block text-2xl leading-[30px] pb-4 text-black font-semibold">{{ card.title|t }}</span>
+                            class=" title-wrap block text-2xl leading-[30px] pb-4 text-black font-semibold">{{ card.title|t }}</span>
                 {% endif %}
                 {% for child_card in card.children %}
                     {% if child_card.url %}

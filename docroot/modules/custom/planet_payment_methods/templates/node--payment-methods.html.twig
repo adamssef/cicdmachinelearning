@@ -26,9 +26,9 @@
             <div class="flex items-stretch min-h-[440px] self-start">
                 <div class="md:w-6/12 px-4 md:pr-6 lg:pr-8 md:pl-0 md:ml-8 flex flex-col justify-center items-end">
                     <!-- Content Section -->
-                    <div class="max-w-[640px] w-full pt-4 pb-12 md:py-6 lg:pt-8 md:pb-20 font-light">
+                    <div class="max-w-[640px] w-full pt-4 pb-12 md:py-6 lg:pt-8 md:pb-20 font-light short-description__section">
                         <span class="block font-semibold text-[28px] md:text-5xl mb-4">{{ elements['#title']|striptags }}</span>
-                        <p class="short-description font-light leading-5 lg:leading-6 text-base lg:text-xl">{{ short_description|t }}</p>
+                        <p class="short-description font-light leading-5 lg:leading-6 text-base lg:text-xl">{{ short_description|raw }}</p>
                         <a class="flex items-center font-semibold block md:flex h-14 flex justify-center rounded-full tracking-tight text-white text-lg bg-planet-black hover:bg-[rgb(224,0,131)] hover:text-white transition-all duration-300 ease-in-out mt-8 py-4 px-6 w-full md:w-fit"
                            href="{{ contact_sales_url }}">{{ "Contact sales"|t }}</a>
                     </div>
@@ -59,7 +59,7 @@
                 <div class="w-full px-4">
                     <div class="py-8 font-light">
                         <span class="block font-semibold text-[28px] md:text-5xl mb-4">{{ elements['#title']|striptags }}</span>
-                        <p class="short-description font-light leading-5 lg:leading-6 text-base lg:text-xl">{{ short_description|t }}</p>
+                        <p class="short-description font-light leading-5 lg:leading-6 text-base lg:text-xl">{{ short_description|raw }}</p>
                         <a class="flex items-center font-semibold block md:flex h-14 flex justify-center rounded-full tracking-tight text-white text-lg bg-planet-black hover:bg-[rgb(224,0,131)] hover:text-white transition-all duration-300 ease-in-out mt-8 py-4 px-6 w-full md:w-fit"
                            href="{{ contact_sales_url }}">{{ "Contact sales"|t }}</a>
                     </div>
@@ -81,7 +81,7 @@
         </div>
     {% endif %}
   {% if long_description %}
-    <div class="w-fit rounded-t-lg py-6 px-4 md:px-8 md:py-8 flex flex-col items-center border-solid border border-b-4 border-[#C2CEFB] mb-12 md:mb-19 lg:mb-20 mx-4 md:mx-8 font-light">
+    <div class="long-description--section max-w-[1280px] box-content w-fit rounded-t-lg py-6 px-4 md:px-8 md:py-8 flex flex-col items-center border-solid border border-b-4 border-[#C2CEFB] mb-12 md:mb-19 lg:mb-20 mx-4 md:mx-8 font-light">
       <div class="text-center mb-6 md:mb-12 font-semibold text-[32px] md:text-5xl flex justify-center text-planet-black leading-[40px] md:leading-[60px]">{{ long_description_label|t }}</div>
       {{ long_description|raw }}
     </div>
@@ -98,3 +98,15 @@
         </div>
     </div>
 </div>
+
+<style>
+  .short-description__section ul {
+    list-style-position: inside !important;
+  }
+
+  @media (min-width: 1380px) {
+    .long-description--section ul {
+      margin-left: -64px;
+    }
+  }
+</style>
