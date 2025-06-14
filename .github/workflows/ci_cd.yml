@@ -33,10 +33,10 @@ jobs:
       - name: Run training and generate report
         run: python train.py
 
-      - name: Commit report with CML
+      - name: Post report with CML
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          cml send-comment reports/report.md --commit
+          cml send-comment reports/report.md --target=commit
