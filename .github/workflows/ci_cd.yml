@@ -29,11 +29,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip setuptools wheel build
           pip install --prefer-binary --only-binary=:all: -r requirements-ci.txt
+
       - name: Run training and generate report
         run: python train.py
 
-      - name: Post report with CML
+      - name: Commit report with CML
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cml comment create reports/report.md --token $REPO_TOKEN
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          cml send-comment reports/report.md --commit
