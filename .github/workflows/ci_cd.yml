@@ -1,7 +1,7 @@
 name: CI/CD for ML
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 jobs:
@@ -39,4 +39,4 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          cml send-comment reports/report.md --target=commit
+          cml comment create reports/report.md --target=pr
