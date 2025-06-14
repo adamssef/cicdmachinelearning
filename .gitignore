@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Environment files
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+env/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VSCode or PyCharm settings
+.vscode/
+.idea/
+
+# DVC and CML
+*.dvc
+.cache/
+.dvc/
+reports/
+
+# Model and data artifacts
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.onnx
+data/
+models/
+
+# Logs and outputs
+*.log
+*.out
+*.err
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Hugging Face token (if you use a token file locally)
+huggingface_token.txt
